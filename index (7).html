@@ -1,0 +1,2566 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ガリレオ | 理系の大学受験専門オンライン塾</title>
+<meta name="description" content="理系の大学受験専門オンライン塾ガリレオ。毎日課題システムによる学習管理と理系思考トレーニングで志望校合格へ。数学・物理・化学・生物のプロ講師が全国対応。">
+<meta property="og:title" content="ガリレオ | 理系の大学受験専門オンライン塾">
+<meta property="og:description" content="毎日課題 × 理系思考で志望校合格へ。数学・物理・化学・生物のプロ講師が全国対応のオンライン指導。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS VARIABLES ===== */
+:root {
+  --primary: #0D47A1;
+  --primary-light: #1565C0;
+  --primary-dark: #0A3680;
+  --secondary: #00BFA5;
+  --secondary-light: #1DE9B6;
+  --accent: #FF6D00;
+  --accent-light: #FF9100;
+  --bg: #FAFCFF;
+  --bg-alt: #F0F4FA;
+  --bg-dark: #0B1929;
+  --text: #1A1A2E;
+  --text-light: #4A5568;
+  --text-muted: #8896A6;
+  --white: #FFFFFF;
+  --border: #E2E8F0;
+  --shadow-sm: 0 1px 3px rgba(13,71,161,0.06);
+  --shadow-md: 0 4px 20px rgba(13,71,161,0.08);
+  --shadow-lg: 0 8px 40px rgba(13,71,161,0.12);
+  --shadow-xl: 0 20px 60px rgba(13,71,161,0.15);
+  --radius-sm: 6px;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --font-jp: 'Noto Sans JP', sans-serif;
+  --font-en: 'DM Sans', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --header-h: 72px;
+  --section-py: clamp(64px, 10vw, 120px);
+}
+
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
+body {
+  font-family: var(--font-jp);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.8;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+ul, ol { list-style: none; }
+
+/* ===== UTILITIES ===== */
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.section-padding { padding: var(--section-py) 0; }
+.en { font-family: var(--font-en); }
+.mono { font-family: var(--font-mono); }
+
+.section-label {
+  font-family: var(--font-en);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 900;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 15px;
+  color: var(--text-light);
+  max-width: 640px;
+  line-height: 1.9;
+}
+.section-header { text-align: center; margin-bottom: clamp(40px, 6vw, 64px); }
+.section-header .section-subtitle { margin: 0 auto; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 16px 32px;
+  border-radius: 60px;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--accent);
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(255,109,0,0.3);
+}
+.btn-primary:hover {
+  background: var(--accent-light);
+  box-shadow: 0 6px 24px rgba(255,109,0,0.4);
+  transform: translateY(-2px);
+}
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+.btn-outline:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+.btn-white {
+  background: var(--white);
+  color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+.btn-white:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ===== HEADER ===== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-h);
+  background: rgba(250,252,255,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226,232,240,0.6);
+  z-index: 1000;
+  transition: box-shadow 0.3s;
+}
+.header.scrolled { box-shadow: var(--shadow-md); }
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  font-size: 20px;
+  color: var(--primary);
+}
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 18px;
+}
+.logo-sub {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.nav { display: flex; align-items: center; gap: 28px; }
+.nav a {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-light);
+  transition: color 0.2s;
+  position: relative;
+}
+.nav a:hover { color: var(--primary); }
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s;
+}
+.nav a:hover::after { width: 100%; }
+.nav-cta {
+  font-size: 13px !important;
+  padding: 10px 22px;
+  background: var(--accent);
+  color: var(--white) !important;
+  border-radius: 60px;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 8px rgba(255,109,0,0.25);
+  transition: all 0.3s !important;
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover {
+  background: var(--accent-light) !important;
+  color: var(--white) !important;
+  transform: translateY(-1px);
+}
+
+/* Mobile menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 28px;
+  padding: 4px 0;
+}
+.menu-toggle span {
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+@media (max-width: 1024px) {
+  .nav { display: none; }
+  .menu-toggle { display: flex; }
+  .mobile-nav {
+    position: fixed;
+    inset: 0;
+    background: rgba(250,252,255,0.98);
+    backdrop-filter: blur(20px);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .mobile-nav.open { opacity: 1; pointer-events: all; }
+  .mobile-nav a {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .mobile-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 28px;
+    color: var(--text);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+/* ===== TOP BAR ===== */
+.top-bar {
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-top: var(--header-h);
+}
+.top-bar strong { color: var(--secondary-light); }
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--bg) 0%, #E8EFF9 50%, var(--bg-alt) 100%);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(0,191,165,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(13,71,161,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Grid pattern overlay */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(13,71,161,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13,71,161,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 6px 16px 6px 8px;
+  border-radius: 60px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+.hero-badge-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--secondary);
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0,191,165,0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(0,191,165,0); }
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 900;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-desc {
+  font-size: 15px;
+  color: var(--text-light);
+  line-height: 2;
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.hero-stat {
+  background: var(--white);
+  padding: 20px 16px;
+  text-align: center;
+}
+.hero-stat-num {
+  font-family: var(--font-en);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.2;
+}
+.hero-stat-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-img-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+}
+.hero-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  gap: 12px;
+}
+.hero-img-placeholder svg { opacity: 0.5; }
+
+/* Floating elements */
+.hero-float {
+  position: absolute;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  box-shadow: var(--shadow-lg);
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: float 6s ease-in-out infinite;
+  z-index: 3;
+}
+.hero-float-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+.hero-float-1 { top: 10%; right: -10px; animation-delay: 0s; }
+.hero-float-1 .hero-float-icon { background: rgba(0,191,165,0.1); }
+.hero-float-2 { bottom: 15%; left: -20px; animation-delay: -2s; }
+.hero-float-2 .hero-float-icon { background: rgba(255,109,0,0.1); }
+.hero-float-3 { bottom: 40%; right: -30px; animation-delay: -4s; }
+.hero-float-3 .hero-float-icon { background: rgba(13,71,161,0.1); }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@media (max-width: 768px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+  .hero-actions { justify-content: center; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .hero-visual { order: -1; }
+  .hero-float { display: none; }
+}
+
+/* ===== WORRIES ===== */
+.worries { background: var(--bg-alt); }
+.worries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.worry-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+}
+.worry-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.worry-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  background: rgba(255,109,0,0.08);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+.worry-text {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.worries-bottom {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.9;
+  box-shadow: var(--shadow-lg);
+}
+.worries-bottom strong { color: var(--secondary-light); font-size: 15px; }
+
+/* ===== GUIDANCE SYSTEM ===== */
+.system-intro {
+  font-size: 15px;
+  color: var(--text-light);
+  line-height: 2;
+  max-width: 800px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+.pillar {
+  position: relative;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s;
+  overflow: hidden;
+}
+.pillar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.pillar:hover::before { opacity: 1; }
+.pillar:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+
+.pillar-num {
+  font-family: var(--font-en);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary);
+  opacity: 0.12;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.pillar h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.pillar p {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.9;
+}
+
+/* ===== DAILY TASK ===== */
+.daily { background: var(--bg-alt); }
+.daily-intro {
+  max-width: 720px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+.daily-intro h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.daily-intro p {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 2;
+}
+
+.daily-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 48px;
+  position: relative;
+}
+.daily-steps::before {
+  content: '';
+  position: absolute;
+  top: 44px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  opacity: 0.2;
+}
+
+.daily-step {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.daily-step-num {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 16px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-en);
+  font-weight: 700;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(13,71,161,0.2);
+}
+.daily-step h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.daily-step p {
+  font-size: 12px;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+.daily-merits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.daily-merit {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  box-shadow: var(--shadow-sm);
+}
+.daily-merit-check {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  background: var(--secondary);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  margin-top: 2px;
+}
+.daily-merit h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.daily-merit p { font-size: 12px; color: var(--text-light); line-height: 1.7; }
+
+.daily-link {
+  text-align: center;
+  margin-top: 40px;
+}
+.daily-link a {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 15px;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 2px;
+  transition: all 0.2s;
+}
+.daily-link a:hover { color: var(--accent); border-color: var(--accent); }
+
+@media (max-width: 768px) {
+  .daily-steps { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .daily-steps::before { display: none; }
+}
+
+/* ===== THINKING TRAINING ===== */
+.thinking-intro {
+  max-width: 760px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+.thinking-intro h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.thinking-intro p {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 2;
+}
+
+.thinking-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.thinking-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s;
+}
+.thinking-card:hover { box-shadow: var(--shadow-md); }
+.thinking-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+.thinking-card:nth-child(1) .thinking-card-icon {
+  background: rgba(13,71,161,0.08);
+}
+.thinking-card:nth-child(2) .thinking-card-icon {
+  background: rgba(0,191,165,0.08);
+}
+.thinking-card h4 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.thinking-card p {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.9;
+}
+
+.thinking-bottom {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.9;
+  font-weight: 600;
+}
+.thinking-bottom strong { color: var(--secondary-light); }
+
+@media (max-width: 640px) {
+  .thinking-cards { grid-template-columns: 1fr; }
+}
+
+/* ===== COURSES ===== */
+.courses { background: var(--bg-alt); }
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.course-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s;
+  display: flex;
+  flex-direction: column;
+}
+.course-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+.course-card-header {
+  padding: 28px 24px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.course-target {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 8px;
+}
+.course-card-header h3 {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.course-card-header p {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+.course-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+.course-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(13,71,161,0.06);
+  color: var(--primary);
+}
+
+.course-card-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.course-prices { margin-bottom: 20px; }
+.course-price-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.course-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.course-price-row:last-child { border-bottom: none; }
+.course-price-freq {
+  font-size: 12px;
+  color: var(--text-light);
+}
+.course-price-amount {
+  font-family: var(--font-en);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+}
+.course-price-tax {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.course-features {
+  flex: 1;
+}
+.course-feature {
+  font-size: 13px;
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-light);
+}
+.course-feature::before {
+  content: '✓';
+  color: var(--secondary);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.courses-note {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.9;
+}
+
+@media (max-width: 900px) {
+  .courses-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+}
+
+/* ===== GALLERY ===== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.gallery-item {
+  aspect-ratio: 4/3;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--bg-alt), #dde4ed);
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s;
+}
+.gallery-item:hover {
+  box-shadow: var(--shadow-lg);
+  transform: scale(1.02);
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallery-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+@media (max-width: 640px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== STAFF ===== */
+.staff { background: var(--bg-alt); }
+.staff-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.staff-tab {
+  padding: 8px 20px;
+  border-radius: 40px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-light);
+  background: var(--white);
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.staff-tab.active, .staff-tab:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+.staff-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s;
+}
+.staff-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.staff-card-img {
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #e8f0fe, #dce8f5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 48px;
+}
+.staff-card-body { padding: 20px; }
+.staff-role {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--secondary);
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+.staff-name {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.staff-subjects {
+  font-size: 12px;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+.staff-message {
+  font-size: 12px;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+.staff-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.9;
+}
+
+/* ===== VOICES ===== */
+.voices-showcase {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  padding: 40px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow-sm);
+}
+.voices-stats {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.voice-stat-box {
+  background: var(--bg-alt);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+}
+.voice-stat-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.voice-stat-value {
+  font-family: var(--font-en);
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.1;
+}
+.voice-stat-sub { font-size: 12px; color: var(--text-muted); }
+.voice-stat-box:last-child .voice-stat-value { color: var(--secondary); }
+.voice-arrow {
+  font-size: 36px;
+  color: var(--accent);
+}
+.voice-summary {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.8;
+}
+.voice-summary strong { color: var(--accent); font-size: 16px; }
+
+.voices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+.voice-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  transition: all 0.3s;
+}
+.voice-card:hover { box-shadow: var(--shadow-md); }
+.voice-card-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--primary);
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+.voice-card-quote {
+  font-size: 36px;
+  color: var(--primary);
+  opacity: 0.15;
+  line-height: 1;
+  margin-bottom: 8px;
+  font-family: serif;
+}
+.voice-card p {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 2;
+  margin-bottom: 16px;
+}
+.voice-card-author {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+@media (max-width: 640px) {
+  .voices-stats { grid-template-columns: 1fr; gap: 12px; }
+  .voice-arrow { transform: rotate(90deg); text-align: center; }
+  .voices-showcase { padding: 24px; }
+}
+
+/* ===== RESULTS ===== */
+.results { background: var(--bg-alt); }
+.results-year {
+  margin-bottom: 36px;
+}
+.results-year-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--primary);
+  display: inline-block;
+}
+.results-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.results-cat {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 24px;
+  border: 1px solid var(--border);
+}
+.results-cat-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+.results-cat li {
+  font-size: 14px;
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--border);
+  font-weight: 500;
+}
+.results-cat li:last-child { border-bottom: none; }
+.results-note {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 24px;
+}
+
+/* ===== FLOW ===== */
+.flow-steps {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+.flow-steps::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 27px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--primary), var(--secondary));
+}
+.flow-step {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+  position: relative;
+}
+.flow-step:last-child { margin-bottom: 0; }
+.flow-step-num {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-en);
+  font-weight: 700;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(13,71,161,0.2);
+  position: relative;
+  z-index: 2;
+}
+.flow-step-content {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 24px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  flex: 1;
+}
+.flow-step-content h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.flow-step-content p {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.9;
+}
+
+/* ===== FAQ ===== */
+.faq { background: var(--bg-alt); }
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.faq-item {
+  background: var(--white);
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.faq-q {
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  gap: 16px;
+  transition: background 0.2s;
+}
+.faq-q:hover { background: var(--bg-alt); }
+.faq-toggle {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  background: var(--bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--primary);
+  transition: all 0.3s;
+}
+.faq-item.open .faq-toggle { transform: rotate(45deg); background: var(--primary); color: var(--white); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.faq-a-inner {
+  padding: 0 24px 20px;
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 2;
+}
+
+/* ===== ABOUT ===== */
+.about-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+.about-philosophy {
+  font-size: clamp(22px, 3.5vw, 30px);
+  font-weight: 900;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+.about-philosophy em {
+  font-style: normal;
+  color: var(--primary);
+}
+.about-text {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 2.2;
+  text-align: left;
+  margin-bottom: 32px;
+}
+.about-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  text-align: left;
+}
+.about-feature {
+  font-size: 13px;
+  padding: 14px 16px;
+  background: var(--bg-alt);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+.about-feature::before {
+  content: '◆';
+  color: var(--secondary);
+  font-size: 10px;
+}
+@media (max-width: 640px) {
+  .about-features { grid-template-columns: 1fr; }
+}
+
+/* ===== CONTACT ===== */
+.contact {
+  background: linear-gradient(135deg, var(--bg-dark), #0f2744);
+  color: var(--white);
+}
+.contact .section-label { color: var(--secondary-light); }
+.contact .section-title { color: var(--white); }
+.contact .section-subtitle { color: rgba(255,255,255,0.7); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 48px;
+  align-items: start;
+}
+.contact-info h3 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+.contact-info p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  line-height: 2;
+  margin-bottom: 20px;
+}
+.contact-target {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 20px;
+  line-height: 1.9;
+}
+.contact-target strong { color: var(--secondary-light); }
+.contact-trial {
+  background: rgba(0,191,165,0.1);
+  border: 1px solid rgba(0,191,165,0.2);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.contact-trial h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--secondary-light);
+  margin-bottom: 8px;
+}
+.contact-trial p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.9;
+}
+
+.contact-form {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  backdrop-filter: blur(10px);
+}
+.form-group { margin-bottom: 20px; }
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: rgba(255,255,255,0.9);
+}
+.form-group label .required {
+  font-size: 11px;
+  color: var(--accent);
+  margin-left: 4px;
+}
+.form-control {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.08);
+  color: var(--white);
+  font-family: var(--font-jp);
+  font-size: 14px;
+  transition: border-color 0.3s;
+  outline: none;
+}
+.form-control:focus { border-color: var(--secondary); }
+.form-control::placeholder { color: rgba(255,255,255,0.3); }
+select.form-control { appearance: none; cursor: pointer; }
+textarea.form-control { min-height: 100px; resize: vertical; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.form-submit {
+  width: 100%;
+  padding: 16px;
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  border-radius: 60px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 16px rgba(255,109,0,0.3);
+}
+.form-submit:hover {
+  background: var(--accent-light);
+  box-shadow: 0 6px 24px rgba(255,109,0,0.4);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--bg-dark);
+  color: rgba(255,255,255,0.5);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 48px 24px 32px;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+.footer-brand .logo { color: var(--white); margin-bottom: 8px; }
+.footer-brand .logo-icon { background: var(--primary-light); }
+.footer-brand p { font-size: 12px; color: rgba(255,255,255,0.4); }
+.footer-links {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.footer-links-col h4 {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 12px;
+}
+.footer-links-col a {
+  display: block;
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+.footer-links-col a:hover { color: var(--secondary-light); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 24px;
+  text-align: center;
+  font-size: 11px;
+}
+
+/* ===== THANK YOU MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+.modal {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 48px;
+  max-width: 480px;
+  width: 90%;
+  text-align: center;
+  transform: scale(0.9);
+  transition: transform 0.3s;
+}
+.modal-overlay.open .modal { transform: scale(1); }
+.modal h2 {
+  font-size: 22px;
+  margin-bottom: 16px;
+  color: var(--primary);
+}
+.modal p {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 2;
+  margin-bottom: 24px;
+}
+.modal-close {
+  padding: 12px 32px;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 60px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.modal-close:hover { background: var(--primary-light); }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">G</div>
+      <div>
+        ガリレオ
+        <div class="logo-sub">理系の大学受験専門オンライン塾</div>
+      </div>
+    </a>
+    <nav class="nav">
+      <a href="#features">指導システム</a>
+      <a href="#courses">コース・料金</a>
+      <a href="#staff">講師紹介</a>
+      <a href="#voices">合格者の声</a>
+      <a href="#results">合格実績</a>
+      <a href="#flow">入塾の流れ</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="nav-cta">無料相談 →</a>
+    </nav>
+    <button class="menu-toggle" onclick="document.getElementById('mobileNav').classList.add('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" onclick="this.parentElement.classList.remove('open')">✕</button>
+  <a href="#features" onclick="this.parentElement.classList.remove('open')">指導システム</a>
+  <a href="#courses" onclick="this.parentElement.classList.remove('open')">コース・料金</a>
+  <a href="#staff" onclick="this.parentElement.classList.remove('open')">講師紹介</a>
+  <a href="#voices" onclick="this.parentElement.classList.remove('open')">合格者の声</a>
+  <a href="#results" onclick="this.parentElement.classList.remove('open')">合格実績</a>
+  <a href="#flow" onclick="this.parentElement.classList.remove('open')">入塾の流れ</a>
+  <a href="#faq" onclick="this.parentElement.classList.remove('open')">FAQ</a>
+  <a href="#contact" class="btn btn-primary" onclick="this.parentElement.classList.remove('open')" style="margin-top:8px;">無料相談 →</a>
+</div>
+
+<!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+  理系専門・少人数オンライン指導 ｜ <strong>東大・京大・東工大・医学部</strong> 合格実績 ｜ 無料学習相談 受付中
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        無料学習相談 受付中
+      </div>
+      <h1>毎日課題 ×<br><em>理系思考で<br>志望校合格へ。</em></h1>
+      <p class="hero-desc">
+        理系の大学受験専門オンライン塾ガリレオは<br>
+        毎日課題システムによる学習管理と<br>
+        理系思考トレーニングで思考力を鍛え、<br>
+        志望校合格まで伴走します。
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">無料学習相談を予約する →</a>
+        <a href="#courses" class="btn btn-outline">コースを見る</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num en">200<span style="font-size:16px;">名+</span></div>
+          <div class="hero-stat-label">指導生徒数</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num en">10<span style="font-size:16px;">年</span></div>
+          <div class="hero-stat-label">理系受験指導の実績</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num en">90<span style="font-size:16px;">%+</span></div>
+          <div class="hero-stat-label">志望校合格率</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" style="font-size:20px;">毎日管理</div>
+          <div class="hero-stat-label">毎日課題で<br>家庭学習管理</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-img-wrapper">
+        <div class="hero-img-placeholder">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M8 12h8M12 8v8"/></svg>
+          <span>指導の様子</span>
+        </div>
+      </div>
+      <div class="hero-float hero-float-1">
+        <div class="hero-float-icon">🧪</div>
+        <div>
+          <div style="font-size:11px;color:var(--text-muted);">対応科目</div>
+          <div>数学・物理・化学・生物</div>
+        </div>
+      </div>
+      <div class="hero-float hero-float-2">
+        <div class="hero-float-icon">📊</div>
+        <div>
+          <div style="font-size:11px;color:var(--text-muted);">偏差値</div>
+          <div style="color:var(--accent);">+21.5 UP</div>
+        </div>
+      </div>
+      <div class="hero-float hero-float-3">
+        <div class="hero-float-icon">🎯</div>
+        <div>
+          <div style="font-size:11px;color:var(--text-muted);">対象</div>
+          <div>全国オンライン対応</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WORRIES ===== -->
+<section class="worries section-padding" id="worries">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Common Challenges</div>
+      <h2 class="section-title">多くの理系受験生が<br>同じ壁にぶつかっています</h2>
+    </div>
+    <div class="worries-grid">
+      <div class="worry-card reveal reveal-delay-1">
+        <div class="worry-icon">😔</div>
+        <div class="worry-text">塾には行くが、帰宅後は何も勉強しない</div>
+      </div>
+      <div class="worry-card reveal reveal-delay-2">
+        <div class="worry-icon">😤</div>
+        <div class="worry-text">「家で勉強しなさい」と言っても全く動かない</div>
+      </div>
+      <div class="worry-card reveal reveal-delay-1">
+        <div class="worry-icon">📉</div>
+        <div class="worry-text">模試の偏差値が上がらない。特に数学・理科の正しい勉強法がわからない</div>
+      </div>
+      <div class="worry-card reveal reveal-delay-2">
+        <div class="worry-icon">⏰</div>
+        <div class="worry-text">部活・習い事と受験勉強の両立ができていない</div>
+      </div>
+      <div class="worry-card reveal reveal-delay-1">
+        <div class="worry-icon">🔢</div>
+        <div class="worry-text">数学・物理・化学の点数が上がらない。公式は覚えたのに応用ができない</div>
+      </div>
+      <div class="worry-card reveal reveal-delay-2">
+        <div class="worry-icon">🎯</div>
+        <div class="worry-text">志望校との差が大きく、何から手をつければいいかわからない</div>
+      </div>
+      <div class="worry-card reveal reveal-delay-1" style="grid-column: 1 / -1; max-width: 480px; margin: 0 auto;">
+        <div class="worry-icon">🌐</div>
+        <div class="worry-text">理系なのに英語が苦手。理系受験でも英語は避けられない</div>
+      </div>
+    </div>
+    <div class="worries-bottom reveal">
+      <strong>「家で勉強できない受験生の志望校合格は100%叶わない」</strong><br>
+      ガリレオは毎日の家庭学習を徹底管理し、この問題を根本から解決します！
+    </div>
+  </div>
+</section>
+
+<!-- ===== GUIDANCE SYSTEM ===== -->
+<section class="section-padding" id="features">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Guidance System</div>
+      <h2 class="section-title">指導システム</h2>
+      <p class="section-subtitle">全国対応のオンライン指導 × 理系の大学受験専門塾</p>
+    </div>
+    <p class="system-intro reveal">
+      当塾は、全国の生徒を対象としたオンラインの<strong>理系の大学受験専門塾</strong>です。数学・物理・化学・生物・英語を中心とした受験対策を行っています。各科目の学習法や参考書の使い方、志望校の出題傾向を踏まえた指導により、効率的に学力を伸ばしていきます。大学受験で合格を勝ち取るためには、<strong>毎日の学習の積み重ね</strong>と<strong>志望校から逆算した受験戦略</strong>の両方が不可欠です。
+    </p>
+    <div class="pillars">
+      <div class="pillar reveal reveal-delay-1">
+        <div class="pillar-num">01</div>
+        <h3>全国対応のオンライン指導</h3>
+        <p>住んでいる地域に関係なく、全国どこからでも受講できます。オンライン指導でありながら、毎日の学習状況を講師がしっかりと把握しながら指導を行います。</p>
+      </div>
+      <div class="pillar reveal reveal-delay-2">
+        <div class="pillar-num">02</div>
+        <h3>理系の大学受験専門塾</h3>
+        <p>数学・物理・化学・生物・英語を中心とした理系大学受験に特化した専門塾です。各科目の学習法や参考書の使い方、志望校の出題傾向を踏まえた指導を行います。</p>
+      </div>
+      <div class="pillar reveal reveal-delay-3">
+        <div class="pillar-num">03</div>
+        <h3>毎日課題による学習管理</h3>
+        <p>生徒一人ひとりの学習状況に合わせて、日々の学習内容を具体的に提示し、学習状況を講師が確認します。「何を勉強すればいいか分からない」「家では続かない」を解決します。</p>
+      </div>
+      <div class="pillar reveal reveal-delay-4">
+        <div class="pillar-num">04</div>
+        <h3>志望校から逆算した受験戦略</h3>
+        <p>生徒の志望校や現在の学力を分析し、合格までのロードマップを作成します。どの参考書を・どの順番で・どの時期までに進めるべきかを明確にします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DAILY TASK ===== -->
+<section class="daily section-padding" id="daily">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Daily Management</div>
+      <h2 class="section-title">毎日課題システム</h2>
+      <p class="section-subtitle">日々の学習を管理するサイクルで、勉強習慣を身につけながら学力を伸ばします。</p>
+    </div>
+
+    <div class="daily-intro reveal">
+      <h3>勉強法は知っているのに、成績が伸びない理由</h3>
+      <p>多くの受験生が成績を伸ばせない理由は、勉強の方法ではなく<strong>勉強量の不足</strong>です。どれだけ良い勉強法を知っていても、日々の学習量が不足していれば学力は伸びません。そこで当塾では、日々の学習を管理する仕組みとして<strong>「毎日課題システム」</strong>を導入しています。</p>
+    </div>
+
+    <div class="daily-steps reveal">
+      <div class="daily-step">
+        <div class="daily-step-num">①</div>
+        <h4>講師が課題を提示</h4>
+        <p>どの参考書を・どの範囲まで・どのように進めるかを具体的に指示します。</p>
+      </div>
+      <div class="daily-step">
+        <div class="daily-step-num">②</div>
+        <h4>自宅で学習・ノート提出</h4>
+        <p>計算過程や解法をノートにまとめ、写真で提出します。</p>
+      </div>
+      <div class="daily-step">
+        <div class="daily-step-num">③</div>
+        <h4>講師が丸付け・確認</h4>
+        <p>提出されたノートを講師が確認。解法のアドバイスやフィードバックを行います。</p>
+      </div>
+      <div class="daily-step">
+        <div class="daily-step-num">④</div>
+        <h4>翌日の課題を提示</h4>
+        <p>学習状況を踏まえ翌日の課題を提示。このサイクルを毎日繰り返します。</p>
+      </div>
+    </div>
+
+    <div class="daily-merits">
+      <div class="daily-merit reveal">
+        <div class="daily-merit-check">✓</div>
+        <div>
+          <h4>毎日勉強する習慣が身につく</h4>
+          <p>日々の課題が明確になることで、自然と学習習慣を身につけることができます。</p>
+        </div>
+      </div>
+      <div class="daily-merit reveal">
+        <div class="daily-merit-check">✓</div>
+        <div>
+          <h4>何を勉強すればいいか迷わない</h4>
+          <p>講師が学習内容を具体的に提示するため、「今日は何を勉強すればいいか」がなくなります。</p>
+        </div>
+      </div>
+      <div class="daily-merit reveal">
+        <div class="daily-merit-check">✓</div>
+        <div>
+          <h4>学習状況を講師が把握できる</h4>
+          <p>学習報告をもとに、講師が生徒の学習状況を確認。課題があれば適切なアドバイスを行います。</p>
+        </div>
+      </div>
+      <div class="daily-merit reveal">
+        <div class="daily-merit-check">✓</div>
+        <div>
+          <h4>自宅学習の質が上がる</h4>
+          <p>大学受験では自宅での学習時間が非常に重要です。毎日課題により、自宅学習の質を高めます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THINKING TRAINING ===== -->
+<section class="section-padding" id="thinking">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Thinking Training</div>
+      <h2 class="section-title">理系思考トレーニング</h2>
+      <p class="section-subtitle">「定量」だけでなく「定性」を鍛える。自ら考え、自ら証明する力を育てます。</p>
+    </div>
+
+    <div class="thinking-intro reveal">
+      <h3>公式を覚えるだけになっていませんか？</h3>
+      <p>多くの受験生は、公式の丸暗記やパターン当てはめばかりになりがちです。もちろんそれも大切ですが、大学受験で合格を掴むためには、受験生自身の<strong>主体性や能動性</strong>が極めて重要です。</p>
+    </div>
+
+    <div class="thinking-cards">
+      <div class="thinking-card reveal">
+        <div class="thinking-card-icon">🔬</div>
+        <h4>自ら考える力</h4>
+        <p>「なぜこの公式が成り立つのか」を原理から理解する力。この力がなければ、応用問題や初見の問題に太刀打ちできません。与えられた公式をただ暗記するのではなく、原理から導き出せるレベルの理解を目指します。</p>
+      </div>
+      <div class="thinking-card reveal">
+        <div class="thinking-card-icon">⚡</div>
+        <h4>自ら解法を構築する力</h4>
+        <p>初見の問題でも既知の原理を組み合わせて解法を構築する力。数学の証明問題はもちろん、物理・化学の複合問題であらゆる場面で問われる力です。パターンに頼らない、本質的な問題解決能力を鍛えます。</p>
+      </div>
+    </div>
+
+    <div class="thinking-bottom reveal">
+      <strong>この2つの力がないと、旧帝大・早慶理工以上の大学に合格することは不可能</strong>だと考えてください。<br>
+      ガリレオでは、毎日課題による学習管理と合わせて、受験生の「考える力」そのものを鍛える<strong>理系思考トレーニング</strong>を実施しています。
+    </div>
+  </div>
+</section>
+
+<!-- ===== COURSES ===== -->
+<section class="courses section-padding" id="courses">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Courses &amp; Pricing</div>
+      <h2 class="section-title">コース紹介・料金</h2>
+      <p class="section-subtitle">すべてのコースに毎日課題・質問対応・学習管理が含まれています。</p>
+    </div>
+
+    <div class="courses-grid">
+      <!-- Course 1 -->
+      <div class="course-card reveal reveal-delay-1">
+        <div class="course-card-header">
+          <div class="course-target">中学生〜高校2年生</div>
+          <h3>大学受験準備コース</h3>
+          <p>理系受験に向けた基礎学力と学習習慣を身につけるコースです。毎日課題による学習管理を通して、受験に必要な基礎学力を養います。</p>
+          <div class="course-tags">
+            <span class="course-tag">毎日課題</span>
+            <span class="course-tag">基礎学力養成</span>
+            <span class="course-tag">オンライン個別指導</span>
+            <span class="course-tag">学習習慣づくり</span>
+          </div>
+        </div>
+        <div class="course-card-body">
+          <div class="course-prices">
+            <div class="course-price-label">月額料金（税込）</div>
+            <div class="course-price-row">
+              <span class="course-price-freq">① 月2回オンライン</span>
+              <span class="course-price-amount en">¥40,000 <span class="course-price-tax">税込/月</span></span>
+            </div>
+            <div class="course-price-row">
+              <span class="course-price-freq">② 週1回オンライン</span>
+              <span class="course-price-amount en">¥48,980 <span class="course-price-tax">税込/月</span></span>
+            </div>
+            <div class="course-price-row">
+              <span class="course-price-freq">③ 週2回オンライン</span>
+              <span class="course-price-amount en">¥67,380 <span class="course-price-tax">税込/月</span></span>
+            </div>
+          </div>
+          <div class="course-features">
+            <div class="course-feature">オンライン個別指導（60分／回）</div>
+            <div class="course-feature">理系思考トレーニング</div>
+            <div class="course-feature">毎日課題 週5回</div>
+            <div class="course-feature">LINE質問対応（随時）</div>
+            <div class="course-feature">三者面談（保護者様・生徒・講師）</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course 2 -->
+      <div class="course-card reveal reveal-delay-2">
+        <div class="course-card-header" style="background:linear-gradient(135deg,rgba(13,71,161,0.03),rgba(0,191,165,0.03));">
+          <div class="course-target">高校1年生〜高校3年生</div>
+          <h3>合格戦略プログラム</h3>
+          <p>志望校から逆算した合格ロードマップを作成し、日々の学習内容を設計。実力診断テストで学力の推移を把握し、受験本番まで講師が伴走します。</p>
+          <div class="course-tags">
+            <span class="course-tag">合格ロードマップ</span>
+            <span class="course-tag">毎日課題</span>
+            <span class="course-tag">実力診断テスト</span>
+            <span class="course-tag">受験戦略</span>
+          </div>
+        </div>
+        <div class="course-card-body">
+          <div class="course-prices">
+            <div class="course-price-label">月額料金（税込）</div>
+            <div class="course-price-row">
+              <span class="course-price-freq">① 月2回オンライン</span>
+              <span class="course-price-amount en">¥45,000 <span class="course-price-tax">税込/月</span></span>
+            </div>
+            <div class="course-price-row">
+              <span class="course-price-freq">② 週1回オンライン</span>
+              <span class="course-price-amount en">¥64,480 <span class="course-price-tax">税込/月</span></span>
+            </div>
+            <div class="course-price-row">
+              <span class="course-price-freq">③ 週2回オンライン</span>
+              <span class="course-price-amount en">¥83,380 <span class="course-price-tax">税込/月</span></span>
+            </div>
+          </div>
+          <div class="course-features">
+            <div class="course-feature">オンライン個別指導（60分／回）</div>
+            <div class="course-feature">理系思考トレーニング</div>
+            <div class="course-feature">合格ロードマップ作成</div>
+            <div class="course-feature">毎日課題 週5回</div>
+            <div class="course-feature">確認テスト 週1回実施</div>
+            <div class="course-feature">実力診断テスト 月末1回実施</div>
+            <div class="course-feature">当月の偏差値推移の提示</div>
+            <div class="course-feature">LINE質問対応（随時）</div>
+            <div class="course-feature">三者面談（保護者様・生徒・講師）</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course 3 -->
+      <div class="course-card reveal reveal-delay-3">
+        <div class="course-card-header">
+          <div class="course-target">併塾向け</div>
+          <h3>合格戦略サポート</h3>
+          <p>予備校や個別指導塾に通っている生徒向けの受験戦略サポートコースです。現在の塾を活かしながら、志望校合格に向けた最適な戦略を提案します。</p>
+          <div class="course-tags">
+            <span class="course-tag">受験戦略サポート</span>
+            <span class="course-tag">偏差値分析</span>
+            <span class="course-tag">学習計画設計</span>
+            <span class="course-tag">併塾OK</span>
+          </div>
+        </div>
+        <div class="course-card-body">
+          <div class="course-prices">
+            <div class="course-price-label">月額料金（税込）</div>
+            <div class="course-price-row">
+              <span class="course-price-freq">月額</span>
+              <span class="course-price-amount en">¥33,000 <span class="course-price-tax">税込</span></span>
+            </div>
+          </div>
+          <div class="course-features">
+            <div class="course-feature">当月の偏差値推移の提示</div>
+            <div class="course-feature">実力診断テスト 月末1回実施</div>
+            <div class="course-feature">確認テスト 週1回実施</div>
+            <div class="course-feature">毎日課題 週5回</div>
+            <div class="course-feature">LINE質問対応（随時）</div>
+            <div class="course-feature">三者面談（保護者様・生徒・講師）</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="courses-note reveal">
+      ※ 銀行振込（一括・2回・3回分割）・クレジットカード毎月払いの4つの支払い方法からお選びいただけます。<br>
+      ※ 入塾金の詳細は無料相談時にご説明いたします。教材は当塾でご用意してお渡しします。<br>
+      ※ 兄弟割引制度あり。まずはお気軽にお問い合わせください。
+    </p>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="section-padding" id="gallery">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Gallery</div>
+      <h2 class="section-title">授業・塾内の様子</h2>
+      <p class="section-subtitle">ガリレオの日常風景をご覧ください。</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item"><div class="gallery-placeholder">オンライン指導の様子</div></div>
+      <div class="gallery-item"><div class="gallery-placeholder">個別指導の様子</div></div>
+      <div class="gallery-item"><div class="gallery-placeholder">講師との対話授業</div></div>
+      <div class="gallery-item"><div class="gallery-placeholder">数学の解説中</div></div>
+      <div class="gallery-item"><div class="gallery-placeholder">毎日課題のノート</div></div>
+      <div class="gallery-item"><div class="gallery-placeholder">合格発表の瞬間</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STAFF ===== -->
+<section class="staff section-padding" id="staff">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Our Teachers</div>
+      <h2 class="section-title">講師紹介</h2>
+      <p class="section-subtitle">ガリレオには理系各科目の専門スタッフが揃っています。</p>
+    </div>
+
+    <div class="staff-tabs reveal">
+      <button class="staff-tab active" onclick="filterStaff('all')">全員</button>
+      <button class="staff-tab" onclick="filterStaff('leader')">代表・塾長</button>
+      <button class="staff-tab" onclick="filterStaff('pro')">プロ講師</button>
+      <button class="staff-tab" onclick="filterStaff('daily')">毎日課題</button>
+    </div>
+
+    <div class="staff-grid">
+      <div class="staff-card reveal" data-role="leader">
+        <div class="staff-card-img">👨‍🏫</div>
+        <div class="staff-card-body">
+          <div class="staff-role">代表・塾長</div>
+          <div class="staff-name">佐野 翼（さの つばさ）</div>
+          <div class="staff-subjects">得意科目：数学・世界史・日本史・現代文・古典</div>
+          <div class="staff-message">指導経験7年目、指導生徒数200名以上。生徒一人一人の合格ロードマップを設計し、毎日の家庭学習からメンタルまで全力でサポートします。</div>
+        </div>
+      </div>
+      <div class="staff-card reveal" data-role="leader">
+        <div class="staff-card-img">👨‍🔬</div>
+        <div class="staff-card-body">
+          <div class="staff-role">塾長</div>
+          <div class="staff-name">澤柳 旬（さわやなぎ しゅん）</div>
+          <div class="staff-subjects">得意科目：英語・数学・物理・化学・生物</div>
+          <div class="staff-message">指導経験10年目、指導生徒数800人以上。東京医科歯科大・東工大など最難関レベルへの合格実績を持つ。思考力を重視した指導で目標達成をサポートします！</div>
+        </div>
+      </div>
+      <div class="staff-card reveal" data-role="pro">
+        <div class="staff-card-img">👩‍🏫</div>
+        <div class="staff-card-body">
+          <div class="staff-role">プロ講師</div>
+          <div class="staff-name">三浦（みうら）</div>
+          <div class="staff-subjects">数学IA・IIB / 生物・英語 / 化学・物理・地学基礎</div>
+          <div class="staff-message">思考力と「なぜそうなるのか」を大切にし、次に繋がる指導をします。</div>
+        </div>
+      </div>
+      <div class="staff-card reveal" data-role="pro">
+        <div class="staff-card-img">👨‍🏫</div>
+        <div class="staff-card-body">
+          <div class="staff-role">プロ講師</div>
+          <div class="staff-name">立川（たちかわ）</div>
+          <div class="staff-subjects">数学IAIIB・IIIC / 英語 / 物理・化学・生物</div>
+          <div class="staff-message">指導経験4年目、指導生徒数110名ほど。生徒さんの「なぜ？」を大切にし、根本的な理解のため粘り強く指導します！</div>
+        </div>
+      </div>
+      <div class="staff-card reveal" data-role="pro">
+        <div class="staff-card-img">👨‍🏫</div>
+        <div class="staff-card-body">
+          <div class="staff-role">プロ講師</div>
+          <div class="staff-name">樋口（ひぐち）</div>
+          <div class="staff-subjects">数学IAIIBIIIC / 英語 / 物理・化学・生物</div>
+          <div class="staff-message">それぞれの生徒に寄り添い、普遍的で重要な「本質」を理解できる指導をします！</div>
+        </div>
+      </div>
+      <div class="staff-card reveal" data-role="pro">
+        <div class="staff-card-img">👨‍🏫</div>
+        <div class="staff-card-body">
+          <div class="staff-role">プロ講師</div>
+          <div class="staff-name">西山（にしやま）</div>
+          <div class="staff-subjects">数学IAIIBIIIC / 化学</div>
+          <div class="staff-message">楽しく長く勉強を続けていけるようサポートしていきます。よろしくお願いします。</div>
+        </div>
+      </div>
+      <div class="staff-card reveal" data-role="daily">
+        <div class="staff-card-img">👩‍💼</div>
+        <div class="staff-card-body">
+          <div class="staff-role">毎日課題 Dir.</div>
+          <div class="staff-name">永田（ながた）</div>
+          <div class="staff-subjects">① 毎日課題チェック ② 確認テスト管理</div>
+          <div class="staff-message">一緒に悩んで考えて、できることを増やしていけるように頑張ります！</div>
+        </div>
+      </div>
+      <div class="staff-card reveal" data-role="daily">
+        <div class="staff-card-img">👩‍💼</div>
+        <div class="staff-card-body">
+          <div class="staff-role">毎日課題 Dir.</div>
+          <div class="staff-name">瀧澤（たきざわ）</div>
+          <div class="staff-subjects">① 毎日課題チェック ② 確認テスト管理</div>
+          <div class="staff-message">ひとり一人にあった勉強の仕方を重視し、自ら進められる学習サポートを心掛けます。</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="staff-bottom reveal">
+      理系各科目のプロ講師のみ在籍。<br>大学入試改革や最新の出題傾向を常に分析し、各大学・学部に合わせた専門的な指導を提供しています。
+    </p>
+  </div>
+</section>
+
+<!-- ===== VOICES ===== -->
+<section class="section-padding" id="voices">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Voice</div>
+      <h2 class="section-title">合格者の声</h2>
+      <p class="section-subtitle">ガリレオで学び、志望校合格を勝ち取った生徒たちのリアルな声です。</p>
+    </div>
+
+    <div class="voices-showcase reveal">
+      <div class="voices-stats">
+        <div class="voice-stat-box">
+          <div class="voice-stat-label">入塾時（高2・12月）</div>
+          <div class="voice-stat-value en">45.7</div>
+          <div class="voice-stat-sub">河合模試 偏差値</div>
+        </div>
+        <div class="voice-arrow">→</div>
+        <div class="voice-stat-box">
+          <div class="voice-stat-label">高3・10月</div>
+          <div class="voice-stat-value en">67.2</div>
+          <div class="voice-stat-sub">河合模試 偏差値</div>
+        </div>
+      </div>
+      <div class="voice-summary">
+        偏差値 <strong>+21.5 UP</strong> ｜ 自ら考えてギャップを埋める力が身につきました。 — <strong>K.Mさん（現役）</strong>
+      </div>
+    </div>
+
+    <div class="voices-grid">
+      <div class="voice-card reveal">
+        <div class="voice-card-badge">合格 東京工業大学</div>
+        <div class="voice-card-quote">"</div>
+        <p>通塾の移動時間がなく、その分勉強に集中できました。わからない問題もLINEで送ればすぐ返答が来るので、ストレスなく学習を続けられました。</p>
+        <div class="voice-card-author">A.Sさん（現役）高校3年生 → 東京工業大学</div>
+      </div>
+      <div class="voice-card reveal">
+        <div class="voice-card-badge">合格 京都大学 理学部</div>
+        <div class="voice-card-quote">"</div>
+        <p>ロードマップがあったことで、常に「今自分はどこにいて、次に何をすべきか」が明確でした。そのおかげでゴールまで迷わず辿り着けた気がします。</p>
+        <div class="voice-card-author">R.Nさん（現役）高校3年生 → 京都大学 理学部</div>
+      </div>
+      <div class="voice-card reveal">
+        <div class="voice-card-badge">合格 早稲田大学 先進理工</div>
+        <div class="voice-card-quote">"</div>
+        <p>マンツーマンなので自分のペースで進められ、学力向上の実感がありました。毎日課題があることで家でもしっかり勉強する習慣がつき、本当に感謝しています。</p>
+        <div class="voice-card-author">T.Kさん（現役）高校3年生 → 早稲田大学 先進理工学部</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESULTS ===== -->
+<section class="results section-padding" id="results">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Results</div>
+      <h2 class="section-title">合格実績</h2>
+      <p class="section-subtitle">ガリレオから志望校合格を勝ち取った生徒たちの実績です。</p>
+    </div>
+
+    <div class="results-year reveal">
+      <div class="results-year-title">2025年 合格実績</div>
+      <div class="results-categories">
+        <div class="results-cat">
+          <div class="results-cat-label">国公立大学</div>
+          <ul>
+            <li>東京大学 理科一類</li>
+            <li>京都大学 工学部</li>
+            <li>東京工業大学</li>
+            <li>北海道大学 理学部</li>
+          </ul>
+        </div>
+        <div class="results-cat">
+          <div class="results-cat-label">早慶・私立理系</div>
+          <ul>
+            <li>早稲田大学 先進理工学部</li>
+            <li>慶應義塾大学 理工学部</li>
+            <li>東京理科大学 工学部</li>
+          </ul>
+        </div>
+        <div class="results-cat">
+          <div class="results-cat-label">医学部</div>
+          <ul>
+            <li>東京医科歯科大学 医学部</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="results-note reveal">※ 合格実績は生徒・保護者様の許可を得て掲載しています。詳細は無料相談時にお伝えします。</p>
+  </div>
+</section>
+
+<!-- ===== FLOW ===== -->
+<section class="section-padding" id="flow">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Flow</div>
+      <h2 class="section-title">入塾の流れ</h2>
+      <p class="section-subtitle">お問い合わせから入塾まで、4つのステップで丁寧にサポートします。</p>
+    </div>
+
+    <div class="flow-steps">
+      <div class="flow-step reveal">
+        <div class="flow-step-num">1</div>
+        <div class="flow-step-content">
+          <h3>お問い合わせ・無料相談</h3>
+          <p>フォームまたはLINEからお気軽にご連絡ください。現在の学力・志望校・学習の悩みなどをお伺いし、最適な学習プランをご提案します。</p>
+        </div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-step-num">2</div>
+        <div class="flow-step-content">
+          <h3>無料体験授業（60分）</h3>
+          <p>実際の授業をご体験いただけます。数学・物理・化学・生物・英語からお好きな科目を選択可能。授業の進め方や講師との相性を、ぜひご確認ください。</p>
+        </div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-step-num">3</div>
+        <div class="flow-step-content">
+          <h3>学習プラン設計</h3>
+          <p>体験授業の結果をもとに、生徒一人ひとりに合わせた合格ロードマップを作成。目標達成までの具体的なスケジュールをご提示します。</p>
+        </div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-step-num">4</div>
+        <div class="flow-step-content">
+          <h3>入塾・学習スタート</h3>
+          <p>入塾後は担当講師がマンツーマンでサポート。毎日課題と定期的な確認テストで、着実に学力を伸ばしていきます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq section-padding" id="faq">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">よくある質問</h2>
+      <p class="section-subtitle">入塾前によくいただくご質問をまとめました。</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>体験授業はありますか？</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">はい、60分の無料体験授業を実施しています。数学・物理・化学・生物・英語から選択可能です。お気軽にお申し込みください。</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>オンラインでの受講は可能ですか？</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">はい、ガリレオはオンライン完結型の指導を提供しています。全国どこからでも受講可能です。通塾の移動時間がないため、その分を学習時間に充てることができます。</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>理系専門とのことですが、英語の指導はありますか？</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">はい、理系入試に必要な英語（理系長文読解含む）の指導も行っています。東大・京大・東工大レベルの英語対策にも対応しています。</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>数学III・Cの指導に対応していますか？</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">はい、数学IIIC まで対応しています。東大・京大・東工大レベルの対策も可能です。</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>医学部受験に対応できますか？</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">はい、医学部受験に必要な全科目の対策が可能です。面接対策の相談も承ります。</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>毎日課題はどのくらいの量ですか？</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">生徒の学力や生活リズムに合わせて量を調整します。無理なく継続できることを重視しており、1日あたり1〜2時間程度を目安に設計しています。部活動との両立も可能です。</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>保護者様へのご報告はありますか？</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">はい、定期的に保護者様との面談を実施し、学習の進捗状況や今後の方針を共有しています。また、日々の学習状況もLINEなどで随時ご報告可能です。</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>授業料の支払い方法はどうなっていますか？</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">銀行振込（一括・2回分割・3回分割）とクレジットカード毎月払いの4つの方法からお選びいただけます。クーリングオフ（契約日から8日以内・全額返金）にも対応しており、退塾時には翌月以降の指導料金を返金いたします。</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section-padding" id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">About Us</div>
+      <h2 class="section-title">塾概要</h2>
+    </div>
+    <div class="about-inner reveal">
+      <h3 class="about-philosophy"><em>「証明できる人」</em>を育てることが、<br>ガリレオの使命です。</h3>
+      <p class="about-text">
+        ガリレオは科学者の名にちなんだ、理系受験専門の学習塾です。知識の詰め込みではなく、「なぜ？」を問い、観察し、実験し、論理的に証明する力を育てることを最大の目標としています。<br><br>
+        難関大の理系学部が求めるのは、単なる計算力ではありません。複雑な問題を構造化する力、原理から解法を組み立てる力、そして多角的に検証する柔軟性です。
+      </p>
+      <div class="about-features">
+        <div class="about-feature">理系各科目のプロ講師のみ在籍で、専門性の高い指導環境</div>
+        <div class="about-feature">入塾から卒塾まで担当講師が一貫してサポート</div>
+        <div class="about-feature">保護者様との定期面談で学習状況を共有</div>
+        <div class="about-feature">卒塾生による合格体験談・アドバイスの場を提供</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact section-padding" id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">無料学習相談・お問い合わせ</h2>
+      <p class="section-subtitle">まずは気軽にご相談ください。入塾の強制は一切ありません。</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>お気軽にご連絡ください</h3>
+        <p>現在の学力・志望校・学習の悩みなど、どんな内容でも構いません。専任スタッフが丁寧にご対応します。</p>
+        <div class="contact-target">
+          <strong>対象者</strong><br>
+          理系の国公立・私大志望 / 医学部志望 / 文理選択に悩む高1・高2・高3生 / 中学生
+        </div>
+        <div class="contact-trial">
+          <h4>🧪 無料体験 受付中</h4>
+          <p>実際の授業をご体験いただけます。数学・物理・化学・生物・英語からお好きな科目を選択可能。授業の進め方や講師との相性を、ぜひご確認ください。</p>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>お名前 <span class="required">必須</span></label>
+            <input type="text" class="form-control" placeholder="山田 太郎" required>
+          </div>
+          <div class="form-group">
+            <label>フリガナ <span class="required">必須</span></label>
+            <input type="text" class="form-control" placeholder="ヤマダ タロウ" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>メールアドレス <span class="required">必須</span></label>
+            <input type="email" class="form-control" placeholder="example@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>電話番号 <span class="required">必須</span></label>
+            <input type="tel" class="form-control" placeholder="090-1234-5678" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>学年</label>
+          <select class="form-control">
+            <option value="">選択してください</option>
+            <option>中学1年生</option>
+            <option>中学2年生</option>
+            <option>中学3年生</option>
+            <option>高校1年生</option>
+            <option>高校2年生</option>
+            <option>高校3年生</option>
+            <option>既卒（浪人）</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>志望大学</label>
+          <input type="text" class="form-control" placeholder="例：東京大学 理科一類">
+        </div>
+        <div class="form-group">
+          <label>お悩み・ご相談内容</label>
+          <textarea class="form-control" placeholder="現在の学習状況や受験に関するお悩みなど、お気軽にご記入ください。"></textarea>
+        </div>
+        <button type="submit" class="form-submit">無料相談を申し込む →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">G</div>
+          <div>ガリレオ</div>
+        </div>
+        <p>Galileo Sciences — 理系の大学受験専門オンライン塾</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-links-col">
+          <h4>塾について</h4>
+          <a href="#features">指導システム</a>
+          <a href="#daily">毎日課題システム</a>
+          <a href="#thinking">理系思考トレーニング</a>
+          <a href="#staff">講師紹介</a>
+          <a href="#about">塾概要</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>コース</h4>
+          <a href="#courses">大学受験準備コース</a>
+          <a href="#courses">合格戦略プログラム</a>
+          <a href="#courses">合格戦略サポート</a>
+          <a href="#courses">料金一覧</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>その他</h4>
+          <a href="#voices">合格者の声</a>
+          <a href="#results">合格実績</a>
+          <a href="#flow">入塾の流れ</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 ガリレオ 理系の大学受験専門オンライン塾. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- ===== THANK YOU MODAL ===== -->
+<div class="modal-overlay" id="thankYouModal">
+  <div class="modal">
+    <h2>お申し込みありがとうございます！</h2>
+    <p>お問い合わせを受け付けました。<br><strong>2〜3営業日以内</strong>に担当者よりご連絡いたします。<br><br>ガリレオでの学びを、精一杯サポートします。<br>一緒に合格を目指しましょう！</p>
+    <button class="modal-close" onclick="document.getElementById('thankYouModal').classList.remove('open')">閉じる</button>
+  </div>
+</div>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+// Header scroll effect
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Scroll reveal
+const revealElements = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+revealElements.forEach(el => observer.observe(el));
+
+// FAQ toggle
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-a').style.maxHeight = null;
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    const answer = item.querySelector('.faq-a');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+
+// Staff filter
+function filterStaff(role) {
+  document.querySelectorAll('.staff-tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.staff-card').forEach(card => {
+    if (role === 'all' || card.dataset.role === role) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// Form submit
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('thankYouModal').classList.add('open');
+  e.target.reset();
+}
+
+// Counter animation
+function animateCounters() {
+  document.querySelectorAll('.hero-stat-num').forEach(el => {
+    const text = el.textContent;
+    const match = text.match(/(\d+)/);
+    if (!match) return;
+    const target = parseInt(match[1]);
+    const suffix = text.replace(match[1], '');
+    let current = 0;
+    const step = target / 40;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      el.innerHTML = Math.floor(current) + suffix;
+    }, 30);
+  });
+}
+
+// Run counter animation when hero is visible
+const heroObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounters();
+      heroObserver.disconnect();
+    }
+  });
+}, { threshold: 0.3 });
+heroObserver.observe(document.querySelector('.hero-stats'));
+</script>
+</body>
+</html>
