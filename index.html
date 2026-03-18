@@ -197,13 +197,14 @@ ul, ol { list-style: none; }
   letter-spacing: 0.05em;
 }
 
-.nav { display: flex; align-items: center; gap: 28px; }
+.nav { display: flex; align-items: center; gap: 20px; }
 .nav a {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--text-light);
   transition: color 0.2s;
   position: relative;
+  white-space: nowrap;
 }
 .nav a:hover { color: var(--primary); }
 .nav a::after {
@@ -249,7 +250,7 @@ ul, ol { list-style: none; }
   transition: all 0.3s;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .nav { display: none; }
   .menu-toggle { display: flex; }
   .mobile-nav {
@@ -1359,6 +1360,119 @@ ul, ol { list-style: none; }
   .about-features { grid-template-columns: 1fr; }
 }
 
+/* ===== INSTAGRAM ===== */
+.instagram { background: var(--bg-alt); }
+.instagram-feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.instagram-item {
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: linear-gradient(135deg, #e0e8f0, #d0dae8);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.instagram-item:hover { transform: scale(1.03); box-shadow: var(--shadow-md); }
+.instagram-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 12px;
+  text-align: center;
+  padding: 12px;
+}
+.instagram-link {
+  text-align: center;
+}
+.instagram-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 15px;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 2px;
+  transition: all 0.2s;
+}
+.instagram-link a:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ===== NEWS ===== */
+.news-list {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.news-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+  transition: all 0.2s;
+}
+.news-item:first-child { padding-top: 0; }
+.news-item:last-child { border-bottom: none; }
+.news-item:hover { padding-left: 8px; }
+.news-date {
+  font-family: var(--font-en);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+  min-width: 100px;
+  padding-top: 2px;
+}
+.news-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.news-badge-info { background: rgba(13,71,161,0.08); color: var(--primary); }
+.news-badge-important { background: rgba(255,109,0,0.1); color: var(--accent); }
+.news-badge-new { background: rgba(0,191,165,0.1); color: var(--secondary); }
+.news-content {
+  flex: 1;
+}
+.news-content h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  line-height: 1.6;
+}
+.news-content p {
+  font-size: 12px;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+.news-more {
+  text-align: center;
+  margin-top: 32px;
+}
+.news-more a {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 14px;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 2px;
+  transition: all 0.2s;
+}
+.news-more a:hover { color: var(--accent); border-color: var(--accent); }
+
+@media (max-width: 640px) {
+  .news-item { flex-direction: column; gap: 8px; }
+  .news-date { min-width: auto; display: flex; align-items: center; gap: 10px; }
+}
+
 /* ===== CONTACT ===== */
 .contact {
   background: linear-gradient(135deg, var(--bg-dark), #0f2744);
@@ -1590,12 +1704,16 @@ textarea.form-control { min-height: 100px; resize: vertical; }
     <nav class="nav">
       <a href="#features">指導システム</a>
       <a href="#courses">コース・料金</a>
+      <a href="#daily">毎日課題システム</a>
+      <a href="#gallery">授業の様子</a>
       <a href="#staff">講師紹介</a>
       <a href="#voices">合格者の声</a>
       <a href="#results">合格実績</a>
       <a href="#flow">入塾の流れ</a>
       <a href="#faq">FAQ</a>
-      <a href="#contact" class="nav-cta">無料相談 →</a>
+      <a href="#about">塾概要</a>
+      <a href="#news">お知らせ</a>
+      <a href="#contact" class="nav-cta">▶ 無料相談</a>
     </nav>
     <button class="menu-toggle" onclick="document.getElementById('mobileNav').classList.add('open')">
       <span></span><span></span><span></span>
@@ -1607,17 +1725,21 @@ textarea.form-control { min-height: 100px; resize: vertical; }
   <button class="mobile-close" onclick="this.parentElement.classList.remove('open')">✕</button>
   <a href="#features" onclick="this.parentElement.classList.remove('open')">指導システム</a>
   <a href="#courses" onclick="this.parentElement.classList.remove('open')">コース・料金</a>
+  <a href="#daily" onclick="this.parentElement.classList.remove('open')">毎日課題システム</a>
+  <a href="#gallery" onclick="this.parentElement.classList.remove('open')">授業の様子</a>
   <a href="#staff" onclick="this.parentElement.classList.remove('open')">講師紹介</a>
   <a href="#voices" onclick="this.parentElement.classList.remove('open')">合格者の声</a>
   <a href="#results" onclick="this.parentElement.classList.remove('open')">合格実績</a>
   <a href="#flow" onclick="this.parentElement.classList.remove('open')">入塾の流れ</a>
   <a href="#faq" onclick="this.parentElement.classList.remove('open')">FAQ</a>
-  <a href="#contact" class="btn btn-primary" onclick="this.parentElement.classList.remove('open')" style="margin-top:8px;">無料相談 →</a>
+  <a href="#about" onclick="this.parentElement.classList.remove('open')">塾概要</a>
+  <a href="#news" onclick="this.parentElement.classList.remove('open')">お知らせ</a>
+  <a href="#contact" class="btn btn-primary" onclick="this.parentElement.classList.remove('open')" style="margin-top:8px;">▶ 無料相談</a>
 </div>
 
 <!-- ===== TOP BAR ===== -->
 <div class="top-bar">
-  理系専門・少人数オンライン指導 ｜ <strong>東大・京大・東工大・医学部</strong> 合格実績 ｜ 無料学習相談 受付中
+  理系専門・少人数オンライン指導 ｜ <strong>東大・京大・東工大・医学部</strong> 合格実績 ｜ <a href="https://www.instagram.com/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.85);text-decoration:underline;">Instagram @galileo_sciences</a>
 </div>
 
 <!-- ===== HERO ===== -->
@@ -2353,6 +2475,91 @@ textarea.form-control { min-height: 100px; resize: vertical; }
   </div>
 </section>
 
+<!-- ===== INSTAGRAM ===== -->
+<section class="instagram section-padding" id="instagram">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Instagram</div>
+      <h2 class="section-title">Instagram最新投稿</h2>
+      <p class="section-subtitle">日々の授業・合格速報・学習tips を発信しています！</p>
+    </div>
+    <div class="instagram-feed reveal">
+      <div class="instagram-item"><div class="instagram-placeholder">学習tips<br>投稿</div></div>
+      <div class="instagram-item"><div class="instagram-placeholder">合格速報<br>投稿</div></div>
+      <div class="instagram-item"><div class="instagram-placeholder">授業の様子<br>投稿</div></div>
+      <div class="instagram-item"><div class="instagram-placeholder">勉強法<br>投稿</div></div>
+      <div class="instagram-item"><div class="instagram-placeholder">受験情報<br>投稿</div></div>
+      <div class="instagram-item"><div class="instagram-placeholder">講師紹介<br>投稿</div></div>
+    </div>
+    <div class="instagram-link reveal">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagramをフォローする → @galileo_sciences</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWS ===== -->
+<section class="section-padding" id="news">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">News</div>
+      <h2 class="section-title">お知らせ</h2>
+      <p class="section-subtitle">最新のお知らせ・キャンペーン情報をお届けします。</p>
+    </div>
+    <div class="news-list">
+      <div class="news-item reveal">
+        <div class="news-date">
+          <span>2026.03.15</span>
+          <span class="news-badge news-badge-new">NEW</span>
+        </div>
+        <div class="news-content">
+          <h4>2026年度 春期講習のご案内</h4>
+          <p>春休み期間の集中講座を開講します。新高1〜高3生対象。数学・物理・化学の基礎固めに最適です。</p>
+        </div>
+      </div>
+      <div class="news-item reveal">
+        <div class="news-date">
+          <span>2026.03.01</span>
+          <span class="news-badge news-badge-important">重要</span>
+        </div>
+        <div class="news-content">
+          <h4>お支払い方法・退塾に関するご案内</h4>
+          <p>銀行振込（一括・2回・3回分割）・クレジットカード毎月払いの4つの支払い方法をご用意しています。クーリングオフ・退塾時の返金制度も完備しています。</p>
+        </div>
+      </div>
+      <div class="news-item reveal">
+        <div class="news-date">
+          <span>2026.02.20</span>
+          <span class="news-badge news-badge-info">実績</span>
+        </div>
+        <div class="news-content">
+          <h4>2026年度 合格実績を更新しました</h4>
+          <p>東大・京大・東工大をはじめ、今年度も多くの生徒が志望校合格を達成しました。</p>
+        </div>
+      </div>
+      <div class="news-item reveal">
+        <div class="news-date">
+          <span>2026.02.01</span>
+          <span class="news-badge news-badge-info">お知らせ</span>
+        </div>
+        <div class="news-content">
+          <h4>無料学習相談 随時受付中</h4>
+          <p>入塾をご検討中の方はもちろん、学習方法のご相談だけでもお気軽にどうぞ。入塾の強制は一切ありません。</p>
+        </div>
+      </div>
+      <div class="news-item reveal">
+        <div class="news-date">
+          <span>2026.01.15</span>
+          <span class="news-badge news-badge-new">開講</span>
+        </div>
+        <div class="news-content">
+          <h4>ガリレオ 理系の大学受験専門オンライン塾 開講しました</h4>
+          <p>文系の大学受験専門塾プラトンの理系版として、ガリレオが開講しました。全国どこからでもオンラインで受講可能です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== CONTACT ===== -->
 <section class="contact section-padding" id="contact">
   <div class="container">
@@ -2441,6 +2648,7 @@ textarea.form-control { min-height: 100px; resize: vertical; }
           <a href="#features">指導システム</a>
           <a href="#daily">毎日課題システム</a>
           <a href="#thinking">理系思考トレーニング</a>
+          <a href="#gallery">授業の様子</a>
           <a href="#staff">講師紹介</a>
           <a href="#about">塾概要</a>
         </div>
@@ -2457,6 +2665,8 @@ textarea.form-control { min-height: 100px; resize: vertical; }
           <a href="#results">合格実績</a>
           <a href="#flow">入塾の流れ</a>
           <a href="#faq">FAQ</a>
+          <a href="#news">お知らせ</a>
+          <a href="#instagram">Instagram</a>
           <a href="#contact">お問い合わせ</a>
         </div>
       </div>
