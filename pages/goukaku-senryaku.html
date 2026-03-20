@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>合格戦略プログラム | ガリレオ 理系の大学受験専門塾</title>
+<meta name="description" content="高校1年生〜3年生対象。合格ロードマップに基づく戦略的指導で志望校合格を実現。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.page-hero{background:linear-gradient(180deg,var(--bg) 0%,var(--green-pale) 100%);padding:60px 0 40px;text-align:center}
+.page-hero .section-label{margin-bottom:8px}
+.page-hero h1{font-family:var(--font-serif);font-size:clamp(24px,4vw,38px);font-weight:700;line-height:1.5;margin-bottom:12px}
+.page-hero p{font-size:14px;color:var(--text-light);max-width:600px;margin:0 auto;line-height:2}
+.breadcrumb{font-size:12px;color:var(--text-muted);margin-bottom:20px}
+.breadcrumb a{color:var(--primary);text-decoration:underline}
+.cta-section{background:var(--primary);color:var(--white);text-align:center}
+.cta-section .section-label{color:#D4A843}
+.cta-section .section-title{color:var(--white)}
+.cta-section p{color:rgba(255,255,255,.7);font-size:14px;line-height:2;max-width:560px;margin:0 auto 28px}
+.target-badge{display:inline-block;background:var(--amber);color:var(--white);font-size:13px;font-weight:700;padding:6px 18px;border-radius:20px;margin-bottom:16px}
+.price-table{width:100%;border-collapse:collapse;margin:20px 0}
+.price-table th,.price-table td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--border)}
+.price-table th{background:var(--primary);color:var(--white);font-size:13px;font-weight:600}
+.price-table td{font-size:14px;background:var(--white)}
+.price-table tr:hover td{background:var(--green-pale)}
+.price-amount{font-size:24px;font-weight:800;color:var(--primary)}
+.price-tax{font-size:11px;color:var(--text-muted)}
+.roadmap-steps{display:flex;flex-direction:column;gap:20px;max-width:700px;margin:0 auto}
+.roadmap-step{display:flex;gap:20px;align-items:flex-start}
+.roadmap-num{background:var(--primary);color:var(--white);font-size:14px;font-weight:700;padding:10px 16px;border-radius:8px;white-space:nowrap;box-shadow:0 2px 8px rgba(14,74,56,.15)}
+.roadmap-content{flex:1;background:var(--white);border-radius:12px;padding:20px;border:1px solid var(--border);border-left:3px solid var(--green-mist)}
+.roadmap-content h3{font-size:16px;font-weight:700;margin-bottom:8px}
+.roadmap-content p{font-size:13px;color:var(--text-light);line-height:2}
+.diagnosis-box{background:var(--white);border-radius:16px;padding:32px;border:1px solid var(--border);border-left:4px solid var(--amber)}
+.diagnosis-box h3{font-size:18px;font-weight:700;margin-bottom:12px}
+.diagnosis-box p{font-size:14px;color:var(--text-light);line-height:2}
+.diagnosis-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:16px}
+.diagnosis-feature{background:var(--green-pale);border:1px solid var(--green-mist);border-radius:10px;padding:16px;font-size:13px;color:var(--text-light);display:flex;align-items:center;gap:10px}
+.diagnosis-feature .check{color:var(--amber);font-weight:700;font-size:16px;flex-shrink:0}
+@media(max-width:768px){.price-table th,.price-table td{padding:12px 14px;font-size:13px}.price-amount{font-size:20px}.roadmap-step{flex-direction:column;gap:10px}}
+</style>
+</head>
+<body>
+<!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <span>理系受験専門塾 ガリレオ</span>
+    <span class="top-bar-sep">|</span>
+    <span>東大・京大・東工大・医学部 合格実績</span>
+    <span class="top-bar-sep">|</span>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram @galileo_sciences</a>
+  </div>
+</div>
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">
+      <img src="../img/galileo-logo.png" alt="ガリレオ" class="logo-img">
+      <div class="logo-text">
+        <span class="logo-name">ガリレオ</span>
+        <span class="logo-sub">理系の大学受験専門塾 — Galileo Sciences</span>
+      </div>
+    </a>
+    <div class="header-right">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="header-instagram">Instagram</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html#features">指導システム</a>
+    <a href="../index.html#courses">コース・料金</a>
+    <a href="mainichi-kadai.html">毎日課題システム</a>
+    <a href="../index.html#gallery">授業の様子</a>
+    <a href="../index.html#staff">講師紹介</a>
+    <a href="voices.html">合格者の声</a>
+    <a href="../index.html#results">合格実績</a>
+    <a href="../index.html#flow">入塾の流れ</a>
+    <a href="../index.html#faq">FAQ</a>
+    <a href="../index.html#about">塾概要</a>
+    <a href="news.html">お知らせ</a>
+    <a href="../index.html#contact" class="nav-cta">▶ 無料相談</a>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">ホーム</a> &gt; <a href="../index.html#courses">コース・料金</a> &gt; 合格戦略プログラム</div>
+    <span class="target-badge">高校1年生〜高校3年生 対象</span>
+    <div class="section-label">STRATEGY PROGRAM</div>
+    <h1>合格戦略プログラム</h1>
+    <p>志望校合格から逆算した「合格ロードマップ」に基づき、戦略的に学力を伸ばすガリレオのメインプログラムです。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-label">ROADMAP</div>
+    <h2 class="section-title">合格ロードマップの仕組み</h2>
+    <p class="section-subtitle">志望校合格に必要な学力を逆算し、一人ひとりに最適な学習計画を設計します。</p>
+    <div class="roadmap-steps">
+      <div class="roadmap-step"><div class="roadmap-num">STEP 01</div><div class="roadmap-content"><h3>現状分析</h3><p>入塾時に実力診断テストを実施。各科目の強み・弱みを数値化し、志望校との差分を明確にします。</p></div></div>
+      <div class="roadmap-step"><div class="roadmap-num">STEP 02</div><div class="roadmap-content"><h3>ロードマップ作成</h3><p>志望校の出題傾向と現在の学力を分析し、合格に必要な学習量・ペースを月単位で計画。科目別の優先順位も明確にします。</p></div></div>
+      <div class="roadmap-step"><div class="roadmap-num">STEP 03</div><div class="roadmap-content"><h3>戦略的指導</h3><p>ロードマップに沿って個別指導を実施。毎日課題システムと連動し、授業→課題→復習の最適なサイクルを回します。</p></div></div>
+      <div class="roadmap-step"><div class="roadmap-num">STEP 04</div><div class="roadmap-content"><h3>定期レビュー</h3><p>月1回の実力テストで偏差値推移を追跡。計画との乖離があれば即座にロードマップを修正し、常に最短ルートを維持します。</p></div></div>
+      <div class="roadmap-step"><div class="roadmap-num">STEP 05</div><div class="roadmap-content"><h3>直前期の仕上げ</h3><p>出願校の最終決定をサポート。過去問演習→弱点補強→予想問題で合格力を最大化します。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt">
+  <div class="container">
+    <div class="section-label">DIAGNOSIS</div>
+    <h2 class="section-title">実力診断テスト・偏差値推移</h2>
+    <p class="section-subtitle">データに基づく客観的な学力把握で、成長を可視化します。</p>
+    <div class="diagnosis-box">
+      <h3>実力診断テストの仕組み</h3>
+      <p>入塾時と毎月の定期テストで、各科目の偏差値を継続的に計測。志望校合格ラインとの差を常に可視化し、効率的な学習を実現します。</p>
+      <div class="diagnosis-features">
+        <div class="diagnosis-feature"><span class="check">✓</span>入塾時の実力診断テスト</div>
+        <div class="diagnosis-feature"><span class="check">✓</span>月1回の定期実力テスト</div>
+        <div class="diagnosis-feature"><span class="check">✓</span>科目別偏差値推移グラフ</div>
+        <div class="diagnosis-feature"><span class="check">✓</span>志望校合格判定</div>
+        <div class="diagnosis-feature"><span class="check">✓</span>弱点分野の自動特定</div>
+        <div class="diagnosis-feature"><span class="check">✓</span>保護者向け進捗レポート</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-label">PRICING</div>
+    <h2 class="section-title">料金プラン</h2>
+    <p class="section-subtitle">志望校レベルと現在の学力に合わせて最適なプランをご提案します</p>
+    <div style="overflow-x:auto">
+    <table class="price-table">
+      <thead><tr><th>プラン</th><th>授業回数</th><th>月額料金</th><th>特徴</th></tr></thead>
+      <tbody>
+        <tr><td><strong>ベーシックプラン</strong></td><td>月2回</td><td><span class="price-amount">¥45,000</span><br><span class="price-tax">（税込¥49,500）</span></td><td>基礎が固まっている方の受験戦略立案に</td></tr>
+        <tr><td><strong>スタンダードプラン</strong></td><td>週1回</td><td><span class="price-amount">¥64,480</span><br><span class="price-tax">（税込¥70,928）</span></td><td>旧帝大・早慶理工を確実に狙う方に</td></tr>
+        <tr><td><strong>プレミアムプラン</strong></td><td>週2回</td><td><span class="price-amount">¥83,380</span><br><span class="price-tax">（税込¥91,718）</span></td><td>東大・京大・医学部を最短で目指す方に</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-section">
+  <div class="container">
+    <div class="section-label">CONTACT</div>
+    <h2 class="section-title">合格戦略プログラムで<br>志望校合格を実現しませんか</h2>
+    <p>まずは無料の学習相談で、志望校との距離と最適な戦略をお伝えします。入塾の強制は一切ありません。</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="../index.html#contact" class="btn btn-primary">無料学習相談を予約する →</a>
+      <a href="../index.html#courses" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:var(--white)">他のコースを見る</a>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">
+      <div class="logo">
+        <img src="../img/galileo-logo.png" alt="ガリレオ" class="logo-img">
+        <div class="logo-text"><span class="logo-name">ガリレオ</span></div>
+      </div>
+      <p>Galileo Sciences — 理系の大学受験専門塾</p>
+    </div>
+    <div class="footer-links">
+      <ul><li><a href="../index.html#features">塾の特長</a></li><li><a href="../index.html#courses">コース・料金</a></li><li><a href="daigaku-juken-junbi.html">大学受験準備コース</a></li><li><a href="goukaku-senryaku.html">合格戦略プログラム</a></li><li><a href="goukaku-senryaku-support.html">合格戦略サポート</a></li></ul>
+      <ul><li><a href="mainichi-kadai.html">毎日課題システム</a></li><li><a href="mainichi-kadai.html">毎日課題の仕組み</a></li><li><a href="../index.html#gallery">授業の様子</a></li><li><a href="../index.html#staff">講師紹介</a></li><li><a href="voices.html">合格者の声</a></li></ul>
+      <ul><li><a href="../index.html#results">合格実績</a></li><li><a href="../index.html#flow">入塾の流れ</a></li><li><a href="../index.html#faq">FAQ</a></li><li><a href="news.html">お知らせ</a></li><li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li><li><a href="../index.html#about">塾概要</a></li><li><a href="../index.html#contact">お問い合わせ</a></li></ul>
+    </div>
+    <div class="footer-bottom">© 2025 ガリレオ 理系の大学受験専門塾. All Rights Reserved.</div>
+  </div>
+</footer>
+<div class="modal-overlay" id="modal"><div class="modal"><h2>お申し込みありがとう<br>ございます！</h2><p>お問い合わせを受け付けました。<br><strong>2〜3営業日以内</strong>に担当者よりご連絡いたします。<br><br>ガリレオでの学びを、精一杯サポートします。<br>一緒に合格を目指しましょう！</p><button onclick="document.getElementById('modal').classList.remove('open')">閉じる</button></div></div>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('header').classList.toggle('scrolled',scrollY>10)});
+document.getElementById('hamburger').addEventListener('click',()=>{document.getElementById('nav').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open')});
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('nav').classList.remove('open');document.getElementById('hamburger').classList.remove('open')}));
+function handleSubmit(e){e.preventDefault();document.getElementById('modal').classList.add('open');e.target.reset()}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
+document.querySelectorAll('.section,.worry-card,.pillar,.daily-step,.daily-merit,.thinking-card,.course-card,.gallery-item,.staff-card,.voice-card,.flow-step,.faq-item').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
