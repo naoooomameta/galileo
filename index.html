@@ -47,8 +47,9 @@ strong{font-weight:700}
 .logo-name{font-size:20px;font-weight:800;color:var(--primary);letter-spacing:.02em}
 .logo-sub{font-size:10px;color:var(--text-muted);letter-spacing:.02em}
 .header-right{display:flex;align-items:center;gap:16px}
-.header-instagram{font-size:13px;font-weight:600;color:var(--text-light);transition:color .2s}
-.header-instagram:hover{color:var(--primary)}
+.header-instagram{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--white);background:var(--primary);padding:8px 20px;border-radius:40px;transition:background .3s;letter-spacing:.02em}
+.header-instagram:hover{background:var(--primary-light)}
+.header-instagram svg{width:16px;height:16px;fill:currentColor}
 
 .hamburger{display:none;width:28px;height:20px;position:relative;z-index:200}
 .hamburger span{display:block;height:2px;background:var(--text);border-radius:2px;position:absolute;left:0;right:0;transition:all .3s}
@@ -56,20 +57,20 @@ strong{font-weight:700}
 .hamburger.open span:nth-child(1){top:9px;transform:rotate(45deg)}.hamburger.open span:nth-child(2){opacity:0}.hamburger.open span:nth-child(3){top:9px;transform:rotate(-45deg)}
 
 /* ===== NAV ===== */
-.nav{background:var(--white);border-bottom:1px solid var(--green-mist)}
+.nav{background:var(--primary);border-bottom:none}
 .nav-inner{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:0;flex-wrap:wrap}
-.nav a{padding:14px 14px;font-size:13px;font-weight:500;color:var(--text-light);transition:all .2s;white-space:nowrap;border-bottom:2px solid transparent}
-.nav a:hover{color:var(--primary);border-bottom-color:var(--amber)}
-.nav-cta{background:var(--cta)!important;color:var(--white)!important;border-radius:6px;padding:8px 18px!important;margin-left:auto;font-weight:700!important;border-bottom:none!important;transition:background .3s!important}
-.nav-cta:hover{background:var(--cta-light)!important}
+.nav a{padding:14px 14px;font-size:13px;font-weight:500;color:rgba(255,255,255,.85);transition:all .2s;white-space:nowrap;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--white);border-bottom-color:var(--amber)}
+.nav-cta{background:transparent!important;color:var(--white)!important;border:1.5px solid rgba(255,255,255,.6)!important;border-radius:6px;padding:8px 18px!important;margin-left:auto;font-weight:700!important;transition:all .3s!important}
+.nav-cta:hover{background:rgba(255,255,255,.15)!important;border-color:var(--white)!important}
 
 @media(max-width:1024px){
   .header-instagram{display:none}
   .hamburger{display:block}
-  .nav{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(244,249,246,.98);backdrop-filter:blur(20px);z-index:150;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+  .nav{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(14,74,56,.97);backdrop-filter:blur(20px);z-index:150;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
   .nav.open{opacity:1;pointer-events:all}
   .nav-inner{flex-direction:column;gap:4px;padding:0}
-  .nav a{font-size:17px;font-weight:600;padding:12px 0;border-bottom:none}
+  .nav a{font-size:17px;font-weight:600;padding:12px 0;border-bottom:none;color:rgba(255,255,255,.9)}
   .nav-cta{margin:12px 0 0!important;font-size:16px!important;padding:14px 40px!important}
 }
 
@@ -619,7 +620,7 @@ strong{font-weight:700}
       </div>
     </a>
     <div class="header-right">
-      <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="header-instagram">Instagram</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="header-instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>Instagram</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="メニュー">
       <span></span><span></span><span></span>

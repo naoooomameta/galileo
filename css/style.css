@@ -32,8 +32,9 @@ strong{font-weight:700}
 .logo-name{font-size:20px;font-weight:800;color:var(--primary);letter-spacing:.02em}
 .logo-sub{font-size:10px;color:var(--text-muted);letter-spacing:.02em}
 .header-right{display:flex;align-items:center;gap:16px}
-.header-instagram{font-size:13px;font-weight:600;color:var(--text-light);transition:color .2s}
-.header-instagram:hover{color:var(--primary)}
+.header-instagram{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--white);background:var(--primary);padding:8px 20px;border-radius:40px;transition:background .3s;letter-spacing:.02em}
+.header-instagram:hover{background:var(--primary-light)}
+.header-instagram svg{width:16px;height:16px;fill:currentColor}
 
 .hamburger{display:none;width:28px;height:20px;position:relative;z-index:200}
 .hamburger span{display:block;height:2px;background:var(--text);border-radius:2px;position:absolute;left:0;right:0;transition:all .3s}
@@ -41,20 +42,20 @@ strong{font-weight:700}
 .hamburger.open span:nth-child(1){top:9px;transform:rotate(45deg)}.hamburger.open span:nth-child(2){opacity:0}.hamburger.open span:nth-child(3){top:9px;transform:rotate(-45deg)}
 
 /* ===== NAV ===== */
-.nav{background:var(--white);border-bottom:1px solid var(--green-mist)}
+.nav{background:var(--primary);border-bottom:none}
 .nav-inner{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:0;flex-wrap:wrap}
-.nav a{padding:14px 14px;font-size:13px;font-weight:500;color:var(--text-light);transition:all .2s;white-space:nowrap;border-bottom:2px solid transparent}
-.nav a:hover{color:var(--primary);border-bottom-color:var(--amber)}
-.nav-cta{background:var(--cta)!important;color:var(--white)!important;border-radius:6px;padding:8px 18px!important;margin-left:auto;font-weight:700!important;border-bottom:none!important;transition:background .3s!important}
-.nav-cta:hover{background:var(--cta-light)!important}
+.nav a{padding:14px 14px;font-size:13px;font-weight:500;color:rgba(255,255,255,.85);transition:all .2s;white-space:nowrap;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--white);border-bottom-color:var(--amber)}
+.nav-cta{background:transparent!important;color:var(--white)!important;border:1.5px solid rgba(255,255,255,.6)!important;border-radius:6px;padding:8px 18px!important;margin-left:auto;font-weight:700!important;transition:all .3s!important}
+.nav-cta:hover{background:rgba(255,255,255,.15)!important;border-color:var(--white)!important}
 
 @media(max-width:1024px){
   .header-instagram{display:none}
   .hamburger{display:block}
-  .nav{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(244,249,246,.98);backdrop-filter:blur(20px);z-index:150;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+  .nav{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(14,74,56,.97);backdrop-filter:blur(20px);z-index:150;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
   .nav.open{opacity:1;pointer-events:all}
   .nav-inner{flex-direction:column;gap:4px;padding:0}
-  .nav a{font-size:17px;font-weight:600;padding:12px 0;border-bottom:none}
+  .nav a{font-size:17px;font-weight:600;padding:12px 0;border-bottom:none;color:rgba(255,255,255,.9)}
   .nav-cta{margin:12px 0 0!important;font-size:16px!important;padding:14px 40px!important}
 }
 
