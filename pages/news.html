@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お知らせ | ガリレオ 理系の大学受験専門塾</title>
+<meta name="description" content="ガリレオからのお知らせ一覧。開講情報、合格実績速報、支払い方法、退塾規定など。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.page-hero{background:linear-gradient(180deg,var(--bg) 0%,var(--green-pale) 100%);padding:60px 0 40px;text-align:center}
+.page-hero .section-label{margin-bottom:8px}
+.page-hero h1{font-family:var(--font-serif);font-size:clamp(24px,4vw,38px);font-weight:700;line-height:1.5;margin-bottom:12px}
+.page-hero p{font-size:14px;color:var(--text-light);max-width:600px;margin:0 auto;line-height:2}
+.breadcrumb{font-size:12px;color:var(--text-muted);margin-bottom:20px}
+.breadcrumb a{color:var(--primary);text-decoration:underline}
+.cta-section{background:var(--primary);color:var(--white);text-align:center}
+.cta-section .section-label{color:#D4A843}
+.cta-section .section-title{color:var(--white)}
+.cta-section p{color:rgba(255,255,255,.7);font-size:14px;line-height:2;max-width:560px;margin:0 auto 28px}
+.news-filter{display:flex;justify-content:center;gap:8px;margin-bottom:36px;flex-wrap:wrap}
+.news-filter-btn{padding:8px 18px;border-radius:40px;font-size:13px;font-weight:600;color:var(--text-light);background:var(--white);border:1px solid var(--border);cursor:pointer;transition:all .3s}
+.news-filter-btn.active,.news-filter-btn:hover{background:var(--primary);color:var(--white);border-color:var(--primary)}
+.news-detail-list{max-width:800px;margin:0 auto}
+.news-article{background:var(--white);border-radius:12px;padding:24px;border:1px solid var(--border);margin-bottom:16px;transition:all .3s}
+.news-article:hover{box-shadow:0 4px 16px rgba(14,74,56,.06);border-color:var(--green-mist)}
+.news-article-header{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.news-article-date{font-size:13px;font-weight:600;color:var(--text-muted)}
+.news-article-badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px}
+.news-article-badge.new{background:rgba(212,148,58,.12);color:#8a6520}
+.news-article-badge.important{background:rgba(200,60,60,.08);color:#c44}
+.news-article-badge.result{background:var(--green-pale);color:var(--primary)}
+.news-article-badge.info{background:var(--bg-alt);color:var(--text-muted)}
+.news-article h3{font-size:16px;font-weight:700;margin-bottom:8px;line-height:1.6}
+.news-article p{font-size:14px;color:var(--text-light);line-height:2}
+.news-article-detail{margin-top:12px;padding-top:12px;border-top:1px dashed var(--border)}
+.news-article-detail h4{font-size:14px;font-weight:700;margin:12px 0 8px;color:var(--primary)}
+.news-article-detail li{font-size:13px;color:var(--text-light);padding:4px 0 4px 20px;position:relative;line-height:1.9}
+.news-article-detail li::before{content:'•';position:absolute;left:6px;color:var(--amber);font-weight:700}
+.news-article-detail table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+.news-article-detail th,.news-article-detail td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--border)}
+.news-article-detail th{background:var(--green-pale);font-weight:600;color:var(--primary)}
+@media(max-width:768px){.news-article{padding:18px}.news-article h3{font-size:15px}}
+</style>
+</head>
+<body>
+<!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <span>理系受験専門塾 ガリレオ</span>
+    <span class="top-bar-sep">|</span>
+    <span>東大・京大・東工大・医学部 合格実績</span>
+    <span class="top-bar-sep">|</span>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram @galileo_sciences</a>
+  </div>
+</div>
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">
+      <img src="../img/galileo-logo.png" alt="ガリレオ" class="logo-img">
+      <div class="logo-text">
+        <span class="logo-name">ガリレオ</span>
+        <span class="logo-sub">理系の大学受験専門塾 — Galileo Sciences</span>
+      </div>
+    </a>
+    <div class="header-right">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="header-instagram">Instagram</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html#features">指導システム</a>
+    <a href="../index.html#courses">コース・料金</a>
+    <a href="mainichi-kadai.html">毎日課題システム</a>
+    <a href="../index.html#gallery">授業の様子</a>
+    <a href="../index.html#staff">講師紹介</a>
+    <a href="voices.html">合格者の声</a>
+    <a href="../index.html#results">合格実績</a>
+    <a href="../index.html#flow">入塾の流れ</a>
+    <a href="../index.html#faq">FAQ</a>
+    <a href="../index.html#about">塾概要</a>
+    <a href="news.html">お知らせ</a>
+    <a href="../index.html#contact" class="nav-cta">▶ 無料相談</a>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">ホーム</a> &gt; お知らせ</div>
+    <div class="section-label">NEWS</div>
+    <h1>お知らせ</h1>
+    <p>ガリレオからの最新情報をお届けします。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="news-filter">
+      <button class="news-filter-btn active" onclick="filterNews('all',this)">すべて</button>
+      <button class="news-filter-btn" onclick="filterNews('new',this)">NEW</button>
+      <button class="news-filter-btn" onclick="filterNews('important',this)">重要</button>
+      <button class="news-filter-btn" onclick="filterNews('result',this)">実績</button>
+      <button class="news-filter-btn" onclick="filterNews('info',this)">お知らせ</button>
+    </div>
+
+    <div class="news-detail-list">
+      <div class="news-article" data-type="new">
+        <div class="news-article-header"><span class="news-article-date">2026.03.15</span><span class="news-article-badge new">NEW</span></div>
+        <h3>2026年度 春期講習のご案内</h3>
+        <p>新高1〜新高3生を対象とした春期講習を開催します。理系科目の基礎固めと新学年の先取り学習で、最高のスタートを切りましょう。</p>
+        <div class="news-article-detail"><h4>春期講習概要</h4><ul><li>期間：2026年3月25日（水）〜 4月5日（日）</li><li>対象：新高1・新高2・新高3生</li><li>科目：数学・物理・化学・生物・英語から選択</li><li>受講料：1科目 ¥22,000（税込）〜</li><li>申込締切：3月20日（金）</li></ul></div>
+      </div>
+
+      <div class="news-article" data-type="result">
+        <div class="news-article-header"><span class="news-article-date">2026.03.10</span><span class="news-article-badge result">実績</span></div>
+        <h3>2026年度 合格実績速報</h3>
+        <p>2026年度入試の合格実績を速報でお届けします。今年も多くの生徒が難関大学への合格を勝ち取りました。</p>
+        <div class="news-article-detail"><h4>主な合格実績</h4><ul><li>東京大学 理科一類・理科二類 合格</li><li>京都大学 工学部・理学部 合格</li><li>東京工業大学 理学院・工学院 合格</li><li>東北大学 医学部医学科 合格</li><li>大阪大学 基礎工学部 合格</li><li>早稲田大学 先進理工学部 合格</li><li>慶應義塾大学 理工学部 合格</li></ul></div>
+      </div>
+
+      <div class="news-article" data-type="new">
+        <div class="news-article-header"><span class="news-article-date">2026.02.28</span><span class="news-article-badge new">NEW</span></div>
+        <h3>新年度生募集開始のお知らせ</h3>
+        <p>2026年4月からの新年度生の募集を開始いたしました。各コースともに定員になり次第、募集を締め切らせていただきます。お早めにお問い合わせください。</p>
+      </div>
+
+      <div class="news-article" data-type="important">
+        <div class="news-article-header"><span class="news-article-date">2026.02.15</span><span class="news-article-badge important">重要</span></div>
+        <h3>お支払い方法について</h3>
+        <p>授業料のお支払い方法についてご案内いたします。</p>
+        <div class="news-article-detail"><h4>対応お支払い方法</h4><table><thead><tr><th>方法</th><th>詳細</th></tr></thead><tbody><tr><td>銀行振込</td><td>毎月25日までに翌月分をお振込み</td></tr><tr><td>クレジットカード</td><td>VISA / Mastercard / JCB 対応（毎月自動決済）</td></tr><tr><td>口座振替</td><td>毎月27日に自動引き落とし</td></tr></tbody></table><ul><li>初月分は入塾手続き時にお支払いいただきます</li><li>教材費は授業料に含まれます（別途費用なし）</li><li>領収書が必要な場合はお申し付けください</li></ul></div>
+      </div>
+
+      <div class="news-article" data-type="important">
+        <div class="news-article-header"><span class="news-article-date">2026.02.15</span><span class="news-article-badge important">重要</span></div>
+        <h3>退塾規定について</h3>
+        <p>退塾をご希望の場合の手続きについてご案内いたします。</p>
+        <div class="news-article-detail"><h4>退塾手続き</h4><ul><li>退塾希望月の前月15日までにお申し出ください</li><li>退塾届（専用フォーム）のご提出が必要です</li><li>月の途中での退塾の場合、当月分の返金はいたしかねます</li><li>退塾後の再入塾も可能です（入会金免除）</li></ul><h4>休塾制度</h4><ul><li>最長3ヶ月間の休塾が可能です</li><li>休塾中は月額¥5,500（税込）の在籍管理費のみ</li><li>休塾期間中もLINEでの質問対応は継続</li></ul></div>
+      </div>
+
+      <div class="news-article" data-type="info">
+        <div class="news-article-header"><span class="news-article-date">2026.01.20</span><span class="news-article-badge info">お知らせ</span></div>
+        <h3>年末年始の休講について</h3>
+        <p>2025年12月29日（月）〜2026年1月3日（土）は年末年始休講とさせていただきます。なお、毎日課題システムは休講期間中も通常通り配信いたします。</p>
+      </div>
+
+      <div class="news-article" data-type="info">
+        <div class="news-article-header"><span class="news-article-date">2025.12.01</span><span class="news-article-badge info">お知らせ</span></div>
+        <h3>冬期講習のご案内</h3>
+        <p>高1〜高3生を対象とした冬期講習を開催いたします。共通テスト直前対策や二次試験の記述対策など、志望校合格に向けた集中講座をご用意しています。</p>
+      </div>
+
+      <div class="news-article" data-type="result">
+        <div class="news-article-header"><span class="news-article-date">2025.11.15</span><span class="news-article-badge result">実績</span></div>
+        <h3>推薦入試 合格速報</h3>
+        <p>2026年度推薦入試にて、東京理科大学 理工学部、早稲田大学 基幹理工学部への合格者が出ました。おめでとうございます！</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-section">
+  <div class="container">
+    <div class="section-label">CONTACT</div>
+    <h2 class="section-title">お問い合わせ・入塾相談</h2>
+    <p>ガリレオについてのご質問やご相談は、お気軽にお問い合わせください。無料体験授業も随時受付中です。</p>
+    <a href="../index.html#contact" class="btn btn-primary">無料学習相談を予約する →</a>
+  </div>
+</section>
+
+<script>
+function filterNews(type,btn){document.querySelectorAll('.news-filter-btn').forEach(t=>t.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.news-article').forEach(a=>{a.style.display=(type==='all'||a.dataset.type===type)?'':'none'})}
+</script>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">
+      <div class="logo">
+        <img src="../img/galileo-logo.png" alt="ガリレオ" class="logo-img">
+        <div class="logo-text"><span class="logo-name">ガリレオ</span></div>
+      </div>
+      <p>Galileo Sciences — 理系の大学受験専門塾</p>
+    </div>
+    <div class="footer-links">
+      <ul><li><a href="../index.html#features">塾の特長</a></li><li><a href="../index.html#courses">コース・料金</a></li><li><a href="daigaku-juken-junbi.html">大学受験準備コース</a></li><li><a href="goukaku-senryaku.html">合格戦略プログラム</a></li><li><a href="goukaku-senryaku-support.html">合格戦略サポート</a></li></ul>
+      <ul><li><a href="mainichi-kadai.html">毎日課題システム</a></li><li><a href="mainichi-kadai.html">毎日課題の仕組み</a></li><li><a href="../index.html#gallery">授業の様子</a></li><li><a href="../index.html#staff">講師紹介</a></li><li><a href="voices.html">合格者の声</a></li></ul>
+      <ul><li><a href="../index.html#results">合格実績</a></li><li><a href="../index.html#flow">入塾の流れ</a></li><li><a href="../index.html#faq">FAQ</a></li><li><a href="news.html">お知らせ</a></li><li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li><li><a href="../index.html#about">塾概要</a></li><li><a href="../index.html#contact">お問い合わせ</a></li></ul>
+    </div>
+    <div class="footer-bottom">© 2025 ガリレオ 理系の大学受験専門塾. All Rights Reserved.</div>
+  </div>
+</footer>
+<div class="modal-overlay" id="modal"><div class="modal"><h2>お申し込みありがとう<br>ございます！</h2><p>お問い合わせを受け付けました。<br><strong>2〜3営業日以内</strong>に担当者よりご連絡いたします。<br><br>ガリレオでの学びを、精一杯サポートします。<br>一緒に合格を目指しましょう！</p><button onclick="document.getElementById('modal').classList.remove('open')">閉じる</button></div></div>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('header').classList.toggle('scrolled',scrollY>10)});
+document.getElementById('hamburger').addEventListener('click',()=>{document.getElementById('nav').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open')});
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('nav').classList.remove('open');document.getElementById('hamburger').classList.remove('open')}));
+function handleSubmit(e){e.preventDefault();document.getElementById('modal').classList.add('open');e.target.reset()}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
+document.querySelectorAll('.section,.worry-card,.pillar,.daily-step,.daily-merit,.thinking-card,.course-card,.gallery-item,.staff-card,.voice-card,.flow-step,.faq-item').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

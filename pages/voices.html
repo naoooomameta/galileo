@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>合格者の声 | ガリレオ 理系の大学受験専門塾</title>
+<meta name="description" content="ガリレオで志望校に合格した先輩たちの体験談。偏差値推移グラフ付き。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.page-hero{background:linear-gradient(180deg,var(--bg) 0%,var(--green-pale) 100%);padding:60px 0 40px;text-align:center}
+.page-hero .section-label{margin-bottom:8px}
+.page-hero h1{font-family:var(--font-serif);font-size:clamp(24px,4vw,38px);font-weight:700;line-height:1.5;margin-bottom:12px}
+.page-hero p{font-size:14px;color:var(--text-light);max-width:600px;margin:0 auto;line-height:2}
+.breadcrumb{font-size:12px;color:var(--text-muted);margin-bottom:20px}
+.breadcrumb a{color:var(--primary);text-decoration:underline}
+.cta-section{background:var(--primary);color:var(--white);text-align:center}
+.cta-section .section-label{color:#D4A843}
+.cta-section .section-title{color:var(--white)}
+.cta-section p{color:rgba(255,255,255,.7);font-size:14px;line-height:2;max-width:560px;margin:0 auto 28px}
+.filter-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:36px;flex-wrap:wrap}
+.filter-tab{padding:8px 18px;border-radius:40px;font-size:13px;font-weight:600;color:var(--text-light);background:var(--white);border:1px solid var(--border);cursor:pointer;transition:all .3s}
+.filter-tab.active,.filter-tab:hover{background:var(--primary);color:var(--white);border-color:var(--primary)}
+.voice-detail{background:var(--white);border-radius:16px;padding:32px;border:1px solid var(--border);margin-bottom:24px;transition:all .3s}
+.voice-detail:hover{box-shadow:0 4px 20px rgba(14,74,56,.06);border-color:var(--green-mist)}
+.voice-detail-header{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:16px;flex-wrap:wrap}
+.voice-detail-info h3{font-size:18px;font-weight:700;margin-bottom:4px}
+.voice-detail-meta{font-size:12px;color:var(--text-muted);line-height:1.8}
+.voice-detail-stats{display:flex;gap:16px;align-items:center}
+.voice-stat-mini{text-align:center;padding:12px 16px;background:var(--green-pale);border-radius:10px;border:1px solid var(--green-mist)}
+.voice-stat-mini-label{font-size:10px;color:var(--text-muted);margin-bottom:2px}
+.voice-stat-mini-num{font-size:24px;font-weight:800;color:var(--primary);line-height:1.1}
+.voice-stat-mini-num.accent{color:var(--amber)}
+.voice-stat-arrow{font-size:20px;color:var(--amber);font-weight:700}
+.voice-detail-body{font-size:14px;color:var(--text-light);line-height:2.2}
+.voice-detail-body .voice-quote{font-size:28px;color:var(--amber);opacity:.4;font-family:serif;line-height:1;margin-bottom:4px}
+.graph-placeholder{background:linear-gradient(135deg,var(--green-pale),var(--bg-alt));border:1px solid var(--green-mist);border-radius:12px;padding:24px;margin-top:16px;text-align:center}
+.graph-title{font-size:13px;font-weight:700;color:var(--primary);margin-bottom:12px}
+.graph-bar-container{display:flex;align-items:flex-end;justify-content:center;gap:8px;height:120px}
+.graph-bar{width:36px;border-radius:4px 4px 0 0;position:relative}
+.graph-bar-label{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);font-size:9px;color:var(--text-muted);white-space:nowrap}
+.graph-bar-value{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:700;color:var(--primary)}
+@media(max-width:768px){.voice-detail{padding:20px}.voice-detail-header{flex-direction:column}.voice-detail-stats{margin-top:12px}.graph-bar-container{height:80px}.graph-bar{width:28px}}
+</style>
+</head>
+<body>
+<!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <span>理系受験専門塾 ガリレオ</span>
+    <span class="top-bar-sep">|</span>
+    <span>東大・京大・東工大・医学部 合格実績</span>
+    <span class="top-bar-sep">|</span>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram @galileo_sciences</a>
+  </div>
+</div>
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">
+      <img src="../img/galileo-logo.png" alt="ガリレオ" class="logo-img">
+      <div class="logo-text">
+        <span class="logo-name">ガリレオ</span>
+        <span class="logo-sub">理系の大学受験専門塾 — Galileo Sciences</span>
+      </div>
+    </a>
+    <div class="header-right">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="header-instagram">Instagram</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html#features">指導システム</a>
+    <a href="../index.html#courses">コース・料金</a>
+    <a href="mainichi-kadai.html">毎日課題システム</a>
+    <a href="../index.html#gallery">授業の様子</a>
+    <a href="../index.html#staff">講師紹介</a>
+    <a href="voices.html">合格者の声</a>
+    <a href="../index.html#results">合格実績</a>
+    <a href="../index.html#flow">入塾の流れ</a>
+    <a href="../index.html#faq">FAQ</a>
+    <a href="../index.html#about">塾概要</a>
+    <a href="news.html">お知らせ</a>
+    <a href="../index.html#contact" class="nav-cta">▶ 無料相談</a>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">ホーム</a> &gt; 合格者の声</div>
+    <div class="section-label">SUCCESS STORIES</div>
+    <h1>合格者の声</h1>
+    <p>ガリレオで学び、志望校合格を勝ち取った先輩たちの体験談をご紹介します。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="filter-tabs">
+      <button class="filter-tab active" onclick="filterVoices('all',this)">すべて</button>
+      <button class="filter-tab" onclick="filterVoices('todai',this)">東大</button>
+      <button class="filter-tab" onclick="filterVoices('kyodai',this)">京大</button>
+      <button class="filter-tab" onclick="filterVoices('tokodai',this)">東工大</button>
+      <button class="filter-tab" onclick="filterVoices('kyutei',this)">旧帝大</button>
+      <button class="filter-tab" onclick="filterVoices('soukeiri',this)">早慶理工</button>
+      <button class="filter-tab" onclick="filterVoices('igaku',this)">医学部</button>
+    </div>
+
+    <div class="voice-detail" data-category="todai">
+      <div class="voice-detail-header">
+        <div class="voice-detail-info">
+          <span class="voice-badge">東京大学 理科一類</span>
+          <h3>「毎日課題で数学の計算力が飛躍的に伸びました」</h3>
+          <div class="voice-detail-meta">T.K.さん（都内私立高校出身）| 高2の4月から入塾 | 在籍期間：1年11ヶ月</div>
+        </div>
+        <div class="voice-detail-stats">
+          <div class="voice-stat-mini"><div class="voice-stat-mini-label">入塾時</div><div class="voice-stat-mini-num">52</div></div>
+          <span class="voice-stat-arrow">→</span>
+          <div class="voice-stat-mini"><div class="voice-stat-mini-label">合格時</div><div class="voice-stat-mini-num accent">71</div></div>
+        </div>
+      </div>
+      <div class="voice-detail-body">
+        <div class="voice-quote">"</div>
+        <p>入塾前は、数学の成績が伸び悩んでいました。計算ミスが多く、模試でも時間が足りずに最後まで解ききれないことが多かったです。ガリレオに入ってからは、毎朝の計算ノート提出が習慣になり、計算スピードと正確性が格段に上がりました。</p>
+        <p>特に印象的だったのは、講師の方が毎日フィードバックをくれること。「ここの計算はもっとこうすれば速い」など具体的なアドバイスが本当に役立ちました。</p>
+      </div>
+      <div class="graph-placeholder"><div class="graph-title">偏差値推移（数学）</div><div class="graph-bar-container"><div class="graph-bar" style="height:35%;background:var(--green-mist)"><span class="graph-bar-value">52</span><span class="graph-bar-label">入塾時</span></div><div class="graph-bar" style="height:45%;background:var(--green-mist)"><span class="graph-bar-value">57</span><span class="graph-bar-label">3ヶ月</span></div><div class="graph-bar" style="height:55%;background:var(--green-mist)"><span class="graph-bar-value">62</span><span class="graph-bar-label">6ヶ月</span></div><div class="graph-bar" style="height:65%;background:var(--green-mist)"><span class="graph-bar-value">66</span><span class="graph-bar-label">9ヶ月</span></div><div class="graph-bar" style="height:75%;background:var(--primary-light)"><span class="graph-bar-value">69</span><span class="graph-bar-label">12ヶ月</span></div><div class="graph-bar" style="height:85%;background:var(--amber)"><span class="graph-bar-value">71</span><span class="graph-bar-label">合格時</span></div></div></div>
+    </div>
+
+    <div class="voice-detail" data-category="kyodai">
+      <div class="voice-detail-header">
+        <div class="voice-detail-info">
+          <span class="voice-badge">京都大学 工学部</span>
+          <h3>「物理の本質を理解する力がつきました」</h3>
+          <div class="voice-detail-meta">M.S.さん（大阪府立高校出身）| 高2の9月から入塾 | 在籍期間：1年5ヶ月</div>
+        </div>
+        <div class="voice-detail-stats">
+          <div class="voice-stat-mini"><div class="voice-stat-mini-label">入塾時</div><div class="voice-stat-mini-num">55</div></div>
+          <span class="voice-stat-arrow">→</span>
+          <div class="voice-stat-mini"><div class="voice-stat-mini-label">合格時</div><div class="voice-stat-mini-num accent">68</div></div>
+        </div>
+      </div>
+      <div class="voice-detail-body">
+        <div class="voice-quote">"</div>
+        <p>物理が苦手で、公式を覚えても応用問題になると手が止まってしまう状態でした。ガリレオでは「なぜその公式が成り立つのか」から丁寧に教えていただき、物理現象のイメージを掴むことができるようになりました。</p>
+        <p>毎日の課題で運動方程式の立式トレーニングを繰り返したことで、複合問題でも自然と解法が浮かぶようになりました。</p>
+      </div>
+      <div class="graph-placeholder"><div class="graph-title">偏差値推移（物理）</div><div class="graph-bar-container"><div class="graph-bar" style="height:38%;background:var(--green-mist)"><span class="graph-bar-value">55</span><span class="graph-bar-label">入塾時</span></div><div class="graph-bar" style="height:45%;background:var(--green-mist)"><span class="graph-bar-value">58</span><span class="graph-bar-label">3ヶ月</span></div><div class="graph-bar" style="height:55%;background:var(--green-mist)"><span class="graph-bar-value">62</span><span class="graph-bar-label">6ヶ月</span></div><div class="graph-bar" style="height:65%;background:var(--green-mist)"><span class="graph-bar-value">65</span><span class="graph-bar-label">9ヶ月</span></div><div class="graph-bar" style="height:80%;background:var(--amber)"><span class="graph-bar-value">68</span><span class="graph-bar-label">合格時</span></div></div></div>
+    </div>
+
+    <div class="voice-detail" data-category="igaku">
+      <div class="voice-detail-header">
+        <div class="voice-detail-info">
+          <span class="voice-badge">東北大学 医学部医学科</span>
+          <h3>「化学の構造決定が得点源に変わりました」</h3>
+          <div class="voice-detail-meta">A.Y.さん（宮城県立高校出身）| 高1の1月から入塾 | 在籍期間：2年1ヶ月</div>
+        </div>
+        <div class="voice-detail-stats">
+          <div class="voice-stat-mini"><div class="voice-stat-mini-label">入塾時</div><div class="voice-stat-mini-num">48</div></div>
+          <span class="voice-stat-arrow">→</span>
+          <div class="voice-stat-mini"><div class="voice-stat-mini-label">合格時</div><div class="voice-stat-mini-num accent">72</div></div>
+        </div>
+      </div>
+      <div class="voice-detail-body">
+        <div class="voice-quote">"</div>
+        <p>医学部志望で理系科目全般の底上げが必要でした。特に化学は暗記科目だと思い込んでいて、有機化学の構造決定は大の苦手。ガリレオでは「構造化思考」のアプローチで、情報を整理してパズルのように解く方法を教わりました。</p>
+        <p>2年間、毎日欠かさず課題に取り組んだことで、偏差値が48から72まで上がりました。ガリレオなしでは医学部合格はなかったと思います。</p>
+      </div>
+      <div class="graph-placeholder"><div class="graph-title">偏差値推移（化学）</div><div class="graph-bar-container"><div class="graph-bar" style="height:25%;background:var(--green-mist)"><span class="graph-bar-value">48</span><span class="graph-bar-label">入塾時</span></div><div class="graph-bar" style="height:38%;background:var(--green-mist)"><span class="graph-bar-value">54</span><span class="graph-bar-label">6ヶ月</span></div><div class="graph-bar" style="height:52%;background:var(--green-mist)"><span class="graph-bar-value">61</span><span class="graph-bar-label">12ヶ月</span></div><div class="graph-bar" style="height:68%;background:var(--green-mist)"><span class="graph-bar-value">67</span><span class="graph-bar-label">18ヶ月</span></div><div class="graph-bar" style="height:85%;background:var(--amber)"><span class="graph-bar-value">72</span><span class="graph-bar-label">合格時</span></div></div></div>
+    </div>
+
+    <div class="voice-detail" data-category="tokodai">
+      <div class="voice-detail-header">
+        <div class="voice-detail-info">
+          <span class="voice-badge">東京工業大学 理学院</span>
+          <h3>「理系思考トレーニングが合格の決め手でした」</h3>
+          <div class="voice-detail-meta">R.N.さん（神奈川県立高校出身）| 高2の6月から入塾 | 在籍期間：1年8ヶ月</div>
+        </div>
+        <div class="voice-detail-stats">
+          <div class="voice-stat-mini"><div class="voice-stat-mini-label">入塾時</div><div class="voice-stat-mini-num">56</div></div>
+          <span class="voice-stat-arrow">→</span>
+          <div class="voice-stat-mini"><div class="voice-stat-mini-label">合格時</div><div class="voice-stat-mini-num accent">70</div></div>
+        </div>
+      </div>
+      <div class="voice-detail-body">
+        <div class="voice-quote">"</div>
+        <p>東工大の数学は独特な問題が多く、パターン暗記では太刀打ちできません。ガリレオの理系思考トレーニングで「抽象化・一般化思考」を鍛えたことが、本番で初見の問題にも対応できた大きな要因です。</p>
+        <p>合格ロードマップのおかげで常に「今何をすべきか」が明確で、不安になることが少なかったです。</p>
+      </div>
+      <div class="graph-placeholder"><div class="graph-title">偏差値推移（総合）</div><div class="graph-bar-container"><div class="graph-bar" style="height:38%;background:var(--green-mist)"><span class="graph-bar-value">56</span><span class="graph-bar-label">入塾時</span></div><div class="graph-bar" style="height:48%;background:var(--green-mist)"><span class="graph-bar-value">60</span><span class="graph-bar-label">4ヶ月</span></div><div class="graph-bar" style="height:58%;background:var(--green-mist)"><span class="graph-bar-value">64</span><span class="graph-bar-label">8ヶ月</span></div><div class="graph-bar" style="height:70%;background:var(--green-mist)"><span class="graph-bar-value">67</span><span class="graph-bar-label">12ヶ月</span></div><div class="graph-bar" style="height:82%;background:var(--amber)"><span class="graph-bar-value">70</span><span class="graph-bar-label">合格時</span></div></div></div>
+    </div>
+
+    <div class="voice-detail" data-category="soukeiri">
+      <div class="voice-detail-header">
+        <div class="voice-detail-info">
+          <span class="voice-badge">慶應義塾大学 理工学部</span>
+          <h3>「併塾サポートで効率的に学力を伸ばせました」</h3>
+          <div class="voice-detail-meta">S.H.さん（千葉県私立高校出身）| 高2の10月から入塾 | 在籍期間：1年4ヶ月</div>
+        </div>
+        <div class="voice-detail-stats">
+          <div class="voice-stat-mini"><div class="voice-stat-mini-label">入塾時</div><div class="voice-stat-mini-num">54</div></div>
+          <span class="voice-stat-arrow">→</span>
+          <div class="voice-stat-mini"><div class="voice-stat-mini-label">合格時</div><div class="voice-stat-mini-num accent">66</div></div>
+        </div>
+      </div>
+      <div class="voice-detail-body">
+        <div class="voice-quote">"</div>
+        <p>大手予備校に通っていましたが、授業のない日の学習管理がうまくいかず成績が停滞していました。合格戦略サポートを利用し始めてからは、毎日課題で学習リズムが安定。予備校の授業の理解度も上がりました。</p>
+      </div>
+      <div class="graph-placeholder"><div class="graph-title">偏差値推移（総合）</div><div class="graph-bar-container"><div class="graph-bar" style="height:36%;background:var(--green-mist)"><span class="graph-bar-value">54</span><span class="graph-bar-label">入塾時</span></div><div class="graph-bar" style="height:44%;background:var(--green-mist)"><span class="graph-bar-value">58</span><span class="graph-bar-label">3ヶ月</span></div><div class="graph-bar" style="height:55%;background:var(--green-mist)"><span class="graph-bar-value">62</span><span class="graph-bar-label">6ヶ月</span></div><div class="graph-bar" style="height:65%;background:var(--green-mist)"><span class="graph-bar-value">64</span><span class="graph-bar-label">9ヶ月</span></div><div class="graph-bar" style="height:78%;background:var(--amber)"><span class="graph-bar-value">66</span><span class="graph-bar-label">合格時</span></div></div></div>
+    </div>
+
+    <div class="voice-detail" data-category="kyutei">
+      <div class="voice-detail-header">
+        <div class="voice-detail-info">
+          <span class="voice-badge">大阪大学 基礎工学部</span>
+          <h3>「毎日の積み重ねが逆転合格を可能にしました」</h3>
+          <div class="voice-detail-meta">Y.T.さん（兵庫県立高校出身）| 高3の4月から入塾 | 在籍期間：10ヶ月</div>
+        </div>
+        <div class="voice-detail-stats">
+          <div class="voice-stat-mini"><div class="voice-stat-mini-label">入塾時</div><div class="voice-stat-mini-num">50</div></div>
+          <span class="voice-stat-arrow">→</span>
+          <div class="voice-stat-mini"><div class="voice-stat-mini-label">合格時</div><div class="voice-stat-mini-num accent">65</div></div>
+        </div>
+      </div>
+      <div class="voice-detail-body">
+        <div class="voice-quote">"</div>
+        <p>高3の春の時点で偏差値50。阪大はE判定でした。正直、間に合うのか不安でしたが、合格ロードマップで「やるべきこと」が明確になり、毎日課題で計画通りに勉強を進められました。</p>
+        <p>10ヶ月で偏差値を15上げられたのは、ガリレオの講師が毎日伴走してくれたおかげです。</p>
+      </div>
+      <div class="graph-placeholder"><div class="graph-title">偏差値推移（総合）</div><div class="graph-bar-container"><div class="graph-bar" style="height:28%;background:var(--green-mist)"><span class="graph-bar-value">50</span><span class="graph-bar-label">4月</span></div><div class="graph-bar" style="height:38%;background:var(--green-mist)"><span class="graph-bar-value">55</span><span class="graph-bar-label">6月</span></div><div class="graph-bar" style="height:50%;background:var(--green-mist)"><span class="graph-bar-value">59</span><span class="graph-bar-label">9月</span></div><div class="graph-bar" style="height:62%;background:var(--green-mist)"><span class="graph-bar-value">63</span><span class="graph-bar-label">11月</span></div><div class="graph-bar" style="height:78%;background:var(--amber)"><span class="graph-bar-value">65</span><span class="graph-bar-label">合格時</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-section">
+  <div class="container">
+    <div class="section-label">CONTACT</div>
+    <h2 class="section-title">次の合格者は、あなたです</h2>
+    <p>まずは無料学習相談で、志望校合格への道筋をお伝えします。先輩たちと同じ成功体験を、あなたも。</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="../index.html#contact" class="btn btn-primary">無料学習相談を予約する →</a>
+      <a href="../index.html#courses" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:var(--white)">コース・料金を見る</a>
+    </div>
+  </div>
+</section>
+
+<script>
+function filterVoices(cat,btn){document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.voice-detail').forEach(v=>{v.style.display=(cat==='all'||v.dataset.category===cat)?'':'none'})}
+</script>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">
+      <div class="logo">
+        <img src="../img/galileo-logo.png" alt="ガリレオ" class="logo-img">
+        <div class="logo-text"><span class="logo-name">ガリレオ</span></div>
+      </div>
+      <p>Galileo Sciences — 理系の大学受験専門塾</p>
+    </div>
+    <div class="footer-links">
+      <ul><li><a href="../index.html#features">塾の特長</a></li><li><a href="../index.html#courses">コース・料金</a></li><li><a href="daigaku-juken-junbi.html">大学受験準備コース</a></li><li><a href="goukaku-senryaku.html">合格戦略プログラム</a></li><li><a href="goukaku-senryaku-support.html">合格戦略サポート</a></li></ul>
+      <ul><li><a href="mainichi-kadai.html">毎日課題システム</a></li><li><a href="mainichi-kadai.html">毎日課題の仕組み</a></li><li><a href="../index.html#gallery">授業の様子</a></li><li><a href="../index.html#staff">講師紹介</a></li><li><a href="voices.html">合格者の声</a></li></ul>
+      <ul><li><a href="../index.html#results">合格実績</a></li><li><a href="../index.html#flow">入塾の流れ</a></li><li><a href="../index.html#faq">FAQ</a></li><li><a href="news.html">お知らせ</a></li><li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li><li><a href="../index.html#about">塾概要</a></li><li><a href="../index.html#contact">お問い合わせ</a></li></ul>
+    </div>
+    <div class="footer-bottom">© 2025 ガリレオ 理系の大学受験専門塾. All Rights Reserved.</div>
+  </div>
+</footer>
+<div class="modal-overlay" id="modal"><div class="modal"><h2>お申し込みありがとう<br>ございます！</h2><p>お問い合わせを受け付けました。<br><strong>2〜3営業日以内</strong>に担当者よりご連絡いたします。<br><br>ガリレオでの学びを、精一杯サポートします。<br>一緒に合格を目指しましょう！</p><button onclick="document.getElementById('modal').classList.remove('open')">閉じる</button></div></div>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('header').classList.toggle('scrolled',scrollY>10)});
+document.getElementById('hamburger').addEventListener('click',()=>{document.getElementById('nav').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open')});
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('nav').classList.remove('open');document.getElementById('hamburger').classList.remove('open')}));
+function handleSubmit(e){e.preventDefault();document.getElementById('modal').classList.add('open');e.target.reset()}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
+document.querySelectorAll('.section,.worry-card,.pillar,.daily-step,.daily-merit,.thinking-card,.course-card,.gallery-item,.staff-card,.voice-card,.flow-step,.faq-item').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
