@@ -182,30 +182,39 @@ strong{font-weight:700}
 .courses-payment{text-align:center;font-size:14px;margin-bottom:32px;color:var(--text-light)}
 .courses-payment a{color:var(--primary);text-decoration:underline}
 .courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.course-card{background:var(--white);border-radius:16px;border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column;transition:all .3s}
-.course-card:hover{box-shadow:0 4px 24px rgba(14,74,56,.08);transform:translateY(-3px);border-color:var(--green-mist)}
-.course-header{padding:24px 20px 16px}
-.course-target{font-size:13px;font-weight:600;color:var(--amber);margin-bottom:6px;display:block}
-.course-header h3{font-size:20px;font-weight:700;margin-bottom:8px}
-.course-header p{font-size:14px;color:var(--text-light);line-height:1.9;margin-bottom:12px}
+.course-card{background:var(--white);border-radius:16px;border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column;transition:all .3s;position:relative}
+.course-card:hover{box-shadow:0 8px 32px rgba(14,74,56,.12);transform:translateY(-4px);border-color:var(--green-mist)}
+.course-header{padding:28px 24px 20px;background:linear-gradient(135deg,#e8f0ec 0%,#d4e4db 100%);border-bottom:1px solid var(--green-mist);position:relative}
+.course-target{font-size:13px;font-weight:700;color:var(--white);background:var(--primary);padding:4px 14px;border-radius:20px;display:inline-block;margin-bottom:10px}
+.course-popular{position:absolute;top:16px;right:16px;background:var(--cta);color:var(--white);font-size:12px;font-weight:700;padding:4px 14px;border-radius:20px;box-shadow:0 2px 8px rgba(196,154,60,.3)}
+.course-header h3{font-size:20px;font-weight:700;margin-bottom:10px;color:var(--primary-dark)}
+.course-header p{font-size:14px;color:var(--text);line-height:1.9;margin-bottom:12px}
 .course-tags{display:flex;flex-wrap:wrap;gap:6px}
-.course-tags span{font-size:12px;font-weight:600;padding:4px 10px;border-radius:20px;background:var(--green-pale);color:var(--primary)}
-.course-divider{height:1px;background:var(--border);margin:0 20px}
-.course-body{padding:16px 20px 20px;flex:1;display:flex;flex-direction:column}
-.course-price-label{font-size:13px;font-weight:600;color:var(--text-muted);margin-bottom:8px;text-align:center}
-.course-prices{margin-bottom:16px}
-.course-price-row{display:flex;align-items:baseline;gap:8px;padding:6px 0;flex-wrap:wrap}
-.course-price-id{font-size:13px;font-weight:700;color:var(--amber);min-width:28px}
-.course-price-amount{font-size:26px;font-weight:800;color:var(--primary)}
+.course-tags span{font-size:12px;font-weight:600;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,.8);color:var(--primary);border:1px solid var(--green-mist)}
+.course-divider{height:0;margin:0}
+.course-body{padding:20px 24px 24px;flex:1;display:flex;flex-direction:column}
+.course-price-label{font-size:13px;font-weight:600;color:var(--text-muted);margin-bottom:10px;text-align:center}
+.course-prices{margin-bottom:16px;background:var(--bg-alt);border-radius:10px;padding:12px 16px}
+.course-price-row{display:flex;align-items:baseline;gap:8px;padding:8px 0;flex-wrap:wrap;border-bottom:1px dashed var(--border)}
+.course-price-row:last-child{border-bottom:none}
+.course-price-id{font-size:13px;font-weight:700;color:var(--white);background:var(--amber);width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.course-price-amount{font-size:28px;font-weight:800;color:var(--primary)}
 .course-price-amount small{font-size:15px;font-weight:600}
 .course-price-tax{font-size:12px;color:var(--text-muted)}
-.course-price-freq{font-size:13px;color:var(--text-light);margin-left:auto}
+.course-price-freq{font-size:13px;color:var(--text-light);margin-left:auto;font-weight:600}
 .course-features{flex:1;margin-bottom:16px}
-.course-features li{font-size:14px;padding:5px 0;padding-left:20px;position:relative;color:var(--text-light)}
-.course-features li::before{content:'•';position:absolute;left:4px;color:var(--amber);font-weight:700}
-.course-link{color:var(--primary);font-size:14px;font-weight:600;text-decoration:underline}
+.course-features li{font-size:14px;padding:6px 0;padding-left:24px;position:relative;color:var(--text-light)}
+.course-features li::before{content:'✓';position:absolute;left:2px;color:var(--primary-light);font-weight:700}
+.course-link{display:inline-flex;align-items:center;gap:4px;color:var(--primary);font-size:14px;font-weight:600;text-decoration:none;padding:8px 0;transition:color .2s}
+.course-link:hover{color:var(--amber)}
 .courses-note{text-align:center;font-size:13px;color:var(--text-muted);margin-top:28px;line-height:2}
 .courses-note a{color:var(--primary);text-decoration:underline}
+.course-card.featured{border-color:var(--primary-light);box-shadow:0 4px 20px rgba(14,74,56,.1)}
+.course-card.featured .course-header{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%)}
+.course-card.featured .course-target{background:rgba(255,255,255,.2);color:var(--white);border:1px solid rgba(255,255,255,.3)}
+.course-card.featured .course-header h3{color:var(--white)}
+.course-card.featured .course-header p{color:rgba(255,255,255,.85)}
+.course-card.featured .course-tags span{background:rgba(255,255,255,.15);color:rgba(255,255,255,.9);border-color:rgba(255,255,255,.2)}
 @media(max-width:900px){.courses-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto}}
 
 /* ===== GALLERY ===== */
@@ -442,14 +451,15 @@ strong{font-weight:700}
   /* Courses */
   .courses-grid{grid-template-columns:1fr;max-width:100%}
   .courses-payment{font-size:13px;margin-bottom:20px}
-  .course-header{padding:20px 16px 14px}
+  .course-header{padding:20px 18px 16px}
   .course-header h3{font-size:18px}
   .course-header p{font-size:13px}
   .course-tags span{font-size:11px;padding:3px 8px}
-  .course-body{padding:14px 16px 18px}
-  .course-price-amount{font-size:22px}
+  .course-body{padding:16px 18px 20px}
+  .course-prices{padding:10px 14px}
+  .course-price-amount{font-size:24px}
   .course-price-amount small{font-size:13px}
-  .course-features li{font-size:13px;padding:4px 0 4px 18px}
+  .course-features li{font-size:13px;padding:4px 0 4px 22px}
   .courses-note{font-size:12px;margin-top:20px}
 
   /* Gallery */
@@ -826,6 +836,7 @@ strong{font-weight:700}
       <!-- Course 2 -->
       <div class="course-card featured">
         <div class="course-header">
+          <span class="course-popular">人気</span>
           <span class="course-target">高校1年生〜高校3年生</span>
           <h3>合格戦略プログラム</h3>
           <p>志望校から逆算した合格ロードマップを作成し、日々の学習内容を設計。実力診断テストで学力の推移を把握し、受験本番まで講師が伴走します。</p>
