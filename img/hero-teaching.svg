@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 690" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="920" y2="690" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#14614A"/>
+      <stop offset="100%" stop-color="#0A3228"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C49A3C"/>
+      <stop offset="100%" stop-color="#D4A843"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a5a44"/>
+      <stop offset="100%" stop-color="#0E4A38"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="920" height="690" rx="16" fill="url(#bg)"/>
+  <!-- Subtle grid pattern -->
+  <g opacity=".04" stroke="#fff" stroke-width="1">
+    <line x1="0" y1="100" x2="920" y2="100"/><line x1="0" y1="200" x2="920" y2="200"/>
+    <line x1="0" y1="300" x2="920" y2="300"/><line x1="0" y1="400" x2="920" y2="400"/>
+    <line x1="0" y1="500" x2="920" y2="500"/><line x1="0" y1="600" x2="920" y2="600"/>
+    <line x1="150" y1="0" x2="150" y2="690"/><line x1="300" y1="0" x2="300" y2="690"/>
+    <line x1="450" y1="0" x2="450" y2="690"/><line x1="600" y1="0" x2="600" y2="690"/>
+    <line x1="750" y1="0" x2="750" y2="690"/>
+  </g>
+  <!-- Laptop body -->
+  <rect x="180" y="160" width="560" height="350" rx="16" fill="#0d3d2d" stroke="#2a7a5a" stroke-width="2"/>
+  <!-- Screen -->
+  <rect x="200" y="180" width="520" height="300" rx="8" fill="url(#screen)"/>
+  <!-- Screen content - teacher video -->
+  <rect x="220" y="200" width="220" height="160" rx="8" fill="#1a5a44" stroke="#2a7a5a" stroke-width="1"/>
+  <!-- Teacher silhouette -->
+  <circle cx="330" cy="260" r="30" fill="#2a7a5a"/>
+  <ellipse cx="330" cy="330" rx="45" ry="25" fill="#2a7a5a"/>
+  <!-- Teacher label -->
+  <rect x="240" y="370" width="180" height="24" rx="4" fill="rgba(196,154,60,.2)"/>
+  <text x="330" y="387" text-anchor="middle" fill="#D4A843" font-size="12" font-family="sans-serif" font-weight="600">LIVE - 数学III解説中</text>
+  <!-- Math formulas on screen -->
+  <g fill="rgba(255,255,255,.7)" font-family="serif" font-size="16">
+    <text x="480" y="230">∫ f(x)dx = F(x) + C</text>
+    <text x="480" y="260">lim (1+1/n)ⁿ = e</text>
+    <text x="480" y="290">Σ aₙ = a₁/(1-r)</text>
+  </g>
+  <g fill="rgba(255,255,255,.4)" font-family="serif" font-size="13">
+    <text x="480" y="325">証明: 微分の定義より</text>
+    <text x="480" y="345">f'(x) = lim Δf/Δx</text>
+    <text x="480" y="365">     = lim [f(x+h)-f(x)]/h</text>
+  </g>
+  <!-- Chat panel indicator -->
+  <rect x="460" y="400" width="240" height="60" rx="6" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+  <text x="480" y="425" fill="rgba(255,255,255,.4)" font-size="11" font-family="sans-serif">生徒: この積分の変換が分かりません</text>
+  <text x="480" y="445" fill="#D4A843" font-size="11" font-family="sans-serif">講師: 置換積分で考えてみましょう</text>
+  <!-- Laptop base -->
+  <path d="M140 510 L180 510 L180 520 Q180 530 190 530 L730 530 Q740 530 740 520 L740 510 L780 510 Q790 510 790 520 L790 535 Q790 545 780 545 L140 545 Q130 545 130 535 L130 520 Q130 510 140 510 Z" fill="#0d3d2d" stroke="#2a7a5a" stroke-width="1.5"/>
+  <!-- Decorative elements -->
+  <!-- Notebook -->
+  <rect x="80" y="400" width="80" height="110" rx="6" fill="#EDF5F0" stroke="#c0d8c8" stroke-width="1.5"/>
+  <line x1="95" y1="420" x2="145" y2="420" stroke="#c0d8c8" stroke-width="1"/>
+  <line x1="95" y1="435" x2="140" y2="435" stroke="#c0d8c8" stroke-width="1"/>
+  <line x1="95" y1="450" x2="135" y2="450" stroke="#c0d8c8" stroke-width="1"/>
+  <line x1="95" y1="465" x2="142" y2="465" stroke="#c0d8c8" stroke-width="1"/>
+  <line x1="95" y1="480" x2="130" y2="480" stroke="#c0d8c8" stroke-width="1"/>
+  <text x="100" y="500" fill="#0E4A38" font-size="9" font-family="sans-serif" opacity=".6">毎日課題ノート</text>
+  <!-- Pen -->
+  <rect x="170" y="420" width="6" height="60" rx="3" fill="#C49A3C" transform="rotate(-20 173 450)"/>
+  <!-- Coffee cup -->
+  <rect x="770" y="430" width="50" height="45" rx="6" fill="#EDF5F0" stroke="#c0d8c8" stroke-width="1.5"/>
+  <path d="M820 445 Q840 445 840 460 Q840 475 820 475" stroke="#c0d8c8" stroke-width="1.5" fill="none"/>
+  <ellipse cx="795" cy="430" rx="25" ry="4" fill="#c0d8c8" opacity=".5"/>
+  <!-- Floating badges -->
+  <g transform="translate(680,180)">
+    <rect width="140" height="36" rx="18" fill="url(#gold)" opacity=".9"/>
+    <text x="70" y="23" text-anchor="middle" fill="#fff" font-size="13" font-family="sans-serif" font-weight="700">東大・京大合格</text>
+  </g>
+  <g transform="translate(60,220)">
+    <rect width="120" height="32" rx="16" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+    <text x="60" y="21" text-anchor="middle" fill="rgba(255,255,255,.8)" font-size="12" font-family="sans-serif" font-weight="600">全国対応</text>
+  </g>
+  <g transform="translate(720,300)">
+    <rect width="130" height="32" rx="16" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+    <text x="65" y="21" text-anchor="middle" fill="rgba(255,255,255,.8)" font-size="12" font-family="sans-serif" font-weight="600">マンツーマン</text>
+  </g>
+  <!-- Bottom tagline -->
+  <rect x="260" y="580" width="400" height="50" rx="12" fill="rgba(196,154,60,.1)" stroke="rgba(196,154,60,.3)" stroke-width="1"/>
+  <text x="460" y="610" text-anchor="middle" fill="#D4A843" font-size="16" font-family="sans-serif" font-weight="700">理系専門 × オンライン個別指導</text>
+</svg>

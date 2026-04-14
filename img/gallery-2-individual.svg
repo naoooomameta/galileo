@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#DCEEE3"/><stop offset="100%" stop-color="#EDF5F0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg2)"/>
+  <!-- Two people silhouettes - teacher and student -->
+  <!-- Teacher -->
+  <circle cx="300" cy="200" r="40" fill="#0E4A38" opacity=".7"/>
+  <ellipse cx="300" cy="310" rx="55" ry="60" fill="#0E4A38" opacity=".7"/>
+  <!-- Student -->
+  <circle cx="520" cy="220" r="35" fill="#14614A" opacity=".6"/>
+  <ellipse cx="520" cy="320" rx="48" ry="55" fill="#14614A" opacity=".6"/>
+  <!-- Desk -->
+  <rect x="180" y="370" width="440" height="16" rx="4" fill="#c0d8c8"/>
+  <rect x="200" y="386" width="8" height="80" fill="#c0d8c8"/>
+  <rect x="600" y="386" width="8" height="80" fill="#c0d8c8"/>
+  <!-- Book on desk -->
+  <rect x="350" y="340" width="80" height="30" rx="3" fill="#C49A3C" opacity=".4"/>
+  <rect x="355" y="345" width="70" height="2" fill="#C49A3C" opacity=".3"/>
+  <rect x="355" y="352" width="50" height="2" fill="#C49A3C" opacity=".3"/>
+  <!-- Tablet on desk -->
+  <rect x="250" y="335" width="70" height="40" rx="5" fill="#0E4A38" opacity=".3"/>
+  <rect x="255" y="340" width="60" height="28" rx="3" fill="#14614A" opacity=".3"/>
+  <!-- Speech bubble -->
+  <rect x="340" y="130" width="180" height="50" rx="25" fill="#C49A3C" opacity=".15" stroke="#C49A3C" stroke-width="1.5" stroke-opacity=".3"/>
+  <text x="430" y="160" text-anchor="middle" fill="#C49A3C" font-size="14" font-family="sans-serif" font-weight="600" opacity=".7">1対1で丁寧に解説</text>
+  <!-- Label -->
+  <rect x="280" y="490" width="240" height="44" rx="22" fill="#0E4A38"/>
+  <text x="400" y="517" text-anchor="middle" fill="#fff" font-size="16" font-family="sans-serif" font-weight="600">個別指導の様子</text>
+</svg>

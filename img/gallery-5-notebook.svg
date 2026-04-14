@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EDF5F0"/><stop offset="100%" stop-color="#DCEEE3"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg5)"/>
+  <!-- Notebook -->
+  <rect x="160" y="60" width="480" height="440" rx="8" fill="#fff" stroke="#c0d8c8" stroke-width="2"/>
+  <!-- Spine -->
+  <rect x="160" y="60" width="30" height="440" fill="#0E4A38" opacity=".06"/>
+  <!-- Spiral rings -->
+  <g fill="none" stroke="#c0d8c8" stroke-width="2">
+    <circle cx="175" cy="100" r="8"/><circle cx="175" cy="140" r="8"/>
+    <circle cx="175" cy="180" r="8"/><circle cx="175" cy="220" r="8"/>
+    <circle cx="175" cy="260" r="8"/><circle cx="175" cy="300" r="8"/>
+    <circle cx="175" cy="340" r="8"/><circle cx="175" cy="380" r="8"/>
+    <circle cx="175" cy="420" r="8"/><circle cx="175" cy="460" r="8"/>
+  </g>
+  <!-- Lines -->
+  <g stroke="#E6EDE8" stroke-width="1">
+    <line x1="210" y1="110" x2="610" y2="110"/>
+    <line x1="210" y1="140" x2="610" y2="140"/>
+    <line x1="210" y1="170" x2="610" y2="170"/>
+    <line x1="210" y1="200" x2="610" y2="200"/>
+    <line x1="210" y1="230" x2="610" y2="230"/>
+    <line x1="210" y1="260" x2="610" y2="260"/>
+    <line x1="210" y1="290" x2="610" y2="290"/>
+    <line x1="210" y1="320" x2="610" y2="320"/>
+    <line x1="210" y1="350" x2="610" y2="350"/>
+    <line x1="210" y1="380" x2="610" y2="380"/>
+    <line x1="210" y1="410" x2="610" y2="410"/>
+    <line x1="210" y1="440" x2="610" y2="440"/>
+    <line x1="210" y1="470" x2="610" y2="470"/>
+  </g>
+  <!-- Date header -->
+  <text x="220" y="100" fill="#0E4A38" font-size="13" font-family="sans-serif" font-weight="700" opacity=".6">2026/04/14（月）毎日課題</text>
+  <!-- Handwriting-style content -->
+  <g fill="#0E4A38" font-family="serif" opacity=".55" font-size="14">
+    <text x="220" y="135">① 数学III 微分方程式 p.152 例題3〜5</text>
+    <text x="220" y="165">② 物理 力学 運動方程式の立式演習</text>
+    <text x="220" y="195">③ 化学 有機化学 構造決定 5問</text>
+    <text x="220" y="225">④ 英語 長文読解（理系テーマ）1題</text>
+  </g>
+  <!-- Check marks -->
+  <g stroke="#C49A3C" stroke-width="2.5" stroke-linecap="round" fill="none" opacity=".7">
+    <path d="M570 125 L578 135 L595 115"/>
+    <path d="M570 155 L578 165 L595 145"/>
+    <path d="M570 185 L578 195 L595 175"/>
+  </g>
+  <!-- In-progress mark -->
+  <circle cx="582" cy="220" r="8" stroke="#C49A3C" stroke-width="2" fill="none" opacity=".4"/>
+  <!-- Teacher comment -->
+  <rect x="220" y="270" width="370" height="80" rx="8" fill="#C49A3C" opacity=".06" stroke="#C49A3C" stroke-width="1" stroke-opacity=".2"/>
+  <text x="235" y="295" fill="#C49A3C" font-size="13" font-family="sans-serif" font-weight="700" opacity=".7">講師コメント:</text>
+  <text x="235" y="315" fill="#C49A3C" font-size="12" font-family="sans-serif" opacity=".5">微分方程式の変数分離法が正確にできています。</text>
+  <text x="235" y="335" fill="#C49A3C" font-size="12" font-family="sans-serif" opacity=".5">明日は置換積分の演習に取り組みましょう。</text>
+  <!-- Pen -->
+  <rect x="530" y="390" width="6" height="80" rx="3" fill="#C49A3C" opacity=".5" transform="rotate(25 533 430)"/>
+  <!-- Label -->
+  <rect x="270" y="520" width="260" height="44" rx="22" fill="#0E4A38"/>
+  <text x="400" y="547" text-anchor="middle" fill="#fff" font-size="16" font-family="sans-serif" font-weight="600">毎日課題のノート</text>
+</svg>
