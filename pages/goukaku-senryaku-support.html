@@ -10,37 +10,44 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 <style>
-.page-hero{background:linear-gradient(180deg,var(--bg) 0%,var(--green-pale) 100%);padding:60px 0 40px;text-align:center}
-.page-hero .section-label{margin-bottom:8px}
-.page-hero h1{font-family:var(--font-serif);font-size:clamp(26px,4vw,40px);font-weight:700;line-height:1.5;margin-bottom:12px}
+.page-hero{background:linear-gradient(180deg,var(--bg) 0%,var(--green-pale) 50%,var(--green-light) 100%);padding:80px 0 56px;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:20px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(196,154,60,.06) 0%,transparent 70%);pointer-events:none}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:50px;background:linear-gradient(180deg,transparent,var(--bg));pointer-events:none}
+.page-hero .section-label{margin-bottom:8px;letter-spacing:.08em}
+.page-hero h1{font-family:var(--font-serif);font-size:clamp(28px,4.5vw,44px);font-weight:700;line-height:1.5;margin-bottom:14px}
 .page-hero p{font-size:15px;color:var(--text-light);max-width:600px;margin:0 auto;line-height:2}
 .breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:20px}
 .breadcrumb a{color:var(--primary);text-decoration:underline}
-.cta-section{background:var(--primary);color:var(--white);text-align:center}
+.cta-section{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--white);text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:-40%;right:-15%;width:500px;height:500px;background:radial-gradient(circle,rgba(196,154,60,.08) 0%,transparent 70%);pointer-events:none}
 .cta-section .section-label{color:#D4A843}
 .cta-section .section-title{color:var(--white)}
-.cta-section p{color:rgba(255,255,255,.7);font-size:15px;line-height:2;max-width:560px;margin:0 auto 28px}
-.target-badge{display:inline-block;background:var(--amber);color:var(--white);font-size:14px;font-weight:700;padding:6px 18px;border-radius:20px;margin-bottom:16px}
-.price-highlight{background:var(--white);border-radius:16px;padding:40px;border:2px solid var(--amber);text-align:center;max-width:480px;margin:0 auto}
-.price-highlight-label{font-size:14px;font-weight:600;color:var(--amber);margin-bottom:8px}
-.price-highlight-amount{font-size:52px;font-weight:800;color:var(--primary);line-height:1.2}
+.cta-section .section-title::after{background:linear-gradient(90deg,#D4A843,rgba(255,255,255,.3))}
+.cta-section p{color:rgba(255,255,255,.75);font-size:15px;line-height:2;max-width:560px;margin:0 auto 28px}
+.target-badge{display:inline-block;background:linear-gradient(135deg,var(--amber),var(--amber-light));color:var(--white);font-size:14px;font-weight:700;padding:6px 20px;border-radius:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(196,154,60,.2)}
+.price-highlight{background:var(--white);border-radius:20px;padding:44px;border:2px solid var(--amber);text-align:center;max-width:480px;margin:0 auto;box-shadow:0 4px 24px rgba(196,154,60,.1);position:relative;overflow:hidden}
+.price-highlight::before{content:'';position:absolute;top:-50%;right:-50%;width:200px;height:200px;background:radial-gradient(circle,rgba(196,154,60,.06) 0%,transparent 70%);pointer-events:none}
+.price-highlight-label{font-size:14px;font-weight:600;color:var(--amber);margin-bottom:8px;letter-spacing:.05em}
+.price-highlight-amount{font-size:56px;font-weight:800;color:var(--primary);line-height:1.2;font-family:var(--font-serif)}
 .price-highlight-amount small{font-size:20px;font-weight:600}
 .price-highlight-tax{font-size:14px;color:var(--text-muted);margin-top:4px}
 .price-highlight-note{font-size:13px;color:var(--text-muted);margin-top:12px}
 .merit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.merit-card{background:var(--white);border-radius:16px;padding:28px;border:1px solid var(--border);border-left:4px solid var(--primary-light)}
-.merit-card h4{font-size:18px;font-weight:700;margin-bottom:10px}
+.merit-card{background:var(--white);border-radius:18px;padding:32px;border:1px solid var(--border);border-left:4px solid var(--primary-light);transition:all .3s;box-shadow:0 2px 8px rgba(14,74,56,.04)}
+.merit-card:hover{box-shadow:0 8px 28px rgba(14,74,56,.08);border-left-color:var(--amber);transform:translateY(-2px)}
+.merit-card h4{font-size:18px;font-weight:700;margin-bottom:10px;color:var(--primary-dark)}
 .merit-card p{font-size:14px;color:var(--text-light);line-height:2}
 .service-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:20px}
-.service-item{background:var(--green-pale);border:1px solid var(--green-mist);border-radius:10px;padding:16px 20px;font-size:14px;display:flex;align-items:center;gap:10px;color:var(--text-light)}
+.service-item{background:var(--green-pale);border:1px solid var(--green-mist);border-radius:12px;padding:16px 20px;font-size:14px;display:flex;align-items:center;gap:10px;color:var(--text-light);transition:all .2s}
+.service-item:hover{background:var(--green-light);transform:translateY(-1px)}
 .service-item .check{color:var(--amber);font-weight:700;font-size:18px;flex-shrink:0}
-.comparison-table{width:100%;border-collapse:collapse;margin:20px 0}
+.comparison-table{width:100%;border-collapse:collapse;margin:20px 0;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(14,74,56,.04)}
 .comparison-table th,.comparison-table td{padding:14px 18px;text-align:center;border-bottom:1px solid var(--border);font-size:15px}
 .comparison-table th{background:var(--primary);color:var(--white);font-size:14px;font-weight:600}
-.comparison-table td{background:var(--white)}
+.comparison-table td{background:var(--white);transition:background .2s}
 .comparison-table tr:hover td{background:var(--green-pale)}
 .comparison-table .highlight{background:var(--green-pale);font-weight:700;color:var(--primary)}
-@media(max-width:768px){.comparison-table th,.comparison-table td{padding:10px 12px;font-size:13px}.price-highlight{padding:28px}.price-highlight-amount{font-size:40px}}
+@media(max-width:768px){.page-hero{padding:60px 0 44px}.comparison-table th,.comparison-table td{padding:10px 12px;font-size:13px}.price-highlight{padding:28px}.price-highlight-amount{font-size:40px}.merit-card{padding:24px 20px}}
 </style>
 </head>
 <body>
