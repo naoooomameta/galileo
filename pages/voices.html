@@ -74,9 +74,8 @@
 .voice-detail-body p:last-child{margin-bottom:0}
 
 /* ===== GRAPH ===== */
-.graph-placeholder{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:28px;margin-top:24px;text-align:center;position:relative}
-.graph-placeholder::before{content:'';position:absolute;inset:1px;border-radius:13px;background:linear-gradient(180deg,var(--green-pale) 0%,transparent 40%);pointer-events:none;opacity:.5}
-.graph-title{font-size:14px;font-weight:700;color:var(--primary);margin-bottom:20px;font-family:var(--font-serif);position:relative;display:inline-block}
+.graph-placeholder{background:linear-gradient(180deg,var(--green-pale) 0%,var(--white) 40%);border:1px solid var(--border);border-radius:14px;padding:28px;margin-top:24px;text-align:center}
+.graph-title{font-size:14px;font-weight:700;color:var(--primary);margin-bottom:20px;font-family:var(--font-serif);display:inline-block}
 .graph-title::after{content:'';position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:40px;height:2px;background:var(--amber);border-radius:1px}
 .graph-bar-container{display:flex;align-items:flex-end;justify-content:center;gap:12px;height:140px;padding-bottom:28px;position:relative}
 .graph-bar{width:42px;border-radius:8px 8px 2px 2px;position:relative;transition:all .4s ease;cursor:default}
