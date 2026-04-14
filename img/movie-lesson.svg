@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" fill="none">
+  <defs>
+    <linearGradient id="mbg2" x1="480" y1="0" x2="0" y2="270" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#14614A"/><stop offset="100%" stop-color="#0A3228"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="270" rx="12" fill="url(#mbg2)"/>
+  <!-- Mini screen showing math -->
+  <rect x="140" y="40" width="200" height="120" rx="6" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+  <text x="240" y="80" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="14" font-family="serif">∫ sin(x)dx = -cos(x)+C</text>
+  <text x="240" y="110" text-anchor="middle" fill="rgba(255,255,255,.3)" font-size="12" font-family="serif">d/dx[eˣ] = eˣ</text>
+  <text x="240" y="135" text-anchor="middle" fill="#C49A3C" font-size="11" font-family="sans-serif" opacity=".5">解説ポイントを動画で確認</text>
+  <!-- Play button overlay -->
+  <circle cx="240" cy="90" r="28" fill="#C49A3C" opacity=".15"/>
+  <circle cx="240" cy="90" r="28" fill="none" stroke="#C49A3C" stroke-width="2" opacity=".6"/>
+  <path d="M232 75 L255 90 L232 105 Z" fill="#C49A3C" opacity=".7"/>
+  <!-- Text -->
+  <text x="240" y="200" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="16" font-family="sans-serif" font-weight="700">実際の授業を体験してみよう</text>
+  <text x="240" y="225" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="12" font-family="sans-serif">授業体験動画 | 5:12</text>
+  <rect x="180" y="240" width="120" height="24" rx="12" fill="#C49A3C" opacity=".15"/>
+  <text x="240" y="256" text-anchor="middle" fill="#C49A3C" font-size="11" font-family="sans-serif" font-weight="600">準備中</text>
+</svg>

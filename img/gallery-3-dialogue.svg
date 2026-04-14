@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="600" x2="800" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EDF5F0"/><stop offset="100%" stop-color="#DCEEE3"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg3)"/>
+  <!-- Chat/dialogue bubbles -->
+  <g transform="translate(100,80)">
+    <rect width="280" height="60" rx="30" fill="#0E4A38" opacity=".12"/>
+    <text x="140" y="35" text-anchor="middle" fill="#0E4A38" font-size="14" font-family="sans-serif" opacity=".6">この問題の解き方がわかりません</text>
+  </g>
+  <g transform="translate(420,160)">
+    <rect width="300" height="60" rx="30" fill="#C49A3C" opacity=".12"/>
+    <text x="150" y="35" text-anchor="middle" fill="#C49A3C" font-size="14" font-family="sans-serif" opacity=".7">まず条件を整理してみましょう</text>
+  </g>
+  <g transform="translate(100,240)">
+    <rect width="260" height="60" rx="30" fill="#0E4A38" opacity=".12"/>
+    <text x="130" y="35" text-anchor="middle" fill="#0E4A38" font-size="14" font-family="sans-serif" opacity=".6">x² + 2x - 3 = 0 ですね</text>
+  </g>
+  <g transform="translate(420,320)">
+    <rect width="280" height="60" rx="30" fill="#C49A3C" opacity=".12"/>
+    <text x="140" y="35" text-anchor="middle" fill="#C49A3C" font-size="14" font-family="sans-serif" opacity=".7">因数分解できますね！</text>
+  </g>
+  <g transform="translate(100,400)">
+    <rect width="300" height="60" rx="30" fill="#0E4A38" opacity=".12"/>
+    <text x="150" y="35" text-anchor="middle" fill="#0E4A38" font-size="14" font-family="sans-serif" opacity=".6">(x+3)(x-1)=0 だから x=-3,1!</text>
+  </g>
+  <!-- Checkmark -->
+  <g transform="translate(430,420)">
+    <circle r="30" cx="30" cy="30" fill="#C49A3C" opacity=".2"/>
+    <path d="M15 30 L25 40 L45 20" stroke="#C49A3C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <!-- Label -->
+  <rect x="270" y="510" width="260" height="44" rx="22" fill="#0E4A38"/>
+  <text x="400" y="537" text-anchor="middle" fill="#fff" font-size="16" font-family="sans-serif" font-weight="600">講師との対話型授業</text>
+</svg>
