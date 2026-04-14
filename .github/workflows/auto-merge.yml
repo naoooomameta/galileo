@@ -1,0 +1,45 @@
+name: Auto-merge claude branches
+
+on:
+  push:
+    branches:
+      - 'claude/**'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create and merge PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BRANCH="${GITHUB_REF#refs/heads/}"
+
+          # Check if PR already exists
+          EXISTING_PR=$(gh pr list --head "$BRANCH" --base main --state open --json number -q '.[0].number')
+
+          if [ -n "$EXISTING_PR" ]; then
+            echo "Merging existing PR #$EXISTING_PR"
+            gh pr merge "$EXISTING_PR" --merge --auto
+          else
+            echo "Creating PR from $BRANCH to main"
+            PR_URL=$(gh pr create \
+              --base main \
+              --head "$BRANCH" \
+              --title "Auto-merge: ${BRANCH}" \
+              --body "Automated merge from \`${BRANCH}\`")
+            echo "Created: $PR_URL"
+
+            # Extract PR number and merge
+            PR_NUM=$(echo "$PR_URL" | grep -o '[0-9]*$')
+            gh pr merge "$PR_NUM" --merge
+          fi
