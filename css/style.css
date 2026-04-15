@@ -335,23 +335,26 @@ strong{font-weight:700}
 .contact-section .section-title::after{background:linear-gradient(90deg,#D4A843,rgba(255,255,255,.4))}
 .contact-section .section-subtitle{color:rgba(255,255,255,.7)}
 .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:start}
-.contact-info h3{font-size:20px;margin-bottom:14px}
-.contact-info p{font-size:15px;color:rgba(255,255,255,.7);line-height:2;margin-bottom:16px}
-.contact-target{font-size:14px;color:rgba(255,255,255,.6);margin-bottom:16px;line-height:2}
-.contact-target strong{color:#D4A843}
+.contact-info{padding:8px 0}
+.contact-info h3{font-size:22px;margin-bottom:14px;font-family:var(--font-serif)}
+.contact-info p{font-size:15px;color:rgba(255,255,255,.7);line-height:2;margin-bottom:20px}
+.contact-target{font-size:14px;color:rgba(255,255,255,.7);margin-bottom:16px;line-height:2;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:18px}
+.contact-target strong{color:#D4A843;display:block;margin-bottom:4px}
 .contact-trial{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:18px;font-size:14px;color:rgba(255,255,255,.7);line-height:2}
 .contact-trial strong{color:#D4A843;display:block;margin-bottom:4px}
-.contact-form{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:32px;backdrop-filter:blur(12px)}
+.contact-form{background:var(--white);border:none;border-radius:20px;padding:32px;box-shadow:0 8px 32px rgba(0,0,0,.1)}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.form-group{margin-bottom:16px}
-.form-group label{display:block;font-size:14px;font-weight:600;margin-bottom:8px;color:rgba(255,255,255,.9)}
-.req{font-size:12px;color:#D4A843;margin-left:4px}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:1px solid rgba(255,255,255,.15);border-radius:10px;background:rgba(255,255,255,.08);color:var(--white);font-family:var(--font);font-size:15px;outline:none;transition:all .3s}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--amber);background:rgba(255,255,255,.12);box-shadow:0 0 0 3px rgba(196,154,60,.15)}
-.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,.3)}
-.form-group select{appearance:none;cursor:pointer}
-.form-group textarea{min-height:80px;resize:vertical}
-@media(max-width:768px){.contact-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:14px;font-weight:700;margin-bottom:8px;color:var(--text)}
+.req{font-size:11px;font-weight:700;color:var(--white);background:var(--primary);padding:2px 8px;border-radius:4px;margin-left:6px;vertical-align:1px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 16px;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font-family:var(--font);font-size:15px;outline:none;transition:all .3s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--primary);background:var(--white);box-shadow:0 0 0 3px rgba(14,74,56,.1)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--text-muted)}
+.form-group select{appearance:none;cursor:pointer;color:var(--text-muted)}
+.form-group textarea{min-height:100px;resize:vertical}
+.btn-submit{width:100%;padding:18px 36px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--white);border:none;border-radius:50px;font-size:16px;font-weight:700;cursor:pointer;transition:all .3s;box-shadow:0 4px 16px rgba(14,74,56,.25);display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font)}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(14,74,56,.35)}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.contact-form{padding:24px 20px}}
 
 /* ===== FOOTER ===== */
 .footer{background:var(--bg-dark);color:rgba(255,255,255,.5);padding:48px 0 24px}
@@ -609,6 +612,3 @@ strong{font-weight:700}
 
 /* --- Touch device improvements --- */
 @media(hover:none){
-  .worry-card:hover,.pillar:hover,.course-card:hover,.staff-card:hover,.voice-card:hover,.gallery-item:hover,.thinking-card:hover{transform:none;box-shadow:none}
-  .nav a:hover{border-bottom-color:transparent}
-}

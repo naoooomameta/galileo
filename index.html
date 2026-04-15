@@ -350,23 +350,26 @@ strong{font-weight:700}
 .contact-section .section-title::after{background:linear-gradient(90deg,#D4A843,rgba(255,255,255,.4))}
 .contact-section .section-subtitle{color:rgba(255,255,255,.7)}
 .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:start}
-.contact-info h3{font-size:20px;margin-bottom:14px}
-.contact-info p{font-size:15px;color:rgba(255,255,255,.7);line-height:2;margin-bottom:16px}
-.contact-target{font-size:14px;color:rgba(255,255,255,.6);margin-bottom:16px;line-height:2}
-.contact-target strong{color:#D4A843}
+.contact-info{padding:8px 0}
+.contact-info h3{font-size:22px;margin-bottom:14px;font-family:var(--font-serif)}
+.contact-info p{font-size:15px;color:rgba(255,255,255,.7);line-height:2;margin-bottom:20px}
+.contact-target{font-size:14px;color:rgba(255,255,255,.7);margin-bottom:16px;line-height:2;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:18px}
+.contact-target strong{color:#D4A843;display:block;margin-bottom:4px}
 .contact-trial{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:18px;font-size:14px;color:rgba(255,255,255,.7);line-height:2}
 .contact-trial strong{color:#D4A843;display:block;margin-bottom:4px}
-.contact-form{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:32px;backdrop-filter:blur(12px)}
+.contact-form{background:var(--white);border:none;border-radius:20px;padding:32px;box-shadow:0 8px 32px rgba(0,0,0,.1)}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.form-group{margin-bottom:16px}
-.form-group label{display:block;font-size:14px;font-weight:600;margin-bottom:8px;color:rgba(255,255,255,.9)}
-.req{font-size:12px;color:#D4A843;margin-left:4px}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:1px solid rgba(255,255,255,.15);border-radius:10px;background:rgba(255,255,255,.08);color:var(--white);font-family:var(--font);font-size:15px;outline:none;transition:all .3s}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--amber);background:rgba(255,255,255,.12);box-shadow:0 0 0 3px rgba(196,154,60,.15)}
-.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,.3)}
-.form-group select{appearance:none;cursor:pointer}
-.form-group textarea{min-height:80px;resize:vertical}
-@media(max-width:768px){.contact-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:14px;font-weight:700;margin-bottom:8px;color:var(--text)}
+.req{font-size:11px;font-weight:700;color:var(--white);background:var(--primary);padding:2px 8px;border-radius:4px;margin-left:6px;vertical-align:1px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 16px;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font-family:var(--font);font-size:15px;outline:none;transition:all .3s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--primary);background:var(--white);box-shadow:0 0 0 3px rgba(14,74,56,.1)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--text-muted)}
+.form-group select{appearance:none;cursor:pointer;color:var(--text-muted)}
+.form-group textarea{min-height:100px;resize:vertical}
+.btn-submit{width:100%;padding:18px 36px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--white);border:none;border-radius:50px;font-size:16px;font-weight:700;cursor:pointer;transition:all .3s;box-shadow:0 4px 16px rgba(14,74,56,.25);display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font)}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(14,74,56,.35)}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.contact-form{padding:24px 20px}}
 
 /* ===== FOOTER ===== */
 .footer{background:var(--bg-dark);color:rgba(255,255,255,.5);padding:48px 0 24px}
@@ -1113,22 +1116,22 @@ strong{font-weight:700}
       <div class="contact-info">
         <h3>お気軽にご連絡ください</h3>
         <p>現在の学力・志望校・学習の悩みなど、どんな内容でも構いません。専任スタッフが丁寧にご対応します。</p>
-        <div class="contact-target"><strong>対象者</strong><br>理系の国公立・私大志望 / 医学部志望 / 文理選択に悩む高1・高2・高3生 / 中学生</div>
-        <div class="contact-trial"><strong>無料体験 受付中</strong><br>実際の授業をご体験いただけます。数学・物理・化学・生物・英語からお好きな科目を選択可能。授業の進め方や講師との相性を、ぜひご確認ください。</div>
+        <div class="contact-target"><strong><svg style="width:16px;height:16px;vertical-align:-3px;margin-right:4px;fill:currentColor;opacity:.7" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg> 対象者</strong>理系の国公立・私大志望 / 医学部志望 / 文理選択に悩む高1・高2・高3生 / 中学生</div>
+        <div class="contact-trial"><strong><svg style="width:16px;height:16px;vertical-align:-3px;margin-right:4px;fill:currentColor;opacity:.7" viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg> 無料体験 受付中</strong>実際の授業をご体験いただけます。数学・物理・化学・生物・英語からお好きな科目を選択可能。授業の進め方や講師との相性を、ぜひご確認ください。</div>
       </div>
       <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
         <div class="form-row">
-          <div class="form-group"><label>お名前<span class="req">必須</span></label><input type="text" required placeholder="お名前を入力してください"></div>
-          <div class="form-group"><label>フリガナ<span class="req">必須</span></label><input type="text" required placeholder="フリガナを入力してください"></div>
+          <div class="form-group"><label>お名前 <span class="req">必須</span></label><input type="text" required placeholder="山田 太郎"></div>
+          <div class="form-group"><label>フリガナ <span class="req">必須</span></label><input type="text" required placeholder="ヤマダ タロウ"></div>
         </div>
+        <div class="form-group"><label>メールアドレス <span class="req">必須</span></label><input type="email" required placeholder="example@email.com"></div>
+        <div class="form-group"><label>電話番号 <span class="req">必須</span></label><input type="tel" required placeholder="090-0000-0000"></div>
         <div class="form-row">
-          <div class="form-group"><label>メールアドレス<span class="req">必須</span></label><input type="email" required placeholder="正しいメールアドレスを入力してください"></div>
-          <div class="form-group"><label>電話番号<span class="req">必須</span></label><input type="tel" required placeholder="電話番号を入力してください"></div>
+          <div class="form-group"><label>学年</label><select><option value="">選択してください</option><option>中学1年生</option><option>中学2年生</option><option>中学3年生</option><option>高校1年生</option><option>高校2年生</option><option>高校3年生</option><option>既卒（浪人）</option></select></div>
+          <div class="form-group"><label>志望大学</label><input type="text" placeholder="例：東京大学 理科一類"></div>
         </div>
-        <div class="form-group"><label>学年</label><select><option value="">選択してください</option><option>中学1年生</option><option>中学2年生</option><option>中学3年生</option><option>高校1年生</option><option>高校2年生</option><option>高校3年生</option><option>既卒（浪人）</option></select></div>
-        <div class="form-group"><label>志望大学</label><input type="text" placeholder="例：東京大学 理科一類"></div>
-        <div class="form-group"><label>お悩み・ご相談内容</label><textarea rows="4"></textarea></div>
-        <button type="submit" class="btn btn-primary btn-full">無料相談を申し込む →</button>
+        <div class="form-group"><label>お悩み・ご相談内容</label><textarea rows="5" placeholder="学習の悩み、志望校についてなど、お気軽にご記入ください。"></textarea></div>
+        <button type="submit" class="btn-submit"><svg style="width:18px;height:18px;fill:currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg> 無料相談を申し込む →</button>
       </form>
     </div>
   </div>
