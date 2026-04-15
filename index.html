@@ -394,6 +394,36 @@ strong{font-weight:700}
 .modal p{font-size:15px;color:var(--text-light);line-height:2;margin-bottom:24px}
 .modal button{padding:12px 32px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--white);border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;transition:all .3s;box-shadow:0 4px 12px rgba(14,74,56,.2)}
 .modal button:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(14,74,56,.25)}
+
+/* ===== BOOKING MODAL ===== */
+.booking-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);z-index:2100;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+.booking-overlay.open{opacity:1;pointer-events:all}
+.booking-modal{background:var(--white);border-radius:20px;max-width:640px;width:94%;max-height:90vh;overflow:hidden;transform:scale(.92) translateY(20px);transition:transform .35s cubic-bezier(.22,1,.36,1);box-shadow:0 24px 64px rgba(0,0,0,.25)}
+.booking-overlay.open .booking-modal{transform:scale(1) translateY(0)}
+.booking-modal-header{background:linear-gradient(135deg,var(--primary),var(--primary-light));padding:24px 28px;display:flex;align-items:center;justify-content:space-between}
+.booking-modal-header h3{color:var(--white);font-family:var(--font-serif);font-size:18px;font-weight:700;display:flex;align-items:center;gap:10px}
+.booking-modal-header h3 svg{width:22px;height:22px;fill:var(--amber)}
+.booking-close{background:rgba(255,255,255,.15);border:none;color:var(--white);width:32px;height:32px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;font-size:18px}
+.booking-close:hover{background:rgba(255,255,255,.3)}
+.booking-modal-body{padding:28px;overflow-y:auto;max-height:calc(90vh - 80px)}
+.booking-modal-body .booking-lead{text-align:center;margin-bottom:20px;color:var(--text-light);font-size:14px;line-height:1.8}
+.booking-modal-body .booking-lead strong{color:var(--primary);font-weight:700}
+.booking-iframe-wrap{width:100%;min-height:480px;border-radius:12px;overflow:hidden;background:var(--bg-light);display:flex;align-items:center;justify-content:center}
+.booking-iframe-wrap iframe{width:100%;height:100%;min-height:480px;border:none}
+.booking-iframe-wrap .booking-placeholder{text-align:center;padding:40px 20px;color:var(--text-light)}
+.booking-iframe-wrap .booking-placeholder svg{width:48px;height:48px;fill:var(--primary);opacity:.3;margin-bottom:16px}
+.booking-iframe-wrap .booking-placeholder p{font-size:14px;line-height:1.8}
+.booking-skip{display:block;margin:16px auto 0;background:none;border:none;color:var(--text-light);font-size:13px;cursor:pointer;text-decoration:underline;transition:color .2s}
+.booking-skip:hover{color:var(--primary)}
+
+@media(max-width:768px){
+.booking-modal{width:96%;max-height:94vh}
+.booking-modal-header{padding:18px 20px}
+.booking-modal-header h3{font-size:16px}
+.booking-modal-body{padding:20px}
+.booking-iframe-wrap{min-height:400px}
+.booking-iframe-wrap iframe{min-height:400px}
+}
 /* ===== COMPREHENSIVE MOBILE RESPONSIVE ===== */
 
 /* --- Tablet (max-width: 768px) --- */
@@ -1164,6 +1194,34 @@ strong{font-weight:700}
 <!-- ===== THANK YOU MODAL ===== -->
 <div class="modal-overlay" id="modal"><div class="modal"><h2>お申し込みありがとう<br>ございます！</h2><p>お問い合わせを受け付けました。<br><strong>2〜3営業日以内</strong>に担当者よりご連絡いたします。<br><br>ガリレオでの学びを、精一杯サポートします。<br>一緒に合格を目指しましょう！</p><button onclick="document.getElementById('modal').classList.remove('open')">閉じる</button></div></div>
 
+<!-- ===== BOOKING / CALENDAR MODAL ===== -->
+<div class="booking-overlay" id="bookingModal">
+  <div class="booking-modal">
+    <div class="booking-modal-header">
+      <h3>
+        <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+        無料相談の日程を予約する
+      </h3>
+      <button class="booking-close" onclick="closeBookingModal()">&times;</button>
+    </div>
+    <div class="booking-modal-body">
+      <p class="booking-lead">
+        ご都合の良い日時をお選びください。<br>
+        <strong>オンライン（Zoom）</strong>にて30分程度の無料相談を行います。
+      </p>
+      <div class="booking-iframe-wrap" id="bookingContent">
+        <!-- ↓ カレンダー埋め込みURL（Calendly等）をここに設定 ↓ -->
+        <!-- 例: <iframe src="https://calendly.com/your-link" /> -->
+        <div class="booking-placeholder">
+          <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm-7-7h5v5h-5z"/></svg>
+          <p>カレンダー予約システムを読み込み中…<br><small>※ 表示されない場合は下記よりお電話ください</small></p>
+        </div>
+      </div>
+      <button class="booking-skip" onclick="closeBookingModal()">あとで予約する（スキップ）</button>
+    </div>
+  </div>
+</div>
+
 <script>
 // Header scroll
 window.addEventListener('scroll',()=>{document.getElementById('header').classList.toggle('scrolled',scrollY>10)});
@@ -1177,6 +1235,7 @@ function toggleFaq(el){const item=el.parentElement;const wasOpen=item.classList.
 function filterStaff(role,btn){document.querySelectorAll('.staff-tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.staff-card').forEach(c=>{c.style.display=(role==='all'||c.dataset.role===role)?'':'none'})}
 // Form - GAS連携
 const GAS_URL = ''; // ← GASデプロイ後にURLをここに貼る
+const BOOKING_URL = ''; // ← カレンダー予約URL（Calendly等）をここに貼る
 
 function handleSubmit(e) {
   e.preventDefault();
@@ -1211,7 +1270,35 @@ function handleSubmit(e) {
   form.reset();
   btn.disabled = false;
   btn.innerHTML = '<svg style="width:18px;height:18px;fill:currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg> 無料相談を申し込む →';
+
+  // 1.2秒後 → 予約モーダルへ自動遷移
+  setTimeout(function() {
+    document.getElementById('modal').classList.remove('open');
+    openBookingModal();
+  }, 1200);
 }
+
+// ===== 予約カレンダーモーダル =====
+function openBookingModal() {
+  // カレンダーiframeを動的に埋め込み（BOOKING_URL設定時）
+  if (BOOKING_URL) {
+    var wrap = document.getElementById('bookingContent');
+    wrap.innerHTML = '<iframe src="' + BOOKING_URL + '" loading="lazy"></iframe>';
+  }
+  document.getElementById('bookingModal').classList.add('open');
+}
+
+function closeBookingModal() {
+  document.getElementById('bookingModal').classList.remove('open');
+}
+
+// プラトン互換: グローバル関数
+window.__openBookingModal = openBookingModal;
+
+// 予約モーダル: 背景クリックで閉じる
+document.getElementById('bookingModal').addEventListener('click', function(e) {
+  if (e.target === this) closeBookingModal();
+});
 // Scroll reveal
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
 document.querySelectorAll('.section,.hero-stats,.worry-card,.pillar,.daily-step,.daily-merit,.thinking-card,.course-card,.gallery-item,.staff-card,.voice-card,.flow-step,.faq-item').forEach(el=>obs.observe(el));
