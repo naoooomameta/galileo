@@ -49,13 +49,14 @@ function saveToSheet(params) {
   if (!sheet) {
     sheet = ss.insertSheet(SHEET_NAME);
     sheet.appendRow([
-      'タイムスタンプ', 'お名前', 'フリガナ', 'メールアドレス',
+      'タイムスタンプ', '送信元', 'お名前', 'フリガナ', 'メールアドレス',
       '電話番号', '学年', '志望大学', 'お悩み・ご相談内容'
     ]);
   }
 
   sheet.appendRow([
     new Date(),
+    params.source || '',
     params.name || '',
     params.kana || '',
     params.email || '',

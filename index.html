@@ -1191,6 +1191,7 @@ function handleSubmit(e) {
   const inputs = form.querySelectorAll('input, select, textarea');
   const params = new URLSearchParams({
     action: 'contact',
+    source: 'galileo',
     name: inputs[0].value,
     kana: inputs[1].value,
     email: inputs[2].value,
