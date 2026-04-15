@@ -1175,8 +1175,42 @@ document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{d
 function toggleFaq(el){const item=el.parentElement;const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null});if(!wasOpen){item.classList.add('open');item.querySelector('.faq-a').style.maxHeight=item.querySelector('.faq-a').scrollHeight+'px'}}
 // Staff filter
 function filterStaff(role,btn){document.querySelectorAll('.staff-tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.staff-card').forEach(c=>{c.style.display=(role==='all'||c.dataset.role===role)?'':'none'})}
-// Form
-function handleSubmit(e){e.preventDefault();document.getElementById('modal').classList.add('open');e.target.reset()}
+// Form - GAS連携
+const GAS_URL = ''; // ← GASデプロイ後にURLをここに貼る
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.btn-submit');
+
+  // 二重送信防止
+  btn.disabled = true;
+  btn.textContent = '送信中…';
+
+  // フォームデータ取得
+  const inputs = form.querySelectorAll('input, select, textarea');
+  const params = new URLSearchParams({
+    action: 'contact',
+    name: inputs[0].value,
+    kana: inputs[1].value,
+    email: inputs[2].value,
+    tel: inputs[3].value,
+    grade: inputs[4].value,
+    univ: inputs[5].value,
+    message: inputs[6].value
+  });
+
+  // fire-and-forget: GASへPOST（レスポンスを待たない）
+  if (GAS_URL) {
+    try { fetch(GAS_URL, { method: 'POST', body: params }); } catch (e) {}
+  }
+
+  // 即座にモーダル表示 + フォームリセット
+  document.getElementById('modal').classList.add('open');
+  form.reset();
+  btn.disabled = false;
+  btn.innerHTML = '<svg style="width:18px;height:18px;fill:currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg> 無料相談を申し込む →';
+}
 // Scroll reveal
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
 document.querySelectorAll('.section,.hero-stats,.worry-card,.pillar,.daily-step,.daily-merit,.thinking-card,.course-card,.gallery-item,.staff-card,.voice-card,.flow-step,.faq-item').forEach(el=>obs.observe(el));
