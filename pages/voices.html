@@ -74,14 +74,18 @@
 .voice-detail-body p:last-child{margin-bottom:0}
 
 /* ===== GRAPH ===== */
-.graph-placeholder{background:linear-gradient(180deg,var(--green-pale) 0%,var(--white) 40%);border:1px solid var(--border);border-radius:14px;padding:28px;margin-top:24px;text-align:center}
-.graph-title{font-size:14px;font-weight:700;color:var(--primary);margin-bottom:20px;font-family:var(--font-serif);display:inline-block}
-.graph-title::after{content:'';position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:40px;height:2px;background:var(--amber);border-radius:1px}
-.graph-bar-container{display:flex;align-items:flex-end;justify-content:center;gap:12px;height:140px;padding-bottom:28px;position:relative}
-.graph-bar{width:42px;border-radius:8px 8px 2px 2px;position:relative;transition:all .4s ease;cursor:default}
-.graph-bar:hover{transform:scaleY(1.04);transform-origin:bottom;filter:brightness(1.1)}
-.graph-bar-label{position:absolute;bottom:-24px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--text-muted);white-space:nowrap;font-weight:600}
-.graph-bar-value{position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:13px;font-weight:800;color:var(--primary);font-family:var(--font-serif)}
+.graph-placeholder{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin-top:24px}
+.graph-title{font-size:14px;font-weight:700;color:var(--primary);margin-bottom:20px;font-family:var(--font-serif);text-align:center}
+.graph-rows{display:flex;flex-direction:column;gap:12px}
+.graph-row{display:flex;align-items:center;gap:12px}
+.graph-row-label{width:60px;font-size:12px;font-weight:600;color:var(--text-muted);text-align:right;flex-shrink:0}
+.graph-row-track{flex:1;height:32px;background:var(--green-pale);border-radius:8px;overflow:hidden;position:relative}
+.graph-row-fill{height:100%;border-radius:8px;display:flex;align-items:center;justify-content:flex-end;padding-right:12px;min-width:40px;transition:width .8s ease}
+.graph-row-fill.green{background:linear-gradient(90deg,#c0d8c8,#a8c8b4)}
+.graph-row-fill.primary{background:linear-gradient(90deg,#14614A,#0E4A38)}
+.graph-row-fill.gold{background:linear-gradient(90deg,#D4A843,#C49A3C)}
+.graph-row-value{font-size:14px;font-weight:800;color:var(--white);font-family:var(--font-serif);text-shadow:0 1px 2px rgba(0,0,0,.15)}
+.graph-row-fill.green .graph-row-value{color:var(--primary-dark)}
 
 /* ===== ANIMATIONS ===== */
 @keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
@@ -105,8 +109,10 @@
   .voice-detail-stats{margin-top:12px}
   .voice-stat-mini{padding:10px 14px}
   .voice-stat-mini-num{font-size:22px}
-  .graph-bar-container{height:100px;gap:8px}
-  .graph-bar{width:32px}
+  .graph-placeholder{padding:20px 16px}
+  .graph-row-track{height:26px}
+  .graph-row-label{width:50px;font-size:11px}
+  .graph-row-value{font-size:12px}
   .filter-tabs{gap:6px}
   .filter-tab{padding:8px 16px;font-size:13px}
   .voice-avatar{width:44px;height:44px;font-size:16px}
@@ -215,7 +221,17 @@
           <p>入塾前は、数学の成績が伸び悩んでいました。計算ミスが多く、模試でも時間が足りずに最後まで解ききれないことが多かったです。ガリレオに入ってからは、毎朝の計算ノート提出が習慣になり、計算スピードと正確性が格段に上がりました。</p>
           <p>特に印象的だったのは、講師の方が毎日フィードバックをくれること。「ここの計算はもっとこうすれば速い」など具体的なアドバイスが本当に役立ちました。</p>
         </div>
-        <div class="graph-placeholder"><div class="graph-title">偏差値推移（数学）</div><div class="graph-bar-container"><div class="graph-bar" style="height:35%;background:linear-gradient(180deg,var(--green-mist),#a8c8b4)"><span class="graph-bar-value">52</span><span class="graph-bar-label">入塾時</span></div><div class="graph-bar" style="height:45%;background:linear-gradient(180deg,var(--green-mist),#a8c8b4)"><span class="graph-bar-value">57</span><span class="graph-bar-label">3ヶ月</span></div><div class="graph-bar" style="height:55%;background:linear-gradient(180deg,var(--green-mist),#a8c8b4)"><span class="graph-bar-value">62</span><span class="graph-bar-label">6ヶ月</span></div><div class="graph-bar" style="height:65%;background:linear-gradient(180deg,var(--green-mist),#a8c8b4)"><span class="graph-bar-value">66</span><span class="graph-bar-label">9ヶ月</span></div><div class="graph-bar" style="height:75%;background:linear-gradient(180deg,var(--primary-light),var(--primary))"><span class="graph-bar-value">69</span><span class="graph-bar-label">12ヶ月</span></div><div class="graph-bar" style="height:85%;background:linear-gradient(180deg,var(--amber),#b08930)"><span class="graph-bar-value">71</span><span class="graph-bar-label">合格時</span></div></div></div>
+        <div class="graph-placeholder">
+          <div class="graph-title">偏差値推移（数学）</div>
+          <div class="graph-rows">
+            <div class="graph-row"><span class="graph-row-label">入塾時</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:55%"><span class="graph-row-value">52</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">3ヶ月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:62%"><span class="graph-row-value">57</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">6ヶ月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:70%"><span class="graph-row-value">62</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">9ヶ月</span><div class="graph-row-track"><div class="graph-row-fill primary" style="width:78%"><span class="graph-row-value">66</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">12ヶ月</span><div class="graph-row-track"><div class="graph-row-fill primary" style="width:84%"><span class="graph-row-value">69</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">合格時</span><div class="graph-row-track"><div class="graph-row-fill gold" style="width:88%"><span class="graph-row-value">71</span></div></div></div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -240,7 +256,16 @@
           <p>物理が苦手で、公式を覚えても応用問題になると手が止まってしまう状態でした。ガリレオでは「なぜその公式が成り立つのか」から丁寧に教えていただき、物理現象のイメージを掴むことができるようになりました。</p>
           <p>毎日の課題で運動方程式の立式トレーニングを繰り返したことで、複合問題でも自然と解法が浮かぶようになりました。</p>
         </div>
-        <div class="graph-placeholder"><div class="graph-title">偏差値推移（物理）</div><div class="graph-bar-container"><div class="graph-bar" style="height:38%;background:linear-gradient(180deg,var(--green-mist),#a8c8b4)"><span class="graph-bar-value">55</span><span class="graph-bar-label">入塾時</span></div><div class="graph-bar" style="height:45%;background:linear-gradient(180deg,var(--green-mist),#a8c8b4)"><span class="graph-bar-value">58</span><span class="graph-bar-label">3ヶ月</span></div><div class="graph-bar" style="height:55%;background:linear-gradient(180deg,var(--green-mist),#a8c8b4)"><span class="graph-bar-value">62</span><span class="graph-bar-label">6ヶ月</span></div><div class="graph-bar" style="height:65%;background:linear-gradient(180deg,var(--primary-light),var(--primary))"><span class="graph-bar-value">65</span><span class="graph-bar-label">9ヶ月</span></div><div class="graph-bar" style="height:80%;background:linear-gradient(180deg,var(--amber),#b08930)"><span class="graph-bar-value">68</span><span class="graph-bar-label">合格時</span></div></div></div>
+        <div class="graph-placeholder">
+          <div class="graph-title">偏差値推移（物理）</div>
+          <div class="graph-rows">
+            <div class="graph-row"><span class="graph-row-label">入塾時</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:60%"><span class="graph-row-value">55</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">3ヶ月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:65%"><span class="graph-row-value">58</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">6ヶ月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:70%"><span class="graph-row-value">62</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">9ヶ月</span><div class="graph-row-track"><div class="graph-row-fill primary" style="width:78%"><span class="graph-row-value">65</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">合格時</span><div class="graph-row-track"><div class="graph-row-fill gold" style="width:83%"><span class="graph-row-value">68</span></div></div></div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -265,7 +290,16 @@
           <p>医学部志望で理系科目全般の底上げが必要でした。特に化学は暗記科目だと思い込んでいて、有機化学の構造決定は大の苦手。ガリレオでは「構造化思考」のアプローチで、情報を整理してパズルのように解く方法を教わりました。</p>
           <p>2年間、毎日欠かさず課題に取り組んだことで、偏差値が48から72まで上がりました。ガリレオなしでは医学部合格はなかったと思います。</p>
         </div>
-        <div class="graph-placeholder"><div class="graph-title">偏差値推移（化学）</div><div class="graph-bar-container"><div class="graph-bar" style="height:25%;background:linear-gradient(180deg,var(--green-mist),#a8c8b4)"><span class="graph-bar-value">48</span><span class="graph-bar-label">入塾時</span></div><div class="graph-bar" style="height:38%;background:linear-gradient(180deg,var(--green-mist),#a8c8b4)"><span class="graph-bar-value">54</span><span class="graph-bar-label">6ヶ月</span></div><div class="graph-bar" style="height:52%;background:linear-gradient(180deg,var(--green-mist),#a8c8b4)"><span class="graph-bar-value">61</span><span class="graph-bar-label">12ヶ月</span></div><div class="graph-bar" style="height:68%;background:linear-gradient(180deg,var(--primary-light),var(--primary))"><span class="graph-bar-value">67</span><span class="graph-bar-label">18ヶ月</span></div><div class="graph-bar" style="height:85%;background:linear-gradient(180deg,var(--amber),#b08930)"><span class="graph-bar-value">72</span><span class="graph-bar-label">合格時</span></div></div></div>
+        <div class="graph-placeholder">
+          <div class="graph-title">偏差値推移（化学）</div>
+          <div class="graph-rows">
+            <div class="graph-row"><span class="graph-row-label">入塾時</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:45%"><span class="graph-row-value">48</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">6ヶ月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:58%"><span class="graph-row-value">54</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">12ヶ月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:70%"><span class="graph-row-value">61</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">18ヶ月</span><div class="graph-row-track"><div class="graph-row-fill primary" style="width:80%"><span class="graph-row-value">67</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">合格時</span><div class="graph-row-track"><div class="graph-row-fill gold" style="width:90%"><span class="graph-row-value">72</span></div></div></div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -290,7 +324,16 @@
           <p>東工大の数学は独特な問題が多く、パターン暗記では太刀打ちできません。ガリレオの理系思考トレーニングで「抽象化・一般化思考」を鍛えたことが、本番で初見の問題にも対応できた大きな要因です。</p>
           <p>合格ロードマップのおかげで常に「今何をすべきか」が明確で、不安になることが少なかったです。</p>
         </div>
-        <div class="graph-placeholder"><div class="graph-title">偏差値推移（総合）</div><div class="graph-bar-container"><div class="graph-bar" style="height:38%;background:linear-gradient(180deg,var(--green-mist),#a8c8b4)"><span class="graph-bar-value">56</span><span class="graph-bar-label">入塾時</span></div><div class="graph-bar" style="height:48%;background:linear-gradient(180deg,var(--green-mist),#a8c8b4)"><span class="graph-bar-value">60</span><span class="graph-bar-label">4ヶ月</span></div><div class="graph-bar" style="height:58%;background:linear-gradient(180deg,var(--green-mist),#a8c8b4)"><span class="graph-bar-value">64</span><span class="graph-bar-label">8ヶ月</span></div><div class="graph-bar" style="height:70%;background:linear-gradient(180deg,var(--primary-light),var(--primary))"><span class="graph-bar-value">67</span><span class="graph-bar-label">12ヶ月</span></div><div class="graph-bar" style="height:82%;background:linear-gradient(180deg,var(--amber),#b08930)"><span class="graph-bar-value">70</span><span class="graph-bar-label">合格時</span></div></div></div>
+        <div class="graph-placeholder">
+          <div class="graph-title">偏差値推移（総合）</div>
+          <div class="graph-rows">
+            <div class="graph-row"><span class="graph-row-label">入塾時</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:62%"><span class="graph-row-value">56</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">4ヶ月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:68%"><span class="graph-row-value">60</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">8ヶ月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:75%"><span class="graph-row-value">64</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">12ヶ月</span><div class="graph-row-track"><div class="graph-row-fill primary" style="width:80%"><span class="graph-row-value">67</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">合格時</span><div class="graph-row-track"><div class="graph-row-fill gold" style="width:86%"><span class="graph-row-value">70</span></div></div></div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -314,7 +357,16 @@
         <div class="voice-detail-body">
           <p>大手予備校に通っていましたが、授業のない日の学習管理がうまくいかず成績が停滞していました。合格戦略サポートを利用し始めてからは、毎日課題で学習リズムが安定。予備校の授業の理解度も上がりました。</p>
         </div>
-        <div class="graph-placeholder"><div class="graph-title">偏差値推移（総合）</div><div class="graph-bar-container"><div class="graph-bar" style="height:36%;background:linear-gradient(180deg,var(--green-mist),#a8c8b4)"><span class="graph-bar-value">54</span><span class="graph-bar-label">入塾時</span></div><div class="graph-bar" style="height:44%;background:linear-gradient(180deg,var(--green-mist),#a8c8b4)"><span class="graph-bar-value">58</span><span class="graph-bar-label">3ヶ月</span></div><div class="graph-bar" style="height:55%;background:linear-gradient(180deg,var(--green-mist),#a8c8b4)"><span class="graph-bar-value">62</span><span class="graph-bar-label">6ヶ月</span></div><div class="graph-bar" style="height:65%;background:linear-gradient(180deg,var(--primary-light),var(--primary))"><span class="graph-bar-value">64</span><span class="graph-bar-label">9ヶ月</span></div><div class="graph-bar" style="height:78%;background:linear-gradient(180deg,var(--amber),#b08930)"><span class="graph-bar-value">66</span><span class="graph-bar-label">合格時</span></div></div></div>
+        <div class="graph-placeholder">
+          <div class="graph-title">偏差値推移（総合）</div>
+          <div class="graph-rows">
+            <div class="graph-row"><span class="graph-row-label">入塾時</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:58%"><span class="graph-row-value">54</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">3ヶ月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:65%"><span class="graph-row-value">58</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">6ヶ月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:70%"><span class="graph-row-value">62</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">9ヶ月</span><div class="graph-row-track"><div class="graph-row-fill primary" style="width:75%"><span class="graph-row-value">64</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">合格時</span><div class="graph-row-track"><div class="graph-row-fill gold" style="width:80%"><span class="graph-row-value">66</span></div></div></div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -339,7 +391,16 @@
           <p>高3の春の時点で偏差値50。阪大はE判定でした。正直、間に合うのか不安でしたが、合格ロードマップで「やるべきこと」が明確になり、毎日課題で計画通りに勉強を進められました。</p>
           <p>10ヶ月で偏差値を15上げられたのは、ガリレオの講師が毎日伴走してくれたおかげです。</p>
         </div>
-        <div class="graph-placeholder"><div class="graph-title">偏差値推移（総合）</div><div class="graph-bar-container"><div class="graph-bar" style="height:28%;background:linear-gradient(180deg,var(--green-mist),#a8c8b4)"><span class="graph-bar-value">50</span><span class="graph-bar-label">4月</span></div><div class="graph-bar" style="height:38%;background:linear-gradient(180deg,var(--green-mist),#a8c8b4)"><span class="graph-bar-value">55</span><span class="graph-bar-label">6月</span></div><div class="graph-bar" style="height:50%;background:linear-gradient(180deg,var(--green-mist),#a8c8b4)"><span class="graph-bar-value">59</span><span class="graph-bar-label">9月</span></div><div class="graph-bar" style="height:62%;background:linear-gradient(180deg,var(--primary-light),var(--primary))"><span class="graph-bar-value">63</span><span class="graph-bar-label">11月</span></div><div class="graph-bar" style="height:78%;background:linear-gradient(180deg,var(--amber),#b08930)"><span class="graph-bar-value">65</span><span class="graph-bar-label">合格時</span></div></div></div>
+        <div class="graph-placeholder">
+          <div class="graph-title">偏差値推移（総合）</div>
+          <div class="graph-rows">
+            <div class="graph-row"><span class="graph-row-label">4月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:50%"><span class="graph-row-value">50</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">6月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:60%"><span class="graph-row-value">55</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">9月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:68%"><span class="graph-row-value">59</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">11月</span><div class="graph-row-track"><div class="graph-row-fill primary" style="width:76%"><span class="graph-row-value">63</span></div></div></div>
+            <div class="graph-row"><span class="graph-row-label">合格時</span><div class="graph-row-track"><div class="graph-row-fill gold" style="width:80%"><span class="graph-row-value">65</span></div></div></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
