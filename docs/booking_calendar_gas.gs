@@ -169,7 +169,7 @@ function createCalendarEvent(params) {
 }
 
 // ===== スプレッドシート記録（統合シート） =====
-var SHEET_NAME = '全データ';
+var SHEET_NAME = '公式サイト_予約一覧';
 
 function getOrCreateSheet() {
   if (!SHEET_ID) return null;
