@@ -154,7 +154,7 @@ strong{font-weight:700}
 .daily-pain-label{font-size:14px;font-weight:700;color:var(--primary-dark);margin-bottom:10px!important}
 .daily-pain-item{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--text);padding:8px 0;border-bottom:1px solid rgba(14,74,56,.08)}
 .daily-pain-item:last-child{border-bottom:none}
-.daily-pain-icon{font-size:20px;flex-shrink:0}
+.daily-pain-icon{flex-shrink:0;width:22px;height:22px;display:flex;align-items:center;justify-content:center}
 .daily-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px;position:relative}
 .daily-step{text-align:center;padding:24px 14px;background:var(--white);border-radius:14px;border:1px solid var(--border);border-top:3px solid var(--green-mist);position:relative;transition:all .3s}
 .daily-step:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(14,74,56,.08);border-top-color:var(--primary)}
