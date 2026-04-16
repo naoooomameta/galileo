@@ -1258,7 +1258,7 @@ strong{font-weight:700}
       <button class="booking-close" onclick="closeBookingModal()">&times;</button>
     </div>
     <div class="booking-modal-body">
-      <p class="booking-lead">ご都合のよい日時をお選びください。<br><strong>オンライン（Zoom）または電話</strong>にて約60分の無料相談を行います。</p>
+      <p class="booking-lead">ご都合のよい日時をお選びください。<br><strong>オンライン（Google Meet）または電話</strong>にて約60分の無料相談を行います。</p>
       <div class="slot-list" id="slotList">
         <div class="slot-loading"><div class="slot-spinner"></div>空き枠を読み込み中…</div>
       </div>
@@ -1280,15 +1280,6 @@ strong{font-weight:700}
       <div class="booking-selected-slot" id="selectedSlotDisplay"></div>
       <form id="bookingForm" onsubmit="submitBooking(event)">
         <div class="bk-form-group">
-          <label>学年</label>
-          <select id="bkGrade">
-            <option value="">選択してください</option>
-            <option>中学1年</option><option>中学2年</option><option>中学3年</option>
-            <option>高校1年</option><option>高校2年</option><option>高校3年</option>
-            <option>既卒</option><option>保護者</option>
-          </select>
-        </div>
-        <div class="bk-form-group">
           <label>ご相談内容（複数選択可）</label>
           <div class="bk-checkbox-group">
             <label class="bk-checkbox"><input type="checkbox" value="学習計画"><span>学習計画・勉強法</span></label>
@@ -1302,7 +1293,7 @@ strong{font-weight:700}
         <div class="bk-form-group">
           <label>ご希望の相談形式</label>
           <div class="bk-radio-group">
-            <label class="bk-radio"><input type="radio" name="format" value="オンライン（Zoom）" checked><span>オンライン（Zoom）</span></label>
+            <label class="bk-radio"><input type="radio" name="format" value="オンライン（Google Meet）" checked><span>オンライン（Google Meet）</span></label>
             <label class="bk-radio"><input type="radio" name="format" value="電話"><span>電話</span></label>
           </div>
         </div>
@@ -1331,7 +1322,7 @@ strong{font-weight:700}
       <p class="booking-success-name" id="bookingSuccessName"></p>
       <p class="booking-success-msg">確認メールをお送りしました。<br>ご予約日時:</p>
       <div class="booking-success-slot" id="bookingSuccessSlot"></div>
-      <p class="booking-success-note">※ オンラインの場合、ZoomのURLを<br>前日までにメールでお送りします。</p>
+      <p class="booking-success-note">※ オンラインの場合、Google MeetのURLを<br>前日までにメールでお送りします。</p>
       <button class="bk-done-btn" onclick="closeBookingModal()">閉じる</button>
     </div>
   </div>
@@ -1524,7 +1515,6 @@ function submitBooking(e) {
     name: _contactName,
     email: _contactEmail,
     tel: _contactTel,
-    grade: document.getElementById('bkGrade').value,
     concerns: concerns.join('、'),
     format: format ? format.value : '',
     note: document.getElementById('bkNote').value,
