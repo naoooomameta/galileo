@@ -17,7 +17,7 @@
 
 // ===== 設定 =====
 var SHEET_NAME = 'お問い合わせ';  // シート名（なければ自動作成）
-var NOTIFY_EMAIL = 'your-email@example.com';  // 通知先メールアドレス
+var NOTIFY_EMAIL = 'galileogalilei.sciences@gmail.com';  // 通知先メールアドレス
 
 // ===== メイン処理 =====
 function doPost(e) {
