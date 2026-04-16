@@ -168,27 +168,30 @@ function createCalendarEvent(params) {
   });
 }
 
-// ===== スプレッドシート記録 =====
-function getOrCreateSheet(sheetName, headers) {
+// ===== スプレッドシート記録（統合シート） =====
+var SHEET_NAME = '全データ';
+
+function getOrCreateSheet() {
   if (!SHEET_ID) return null;
   var ss = SpreadsheetApp.openById(SHEET_ID);
-  var sheet = ss.getSheetByName(sheetName);
+  var sheet = ss.getSheetByName(SHEET_NAME);
   if (!sheet) {
-    sheet = ss.insertSheet(sheetName);
-    sheet.appendRow(headers);
+    sheet = ss.insertSheet(SHEET_NAME);
+    sheet.appendRow([
+      'タイムスタンプ', '種別', '送信元', 'お名前', 'フリガナ', 'メールアドレス',
+      '電話番号', '学年', '志望大学', '予約日時', '相談形式', '相談内容', '伝言'
+    ]);
   }
   return sheet;
 }
 
 function saveContactToSheet(params) {
-  var sheet = getOrCreateSheet('お問い合わせ', [
-    'タイムスタンプ', '送信元', 'お名前', 'フリガナ', 'メールアドレス',
-    '電話番号', '学年', '志望大学', 'お悩み・ご相談内容'
-  ]);
+  var sheet = getOrCreateSheet();
   if (!sheet) return;
 
   sheet.appendRow([
     new Date(),
+    'お問い合わせ',
     params.source || 'galileo',
     params.name || '',
     params.kana || '',
@@ -196,24 +199,28 @@ function saveContactToSheet(params) {
     params.tel || '',
     params.grade || '',
     params.univ || '',
-    params.message || ''
+    '',
+    '',
+    params.message || '',
+    ''
   ]);
 }
 
 function saveBookingToSheet(params) {
-  var sheet = getOrCreateSheet('予約一覧', [
-    'タイムスタンプ', '予約日時', 'お名前', 'メールアドレス', '電話番号',
-    '学年', '相談形式', '相談内容', '伝言'
-  ]);
+  var sheet = getOrCreateSheet();
   if (!sheet) return;
 
   sheet.appendRow([
     new Date(),
-    params.slot_display || '',
+    '予約',
+    'galileo',
     params.name || '',
+    '',
     params.email || '',
     params.tel || '',
-    params.grade || '',
+    '',
+    '',
+    params.slot_display || '',
     params.format || '',
     params.concerns || '',
     params.note || ''
