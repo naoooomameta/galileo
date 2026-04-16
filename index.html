@@ -1356,7 +1356,7 @@ function toggleFaq(el){const item=el.parentElement;const wasOpen=item.classList.
 // Staff filter
 function filterStaff(role,btn){document.querySelectorAll('.staff-tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.staff-card').forEach(c=>{c.style.display=(role==='all'||c.dataset.role===role)?'':'none'})}
 // ===== GAS連携 + 予約ウィジェット =====
-const BOOKING_GAS_URL = 'https://script.google.com/macros/s/AKfycbzcWPn1oznZb7CaMNmIYcfZpKakwxopMgEnACcrUViaOiBZLr_z_1Icns_qLRqaUYT1hw/exec';
+const BOOKING_GAS_URL = 'https://script.google.com/macros/s/AKfycbzleIs1DqaybK2orps2tQwLCDimHb_7_5CQ0AV4IMD1gN3kVtjOUuD-2EA2-tCGDCo/exec';
 const CALENDAR_EMBED_ID = 'galileogalilei.sciences@gmail.com';
 
 // 問い合わせフォーム送信時に保持する名前・メール
