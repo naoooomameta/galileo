@@ -23,7 +23,7 @@
 
 // ===== 設定 =====
 var CALENDAR_ID = 'galileogalilei.sciences@gmail.com';
-var SHEET_ID = '';                                  // ← スプレッドシートID（決まったら入力）
+var SHEET_ID = '1itXiW1nHXN9Dp2loqx1izUOP_rWpe0hzTafMlJXWmN4';
 var NOTIFY_EMAIL = 'galileogalilei.sciences@gmail.com';
 var SLOT_DURATION_MIN = 60;                         // 1枠の長さ（分）
 var START_HOUR = 10;                                // 予約受付開始時刻
