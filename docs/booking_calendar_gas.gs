@@ -267,7 +267,7 @@ function sendThankYouToUser(params) {
     '代表 佐野 翼',
     'メール: galileogalilei.sciences@gmail.com',
     'Instagram: 準備中',
-    '公式サイト: ※公式サイトURL',
+    '公式サイト: 準備中',
     '━━━━━━━━━━━━━━━━━━━━',
     '',
     '※ 本メールは自動送信です。',
