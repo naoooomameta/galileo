@@ -1394,7 +1394,7 @@ function handleSubmit(e) {
 
   // fire-and-forget: GASへPOST
   if (BOOKING_GAS_URL) {
-    try { fetch(BOOKING_GAS_URL, { method: 'POST', body: params }); } catch (err) {}
+    try { fetch(BOOKING_GAS_URL, { method: 'POST', body: params, mode: 'no-cors' }); } catch (err) {}
   }
 
   // サンキューモーダル表示
@@ -1524,7 +1524,7 @@ function submitBooking(e) {
 
   // GASへPOST（予約確定）
   if (BOOKING_GAS_URL) {
-    fetch(BOOKING_GAS_URL, { method: 'POST', body: params })
+    fetch(BOOKING_GAS_URL, { method: 'POST', body: params, mode: 'no-cors' })
       .then(function() { showBookingSuccess(); })
       .catch(function() { showBookingSuccess(); });
   } else {
