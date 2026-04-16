@@ -22,9 +22,9 @@
  */
 
 // ===== 設定 =====
-var CALENDAR_ID = 'your-galileo@gmail.com';       // ← ガリレオ用Gmailアドレス
-var SHEET_ID = '';                                  // ← スプレッドシートID（空なら記録しない）
-var NOTIFY_EMAIL = 'your-galileo@gmail.com';       // ← 通知先メールアドレス
+var CALENDAR_ID = 'galileogalilei.sciences@gmail.com';
+var SHEET_ID = '';                                  // ← スプレッドシートID（決まったら入力）
+var NOTIFY_EMAIL = 'galileogalilei.sciences@gmail.com';
 var SLOT_DURATION_MIN = 60;                         // 1枠の長さ（分）
 var START_HOUR = 10;                                // 予約受付開始時刻
 var END_HOUR = 22;                                  // 予約受付終了時刻
