@@ -298,7 +298,7 @@ function sendBookingConfirmation(params) {
     '※ ご都合が悪くなった場合は、お早めにご連絡ください。',
     '',
     '━━━━━━━━━━━━━━━━━',
-    BRAND_NAME + ' — 理系の大学受験専門塾',
+    '理系の大学受験専門塾 ' + BRAND_NAME,
     SITE_URL ? SITE_URL : '',
     '━━━━━━━━━━━━━━━━━'
   ].join('\n');
