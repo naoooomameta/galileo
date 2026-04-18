@@ -336,6 +336,7 @@ strong{font-weight:700}
 .news-badge.important{background:rgba(200,60,60,.08);color:#c44}
 .news-badge.info{background:var(--green-pale);color:var(--primary)}
 .news-text{font-size:15px;font-weight:500;flex:1}
+a.news-item{text-decoration:none;color:inherit;cursor:pointer}
 
 /* ===== CONTACT ===== */
 .contact-section{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--white);position:relative;overflow:hidden}
@@ -712,4 +713,3 @@ strong{font-weight:700}
   .worry-card:hover,.pillar:hover,.course-card:hover,.staff-card:hover,.voice-card:hover,.gallery-item:hover,.thinking-card:hover{transform:none;box-shadow:none}
   .nav a:hover{border-bottom-color:transparent}
 }
-</style>
