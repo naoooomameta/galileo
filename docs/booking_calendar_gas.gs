@@ -16,7 +16,7 @@ var START_HOUR = 10;
 var END_HOUR = 22;
 var DAYS_AHEAD_DEFAULT = 14;
 var BRAND_NAME = 'ガリレオ';
-var SITE_URL = '';
+var SITE_URL = 'https://galileo-sciences.com';
 
 // ===== GET: 空き枠一覧を返す =====
 function doGet(e) {
@@ -232,7 +232,7 @@ function sendThankYouToUser(params) {
     '以下URLより、当塾のサービス全体の概要資料をご覧いただけます。',
     '',
     '■ 公式サイト',
-    '⇒ 準備中',
+    '⇒ https://galileo-sciences.com',
     '',
     '■ サービス概要資料',
     '⇒ 準備中',
@@ -267,7 +267,7 @@ function sendThankYouToUser(params) {
     '代表 佐野 翼',
     'メール: galileogalilei.sciences@gmail.com',
     'Instagram: 準備中',
-    '公式サイト: 準備中',
+    '公式サイト: https://galileo-sciences.com',
     '━━━━━━━━━━━━━━━━━━━━',
     '',
     '※ 本メールは自動送信です。',
