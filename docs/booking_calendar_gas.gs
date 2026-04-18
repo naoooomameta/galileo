@@ -109,7 +109,7 @@ function createCalendarEvent(params) {
   if (!cal) throw new Error('カレンダーが見つかりません');
   var startTime = new Date(params.slot_iso);
   var endTime = new Date(startTime.getTime() + SLOT_DURATION_MIN * 60 * 1000);
-  var title = '【' + BRAND_NAME + '無料相談】' + (params.name || '名前未入力');
+  var title = '【' + BRAND_NAME + '学習相談会】' + (params.name || '名前未入力');
   var description = [
     '■ お名前: ' + (params.name || ''),
     '■ メール: ' + (params.email || ''),
@@ -279,12 +279,12 @@ function sendThankYouToUser(params) {
 // ===== 予約確定時の確認メール =====
 function sendBookingConfirmation(params) {
   if (!params.email) return;
-  var subject = '【' + BRAND_NAME + '】無料相談のご予約を承りました';
+  var subject = '【' + BRAND_NAME + '】学習相談会のご予約を承りました';
   var body = [
     (params.name || '') + ' 様',
     '',
     'この度は' + BRAND_NAME + 'へのご相談予約ありがとうございます。',
-    '下記の日程にて無料相談を承りました。',
+    '下記の日程にて学習相談会を承りました。',
     '',
     '━━━━━━━━━━━━━━━━━',
     '■ 予約日時: ' + (params.slot_display || ''),
