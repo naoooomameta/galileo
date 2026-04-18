@@ -283,7 +283,7 @@ function sendBookingConfirmation(params) {
   var body = [
     (params.name || '') + ' 様',
     '',
-    'この度は' + BRAND_NAME + 'へのご相談予約ありがとうございます。',
+    'この度は' + BRAND_NAME + 'へのお問い合わせありがとうございます。',
     '下記の日程にて学習相談会を承りました。',
     '',
     '━━━━━━━━━━━━━━━━━',
