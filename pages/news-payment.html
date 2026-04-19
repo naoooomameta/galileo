@@ -27,40 +27,58 @@
 .back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--primary);font-weight:600;margin-bottom:20px}
 .back-link:hover{text-decoration:underline}
 .payment-content{max-width:800px;margin:0 auto}
-.payment-lead{font-size:15px;color:var(--text-light);line-height:2.2;margin-bottom:40px;background:var(--white);border-radius:16px;padding:28px 32px;border:1px solid var(--border);border-left:4px solid var(--primary)}
-.payment-section-title{font-family:var(--font-serif);font-size:clamp(20px,3vw,26px);font-weight:700;color:var(--primary-dark);margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--green-light)}
-.plan-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:32px}
-.plan-card{background:var(--white);border-radius:16px;padding:24px;border:1px solid var(--border);border-top:4px solid var(--primary-light);text-align:center;transition:all .3s;box-shadow:0 2px 8px rgba(14,74,56,.04)}
-.plan-card:hover{box-shadow:0 8px 28px rgba(14,74,56,.08);transform:translateY(-2px)}
-.plan-number{font-size:12px;font-weight:700;color:var(--amber);letter-spacing:.1em;margin-bottom:8px}
-.plan-card h4{font-size:16px;font-weight:700;color:var(--primary-dark);margin-bottom:8px;line-height:1.5}
+.payment-date-badge{display:inline-block;background:var(--primary);color:var(--white);font-size:13px;font-weight:700;padding:6px 20px;border-radius:30px;margin-bottom:24px;letter-spacing:.05em}
+.payment-lead{font-size:15px;color:var(--text-light);line-height:2.2;margin-bottom:48px;background:var(--white);border-radius:16px;padding:32px 36px;border:1px solid var(--border);border-left:5px solid var(--primary);box-shadow:0 4px 16px rgba(14,74,56,.06)}
+.payment-section-label{font-size:12px;font-weight:700;color:var(--amber);letter-spacing:.15em;margin-bottom:8px;text-transform:uppercase}
+.payment-section-title{font-family:var(--font-serif);font-size:clamp(22px,3.5vw,28px);font-weight:700;color:var(--primary-dark);margin-bottom:12px;line-height:1.5}
+.payment-section-desc{font-size:15px;color:var(--text-light);line-height:2;margin-bottom:32px}
+.payment-section-divider{width:60px;height:3px;background:linear-gradient(90deg,var(--amber),var(--primary-light));border-radius:3px;margin-bottom:32px}
+.plan-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:32px}
+.plan-card{background:var(--white);border-radius:20px;padding:32px 24px;border:1px solid var(--border);text-align:center;transition:all .3s;box-shadow:0 2px 12px rgba(14,74,56,.04);position:relative;overflow:hidden}
+.plan-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--primary-light))}
+.plan-card:hover{box-shadow:0 12px 36px rgba(14,74,56,.1);transform:translateY(-4px)}
+.plan-icon{width:56px;height:56px;border-radius:50%;background:var(--green-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.plan-icon svg{width:26px;height:26px;fill:var(--primary)}
+.plan-number{font-size:11px;font-weight:800;color:var(--white);letter-spacing:.12em;margin-bottom:12px;background:var(--amber);display:inline-block;padding:3px 14px;border-radius:20px}
+.plan-card h4{font-size:16px;font-weight:700;color:var(--primary-dark);margin-bottom:10px;line-height:1.5}
 .plan-card p{font-size:14px;color:var(--text-light);line-height:1.8}
-.payment-note{font-size:14px;color:var(--text-muted);text-align:center;margin-bottom:16px;font-weight:500}
-.payment-supplement{font-size:14px;color:var(--text-light);line-height:2;margin-bottom:40px}
-.security-box{background:var(--green-pale);border-radius:16px;padding:24px 28px;margin-bottom:48px;border:1px solid var(--green-light)}
-.security-box h4{font-size:15px;font-weight:700;color:var(--primary);margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.security-box p{font-size:14px;color:var(--text-light);line-height:2}
-.system-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:32px}
-.system-card{background:var(--white);border-radius:16px;padding:24px 28px;border:1px solid var(--border);border-left:4px solid var(--amber);box-shadow:0 2px 8px rgba(14,74,56,.04)}
-.system-number{font-size:12px;font-weight:700;color:var(--amber);letter-spacing:.1em;margin-bottom:4px}
-.system-card h4{font-size:16px;font-weight:700;color:var(--primary-dark);margin-bottom:8px;line-height:1.5}
+.payment-note{font-size:13px;color:var(--text-muted);text-align:center;margin-bottom:12px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px}
+.payment-note::before{content:'';width:20px;height:1px;background:var(--border)}
+.payment-note::after{content:'';width:20px;height:1px;background:var(--border)}
+.payment-supplement{font-size:14px;color:var(--text-light);line-height:2;margin-bottom:40px;text-align:center}
+.security-box{background:linear-gradient(135deg,var(--green-pale) 0%,var(--green-light) 100%);border-radius:20px;padding:32px 36px;margin-bottom:56px;border:1px solid var(--green-mist);position:relative;overflow:hidden}
+.security-box::before{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:radial-gradient(circle,rgba(14,74,56,.04) 0%,transparent 70%);pointer-events:none}
+.security-box h4{font-size:16px;font-weight:700;color:var(--primary);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.security-box p{font-size:14px;color:var(--text-light);line-height:2.1}
+.system-section{background:var(--bg-alt);border-radius:24px;padding:48px 40px;margin-bottom:48px}
+.system-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-bottom:8px}
+.system-card{background:var(--white);border-radius:20px;padding:28px 32px;border:1px solid var(--border);box-shadow:0 2px 12px rgba(14,74,56,.04);display:flex;gap:20px;align-items:flex-start;transition:all .3s}
+.system-card:hover{box-shadow:0 8px 28px rgba(14,74,56,.08);transform:translateY(-2px)}
+.system-icon{width:52px;height:52px;min-width:52px;border-radius:14px;background:linear-gradient(135deg,var(--amber),var(--gold-light));display:flex;align-items:center;justify-content:center}
+.system-icon svg{width:24px;height:24px;fill:var(--white)}
+.system-card-body{flex:1}
+.system-number{font-size:11px;font-weight:800;color:var(--amber);letter-spacing:.12em;margin-bottom:4px}
+.system-card h4{font-size:17px;font-weight:700;color:var(--primary-dark);margin-bottom:8px;line-height:1.5}
 .system-card p{font-size:14px;color:var(--text-light);line-height:2}
-.procedure-table{width:100%;border-collapse:collapse;margin:32px 0;font-size:14px;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(14,74,56,.04)}
-.procedure-table th,.procedure-table td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--border)}
-.procedure-table th{background:var(--primary);color:var(--white);font-weight:600;font-size:13px}
-.procedure-table td{background:var(--white)}
+.procedure-table{width:100%;border-collapse:collapse;margin:12px 0 0;font-size:14px;border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(14,74,56,.06)}
+.procedure-table th,.procedure-table td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--border)}
+.procedure-table th{background:var(--primary);color:var(--white);font-weight:600;font-size:13px;letter-spacing:.03em}
+.procedure-table td{background:var(--white);font-weight:500}
 .procedure-table tr:hover td{background:var(--green-pale)}
-.payment-summary{background:var(--white);border-radius:16px;padding:28px 32px;border:1px solid var(--border);border-left:4px solid var(--primary);margin-top:40px;margin-bottom:16px}
-.payment-summary h3{font-size:17px;font-weight:700;color:var(--primary-dark);margin-bottom:12px}
-.payment-summary p{font-size:14px;color:var(--text-light);line-height:2}
+.procedure-table td:first-child{color:var(--primary-dark);font-weight:700}
+.payment-summary{background:var(--white);border-radius:20px;padding:32px 36px;border:1px solid var(--border);border-left:5px solid var(--primary);margin-top:40px;margin-bottom:20px;box-shadow:0 4px 16px rgba(14,74,56,.04)}
+.payment-summary h3{font-size:18px;font-weight:700;color:var(--primary-dark);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.payment-summary h3 svg{width:22px;height:22px;fill:var(--amber)}
+.payment-summary p{font-size:14px;color:var(--text-light);line-height:2.1}
 @media(max-width:768px){
   .page-hero{padding:60px 0 44px}
   .plan-grid{grid-template-columns:1fr}
-  .payment-lead{padding:20px}
-  .security-box{padding:20px}
-  .system-card{padding:20px}
-  .payment-summary{padding:20px}
-  .procedure-table{font-size:13px}
+  .payment-lead{padding:24px 20px}
+  .security-box{padding:24px 20px}
+  .system-section{padding:32px 20px}
+  .system-card{flex-direction:column;padding:24px 20px}
+  .payment-summary{padding:24px 20px}
+  .procedure-table{font-size:12px}
   .procedure-table th,.procedure-table td{padding:10px 12px}
 }
 </style>
@@ -122,31 +140,39 @@
   <div class="container">
     <div class="payment-content">
 
+      <div class="payment-date-badge">2026年 お知らせ</div>
+
       <div class="payment-lead">
         昨今、学習塾業界において授業料の支払い方法に関する報道が話題となっています。塾を選ぶ際、月謝や支払い方法についてご不安を感じているご家庭も多いのではないでしょうか。ガリレオでは、ご家庭のご事情やご要望に合わせて4つの支払い方法をご用意しており、クレジットカードによる毎月払いにも対応しています。クレジットカード毎月払いには、月謝払いに実績のあるロボットペイメント株式会社の「サブスクペイ」を採用し、安心・安全な決済環境を整えています。また、特定商取引法に基づくクーリングオフをはじめ、退塾時の返金制度も明確に定めています。
       </div>
 
       <!-- 4つの支払い方法 -->
+      <div class="payment-section-label">PAYMENT PLANS</div>
       <h2 class="payment-section-title">4つの柔軟な支払い方法</h2>
-      <p class="payment-supplement">ガリレオではご家庭の状況に応じてお選びいただける、以下の4つの支払い方法をご用意しています。</p>
+      <div class="payment-section-divider"></div>
+      <p class="payment-section-desc">ガリレオではご家庭の状況に応じてお選びいただける、以下の4つの支払い方法をご用意しています。</p>
 
       <div class="plan-grid">
         <div class="plan-card">
+          <div class="plan-icon"><svg viewBox="0 0 24 24"><path d="M21 18v1c0 1.1-.9 2-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14c1.1 0 2 .9 2 2v1h-9a2 2 0 00-2 2v8a2 2 0 002 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div>
           <div class="plan-number">PLAN 1</div>
           <h4>銀行口座へのご入金<br>（一括）</h4>
           <p>一括でまとめてお支払いいただく方法です。</p>
         </div>
         <div class="plan-card">
+          <div class="plan-icon"><svg viewBox="0 0 24 24"><path d="M21 18v1c0 1.1-.9 2-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14c1.1 0 2 .9 2 2v1h-9a2 2 0 00-2 2v8a2 2 0 002 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div>
           <div class="plan-number">PLAN 2</div>
           <h4>銀行口座へのご入金<br>（2回分割）</h4>
           <p>2回に分けてお支払いいただく方法です。</p>
         </div>
         <div class="plan-card">
+          <div class="plan-icon"><svg viewBox="0 0 24 24"><path d="M21 18v1c0 1.1-.9 2-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14c1.1 0 2 .9 2 2v1h-9a2 2 0 00-2 2v8a2 2 0 002 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div>
           <div class="plan-number">PLAN 3</div>
           <h4>銀行口座へのご入金<br>（3回分割）</h4>
           <p>3回に分けてお支払いいただく方法です。</p>
         </div>
         <div class="plan-card">
+          <div class="plan-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></div>
           <div class="plan-number">PLAN 4</div>
           <h4>クレジットカード払い<br>（毎月払い）</h4>
           <p>クレジットカードで毎月お支払いいただく方法です。月謝感覚でご利用いただけます。</p>
@@ -154,37 +180,52 @@
       </div>
 
       <p class="payment-note">ロボットペイメント「サブスクペイ」利用</p>
-      <p class="payment-supplement">いずれの方法でも、学習相談会の際に各プランの詳細を丁寧にご説明いたします。ご家庭のご事情に合った方法をお選びいただけます。</p>
+      <p class="payment-supplement">いずれの方法でも、学習相談会の際に各プランの詳細を丁寧にご説明いたします。<br>ご家庭のご事情に合った方法をお選びいただけます。</p>
 
       <div class="security-box">
-        <h4><svg style="width:18px;height:18px;fill:var(--primary)" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg> 決済セキュリティ</h4>
+        <h4><svg style="width:20px;height:20px;fill:var(--primary)" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg> 決済セキュリティ</h4>
         <p>クレジットカード毎月払い（PLAN 4）は、ロボットペイメント株式会社の「サブスクペイ」を利用しています。サブスクペイは月謝・月額課金に特化したサブスクリプション決済サービスで、2021年9月に東証グロース市場（旧・東証マザーズ）へ上場したロボットペイメント株式会社が提供する、多くの教育機関・学習塾に導入されている実績ある決済システムです。カード情報はガリレオには一切届かず、PCI DSS（クレジットカード業界のセキュリティ国際基準）に準拠したロボットペイメント社のシステムで安全に管理されます。安心してご利用いただけます。</p>
       </div>
 
       <!-- 安心の3つの制度 -->
-      <h2 class="payment-section-title">安心の3つの制度</h2>
-      <p class="payment-supplement">ガリレオでは、ご家庭に安心してお通いいただくために、以下の制度を明確に定めています。</p>
+      <div class="system-section">
+        <div class="payment-section-label">SAFETY SYSTEMS</div>
+        <h2 class="payment-section-title">安心の3つの制度</h2>
+        <div class="payment-section-divider"></div>
+        <p class="payment-section-desc">ガリレオでは、ご家庭に安心してお通いいただくために、以下の制度を明確に定めています。</p>
 
-      <div class="system-grid">
-        <div class="system-card">
-          <div class="system-number">制度 01</div>
-          <h4>クーリングオフ（8日以内・全額返金）</h4>
-          <p>特定商取引法に基づき、契約日から8日以内であればクーリングオフが適用されます。無条件で契約を解除でき、お支払い済みの授業料および諸費用は全額返金いたします。</p>
-        </div>
-        <div class="system-card">
-          <div class="system-number">制度 02</div>
-          <h4>コース変更（当月20日までの申告）</h4>
-          <p>当月20日までにお申し出いただければ、翌月よりコースを変更できます。21日以降のお申し出の場合は、翌々月からの適用となります。変更後のコースにより授業料が下がる場合は、契約満了時に一括精算いたします。</p>
-        </div>
-        <div class="system-card">
-          <div class="system-number">制度 03</div>
-          <h4>退塾（明確な手続き・返金対応）</h4>
-          <p>当月20日までに所定の手続きを完了すれば、当月末日をもって退塾が可能です。21日以降のお申し出の場合は、翌月末日が退塾日となります。すでにご納入いただいた翌月以降の指導料金は、退塾月翌月の10日までに保護者様ご指定の口座へ返金いたします。</p>
+        <div class="system-grid">
+          <div class="system-card">
+            <div class="system-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+            <div class="system-card-body">
+              <div class="system-number">制度 01</div>
+              <h4>クーリングオフ（8日以内・全額返金）</h4>
+              <p>特定商取引法に基づき、契約日から8日以内であればクーリングオフが適用されます。無条件で契約を解除でき、お支払い済みの授業料および諸費用は全額返金いたします。</p>
+            </div>
+          </div>
+          <div class="system-card">
+            <div class="system-icon"><svg viewBox="0 0 24 24"><path d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8A5.87 5.87 0 016 12c0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"/></svg></div>
+            <div class="system-card-body">
+              <div class="system-number">制度 02</div>
+              <h4>コース変更（当月20日までの申告）</h4>
+              <p>当月20日までにお申し出いただければ、翌月よりコースを変更できます。21日以降のお申し出の場合は、翌々月からの適用となります。変更後のコースにより授業料が下がる場合は、契約満了時に一括精算いたします。</p>
+            </div>
+          </div>
+          <div class="system-card">
+            <div class="system-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+            <div class="system-card-body">
+              <div class="system-number">制度 03</div>
+              <h4>退塾（明確な手続き・返金対応）</h4>
+              <p>当月20日までに所定の手続きを完了すれば、当月末日をもって退塾が可能です。21日以降のお申し出の場合は、翌月末日が退塾日となります。すでにご納入いただいた翌月以降の指導料金は、退塾月翌月の10日までに保護者様ご指定の口座へ返金いたします。</p>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- 手続き早見表 -->
+      <div class="payment-section-label">QUICK REFERENCE</div>
       <h2 class="payment-section-title">手続き早見表</h2>
+      <div class="payment-section-divider"></div>
       <table class="procedure-table">
         <thead>
           <tr><th>手続き</th><th>申告期限</th><th>適用タイミング</th></tr>
@@ -201,12 +242,12 @@
 
       <!-- まとめ -->
       <div class="payment-summary">
-        <h3>料金体系の透明性へのこだわり</h3>
+        <h3><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> 料金体系の透明性へのこだわり</h3>
         <p>塾選びは学習効果だけでなく、ご家庭の安心感も大切な要素です。ガリレオでは4つの支払い方法と明確な手続き規定を通じて、料金体系の透明性を大切にしています。クレジットカード毎月払いにはロボットペイメント株式会社の「サブスクペイ」を採用し、月謝感覚で安全にご利用いただける仕組みを整えています。学習相談会の際には、入塾金・授業料・支払いプランについて丁寧にご説明いたしますので、お気軽にお問い合わせください。</p>
       </div>
 
       <div class="payment-summary">
-        <h3>まとめ</h3>
+        <h3><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> まとめ</h3>
         <p>ガリレオでは「4つの柔軟な支払い方法」「ロボットペイメント社サブスクペイによる安全な月謝払い」「クーリングオフ対応」「明確な退塾・返金制度」により、ご家庭が安心して学習に集中できる環境を整えています。料金や支払い方法についてご不安をお感じの方は、ぜひ一度ガリレオの学習相談会をご利用ください。具体的な料金や各支払いプランの詳細について、担当者がわかりやすくご説明いたします。</p>
       </div>
 
