@@ -266,7 +266,7 @@ function sendThankYouToUser(params) {
     '理系の大学受験専門塾 ガリレオ',
     '代表 佐野 翼',
     'メール: galileogalilei.sciences@gmail.com',
-    'Instagram: 準備中',
+    'Instagram: https://www.instagram.com/galileo_sciences/',
     '公式サイト: https://galileo-sciences.com',
     '━━━━━━━━━━━━━━━━━━━━',
     '',
