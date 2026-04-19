@@ -16,7 +16,7 @@ var START_HOUR = 10;
 var END_HOUR = 22;
 var DAYS_AHEAD_DEFAULT = 14;
 var BRAND_NAME = 'ガリレオ';
-var SITE_URL = 'https://galileo-sciences.com';
+var SITE_URL = 'https://galileo-sciences.com/';
 
 // ===== GET: 空き枠一覧を返す =====
 function doGet(e) {
