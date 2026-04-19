@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>授業料のお支払い・退塾について | ガリレオ 理系の大学受験専門塾</title>
+<meta name="description" content="ガリレオの授業料お支払い方法・退塾規定のご案内。4つの柔軟な支払い方法、クーリングオフ対応、明確な退塾・返金制度をご用意しています。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.page-hero{background:linear-gradient(180deg,var(--bg) 0%,var(--green-pale) 50%,var(--green-light) 100%);padding:80px 0 56px;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:20px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(196,154,60,.06) 0%,transparent 70%);pointer-events:none}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:50px;background:linear-gradient(180deg,transparent,var(--bg));pointer-events:none}
+.page-hero .section-label{margin-bottom:8px;letter-spacing:.08em}
+.page-hero h1{font-family:var(--font-serif);font-size:clamp(28px,4.5vw,44px);font-weight:700;line-height:1.5;margin-bottom:14px}
+.page-hero p{font-size:15px;color:var(--text-light);max-width:600px;margin:0 auto;line-height:2}
+.breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:20px}
+.breadcrumb a{color:var(--primary);text-decoration:underline}
+.cta-section{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--white);text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:-40%;right:-15%;width:500px;height:500px;background:radial-gradient(circle,rgba(196,154,60,.08) 0%,transparent 70%);pointer-events:none}
+.cta-section .section-label{color:#D4A843}
+.cta-section .section-title{color:var(--white)}
+.cta-section .section-title::after{background:linear-gradient(90deg,#D4A843,rgba(255,255,255,.3))}
+.cta-section p{color:rgba(255,255,255,.75);font-size:15px;line-height:2;max-width:560px;margin:0 auto 28px}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--primary);font-weight:600;margin-bottom:20px}
+.back-link:hover{text-decoration:underline}
+.payment-content{max-width:800px;margin:0 auto}
+.payment-lead{font-size:15px;color:var(--text-light);line-height:2.2;margin-bottom:40px;background:var(--white);border-radius:16px;padding:28px 32px;border:1px solid var(--border);border-left:4px solid var(--primary)}
+.payment-section-title{font-family:var(--font-serif);font-size:clamp(20px,3vw,26px);font-weight:700;color:var(--primary-dark);margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--green-light)}
+.plan-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:32px}
+.plan-card{background:var(--white);border-radius:16px;padding:24px;border:1px solid var(--border);border-top:4px solid var(--primary-light);text-align:center;transition:all .3s;box-shadow:0 2px 8px rgba(14,74,56,.04)}
+.plan-card:hover{box-shadow:0 8px 28px rgba(14,74,56,.08);transform:translateY(-2px)}
+.plan-number{font-size:12px;font-weight:700;color:var(--amber);letter-spacing:.1em;margin-bottom:8px}
+.plan-card h4{font-size:16px;font-weight:700;color:var(--primary-dark);margin-bottom:8px;line-height:1.5}
+.plan-card p{font-size:14px;color:var(--text-light);line-height:1.8}
+.payment-note{font-size:14px;color:var(--text-muted);text-align:center;margin-bottom:16px;font-weight:500}
+.payment-supplement{font-size:14px;color:var(--text-light);line-height:2;margin-bottom:40px}
+.security-box{background:var(--green-pale);border-radius:16px;padding:24px 28px;margin-bottom:48px;border:1px solid var(--green-light)}
+.security-box h4{font-size:15px;font-weight:700;color:var(--primary);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.security-box p{font-size:14px;color:var(--text-light);line-height:2}
+.system-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:32px}
+.system-card{background:var(--white);border-radius:16px;padding:24px 28px;border:1px solid var(--border);border-left:4px solid var(--amber);box-shadow:0 2px 8px rgba(14,74,56,.04)}
+.system-number{font-size:12px;font-weight:700;color:var(--amber);letter-spacing:.1em;margin-bottom:4px}
+.system-card h4{font-size:16px;font-weight:700;color:var(--primary-dark);margin-bottom:8px;line-height:1.5}
+.system-card p{font-size:14px;color:var(--text-light);line-height:2}
+.procedure-table{width:100%;border-collapse:collapse;margin:32px 0;font-size:14px;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(14,74,56,.04)}
+.procedure-table th,.procedure-table td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--border)}
+.procedure-table th{background:var(--primary);color:var(--white);font-weight:600;font-size:13px}
+.procedure-table td{background:var(--white)}
+.procedure-table tr:hover td{background:var(--green-pale)}
+.payment-summary{background:var(--white);border-radius:16px;padding:28px 32px;border:1px solid var(--border);border-left:4px solid var(--primary);margin-top:40px;margin-bottom:16px}
+.payment-summary h3{font-size:17px;font-weight:700;color:var(--primary-dark);margin-bottom:12px}
+.payment-summary p{font-size:14px;color:var(--text-light);line-height:2}
+@media(max-width:768px){
+  .page-hero{padding:60px 0 44px}
+  .plan-grid{grid-template-columns:1fr}
+  .payment-lead{padding:20px}
+  .security-box{padding:20px}
+  .system-card{padding:20px}
+  .payment-summary{padding:20px}
+  .procedure-table{font-size:13px}
+  .procedure-table th,.procedure-table td{padding:10px 12px}
+}
+</style>
+</head>
+<body>
+<!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <span><svg style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;fill:currentColor" viewBox="0 0 24 24"><path d="M6 22v-2h2v-6L2 8V6h20v2l-6 6v6h2v2H6zm1.55-12h8.9l3-3H4.55l3 3zM10 20h4v-7.2l-2-2-2 2V20z"/></svg>理系受験専門塾 ガリレオ</span>
+    <span class="top-bar-sep">|</span>
+    <span><svg style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 7.13l.97 2.29.47 1.11 1.2.1 2.47.21-1.88 1.63-.91.79.27 1.18.56 2.41-2.12-1.28L12 14.78l-1.03.58-2.12 1.28.56-2.41.27-1.18-.91-.79-1.88-1.63 2.47-.21 1.2-.1.47-1.11L12 7.13M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"/></svg>東大・京大・東工大・医学部 合格実績</span>
+    <span class="top-bar-sep">|</span>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram @galileo_sciences</a>
+  </div>
+</div>
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">
+      <img src="../img/galileo-logo.png" alt="ガリレオ" class="logo-img">
+      <div class="logo-text">
+        <span class="logo-name">ガリレオ</span>
+        <span class="logo-sub">理系の大学受験専門塾 — Galileo Sciences</span>
+      </div>
+    </a>
+    <div class="header-right">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="header-instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>Instagram</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html#features">指導システム</a>
+    <a href="../index.html#courses">コース・料金</a>
+    <a href="mainichi-kadai.html">毎日課題システム</a>
+    <a href="../index.html#gallery">授業の様子</a>
+    <a href="voices.html">合格者の声</a>
+    <a href="../index.html#results">合格実績</a>
+    <a href="../index.html#flow">入塾の流れ</a>
+    <a href="../index.html#faq">FAQ</a>
+    <a href="../index.html#about">塾概要</a>
+    <a href="news.html">お知らせ</a>
+    <a href="../index.html#contact" class="nav-cta">▶ 学習相談会</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <a href="news.html" class="back-link">← お知らせ一覧へ戻る</a>
+    <div class="section-label">News &amp; Info</div>
+    <h1>授業料のお支払い・退塾について</h1>
+    <p>ガリレオでは、ご家庭のご事情に合わせた柔軟な支払い方法をご用意しています。また、クーリングオフ・コース変更・退塾時の手続きについても明確に定めています。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="payment-content">
+
+      <div class="payment-lead">
+        昨今、学習塾業界において授業料の支払い方法に関する報道が話題となっています。塾を選ぶ際、月謝や支払い方法についてご不安を感じているご家庭も多いのではないでしょうか。ガリレオでは、ご家庭のご事情やご要望に合わせて4つの支払い方法をご用意しており、クレジットカードによる毎月払いにも対応しています。クレジットカード毎月払いには、月謝払いに実績のあるロボットペイメント株式会社の「サブスクペイ」を採用し、安心・安全な決済環境を整えています。また、特定商取引法に基づくクーリングオフをはじめ、退塾時の返金制度も明確に定めています。
+      </div>
+
+      <!-- 4つの支払い方法 -->
+      <h2 class="payment-section-title">4つの柔軟な支払い方法</h2>
+      <p class="payment-supplement">ガリレオではご家庭の状況に応じてお選びいただける、以下の4つの支払い方法をご用意しています。</p>
+
+      <div class="plan-grid">
+        <div class="plan-card">
+          <div class="plan-number">PLAN 1</div>
+          <h4>銀行口座へのご入金<br>（一括）</h4>
+          <p>一括でまとめてお支払いいただく方法です。</p>
+        </div>
+        <div class="plan-card">
+          <div class="plan-number">PLAN 2</div>
+          <h4>銀行口座へのご入金<br>（2回分割）</h4>
+          <p>2回に分けてお支払いいただく方法です。</p>
+        </div>
+        <div class="plan-card">
+          <div class="plan-number">PLAN 3</div>
+          <h4>銀行口座へのご入金<br>（3回分割）</h4>
+          <p>3回に分けてお支払いいただく方法です。</p>
+        </div>
+        <div class="plan-card">
+          <div class="plan-number">PLAN 4</div>
+          <h4>クレジットカード払い<br>（毎月払い）</h4>
+          <p>クレジットカードで毎月お支払いいただく方法です。月謝感覚でご利用いただけます。</p>
+        </div>
+      </div>
+
+      <p class="payment-note">ロボットペイメント「サブスクペイ」利用</p>
+      <p class="payment-supplement">いずれの方法でも、学習相談会の際に各プランの詳細を丁寧にご説明いたします。ご家庭のご事情に合った方法をお選びいただけます。</p>
+
+      <div class="security-box">
+        <h4><svg style="width:18px;height:18px;fill:var(--primary)" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg> 決済セキュリティ</h4>
+        <p>クレジットカード毎月払い（PLAN 4）は、ロボットペイメント株式会社の「サブスクペイ」を利用しています。サブスクペイは月謝・月額課金に特化したサブスクリプション決済サービスで、2021年9月に東証グロース市場（旧・東証マザーズ）へ上場したロボットペイメント株式会社が提供する、多くの教育機関・学習塾に導入されている実績ある決済システムです。カード情報はガリレオには一切届かず、PCI DSS（クレジットカード業界のセキュリティ国際基準）に準拠したロボットペイメント社のシステムで安全に管理されます。安心してご利用いただけます。</p>
+      </div>
+
+      <!-- 安心の3つの制度 -->
+      <h2 class="payment-section-title">安心の3つの制度</h2>
+      <p class="payment-supplement">ガリレオでは、ご家庭に安心してお通いいただくために、以下の制度を明確に定めています。</p>
+
+      <div class="system-grid">
+        <div class="system-card">
+          <div class="system-number">制度 01</div>
+          <h4>クーリングオフ（8日以内・全額返金）</h4>
+          <p>特定商取引法に基づき、契約日から8日以内であればクーリングオフが適用されます。無条件で契約を解除でき、お支払い済みの授業料および諸費用は全額返金いたします。</p>
+        </div>
+        <div class="system-card">
+          <div class="system-number">制度 02</div>
+          <h4>コース変更（当月20日までの申告）</h4>
+          <p>当月20日までにお申し出いただければ、翌月よりコースを変更できます。21日以降のお申し出の場合は、翌々月からの適用となります。変更後のコースにより授業料が下がる場合は、契約満了時に一括精算いたします。</p>
+        </div>
+        <div class="system-card">
+          <div class="system-number">制度 03</div>
+          <h4>退塾（明確な手続き・返金対応）</h4>
+          <p>当月20日までに所定の手続きを完了すれば、当月末日をもって退塾が可能です。21日以降のお申し出の場合は、翌月末日が退塾日となります。すでにご納入いただいた翌月以降の指導料金は、退塾月翌月の10日までに保護者様ご指定の口座へ返金いたします。</p>
+        </div>
+      </div>
+
+      <!-- 手続き早見表 -->
+      <h2 class="payment-section-title">手続き早見表</h2>
+      <table class="procedure-table">
+        <thead>
+          <tr><th>手続き</th><th>申告期限</th><th>適用タイミング</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>クーリングオフ</td><td>契約日から8日以内</td><td>無条件で解除・全額返金</td></tr>
+          <tr><td>コース変更</td><td>当月20日まで</td><td>翌月より適用</td></tr>
+          <tr><td>コース変更</td><td>当月21日以降</td><td>翌々月より適用</td></tr>
+          <tr><td>退塾</td><td>当月20日まで</td><td>当月末日をもって退塾</td></tr>
+          <tr><td>退塾</td><td>当月21日以降</td><td>翌月末日をもって退塾</td></tr>
+          <tr><td>退塾時の返金</td><td>-</td><td>退塾月翌月10日までに指定口座へ返金</td></tr>
+        </tbody>
+      </table>
+
+      <!-- まとめ -->
+      <div class="payment-summary">
+        <h3>料金体系の透明性へのこだわり</h3>
+        <p>塾選びは学習効果だけでなく、ご家庭の安心感も大切な要素です。ガリレオでは4つの支払い方法と明確な手続き規定を通じて、料金体系の透明性を大切にしています。クレジットカード毎月払いにはロボットペイメント株式会社の「サブスクペイ」を採用し、月謝感覚で安全にご利用いただける仕組みを整えています。学習相談会の際には、入塾金・授業料・支払いプランについて丁寧にご説明いたしますので、お気軽にお問い合わせください。</p>
+      </div>
+
+      <div class="payment-summary">
+        <h3>まとめ</h3>
+        <p>ガリレオでは「4つの柔軟な支払い方法」「ロボットペイメント社サブスクペイによる安全な月謝払い」「クーリングオフ対応」「明確な退塾・返金制度」により、ご家庭が安心して学習に集中できる環境を整えています。料金や支払い方法についてご不安をお感じの方は、ぜひ一度ガリレオの学習相談会をご利用ください。具体的な料金や各支払いプランの詳細について、担当者がわかりやすくご説明いたします。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section cta-section">
+  <div class="container">
+    <div class="section-label">CONTACT</div>
+    <h2 class="section-title">料金・お支払い方法について、<br>まずは学習相談会でご確認ください</h2>
+    <p>4つの支払いプランの詳細・入塾金・コース内容など、担当者が丁寧にご説明します。オンライン対応・全国どこからでも参加可能です。</p>
+    <a href="../index.html#contact" class="btn btn-primary">無料学習相談を予約する →</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">
+      <div class="logo">
+        <img src="../img/galileo-logo.png" alt="ガリレオ" class="logo-img">
+        <div class="logo-text"><span class="logo-name">ガリレオ</span></div>
+      </div>
+      <p>Galileo Sciences — 理系の大学受験専門塾</p>
+    </div>
+    <div class="footer-links">
+      <ul><li><a href="../index.html#features">塾の特長</a></li><li><a href="../index.html#courses">コース・料金</a></li><li><a href="daigaku-juken-junbi.html">大学受験準備コース</a></li><li><a href="goukaku-senryaku.html">合格戦略プログラム</a></li><li><a href="goukaku-senryaku-support.html">合格戦略サポート</a></li></ul>
+      <ul><li><a href="../index.html#results">合格実績</a></li><li><a href="../index.html#flow">入塾の流れ</a></li><li><a href="../index.html#faq">FAQ</a></li><li><a href="news.html">お知らせ</a></li><li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li><li><a href="../index.html#about">塾概要</a></li><li><a href="../index.html#contact">お問い合わせ</a></li></ul>
+    </div>
+    <div class="footer-bottom">© 2025 ガリレオ 理系の大学受験専門塾. All Rights Reserved.</div>
+  </div>
+</footer>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('header').classList.toggle('scrolled',scrollY>10)});
+document.getElementById('hamburger').addEventListener('click',()=>{document.getElementById('nav').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open')});
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('nav').classList.remove('open');document.getElementById('hamburger').classList.remove('open')}));
+</script>
+</body>
+</html>
