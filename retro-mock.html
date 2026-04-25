@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大川戸釣り堀 | 栃木県益子町</title>
+<meta name="description" content="栃木県益子町の大川戸釣り堀。自然豊かな環境でニジマス釣りが楽しめます。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;700;800&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail" data-bg-color="#f2e6ce">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <!-- Sky -->
+    <rect width="1200" height="800" fill="#f2e6ce"/>
+    <!-- Border frame -->
+    <rect x="20" y="20" width="1160" height="760" fill="none" stroke="#3d2e1a" stroke-width="6"/>
+    <rect x="32" y="32" width="1136" height="736" fill="none" stroke="#3d2e1a" stroke-width="2"/>
+    <!-- Sky bg -->
+    <rect x="24" y="24" width="1152" height="752" fill="#e8f0d0"/>
+    <!-- Sun -->
+    <circle cx="600" cy="180" r="80" fill="#f0c050"/>
+    <!-- Mountains -->
+    <polygon points="0,500 250,200 500,500" fill="#3a5228" opacity="0.8"/>
+    <polygon points="200,500 500,150 800,500" fill="#243018"/>
+    <polygon points="700,500 950,180 1200,500" fill="#3a5228" opacity="0.8"/>
+    <!-- Water -->
+    <rect x="24" y="500" width="1152" height="276" fill="#4878a0"/>
+    <!-- Title box -->
+    <rect x="350" y="300" width="500" height="220" fill="rgba(242,230,206,0.95)" stroke="#3d2e1a" stroke-width="4"/>
+    <text x="600" y="390" text-anchor="middle" font-size="72" fill="#3d2e1a" font-family="serif" font-weight="900">大川戸</text>
+    <text x="600" y="470" text-anchor="middle" font-size="72" fill="#3d2e1a" font-family="serif" font-weight="900">釣り堀</text>
+    <!-- Stamp tags -->
+    <rect x="320" y="540" width="160" height="30" fill="#3d2e1a"/>
+    <rect x="490" y="540" width="160" height="30" fill="#c84c1c"/>
+    <rect x="660" y="540" width="160" height="30" fill="#3d2e1a"/>
+  </svg>
+</template>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --paper:   #f2e6ce;
+  --cream:   #f9f2e3;
+  --ink:     #2e2010;
+  --brown:   #3d2e1a;
+  --mid:     #6b4a28;
+  --orange:  #c84c1c;
+  --vermil:  #d43818;
+  --olive:   #5c6830;
+  --forest:  #3a5228;
+  --dark-g:  #243018;
+  --water:   #4878a0;
+  --sky:     #8ab8d0;
+  --sand:    #c8a870;
+  --stamp-r: #a82010;
+}
+
+body {
+  background: var(--paper);
+  color: var(--brown);
+  font-family: 'Noto Sans JP', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: var(--brown);
+  padding: 0 40px;
+  height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 3px solid var(--orange);
+}
+.nav-logo {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.1rem; font-weight: 800;
+  color: var(--paper);
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  font-size: 0.72rem; letter-spacing: 0.15em;
+  color: rgba(242,230,206,0.65);
+  text-decoration: none; transition: color 0.2s;
+  font-family: 'Noto Sans JP'; font-weight: 400;
+}
+.nav-links a:hover { color: var(--paper); }
+.nav-tel {
+  font-size: 0.8rem; color: var(--sand);
+  letter-spacing: 0.08em; font-weight: 500;
+}
+.nav-menu-btn {
+  display: none; background: none; border: none;
+  color: var(--paper); font-size: 1.4rem; cursor: pointer;
+}
+
+/* ─── HERO ─── */
+#hero {
+  min-height: 100vh;
+  padding-top: 56px;
+  position: relative;
+  overflow: hidden;
+  background: var(--paper);
+  display: flex; flex-direction: column;
+}
+
+/* Outer frame lines */
+.hero-frame {
+  position: absolute; inset: 72px 32px 32px;
+  border: 3px solid var(--brown);
+  pointer-events: none; z-index: 10;
+}
+.hero-frame::before {
+  content: ''; position: absolute; inset: 8px;
+  border: 1px solid rgba(61,46,26,0.4);
+}
+/* Corner ornaments */
+.hero-frame::after {
+  content: '◆';
+  position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%);
+  color: var(--brown); background: var(--paper); padding: 0 8px;
+  font-size: 0.8rem;
+}
+
+/* Sky */
+.hero-sky {
+  position: absolute; top: 56px; left: 0; right: 0;
+  height: 52%;
+  background: linear-gradient(180deg, #c0d8e8 0%, #d8eaf0 50%, #eef4e8 100%);
+}
+
+/* Sun */
+.hero-sun {
+  position: absolute;
+  width: 110px; height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f0c050 30%, #d46030 100%);
+  box-shadow: 0 0 0 20px rgba(240,192,80,0.15), 0 0 0 40px rgba(240,192,80,0.07);
+  top: calc(56px + 8%); left: 50%; transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* Mountains */
+.hero-mountains {
+  position: absolute;
+  width: 100%; z-index: 3;
+  top: calc(56px + 36%);
+}
+
+/* Forest band */
+.hero-forest {
+  position: absolute;
+  left: 0; right: 0; z-index: 4;
+  top: calc(56px + 52%);
+  height: 100px;
+  background: linear-gradient(180deg, #3a5228 0%, #243018 100%);
+}
+.hero-forest-top {
+  position: absolute; top: -30px; left: 0; right: 0;
+}
+
+/* Water */
+.hero-water {
+  position: absolute;
+  left: 0; right: 0; bottom: 0; z-index: 5;
+  height: 28%;
+  background: linear-gradient(180deg, #4878a0 0%, #2a5878 100%);
+}
+.hero-water-lines {
+  position: absolute; top: 0; left: 0; right: 0;
+}
+
+/* Title block */
+.hero-title-block {
+  position: absolute;
+  top: 50%; left: 50%; transform: translate(-50%, -44%);
+  z-index: 8; text-align: center;
+}
+.hero-title-inner {
+  background: rgba(242,230,206,0.94);
+  border: 3px solid var(--brown);
+  padding: 20px 48px 16px;
+  position: relative;
+}
+.hero-title-inner::before {
+  content: ''; position: absolute;
+  inset: 6px; border: 1px solid rgba(61,46,26,0.3);
+  pointer-events: none;
+}
+.hero-label-top {
+  font-size: 0.7rem; letter-spacing: 0.35em;
+  color: var(--orange); font-family: 'Noto Sans JP';
+  margin-bottom: 6px; font-weight: 500;
+}
+.hero-title-jp {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(4rem, 10vw, 7rem);
+  font-weight: 800;
+  color: var(--brown);
+  line-height: 1.0;
+  letter-spacing: 0.08em;
+}
+.hero-subtitle {
+  margin-top: 8px;
+  font-size: 0.78rem; letter-spacing: 0.2em;
+  color: var(--mid); font-family: 'Noto Sans JP';
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.hero-subtitle::before, .hero-subtitle::after {
+  content: ''; display: block; width: 30px; height: 1px; background: var(--mid);
+}
+
+/* Stamp tags */
+.hero-stamps {
+  position: absolute; bottom: calc(28% + 24px); left: 0; right: 0;
+  z-index: 9; display: flex; justify-content: center; gap: 3px;
+  flex-wrap: wrap; padding: 0 20px;
+}
+.stamp {
+  padding: 6px 16px;
+  font-size: 0.72rem; letter-spacing: 0.12em;
+  font-family: 'Noto Sans JP'; font-weight: 500;
+}
+.stamp-dark { background: var(--brown); color: var(--paper); }
+.stamp-orange { background: var(--orange); color: var(--paper); }
+
+/* Fish in water */
+.hero-fish {
+  position: absolute; z-index: 6;
+}
+
+/* Scroll indicator */
+.hero-scroll {
+  position: absolute; bottom: calc(28% - 50px); left: 50%;
+  transform: translateX(-50%); z-index: 9;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  font-size: 0.6rem; letter-spacing: 0.25em;
+  color: rgba(255,255,255,0.6); font-family: 'Noto Sans JP';
+}
+.hero-scroll-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  animation: dot-bounce 1.8s ease infinite;
+}
+@keyframes dot-bounce {
+  0%,100% { transform: translateY(0); opacity: 0.4; }
+  50%      { transform: translateY(-6px); opacity: 1; }
+}
+
+/* ─── SECTION BASE ─── */
+.section { padding: 80px 40px; position: relative; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+
+.retro-heading {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800; color: var(--brown);
+  letter-spacing: 0.06em; line-height: 1.2;
+}
+.retro-label {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 0.68rem; letter-spacing: 0.3em;
+  color: var(--orange); font-family: 'Noto Sans JP';
+  margin-bottom: 14px; font-weight: 500;
+}
+.retro-label::before, .retro-label::after {
+  content: ''; display: block; width: 20px; height: 1px; background: var(--orange);
+}
+.retro-body {
+  font-size: 0.9rem; line-height: 2.2;
+  color: var(--mid); font-weight: 300;
+  font-family: 'Noto Sans JP';
+}
+
+/* ─── DIVIDER ─── */
+.retro-divider {
+  display: flex; align-items: center; gap: 16px;
+  margin: 0; color: var(--brown);
+}
+.retro-divider::before, .retro-divider::after {
+  content: ''; flex: 1; height: 2px; background: var(--brown);
+}
+.retro-divider span {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1rem; letter-spacing: 0.2em;
+}
+
+/* ─── ABOUT ─── */
+#about { background: var(--cream); }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: center;
+}
+.about-illus {
+  position: relative;
+  border: 3px solid var(--brown);
+  background: var(--paper);
+  padding: 24px;
+  min-height: 380px;
+  display: flex; align-items: center; justify-content: center;
+}
+.about-illus::before {
+  content: ''; position: absolute; inset: 8px;
+  border: 1px solid rgba(61,46,26,0.25);
+  pointer-events: none;
+}
+.about-illus-label {
+  position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+  font-size: 0.68rem; letter-spacing: 0.2em;
+  color: var(--mid); font-family: 'Noto Sans JP';
+  white-space: nowrap;
+}
+.about-facts {
+  margin-top: 32px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 2px solid var(--brown);
+}
+.fact-item {
+  padding: 16px 20px;
+  border-right: 1px solid rgba(61,46,26,0.2);
+  border-bottom: 1px solid rgba(61,46,26,0.2);
+}
+.fact-item:nth-child(2n) { border-right: none; }
+.fact-item:nth-last-child(-n+2) { border-bottom: none; }
+.fact-label {
+  font-size: 0.65rem; letter-spacing: 0.2em;
+  color: var(--orange); font-family: 'Noto Sans JP';
+  margin-bottom: 4px;
+}
+.fact-value {
+  font-size: 0.95rem; color: var(--brown);
+  font-weight: 700; font-family: 'Shippori Mincho', serif;
+}
+
+/* ─── PRICING ─── */
+#pricing { background: var(--brown); }
+#pricing .retro-heading { color: var(--paper); }
+#pricing .retro-label { color: var(--sand); }
+#pricing .retro-label::before, #pricing .retro-label::after { background: var(--sand); }
+#pricing .retro-divider { color: rgba(242,230,206,0.3); }
+#pricing .retro-divider::before, #pricing .retro-divider::after { background: rgba(242,230,206,0.3); }
+
+.pricing-grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: rgba(242,230,206,0.12);
+  border: 2px solid rgba(242,230,206,0.2);
+}
+.price-card {
+  background: rgba(242,230,206,0.04);
+  padding: 40px 32px;
+  position: relative;
+  transition: background 0.25s;
+}
+.price-card:hover { background: rgba(242,230,206,0.08); }
+.price-card + .price-card { border-left: 1px solid rgba(242,230,206,0.1); }
+.price-card-corner {
+  position: absolute; top: 16px; right: 16px;
+  width: 32px; height: 32px;
+  border-top: 2px solid rgba(242,230,206,0.2);
+  border-right: 2px solid rgba(242,230,206,0.2);
+}
+.price-card-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  background: var(--orange);
+  font-size: 0.62rem; letter-spacing: 0.2em;
+  color: var(--paper); font-family: 'Noto Sans JP';
+  margin-bottom: 20px;
+}
+.price-card-name {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.6rem; font-weight: 700;
+  color: var(--paper); line-height: 1.3;
+  margin-bottom: 20px;
+}
+.price-amount {
+  font-size: 2.8rem; font-weight: 300;
+  color: var(--sand); letter-spacing: -0.02em;
+  line-height: 1;
+}
+.price-amount sub {
+  font-size: 1rem; color: rgba(200,168,112,0.7);
+  vertical-align: baseline; font-weight: 400;
+}
+.price-card-note {
+  margin-top: 20px;
+  font-size: 0.78rem; line-height: 2;
+  color: rgba(242,230,206,0.5); font-family: 'Noto Sans JP';
+  font-weight: 300;
+}
+.price-card-hr { height: 1px; background: rgba(242,230,206,0.12); margin: 20px 0; }
+
+/* ─── EXPERIENCE ─── */
+#experience { background: var(--paper); }
+.steps-grid {
+  margin-top: 48px;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 2px solid var(--brown);
+}
+.step-item {
+  padding: 36px 28px;
+  border-right: 1px solid rgba(61,46,26,0.15);
+  position: relative;
+  transition: background 0.2s;
+}
+.step-item:last-child { border-right: none; }
+.step-item:hover { background: rgba(200,168,112,0.08); }
+.step-arrow {
+  position: absolute; right: -14px; top: 50%; transform: translateY(-50%);
+  width: 28px; height: 28px;
+  background: var(--brown); color: var(--paper);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; z-index: 2; border-radius: 50%;
+}
+.step-item:last-child .step-arrow { display: none; }
+.step-num-box {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 20px;
+}
+.step-num {
+  width: 36px; height: 36px; background: var(--brown);
+  color: var(--paper); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1rem; font-weight: 700; flex-shrink: 0;
+}
+.step-title {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.05rem; font-weight: 700;
+  color: var(--brown);
+}
+.step-desc {
+  font-size: 0.78rem; line-height: 2;
+  color: var(--mid); font-family: 'Noto Sans JP'; font-weight: 300;
+}
+.step-icon {
+  margin-bottom: 16px; opacity: 0.6;
+}
+
+/* ─── ACCESS ─── */
+#access { background: var(--cream); }
+.access-grid {
+  display: grid; grid-template-columns: 1.1fr 1fr;
+  gap: 48px; align-items: start;
+}
+.access-map-wrap {
+  border: 3px solid var(--brown);
+  overflow: hidden;
+  position: relative;
+}
+.access-map-wrap iframe {
+  display: block; width: 100%; height: 360px; border: none;
+  filter: sepia(25%) contrast(1.05);
+}
+.access-map-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: var(--brown); color: var(--paper);
+  text-align: center; padding: 8px;
+  font-size: 0.7rem; letter-spacing: 0.2em;
+  font-family: 'Noto Sans JP';
+}
+.access-rows { margin-top: 8px; }
+.access-row {
+  display: grid; grid-template-columns: 80px 1fr;
+  gap: 12px; padding: 14px 0;
+  border-bottom: 1px solid rgba(61,46,26,0.12);
+  align-items: baseline;
+}
+.access-row:first-child { border-top: 2px solid var(--brown); }
+.access-row-label {
+  font-size: 0.65rem; letter-spacing: 0.2em;
+  color: var(--orange); font-family: 'Noto Sans JP';
+}
+.access-row-val {
+  font-size: 0.88rem; color: var(--brown);
+  font-weight: 500; font-family: 'Noto Sans JP';
+  line-height: 1.8;
+}
+.access-row-val a { color: var(--water); text-decoration: none; }
+.tel-big {
+  margin-top: 24px;
+  background: var(--brown); color: var(--paper);
+  padding: 16px 24px;
+  display: flex; align-items: center; gap: 16px;
+  border: none; width: 100%; cursor: pointer;
+  font-family: 'Shippori Mincho', serif;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.tel-big:hover { background: var(--orange); }
+.tel-big-label {
+  font-size: 0.68rem; letter-spacing: 0.2em;
+  color: rgba(242,230,206,0.6); font-family: 'Noto Sans JP';
+  display: block;
+}
+.tel-big-num {
+  font-size: 1.4rem; color: var(--paper);
+  letter-spacing: 0.08em; font-weight: 700;
+}
+
+/* ─── INSTAGRAM ─── */
+#instagram { background: var(--brown); text-align: center; }
+#instagram .retro-heading { color: var(--paper); }
+#instagram .retro-label { color: var(--sand); }
+#instagram .retro-label::before,
+#instagram .retro-label::after { background: var(--sand); }
+
+.ig-box {
+  margin: 48px auto 0; max-width: 620px;
+  border: 3px solid rgba(242,230,206,0.25);
+  padding: 56px 40px;
+  position: relative;
+}
+.ig-box::before {
+  content: ''; position: absolute; inset: 8px;
+  border: 1px solid rgba(242,230,206,0.1); pointer-events: none;
+}
+.ig-icon-ring {
+  width: 72px; height: 72px; border-radius: 20px;
+  border: 2px solid rgba(242,230,206,0.35);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 24px;
+}
+.ig-coming {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.8rem; font-weight: 700;
+  color: var(--paper); letter-spacing: 0.15em;
+  margin-bottom: 12px;
+}
+.ig-handle {
+  font-size: 0.8rem; letter-spacing: 0.15em;
+  color: rgba(200,168,112,0.6); font-family: 'Noto Sans JP';
+  margin-bottom: 32px;
+}
+.ig-btn {
+  display: inline-block;
+  padding: 12px 36px;
+  border: 1px solid rgba(242,230,206,0.3);
+  color: rgba(242,230,206,0.6);
+  font-size: 0.75rem; letter-spacing: 0.2em;
+  font-family: 'Noto Sans JP'; cursor: pointer;
+  background: none;
+  transition: all 0.25s;
+}
+.ig-btn:hover {
+  background: rgba(242,230,206,0.08);
+  color: var(--paper); border-color: rgba(242,230,206,0.5);
+}
+.ig-notify-form {
+  display: none; margin-top: 24px; gap: 8px;
+  flex-direction: column; align-items: center;
+}
+.ig-notify-form.open { display: flex; }
+.ig-input {
+  background: rgba(242,230,206,0.08);
+  border: 1px solid rgba(242,230,206,0.25);
+  color: var(--paper); padding: 10px 20px;
+  font-size: 0.82rem; font-family: 'Noto Sans JP';
+  width: 280px; outline: none; letter-spacing: 0.05em;
+}
+.ig-input::placeholder { color: rgba(242,230,206,0.3); }
+.ig-submit {
+  padding: 10px 28px;
+  background: var(--orange); color: var(--paper);
+  border: none; font-size: 0.78rem;
+  letter-spacing: 0.15em; font-family: 'Noto Sans JP';
+  cursor: pointer; transition: background 0.2s;
+}
+.ig-submit:hover { background: var(--vermil); }
+.ig-thanks { color: var(--sand); font-size: 0.8rem; letter-spacing: 0.1em; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--ink); padding: 48px 40px 28px;
+}
+.footer-inner {
+  max-width: 1100px; margin: 0 auto;
+}
+.footer-top {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(242,230,206,0.1);
+  margin-bottom: 24px;
+  flex-wrap: wrap; gap: 24px;
+}
+.footer-logo {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.4rem; font-weight: 800;
+  color: var(--paper); letter-spacing: 0.1em;
+}
+.footer-logo-sub {
+  font-size: 0.68rem; color: rgba(242,230,206,0.35);
+  letter-spacing: 0.2em; margin-top: 4px;
+  font-family: 'Noto Sans JP';
+}
+.footer-links {
+  display: flex; gap: 28px; list-style: none; flex-wrap: wrap;
+}
+.footer-links a {
+  font-size: 0.72rem; color: rgba(242,230,206,0.4);
+  text-decoration: none; letter-spacing: 0.1em;
+  transition: color 0.2s; font-family: 'Noto Sans JP';
+}
+.footer-links a:hover { color: var(--paper); }
+.footer-copy {
+  font-size: 0.65rem; color: rgba(242,230,206,0.2);
+  letter-spacing: 0.12em; font-family: 'Noto Sans JP';
+}
+
+/* ─── SCROLL REVEAL ─── */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.42s; }
+
+/* ─── MOBILE NAV ─── */
+.mobile-nav {
+  display: none; position: fixed; inset: 0; z-index: 199;
+  background: var(--brown); flex-direction: column;
+  align-items: center; justify-content: center; gap: 36px;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.6rem; color: var(--paper);
+  text-decoration: none; letter-spacing: 0.12em;
+  font-weight: 700;
+}
+.mobile-nav-close {
+  position: absolute; top: 20px; right: 24px;
+  background: none; border: none; color: var(--paper);
+  font-size: 1.6rem; cursor: pointer;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .about-grid, .access-grid { grid-template-columns: 1fr; gap: 32px; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .price-card + .price-card { border-left: none; border-top: 1px solid rgba(242,230,206,0.1); }
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+  .step-item:nth-child(2) { border-right: none; }
+  .step-item { border-bottom: 1px solid rgba(61,46,26,0.12); }
+  .step-arrow { display: none; }
+  .nav-links { display: none; }
+  .nav-tel { display: none; }
+  .nav-menu-btn { display: block; }
+}
+@media (max-width: 600px) {
+  .section { padding: 56px 20px; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .hero-title-jp { font-size: 3.5rem; }
+  .hero-title-inner { padding: 16px 28px 12px; }
+  nav { padding: 0 20px; }
+  .hero-stamps { gap: 2px; }
+  .stamp { padding: 5px 10px; font-size: 0.65rem; }
+  .about-facts { grid-template-columns: 1fr; }
+  .fact-item:nth-child(2n) { border-right: 1px solid rgba(61,46,26,0.2); }
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileNavClose">✕</button>
+  <a href="#about" onclick="closeMobileNav()">釣り堀について</a>
+  <a href="#pricing" onclick="closeMobileNav()">ご料金</a>
+  <a href="#experience" onclick="closeMobileNav()">楽しみ方</a>
+  <a href="#access" onclick="closeMobileNav()">アクセス</a>
+  <a href="#instagram" onclick="closeMobileNav()">Instagram</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">大川戸釣り堀</a>
+  <ul class="nav-links">
+    <li><a href="#about">釣り堀について</a></li>
+    <li><a href="#pricing">ご料金</a></li>
+    <li><a href="#experience">楽しみ方</a></li>
+    <li><a href="#access">アクセス</a></li>
+    <li><a href="#instagram">Instagram</a></li>
+  </ul>
+  <div class="nav-tel">☎ 0285-72-2771</div>
+  <button class="nav-menu-btn" id="navMenuBtn">☰</button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-frame"></div>
+
+  <!-- Sky -->
+  <div class="hero-sky"></div>
+
+  <!-- Sun -->
+  <div class="hero-sun"></div>
+
+  <!-- Mountains SVG -->
+  <div class="hero-mountains">
+    <svg viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%">
+      <polygon points="0,320 220,80 440,320" fill="#3a5228" opacity="0.5"/>
+      <polygon points="160,320 420,30 680,320" fill="#3a5228" opacity="0.75"/>
+      <polygon points="420,320 660,55 900,320" fill="#243018" opacity="0.9"/>
+      <polygon points="700,320 940,40 1180,320" fill="#3a5228" opacity="0.75"/>
+      <polygon points="1000,320 1220,85 1440,320" fill="#243018" opacity="0.65"/>
+      <polygon points="1200,320 1380,120 1440,320" fill="#3a5228" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <!-- Forest band -->
+  <div class="hero-forest">
+    <svg class="hero-forest-top" viewBox="0 0 1440 50" fill="none" preserveAspectRatio="none" style="display:block;width:100%;margin-top:-1px">
+      <!-- Tree silhouettes along top of forest band -->
+      <rect x="40" y="2" width="8" height="30" fill="#3a5228"/>
+      <polygon points="44,-18 28,12 60,12" fill="#243018"/>
+      <polygon points="44,-30 26,4 62,4" fill="#3a5228"/>
+      <rect x="120" y="5" width="7" height="28" fill="#243018"/>
+      <polygon points="123.5,-12 109,12 138,12" fill="#3a5228"/>
+      <rect x="220" y="0" width="9" height="32" fill="#3a5228"/>
+      <polygon points="224.5,-20 207,8 242,8" fill="#243018"/>
+      <polygon points="224.5,-32 205,2 244,2" fill="#3a5228"/>
+      <rect x="380" y="3" width="8" height="28" fill="#243018"/>
+      <polygon points="384,-15 369,8 399,8" fill="#3a5228"/>
+      <rect x="520" y="0" width="9" height="32" fill="#3a5228"/>
+      <polygon points="524.5,-22 507,8 542,8" fill="#243018"/>
+      <rect x="680" y="4" width="7" height="26" fill="#243018"/>
+      <polygon points="683.5,-14 669,10 698,10" fill="#3a5228"/>
+      <rect x="820" y="1" width="9" height="30" fill="#3a5228"/>
+      <polygon points="824.5,-18 808,8 841,8" fill="#243018"/>
+      <rect x="980" y="3" width="8" height="28" fill="#243018"/>
+      <polygon points="984,-14 969,8 999,8" fill="#3a5228"/>
+      <rect x="1100" y="0" width="9" height="32" fill="#3a5228"/>
+      <polygon points="1104.5,-20 1088,8 1121,8" fill="#243018"/>
+      <rect x="1280" y="2" width="8" height="30" fill="#3a5228"/>
+      <polygon points="1284,-16 1269,8 1299,8" fill="#243018"/>
+      <rect x="1390" y="4" width="7" height="26" fill="#243018"/>
+      <polygon points="1393.5,-12 1380,8 1407,8" fill="#3a5228"/>
+    </svg>
+  </div>
+
+  <!-- Water -->
+  <div class="hero-water">
+    <svg class="hero-water-lines" viewBox="0 0 1440 30" fill="none" preserveAspectRatio="none" style="display:block;width:100%;height:30px">
+      <path d="M0,8 Q180,2 360,8 Q540,14 720,8 Q900,2 1080,8 Q1260,14 1440,8" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" fill="none"/>
+      <path d="M0,16 Q200,10 400,16 Q600,22 800,16 Q1000,10 1200,16 Q1320,20 1440,16" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/>
+    </svg>
+
+    <!-- Fish silhouettes in water -->
+    <div class="hero-fish" style="left:15%;bottom:60px">
+      <svg width="160" height="67" viewBox="0 0 160 67" fill="none">
+        <path d="M140,33 C113,14 82,6 55,9 C28,13 8,24 2,33 C8,42 28,54 55,57 C82,60 113,52 140,33Z" fill="rgba(255,255,255,0.15)"/>
+        <path d="M140,33 L158,21 L158,45 Z" fill="rgba(255,255,255,0.15)"/>
+        <circle cx="28" cy="29" r="4" fill="rgba(0,0,0,0.2)"/>
+      </svg>
+    </div>
+    <div class="hero-fish" style="right:18%;bottom:40px;transform:scaleX(-1)">
+      <svg width="100" height="42" viewBox="0 0 100 42" fill="none">
+        <path d="M87,21 C70,9 52,4 34,6 C17,8 5,15 1,21 C5,27 17,34 34,36 C52,38 70,33 87,21Z" fill="rgba(255,255,255,0.1)"/>
+        <path d="M87,21 L99,13 L99,29 Z" fill="rgba(255,255,255,0.1)"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Title -->
+  <div class="hero-title-block">
+    <div class="hero-title-inner">
+      <div class="hero-label-top">栃木県芳賀郡益子町 ── 公式サイト</div>
+      <div class="hero-title-jp">大川戸<br>釣り堀</div>
+      <div class="hero-subtitle">ニジマス釣り・炭火焼き</div>
+    </div>
+  </div>
+
+  <!-- Stamps -->
+  <div class="hero-stamps">
+    <span class="stamp stamp-dark">ニジマス ¥1,800/kg</span>
+    <span class="stamp stamp-orange">炭火焼き +¥500/kg</span>
+    <span class="stamp stamp-dark">9:00〜17:00</span>
+    <span class="stamp stamp-dark">水曜定休</span>
+    <span class="stamp stamp-dark">駐車場50台無料</span>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll">
+    <div class="hero-scroll-dot"></div>
+    SCROLL
+  </div>
+</section>
+
+<!-- ─── RETRO DIVIDER ─── -->
+<div style="background:var(--brown);padding:14px 40px;">
+  <div class="retro-divider" style="color:rgba(242,230,206,0.3)">
+    <span style="font-size:0.75rem;letter-spacing:0.3em;color:rgba(242,230,206,0.35);font-family:'Noto Sans JP'">◆ 大川戸釣り堀 ◆</span>
+  </div>
+</div>
+
+<!-- ─── ABOUT ─── -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-illus reveal">
+        <svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Pond scene illustration -->
+          <!-- Sky -->
+          <rect width="300" height="300" fill="#e8f0d8"/>
+          <!-- Sun -->
+          <circle cx="150" cy="55" r="32" fill="#f0c050" opacity="0.85"/>
+          <circle cx="150" cy="55" r="24" fill="#f5d060"/>
+          <!-- Sun rays -->
+          <line x1="150" y1="10" x2="150" y2="22" stroke="#f0c050" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="150" y1="88" x2="150" y2="100" stroke="#f0c050" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="105" y1="55" x2="94" y2="55" stroke="#f0c050" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="195" y1="55" x2="206" y2="55" stroke="#f0c050" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="118" y1="22" x2="111" y2="15" stroke="#f0c050" stroke-width="2" stroke-linecap="round"/>
+          <line x1="182" y1="22" x2="189" y2="15" stroke="#f0c050" stroke-width="2" stroke-linecap="round"/>
+          <line x1="118" y1="88" x2="111" y2="95" stroke="#f0c050" stroke-width="2" stroke-linecap="round"/>
+          <line x1="182" y1="88" x2="189" y2="95" stroke="#f0c050" stroke-width="2" stroke-linecap="round"/>
+          <!-- Hills -->
+          <ellipse cx="60" cy="165" rx="80" ry="50" fill="#4a6a30"/>
+          <ellipse cx="250" cy="170" rx="80" ry="50" fill="#3a5828"/>
+          <ellipse cx="150" cy="155" rx="90" ry="55" fill="#5c7840"/>
+          <!-- Pond -->
+          <ellipse cx="150" cy="215" rx="100" ry="55" fill="#5888a8"/>
+          <ellipse cx="150" cy="210" rx="84" ry="42" fill="#6898b8"/>
+          <!-- Water ripple -->
+          <ellipse cx="150" cy="210" rx="60" ry="28" stroke="rgba(255,255,255,0.35)" stroke-width="1.2" fill="none"/>
+          <ellipse cx="150" cy="210" rx="36" ry="17" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/>
+          <!-- Fish -->
+          <ellipse cx="138" cy="212" rx="28" ry="9" fill="rgba(80,120,100,0.75)"/>
+          <path d="M166,212 L178,205 L178,219Z" fill="rgba(80,120,100,0.75)"/>
+          <circle cx="118" cy="210" r="3.5" fill="rgba(30,30,20,0.5)"/>
+          <!-- Pink stripe on fish -->
+          <path d="M130,207 Q148,205 162,208" stroke="rgba(220,160,160,0.6)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- Trees -->
+          <rect x="36" y="125" width="8" height="35" fill="#3a2e1a"/>
+          <polygon points="40,88 24,132 56,132" fill="#243018"/>
+          <polygon points="40,76 22,120 58,120" fill="#3a5228"/>
+          <rect x="258" y="120" width="8" height="35" fill="#3a2e1a"/>
+          <polygon points="262,83 246,128 278,128" fill="#243018"/>
+          <polygon points="262,71 244,116 280,116" fill="#3a5228"/>
+          <!-- Reeds/grass at water edge -->
+          <line x1="68" y1="195" x2="65" y2="165" stroke="#4a6a30" stroke-width="2.5" stroke-linecap="round"/>
+          <ellipse cx="65" cy="160" rx="5" ry="10" fill="#5c7a40"/>
+          <line x1="80" y1="192" x2="78" y2="168" stroke="#4a6a30" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="78" cy="164" rx="4" ry="8" fill="#5c7a40"/>
+          <line x1="225" y1="193" x2="228" y2="166" stroke="#4a6a30" stroke-width="2.5" stroke-linecap="round"/>
+          <ellipse cx="228" cy="161" rx="5" ry="10" fill="#5c7a40"/>
+          <!-- Fishing rod + line -->
+          <line x1="90" y1="175" x2="158" y2="208" stroke="#3a2e1a" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <circle cx="158" cy="210" r="3" fill="#c84c1c"/>
+          <line x1="90" y1="150" x2="90" y2="177" stroke="#6b4a28" stroke-width="3" stroke-linecap="round"/>
+          <!-- Person (stick figure) fishing -->
+          <circle cx="90" cy="142" r="9" fill="#3a2e1a"/>
+          <rect x="85" y="151" width="10" height="18" rx="2" fill="#3a2e1a"/>
+          <line x1="85" y1="154" x2="74" y2="163" stroke="#3a2e1a" stroke-width="3" stroke-linecap="round"/>
+          <line x1="95" y1="154" x2="92" y2="148" stroke="#3a2e1a" stroke-width="3" stroke-linecap="round"/>
+          <line x1="88" y1="169" x2="85" y2="183" stroke="#3a2e1a" stroke-width="3" stroke-linecap="round"/>
+          <line x1="92" y1="169" x2="95" y2="183" stroke="#3a2e1a" stroke-width="3" stroke-linecap="round"/>
+          <!-- Ground line -->
+          <line x1="40" y1="185" x2="140" y2="183" stroke="#4a6a30" stroke-width="2"/>
+          <!-- Caption box -->
+          <rect x="8" y="266" width="284" height="26" fill="rgba(61,46,26,0.85)"/>
+          <text x="150" y="284" text-anchor="middle" font-size="10" fill="rgba(242,230,206,0.8)" font-family="'Noto Sans JP',sans-serif" letter-spacing="3">益子の里・大川戸釣り堀の風景</text>
+        </svg>
+        <div class="about-illus-label">◆ 手描きイメージイラスト ◆</div>
+      </div>
+
+      <div class="reveal reveal-d1">
+        <div class="retro-label">About</div>
+        <h2 class="retro-heading">のどかな自然の中で<br>家族みんなで楽しむ</h2>
+        <p class="retro-body" style="margin-top:20px">
+          大川戸釣り堀は、栃木県益子町の緑豊かな山あいに佇む釣り場です。
+          澄んだ水で育ったニジマスを竿一本で釣り上げ、炭火でじっくり焼いてその場でお召し上がりいただけます。
+          お子様から年配の方まで、手ぶらでお気軽にお越しください。
+        </p>
+        <p class="retro-body" style="margin-top:12px">
+          釣り竿や仕掛けは無料でご用意しています。初めての方も、ベテランの方も存分に楽しめる釣り場です。
+        </p>
+
+        <div class="about-facts reveal reveal-d2" style="margin-top:32px">
+          <div class="fact-item">
+            <div class="fact-label">営業時間</div>
+            <div class="fact-value">9:00 〜 17:00</div>
+          </div>
+          <div class="fact-item">
+            <div class="fact-label">定休日</div>
+            <div class="fact-value">水曜日</div>
+          </div>
+          <div class="fact-item">
+            <div class="fact-label">駐車場</div>
+            <div class="fact-value">50台（無料）</div>
+          </div>
+          <div class="fact-item">
+            <div class="fact-label">お電話</div>
+            <div class="fact-value">0285-72-2771</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRICING ─── -->
+<section class="section" id="pricing">
+  <div class="section-inner">
+    <div class="retro-label reveal">Pricing</div>
+    <h2 class="retro-heading reveal reveal-d1">ご料金</h2>
+    <p class="retro-body reveal reveal-d2" style="margin-top:12px;color:rgba(242,230,206,0.55)">
+      釣り上げた魚の重さで計量いたします。竿・仕掛けは無料でご用意しています。
+    </p>
+
+    <div class="pricing-grid reveal reveal-d1">
+      <div class="price-card">
+        <div class="price-card-corner"></div>
+        <div class="price-card-tag">MAIN</div>
+        <div class="price-card-name">ニジマス<br>（虹鱒）</div>
+        <div class="price-card-hr"></div>
+        <div class="price-amount">¥1,800 <sub>/ 1kg</sub></div>
+        <div class="price-card-note">
+          釣り上げた魚を重さで計量します。<br>
+          持ち帰り・その場でお召し上がりも可能。<br>
+          竿・仕掛けは無料でご貸出します。
+        </div>
+      </div>
+      <div class="price-card">
+        <div class="price-card-corner"></div>
+        <div class="price-card-tag">OPTION</div>
+        <div class="price-card-name">炭火焼き<br>サービス</div>
+        <div class="price-card-hr"></div>
+        <div class="price-amount">¥500 <sub>/ 1kg</sub></div>
+        <div class="price-card-note">
+          釣った魚をその場で炭火焼きに。<br>
+          シンプルな塩焼きで、ニジマス本来の<br>
+          旨味をお楽しみいただけます。
+        </div>
+      </div>
+      <div class="price-card">
+        <div class="price-card-corner"></div>
+        <div class="price-card-tag">FREE</div>
+        <div class="price-card-name">入場・<br>釣り竿貸出</div>
+        <div class="price-card-hr"></div>
+        <div class="price-amount" style="font-size:2rem">無料</div>
+        <div class="price-card-note">
+          入場料はいただきません。<br>
+          釣り竿・仕掛けも無料でご用意。<br>
+          手ぶらでお越しください。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EXPERIENCE ─── -->
+<section class="section" id="experience">
+  <div class="section-inner">
+    <div class="retro-label reveal">Experience</div>
+    <h2 class="retro-heading reveal reveal-d1">楽しみ方</h2>
+
+    <div class="steps-grid reveal reveal-d2">
+      <div class="step-item">
+        <div class="step-arrow">→</div>
+        <div class="step-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect x="8" y="12" width="24" height="18" rx="2" stroke="#3d2e1a" stroke-width="2" fill="none"/>
+            <line x1="14" y1="12" x2="14" y2="8" stroke="#3d2e1a" stroke-width="2" stroke-linecap="round"/>
+            <line x1="26" y1="12" x2="26" y2="8" stroke="#3d2e1a" stroke-width="2" stroke-linecap="round"/>
+            <line x1="8" y1="20" x2="32" y2="20" stroke="#3d2e1a" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="step-num-box">
+          <div class="step-num">一</div>
+          <div class="step-title">受付</div>
+        </div>
+        <div class="step-desc">受付にお越しください。竿・仕掛けは無料でお貸しします。初めての方もご安心ください。</div>
+      </div>
+      <div class="step-item">
+        <div class="step-arrow">→</div>
+        <div class="step-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <line x1="12" y1="8" x2="20" y2="32" stroke="#3d2e1a" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M8,28 Q14,24 20,28 Q26,32 32,28" stroke="#3d2e1a" stroke-width="1.5" fill="none"/>
+            <ellipse cx="20" cy="30" rx="6" ry="3" fill="#5888a8" opacity="0.5"/>
+            <circle cx="20" cy="32" r="2.5" fill="#c84c1c"/>
+          </svg>
+        </div>
+        <div class="step-num-box">
+          <div class="step-num">二</div>
+          <div class="step-title">釣り</div>
+        </div>
+        <div class="step-desc">池のほとりに腰を落ち着けて、ニジマス釣りをお楽しみください。のんびりと過ごせます。</div>
+      </div>
+      <div class="step-item">
+        <div class="step-arrow">→</div>
+        <div class="step-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect x="6" y="16" width="28" height="14" rx="2" stroke="#3d2e1a" stroke-width="2" fill="none"/>
+            <path d="M13,16 L13,10 L20,6 L27,10 L27,16" stroke="#3d2e1a" stroke-width="1.5" fill="none"/>
+            <line x1="20" y1="20" x2="20" y2="26" stroke="#3d2e1a" stroke-width="1.5"/>
+            <line x1="16" y1="23" x2="24" y2="23" stroke="#3d2e1a" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="step-num-box">
+          <div class="step-num">三</div>
+          <div class="step-title">計量</div>
+        </div>
+        <div class="step-desc">釣り上げた魚をスタッフが計量します。1kgあたり1,800円で計算いたします。</div>
+      </div>
+      <div class="step-item">
+        <div class="step-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect x="6" y="26" width="28" height="6" rx="1" stroke="#3d2e1a" stroke-width="1.5" fill="none"/>
+            <path d="M10,26 L10,18 Q20,10 30,18 L30,26" stroke="#3d2e1a" stroke-width="1.5" fill="none"/>
+            <line x1="16" y1="26" x2="16" y2="20" stroke="#c84c1c" stroke-width="1.5"/>
+            <line x1="20" y1="26" x2="20" y2="18" stroke="#c84c1c" stroke-width="1.5"/>
+            <line x1="24" y1="26" x2="24" y2="20" stroke="#c84c1c" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="step-num-box">
+          <div class="step-num">四</div>
+          <div class="step-title">焼く・持ち帰る</div>
+        </div>
+        <div class="step-desc">炭火焼き（+500円/kg）か、お持ち帰りかをお選びください。焼きたての塩焼きは絶品です。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ACCESS ─── -->
+<section class="section" id="access" style="background:var(--cream)">
+  <div class="section-inner">
+    <div class="retro-label reveal">Access</div>
+    <h2 class="retro-heading reveal reveal-d1">アクセス</h2>
+
+    <div class="access-grid" style="margin-top:40px">
+      <div class="access-map-wrap reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3222.5!2d140.2657!3d36.4585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601f58a97f0b5d07%3A0xabd5285e4de2c1a0!2z5aSn5bed5oi45Y2856KJ!5e0!3m2!1sja!2sjp!4v1700000000000"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="大川戸釣り堀 地図">
+        </iframe>
+        <div class="access-map-label">◆ 大川戸釣り堀 — 栃木県益子町 ◆</div>
+      </div>
+
+      <div class="reveal reveal-d1">
+        <div class="access-rows">
+          <div class="access-row">
+            <span class="access-row-label">住　所</span>
+            <span class="access-row-val">〒321-4217<br>栃木県芳賀郡<br>益子町上大羽1211</span>
+          </div>
+          <div class="access-row">
+            <span class="access-row-label">電　話</span>
+            <span class="access-row-val"><a href="tel:0285722771">0285-72-2771</a></span>
+          </div>
+          <div class="access-row">
+            <span class="access-row-label">営業時間</span>
+            <span class="access-row-val">9:00 〜 17:00</span>
+          </div>
+          <div class="access-row">
+            <span class="access-row-label">定　休</span>
+            <span class="access-row-val" style="color:var(--orange)">水曜日</span>
+          </div>
+          <div class="access-row">
+            <span class="access-row-label">駐車場</span>
+            <span class="access-row-val">50台（無料）</span>
+          </div>
+          <div class="access-row">
+            <span class="access-row-label">電車</span>
+            <span class="access-row-val">真岡鐵道 益子駅より<br>車で約15分</span>
+          </div>
+        </div>
+
+        <a href="tel:0285722771" class="tel-big" style="margin-top:24px;display:flex;text-decoration:none">
+          <span style="font-size:1.5rem;margin-right:4px">☎</span>
+          <span>
+            <span class="tel-big-label">お電話でお気軽にどうぞ</span>
+            <span class="tel-big-num">0285-72-2771</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INSTAGRAM ─── -->
+<section class="section" id="instagram">
+  <div class="section-inner" style="text-align:center">
+    <div class="retro-label reveal" style="justify-content:center">Instagram</div>
+    <h2 class="retro-heading reveal reveal-d1">インスタグラム</h2>
+    <p class="retro-body reveal reveal-d2" style="margin-top:12px;text-align:center;margin-left:auto;margin-right:auto;max-width:460px;color:rgba(242,230,206,0.45)">
+      釣り堀の四季の風景、釣果レポートなど<br>近日公開予定です。お楽しみに。
+    </p>
+
+    <div class="ig-box reveal reveal-d2">
+      <div class="ig-icon-ring">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <rect x="4" y="4" width="28" height="28" rx="8" stroke="rgba(242,230,206,0.4)" stroke-width="2" fill="none"/>
+          <circle cx="18" cy="18" r="7" stroke="rgba(242,230,206,0.4)" stroke-width="2" fill="none"/>
+          <circle cx="26.5" cy="9.5" r="2" fill="rgba(242,230,206,0.4)"/>
+        </svg>
+      </div>
+      <div class="ig-coming">Coming Soon</div>
+      <div class="ig-handle">@okawado_tsuribori（準備中）</div>
+      <button class="ig-btn" id="igNotifyBtn">開設のお知らせを受け取る</button>
+      <div class="ig-notify-form" id="igNotifyForm">
+        <input type="email" class="ig-input" placeholder="メールアドレスを入力" id="igEmail">
+        <button class="ig-submit" id="igSubmit">通知を受け取る</button>
+        <div class="ig-thanks" id="igThanks" style="display:none">
+          ありがとうございます。開設時にご連絡いたします。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">大川戸釣り堀</div>
+        <div class="footer-logo-sub">栃木県芳賀郡益子町上大羽1211</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#about">釣り堀について</a></li>
+        <li><a href="#pricing">ご料金</a></li>
+        <li><a href="#experience">楽しみ方</a></li>
+        <li><a href="#access">アクセス</a></li>
+        <li><a href="#instagram">Instagram</a></li>
+      </ul>
+    </div>
+    <div class="footer-copy">© 2026 大川戸釣り堀. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+// ── Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+reveals.forEach(el => revealObs.observe(el));
+
+// ── Mobile nav
+document.getElementById('navMenuBtn').addEventListener('click', () => {
+  document.getElementById('mobileNav').classList.add('open');
+  document.body.style.overflow = 'hidden';
+});
+document.getElementById('mobileNavClose').addEventListener('click', closeMobileNav);
+function closeMobileNav() {
+  document.getElementById('mobileNav').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ── Instagram notify form
+const igBtn = document.getElementById('igNotifyBtn');
+const igForm = document.getElementById('igNotifyForm');
+igBtn.addEventListener('click', () => {
+  igForm.classList.toggle('open');
+  igBtn.textContent = igForm.classList.contains('open') ? '閉じる' : '開設のお知らせを受け取る';
+});
+document.getElementById('igSubmit').addEventListener('click', () => {
+  const email = document.getElementById('igEmail').value;
+  if (!email || !email.includes('@')) {
+    document.getElementById('igEmail').style.borderColor = 'var(--orange)';
+    return;
+  }
+  document.getElementById('igEmail').style.display = 'none';
+  document.getElementById('igSubmit').style.display = 'none';
+  document.getElementById('igThanks').style.display = 'block';
+});
+
+// ── Hero height fix for mobile
+function setHeroHeight() {
+  const hero = document.getElementById('hero');
+  hero.style.minHeight = window.innerHeight + 'px';
+}
+setHeroHeight();
+window.addEventListener('resize', setHeroHeight);
+</script>
+</body>
+</html>
