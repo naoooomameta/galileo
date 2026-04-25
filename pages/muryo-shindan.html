@@ -48,6 +48,25 @@
 .suited-item{background:var(--white);border-radius:14px;padding:22px 24px;border:1px solid var(--border);border-left:3px solid var(--amber);font-size:15px;color:var(--text-light);line-height:1.9;box-shadow:0 2px 8px rgba(14,74,56,.04);transition:all .3s}
 .suited-item:hover{box-shadow:0 6px 20px rgba(14,74,56,.08);transform:translateY(-2px)}
 .suited-item strong{display:block;color:var(--primary-dark);font-size:16px;font-weight:700;margin-bottom:6px}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:920px;margin:0 auto}
+.compare-card{background:var(--white);border-radius:18px;padding:32px 28px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(14,74,56,.04);transition:all .3s;display:flex;flex-direction:column}
+.compare-card:hover{box-shadow:0 8px 28px rgba(14,74,56,.08);transform:translateY(-2px)}
+.compare-card.is-diagnosis{border-left:4px solid var(--amber)}
+.compare-card.is-consult{border-left:4px solid var(--primary)}
+.compare-card .compare-tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;padding:4px 12px;border-radius:20px;margin-bottom:14px;align-self:flex-start}
+.compare-card.is-diagnosis .compare-tag{background:rgba(196,154,60,.12);color:var(--amber)}
+.compare-card.is-consult .compare-tag{background:var(--green-pale);color:var(--primary)}
+.compare-card h3{font-family:var(--font-serif);font-size:22px;font-weight:700;color:var(--primary-dark);margin-bottom:10px;line-height:1.5}
+.compare-card .compare-lead{font-size:14px;color:var(--text-light);line-height:1.95;margin-bottom:18px}
+.compare-card ul{list-style:none;padding:0;margin:0 0 22px;display:flex;flex-direction:column;gap:8px}
+.compare-card li{font-size:13.5px;color:var(--text-light);line-height:1.8;padding-left:22px;position:relative}
+.compare-card li::before{content:'✓';position:absolute;left:0;top:0;color:var(--amber);font-weight:700}
+.compare-card .compare-meta{font-size:12px;color:var(--text-muted);margin-bottom:18px;padding-top:14px;border-top:1px dashed var(--border)}
+.compare-card .compare-cta{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:13px 22px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;transition:all .3s}
+.compare-card.is-diagnosis .compare-cta{background:linear-gradient(135deg,var(--amber),var(--amber-light));color:var(--white);box-shadow:0 3px 10px rgba(196,154,60,.22)}
+.compare-card.is-consult .compare-cta{background:transparent;color:var(--primary);border:1.5px solid var(--primary)}
+.compare-card .compare-cta:hover{transform:translateY(-1px)}
+.compare-card.is-consult .compare-cta:hover{background:var(--primary);color:var(--white)}
 .shindan-form{max-width:720px;margin:0 auto;background:var(--white);border-radius:18px;padding:36px;border:1px solid var(--border);box-shadow:0 4px 16px rgba(14,74,56,.06)}
 .shindan-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .shindan-form .form-group{margin-bottom:18px}
@@ -62,7 +81,7 @@
 .shindan-form .btn-submit{width:100%;background:linear-gradient(135deg,var(--amber),var(--amber-light));color:var(--white);border:none;border-radius:10px;padding:16px;font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .3s;box-shadow:0 4px 12px rgba(196,154,60,.25)}
 .shindan-form .btn-submit:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(196,154,60,.35)}
 .shindan-note{max-width:720px;margin:18px auto 0;font-size:13px;color:var(--text-muted);line-height:1.9;text-align:center}
-@media(max-width:768px){.page-hero{padding:60px 0 44px}.intro-card,.diagnosis-box{padding:24px 20px}.roadmap-step{flex-direction:column;gap:10px}.shindan-form{padding:24px 20px}.shindan-form .form-row{grid-template-columns:1fr}}
+@media(max-width:768px){.page-hero{padding:60px 0 44px}.intro-card,.diagnosis-box{padding:24px 20px}.roadmap-step{flex-direction:column;gap:10px}.shindan-form{padding:24px 20px}.shindan-form .form-row{grid-template-columns:1fr}.compare-grid{grid-template-columns:1fr}}
 </style>
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
@@ -113,7 +132,8 @@
     <a href="../index.html#faq">FAQ</a>
     <a href="../index.html#about">塾概要</a>
     <a href="news.html">お知らせ</a>
-    <a href="muryo-shindan.html" class="nav-cta">▶ 無料合格診断</a>
+    <a href="muryo-shindan.html">無料合格診断</a>
+    <a href="../index.html#contact" class="nav-cta">▶ 無料相談</a>
   </div>
 </nav>
 <section class="page-hero">
@@ -190,6 +210,42 @@
 </section>
 
 <section class="section">
+  <div class="container">
+    <div class="section-label">CONSULTATION</div>
+    <h2 class="section-title">「無料相談」もご利用いただけます</h2>
+    <p class="section-subtitle">学力診断の前に、まずは話を聞いてみたい方には「無料相談」をご用意しています。<br>診断と相談、どちらからでもガリレオの考え方に触れていただけます。</p>
+    <div class="compare-grid">
+      <div class="compare-card is-diagnosis">
+        <span class="compare-tag">DIAGNOSIS</span>
+        <h3>無料合格診断</h3>
+        <p class="compare-lead">学力診断と志望校分析をもとに、合格までの最短ルートをデータで描き出します。「現在地」を客観的に把握したい方に。</p>
+        <ul>
+          <li>科目別の学力位置と志望校との差を数値化</li>
+          <li>弱点分野の特定と優先課題の明確化</li>
+          <li>月単位の学習プランをその場でご提案</li>
+          <li>診断結果サマリ資料をお渡し</li>
+        </ul>
+        <p class="compare-meta">所要時間 60〜90分 / オンライン（Google Meet）</p>
+        <a href="#shindanForm" class="compare-cta">無料合格診断を申し込む →</a>
+      </div>
+      <div class="compare-card is-consult">
+        <span class="compare-tag">CONSULTATION</span>
+        <h3>無料相談</h3>
+        <p class="compare-lead">学習の悩み・志望校・文理選択など、気になることを気軽にご相談いただけます。「まずは話を聞いてみたい」方に。</p>
+        <ul>
+          <li>学習・進路全般のお悩みヒアリング</li>
+          <li>ガリレオの指導方針・コース内容のご説明</li>
+          <li>毎日課題システムの仕組みのご紹介</li>
+          <li>料金・入塾の流れについてのご質問対応</li>
+        </ul>
+        <p class="compare-meta">所要時間 約60分 / オンライン（Google Meet）または電話</p>
+        <a href="../index.html#contact" class="compare-cta">無料相談を予約する →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt">
   <div class="container">
     <div class="section-label">APPLICATION</div>
     <h2 class="section-title">無料合格診断のお申し込み</h2>
