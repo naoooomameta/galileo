@@ -219,16 +219,30 @@ body{
 .fv-cta-wrap:hover{transform:translateY(-2px);}
 .fv-cta-wrap:active{transform:scale(0.98);}
 .fv-cta-ribbon{
-  position:absolute;top:-15px;left:50%;transform:translateX(-50%);
-  background:var(--g-green-darkest);color:var(--g-gold-light);
+  position:absolute;top:-16px;left:50%;transform:translateX(-50%);
+  background:linear-gradient(135deg,#22372d 0%,var(--g-green-darkest) 100%);
+  color:#fff;
   font-size:15px;font-weight:700;
-  padding:7px 26px;border-radius:2px;
-  letter-spacing:3px;
-  border:1px solid var(--g-gold);
+  padding:8px 18px;border-radius:100px;
+  letter-spacing:1.2px;
+  border:1.5px solid var(--g-gold);
   z-index:2;white-space:nowrap;
   font-family:'Noto Serif JP',serif;
-  box-shadow:0 4px 12px rgba(31,51,41,0.3);
+  box-shadow:0 6px 16px rgba(31,51,41,0.35),inset 0 1px 0 rgba(255,255,255,0.08);
+  display:inline-flex;align-items:center;gap:8px;
   animation:ribbonPop 2.5s ease-in-out infinite;
+}
+.ribbon-dot{
+  display:inline-block;width:8px;height:8px;border-radius:50%;
+  background:#ff5d5d;
+  box-shadow:0 0 0 0 rgba(255,93,93,0.6);
+  animation:ribbonDot 1.4s ease-in-out infinite;
+  font-size:0;line-height:0;flex-shrink:0;
+}
+@keyframes ribbonDot{
+  0%{box-shadow:0 0 0 0 rgba(255,93,93,0.7);}
+  70%{box-shadow:0 0 0 8px rgba(255,93,93,0);}
+  100%{box-shadow:0 0 0 0 rgba(255,93,93,0);}
 }
 @keyframes ribbonPop{
   0%,100%{transform:translateX(-50%) scale(1);}
@@ -1247,7 +1261,7 @@ body{
   .fv-cta-mega{padding:28px 26px 22px;border-radius:8px;}
   .fv-cta-mega-text{font-size:22px;}
   .fv-cta-mega-sub{font-size:14px;}
-  .fv-cta-ribbon{font-size:15px;padding:7px 26px;top:-14px;}
+  .fv-cta-ribbon{font-size:15px;padding:8px 20px;top:-15px;}
   .fv-cta-micro{font-size:14px;margin-top:16px;}
 
   .visual-area{
@@ -1320,7 +1334,8 @@ body{
   .fv-cta-mega-text{font-size:17px;letter-spacing:0;gap:8px;}
   .fv-cta-arrow{font-size:20px;}
   .fv-cta-mega-sub{font-size:12px;}
-  .fv-cta-ribbon{font-size:14px;padding:6px 22px;}
+  .fv-cta-ribbon{font-size:13px;padding:7px 16px;letter-spacing:0.8px;gap:6px;top:-14px;}
+  .ribbon-dot{width:7px;height:7px;}
   .omakase-main{font-size:26px;}
   .omakase-brand{font-size:15px;}
   .omakase-brand em{font-size:17px;}
@@ -1473,7 +1488,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- FV CTA -->
   <div class="fv-cta">
     <div class="fv-cta-wrap" onclick="openSurvey()">
-      <div class="fv-cta-ribbon">＼ 完全無料 ／</div>
+      <div class="fv-cta-ribbon"><span class="ribbon-dot">●</span>30秒診断・完全無料</div>
       <div class="fv-cta-mega">
         <div class="fv-cta-mega-text">うちの子の戦略を見てみる <span class="fv-cta-arrow">→</span></div>
         <div class="fv-cta-mega-sub">たった30秒で完了</div>
@@ -1772,7 +1787,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
 
   <div class="fv-cta-wrap bridge-cta" onclick="openSurvey()" style="max-width:340px;margin:0 auto;">
-    <div class="fv-cta-ribbon">＼ 完全無料 ／</div>
+    <div class="fv-cta-ribbon"><span class="ribbon-dot">●</span>30秒診断・完全無料</div>
     <div class="fv-cta-mega">
       <div class="fv-cta-mega-text">うちの子の戦略を見てみる <span class="fv-cta-arrow">→</span></div>
       <div class="fv-cta-mega-sub">たった30秒で完了</div>
