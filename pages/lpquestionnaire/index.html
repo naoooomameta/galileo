@@ -10,7 +10,7 @@
 <meta property="og:description" content="4問のかんたん診断で、志望校合格までの道筋がわかる。理系の大学受験専門塾ガリレオが、お子様専用の合格戦略ガイドブックを無料でお届けします。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://galileo-sciences.com/pages/lpquestionnaire/">
-<meta property="og:image" content="https://galileo-sciences.com/pages/lpquestionnaire/images/ogp.jpg">
+<meta property="og:image" content="https://galileo-sciences.com/img/ogp.svg">
 <meta property="og:site_name" content="ガリレオ｜理系の大学受験専門塾">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
@@ -31,7 +31,7 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{GALILEO_PIXEL_ID}}&ev=PageView&noscript=1"/></noscript>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="images/logo.png" fetchpriority="high">
+<link rel="preload" as="image" href="../../img/galileo-logo.png" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════
@@ -517,6 +517,110 @@ body{
 }
 .preview-card img{
   width:100%;height:auto;display:block;
+}
+
+/* Preview mock — 画像不要のガイドブックページ風モック */
+.preview-mock{
+  width:100%;aspect-ratio:3/4;
+  background:linear-gradient(180deg,#fff 0%,var(--g-cream-light) 100%);
+  display:flex;flex-direction:column;
+  position:relative;overflow:hidden;
+}
+.preview-mock-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 14px;
+  background:var(--g-green-darkest);color:var(--g-cream-light);
+  border-bottom:2px solid var(--g-gold);
+  font-family:'Noto Serif JP',serif;
+}
+.preview-mock-eyebrow{
+  font-size:9px;font-weight:700;letter-spacing:2px;color:var(--g-gold-light);
+  font-family:'Cormorant Garamond',serif;text-transform:uppercase;
+}
+.preview-mock-title{font-size:11px;font-weight:700;letter-spacing:1px;}
+.preview-mock-page{
+  font-size:9px;font-weight:600;color:var(--g-gold-light);
+  font-family:'Cormorant Garamond',serif;
+}
+.preview-mock-body{
+  flex:1;padding:16px 14px;display:flex;flex-direction:column;gap:10px;
+  position:relative;
+}
+.preview-mock-h{
+  font-size:13px;font-weight:700;color:var(--g-green-darkest);
+  font-family:'Noto Serif JP',serif;letter-spacing:0.5px;line-height:1.4;
+}
+.preview-mock-h::after{
+  content:'';display:block;width:32px;height:2px;background:var(--g-gold);margin-top:4px;
+}
+.preview-mock-lines{display:flex;flex-direction:column;gap:5px;}
+.preview-mock-lines i{
+  display:block;height:5px;border-radius:2px;background:var(--g-cream-soft);
+}
+.preview-mock-lines i:nth-child(1){width:90%;}
+.preview-mock-lines i:nth-child(2){width:78%;}
+.preview-mock-lines i:nth-child(3){width:85%;}
+.preview-mock-lines i:nth-child(4){width:65%;}
+.preview-mock-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:auto;
+}
+.preview-mock-grid span{
+  aspect-ratio:1;border-radius:2px;background:var(--g-cream-soft);
+  display:flex;align-items:center;justify-content:center;
+  font-size:8px;color:var(--g-green-soft);font-weight:700;
+  font-family:'Cormorant Garamond',serif;
+}
+.preview-mock-grid span.mark{background:var(--g-green-deep);color:var(--g-gold-light);}
+.preview-mock-bars{
+  display:flex;align-items:flex-end;gap:6px;height:80px;margin-top:auto;
+  padding:0 4px;
+}
+.preview-mock-bars b{
+  flex:1;display:block;border-radius:2px 2px 0 0;
+  background:linear-gradient(180deg,var(--g-green) 0%,var(--g-green-darkest) 100%);
+}
+.preview-mock-bars b.gold{background:linear-gradient(180deg,var(--g-gold-light) 0%,var(--g-gold-deep) 100%);}
+.preview-mock-line-chart{
+  margin-top:auto;
+}
+.preview-mock-tasks{display:flex;flex-direction:column;gap:8px;margin-top:6px;}
+.preview-mock-task{
+  display:flex;align-items:center;gap:8px;
+  padding:7px 9px;background:var(--g-cream-soft);border-radius:3px;
+  border-left:3px solid var(--g-gold);
+}
+.preview-mock-task em{
+  font-style:normal;font-size:11px;font-weight:700;color:var(--g-gold-deep);
+  font-family:'Cormorant Garamond',serif;width:14px;
+}
+.preview-mock-task span{
+  flex:1;height:5px;background:var(--g-line);border-radius:2px;
+}
+.preview-mock-cover{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:18px 16px;gap:10px;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(200,164,92,0.1), transparent 60%),
+    linear-gradient(160deg,var(--g-cream-light),var(--g-cream-soft));
+}
+.preview-mock-cover-eyebrow{
+  font-size:9px;font-weight:600;letter-spacing:3px;color:var(--g-gold-deep);
+  font-family:'Cormorant Garamond',serif;text-transform:uppercase;
+}
+.preview-mock-cover-title{
+  font-size:18px;font-weight:700;color:var(--g-green-darkest);
+  line-height:1.4;font-family:'Noto Serif JP',serif;letter-spacing:1px;
+}
+.preview-mock-cover-brand{
+  margin-top:auto;font-size:10px;font-weight:700;color:var(--g-green-deep);
+  letter-spacing:3px;font-family:'Noto Serif JP',serif;
+  padding-top:14px;border-top:1px solid var(--g-gold);width:60%;
+}
+.preview-mock-bar-labels{
+  display:flex;justify-content:space-between;margin-top:5px;
+  font-size:8px;color:var(--g-muted);font-weight:700;
+  font-family:'Cormorant Garamond',serif;
+  padding:0 4px;
 }
 .preview-caption{
   padding:11px 14px;font-size:13px;font-weight:600;
@@ -1274,7 +1378,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <header class="pc-header">
   <div class="pc-header-inner">
     <a href="https://galileo-sciences.com/pages/lpquestionnaire/" class="pc-header-logo">
-      <img src="images/logo.png" alt="ガリレオ" fetchpriority="high" decoding="async">
+      <img src="../../img/galileo-logo.png" alt="ガリレオ" fetchpriority="high" decoding="async">
       <div class="logo-text-wrap">
         <span class="logo-sub">理系の大学受験専門塾</span>
         <span class="logo-name">ガリレオ</span>
@@ -1287,7 +1391,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Logo Bar -->
 <div class="logo-bar">
   <a href="https://galileo-sciences.com/pages/lpquestionnaire/" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;">
-    <img src="images/logo.png" alt="ガリレオ" fetchpriority="high" decoding="async">
+    <img src="../../img/galileo-logo.png" alt="ガリレオ" fetchpriority="high" decoding="async">
     <div class="logo-text-wrap">
       <span class="logo-sub">理系の大学受験専門塾</span>
       <span class="logo-name">ガリレオ</span>
@@ -1400,7 +1504,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <span class="report-footer-name">GALILEO</span>
       </div>
     </div>
-    <img class="mascot" src="images/logo.png" alt="ガリレオ" decoding="async">
+    <img class="mascot" src="../../img/galileo-logo.png" alt="ガリレオ" decoding="async">
   </div>
   </div><!-- /hero-right -->
   </div><!-- /hero-fv-inner -->
@@ -1504,38 +1608,162 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="preview-gallery">
     <div class="preview-label">▼ Sample Guidebook</div>
     <div class="preview-scroll">
+
+      <!-- 1: 表紙 -->
       <div class="preview-card">
-        <img src="images/roadmap_p1.jpg" alt="合格戦略ガイドブック表紙" loading="lazy" decoding="async">
+        <div class="preview-mock">
+          <div class="preview-mock-cover">
+            <div class="preview-mock-cover-eyebrow">Galileo Roadmap</div>
+            <div class="preview-mock-cover-title">合格戦略<br>ガイドブック</div>
+            <div class="preview-mock-cover-brand">GALILEO</div>
+          </div>
+        </div>
         <div class="preview-caption">1/8　合格戦略ガイドブック＋月別タイムライン</div>
       </div>
+
+      <!-- 2: 参考書ルート 3-4月 -->
       <div class="preview-card">
-        <img src="images/roadmap_p2.jpg" alt="参考書ルート 3-4月" loading="lazy" decoding="async">
+        <div class="preview-mock">
+          <div class="preview-mock-header">
+            <span class="preview-mock-eyebrow">Routes</span>
+            <span class="preview-mock-page">P.02</span>
+          </div>
+          <div class="preview-mock-body">
+            <div class="preview-mock-h">参考書ルート ／ 3〜4月</div>
+            <div class="preview-mock-lines"><i></i><i></i><i></i></div>
+            <div class="preview-mock-grid">
+              <span class="mark">✓</span><span class="mark">✓</span><span>3</span><span>4</span>
+              <span class="mark">✓</span><span>6</span><span>7</span><span>8</span>
+            </div>
+          </div>
+        </div>
         <div class="preview-caption">2/8　参考書ルート（3〜4月）</div>
       </div>
+
+      <!-- 3: 参考書ルート 5-6月 -->
       <div class="preview-card">
-        <img src="images/roadmap_p3.jpg" alt="参考書ルート 5-6月" loading="lazy" decoding="async">
+        <div class="preview-mock">
+          <div class="preview-mock-header">
+            <span class="preview-mock-eyebrow">Routes</span>
+            <span class="preview-mock-page">P.03</span>
+          </div>
+          <div class="preview-mock-body">
+            <div class="preview-mock-h">参考書ルート ／ 5〜6月</div>
+            <div class="preview-mock-lines"><i></i><i></i><i></i></div>
+            <div class="preview-mock-grid">
+              <span class="mark">✓</span><span class="mark">✓</span><span class="mark">✓</span><span>4</span>
+              <span>5</span><span>6</span><span>7</span><span>8</span>
+            </div>
+          </div>
+        </div>
         <div class="preview-caption">3/8　参考書ルート（5〜6月）</div>
       </div>
+
+      <!-- 4: 参考書ルート 7-11月 -->
       <div class="preview-card">
-        <img src="images/roadmap_p4.jpg" alt="参考書ルート 7-11月" loading="lazy" decoding="async">
+        <div class="preview-mock">
+          <div class="preview-mock-header">
+            <span class="preview-mock-eyebrow">Routes</span>
+            <span class="preview-mock-page">P.04</span>
+          </div>
+          <div class="preview-mock-body">
+            <div class="preview-mock-h">参考書ルート ／ 7〜11月</div>
+            <div class="preview-mock-lines"><i></i><i></i><i></i><i></i></div>
+            <div class="preview-mock-grid">
+              <span class="mark">✓</span><span class="mark">✓</span><span class="mark">✓</span><span class="mark">✓</span>
+              <span class="mark">✓</span><span>6</span><span>7</span><span>8</span>
+            </div>
+          </div>
+        </div>
         <div class="preview-caption">4/8　参考書ルート（7〜11月）</div>
       </div>
+
+      <!-- 5: 偏差値ギャップ分析 -->
       <div class="preview-card">
-        <img src="images/roadmap_p5.jpg" alt="偏差値ギャップ分析" loading="lazy" decoding="async">
+        <div class="preview-mock">
+          <div class="preview-mock-header">
+            <span class="preview-mock-eyebrow">Gap Analysis</span>
+            <span class="preview-mock-page">P.05</span>
+          </div>
+          <div class="preview-mock-body">
+            <div class="preview-mock-h">科目別 偏差値ギャップ</div>
+            <div class="preview-mock-bars">
+              <b style="height:48%"></b><b style="height:62%"></b><b style="height:38%"></b>
+              <b style="height:74%"></b><b class="gold" style="height:88%"></b>
+            </div>
+            <div class="preview-mock-bar-labels">
+              <span>英</span><span>数</span><span>化</span><span>物</span><span>生</span>
+            </div>
+          </div>
+        </div>
         <div class="preview-caption">5/8　科目別 偏差値ギャップ分析</div>
       </div>
+
+      <!-- 6: 偏差値推移予測 -->
       <div class="preview-card">
-        <img src="images/roadmap_p6.jpg" alt="偏差値推移予測" loading="lazy" decoding="async">
+        <div class="preview-mock">
+          <div class="preview-mock-header">
+            <span class="preview-mock-eyebrow">Forecast</span>
+            <span class="preview-mock-page">P.06</span>
+          </div>
+          <div class="preview-mock-body">
+            <div class="preview-mock-h">偏差値 推移予測</div>
+            <div class="preview-mock-line-chart">
+              <svg viewBox="0 0 200 90" preserveAspectRatio="none" style="width:100%;height:90px;">
+                <defs>
+                  <linearGradient id="gAreaPv" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#c8a45c" stop-opacity="0.4"/>
+                    <stop offset="100%" stop-color="#c8a45c" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0,72 L40,66 L80,52 L120,38 L160,22 L200,10 L200,90 L0,90 Z" fill="url(#gAreaPv)"/>
+                <polyline points="0,72 40,66 80,52 120,38 160,22 200,10" fill="none" stroke="#a8843c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="200" cy="10" r="4" fill="#a8843c"/>
+              </svg>
+              <div class="preview-mock-bar-labels">
+                <span>4月</span><span>7月</span><span>10月</span><span>1月</span><span>合格</span>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="preview-caption">6/8　偏差値推移予測＋戦略アドバイス</div>
       </div>
+
+      <!-- 7: 科目別 重点アドバイス -->
       <div class="preview-card">
-        <img src="images/roadmap_p7.jpg" alt="科目別重点アドバイス" loading="lazy" decoding="async">
+        <div class="preview-mock">
+          <div class="preview-mock-header">
+            <span class="preview-mock-eyebrow">Subject Tips</span>
+            <span class="preview-mock-page">P.07</span>
+          </div>
+          <div class="preview-mock-body">
+            <div class="preview-mock-h">科目別 重点アドバイス</div>
+            <div class="preview-mock-lines"><i></i><i></i><i></i></div>
+            <div class="preview-mock-lines" style="margin-top:8px;"><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
         <div class="preview-caption">7/8　科目別 重点アドバイス</div>
       </div>
+
+      <!-- 8: 今月の最優先タスク -->
       <div class="preview-card">
-        <img src="images/roadmap_p8.jpg" alt="今月の最優先タスク" loading="lazy" decoding="async">
+        <div class="preview-mock">
+          <div class="preview-mock-header">
+            <span class="preview-mock-eyebrow">Top 3 Tasks</span>
+            <span class="preview-mock-page">P.08</span>
+          </div>
+          <div class="preview-mock-body">
+            <div class="preview-mock-h">今月の最優先タスク</div>
+            <div class="preview-mock-tasks">
+              <div class="preview-mock-task"><em>01</em><span></span></div>
+              <div class="preview-mock-task"><em>02</em><span></span></div>
+              <div class="preview-mock-task"><em>03</em><span></span></div>
+            </div>
+          </div>
+        </div>
         <div class="preview-caption">8/8　今月の最優先タスク</div>
       </div>
+
     </div>
     <div class="preview-hint">← Swipe to see all 8 pages →</div>
   </div>
