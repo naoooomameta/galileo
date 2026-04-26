@@ -1,0 +1,2005 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>ガリレオ｜偏差値UP合格戦略ガイドブック無料診断</title>
+
+<!-- OGP -->
+<meta property="og:title" content="うちの子の合格戦略を無料で見てみる｜ガリレオ">
+<meta property="og:description" content="4問のかんたん診断で、志望校合格までの道筋がわかる。理系の大学受験専門塾ガリレオが、お子様専用の合格戦略ガイドブックを無料でお届けします。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://naoooomameta.github.io/galileo/lpquestionnaire/">
+<meta property="og:image" content="https://naoooomameta.github.io/galileo/lpquestionnaire/images/ogp.jpg">
+<meta property="og:site_name" content="ガリレオ｜理系の大学受験専門塾">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '{{GALILEO_PIXEL_ID}}');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{GALILEO_PIXEL_ID}}&ev=PageView&noscript=1"/></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="images/logo.png" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   GALILEO BRAND TOKENS
+   ═══════════════════════════════════════ */
+:root{
+  --g-green-darkest:#1f3329;     /* 最深部の森 */
+  --g-green-deep:#2d4a3e;        /* メインのダークグリーン */
+  --g-green:#3d5e4f;              /* やや明るめの緑 */
+  --g-green-soft:#5a7868;         /* テキスト用くすみ緑 */
+  --g-gold:#c8a45c;               /* メインゴールド */
+  --g-gold-light:#d9bb7a;         /* ライトゴールド */
+  --g-gold-deep:#a8843c;          /* 深いゴールド */
+  --g-cream:#f5f1e8;              /* メイン背景アイボリー */
+  --g-cream-light:#faf7ef;        /* 最も明るい背景 */
+  --g-cream-soft:#ece6d6;         /* やや濃いアイボリー */
+  --g-ink:#1a1f1c;                /* 墨色（本文） */
+  --g-muted:#7a857e;              /* グレイッシュ */
+  --g-line:#d9d2c0;                /* 区切り線 */
+  --g-shadow:rgba(31,51,41,0.12);
+}
+
+/* ═══════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════ */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{font-size:16px;scroll-behavior:smooth;}
+body{
+  font-family:'Noto Sans JP','Noto Serif JP',sans-serif;
+  background:var(--g-cream);
+  color:var(--g-ink);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -webkit-tap-highlight-color:transparent;
+}
+
+/* ═══════════════════════════════════════
+   SECTION 1 — FV
+   ═══════════════════════════════════════ */
+
+/* Top Banner */
+.top-banner{
+  background:var(--g-green-darkest);
+  color:var(--g-cream);
+  text-align:center;
+  padding:11px 16px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:1px;
+  position:relative;
+  font-family:'Noto Serif JP',serif;
+}
+.top-banner::after{
+  content:'';position:absolute;bottom:-6px;left:50%;
+  transform:translateX(-50%);
+  width:0;height:0;
+  border-left:8px solid transparent;border-right:8px solid transparent;
+  border-top:6px solid var(--g-green-darkest);
+}
+
+/* Logo Bar */
+.logo-bar{
+  display:flex;align-items:center;justify-content:center;
+  gap:12px;padding:14px 16px;
+  background:var(--g-cream-light);
+  border-bottom:1px solid var(--g-line);
+}
+.logo-bar img{
+  width:48px;height:48px;
+  object-fit:contain;
+}
+.logo-text-wrap{
+  display:flex;flex-direction:column;line-height:1.2;
+}
+.logo-sub{
+  font-size:10px;font-weight:600;
+  color:var(--g-green-soft);letter-spacing:1.2px;
+  font-family:'Noto Serif JP',serif;
+}
+.logo-name{
+  font-size:20px;font-weight:700;
+  color:var(--g-green-deep);letter-spacing:3px;
+  font-family:'Noto Serif JP',serif;
+}
+
+/* Stats Bar */
+.stats-bar{
+  display:flex;align-items:center;justify-content:center;
+  gap:0;padding:18px 12px;
+  background:var(--g-cream-light);
+  border-bottom:1px solid var(--g-line);
+}
+.stat-item{
+  flex:1;text-align:center;
+}
+.stat-num{
+  font-size:24px;font-weight:700;color:var(--g-gold-deep);
+  line-height:1;
+  font-family:'Cormorant Garamond',serif;
+  letter-spacing:0.5px;
+}
+.stat-num span{
+  font-size:13px;font-weight:600;margin-left:2px;
+  font-family:'Noto Sans JP',sans-serif;
+}
+.stat-label{
+  font-size:11px;font-weight:600;color:var(--g-green-soft);
+  margin-top:5px;letter-spacing:0.5px;
+}
+.stat-divider{
+  width:1px;height:34px;background:var(--g-line);
+  flex-shrink:0;
+}
+
+/* Hero FV */
+.hero-fv{
+  background:
+    radial-gradient(circle at 75% 25%, rgba(200,164,92,0.08), transparent 55%),
+    radial-gradient(circle at 20% 75%, rgba(45,74,62,0.06), transparent 50%),
+    linear-gradient(160deg,var(--g-cream-light) 0%,var(--g-cream) 100%);
+  text-align:center;padding:36px 24px 28px;
+  position:relative;overflow:hidden;
+}
+
+/* Constellation decoration */
+.constellation{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.4;pointer-events:none;}
+
+.impact-area{position:relative;margin-bottom:18px;}
+.impact-sub{
+  font-size:13px;color:var(--g-green-soft);line-height:1.9;
+  margin-top:18px;font-weight:500;
+  font-family:'Noto Serif JP',serif;
+}
+.impact-copy{
+  position:relative;z-index:1;
+  display:flex;flex-direction:column;align-items:center;
+  animation:numberPop 0.7s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+@keyframes numberPop{0%{transform:scale(0.85);opacity:0;}100%{transform:scale(1);opacity:1;}}
+.impact-eyebrow{
+  font-size:11px;font-weight:600;
+  color:var(--g-gold-deep);letter-spacing:4px;
+  margin-bottom:14px;
+  font-family:'Cormorant Garamond',serif;
+  text-transform:uppercase;
+}
+.impact-eyebrow::before, .impact-eyebrow::after{
+  content:'';display:inline-block;
+  width:24px;height:1px;background:var(--g-gold);
+  vertical-align:middle;margin:0 12px;
+}
+.impact-top{
+  font-size:20px;font-weight:600;color:var(--g-green-deep);
+  letter-spacing:2px;line-height:1.5;
+  margin-bottom:10px;
+  font-family:'Noto Serif JP',serif;
+}
+.impact-bottom{
+  font-size:54px;font-weight:700;color:var(--g-green-darkest);
+  line-height:1;letter-spacing:-1px;
+  font-family:'Noto Serif JP',serif;
+  position:relative;
+  display:inline-block;
+}
+.impact-bottom-sub{
+  font-size:30px;font-weight:600;color:var(--g-green-deep);
+  letter-spacing:2px;
+  font-family:'Noto Serif JP',serif;
+}
+.impact-bottom .gold-accent{
+  color:var(--g-gold-deep);
+  position:relative;
+}
+
+/* FV CTA */
+.fv-cta{
+  text-align:center;
+  margin:28px 0 8px;
+  position:relative;z-index:1;
+}
+.fv-cta-wrap{
+  position:relative;display:inline-block;width:100%;max-width:320px;
+  cursor:pointer;transition:all 0.25s;
+}
+.fv-cta-wrap:hover{transform:translateY(-2px);}
+.fv-cta-wrap:active{transform:scale(0.98);}
+.fv-cta-ribbon{
+  position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+  background:var(--g-green-darkest);color:var(--g-gold-light);
+  font-size:13px;font-weight:600;
+  padding:5px 22px;border-radius:2px;
+  letter-spacing:3px;
+  border:1px solid var(--g-gold);
+  z-index:2;white-space:nowrap;
+  font-family:'Noto Serif JP',serif;
+  box-shadow:0 3px 10px rgba(31,51,41,0.25);
+  animation:ribbonPop 2.5s ease-in-out infinite;
+}
+@keyframes ribbonPop{
+  0%,100%{transform:translateX(-50%) scale(1);}
+  50%{transform:translateX(-50%) scale(1.03);}
+}
+.fv-cta-mega{
+  width:100%;padding:26px 20px 18px;
+  background:linear-gradient(135deg,var(--g-gold) 0%,var(--g-gold-deep) 100%);
+  border-radius:6px;
+  box-shadow:0 8px 26px rgba(168,132,60,0.35),inset 0 1px 0 rgba(255,255,255,0.2);
+  margin-top:10px;
+  position:relative;overflow:hidden;
+  border:1px solid var(--g-gold-light);
+}
+.fv-cta-mega::after{
+  content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent);
+  animation:shine 3.5s infinite;
+}
+.fv-cta-mega-text{
+  font-size:17px;font-weight:700;color:#fff;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  letter-spacing:1px;
+  text-shadow:0 1px 2px rgba(31,51,41,0.2);
+}
+.fv-cta-mega-sub{
+  font-size:11px;color:rgba(255,255,255,0.85);
+  margin-top:6px;letter-spacing:1.5px;
+  font-family:'Cormorant Garamond',serif;
+  text-transform:uppercase;
+}
+.fv-cta-arrow{
+  font-size:20px;transition:transform 0.25s;
+}
+.fv-cta-wrap:hover .fv-cta-arrow{transform:translateX(5px);}
+.fv-cta-micro{
+  font-size:11px;color:var(--g-green-soft);
+  font-weight:500;margin-top:10px;
+  display:flex;align-items:flex-start;justify-content:center;gap:6px;
+  text-align:center;line-height:1.7;
+}
+.fv-cta-micro svg{flex-shrink:0;margin-top:2px;}
+
+/* Stars (constellation accents) */
+.spark{position:absolute;z-index:2;}
+.spark1{top:14px;right:24px;width:32px;animation:sparkle 2.5s ease-in-out infinite;}
+.spark2{top:64px;left:18px;width:24px;animation:sparkle 2.5s ease-in-out infinite 0.7s;}
+.spark3{bottom:32px;right:14px;width:28px;animation:sparkle 2.5s ease-in-out infinite 1.2s;}
+@keyframes sparkle{0%,100%{opacity:0.4;transform:scale(0.85);}50%{opacity:1;transform:scale(1.15);}}
+
+/* Visual Area — Report Card */
+.visual-area{max-width:300px;margin:26px auto 0;}
+.report-card{
+  background:var(--g-cream-light);border-radius:6px;
+  border:1px solid var(--g-line);
+  box-shadow:0 12px 40px rgba(31,51,41,0.18),0 0 0 1px rgba(200,164,92,0.15);
+  overflow:hidden;
+  position:relative;
+}
+.report-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--g-gold-deep),var(--g-gold),var(--g-gold-deep));
+}
+.report-card-header{
+  background:var(--g-green-darkest);
+  padding:14px 16px;
+  display:flex;align-items:center;gap:10px;
+  border-bottom:1px solid var(--g-gold);
+}
+.report-icon{font-size:14px;line-height:1;color:var(--g-gold-light);}
+.report-title{flex:1;font-size:12px;font-weight:600;color:var(--g-cream);letter-spacing:1px;font-family:'Noto Serif JP',serif;}
+.report-badge-free{
+  background:var(--g-gold);color:var(--g-green-darkest);
+  font-size:10px;font-weight:700;
+  padding:3px 10px;border-radius:2px;
+  letter-spacing:1px;
+  font-family:'Cormorant Garamond',serif;
+  text-transform:uppercase;
+}
+.report-chart{padding:16px 14px 12px;background:var(--g-cream-light);}
+.mini-chart{display:flex;align-items:flex-end;gap:5px;height:76px;margin-bottom:8px;}
+.mini-bar{flex:1;border-radius:1px;animation:barGrow 1.2s ease-out both;}
+@keyframes barGrow{from{height:0 !important;}}
+.mini-bar:nth-child(1){background:#a8b8af;height:25%;}
+.mini-bar:nth-child(2){background:#7a9486;height:35%;}
+.mini-bar:nth-child(3){background:#5a7868;height:48%;}
+.mini-bar:nth-child(4){background:#3d5e4f;height:62%;}
+.mini-bar:nth-child(5){background:#2d4a3e;height:78%;}
+.mini-bar:nth-child(6){background:linear-gradient(180deg,var(--g-gold-light),var(--g-gold-deep));height:100%;position:relative;border:1px solid var(--g-gold);}
+.mini-bar:nth-child(6)::after{content:'★';position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:14px;color:var(--g-gold-deep);}
+.mini-label{display:flex;justify-content:space-between;font-size:9px;color:var(--g-muted);font-weight:600;font-family:'Cormorant Garamond',serif;}
+.report-footer{
+  padding:9px 16px 11px;font-size:10px;color:var(--g-muted);
+  font-weight:600;background:var(--g-cream-light);border-top:1px solid var(--g-line);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.report-footer-label{color:var(--g-green-soft);letter-spacing:0.5px;}
+.report-footer-name{color:var(--g-green-deep);font-weight:700;font-family:'Noto Serif JP',serif;letter-spacing:1.5px;}
+
+/* Mascot */
+.mascot{display:block;width:80px;height:auto;margin-left:auto;margin-top:-6px;position:relative;z-index:2;animation:mascotBounce 3.5s ease-in-out infinite;}
+@keyframes mascotBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
+
+/* Omakase */
+.omakase-area{
+  background:var(--g-cream-light);
+  text-align:center;
+  padding:26px 20px 30px;
+  border-top:1px solid var(--g-line);
+  position:relative;
+}
+.omakase-area::before{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:60px;height:1px;background:var(--g-gold);
+}
+.omakase-brand{
+  font-size:14px;font-weight:600;color:var(--g-green-soft);
+  margin-bottom:4px;font-family:'Noto Serif JP',serif;
+  letter-spacing:1.5px;
+}
+.omakase-brand em{
+  font-style:normal;color:var(--g-green-deep);
+  font-weight:700;font-size:16px;letter-spacing:3px;
+  font-family:'Noto Serif JP',serif;
+}
+.omakase-main{
+  font-size:28px;font-weight:700;color:var(--g-green-darkest);
+  line-height:1.4;margin:6px 0;letter-spacing:0;
+  font-family:'Noto Serif JP',serif;
+}
+.omakase-main .blue{color:var(--g-gold-deep);}
+.omakase-main .gold-underline{position:relative;display:inline-block;}
+.omakase-main .gold-underline::after{
+  content:'';position:absolute;bottom:2px;left:-4px;right:-4px;
+  height:8px;background:linear-gradient(90deg,rgba(200,164,92,0.45),rgba(168,132,60,0.45));
+  border-radius:4px;z-index:-1;
+}
+
+/* ═══════════════════════════════════════
+   FV → SURVEY BRIDGE
+   ═══════════════════════════════════════ */
+.bridge-section{
+  background:linear-gradient(180deg,var(--g-cream) 0%,var(--g-cream-soft) 100%);
+  text-align:center;
+  padding:38px 20px 44px;
+  display:flex;flex-direction:column;align-items:center;
+  position:relative;
+}
+.bridge-section::before{
+  content:'';position:absolute;top:24px;left:50%;transform:translateX(-50%);
+  width:40px;height:1px;background:var(--g-gold);
+}
+.bridge-eyebrow{
+  font-size:11px;font-weight:600;color:var(--g-gold-deep);
+  letter-spacing:4px;margin-bottom:14px;
+  font-family:'Cormorant Garamond',serif;
+  text-transform:uppercase;
+}
+.bridge-heading{
+  font-size:20px;font-weight:700;color:var(--g-green-darkest);
+  line-height:1.7;margin-bottom:10px;
+  font-family:'Noto Serif JP',serif;
+  letter-spacing:1px;
+}
+.bridge-heading .blue{color:var(--g-gold-deep);}
+.bridge-heading .num{
+  font-size:30px;color:var(--g-gold-deep);
+  position:relative;display:inline-block;
+  font-family:'Cormorant Garamond',serif;
+  font-weight:700;
+}
+.bridge-heading .num::after{
+  content:'';position:absolute;bottom:0;left:-2px;right:-2px;
+  height:2px;background:var(--g-gold);
+}
+.bridge-sub{
+  font-size:13px;color:var(--g-green-soft);margin-bottom:28px;line-height:1.9;
+  font-family:'Noto Serif JP',serif;
+}
+.bridge-steps{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  margin-bottom:28px;
+}
+.bridge-step{
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  width:90px;
+}
+.bridge-step-icon{
+  width:64px;height:64px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--g-cream-light);
+  box-shadow:0 4px 14px rgba(31,51,41,0.1);
+  border:1px solid var(--g-line);
+  position:relative;
+}
+.bridge-step-icon::before{
+  content:'';position:absolute;inset:-3px;
+  border:1px solid var(--g-gold);
+  border-radius:50%;opacity:0.4;
+}
+.bridge-step-icon svg{width:42px;height:42px;}
+.bridge-step-label{
+  font-size:11px;font-weight:600;color:var(--g-green-deep);
+  line-height:1.4;text-align:center;
+  font-family:'Noto Serif JP',serif;
+  letter-spacing:0.5px;
+}
+.bridge-step-label small{color:var(--g-gold-deep);font-size:10px;font-weight:700;}
+.bridge-arrow{color:var(--g-gold);font-size:22px;margin-top:-20px;font-weight:300;font-family:'Cormorant Garamond',serif;}
+
+/* Bridge Benefits */
+.bridge-benefits{
+  background:var(--g-cream-light);border-radius:6px;
+  padding:26px 22px;margin-bottom:26px;
+  text-align:left;
+  box-shadow:0 4px 18px rgba(31,51,41,0.08);
+  border:1px solid var(--g-line);
+  width:100%;max-width:360px;
+  position:relative;
+}
+.bridge-benefits::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--g-gold-deep),var(--g-gold));
+  border-radius:6px 6px 0 0;
+}
+.bridge-benefits-title{
+  text-align:center;font-size:15px;font-weight:600;
+  color:var(--g-green-darkest);line-height:1.6;margin-bottom:18px;
+  font-family:'Noto Serif JP',serif;
+  letter-spacing:1px;
+}
+.bridge-benefits-title strong{color:var(--g-gold-deep);font-weight:700;}
+.benefit-list{display:flex;flex-direction:column;gap:11px;margin-bottom:18px;}
+.benefit-item{
+  display:flex;align-items:flex-start;gap:11px;
+  font-size:13px;color:var(--g-ink);line-height:1.6;
+  font-family:'Noto Sans JP',sans-serif;
+}
+.benefit-item strong{color:var(--g-green-deep);font-weight:700;}
+.benefit-check{
+  flex-shrink:0;width:20px;height:20px;
+  background:var(--g-green-deep);color:var(--g-gold-light);
+  border-radius:50%;font-size:11px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  margin-top:1px;
+  border:1px solid var(--g-gold);
+}
+.benefit-free{
+  text-align:center;font-size:13px;color:var(--g-green-soft);
+  padding-top:14px;border-top:1px solid var(--g-line);
+  font-family:'Noto Serif JP',serif;
+  letter-spacing:0.5px;
+}
+.benefit-free strong{color:var(--g-gold-deep);font-weight:700;}
+
+/* Preview Gallery */
+.preview-gallery{
+  width:100%;max-width:360px;
+  margin:22px auto 26px;
+}
+.preview-label{
+  text-align:center;font-size:12px;font-weight:600;
+  color:var(--g-gold-deep);margin-bottom:14px;letter-spacing:2px;
+  font-family:'Cormorant Garamond',serif;
+  text-transform:uppercase;
+}
+.preview-scroll{
+  display:flex;gap:12px;
+  overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:4px 0 14px;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.preview-scroll::-webkit-scrollbar{display:none;}
+.preview-card{
+  flex:0 0 85%;scroll-snap-align:center;
+  background:var(--g-cream-light);border-radius:4px;
+  box-shadow:0 4px 18px rgba(31,51,41,0.12);
+  border:1px solid var(--g-line);
+  overflow:hidden;
+}
+.preview-card img{
+  width:100%;height:auto;display:block;
+}
+.preview-caption{
+  padding:9px 12px;font-size:11px;font-weight:600;
+  color:var(--g-green-deep);text-align:center;background:var(--g-cream);
+  border-top:1px solid var(--g-line);
+  font-family:'Noto Serif JP',serif;
+  letter-spacing:0.5px;
+}
+.preview-hint{
+  text-align:center;font-size:11px;color:var(--g-muted);
+  font-weight:500;margin-top:6px;
+  font-family:'Cormorant Garamond',serif;
+  letter-spacing:1px;
+}
+@keyframes shine{0%{left:-100%;}30%{left:100%;}100%{left:100%;}}
+
+/* ═══════════════════════════════════════
+   SECTION 2 — SURVEY
+   ═══════════════════════════════════════ */
+.survey-overlay{
+  display:none;
+  position:fixed;inset:0;z-index:1000;
+  background:rgba(31,51,41,0.7);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  animation:fadeIn 0.35s ease;
+}
+.survey-overlay.show{display:flex;align-items:center;justify-content:center;}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+.survey-container{
+  width:100%;max-width:420px;height:100dvh;max-height:720px;
+  background:var(--g-cream-light);border-radius:8px;
+  display:flex;flex-direction:column;
+  overflow:hidden;
+  box-shadow:0 24px 70px rgba(31,51,41,0.4);
+  position:relative;
+  border:1px solid var(--g-line);
+}
+.survey-container::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--g-gold-deep),var(--g-gold),var(--g-gold-deep));
+  z-index:1;
+}
+@media(max-width:500px){
+  .survey-container{
+    max-width:100%;height:100dvh;max-height:none;border-radius:0;
+  }
+}
+
+/* Back Link */
+.back-to-top{
+  display:flex;align-items:center;gap:4px;
+  padding:14px 20px 0;
+  background:var(--g-cream-light);
+  font-size:13px;font-weight:600;
+  color:var(--g-green-deep);text-decoration:none;
+  flex-shrink:0;
+  font-family:'Noto Serif JP',serif;
+  letter-spacing:0.5px;
+}
+.back-to-top:active{opacity:0.6;}
+
+/* Survey Header */
+.survey-header{
+  padding:14px 20px 18px;
+  background:var(--g-cream-light);
+  border-bottom:1px solid var(--g-line);
+  flex-shrink:0;
+}
+.survey-progress{
+  display:flex;align-items:center;gap:14px;margin-bottom:12px;
+}
+.progress-bar{
+  flex:1;height:5px;background:var(--g-cream-soft);border-radius:0;overflow:hidden;
+  border:1px solid var(--g-line);
+}
+.progress-fill{
+  height:100%;background:linear-gradient(90deg,var(--g-gold-deep),var(--g-gold));
+  transition:width 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+.progress-text{
+  font-size:13px;font-weight:600;color:var(--g-green-deep);white-space:nowrap;
+  font-family:'Cormorant Garamond',serif;letter-spacing:1px;
+}
+.survey-step-title{
+  font-size:11px;font-weight:600;color:var(--g-gold-deep);letter-spacing:3px;
+  font-family:'Cormorant Garamond',serif;
+}
+
+/* Survey Body */
+.survey-body{
+  flex:1;overflow-y:auto;padding:26px 22px;
+  -webkit-overflow-scrolling:touch;
+  background:var(--g-cream-light);
+}
+.survey-question{
+  display:none;
+  animation:slideUp 0.45s cubic-bezier(0.4,0,0.2,1) both;
+}
+.survey-question.active{display:block;}
+@keyframes slideUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+
+.q-icon{font-size:36px;margin-bottom:14px;display:block;}
+.q-title{
+  font-size:22px;font-weight:700;color:var(--g-green-darkest);line-height:1.5;margin-bottom:8px;
+  font-family:'Noto Serif JP',serif;
+  letter-spacing:1px;
+}
+.q-desc{
+  font-size:13px;color:var(--g-green-soft);margin-bottom:24px;line-height:1.7;
+  font-family:'Noto Serif JP',serif;
+}
+
+/* Option Cards */
+.option-grid{display:flex;flex-direction:column;gap:10px;}
+.option-card{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 18px;border:1.5px solid var(--g-line);border-radius:4px;
+  cursor:pointer;transition:all 0.2s;background:var(--g-cream-light);
+  -webkit-user-select:none;user-select:none;
+}
+.option-card:hover{border-color:var(--g-gold);background:var(--g-cream);}
+.option-card:active{transform:scale(0.98);}
+.option-card.selected{
+  border-color:var(--g-green-deep);background:rgba(45,74,62,0.04);
+  box-shadow:0 0 0 3px rgba(200,164,92,0.18);
+}
+.option-radio{
+  width:22px;height:22px;border-radius:50%;
+  border:2px solid var(--g-muted);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  transition:all 0.2s;
+  background:var(--g-cream-light);
+}
+.option-card.selected .option-radio{
+  border-color:var(--g-gold-deep);background:var(--g-gold-deep);
+}
+.option-card.selected .option-radio::after{
+  content:'';width:8px;height:8px;border-radius:50%;background:var(--g-cream-light);
+}
+.option-label{
+  font-size:15px;font-weight:600;color:var(--g-green-darkest);
+  font-family:'Noto Serif JP',serif;
+  letter-spacing:0.5px;
+}
+.option-sub{font-size:11px;color:var(--g-muted);font-weight:500;}
+
+/* Checkbox variant for multi-select */
+.option-card.multi .option-radio{border-radius:2px;}
+.option-card.multi.selected .option-radio{border-radius:2px;}
+.option-card.multi.selected .option-radio::after{
+  content:'✓';width:auto;height:auto;background:none;
+  color:var(--g-cream-light);font-size:13px;font-weight:700;border-radius:0;
+}
+
+/* Chip grid for subjects */
+.chip-grid{
+  display:flex;flex-wrap:wrap;gap:8px;
+  margin-top:8px;
+}
+.chip{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:10px 18px;font-size:14px;font-weight:600;
+  color:var(--g-green-deep);background:var(--g-cream-light);
+  border:1.5px solid var(--g-line);border-radius:100px;
+  cursor:pointer;font-family:'Noto Serif JP',serif;
+  transition:all 0.18s ease;
+  -webkit-user-select:none;user-select:none;
+  white-space:nowrap;
+  letter-spacing:0.5px;
+}
+.chip:hover{border-color:var(--g-gold);background:var(--g-cream);}
+.chip:active{transform:scale(0.96);}
+.chip.selected{
+  color:var(--g-cream-light);background:var(--g-green-deep);border-color:var(--g-green-deep);
+  box-shadow:0 2px 8px rgba(45,74,62,0.3);
+}
+.chip-none{
+  display:block;margin-top:14px;
+  padding:10px 20px;font-size:13px;font-weight:600;
+  color:var(--g-muted);background:var(--g-cream);
+  border:1px dashed var(--g-line);border-radius:100px;
+  cursor:pointer;font-family:'Noto Serif JP',serif;
+  transition:all 0.18s ease;
+  text-align:center;width:auto;
+  letter-spacing:0.5px;
+}
+.chip-none:hover{border-color:var(--g-muted);color:var(--g-green-soft);}
+.chip-none.selected{
+  color:var(--g-cream-light);background:var(--g-muted);border-color:var(--g-muted);border-style:solid;
+}
+
+/* Number input */
+.number-input-wrap{
+  display:flex;align-items:center;gap:12px;
+  justify-content:center;margin:20px 0;
+}
+.number-input{
+  width:120px;padding:16px;font-size:36px;font-weight:700;
+  text-align:center;border:2px solid var(--g-line);border-radius:4px;
+  font-family:'Cormorant Garamond',serif;color:var(--g-green-deep);
+  transition:border-color 0.2s;background:var(--g-cream);
+}
+.number-input:focus{outline:none;border-color:var(--g-gold-deep);background:var(--g-cream-light);}
+.number-input::placeholder{color:var(--g-line);font-size:24px;}
+.number-unit{font-size:18px;font-weight:700;color:var(--g-green-soft);font-family:'Noto Serif JP',serif;}
+
+/* Text input for free-form answers */
+.text-input-area{display:flex;flex-direction:column;gap:16px;margin-top:8px;}
+.text-field-group{display:flex;flex-direction:column;gap:6px;}
+.text-field-label{font-size:12px;font-weight:600;color:var(--g-green-soft);letter-spacing:1px;font-family:'Cormorant Garamond',serif;}
+.text-field{
+  width:100%;padding:16px 18px;font-size:16px;font-weight:500;
+  border:1.5px solid var(--g-line);border-radius:4px;
+  font-family:'Noto Serif JP',serif;color:var(--g-green-darkest);background:var(--g-cream);
+  transition:all 0.2s;
+  letter-spacing:0.5px;
+}
+.text-field:focus{outline:none;border-color:var(--g-gold-deep);background:var(--g-cream-light);box-shadow:0 0 0 3px rgba(200,164,92,0.15);}
+.text-field::placeholder{color:#bdb8a8;font-weight:400;font-size:14px;font-family:'Noto Serif JP',serif;}
+.text-hint{
+  display:flex;align-items:flex-start;gap:6px;
+  padding:11px 14px;background:var(--g-cream);border-radius:4px;
+  font-size:11px;color:var(--g-green-soft);line-height:1.7;
+  border:1px solid var(--g-line);
+  font-family:'Noto Serif JP',serif;
+}
+
+/* Wish group */
+.wish-group{
+  background:var(--g-cream);border:1.5px solid var(--g-line);
+  border-radius:4px;padding:14px;
+  transition:border-color 0.2s;
+}
+.wish-group:focus-within{border-color:var(--g-gold);background:var(--g-cream-light);}
+.wish-label{margin-bottom:10px;}
+.wish-badge{
+  display:inline-block;padding:3px 12px;
+  font-size:11px;font-weight:700;border-radius:2px;
+  letter-spacing:1px;
+  font-family:'Cormorant Garamond',serif;
+}
+.wish-badge.first{background:var(--g-green-deep);color:var(--g-gold-light);}
+.wish-req{
+  font-size:10px;font-weight:700;color:var(--g-gold-deep);
+  margin-left:8px;letter-spacing:1px;
+  font-family:'Cormorant Garamond',serif;
+  text-transform:uppercase;
+}
+.wish-badge.second{background:var(--g-cream-soft);color:var(--g-green-deep);border:1px solid var(--g-gold);}
+.wish-badge.third{background:var(--g-cream-soft);color:var(--g-green-soft);}
+.wish-fields{display:flex;flex-direction:column;gap:8px;}
+.text-field.sm{font-size:14px;padding:12px 16px;}
+
+/* Survey Footer */
+.survey-footer{
+  padding:18px 22px calc(26px + env(safe-area-inset-bottom, 0px));
+  border-top:1px solid var(--g-line);
+  flex-shrink:0;
+  display:flex;gap:10px;
+  background:var(--g-cream-light);
+}
+.survey-btn{
+  flex:1;padding:16px;font-size:15px;font-weight:700;
+  border:none;border-radius:4px;cursor:pointer;
+  font-family:'Noto Serif JP',serif;transition:all 0.2s;
+  letter-spacing:1.5px;
+}
+.survey-btn.back{
+  background:var(--g-cream-soft);color:var(--g-green-soft);flex:0 0 auto;width:56px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;padding:0;
+  border:1px solid var(--g-line);
+}
+.survey-btn.back:hover{background:var(--g-line);}
+.survey-btn.next{
+  background:linear-gradient(135deg,var(--g-green-deep),var(--g-green-darkest));
+  color:var(--g-gold-light);
+  box-shadow:0 4px 14px rgba(31,51,41,0.3);
+  border:1px solid var(--g-gold);
+}
+.survey-btn.next:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(31,51,41,0.4);}
+.survey-btn.next:disabled{
+  background:var(--g-cream-soft);color:var(--g-muted);
+  box-shadow:none;cursor:not-allowed;transform:none;
+  border:1px solid var(--g-line);
+}
+
+/* ═══════════════════════════════════════
+   SECTION 3 — COMPLETE SCREEN
+   ═══════════════════════════════════════ */
+.complete-screen{
+  display:none;
+  text-align:center;
+  padding:20px 20px;
+  flex:1;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  overflow-y:auto;
+}
+.complete-screen.show{display:flex;}
+
+/* Compact inline header */
+.complete-header-inline{
+  display:flex;align-items:center;gap:14px;
+  background:rgba(45,74,62,0.06);border:1px solid var(--g-green);
+  border-radius:4px;padding:14px 18px;
+  width:100%;max-width:360px;margin:0 auto 22px;
+  text-align:left;
+  animation:checkPop 0.55s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+@keyframes checkPop{0%{transform:scale(0.9);opacity:0;}100%{transform:scale(1);opacity:1;}}
+.complete-check-sm{
+  width:40px;height:40px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--g-green-deep),var(--g-green));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 12px rgba(45,74,62,0.3);
+  border:1px solid var(--g-gold);
+}
+.complete-check-sm svg{width:20px;height:20px;}
+.complete-title-sm{
+  font-size:15px;font-weight:700;color:var(--g-green-darkest);line-height:1.4;
+  font-family:'Noto Serif JP',serif;letter-spacing:0.5px;
+}
+.complete-sub-sm{font-size:12px;color:var(--g-green-deep);font-weight:600;font-family:'Cormorant Garamond',serif;letter-spacing:1px;}
+
+/* Summary collapsible */
+.summary-details{
+  width:100%;max-width:360px;margin:0 auto;
+}
+.summary-toggle{
+  display:block;text-align:center;
+  font-size:12px;font-weight:600;color:var(--g-muted);
+  cursor:pointer;padding:8px;
+  list-style:none;
+  transition:color 0.2s;
+  font-family:'Noto Serif JP',serif;
+  letter-spacing:1px;
+}
+.summary-toggle:hover{color:var(--g-green-soft);}
+.summary-toggle::-webkit-details-marker{display:none;}
+.summary-details[open] .summary-toggle{margin-bottom:8px;}
+
+/* Summary card */
+.summary-card{
+  background:var(--g-cream);border:1px solid var(--g-line);
+  border-radius:4px;padding:20px;
+  text-align:left;width:100%;
+  margin:0 auto;
+}
+.summary-row{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  padding:9px 0;border-bottom:1px solid var(--g-line);gap:12px;
+}
+.summary-row:last-child{border-bottom:none;}
+.summary-label{
+  font-size:12px;color:var(--g-muted);font-weight:600;flex-shrink:0;white-space:nowrap;
+  font-family:'Cormorant Garamond',serif;letter-spacing:1px;
+}
+.summary-value{
+  font-size:14px;color:var(--g-green-darkest);font-weight:600;text-align:right;line-height:1.6;
+  font-family:'Noto Serif JP',serif;
+}
+
+/* LINE CTA */
+.line-cta-box{
+  background:linear-gradient(135deg,#06c755,#00a847);
+  border-radius:6px;padding:30px 22px;
+  width:100%;max-width:360px;margin:0 auto;
+  box-shadow:0 10px 32px rgba(6,199,85,0.32);
+  border:1px solid rgba(255,255,255,0.15);
+  position:relative;
+}
+.line-cta-box::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:rgba(255,255,255,0.4);
+  border-radius:6px 6px 0 0;
+}
+.line-cta-box .line-icon{
+  width:56px;height:56px;border-radius:14px;
+  background:#fff;display:flex;align-items:center;justify-content:center;
+  margin:0 auto 14px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+.line-cta-title{
+  font-size:22px;font-weight:700;color:#fff;
+  margin-bottom:10px;line-height:1.5;
+  font-family:'Noto Serif JP',serif;
+  letter-spacing:1px;
+}
+.line-cta-desc{
+  font-size:12px;color:rgba(255,255,255,0.88);
+  margin-bottom:16px;line-height:1.7;
+  font-family:'Noto Serif JP',serif;
+}
+.line-cta-highlight{
+  display:inline-block;background:rgba(255,255,255,0.22);
+  border-radius:4px;padding:6px 14px;
+  font-size:13px;font-weight:600;color:#fff;
+  margin-bottom:16px;
+  font-family:'Noto Serif JP',serif;letter-spacing:1px;
+  border:1px solid rgba(255,255,255,0.25);
+}
+.line-add-btn{
+  display:block;width:100%;padding:18px;
+  font-size:16px;font-weight:700;
+  color:#06c755;background:#fff;
+  border:none;border-radius:4px;cursor:pointer;
+  font-family:'Noto Serif JP',serif;
+  box-shadow:0 4px 15px rgba(0,0,0,0.12);
+  transition:all 0.2s;
+  letter-spacing:1.5px;
+  animation:lineBtn 2.2s ease-in-out infinite;
+}
+@keyframes lineBtn{0%,100%{box-shadow:0 4px 15px rgba(0,0,0,0.12);}50%{box-shadow:0 4px 25px rgba(255,255,255,0.4);}}
+.line-add-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,0.18);}
+
+/* Confetti canvas */
+#confetti{
+  position:fixed;inset:0;z-index:1001;pointer-events:none;
+}
+
+/* Floating CTA */
+.floating-cta{
+  position:fixed;bottom:0;left:0;right:0;z-index:90;
+  transform:translateY(100%);
+  transition:transform 0.45s cubic-bezier(0.4,0,0.2,1);
+}
+.floating-cta.show{transform:translateY(0);}
+.floating-cta-inner{
+  max-width:500px;margin:0 auto;
+  background:var(--g-cream-light);
+  border-top:1px solid var(--g-line);
+  padding:11px 16px calc(11px + env(safe-area-inset-bottom, 0px));
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  box-shadow:0 -4px 22px rgba(31,51,41,0.15);
+}
+.floating-cta-text{
+  font-size:12px;font-weight:600;color:var(--g-green-darkest);
+  line-height:1.4;
+  font-family:'Noto Serif JP',serif;
+  letter-spacing:0.5px;
+}
+.floating-cta-free{
+  display:inline-block;
+  background:var(--g-gold-deep);color:#fff;
+  font-size:11px;font-weight:700;
+  padding:3px 10px;border-radius:2px;
+  margin-right:4px;vertical-align:middle;
+  font-family:'Cormorant Garamond',serif;letter-spacing:1px;
+  text-transform:uppercase;
+}
+.floating-cta-btn{
+  flex-shrink:0;
+  padding:12px 22px;font-size:14px;font-weight:700;
+  color:#fff;background:linear-gradient(135deg,var(--g-gold),var(--g-gold-deep));
+  border:none;border-radius:100px;cursor:pointer;
+  font-family:'Noto Serif JP',serif;white-space:nowrap;
+  box-shadow:0 4px 14px rgba(168,132,60,0.4);
+  transition:all 0.2s;
+  letter-spacing:1px;
+  animation:floatPulse 2.2s ease-in-out infinite;
+}
+.floating-cta-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(168,132,60,0.5);}
+@keyframes floatPulse{
+  0%,100%{box-shadow:0 4px 14px rgba(168,132,60,0.4);}
+  50%{box-shadow:0 4px 22px rgba(168,132,60,0.6);}
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════ */
+@media(min-width:600px){
+  body{
+    display:flex;flex-direction:column;align-items:center;
+    min-height:100vh;
+    background:linear-gradient(135deg,#e8e2d0,#d9d2c0);
+    padding:32px 20px;
+  }
+  .phone-frame{
+    width:100%;max-width:680px;border-radius:8px;overflow:hidden;
+    box-shadow:0 16px 60px rgba(31,51,41,0.18);
+    background:var(--g-cream-light);padding:0;position:relative;
+    border:1px solid var(--g-line);
+  }
+  .phone-frame::before{display:none;}
+  .phone-inner{border-radius:0;overflow:hidden;overflow-y:auto;max-height:none;}
+  .floating-cta{display:none !important;}
+  .fv-cta-wrap{max-width:400px;}
+  .visual-area{max-width:440px;}
+  .bridge-benefits{max-width:560px;}
+  .preview-gallery{max-width:560px;}
+}
+
+/* PC LAYOUT */
+.pc-header{display:none;}
+.hero-stats{display:none;}
+.hero-fv-inner{display:contents;}
+.hero-left,.hero-right{display:contents;}
+
+@media(min-width:900px){
+  body{
+    background:var(--g-cream);
+    padding:0;
+    display:block;
+  }
+
+  .phone-frame{
+    width:100%;max-width:none;
+    margin:0;padding:0;
+    border-radius:0;background:transparent;
+    box-shadow:none;border:none;
+  }
+  .phone-frame::before{display:none;}
+  .phone-inner{
+    width:100%;max-width:none;
+    border-radius:0;overflow:visible;
+    background:transparent;box-shadow:none;
+    max-height:none;
+  }
+
+  .top-banner{
+    padding:14px 16px;font-size:14px;
+    width:100%;letter-spacing:2px;
+  }
+  .top-banner::after{display:none;}
+
+  .pc-header{
+    display:block;
+    background:var(--g-cream-light);
+    box-shadow:0 1px 3px rgba(31,51,41,0.08);
+    position:sticky;top:0;z-index:100;
+    border-bottom:1px solid var(--g-line);
+  }
+  .pc-header-inner{
+    max-width:1200px;margin:0 auto;
+    padding:14px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .pc-header-logo{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;}
+  .pc-header-logo img{width:44px;height:44px;object-fit:contain;}
+  .pc-header-logo .logo-text-wrap{display:flex;flex-direction:column;line-height:1.2;}
+  .pc-header-logo .logo-sub{font-size:11px;font-weight:600;color:var(--g-green-soft);letter-spacing:1.5px;font-family:'Noto Serif JP',serif;}
+  .pc-header-logo .logo-name{font-size:24px;font-weight:700;color:var(--g-green-deep);letter-spacing:4px;font-family:'Noto Serif JP',serif;}
+  .pc-header-cta{
+    background:linear-gradient(135deg,var(--g-gold),var(--g-gold-deep));
+    color:#fff;padding:11px 26px;border-radius:2px;
+    font-weight:700;font-size:13px;text-decoration:none;
+    box-shadow:0 4px 12px rgba(168,132,60,0.3);
+    transition:transform 0.2s;cursor:pointer;border:1px solid var(--g-gold-light);
+    font-family:'Noto Serif JP',serif;
+    letter-spacing:1.5px;
+  }
+  .pc-header-cta:hover{transform:translateY(-1px);}
+
+  .logo-bar{display:none;}
+
+  .hero-fv{
+    background:
+      radial-gradient(circle at 80% 20%, rgba(200,164,92,0.1), transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(45,74,62,0.06), transparent 50%),
+      linear-gradient(135deg,var(--g-cream-light) 0%,var(--g-cream) 50%,var(--g-cream-soft) 100%);
+    padding:64px 24px 84px;
+    width:100%;max-width:none;
+    display:block;
+    text-align:left;
+    position:relative;overflow:hidden;
+  }
+  .hero-fv-inner{
+    max-width:1200px;margin:0 auto;
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:48px;align-items:center;
+  }
+  .hero-left,.hero-right{display:block;}
+  .hero-stats{display:flex;}
+
+  .stats-bar.stats-bar-mobile{display:none !important;}
+
+  .hero-left .stats-bar,
+  .hero-stats{
+    display:flex;gap:16px;
+    background:transparent;
+    padding:0;margin:24px 0 32px;
+    max-width:none;
+    border:none;
+  }
+  .hero-left .stat-item,
+  .hero-stats .stat-item{
+    flex:1;background:var(--g-cream-light);border-radius:4px;
+    padding:18px;text-align:center;
+    box-shadow:0 2px 10px rgba(31,51,41,0.08);
+    border:1px solid var(--g-line);
+    position:relative;
+  }
+  .hero-stats .stat-item::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:2px;
+    background:var(--g-gold);
+  }
+  .hero-left .stat-divider,
+  .hero-stats .stat-divider{display:none;}
+  .hero-left .stat-num,
+  .hero-stats .stat-num{font-size:32px;}
+  .hero-left .stat-label,
+  .hero-stats .stat-label{font-size:11px;}
+
+  .impact-area{margin-bottom:0;}
+  .impact-copy{align-items:flex-start;}
+  .impact-eyebrow{font-size:13px;letter-spacing:5px;margin-bottom:18px;}
+  .impact-eyebrow::before,.impact-eyebrow::after{width:30px;}
+  .impact-top{font-size:22px;margin-bottom:14px;}
+  .impact-bottom{
+    font-size:72px;letter-spacing:-2px;line-height:1;
+  }
+  .impact-bottom-sub{font-size:42px;}
+  .impact-sub{
+    font-size:16px;line-height:1.95;
+    max-width:480px;color:var(--g-green-soft);margin-top:22px;
+  }
+
+  .fv-cta{margin:32px 0 0;}
+  .fv-cta-wrap{max-width:380px;margin:0;}
+  .fv-cta-mega{padding:24px 24px 18px;border-radius:6px;}
+  .fv-cta-mega-text{font-size:18px;}
+  .fv-cta-mega-sub{font-size:12px;}
+  .fv-cta-ribbon{font-size:13px;padding:5px 22px;top:-12px;}
+  .fv-cta-micro{margin-top:14px;}
+
+  .visual-area{
+    max-width:none;margin:0;
+    align-self:center;position:relative;
+  }
+  .report-card{
+    box-shadow:0 30px 80px rgba(31,51,41,0.22);
+    transform:rotate(-2deg);
+    transition:transform 0.35s;
+  }
+  .report-card:hover{transform:rotate(0) scale(1.02);}
+  .report-chart{padding:24px 20px 16px;}
+  .mini-chart{height:160px;}
+  .mini-label{font-size:12px;}
+  .mascot{width:100px;bottom:-50px;right:10px;}
+
+  .omakase-area{
+    padding:60px 24px;
+    border-top:none;
+    background:var(--g-cream-light);
+    text-align:center;
+  }
+  .omakase-brand{font-size:16px;}
+  .omakase-brand em{font-size:18px;}
+  .omakase-main{font-size:42px;}
+
+  .bridge-section{
+    padding:84px 24px;
+    max-width:none;
+    background:linear-gradient(180deg,var(--g-cream) 0%,var(--g-cream-light) 100%);
+  }
+  .bridge-section > *{max-width:1000px;margin-left:auto;margin-right:auto;}
+  .bridge-eyebrow{font-size:14px;letter-spacing:5px;}
+  .bridge-heading{font-size:32px;}
+  .bridge-heading .num{font-size:48px;}
+  .bridge-sub{font-size:16px;max-width:640px;}
+  .bridge-benefits{max-width:720px;}
+  .bridge-benefits-title{font-size:17px;}
+  .fv-cta-wrap.bridge-cta{max-width:420px !important;}
+  .benefit-item{font-size:15px;}
+  .preview-gallery{max-width:880px;}
+
+  .survey-container{max-width:720px;}
+  .complete-header-inline{max-width:720px;}
+  .summary-details{max-width:720px;}
+  .line-cta-box{max-width:720px;}
+}
+
+@media(min-width:1200px){
+  .impact-bottom{font-size:84px;}
+  .impact-bottom-sub{font-size:52px;}
+  .omakase-main{font-size:48px;}
+}
+
+@media(max-width:599px){
+  .phone-frame{width:100%;}
+  .phone-inner{width:100%;}
+  .impact-eyebrow{font-size:10px;letter-spacing:3px;}
+  .impact-top{font-size:18px;letter-spacing:1.5px;}
+  .impact-bottom{font-size:48px;}
+  .impact-bottom-sub{font-size:28px;}
+  .fv-cta-mega-text{font-size:16px;}
+  .fv-cta-ribbon{font-size:12px;padding:4px 20px;}
+  .omakase-main{font-size:24px;}
+  .bridge-heading{font-size:18px;}
+  .survey-container{border-radius:0;max-width:100%;height:100dvh;max-height:none;}
+  .survey-body{padding:22px 18px;}
+  .q-title{font-size:20px;}
+  .chip{padding:8px 14px;font-size:13px;}
+  .wish-group{padding:12px;}
+  .text-field{font-size:15px;padding:14px 16px;}
+  .text-field.sm{font-size:13px;padding:11px 14px;}
+  .complete-header-inline{max-width:100%;}
+  .summary-card{padding:16px;}
+  .line-cta-box{max-width:100%;}
+  .line-cta-title{font-size:18px;}
+  .summary-details{max-width:100%;}
+}
+</style>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','{{GALILEO_GTM_ID}}');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+
+<div class="phone-frame">
+<div class="phone-inner">
+
+<!-- ════════════════════════════════════════
+     FV — First View
+     ════════════════════════════════════════ -->
+<div class="top-banner">理系志望のお子様の合格を本気で目指す保護者様へ</div>
+
+<!-- PC専用ヘッダー（sticky） -->
+<header class="pc-header">
+  <div class="pc-header-inner">
+    <a href="https://naoooomameta.github.io/galileo/lpquestionnaire/" class="pc-header-logo">
+      <img src="images/logo.png" alt="ガリレオ" fetchpriority="high" decoding="async">
+      <div class="logo-text-wrap">
+        <span class="logo-sub">理系の大学受験専門塾</span>
+        <span class="logo-name">ガリレオ</span>
+      </div>
+    </a>
+    <button class="pc-header-cta" onclick="openSurvey()">無料診断を始める →</button>
+  </div>
+</header>
+
+<!-- Logo Bar -->
+<div class="logo-bar">
+  <a href="https://naoooomameta.github.io/galileo/lpquestionnaire/" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;">
+    <img src="images/logo.png" alt="ガリレオ" fetchpriority="high" decoding="async">
+    <div class="logo-text-wrap">
+      <span class="logo-sub">理系の大学受験専門塾</span>
+      <span class="logo-name">ガリレオ</span>
+    </div>
+  </a>
+</div>
+
+<div class="stats-bar stats-bar-mobile">
+  <div class="stat-item">
+    <div class="stat-num">93<span>%</span></div>
+    <div class="stat-label">第一志望合格率</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <div class="stat-num">+12<span>UP</span></div>
+    <div class="stat-label">平均偏差値アップ</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <div class="stat-num">98<span>%</span></div>
+    <div class="stat-label">保護者満足度</div>
+  </div>
+</div>
+
+<div class="hero-fv">
+  <!-- Constellation decoration -->
+  <svg class="constellation" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
+    <g fill="none" stroke="#c8a45c" stroke-width="0.5" opacity="0.3">
+      <line x1="50" y1="80" x2="120" y2="60"/>
+      <line x1="120" y1="60" x2="180" y2="120"/>
+      <line x1="180" y1="120" x2="250" y2="100"/>
+      <line x1="250" y1="100" x2="320" y2="160"/>
+      <line x1="320" y1="160" x2="350" y2="240"/>
+    </g>
+    <g fill="#c8a45c">
+      <circle cx="50" cy="80" r="1.5"/>
+      <circle cx="120" cy="60" r="2"/>
+      <circle cx="180" cy="120" r="1.5"/>
+      <circle cx="250" cy="100" r="2.5"/>
+      <circle cx="320" cy="160" r="1.5"/>
+      <circle cx="350" cy="240" r="2"/>
+    </g>
+  </svg>
+
+  <svg class="spark spark1" viewBox="0 0 40 40"><path d="M20 2 L23 16 L38 20 L23 24 L20 38 L17 24 L2 20 L17 16 Z" fill="#c8a45c"/></svg>
+  <svg class="spark spark2" viewBox="0 0 40 40"><path d="M20 5 L22 16 L33 20 L22 24 L20 35 L18 24 L7 20 L18 16 Z" fill="#a8843c"/></svg>
+  <svg class="spark spark3" viewBox="0 0 40 40"><path d="M20 2 L23 16 L38 20 L23 24 L20 38 L17 24 L2 20 L17 16 Z" fill="#c8a45c"/></svg>
+
+  <div class="hero-fv-inner">
+  <div class="hero-left">
+  <div class="impact-area">
+    <div class="impact-copy">
+      <span class="impact-eyebrow">Strategy for Sciences</span>
+      <span class="impact-top">「受かる理系」には</span>
+      <span class="impact-bottom"><span class="gold-accent">戦略</span><span class="impact-bottom-sub">がある</span></span>
+    </div>
+    <p class="impact-sub">4問のかんたん診断で、お子様専用の<br>合格戦略ガイドブックを無料でお届けします</p>
+  </div>
+
+  <!-- PC専用：ヒーロー内ステータス -->
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">93<span>%</span></div>
+      <div class="stat-label">第一志望合格率</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">+12<span>UP</span></div>
+      <div class="stat-label">平均偏差値</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">98<span>%</span></div>
+      <div class="stat-label">保護者満足度</div>
+    </div>
+  </div>
+
+  <!-- FV CTA -->
+  <div class="fv-cta">
+    <div class="fv-cta-wrap" onclick="openSurvey()">
+      <div class="fv-cta-ribbon">＼ 完全無料 ／</div>
+      <div class="fv-cta-mega">
+        <div class="fv-cta-mega-text">うちの子の戦略を見てみる <span class="fv-cta-arrow">→</span></div>
+        <div class="fv-cta-mega-sub">Just 30 Seconds</div>
+      </div>
+    </div>
+    <div class="fv-cta-micro"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="12" rx="2" stroke="#5a7868" stroke-width="2"/><path d="M7 20h10" stroke="#5a7868" stroke-width="2" stroke-linecap="round"/><path d="M12 16v4" stroke="#5a7868" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="10" r="2" fill="#a8843c"/><path d="M8 14c0-2 2-3 4-3s4 1 4 3" stroke="#a8843c" stroke-width="1.5" stroke-linecap="round"/></svg><span>場所を選ばず、最高峰の学習環境を。<br>全国どこからでも診断・入塾OK</span></div>
+  </div>
+  </div><!-- /hero-left -->
+
+  <div class="hero-right">
+  <div class="visual-area">
+    <div class="report-card">
+      <div class="report-card-header">
+        <span class="report-icon">★</span>
+        <span class="report-title">お子様専用 合格戦略レポート</span>
+        <span class="report-badge-free">FREE</span>
+      </div>
+      <div class="report-chart">
+        <div class="mini-chart">
+          <div class="mini-bar" style="animation-delay:0.1s"></div>
+          <div class="mini-bar" style="animation-delay:0.2s"></div>
+          <div class="mini-bar" style="animation-delay:0.3s"></div>
+          <div class="mini-bar" style="animation-delay:0.4s"></div>
+          <div class="mini-bar" style="animation-delay:0.5s"></div>
+          <div class="mini-bar" style="animation-delay:0.6s"></div>
+        </div>
+        <div class="mini-label"><span>Apr</span><span>Jun</span><span>Aug</span><span>Oct</span><span>Dec</span><span>合格</span></div>
+      </div>
+      <div class="report-footer">
+        <span class="report-footer-label">偏差値の推移予測</span>
+        <span class="report-footer-name">GALILEO</span>
+      </div>
+    </div>
+    <img class="mascot" src="images/logo.png" alt="ガリレオ" decoding="async">
+  </div>
+  </div><!-- /hero-right -->
+  </div><!-- /hero-fv-inner -->
+</div>
+
+<div class="omakase-area">
+  <div class="omakase-brand"><em>ガリレオ</em>の戦略システムに</div>
+  <div class="omakase-main"><span class="gold-underline">まるっと</span>おまかせ<span class="blue">。</span></div>
+</div>
+
+<!-- ════════════════════════════════════════
+     BRIDGE — FV → アンケート誘導
+     ════════════════════════════════════════ -->
+<div class="bridge-section" id="bridge">
+  <div class="bridge-eyebrow">Free Diagnosis</div>
+  <div class="bridge-heading">
+    <span class="blue">合格までの距離</span>を、<br>
+    <span class="num">数字</span>で見てみませんか？
+  </div>
+  <div class="bridge-sub">
+    4問のかんたんな質問に答えるだけで、<br>
+    プロがあなただけの合格戦略書をLINEでお届けします。
+  </div>
+
+  <div class="bridge-steps">
+    <div class="bridge-step">
+      <div class="bridge-step-icon active">
+        <svg viewBox="0 0 56 56" fill="none" width="56" height="56">
+          <rect x="12" y="6" width="32" height="44" rx="2" fill="#f5f1e8" stroke="#2d4a3e" stroke-width="1.5"/>
+          <rect x="20" y="2" width="16" height="8" rx="1" fill="#2d4a3e"/>
+          <circle cx="28" cy="6" r="2" fill="#c8a45c"/>
+          <rect x="18" y="18" width="8" height="8" rx="1" fill="#2d4a3e"/><path d="M20 22l2 2 4-4" stroke="#c8a45c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="30" y="19" width="10" height="2" rx="1" fill="#5a7868"/>
+          <rect x="30" y="23" width="8" height="2" rx="1" fill="#5a7868"/>
+          <rect x="18" y="30" width="8" height="8" rx="1" fill="#2d4a3e"/><path d="M20 34l2 2 4-4" stroke="#c8a45c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="30" y="31" width="10" height="2" rx="1" fill="#5a7868"/>
+          <rect x="30" y="35" width="8" height="2" rx="1" fill="#5a7868"/>
+        </svg>
+      </div>
+      <div class="bridge-step-label">4問に回答<br><small>約30秒</small></div>
+    </div>
+    <div class="bridge-arrow">→</div>
+    <div class="bridge-step">
+      <div class="bridge-step-icon active">
+        <svg viewBox="0 0 56 56" fill="none" width="56" height="56">
+          <rect x="14" y="4" width="28" height="48" rx="3" fill="#f5f1e8" stroke="#2d4a3e" stroke-width="1.5"/>
+          <rect x="18" y="10" width="20" height="30" rx="1" fill="#fff"/>
+          <circle cx="28" cy="46" r="2.5" fill="#5a7868"/>
+          <path d="M28 16c-5.5 0-10 3.6-10 8 0 3.3 2.6 6.2 6.4 7.2.25.06.58.17.67.4.07.2.05.52.02.72l-.1.65c-.04.2-.15.8.7.43s4.6-2.7 6.3-4.7C34.5 26.6 38 25.3 38 24c0-4.4-4.5-8-10-8z" fill="#06c755"/>
+        </svg>
+      </div>
+      <div class="bridge-step-label">LINEを<br>友だち追加</div>
+    </div>
+    <div class="bridge-arrow">→</div>
+    <div class="bridge-step">
+      <div class="bridge-step-icon active">
+        <svg viewBox="0 0 56 56" fill="none" width="56" height="56">
+          <rect x="10" y="6" width="36" height="44" rx="2" fill="#f5f1e8" stroke="#2d4a3e" stroke-width="1.5"/>
+          <rect x="16" y="32" width="6" height="12" rx="0.5" fill="#5a7868"/>
+          <rect x="25" y="24" width="6" height="20" rx="0.5" fill="#3d5e4f"/>
+          <rect x="34" y="16" width="6" height="28" rx="0.5" fill="#2d4a3e"/>
+          <path d="M18 30 L28 20 L38 12" stroke="#c8a45c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <polygon points="38,8 42,14 36,14" fill="#a8843c"/>
+          <path d="M40 6l1.2 2.4 2.6.4-1.9 1.8.4 2.6L40 12l-2.3 1.2.4-2.6L36.2 8.8l2.6-.4z" fill="#c8a45c"/>
+        </svg>
+      </div>
+      <div class="bridge-step-label">2日以内に<br><small>戦略書が届く</small></div>
+    </div>
+  </div>
+
+  <div class="bridge-benefits">
+    <div class="bridge-benefits-title">あなたのお子様専用の<br><strong>合格戦略ガイドブック</strong>には…</div>
+    <div class="benefit-list">
+      <div class="benefit-item">
+        <span class="benefit-check">✓</span>
+        <span>志望校逆算の<strong>月別学習タイムライン</strong></span>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-check">✓</span>
+        <span>科目別の<strong>偏差値ギャップ分析</strong>グラフ</span>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-check">✓</span>
+        <span>今月から使う<strong>参考書リスト</strong>（順番指定）</span>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-check">✓</span>
+        <span>合格までの<strong>偏差値推移の予測</strong>チャート</span>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-check">✓</span>
+        <span>塾長からの<strong>個別戦略アドバイス</strong></span>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-check">✓</span>
+        <span>今月の<strong>最優先タスク3つ</strong></span>
+      </div>
+    </div>
+    <div class="benefit-free">これらすべてを<strong>完全無料</strong>でお届けします。</div>
+  </div>
+  <div class="preview-gallery">
+    <div class="preview-label">▼ Sample Guidebook</div>
+    <div class="preview-scroll">
+      <div class="preview-card">
+        <img src="images/roadmap_p1.jpg" alt="合格戦略ガイドブック表紙" loading="lazy" decoding="async">
+        <div class="preview-caption">1/8　合格戦略ガイドブック＋月別タイムライン</div>
+      </div>
+      <div class="preview-card">
+        <img src="images/roadmap_p2.jpg" alt="参考書ルート 3-4月" loading="lazy" decoding="async">
+        <div class="preview-caption">2/8　参考書ルート（3〜4月）</div>
+      </div>
+      <div class="preview-card">
+        <img src="images/roadmap_p3.jpg" alt="参考書ルート 5-6月" loading="lazy" decoding="async">
+        <div class="preview-caption">3/8　参考書ルート（5〜6月）</div>
+      </div>
+      <div class="preview-card">
+        <img src="images/roadmap_p4.jpg" alt="参考書ルート 7-11月" loading="lazy" decoding="async">
+        <div class="preview-caption">4/8　参考書ルート（7〜11月）</div>
+      </div>
+      <div class="preview-card">
+        <img src="images/roadmap_p5.jpg" alt="偏差値ギャップ分析" loading="lazy" decoding="async">
+        <div class="preview-caption">5/8　科目別 偏差値ギャップ分析</div>
+      </div>
+      <div class="preview-card">
+        <img src="images/roadmap_p6.jpg" alt="偏差値推移予測" loading="lazy" decoding="async">
+        <div class="preview-caption">6/8　偏差値推移予測＋戦略アドバイス</div>
+      </div>
+      <div class="preview-card">
+        <img src="images/roadmap_p7.jpg" alt="科目別重点アドバイス" loading="lazy" decoding="async">
+        <div class="preview-caption">7/8　科目別 重点アドバイス</div>
+      </div>
+      <div class="preview-card">
+        <img src="images/roadmap_p8.jpg" alt="今月の最優先タスク" loading="lazy" decoding="async">
+        <div class="preview-caption">8/8　今月の最優先タスク</div>
+      </div>
+    </div>
+    <div class="preview-hint">← Swipe to see all 8 pages →</div>
+  </div>
+
+  <div class="fv-cta-wrap bridge-cta" onclick="openSurvey()" style="max-width:300px;margin:0 auto;">
+    <div class="fv-cta-ribbon">＼ 完全無料 ／</div>
+    <div class="fv-cta-mega">
+      <div class="fv-cta-mega-text">うちの子の戦略を見てみる <span class="fv-cta-arrow">→</span></div>
+      <div class="fv-cta-mega-sub">Just 30 Seconds</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /phone-inner -->
+</div><!-- /phone-frame -->
+
+<!-- Floating CTA -->
+<div class="floating-cta" id="floatingCta">
+  <div class="floating-cta-inner">
+    <div class="floating-cta-text">
+      <span class="floating-cta-free">FREE</span>
+      うちの子の戦略を見てみる
+    </div>
+    <button class="floating-cta-btn" onclick="openSurvey()">
+      診断スタート →
+    </button>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     SURVEY OVERLAY (Full-screen modal)
+     ════════════════════════════════════════ -->
+<div class="survey-overlay" id="surveyOverlay">
+<div class="survey-container" id="surveyContainer">
+
+  <!-- Back Link -->
+  <a href="javascript:void(0)" onclick="closeSurvey()" class="back-to-top">← 戻る</a>
+
+  <!-- Header -->
+  <div class="survey-header">
+    <div class="survey-progress">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+      <div class="progress-text" id="progressText">0 / 4</div>
+    </div>
+    <div class="survey-step-title" id="stepLabel">STEP 1</div>
+  </div>
+
+  <!-- Body — Questions -->
+  <div class="survey-body" id="surveyBody">
+
+    <!-- Q1: 学年 -->
+    <div class="survey-question active" data-step="1">
+      <span class="q-icon">🎒</span>
+      <div class="q-title">お子様の学年を<br>教えてください</div>
+      <div class="q-desc">現在の学年を選択してください</div>
+      <div class="option-grid" data-name="grade">
+        <div class="option-card" data-value="中1" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">中学1年生</div></div>
+        </div>
+        <div class="option-card" data-value="中2" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">中学2年生</div></div>
+        </div>
+        <div class="option-card" data-value="中3" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">中学3年生</div></div>
+        </div>
+        <div class="option-card" data-value="高1" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">高校1年生</div></div>
+        </div>
+        <div class="option-card" data-value="高2" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">高校2年生</div></div>
+        </div>
+        <div class="option-card" data-value="高3" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">高校3年生</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2: 志望校（第一〜第三志望まで自由入力） -->
+    <div class="survey-question" data-step="2" data-type="text">
+      <span class="q-icon">🏫</span>
+      <div class="q-title">志望大学・学部を<br>教えてください</div>
+      <div class="q-desc">第一志望は必須です。第二・第三志望は任意でOK！</div>
+      <div class="text-input-area">
+
+        <!-- 第一志望 -->
+        <div class="wish-group">
+          <div class="wish-label"><span class="wish-badge first">第1志望</span><span class="wish-req">必須</span></div>
+          <div class="wish-fields">
+            <input type="text" class="text-field" id="univ1" placeholder="大学名（例：東京大学）" oninput="onTextInput()">
+            <input type="text" class="text-field sm" id="dept1" placeholder="学部・学科（例：理科一類）" oninput="onTextInput()">
+          </div>
+        </div>
+
+        <!-- 第二志望 -->
+        <div class="wish-group">
+          <div class="wish-label"><span class="wish-badge second">第2志望</span></div>
+          <div class="wish-fields">
+            <input type="text" class="text-field" id="univ2" placeholder="大学名" oninput="onTextInput()">
+            <input type="text" class="text-field sm" id="dept2" placeholder="学部・学科" oninput="onTextInput()">
+          </div>
+        </div>
+
+        <!-- 第三志望 -->
+        <div class="wish-group">
+          <div class="wish-label"><span class="wish-badge third">第3志望</span></div>
+          <div class="wish-fields">
+            <input type="text" class="text-field" id="univ3" placeholder="大学名" oninput="onTextInput()">
+            <input type="text" class="text-field sm" id="dept3" placeholder="学部・学科" oninput="onTextInput()">
+          </div>
+        </div>
+
+        <div class="text-hint">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#7a857e" stroke-width="1.5"/><path d="M7 6.5V10" stroke="#7a857e" stroke-width="1.5" stroke-linecap="round"/><circle cx="7" cy="4.5" r="0.75" fill="#7a857e"/></svg>
+          <span>第二・第三志望は任意です。<br>第一志望の大学名を入力すると次へ進めます。</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q3: 現在の偏差値 -->
+    <div class="survey-question" data-step="3">
+      <span class="q-icon">📐</span>
+      <div class="q-title">現在の偏差値は<br>どれくらいですか？</div>
+      <div class="q-desc">直近の模試の偏差値をおおよそで構いません</div>
+      <div class="option-grid" data-name="deviation">
+        <div class="option-card" data-value="〜40" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">〜40（これから伸ばしたい）</div></div>
+        </div>
+        <div class="option-card" data-value="41〜50" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">41〜50（平均くらい）</div></div>
+        </div>
+        <div class="option-card" data-value="51〜58" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">51〜58（中堅レベル）</div></div>
+        </div>
+        <div class="option-card" data-value="59〜65" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">59〜65（上位層）</div></div>
+        </div>
+        <div class="option-card" data-value="66〜" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">66〜（難関レベル）</div></div>
+        </div>
+        <div class="option-card" data-value="わからない" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">わからない / 模試を受けていない</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q4: 苦手な科目・対策したい科目 -->
+    <div class="survey-question" data-step="4">
+      <span class="q-icon">📊</span>
+      <div class="q-title">お子様の苦手な科目・<br>対策したい科目はありますか？</div>
+      <div class="q-desc">当てはまるものをすべて選択してください（複数可）</div>
+      <div class="chip-grid" data-name="subjects">
+        <button class="chip" data-value="英語R" onclick="toggleChip(this)">英語R</button>
+        <button class="chip" data-value="英語L" onclick="toggleChip(this)">英語L</button>
+        <button class="chip" data-value="数学1A" onclick="toggleChip(this)">数学1A</button>
+        <button class="chip" data-value="数学2BC" onclick="toggleChip(this)">数学2BC</button>
+        <button class="chip" data-value="現代文" onclick="toggleChip(this)">現代文</button>
+        <button class="chip" data-value="古文" onclick="toggleChip(this)">古文</button>
+        <button class="chip" data-value="漢文" onclick="toggleChip(this)">漢文</button>
+        <button class="chip" data-value="日本史" onclick="toggleChip(this)">日本史</button>
+        <button class="chip" data-value="世界史" onclick="toggleChip(this)">世界史</button>
+        <button class="chip" data-value="地理" onclick="toggleChip(this)">地理</button>
+        <button class="chip" data-value="公民" onclick="toggleChip(this)">公民</button>
+        <button class="chip" data-value="理科基礎" onclick="toggleChip(this)">理科基礎</button>
+        <button class="chip" data-value="物理" onclick="toggleChip(this)">物理</button>
+        <button class="chip" data-value="化学" onclick="toggleChip(this)">化学</button>
+        <button class="chip" data-value="生物" onclick="toggleChip(this)">生物</button>
+        <button class="chip" data-value="地学" onclick="toggleChip(this)">地学</button>
+        <button class="chip" data-value="情報" onclick="toggleChip(this)">情報</button>
+      </div>
+      <button class="chip-none" id="chipNone" onclick="toggleNone(this)">特になし</button>
+    </div>
+
+    <!-- COMPLETE SCREEN -->
+    <div class="complete-screen" id="completeScreen">
+
+      <!-- Compact header -->
+      <div class="complete-header-inline">
+        <div class="complete-check-sm">
+          <svg viewBox="0 0 36 36" fill="none"><path d="M8 18l7 7 13-13" stroke="#d9bb7a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div class="complete-title-sm">回答を受け付けました！</div>
+          <div class="complete-sub-sm">あと1ステップで完了です</div>
+        </div>
+      </div>
+
+      <!-- LINE CTA — Required -->
+      <div class="line-cta-box">
+        <div class="line-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32"><path d="M16 3C8.82 3 3 7.95 3 13.97c0 4.58 3.56 8.56 8.87 9.88.34.08.81.24.93.55.1.28.07.72.03 1l-.15.9c-.05.28-.21 1.1.97.6s6.43-3.79 8.78-6.49h0C24.68 18.04 29 16.22 29 13.97 29 7.95 23.18 3 16 3z" fill="#06c755"/><path d="M13.3 11.6h-.73a.24.24 0 00-.24.24v4.55c0 .13.11.24.24.24h.73c.13 0 .24-.11.24-.24v-4.55a.24.24 0 00-.24-.24zm5.63 0h-.73a.24.24 0 00-.24.24v2.7l-2.07-2.83a.24.24 0 00-.2-.11h-.73a.24.24 0 00-.24.24v4.55c0 .13.11.24.24.24h.73c.13 0 .24-.11.24-.24v-2.7l2.07 2.84c.04.06.11.1.19.1h.73c.13 0 .24-.11.24-.24v-4.55a.24.24 0 00-.24-.24zm-7.96 3.81h-1.8v-3.57a.24.24 0 00-.24-.24h-.73a.24.24 0 00-.24.24v4.55c0 .07.03.13.07.17a.24.24 0 00.17.07h2.77c.13 0 .24-.11.24-.24v-.73a.24.24 0 00-.24-.24zm11.32-2.84a.24.24 0 00.24-.24v-.73a.24.24 0 00-.24-.24H19.5a.24.24 0 00-.17.07.24.24 0 00-.07.17v4.55c0 .07.03.13.07.17a.24.24 0 00.17.07h2.77c.13 0 .24-.11.24-.24v-.73a.24.24 0 00-.24-.24h-1.8v-.76h1.8c.13 0 .24-.11.24-.24v-.73a.24.24 0 00-.24-.24h-1.8v-.76h1.8z" fill="#fff"/></svg>
+        </div>
+        <div class="line-cta-title">LINE登録で<br>診断結果を受け取る</div>
+        <div class="line-cta-desc">
+          あなたの回答をもとに、プロの講師が<br>
+          <strong style="color:#fff;">お子様専用の合格戦略ガイドブック</strong>を作成。<br>
+          LINEで直接お届けします。
+        </div>
+        <div class="line-cta-highlight">📩 2日以内にお届けします</div>
+        <button class="line-add-btn" onclick="openLine()">
+          LINE登録して診断結果を受け取る
+        </button>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:10px;">※ 診断結果はLINEでのみお届けしています</div>
+      </div>
+
+    </div>
+
+  </div><!-- /survey-body -->
+
+  <!-- Footer -->
+  <div class="survey-footer" id="surveyFooter">
+    <button class="survey-btn back" id="backBtn" onclick="prevStep()" style="display:none;">←</button>
+    <button class="survey-btn next" id="nextBtn" onclick="nextStep()" disabled>次へ →</button>
+  </div>
+
+</div><!-- /survey-container -->
+</div><!-- /survey-overlay -->
+
+<canvas id="confetti"></canvas>
+
+<script>
+/* ═══════════════════════════════════════
+   FLOATING CTA — show after scrolling past hero
+   ═══════════════════════════════════════ */
+(function(){
+  const fcta = document.getElementById('floatingCta');
+  const phoneInner = document.querySelector('.phone-inner');
+  function checkScroll(){
+    const scrolled = window.scrollY > 400 || (phoneInner && phoneInner.scrollTop > 300);
+    if(scrolled && !document.getElementById('surveyOverlay').classList.contains('show')){
+      fcta.classList.add('show');
+    } else {
+      fcta.classList.remove('show');
+    }
+  }
+  window.addEventListener('scroll', checkScroll, {passive:true});
+  if(phoneInner) phoneInner.addEventListener('scroll', checkScroll, {passive:true});
+})();
+
+/* ═══════════════════════════════════════
+   SURVEY LOGIC
+   ═══════════════════════════════════════ */
+const TOTAL_STEPS = 4;
+let currentStep = 1;
+const answers = {};
+
+function openSurvey() {
+  document.getElementById('surveyOverlay').classList.add('show');
+  document.getElementById('floatingCta').classList.remove('show');
+  document.body.style.overflow = 'hidden';
+  if(typeof fbq==='function') fbq('trackCustom', 'SurveyStart');
+  updateUI();
+}
+
+function closeSurvey() {
+  document.getElementById('surveyOverlay').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+function onTextInput() {
+  const wishes = [];
+  for (let i = 1; i <= 3; i++) {
+    const univ = document.getElementById('univ' + i).value.trim();
+    const dept = document.getElementById('dept' + i).value.trim();
+    if (univ || dept) {
+      let line = '';
+      if (univ && dept) line = univ + '　' + dept;
+      else if (univ) line = univ;
+      else line = dept;
+      wishes.push(line);
+    }
+  }
+  answers.target = wishes.length > 0 ? wishes : ['未定'];
+
+  const univ1 = document.getElementById('univ1').value.trim();
+  document.getElementById('nextBtn').disabled = univ1.length === 0;
+}
+
+function selectOption(card) {
+  const grid = card.closest('.option-grid');
+  grid.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+  card.classList.add('selected');
+
+  const name = grid.dataset.name;
+  answers[name] = card.dataset.value;
+
+  document.getElementById('nextBtn').disabled = false;
+}
+
+function toggleChip(chip) {
+  document.getElementById('chipNone').classList.remove('selected');
+  chip.classList.toggle('selected');
+  syncSubjects();
+}
+
+function toggleNone(btn) {
+  document.querySelectorAll('.chip-grid .chip').forEach(c => c.classList.remove('selected'));
+  btn.classList.toggle('selected');
+  syncSubjects();
+}
+
+function syncSubjects() {
+  const noneBtn = document.getElementById('chipNone');
+  if (noneBtn.classList.contains('selected')) {
+    answers.subjects = ['特になし'];
+  } else {
+    const selected = document.querySelectorAll('.chip-grid .chip.selected');
+    answers.subjects = Array.from(selected).map(c => c.dataset.value);
+  }
+  document.getElementById('nextBtn').disabled = answers.subjects.length === 0;
+}
+
+function nextStep() {
+  if (currentStep >= TOTAL_STEPS) {
+    openLine();
+    return;
+  }
+  currentStep++;
+  updateUI();
+}
+
+function prevStep() {
+  if (currentStep <= 1) return;
+  currentStep--;
+  updateUI();
+}
+
+function updateUI() {
+  document.querySelectorAll('.survey-question').forEach(q => {
+    q.classList.remove('active');
+    if (parseInt(q.dataset.step) === currentStep) {
+      q.classList.add('active');
+    }
+  });
+
+  const pct = ((currentStep - 1) / TOTAL_STEPS) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressText').textContent = (currentStep - 1) + ' / ' + TOTAL_STEPS;
+  document.getElementById('stepLabel').textContent = 'STEP ' + currentStep;
+
+  document.getElementById('backBtn').style.display = currentStep > 1 ? 'flex' : 'none';
+
+  const btn = document.getElementById('nextBtn');
+  const q = document.querySelector(`.survey-question[data-step="${currentStep}"]`);
+  if (q) {
+    const isTextStep = q.dataset.type === 'text';
+    if (isTextStep) {
+      const univ1 = document.getElementById('univ1');
+      btn.disabled = !univ1 || univ1.value.trim().length === 0;
+    } else if (currentStep === 4) {
+      btn.disabled = !answers.subjects || answers.subjects.length === 0;
+    } else {
+      const grid = q.querySelector('.option-grid');
+      const name = grid?.dataset.name;
+      btn.disabled = !answers[name];
+    }
+  }
+
+  if (currentStep === TOTAL_STEPS) {
+    btn.innerHTML = '<svg width="22" height="22" viewBox="0 0 32 32" style="vertical-align:middle;margin-right:6px;"><path d="M16 3C8.82 3 3 7.95 3 13.97c0 4.58 3.56 8.56 8.87 9.88.34.08.81.24.93.55.1.28.07.72.03 1l-.15.9c-.05.28-.21 1.1.97.6s6.43-3.79 8.78-6.49h0C24.68 18.04 29 16.22 29 13.97 29 7.95 23.18 3 16 3z" fill="#fff"/><path d="M13.3 11.6h-.73a.24.24 0 00-.24.24v4.55c0 .13.11.24.24.24h.73c.13 0 .24-.11.24-.24v-4.55a.24.24 0 00-.24-.24zm5.63 0h-.73a.24.24 0 00-.24.24v2.7l-2.07-2.83a.24.24 0 00-.2-.11h-.73a.24.24 0 00-.24.24v4.55c0 .13.11.24.24.24h.73c.13 0 .24-.11.24-.24v-2.7l2.07 2.84c.04.06.11.1.19.1h.73c.13 0 .24-.11.24-.24v-4.55a.24.24 0 00-.24-.24zm-7.96 3.81h-1.8v-3.57a.24.24 0 00-.24-.24h-.73a.24.24 0 00-.24.24v4.55c0 .07.03.13.07.17a.24.24 0 00.17.07h2.77c.13 0 .24-.11.24-.24v-.73a.24.24 0 00-.24-.24zm11.32-2.84a.24.24 0 00.24-.24v-.73a.24.24 0 00-.24-.24H19.5a.24.24 0 00-.17.07.24.24 0 00-.07.17v4.55c0 .07.03.13.07.17a.24.24 0 00.17.07h2.77c.13 0 .24-.11.24-.24v-.73a.24.24 0 00-.24-.24h-1.8v-.76h1.8c.13 0 .24-.11.24-.24v-.73a.24.24 0 00-.24-.24h-1.8v-.76h1.8z" fill="#06c755"/></svg>LINE登録して回答を送信';
+    btn.style.background = '#06c755';
+    btn.style.color = '#fff';
+    btn.style.boxShadow = '0 4px 15px rgba(6,199,85,0.4)';
+    btn.style.fontSize = '15px';
+    btn.style.fontWeight = '700';
+  } else {
+    btn.textContent = '次へ →';
+    btn.style.background = '';
+    btn.style.color = '';
+    btn.style.boxShadow = '';
+    btn.style.fontSize = '';
+    btn.style.fontWeight = '';
+  }
+
+  document.getElementById('surveyBody').scrollTop = 0;
+}
+
+function showComplete() {
+  document.querySelectorAll('.survey-question').forEach(q => q.classList.remove('active'));
+  document.getElementById('surveyFooter').style.display = 'none';
+  document.getElementById('progressFill').style.width = '100%';
+  document.getElementById('progressText').textContent = '完了！';
+  document.getElementById('stepLabel').textContent = 'COMPLETE';
+  document.getElementById('completeScreen').classList.add('show');
+  document.getElementById('surveyBody').scrollTop = 0;
+  launchConfetti();
+}
+
+function openLine() {
+  if(typeof fbq==='function') fbq('track', 'Lead', {content_name: 'line_add'});
+
+  // Send data to Google Sheets
+  fetch('https://script.google.com/macros/s/AKfycbwSZT1v2M1P86Vsvox_kC3FIl6IfYRthA_4IfEL18vdmt8FoMqJ3dkUV2N7FpOosy6dxw/exec', {
+    method: 'POST',
+    mode: 'no-cors',
+    keepalive: true,
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      grade: answers.grade || '',
+      target: answers.target || [],
+      deviation: answers.deviation || '',
+      subjects: answers.subjects || [],
+      source: 'ad'
+    })
+  }).catch(function(e) { console.log('Data send error:', e); });
+
+  window.open('https://line.me/ti/p/{{GALILEO_LINE_ID}}', '_blank');
+  setTimeout(function() {
+    window.location.href = 'thanks.html';
+  }, 800);
+}
+
+/* ═══════════════════════════════════════
+   CONFETTI
+   ═══════════════════════════════════════ */
+function launchConfetti() {
+  const canvas = document.getElementById('confetti');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  canvas.style.display = 'block';
+
+  const pieces = [];
+  // Galileo brand palette
+  const colors = ['#c8a45c','#a8843c','#d9bb7a','#2d4a3e','#3d5e4f','#5a7868','#f5f1e8'];
+  const total = 120;
+
+  for (let i = 0; i < total; i++) {
+    pieces.push({
+      x: Math.random() * canvas.width,
+      y: -20 - Math.random() * 300,
+      w: 6 + Math.random() * 6,
+      h: 4 + Math.random() * 4,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      vx: (Math.random() - 0.5) * 3,
+      vy: 2 + Math.random() * 4,
+      rot: Math.random() * 360,
+      rotV: (Math.random() - 0.5) * 10,
+      opacity: 1,
+    });
+  }
+
+  let frame = 0;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let alive = false;
+    pieces.forEach(p => {
+      if (p.opacity <= 0) return;
+      alive = true;
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += 0.05;
+      p.rot += p.rotV;
+      if (frame > 60) p.opacity -= 0.01;
+
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot * Math.PI / 180);
+      ctx.globalAlpha = Math.max(0, p.opacity);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+      ctx.restore();
+    });
+    frame++;
+    if (alive) {
+      requestAnimationFrame(draw);
+    } else {
+      canvas.style.display = 'none';
+    }
+  }
+  draw();
+}
+</script>
+
+<!-- Footer -->
+<div style="text-align:center;padding:18px 12px 28px;background:var(--g-cream-soft);font-size:11px;color:var(--g-muted);font-family:'Noto Serif JP',serif;letter-spacing:0.5px;border-top:1px solid var(--g-line);">
+  <a href='/lpquestionnaire/privacy' style='color:var(--g-green-soft);text-decoration:none;'>プライバシーポリシー</a>
+  <span style="margin:0 8px;color:var(--g-gold);">｜</span>
+  <a href='/lpquestionnaire/contact' style='color:var(--g-green-soft);text-decoration:none;'>お問い合わせ</a>
+  <span style="margin:0 8px;color:var(--g-gold);">｜</span>
+  <span>© 2026 ガリレオ 理系の大学受験専門塾</span>
+</div>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{GALILEO_GTM_ID}}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+</body>
+</html>
