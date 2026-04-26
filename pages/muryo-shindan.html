@@ -89,10 +89,25 @@
   .final-cta{padding:60px 0}
   .final-cta .hero-cta{padding:18px 40px;font-size:17px;width:100%;max-width:340px}
 }
+.faq-section{background:var(--bg)}
+.faq-list{display:flex;flex-direction:column;gap:18px;max-width:820px;margin:0 auto}
+.faq-item{background:var(--green-pale);border:1px solid var(--green-mist);border-radius:14px;padding:24px 28px;transition:all .25s}
+.faq-item:hover{box-shadow:0 4px 14px rgba(14,74,56,.06)}
+.faq-q,.faq-a{display:flex;gap:16px;align-items:flex-start;line-height:1.85}
+.faq-q{font-size:16px;font-weight:700;color:var(--primary-dark)}
+.faq-a{font-size:14.5px;color:var(--text-light);margin-top:14px;padding-top:14px;border-top:1px dashed var(--green-mist)}
+.faq-mark{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-size:14px;font-weight:700}
+.faq-q .faq-mark{background:var(--primary);color:var(--white)}
+.faq-a .faq-mark{background:var(--amber);color:var(--white)}
+.faq-q-text,.faq-a-text{flex:1;padding-top:3px}
+
 @media(max-width:480px){
   .hero-chips{gap:8px}
   .hero-chip{font-size:12.5px;padding:7px 14px}
   .guidebook-card{padding:28px 20px}
+  .faq-item{padding:20px}
+  .faq-q{font-size:15px}
+  .faq-a{font-size:14px}
 }
 </style>
 <!-- Microsoft Clarity -->
@@ -273,6 +288,36 @@
         <li>ガリレオが実践する「合格思考 → 理系思考」トレーニングの概要</li>
         <li>今すぐ取り組むべき最優先アクション3選</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section faq-section">
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">よくある質問</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-mark">Q</span><span class="faq-q-text">無料診断は本当に無料ですか？</span></div>
+        <div class="faq-a"><span class="faq-mark">A</span><span class="faq-a-text">はい、完全無料です。クレジットカードの登録も不要で、診断後に勧誘の電話がかかることもありません。診断結果のガイドブックはLINEでお届けします。</span></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-mark">Q</span><span class="faq-q-text">診断にどのくらい時間がかかりますか？</span></div>
+        <div class="faq-a"><span class="faq-mark">A</span><span class="faq-a-text">4問のかんたんな質問に答えるだけで、所要時間は約2〜3分です。</span></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-mark">Q</span><span class="faq-q-text">診断対象の学年を教えてください。</span></div>
+        <div class="faq-a"><span class="faq-mark">A</span><span class="faq-a-text">中学生〜高校3年生（および既卒・浪人生）を対象としています。理系志望で大学受験を考えているお子様であればどなたでも受診できます。</span></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-mark">Q</span><span class="faq-q-text">診断後に入塾を強制されますか？</span></div>
+        <div class="faq-a"><span class="faq-mark">A</span><span class="faq-a-text">いいえ。診断結果のお届けのみで、その後の入塾は完全に任意です。無理な勧誘は一切行いません。</span></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-mark">Q</span><span class="faq-q-text">ガリレオはどのような塾ですか？</span></div>
+        <div class="faq-a"><span class="faq-mark">A</span><span class="faq-a-text">ガリレオは理系の大学受験に特化したオンライン専門塾です。毎日課題システムと「合格思考 → 理系思考」トレーニングを通じて、お子様の学力と思考力を体系的に引き上げます。東大・京大・東工大・旧帝大・早慶理工・医学部・東京理科大などを目指す理系受験生のための専門塾です。</span></div>
+      </div>
     </div>
   </div>
 </section>
