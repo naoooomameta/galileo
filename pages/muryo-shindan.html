@@ -4,84 +4,96 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>無料合格診断 | ガリレオ 理系の大学受験専門塾</title>
-<meta name="description" content="理系志望の中高生・既卒生向け 無料合格診断。現在の学力位置・志望校との距離・弱点科目を可視化し、合格までの最短ルートをご提案します。">
+<meta name="description" content="理系大学受験の無料合格診断。たった4問のかんたん診断で、お子様の現状から志望校合格までの具体的なロードマップを無料でお届けします。完全無料・登録不要・勧誘なし。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 <style>
-.page-hero{background:linear-gradient(180deg,var(--bg) 0%,var(--green-pale) 50%,var(--green-light) 100%);padding:80px 0 56px;text-align:center;position:relative;overflow:hidden}
-.page-hero::before{content:'';position:absolute;top:20px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(196,154,60,.06) 0%,transparent 70%);pointer-events:none}
-.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:50px;background:linear-gradient(180deg,transparent,var(--bg));pointer-events:none}
-.page-hero .section-label{margin-bottom:8px;letter-spacing:.08em}
-.page-hero h1{font-family:var(--font-serif);font-size:clamp(28px,4.5vw,44px);font-weight:700;line-height:1.5;margin-bottom:14px}
-.page-hero p{font-size:15px;color:var(--text-light);max-width:640px;margin:0 auto;line-height:2}
-.breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:20px}
-.breadcrumb a{color:var(--primary);text-decoration:underline}
-.cta-section{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--white);text-align:center;position:relative;overflow:hidden}
-.cta-section::before{content:'';position:absolute;top:-40%;right:-15%;width:500px;height:500px;background:radial-gradient(circle,rgba(196,154,60,.08) 0%,transparent 70%);pointer-events:none}
-.cta-section .section-label{color:#D4A843}
-.cta-section .section-title{color:var(--white)}
-.cta-section .section-title::after{background:linear-gradient(90deg,#D4A843,rgba(255,255,255,.3))}
-.cta-section p{color:rgba(255,255,255,.75);font-size:15px;line-height:2;max-width:560px;margin:0 auto 28px}
-.target-badge{display:inline-block;background:linear-gradient(135deg,var(--amber),var(--amber-light));color:var(--white);font-size:14px;font-weight:700;padding:6px 20px;border-radius:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(196,154,60,.2)}
-.intro-card{background:var(--white);border-radius:18px;padding:36px;border:1px solid var(--border);border-left:4px solid var(--primary);box-shadow:0 2px 8px rgba(14,74,56,.04);max-width:780px;margin:0 auto}
-.intro-card p{font-size:15px;color:var(--text-light);line-height:2.05}
-.intro-card p+p{margin-top:14px}
-.diagnosis-box{background:var(--white);border-radius:18px;padding:36px;border:1px solid var(--border);border-left:4px solid var(--amber);box-shadow:0 2px 8px rgba(14,74,56,.04);transition:all .3s}
-.diagnosis-box:hover{box-shadow:0 8px 28px rgba(14,74,56,.08)}
-.diagnosis-box h3{font-size:20px;font-weight:700;margin-bottom:12px;color:var(--primary-dark)}
-.diagnosis-box p{font-size:15px;color:var(--text-light);line-height:2}
-.diagnosis-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:18px}
-.diagnosis-feature{background:var(--green-pale);border:1px solid var(--green-mist);border-radius:12px;padding:18px;font-size:14px;color:var(--text-light);display:flex;align-items:flex-start;gap:10px;transition:all .2s;line-height:1.7}
-.diagnosis-feature:hover{background:var(--green-light);transform:translateY(-1px)}
-.diagnosis-feature .check{color:var(--amber);font-weight:700;font-size:18px;flex-shrink:0;line-height:1.4}
-.diagnosis-feature strong{color:var(--primary-dark);font-weight:700;display:block;margin-bottom:4px}
-.roadmap-steps{display:flex;flex-direction:column;gap:24px;max-width:740px;margin:0 auto}
-.roadmap-step{display:flex;gap:20px;align-items:flex-start}
-.roadmap-num{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--white);font-size:15px;font-weight:700;padding:12px 18px;border-radius:10px;white-space:nowrap;box-shadow:0 3px 12px rgba(14,74,56,.15)}
-.roadmap-content{flex:1;background:var(--white);border-radius:14px;padding:24px;border:1px solid var(--border);border-left:3px solid var(--green-mist);transition:all .3s;box-shadow:0 2px 8px rgba(14,74,56,.04)}
-.roadmap-content:hover{box-shadow:0 6px 20px rgba(14,74,56,.08);border-left-color:var(--amber)}
-.roadmap-content h3{font-size:18px;font-weight:700;margin-bottom:8px;color:var(--primary-dark)}
-.roadmap-content p{font-size:14px;color:var(--text-light);line-height:2}
-.suited-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;max-width:900px;margin:0 auto}
-.suited-item{background:var(--white);border-radius:14px;padding:22px 24px;border:1px solid var(--border);border-left:3px solid var(--amber);font-size:15px;color:var(--text-light);line-height:1.9;box-shadow:0 2px 8px rgba(14,74,56,.04);transition:all .3s}
-.suited-item:hover{box-shadow:0 6px 20px rgba(14,74,56,.08);transform:translateY(-2px)}
-.suited-item strong{display:block;color:var(--primary-dark);font-size:16px;font-weight:700;margin-bottom:6px}
-.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:920px;margin:0 auto}
-.compare-card{background:var(--white);border-radius:18px;padding:32px 28px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(14,74,56,.04);transition:all .3s;display:flex;flex-direction:column}
-.compare-card:hover{box-shadow:0 8px 28px rgba(14,74,56,.08);transform:translateY(-2px)}
-.compare-card.is-diagnosis{border-left:4px solid var(--amber)}
-.compare-card.is-consult{border-left:4px solid var(--primary)}
-.compare-card .compare-tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;padding:4px 12px;border-radius:20px;margin-bottom:14px;align-self:flex-start}
-.compare-card.is-diagnosis .compare-tag{background:rgba(196,154,60,.12);color:var(--amber)}
-.compare-card.is-consult .compare-tag{background:var(--green-pale);color:var(--primary)}
-.compare-card h3{font-family:var(--font-serif);font-size:22px;font-weight:700;color:var(--primary-dark);margin-bottom:10px;line-height:1.5}
-.compare-card .compare-lead{font-size:14px;color:var(--text-light);line-height:1.95;margin-bottom:18px}
-.compare-card ul{list-style:none;padding:0;margin:0 0 22px;display:flex;flex-direction:column;gap:8px}
-.compare-card li{font-size:13.5px;color:var(--text-light);line-height:1.8;padding-left:22px;position:relative}
-.compare-card li::before{content:'✓';position:absolute;left:0;top:0;color:var(--amber);font-weight:700}
-.compare-card .compare-meta{font-size:12px;color:var(--text-muted);margin-bottom:18px;padding-top:14px;border-top:1px dashed var(--border)}
-.compare-card .compare-cta{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:13px 22px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;transition:all .3s}
-.compare-card.is-diagnosis .compare-cta{background:linear-gradient(135deg,var(--amber),var(--amber-light));color:var(--white);box-shadow:0 3px 10px rgba(196,154,60,.22)}
-.compare-card.is-consult .compare-cta{background:transparent;color:var(--primary);border:1.5px solid var(--primary)}
-.compare-card .compare-cta:hover{transform:translateY(-1px)}
-.compare-card.is-consult .compare-cta:hover{background:var(--primary);color:var(--white)}
-.shindan-form{max-width:720px;margin:0 auto;background:var(--white);border-radius:18px;padding:36px;border:1px solid var(--border);box-shadow:0 4px 16px rgba(14,74,56,.06)}
-.shindan-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.shindan-form .form-group{margin-bottom:18px}
-.shindan-form label{display:block;font-size:14px;font-weight:600;color:var(--primary-dark);margin-bottom:6px}
-.shindan-form .req{display:inline-block;background:var(--amber);color:var(--white);font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;margin-left:6px;vertical-align:1px}
-.shindan-form input,.shindan-form select,.shindan-form textarea{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:8px;font-size:15px;font-family:inherit;background:var(--bg);transition:border-color .2s,background .2s}
-.shindan-form input:focus,.shindan-form select:focus,.shindan-form textarea:focus{outline:none;border-color:var(--primary);background:var(--white)}
-.shindan-form .checkbox-group{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-top:6px}
-.shindan-form .checkbox-item{display:flex;align-items:center;gap:8px;padding:10px 12px;background:var(--green-pale);border:1px solid var(--green-mist);border-radius:8px;cursor:pointer;font-size:14px;transition:all .2s}
-.shindan-form .checkbox-item:hover{background:var(--green-light)}
-.shindan-form .checkbox-item input{width:auto;margin:0}
-.shindan-form .btn-submit{width:100%;background:linear-gradient(135deg,var(--amber),var(--amber-light));color:var(--white);border:none;border-radius:10px;padding:16px;font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .3s;box-shadow:0 4px 12px rgba(196,154,60,.25)}
-.shindan-form .btn-submit:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(196,154,60,.35)}
-.shindan-note{max-width:720px;margin:18px auto 0;font-size:13px;color:var(--text-muted);line-height:1.9;text-align:center}
-@media(max-width:768px){.page-hero{padding:60px 0 44px}.intro-card,.diagnosis-box{padding:24px 20px}.roadmap-step{flex-direction:column;gap:10px}.shindan-form{padding:24px 20px}.shindan-form .form-row{grid-template-columns:1fr}.compare-grid{grid-template-columns:1fr}}
+.page-hero{background:linear-gradient(180deg,var(--bg) 0%,var(--green-pale) 60%,var(--green-light) 100%);padding:88px 0 72px;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:40px;right:-80px;width:340px;height:340px;background:radial-gradient(circle,rgba(196,154,60,.08) 0%,transparent 70%);pointer-events:none}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(180deg,transparent,var(--bg));pointer-events:none}
+.page-hero .breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:20px}
+.page-hero .breadcrumb a{color:var(--primary);text-decoration:underline}
+.hero-badge{display:inline-block;border:1.5px solid var(--primary);color:var(--primary);background:var(--white);font-size:13px;font-weight:700;letter-spacing:.16em;padding:8px 22px;border-radius:30px;margin-bottom:22px}
+.page-hero h1{font-family:var(--font-serif);font-size:clamp(30px,5.2vw,50px);font-weight:700;line-height:1.5;margin-bottom:24px;letter-spacing:.02em}
+.page-hero h1 .accent{color:var(--amber)}
+.page-hero h1 .line2{display:block;margin-top:6px}
+.hero-lead{font-size:16px;color:var(--text-light);max-width:700px;margin:0 auto 32px;line-height:2.05}
+.hero-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:34px}
+.hero-chip{background:var(--white);border:1px solid var(--border);color:var(--primary-dark);font-size:14px;font-weight:600;padding:10px 20px;border-radius:30px;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(14,74,56,.04)}
+.hero-chip::before{content:'✓';color:var(--amber);font-weight:700}
+.hero-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--white);padding:20px 56px;border-radius:14px;font-size:18px;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(14,74,56,.22);transition:all .3s}
+.hero-cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(14,74,56,.3)}
+.hero-cta-note{margin-top:14px;font-size:13px;color:var(--text-muted)}
+
+.learn-section{background:var(--bg)}
+.learn-lead{text-align:center;font-size:15px;color:var(--text-light);max-width:560px;margin:0 auto 44px;line-height:1.95}
+.learn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1080px;margin:0 auto}
+.learn-card{background:var(--white);border-radius:18px;padding:36px 28px;border:1px solid var(--border);border-left:4px solid var(--primary);box-shadow:0 2px 8px rgba(14,74,56,.04);transition:all .3s}
+.learn-card:hover{box-shadow:0 8px 28px rgba(14,74,56,.08);transform:translateY(-2px)}
+.learn-icon{width:54px;height:54px;border-radius:14px;background:var(--green-pale);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.learn-icon svg{width:28px;height:28px;fill:var(--primary)}
+.learn-card h3{font-size:18px;font-weight:700;color:var(--primary-dark);margin-bottom:12px;line-height:1.55}
+.learn-card p{font-size:14.5px;color:var(--text-light);line-height:1.95}
+
+.suited-section{background:var(--green-pale)}
+.suited-list{display:flex;flex-direction:column;gap:14px;max-width:880px;margin:0 auto}
+.suited-item{background:var(--white);border:1px solid var(--border);border-left:3px solid var(--primary);border-radius:14px;padding:22px 28px;display:flex;align-items:center;gap:18px;font-size:15.5px;color:var(--text);line-height:1.8;box-shadow:0 2px 8px rgba(14,74,56,.04);transition:all .25s}
+.suited-item:hover{box-shadow:0 6px 18px rgba(14,74,56,.08);border-left-color:var(--amber)}
+.suited-check{width:30px;height:30px;border-radius:50%;background:var(--primary);color:var(--white);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700}
+.suited-check svg{width:16px;height:16px;fill:currentColor}
+
+.flow-section{background:var(--bg)}
+.flow-lead{text-align:center;font-size:15px;color:var(--text-light);max-width:560px;margin:0 auto 44px;line-height:1.95}
+.flow-steps{display:flex;flex-direction:column;gap:0;max-width:780px;margin:0 auto}
+.flow-step{display:flex;gap:28px;padding:28px 0;border-bottom:1px dashed var(--border)}
+.flow-step:last-child{border-bottom:none}
+.flow-num{flex-shrink:0;width:60px;height:60px;border-radius:50%;background:var(--primary);color:var(--white);font-size:22px;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:var(--font-serif)}
+.flow-content{flex:1;padding-top:6px}
+.flow-content h3{font-size:19px;font-weight:700;color:var(--primary-dark);margin-bottom:10px;line-height:1.5}
+.flow-content p{font-size:14.5px;color:var(--text-light);line-height:1.95;margin-bottom:12px}
+.flow-tag{display:inline-block;background:var(--green-pale);color:var(--primary);font-size:12.5px;font-weight:600;padding:5px 14px;border-radius:20px}
+
+.guidebook-section{background:var(--bg)}
+.guidebook-card{max-width:780px;margin:0 auto;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--white);border-radius:20px;padding:44px 48px;position:relative;overflow:hidden;box-shadow:0 12px 36px rgba(14,74,56,.18)}
+.guidebook-card::before{content:'';position:absolute;top:-30%;right:-15%;width:380px;height:380px;background:radial-gradient(circle,rgba(196,154,60,.18) 0%,transparent 70%);pointer-events:none}
+.guidebook-card::after{content:'';position:absolute;bottom:-40%;left:-20%;width:340px;height:340px;background:radial-gradient(circle,rgba(196,154,60,.1) 0%,transparent 70%);pointer-events:none}
+.guidebook-title{display:flex;align-items:center;gap:14px;font-size:21px;font-weight:700;margin-bottom:24px;position:relative;z-index:1;line-height:1.5}
+.guidebook-title svg{width:28px;height:28px;fill:var(--amber-light);flex-shrink:0}
+.guidebook-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;position:relative;z-index:1}
+.guidebook-list li{font-size:15.5px;line-height:1.8;padding-left:30px;position:relative;color:rgba(255,255,255,.95)}
+.guidebook-list li::before{content:'✓';position:absolute;left:0;top:0;width:22px;height:22px;background:var(--amber);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;line-height:1;padding-top:1px}
+
+.final-cta{background:var(--green-pale);text-align:center;padding:88px 0}
+.final-cta h2{font-family:var(--font-serif);font-size:clamp(26px,4vw,36px);font-weight:700;color:var(--primary-dark);line-height:1.65;margin-bottom:18px}
+.final-cta h2 .sub{display:block;font-size:.78em;color:var(--text-light);margin-top:8px;letter-spacing:.04em}
+.final-cta .lead{font-size:15px;color:var(--text-light);max-width:560px;margin:0 auto 40px;line-height:2}
+.final-cta .hero-cta{padding:22px 64px;font-size:19px}
+.final-cta .hero-cta-note{margin-top:16px;font-size:13.5px;color:var(--text-muted)}
+
+@media(max-width:1024px){.learn-grid{grid-template-columns:1fr;gap:18px;max-width:560px}}
+@media(max-width:768px){
+  .page-hero{padding:64px 0 56px}
+  .page-hero h1{font-size:28px;line-height:1.55}
+  .hero-lead{font-size:14.5px;line-height:1.95}
+  .hero-cta{padding:18px 40px;font-size:16px;width:100%;max-width:340px}
+  .hero-chip{font-size:13px;padding:8px 16px}
+  .learn-card{padding:28px 22px}
+  .suited-item{padding:18px 20px;font-size:14.5px;gap:14px}
+  .flow-step{flex-direction:column;gap:14px;padding:22px 0}
+  .flow-num{width:48px;height:48px;font-size:18px}
+  .guidebook-card{padding:32px 24px}
+  .guidebook-title{font-size:18px;gap:10px}
+  .guidebook-list li{font-size:14.5px}
+  .final-cta{padding:60px 0}
+  .final-cta .hero-cta{padding:18px 40px;font-size:17px;width:100%;max-width:340px}
+}
+@media(max-width:480px){
+  .hero-chips{gap:8px}
+  .hero-chip{font-size:12.5px;padding:7px 14px}
+  .guidebook-card{padding:28px 20px}
+}
 </style>
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
@@ -132,167 +144,149 @@
     <a href="../index.html#faq">FAQ</a>
     <a href="../index.html#about">塾概要</a>
     <a href="news.html">お知らせ</a>
-    <a href="muryo-shindan.html">無料合格診断</a>
+    <a href="muryo-shindan.html" aria-current="page">無料合格診断</a>
     <a href="../index.html#contact" class="nav-cta">▶ 無料相談</a>
   </div>
 </nav>
+
+<!-- ===== HERO ===== -->
 <section class="page-hero">
   <div class="container">
     <div class="breadcrumb"><a href="../index.html">ホーム</a> &gt; 無料合格診断</div>
-    <span class="target-badge">中学生 〜 既卒生（理系志望）対象</span>
-    <div class="section-label">FREE DIAGNOSIS</div>
-    <h1>無料合格診断</h1>
-    <p>志望校との距離を、客観的なデータで可視化します。<br>現在の学力位置・弱点科目・合格までの最短ルートを、ガリレオの講師陣が無料で診断します。</p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-label">ABOUT</div>
-    <h2 class="section-title">無料合格診断とは</h2>
-    <p class="section-subtitle">志望校合格に向けた「現在地」を、感覚ではなくデータで明らかにする入口の診断です。</p>
-    <div class="intro-card">
-      <p>理系の大学受験は、科目ごとの理解度・思考プロセス・演習量のバランスで合否が決まります。模試の偏差値だけを見ていても、なぜ点が伸びないのか、どこから手をつければ良いのかは見えてきません。</p>
-      <p>ガリレオの無料合格診断は、ヒアリング・学力チェック・志望校分析を通じて、<strong>「合格までに何が、どれだけ足りていないのか」</strong>を具体的に言語化します。理系専門塾だからこそ可能な、数学・物理・化学・生物・英語（理系長文読解）に対応した診断です。</p>
-      <p>診断結果はその場でフィードバック。入塾の強制は一切ありません。<strong>「証明できる人」を育てる</strong>ガリレオの考え方に触れていただく機会としても、ぜひご活用ください。</p>
+    <span class="hero-badge">FREE DIAGNOSIS</span>
+    <h1>理系大学受験<span class="accent">無料合格診断</span><span class="line2">志望校合格までの<span class="accent">戦略</span>がわかる</span></h1>
+    <p class="hero-lead">たった4問のかんたん診断で、お子様の現状から志望校合格までの具体的なロードマップを無料でお届けします。「何から始めればいいかわからない」「偏差値をどこまで上げれば合格できるのか」── ガリレオの合格戦略をもとに、個別の道筋をお伝えします。</p>
+    <div class="hero-chips">
+      <span class="hero-chip">完全無料</span>
+      <span class="hero-chip">所要時間2〜3分</span>
+      <span class="hero-chip">勧誘なし</span>
+      <span class="hero-chip">LINEで受け取る</span>
     </div>
+    <a href="lpquestionnaire/index.html" class="hero-cta">無料で合格診断を受ける →</a>
+    <p class="hero-cta-note">※ 登録不要・クレジットカード不要</p>
   </div>
 </section>
 
-<section class="section bg-alt">
+<!-- ===== WHAT YOU LEARN ===== -->
+<section class="section learn-section">
   <div class="container">
-    <div class="section-label">WHAT YOU GET</div>
-    <h2 class="section-title">診断でわかること</h2>
-    <p class="section-subtitle">合格戦略を立てるために必要な4つの観点を、客観的なデータで明らかにします。</p>
-    <div class="diagnosis-box">
-      <h3>診断結果として、以下をフィードバックします</h3>
-      <p>ヒアリングと学力チェックの結果をもとに、講師が一人ひとりに向き合って分析。志望校合格までのロードマップを、その場で言葉と数字でお伝えします。</p>
-      <div class="diagnosis-features">
-        <div class="diagnosis-feature"><span class="check">✓</span><span><strong>現在の学力位置</strong>科目別の理解度と、全国レベルでの相対的なポジションを把握。</span></div>
-        <div class="diagnosis-feature"><span class="check">✓</span><span><strong>志望校との距離</strong>東大・京大・旧帝大・早慶理工・医学部など、志望校の合格ラインまでの差を数値で提示。</span></div>
-        <div class="diagnosis-feature"><span class="check">✓</span><span><strong>弱点科目・分野の特定</strong>数学IA/IIB/IIIC、物理、化学、生物、英語（理系長文）の中で、優先的に補強すべき領域を明確化。</span></div>
-        <div class="diagnosis-feature"><span class="check">✓</span><span><strong>合格までの学習プラン</strong>残り期間と現状から逆算し、月単位の学習量・ペース・優先順位をご提案。</span></div>
-        <div class="diagnosis-feature"><span class="check">✓</span><span><strong>合格思考・理系思考の現在地</strong>「証明できる人」までの距離を、思考プロセスの観点から評価。</span></div>
-        <div class="diagnosis-feature"><span class="check">✓</span><span><strong>家庭学習・併塾の指針</strong>毎日課題システムや併塾サポートも含め、最適な学習環境をアドバイス。</span></div>
+    <div class="section-label">WHAT YOU LEARN</div>
+    <h2 class="section-title">この診断でわかること</h2>
+    <p class="learn-lead">診断結果は「合格戦略ガイドブック」としてLINEでお届けします。</p>
+    <div class="learn-grid">
+      <div class="learn-card">
+        <div class="learn-icon"><svg viewBox="0 0 24 24"><path d="M3 13h2v8H3v-8zm4-4h2v12H7V9zm4-6h2v18h-2V3zm4 8h2v10h-2V11zm4-4h2v14h-2V7z"/></svg></div>
+        <h3>現在の偏差値と<br>必要偏差値のギャップ</h3>
+        <p>志望校合格に必要な偏差値と現状のギャップを可視化。何点上げればよいかが明確になります。</p>
+      </div>
+      <div class="learn-card">
+        <div class="learn-icon"><svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg></div>
+        <h3>入試本番までの<br>学習ロードマップ</h3>
+        <p>現在の学年・時期から逆算した月別の学習計画。どの時期に何を仕上げるべきかがわかります。</p>
+      </div>
+      <div class="learn-card">
+        <div class="learn-icon"><svg viewBox="0 0 24 24"><path d="M9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4zm2.5 2.1h-15V5h15v14.1zM21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg></div>
+        <h3>理系科目別の<br>優先順位と対策方針</h3>
+        <p>数学・物理・化学・生物・英語の5科目について、配点と現状から優先すべき科目と取り組み方をお伝えします。</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<!-- ===== FOR WHOM ===== -->
+<section class="section suited-section">
   <div class="container">
-    <div class="section-label">FLOW</div>
-    <h2 class="section-title">診断の流れ</h2>
-    <p class="section-subtitle">お申し込みから結果フィードバックまで、所要時間は合計60〜90分。すべてオンラインで完結します。</p>
-    <div class="roadmap-steps">
-      <div class="roadmap-step"><div class="roadmap-num">STEP 01</div><div class="roadmap-content"><h3>お申し込み</h3><p>本ページのフォームから、お名前・連絡先・志望校・希望診断科目をご入力ください。2〜3営業日以内に担当者よりご連絡し、日時を調整します。</p></div></div>
-      <div class="roadmap-step"><div class="roadmap-num">STEP 02</div><div class="roadmap-content"><h3>事前ヒアリング</h3><p>オンライン（Google Meet）にて、現在の学習状況・志望校・これまでの模試結果・学習の悩みなどを丁寧にお伺いします。所要時間は約20〜30分です。</p></div></div>
-      <div class="roadmap-step"><div class="roadmap-num">STEP 03</div><div class="roadmap-content"><h3>学力診断</h3><p>希望科目に応じた診断テストを実施。単に「解けるか」だけでなく、解答プロセス・思考の筋道まで分析することで、点数に表れない理解の質を可視化します。</p></div></div>
-      <div class="roadmap-step"><div class="roadmap-num">STEP 04</div><div class="roadmap-content"><h3>結果フィードバック</h3><p>診断結果を踏まえ、現在地・志望校との距離・優先課題・学習プランをその場で講師が解説。ご質問にもお答えします。診断結果はサマリ資料としてもお渡しします。</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="section bg-alt">
-  <div class="container">
-    <div class="section-label">RECOMMENDED FOR</div>
-    <h2 class="section-title">こんな方におすすめ</h2>
-    <p class="section-subtitle">理系受験で「次の一手」に迷っている方に、客観的な視点をご提供します。</p>
+    <div class="section-label">FOR WHOM</div>
+    <h2 class="section-title">こんなお子様・保護者の方におすすめ</h2>
     <div class="suited-list">
-      <div class="suited-item"><strong>志望校との距離が見えていない方</strong>東大・京大・東工大・旧帝大・早慶理工・医学部・東京理科大などを志望し、合格までに何が足りないのかを客観的に把握したい方。</div>
-      <div class="suited-item"><strong>科目バランスに不安がある方</strong>数学は得意だが理科や英語の伸び悩みを感じている、特定分野でつまずいているなど、科目間の優先順位を整理したい方。</div>
-      <div class="suited-item"><strong>文理選択・進路選びに迷う中学生・高1生</strong>理系の道に進む前提で、現在の学力から最も伸びしろのある進路を一緒に考えたい方。</div>
-      <div class="suited-item"><strong>既卒生・浪人生</strong>現役期の振り返りも含め、来年の合格に向けた最短ルートを設計したい方。</div>
-      <div class="suited-item"><strong>併塾を検討している方</strong>すでに通っている塾と併用するかたちで、ガリレオの「合格戦略サポート」が機能するかを判断したい方。</div>
-      <div class="suited-item"><strong>毎日課題・理系思考に興味がある方</strong>ガリレオ独自の「毎日課題システム」「合格思考→理系思考」のトレーニングが自分に合うかを試してみたい方。</div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-label">CONSULTATION</div>
-    <h2 class="section-title">「無料相談」もご利用いただけます</h2>
-    <p class="section-subtitle">学力診断の前に、まずは話を聞いてみたい方には「無料相談」をご用意しています。<br>診断と相談、どちらからでもガリレオの考え方に触れていただけます。</p>
-    <div class="compare-grid">
-      <div class="compare-card is-diagnosis">
-        <span class="compare-tag">DIAGNOSIS</span>
-        <h3>無料合格診断</h3>
-        <p class="compare-lead">学力診断と志望校分析をもとに、合格までの最短ルートをデータで描き出します。「現在地」を客観的に把握したい方に。</p>
-        <ul>
-          <li>科目別の学力位置と志望校との差を数値化</li>
-          <li>弱点分野の特定と優先課題の明確化</li>
-          <li>月単位の学習プランをその場でご提案</li>
-          <li>診断結果サマリ資料をお渡し</li>
-        </ul>
-        <p class="compare-meta">所要時間 60〜90分 / オンライン（Google Meet）</p>
-        <a href="#shindanForm" class="compare-cta">無料合格診断を申し込む →</a>
+      <div class="suited-item">
+        <span class="suited-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+        <span>理系志望だが、どの科目から手をつけていいかわからない</span>
       </div>
-      <div class="compare-card is-consult">
-        <span class="compare-tag">CONSULTATION</span>
-        <h3>無料相談</h3>
-        <p class="compare-lead">学習の悩み・志望校・文理選択など、気になることを気軽にご相談いただけます。「まずは話を聞いてみたい」方に。</p>
-        <ul>
-          <li>学習・進路全般のお悩みヒアリング</li>
-          <li>ガリレオの指導方針・コース内容のご説明</li>
-          <li>毎日課題システムの仕組みのご紹介</li>
-          <li>料金・入塾の流れについてのご質問対応</li>
-        </ul>
-        <p class="compare-meta">所要時間 約60分 / オンライン（Google Meet）または電話</p>
-        <a href="../index.html#contact" class="compare-cta">無料相談を予約する →</a>
+      <div class="suited-item">
+        <span class="suited-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+        <span>志望校はあるが、今の成績で合格できるか不安</span>
+      </div>
+      <div class="suited-item">
+        <span class="suited-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+        <span>塾を探しているが、まず客観的なアドバイスが欲しい</span>
+      </div>
+      <div class="suited-item">
+        <span class="suited-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+        <span>模試の結果が伸び悩んでいて、原因と対策を知りたい</span>
+      </div>
+      <div class="suited-item">
+        <span class="suited-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+        <span>高1・高2でまだ時間があるが、何をすべきかわからない</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section bg-alt">
+<!-- ===== HOW IT WORKS ===== -->
+<section class="section flow-section">
   <div class="container">
-    <div class="section-label">APPLICATION</div>
-    <h2 class="section-title">無料合格診断のお申し込み</h2>
-    <p class="section-subtitle">下記フォームよりお申し込みください。担当者より2〜3営業日以内にご連絡いたします。</p>
-    <form class="shindan-form" id="shindanForm" onsubmit="handleSubmit(event)">
-      <div class="form-row">
-        <div class="form-group"><label>お名前 <span class="req">必須</span></label><input type="text" required placeholder="山田 太郎"></div>
-        <div class="form-group"><label>フリガナ <span class="req">必須</span></label><input type="text" required placeholder="ヤマダ タロウ"></div>
-      </div>
-      <div class="form-group"><label>メールアドレス <span class="req">必須</span></label><input type="email" required placeholder="example@email.com"></div>
-      <div class="form-group"><label>電話番号 <span class="req">必須</span></label><input type="tel" required placeholder="090-0000-0000"></div>
-      <div class="form-row">
-        <div class="form-group"><label>学年 <span class="req">必須</span></label><select required><option value="">選択してください</option><option>中学1年生</option><option>中学2年生</option><option>中学3年生</option><option>高校1年生</option><option>高校2年生</option><option>高校3年生</option><option>既卒（浪人）</option></select></div>
-        <div class="form-group"><label>志望大学・学部</label><input type="text" placeholder="例：東京大学 理科一類"></div>
-      </div>
-      <div class="form-group">
-        <label>希望診断科目 <span class="req">必須</span></label>
-        <div class="checkbox-group">
-          <label class="checkbox-item"><input type="checkbox" name="subject" value="数学">数学（IA・IIB・IIIC）</label>
-          <label class="checkbox-item"><input type="checkbox" name="subject" value="物理">物理</label>
-          <label class="checkbox-item"><input type="checkbox" name="subject" value="化学">化学</label>
-          <label class="checkbox-item"><input type="checkbox" name="subject" value="生物">生物</label>
-          <label class="checkbox-item"><input type="checkbox" name="subject" value="英語">英語（理系長文）</label>
+    <div class="section-label">HOW IT WORKS</div>
+    <h2 class="section-title">診断の流れ</h2>
+    <p class="flow-lead">3ステップで、個別の合格戦略ガイドブックをお受け取りいただけます。</p>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <div class="flow-content">
+          <h3>4問の診断に答える</h3>
+          <p>学年・志望校レベル・現在の偏差値・学習時間など、4つのかんたんな質問に答えるだけです。</p>
+          <span class="flow-tag">所要時間：約2〜3分</span>
         </div>
       </div>
-      <div class="form-row">
-        <div class="form-group"><label>直近の模試偏差値（全科目総合）</label><input type="text" placeholder="例：偏差値58 / 河合全統模試"></div>
-        <div class="form-group"><label>得意・苦手科目（任意）</label><input type="text" placeholder="例：数学が得意、化学が苦手"></div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <div class="flow-content">
+          <h3>LINEでガリレオを友だち追加</h3>
+          <p>診断完了後、LINEでガリレオを友だち追加していただくと、合格戦略ガイドブックをお送りします。</p>
+          <span class="flow-tag">すぐに受け取れます</span>
+        </div>
       </div>
-      <div class="form-group"><label>学習の悩み・診断で知りたいこと（任意）</label><textarea rows="5" placeholder="志望校との距離感、特定分野でのつまずきなど、ご自由にご記入ください。"></textarea></div>
-      <button type="submit" class="btn-submit"><svg style="width:18px;height:18px;fill:currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg> 無料合格診断を申し込む →</button>
-    </form>
-    <p class="shindan-note">※ 診断は完全無料です。入塾の強制やしつこい勧誘は一切いたしません。<br>※ オンライン（Google Meet）にて実施いたします。所要時間は合計60〜90分です。</p>
-  </div>
-</section>
-
-<section class="section cta-section">
-  <div class="container">
-    <div class="section-label">NEXT STEP</div>
-    <h2 class="section-title">志望校合格の最短ルートを、<br>客観的データで描き出します</h2>
-    <p>無料合格診断は、ガリレオの考え方と指導の質に直接触れていただく機会でもあります。まずはお気軽にお申し込みください。</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-      <a href="#shindanForm" class="btn btn-primary">無料合格診断を申し込む →</a>
-      <a href="../index.html#courses" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:var(--white)">コース・料金を見る</a>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <div class="flow-content">
+          <h3>合格戦略ガイドブックを受け取る</h3>
+          <p>お子様の状況に合わせた合格ロードマップ・科目別対策方針をLINEでお届けします。</p>
+          <span class="flow-tag">完全無料・勧誘なし</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- ===== GUIDEBOOK CONTENTS ===== -->
+<section class="section guidebook-section">
+  <div class="container">
+    <div class="guidebook-card">
+      <div class="guidebook-title">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+        無料でもらえる「合格戦略ガイドブック」の内容
+      </div>
+      <ul class="guidebook-list">
+        <li>志望校合格に必要な偏差値と現状のギャップ分析</li>
+        <li>入試本番から逆算した月別学習ロードマップ</li>
+        <li>数学・物理・化学・生物・英語の科目別優先順位と対策方針</li>
+        <li>ガリレオが実践する「合格思考 → 理系思考」トレーニングの概要</li>
+        <li>今すぐ取り組むべき最優先アクション3選</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta">
+  <div class="container">
+    <h2>まず診断してみる<span class="sub">──それだけでOKです</span></h2>
+    <p class="lead">入塾の意思は不要です。「今の状況を整理したい」だけでも、大歓迎です。<br>無料診断は2〜3分で完了します。</p>
+    <a href="lpquestionnaire/index.html" class="hero-cta">無料で合格診断を受ける →</a>
+    <p class="hero-cta-note">完全無料・登録不要・勧誘なし</p>
+  </div>
+</section>
+
 <footer class="footer">
   <div class="container">
     <div class="footer-brand">
@@ -309,14 +303,12 @@
     <div class="footer-bottom">© 2025 ガリレオ 理系の大学受験専門塾. All Rights Reserved.</div>
   </div>
 </footer>
-<div class="modal-overlay" id="modal"><div class="modal"><h2>お申し込みありがとう<br>ございます！</h2><p>無料合格診断のお申し込みを受け付けました。<br><strong>2〜3営業日以内</strong>に担当者よりご連絡し、日時を調整させていただきます。<br><br>診断当日は、ガリレオの考え方と指導の質を存分にご体感ください。<br>志望校合格に向けた最短ルートを、一緒に描き出しましょう。</p><button onclick="document.getElementById('modal').classList.remove('open')">閉じる</button></div></div>
 <script>
 window.addEventListener('scroll',()=>{document.getElementById('header').classList.toggle('scrolled',scrollY>10)});
 document.getElementById('hamburger').addEventListener('click',()=>{document.getElementById('nav').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open')});
 document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('nav').classList.remove('open');document.getElementById('hamburger').classList.remove('open')}));
-function handleSubmit(e){e.preventDefault();document.getElementById('modal').classList.add('open');e.target.reset()}
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
-document.querySelectorAll('.section,.intro-card,.diagnosis-box,.diagnosis-feature,.roadmap-step,.suited-item').forEach(el=>obs.observe(el));
+document.querySelectorAll('.section,.learn-card,.suited-item,.flow-step,.guidebook-card').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
