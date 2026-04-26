@@ -353,7 +353,7 @@ window.addEventListener('scroll',()=>{document.getElementById('header').classLis
 document.getElementById('hamburger').addEventListener('click',()=>{document.getElementById('nav').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open')});
 document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('nav').classList.remove('open');document.getElementById('hamburger').classList.remove('open')}));
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
-document.querySelectorAll('.section,.learn-card,.suited-item,.flow-step,.guidebook-card').forEach(el=>obs.observe(el));
+document.querySelectorAll('.section,.learn-card,.suited-item,.flow-step,.guidebook-card,.faq-item').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
