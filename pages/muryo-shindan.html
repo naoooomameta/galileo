@@ -96,7 +96,23 @@
   .final-cta .hero-cta{padding:18px 40px;font-size:17px;width:100%;max-width:340px}
 }
 .faq-section{background:var(--bg)}
-.faq-section .faq-list{max-width:820px}
+.faq-section .faq-list{max-width:820px;margin:0 auto}
+.faq-section .faq-item{background:var(--green-pale);border:1px solid var(--green-mist);border-radius:14px;overflow:visible;margin-bottom:16px;transition:box-shadow .25s}
+.faq-section .faq-item:hover{box-shadow:0 4px 14px rgba(14,74,56,.06)}
+.faq-section .faq-q{padding:22px 26px;font-size:16px;font-weight:700;color:var(--primary-dark);cursor:default;background:transparent;display:flex;gap:14px;align-items:center;justify-content:flex-start}
+.faq-section .faq-q:hover{background:transparent}
+.faq-section .faq-q::before{content:'Q';width:32px;height:32px;border-radius:50%;background:var(--primary);color:var(--white);display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:700;font-size:15px;flex-shrink:0}
+.faq-section .faq-q .faq-icon{display:none}
+.faq-section .faq-a{max-height:none;overflow:visible;border-top:1px dashed var(--green-mist);margin:0 26px}
+.faq-section .faq-a p{padding:18px 0 20px 46px;font-size:14.5px;color:var(--text-light);line-height:1.95;position:relative}
+.faq-section .faq-a p::before{content:'A';position:absolute;left:0;top:16px;width:32px;height:32px;border-radius:50%;background:var(--amber);color:var(--white);display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:700;font-size:15px}
+@media(max-width:480px){
+  .faq-section .faq-q{padding:18px 20px;font-size:15px;gap:12px}
+  .faq-section .faq-q::before{width:28px;height:28px;font-size:14px}
+  .faq-section .faq-a{margin:0 20px}
+  .faq-section .faq-a p{padding:14px 0 16px 40px;font-size:14px}
+  .faq-section .faq-a p::before{width:28px;height:28px;font-size:14px;top:13px}
+}
 
 @media(max-width:480px){
   .hero-chips{gap:8px}
@@ -296,31 +312,31 @@
     <h2 class="section-title">よくある質問</h2>
     <div class="faq-list">
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">無料診断は本当に無料ですか？<span class="faq-icon">+</span></div>
+        <div class="faq-q">無料診断は本当に無料ですか？</div>
         <div class="faq-a"><p>はい、完全無料です。クレジットカードの登録も不要で、診断後に勧誘の電話がかかることもありません。診断結果のガイドブックはLINEでお届けします。</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">診断にどのくらい時間がかかりますか？<span class="faq-icon">+</span></div>
+        <div class="faq-q">診断にどのくらい時間がかかりますか？</div>
         <div class="faq-a"><p>4問のかんたんな質問に答えるだけで、所要時間は約2〜3分です。</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">診断対象の学年を教えてください。<span class="faq-icon">+</span></div>
+        <div class="faq-q">診断対象の学年を教えてください。</div>
         <div class="faq-a"><p>中学生〜高校3年生（および既卒・浪人生）を対象としています。理系志望で大学受験を考えているお子様であればどなたでも受診できます。</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">診断後に入塾を強制されますか？<span class="faq-icon">+</span></div>
+        <div class="faq-q">診断後に入塾を強制されますか？</div>
         <div class="faq-a"><p>いいえ。診断結果のお届けのみで、その後の入塾は完全に任意です。無理な勧誘は一切行いません。</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">ガリレオはどのような塾ですか？<span class="faq-icon">+</span></div>
+        <div class="faq-q">ガリレオはどのような塾ですか？</div>
         <div class="faq-a"><p>ガリレオは理系の大学受験に特化したオンライン専門塾です。毎日課題システムと「合格思考 → 理系思考」トレーニングを通じて、お子様の学力と思考力を体系的に引き上げます。東大・京大・東工大・旧帝大・早慶理工・医学部・東京理科大などを目指す理系受験生のための専門塾です。</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">どんな科目に対応していますか？<span class="faq-icon">+</span></div>
+        <div class="faq-q">どんな科目に対応していますか？</div>
         <div class="faq-a"><p>数学（IA・IIB・IIIC）／物理／化学／生物／英語（理系長文読解含む）の5科目に対応しています。診断結果のガイドブックも、これらの科目バランスを踏まえて作成します。</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">親（保護者）が代わりに回答してもいいですか？<span class="faq-icon">+</span></div>
+        <div class="faq-q">親（保護者）が代わりに回答してもいいですか？</div>
         <div class="faq-a"><p>はい、保護者の方が代理で回答していただいても構いません。「学年」「志望校レベル」「現在の偏差値」「学習時間」など事実に基づいた4問なので、お子様の状況をご存知の保護者の方であればスムーズに回答いただけます。</p></div>
       </div>
     </div>
@@ -357,7 +373,6 @@
 window.addEventListener('scroll',()=>{document.getElementById('header').classList.toggle('scrolled',scrollY>10)});
 document.getElementById('hamburger').addEventListener('click',()=>{document.getElementById('nav').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open')});
 document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('nav').classList.remove('open');document.getElementById('hamburger').classList.remove('open')}));
-function toggleFaq(el){const item=el.parentElement;const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null});if(!wasOpen){item.classList.add('open');item.querySelector('.faq-a').style.maxHeight=item.querySelector('.faq-a').scrollHeight+'px'}}
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
 document.querySelectorAll('.section,.learn-card,.suited-item,.flow-step,.guidebook-card,.faq-item').forEach(el=>obs.observe(el));
 </script>
