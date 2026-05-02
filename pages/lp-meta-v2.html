@@ -1177,6 +1177,46 @@ img, svg { display: block; max-width: 100%; }
   text-align: center;
   letter-spacing: 1px;
 }
+.results__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 28px;
+}
+.results__card {
+  background: #fff;
+  border: 1px solid var(--results-border);
+  border-radius: 10px;
+  padding: 20px 18px;
+}
+.results__card-title {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--results-border);
+}
+.results__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.results__list li {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--results-border);
+}
+.results__list li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
 
 /* ─── Teachers ─────────────────────────────────── */
 .teachers { background: var(--pain-bg); padding: 56px 22px; }
@@ -1851,34 +1891,24 @@ img, svg { display: block; max-width: 100%; }
     </div>
     <div class="numbers__grid">
       <div class="numbers__cell">
-        <div class="numbers__num-row"><span class="numbers__num">156</span><span class="numbers__unit">名</span></div>
-        <div class="numbers__label">難関国立・医学部 合格</div>
-        <div class="numbers__sub">2024年度実績</div>
+        <div class="numbers__num-row"><span class="numbers__num">200</span><span class="numbers__unit">名+</span></div>
+        <div class="numbers__label">累計指導生徒数</div>
+        <div class="numbers__sub"></div>
       </div>
       <div class="numbers__cell">
-        <div class="numbers__num-row"><span class="numbers__num">92</span><span class="numbers__unit">%</span></div>
-        <div class="numbers__label">学習習慣 定着率</div>
-        <div class="numbers__sub">入塾3ヶ月時点</div>
+        <div class="numbers__num-row"><span class="numbers__num">10</span><span class="numbers__unit">年</span></div>
+        <div class="numbers__label">理系受験指導の実績</div>
+        <div class="numbers__sub"></div>
       </div>
       <div class="numbers__cell">
-        <div class="numbers__num-row"><span class="numbers__num">365</span><span class="numbers__unit">日</span></div>
-        <div class="numbers__label">学習が止まらない</div>
-        <div class="numbers__sub">休塾日もサポート</div>
+        <div class="numbers__num-row"><span class="numbers__num">90</span><span class="numbers__unit">%+</span></div>
+        <div class="numbers__label">理系受験生<br>志望校合格率</div>
+        <div class="numbers__sub"></div>
       </div>
       <div class="numbers__cell">
-        <div class="numbers__num-row"><span class="numbers__num">+12.4</span></div>
-        <div class="numbers__label">平均偏差値上昇</div>
-        <div class="numbers__sub">入塾後1年</div>
-      </div>
-      <div class="numbers__cell">
-        <div class="numbers__num-row"><span class="numbers__num">18</span><span class="numbers__unit">年</span></div>
-        <div class="numbers__label">理系受験 指導歴</div>
-        <div class="numbers__sub">塾長 田中</div>
-      </div>
-      <div class="numbers__cell">
-        <div class="numbers__num-row"><span class="numbers__num">9割</span></div>
-        <div class="numbers__label">保護者様満足度</div>
-        <div class="numbers__sub">年次アンケート</div>
+        <div class="numbers__num-row"><span class="numbers__num" style="font-size:22px; letter-spacing:0;">毎日管理</span></div>
+        <div class="numbers__label">毎日課題で<br>家庭学習管理</div>
+        <div class="numbers__sub"></div>
       </div>
     </div>
   </section>
@@ -2369,37 +2399,36 @@ img, svg { display: block; max-width: 100%; }
   <!-- ─── Results ──────────────────────────────── -->
   <section class="results">
     <div class="sec-title">
-      <div class="sec-title__eyebrow">RESULTS 2024</div>
-      <h2 class="sec-title__heading">2024年度<br>合格実績。</h2>
-      <p class="sec-title__sub">塾生<strong>156名</strong>の合格実績（一部抜粋）。</p>
+      <div class="sec-title__eyebrow">RESULTS 2025</div>
+      <h2 class="sec-title__heading">2025年<br>合格実績。</h2>
+      <p class="sec-title__sub">ガリレオから志望校合格を勝ち取った生徒たちの実績です。</p>
     </div>
-    <div class="results__grid">
-      <div class="results__cell">
-        <div class="results__num">22<span class="results__num-unit">名</span></div>
-        <div class="results__label">東京大学</div>
+    <div class="results__cards">
+      <div class="results__card">
+        <div class="results__card-title">国公立大学</div>
+        <ul class="results__list">
+          <li>東京大学 理科一類</li>
+          <li>京都大学 工学部</li>
+          <li>東京工業大学</li>
+          <li>北海道大学 理学部</li>
+        </ul>
       </div>
-      <div class="results__cell">
-        <div class="results__num">15<span class="results__num-unit">名</span></div>
-        <div class="results__label">京都大学</div>
+      <div class="results__card">
+        <div class="results__card-title">早慶・私立理系</div>
+        <ul class="results__list">
+          <li>早稲田大学 先進理工学部</li>
+          <li>慶應義塾大学 理工学部</li>
+          <li>東京理科大学 工学部</li>
+        </ul>
       </div>
-      <div class="results__cell">
-        <div class="results__num">18<span class="results__num-unit">名</span></div>
-        <div class="results__label">東京工業大</div>
-      </div>
-      <div class="results__cell">
-        <div class="results__num">12<span class="results__num-unit">名</span></div>
-        <div class="results__label">一橋大学</div>
-      </div>
-      <div class="results__cell">
-        <div class="results__num">31<span class="results__num-unit">名</span></div>
-        <div class="results__label">医学部医学科</div>
-      </div>
-      <div class="results__cell">
-        <div class="results__num">46<span class="results__num-unit">名</span></div>
-        <div class="results__label">旧帝・難関国立</div>
+      <div class="results__card">
+        <div class="results__card-title">医学部</div>
+        <ul class="results__list">
+          <li>東京医科歯科大学 医学部</li>
+        </ul>
       </div>
     </div>
-    <div class="results__note">※塾生本人による申告に基づく。重複合格を含む。</div>
+    <div class="results__note">※ 合格実績は生徒・保護者様の許可を得て掲載しています。詳細は学習相談会時にお伝えします。</div>
   </section>
 
   <!-- ─── Teachers ─────────────────────────────── -->
