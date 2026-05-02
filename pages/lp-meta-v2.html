@@ -286,7 +286,7 @@ img, svg { display: block; max-width: 100%; }
   background: #0a1f12;
   color: #fff;
   overflow: hidden;
-  height: 720px;
+  padding: 40px 22px;
 }
 .fv-a__photo {
   position: absolute; inset: 0;
@@ -1792,12 +1792,11 @@ img, svg { display: block; max-width: 100%; }
     <div class="mini-header__hint">理系の大学受験専門塾</div>
   </header>
 
-  <!-- ─── FV (First View) — A案 窓辺の高校生 ─── -->
+  <!-- ─── FV (First View) — A案 写真背景 ─── -->
   <section class="fv-a">
     <div class="fv-a__photo"></div>
     <div class="fv-a__tint"></div>
     <div class="fv-a__darken"></div>
-
     <svg class="fv-a__constellation" viewBox="0 0 430 720" aria-hidden="true">
       <line x1="34" y1="86" x2="95" y2="58"/>
       <line x1="95" y1="58" x2="138" y2="130"/>
@@ -1808,25 +1807,37 @@ img, svg { display: block; max-width: 100%; }
       <circle cx="77" cy="187" r="2"/>
     </svg>
 
-    <div class="fv-a__top">
-      <span class="fv-a__tag">高1〜高3 保護者様へ</span>
-      <span class="fv-a__brand">Galileo</span>
-    </div>
+    <div class="fv__inner">
+      <img class="fv__mascot" src="../img/galileo-mascot.png" alt="ガリレオ マスコット" width="210" height="210" loading="eager" decoding="async">
+      <div class="fv__tag">高1〜高3 保護者様へ</div>
+      <div class="fv__opening">「うちの子、本当に<br>勉強しないんです…」</div>
+      <h1 class="fv__headline"><span class="fv__hl-accent">9割</span>の親が見落とす。<br>なぜ「勉強しなさい」ほど、<br>子は<span class="fv__hl-accent">机から離れる</span>のか？</h1>
+      <p class="fv__hl-answer">── 叱責では、もう動きません。</p>
+      <div class="fv__rule"></div>
+      <p class="fv__sub">原因は<strong>「やる気」ではなく「仕組み」</strong>でした。<br>「今日やること」が毎日明確になれば、子は自然と机に向かいます。<br>ガリレオは、<strong>叱る代わりに毎日の道筋を可視化する</strong>理系専門塾です。</p>
 
-    <div class="fv-a__copy">
-      <div class="fv-a__whisper">
-        「うちの子、本当にこのままで<br>志望校に届くんだろうか…」
+      <div class="fv__chips">
+        <div class="fv__chip">
+          <span class="fv__chip-key">毎日課題</span>
+          <span class="fv__chip-divider"></span>
+          <span class="fv__chip-value">"今日やること"を毎朝提示</span>
+        </div>
+        <div class="fv__chip">
+          <span class="fv__chip-key">3週間で自走</span>
+          <span class="fv__chip-divider"></span>
+          <span class="fv__chip-value">講師が伴走 → 1人で動く子へ</span>
+        </div>
+        <div class="fv__chip">
+          <span class="fv__chip-key">週次レポート</span>
+          <span class="fv__chip-divider"></span>
+          <span class="fv__chip-value">家庭で叱る必要がなくなる</span>
+        </div>
       </div>
-      <h1 class="fv-a__headline">
-        不安なのは、<br>道筋が<span class="fv-a__hl-accent">見えない</span>から。
-      </h1>
-      <div class="fv-a__rule"></div>
-      <p class="fv-a__sub">
-        毎日の課題で、現在地から志望校まで<br>
-        確実に距離を縮める理系専門塾。
-      </p>
-      <a href="#cta" class="fv-a__cta">▶︎ 無料学習相談を予約する</a>
-      <div class="fv-a__hint">所要15分 / オンライン可 / 完全無料</div>
+
+      <div class="fv__cta-wrap">
+        <a href="#cta" class="cta-btn">▶︎ 無料学習相談を予約</a>
+        <div class="fv__cta-hint">所要15分 / オンライン可 / 完全無料</div>
+      </div>
     </div>
   </section>
 
