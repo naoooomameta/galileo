@@ -184,31 +184,53 @@ img, svg { display: block; max-width: 100%; }
   font-family: var(--serif);
   font-size: 16px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 2;
-  margin-bottom: 14px;
-  font-style: italic;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.95;
+  margin-bottom: 16px;
+  font-style: normal;
 }
 .fv__headline {
   font-family: var(--serif);
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 800;
   color: #fff;
-  line-height: 1.4;
+  line-height: 1.5;
   letter-spacing: 0.5px;
-  margin: 0 0 8px;
+  margin: 0 0 14px;
+}
+@media (min-width: 540px) {
+  .fv__headline { font-size: 32px; }
+}
+.fv__hl-accent {
+  color: var(--accent);
+  background: linear-gradient(transparent 65%, rgba(201,168,76,0.18) 65%);
+  padding: 0 2px;
+}
+.fv__hl-answer {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  margin: 0 0 4px;
 }
 .fv__rule {
   width: 48px;
   height: 3px;
   background: var(--accent);
-  margin: 14px 0 22px;
+  margin: 18px 0 22px;
 }
 .fv__sub {
-  font-size: 13.5px;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.78);
-  line-height: 2.1;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 2.05;
+}
+.fv__sub strong {
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(transparent 70%, rgba(201,168,76,0.22) 70%);
+  padding: 0 2px;
 }
 .fv__chips {
   margin-top: 26px;
@@ -226,13 +248,13 @@ img, svg { display: block; max-width: 100%; }
   border-radius: 6px;
 }
 .fv__chip-key {
-  font-family: var(--serif-latin);
-  font-size: 12px;
-  font-weight: 600;
-  font-style: italic;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  font-weight: 700;
+  font-style: normal;
   color: var(--accent);
-  letter-spacing: 1px;
-  min-width: 80px;
+  letter-spacing: 0.04em;
+  min-width: 92px;
 }
 .fv__chip-divider { width: 1px; height: 16px; background: rgba(255, 255, 255, 0.15); }
 .fv__chip-value {
@@ -1686,26 +1708,27 @@ img, svg { display: block; max-width: 100%; }
     <div class="fv__inner">
       <img class="fv__mascot" src="../img/galileo-mascot.png" alt="ガリレオ マスコット" width="160" height="160" loading="eager" decoding="async">
       <div class="fv__tag">高1〜高3 保護者様へ</div>
-      <div class="fv__opening">「うちの子、本当にこのままで<br>志望校に届くんだろうか…」</div>
-      <h1 class="fv__headline">不安なのは、<br>道筋が見えないから。</h1>
+      <div class="fv__opening">「うちの子、本当に<br>勉強しないんです…」</div>
+      <h1 class="fv__headline"><span class="fv__hl-accent">9割</span>の親が見落とす。<br>なぜ「勉強しなさい」ほど、<br>子は<span class="fv__hl-accent">机から離れる</span>のか？</h1>
+      <p class="fv__hl-answer">── 叱責では、もう動きません。</p>
       <div class="fv__rule"></div>
-      <p class="fv__sub">ガリレオは、お子さまの現在地から志望校まで、<br>毎日の学習で確実に距離を縮めていく専門塾です。<br>1人で悩まず、まずはお話を聞かせてください。</p>
+      <p class="fv__sub">原因は<strong>「やる気」ではなく「仕組み」</strong>でした。<br>「今日やること」が毎日明確になれば、子は自然と机に向かいます。<br>ガリレオは、<strong>叱る代わりに毎日の道筋を可視化する</strong>理系専門塾です。</p>
 
       <div class="fv__chips">
         <div class="fv__chip">
-          <span class="fv__chip-key">365日</span>
+          <span class="fv__chip-key">毎日課題</span>
           <span class="fv__chip-divider"></span>
-          <span class="fv__chip-value">迷わない学習管理</span>
+          <span class="fv__chip-value">"今日やること"を毎朝提示</span>
         </div>
         <div class="fv__chip">
-          <span class="fv__chip-key">1対1〜少人数</span>
+          <span class="fv__chip-key">3週間で自走</span>
           <span class="fv__chip-divider"></span>
-          <span class="fv__chip-value">本質を教える対話型授業</span>
+          <span class="fv__chip-value">講師が伴走 → 1人で動く子へ</span>
         </div>
         <div class="fv__chip">
           <span class="fv__chip-key">週次レポート</span>
           <span class="fv__chip-divider"></span>
-          <span class="fv__chip-value">保護者様にも進捗を共有</span>
+          <span class="fv__chip-value">家庭で叱る必要がなくなる</span>
         </div>
       </div>
 
