@@ -126,7 +126,18 @@ img, svg { display: block; max-width: 100%; }
   background: var(--header-bg);
   border-bottom: 1px solid var(--header-border);
 }
-.mini-header__brand { display: flex; align-items: baseline; gap: 8px; }
+.mini-header__brand { display: flex; align-items: center; gap: 10px; }
+.mini-header__mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 2px;
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.5), 0 2px 6px rgba(0,0,0,0.18);
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.mini-header__name { display: flex; align-items: baseline; gap: 8px; }
 .mini-header__logo {
   font-family: var(--serif);
   font-size: 18px;
@@ -1669,8 +1680,11 @@ img, svg { display: block; max-width: 100%; }
   <!-- ─── Mini Header ───────────────────────────── -->
   <header class="mini-header">
     <div class="mini-header__brand">
-      <span class="mini-header__logo">ガリレオ</span>
-      <span class="mini-header__sub">SCIENCES</span>
+      <img class="mini-header__mark" src="../img/galileo-mascot.png" alt="ガリレオ" width="36" height="36" loading="eager" decoding="async">
+      <span class="mini-header__name">
+        <span class="mini-header__logo">ガリレオ</span>
+        <span class="mini-header__sub">SCIENCES</span>
+      </span>
     </div>
     <div class="mini-header__hint">理系の大学受験専門塾</div>
   </header>
