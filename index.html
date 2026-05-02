@@ -83,73 +83,40 @@ strong{font-weight:700}
 .btn-outline:hover{background:var(--primary);color:var(--white);transform:translateY(-2px);box-shadow:0 4px 16px rgba(14,74,56,.15)}
 .btn-full{width:100%;justify-content:center}
 
-/* ===== HERO (鬼管理スタイル × ガリレオ) ===== */
-.hero{position:relative;background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary) 55%,var(--primary-light) 100%);overflow:hidden;color:#fff}
-.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 20% 30%,rgba(196,154,60,.15),transparent 40%),radial-gradient(circle at 80% 70%,rgba(196,154,60,.1),transparent 50%);pointer-events:none}
-.hero::after{content:'';position:absolute;top:0;right:0;bottom:0;width:55%;background-image:repeating-linear-gradient(90deg,transparent 0 60px,rgba(255,255,255,.025) 60px 61px);pointer-events:none}
-.hero-badges{position:relative;z-index:2;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:24px 24px 0;margin-bottom:0}
-.hero-badge{font-size:13px;font-weight:600;padding:7px 18px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:40px;color:#fff;backdrop-filter:blur(6px);transition:transform .2s}
-.hero-badge:hover{transform:translateY(-1px);background:rgba(255,255,255,.15)}
-.hero-badge.accent{background:linear-gradient(135deg,#E8B94A,var(--cta));color:var(--primary-dark);border-color:#E8B94A;box-shadow:0 4px 16px rgba(196,154,60,.4);font-weight:800}
-.hero-grid{position:relative;z-index:2;max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:end;padding:40px 24px 0;min-height:560px}
-.hero-text{padding-bottom:48px}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(196,154,60,.15);border:1px solid rgba(196,154,60,.5);color:#E8B94A;font-size:13px;font-weight:700;padding:6px 14px;border-radius:4px;letter-spacing:.08em;margin-bottom:24px}
-.hero-eyebrow::before{content:'';width:6px;height:6px;background:#E8B94A;border-radius:50%;animation:hero-pulse 1.6s infinite}
-@keyframes hero-pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.hero h1{font-family:var(--font-serif);font-weight:900;font-size:clamp(30px,5vw,56px);line-height:1.3;letter-spacing:.01em;margin-bottom:20px;color:#fff}
-.hero h1 em{font-style:normal;color:#E8B94A;background:none;padding:0;position:relative;display:inline-block}
-.hero h1 em::after{content:'';position:absolute;left:0;right:0;bottom:-4px;height:4px;background:#E8B94A;opacity:.6}
-.hero h1 .strike{text-decoration:line-through;text-decoration-color:#e74c3c;text-decoration-thickness:3px;opacity:.7;font-size:.7em}
-.hero-sub{font-size:15px;font-weight:600;color:#E8B94A;margin-bottom:14px;letter-spacing:.08em}
-.hero-desc{font-size:16px;line-height:2;color:rgba(255,255,255,.85);margin-bottom:28px;max-width:540px}
-.hero-desc strong{color:#E8B94A;font-weight:700}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.hero-actions .btn-primary{background:linear-gradient(135deg,#E8B94A,var(--cta));color:var(--primary-dark);box-shadow:0 8px 24px rgba(196,154,60,.4);font-weight:800}
-.hero-actions .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(196,154,60,.55)}
-.hero-actions .btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
-.hero-actions .btn-outline:hover{background:rgba(255,255,255,.08);color:#fff}
-.hero-visual{position:relative;align-self:end;height:560px;display:flex;justify-content:center;align-items:flex-end}
-.hero-mascot-wrap{position:relative;width:100%;max-width:480px;height:100%;display:flex;justify-content:center;align-items:flex-end}
-.hero-mascot-bg{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:120%;height:90%;background:radial-gradient(ellipse at center bottom,rgba(196,154,60,.35) 0%,rgba(196,154,60,.1) 40%,transparent 70%);pointer-events:none}
-.hero-mascot{position:relative;z-index:2;height:540px;width:auto;max-width:none;filter:drop-shadow(0 24px 48px rgba(0,0,0,.4))}
-.hero-bubble{position:absolute;top:40px;left:-20px;background:#fff;color:var(--primary-dark);padding:14px 20px;border-radius:18px 18px 18px 4px;font-size:14px;font-weight:700;line-height:1.5;box-shadow:0 12px 32px rgba(0,0,0,.25);z-index:3;max-width:240px}
-.hero-bubble::after{content:'';position:absolute;bottom:-10px;left:20px;border:10px solid transparent;border-top-color:#fff;border-bottom:0}
-.hero-bubble small{display:block;font-size:11px;font-weight:500;color:var(--text-light);margin-top:4px}
-.hero-badge-float{position:absolute;background:#E8B94A;color:var(--primary-dark);padding:8px 14px;border-radius:50px;font-size:12px;font-weight:800;line-height:1.3;box-shadow:0 8px 20px rgba(0,0,0,.3);z-index:3;text-align:center}
-.hero-badge-float.b1{top:160px;right:0;transform:rotate(8deg)}
-.hero-badge-float.b2{bottom:120px;left:-10px;transform:rotate(-6deg);background:#fff;color:var(--primary)}
+/* ===== HERO ===== */
+.hero{background:linear-gradient(180deg,var(--bg) 0%,var(--green-pale) 60%,var(--green-light) 100%);padding-top:20px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(180deg,transparent,var(--green-pale));pointer-events:none}
+.hero-badges{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;padding:0 24px;margin-bottom:24px}
+.hero-badge{font-size:14px;font-weight:600;padding:8px 20px;background:var(--white);border:1px solid var(--green-mist);border-radius:40px;color:var(--primary);box-shadow:0 2px 8px rgba(14,74,56,.06);transition:transform .2s}
+.hero-badge:hover{transform:translateY(-1px)}
+.hero-badge.accent{background:linear-gradient(135deg,var(--cta),var(--cta-light));color:var(--white);border-color:var(--cta);box-shadow:0 2px 12px rgba(196,154,60,.25)}
+.hero-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:40px;align-items:center;padding:44px 24px 48px}
+.hero h1{font-family:var(--font-serif);font-size:clamp(30px,5vw,48px);font-weight:700;line-height:1.4;margin-bottom:12px;letter-spacing:.02em}
+.hero h1 em{font-style:normal;color:var(--amber);background:linear-gradient(transparent 60%,rgba(196,154,60,.12) 60%);padding:0 2px}
+.hero-sub{font-size:16px;font-weight:600;color:var(--primary);margin-bottom:16px;letter-spacing:.05em}
+.hero-desc{font-size:16px;color:var(--text-light);line-height:2.1;margin-bottom:32px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.hero-visual{display:flex;justify-content:center}
+.hero-img{width:100%;max-width:760px;aspect-ratio:16/10;border-radius:18px;overflow:hidden;box-shadow:0 18px 60px rgba(14,74,56,.22);background:var(--white)}
+.hero-img img{width:100%;height:100%;object-fit:contain}
+.hero-img-placeholder{width:100%;height:100%;background:linear-gradient(135deg,var(--primary-light),var(--primary-dark));display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-size:14px}
 
-.hero-stats{position:relative;z-index:2;background:rgba(0,0,0,.35);backdrop-filter:blur(8px);border-top:1px solid rgba(196,154,60,.3);padding:0}
-.hero-stats-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
-.hero-stat{padding:24px 16px;text-align:center;border-right:1px solid rgba(255,255,255,.08);transition:background .2s}
-.hero-stat:hover{background:rgba(255,255,255,.04)}
+.hero-stats{background:var(--white);border-top:1px solid var(--green-mist);border-bottom:1px solid var(--green-mist);padding:0;position:relative;z-index:1}
+.hero-stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.hero-stat{padding:28px 16px;text-align:center;border-right:1px solid var(--green-mist);transition:background .2s}
+.hero-stat:hover{background:var(--green-pale)}
 .hero-stat:last-child{border-right:none}
-.hero-stat-num{font-family:var(--font-serif);font-size:38px;font-weight:900;color:#E8B94A;line-height:1.2}
-.hero-stat-num span{font-size:16px;color:rgba(255,255,255,.7);font-weight:600;margin-left:2px}
+.hero-stat-num{font-size:38px;font-weight:800;color:var(--primary);line-height:1.2}
+.hero-stat-num span{font-size:18px;font-weight:600}
 .hero-stat-num.small{font-size:22px}
-.hero-stat-label{font-size:12px;color:rgba(255,255,255,.7);margin-top:4px;line-height:1.5}
+.hero-stat-label{font-size:13px;color:var(--text-muted);margin-top:6px;line-height:1.5}
 
-@media(max-width:1024px){
-  .hero-mascot{height:440px}
-  .hero-visual{height:460px}
-}
 @media(max-width:768px){
-  .hero-grid{grid-template-columns:1fr;gap:0;text-align:center;padding:24px 20px 0;min-height:auto}
-  .hero-text{padding-bottom:24px;order:2}
-  .hero-eyebrow{margin-left:auto;margin-right:auto}
-  .hero-visual{order:1;height:auto;min-height:380px}
-  .hero-mascot{height:360px}
+  .hero-grid{grid-template-columns:1fr;text-align:center}
   .hero-actions{justify-content:center}
-  .hero-desc{margin-left:auto;margin-right:auto}
-  .hero-bubble{font-size:12px;max-width:180px;left:0}
+  .hero-visual{order:-1}
   .hero-stats-grid{grid-template-columns:repeat(2,1fr)}
   .hero-stat:nth-child(2){border-right:none}
-  .hero-stat:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.08)}
-}
-@media(max-width:480px){
-  .hero h1{font-size:28px}
-  .hero-mascot{height:300px}
-  .hero-stat-num{font-size:28px}
 }
 
 /* ===== SECTIONS ===== */
@@ -849,24 +816,19 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
     <span class="hero-badge">理系専門・少人数指導</span>
     <span class="hero-badge accent">無料学習相談 受付中</span>
   </div>
-  <div class="hero-grid">
+  <div class="container hero-grid">
     <div class="hero-text">
-      <div class="hero-eyebrow">理系受験 専門オンライン塾</div>
-      <h1><span class="strike">暗記だけ</span>では<br>東大・医学部は<br><em>突破できない。</em></h1>
+      <h1>毎日課題 ×<br><em>理系思考で<br>志望校合格へ。</em></h1>
       <p class="hero-sub">理系の大学受験専門塾 ガリレオ</p>
-      <p class="hero-desc">ガリレオは<strong>毎日課題システム</strong>と<strong>理系思考トレーニング</strong>で、「自ら解を導ける人」を育てる理系専門塾です。</p>
+      <p class="hero-desc">理系の大学受験専門塾ガリレオは<br>毎日課題システムによる学習管理と<br>理系思考トレーニングで思考力を鍛え、<br>志望校合格まで伴走します。</p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">無料学習相談を予約する →</a>
         <a href="#courses" class="btn btn-outline">コースを見る</a>
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-mascot-wrap">
-        <div class="hero-mascot-bg"></div>
-        <div class="hero-bubble">「なぜ？」を解き明かそう。<small>— ガリレオ博士</small></div>
-        <span class="hero-badge-float b1">合格率<br>90%+</span>
-        <span class="hero-badge-float b2">毎日<br>管理</span>
-        <img src="img/galileo-mascot.png" alt="ガリレオ博士 — 理系受験を伴走するマスコット" class="hero-mascot">
+      <div class="hero-img">
+        <img src="img/hero-roadmap.png" alt="ガリレオ 合格ロードマップ — 偏差値ギャップ・月別ロードマップ・科目別重点アドバイスを一画面で可視化">
       </div>
     </div>
   </div>
