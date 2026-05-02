@@ -744,55 +744,6 @@ img, svg { display: block; max-width: 100%; }
 }
 
 /* ─── Subjects ─────────────────────────────────── */
-.subjects { background: #fff; padding: 64px 22px; }
-.subjects__list { margin-top: 30px; display: flex; flex-direction: column; gap: 14px; }
-.subjects__card {
-  display: flex;
-  gap: 16px;
-  padding: 20px 18px;
-  background: var(--strength-card-bg);
-  border: 1px solid var(--strength-card-border);
-  border-radius: 8px;
-}
-.subjects__sym {
-  flex-shrink: 0;
-  width: 56px;
-  height: 56px;
-  border-radius: 8px;
-  background: var(--pain-callout-bg);
-  color: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--serif-latin);
-  font-size: 26px;
-  font-weight: 600;
-  font-style: italic;
-}
-.subjects__name {
-  font-family: var(--serif);
-  font-size: 17px;
-  font-weight: 800;
-  color: var(--text);
-  margin-bottom: 6px;
-}
-.subjects__body {
-  font-size: 12.5px;
-  color: var(--text-muted);
-  line-height: 1.85;
-  margin-bottom: 10px;
-}
-.subjects__tags { display: flex; flex-wrap: wrap; gap: 5px; }
-.subjects__tag {
-  padding: 3px 8px;
-  background: #fff;
-  border: 1px solid var(--faq-border);
-  border-radius: 3px;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text);
-}
-
 /* ─── Grade ────────────────────────────────────── */
 .grade { background: #fff; padding: 64px 22px; }
 .grade__list { margin-top: 32px; display: flex; flex-direction: column; gap: 18px; }
@@ -1283,6 +1234,49 @@ img, svg { display: block; max-width: 100%; }
   color: var(--text);
 }
 .courses__card.is-popular .courses__price-tbd { color: #fff; }
+.courses__plans {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--faq-border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.courses__card.is-popular .courses__plans { border-top-color: rgba(255, 255, 255, 0.15); }
+.courses__plan {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 12px;
+  background: var(--pain-callout-bg);
+  border-radius: 6px;
+}
+.courses__card.is-popular .courses__plan { background: rgba(255,255,255,0.06); }
+.courses__plan-freq {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+.courses__card.is-popular .courses__plan-freq { color: rgba(255,255,255,0.85); }
+.courses__plan-amount {
+  font-family: var(--sans);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+}
+.courses__card.is-popular .courses__plan-amount { color: #fff; }
+.courses__plan-tax {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-left: 4px;
+}
+.courses__card.is-popular .courses__plan-tax { color: rgba(255,255,255,0.6); }
+.courses__plans--single .courses__plan { background: transparent; padding: 4px 0; }
+.courses__plans--single .courses__plan-amount { font-size: 22px; }
 .courses__note {
   margin-top: 18px;
   font-size: 11.5px;
@@ -1561,18 +1555,19 @@ img, svg { display: block; max-width: 100%; }
   gap: 8px;
 }
 .final-cta__stat-num {
-  font-family: var(--serif-latin);
-  font-size: 26px;
-  font-weight: 300;
-  font-style: italic;
+  font-family: var(--sans);
+  font-size: 28px;
+  font-weight: 700;
+  font-style: normal;
   color: var(--accent);
   line-height: 1;
+  letter-spacing: 0.01em;
 }
 .final-cta__stat-label {
-  margin-top: 4px;
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.55);
-  letter-spacing: 1.5px;
+  margin-top: 6px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 1px;
 }
 .final-cta__brand {
   margin-top: 36px;
@@ -1647,7 +1642,7 @@ img, svg { display: block; max-width: 100%; }
 <div class="lp-frame">
 
   <!-- ─── Top Promo ─────────────────────────────── -->
-  <div class="top-promo">◆ 高校生の保護者さま｜お子さまの理系受験について</div>
+  <div class="top-promo">◆ 高校生の保護者様｜お子さまの理系受験について</div>
 
   <!-- ─── Mini Header ───────────────────────────── -->
   <header class="mini-header">
@@ -1690,7 +1685,7 @@ img, svg { display: block; max-width: 100%; }
 
     <div class="fv__inner">
       <img class="fv__mascot" src="../img/galileo-mascot.png" alt="ガリレオ マスコット" width="160" height="160" loading="eager" decoding="async">
-      <div class="fv__tag">高1〜高3 保護者の方へ</div>
+      <div class="fv__tag">高1〜高3 保護者様へ</div>
       <div class="fv__opening">「うちの子、本当にこのままで<br>志望校に届くんだろうか…」</div>
       <h1 class="fv__headline">不安なのは、<br>道筋が見えないから。</h1>
       <div class="fv__rule"></div>
@@ -1710,7 +1705,7 @@ img, svg { display: block; max-width: 100%; }
         <div class="fv__chip">
           <span class="fv__chip-key">週次レポート</span>
           <span class="fv__chip-divider"></span>
-          <span class="fv__chip-value">保護者にも進捗を共有</span>
+          <span class="fv__chip-value">保護者様にも進捗を共有</span>
         </div>
       </div>
 
@@ -1756,7 +1751,7 @@ img, svg { display: block; max-width: 100%; }
       </div>
       <div class="numbers__cell">
         <div class="numbers__num-row"><span class="numbers__num">9割</span></div>
-        <div class="numbers__label">保護者満足度</div>
+        <div class="numbers__label">保護者様満足度</div>
         <div class="numbers__sub">年次アンケート</div>
       </div>
     </div>
@@ -1766,7 +1761,7 @@ img, svg { display: block; max-width: 100%; }
   <section class="pain">
     <div class="sec-title">
       <div class="sec-title__eyebrow">SUCH WORRIES?</div>
-      <h2 class="sec-title__heading">保護者の方から、<br>こんなお声をいただきます。</h2>
+      <h2 class="sec-title__heading">保護者様から、<br>こんなお声をいただきます。</h2>
     </div>
     <div class="pain__list">
       <div class="pain__card">
@@ -1801,7 +1796,7 @@ img, svg { display: block; max-width: 100%; }
   <section class="message">
     <div class="sec-title">
       <div class="sec-title__eyebrow">MESSAGE</div>
-      <h2 class="sec-title__heading">塾長より、<br>保護者の皆さまへ。</h2>
+      <h2 class="sec-title__heading">塾長より、<br>保護者の皆様へ。</h2>
     </div>
     <div class="message__monogram">田</div>
     <div class="message__attr">
@@ -1811,8 +1806,8 @@ img, svg { display: block; max-width: 100%; }
     <div class="message__card">
       <div class="message__quote">「子どもを信じたい。<br>でも、不安もある。」</div>
       <div class="message__body">
-        <p>受験期、保護者の方々が抱える迷いを、私たちは多く伺ってきました。</p>
-        <p>ガリレオが大切にしているのは、<strong>「子どもの可能性を信じきる」</strong>こと。そのために、毎日の課題で迷いを取り除き、本質を教える授業で確かな学力を育て、保護者の皆さまには進捗を共有する。</p>
+        <p>受験期、保護者様が抱える迷いを、私たちは多く伺ってきました。</p>
+        <p>ガリレオが大切にしているのは、<strong>「子どもの可能性を信じきる」</strong>こと。そのために、毎日の課題で迷いを取り除き、本質を教える授業で確かな学力を育て、保護者の皆様には進捗を共有する。</p>
         <p>一人で悩まれる前に、ぜひ一度、お話を聞かせてください。お子さまのこれまでとこれからを、私たちと一緒に見つめ直しましょう。</p>
       </div>
       <div class="message__sign">— Galileo Sciences, Director</div>
@@ -1841,7 +1836,7 @@ img, svg { display: block; max-width: 100%; }
           <tr><td>理系専門</td><td class="mark-x">×</td><td class="mark-tri">△</td><td class="is-galileo">◎</td></tr>
           <tr><td>毎日の学習管理</td><td class="mark-x">×</td><td class="mark-tri">△</td><td class="is-galileo">◎</td></tr>
           <tr><td>本質理解の授業</td><td class="mark-tri">△</td><td>○</td><td class="is-galileo">◎</td></tr>
-          <tr><td>保護者への進捗共有</td><td class="mark-tri">△</td><td class="mark-x">×</td><td class="is-galileo">◎</td></tr>
+          <tr><td>保護者様への進捗共有</td><td class="mark-tri">△</td><td class="mark-x">×</td><td class="is-galileo">◎</td></tr>
           <tr><td>志望校別カリキュラム</td><td class="mark-x">×</td><td>○</td><td class="is-galileo">◎</td></tr>
         </tbody>
       </table>
@@ -1874,9 +1869,9 @@ img, svg { display: block; max-width: 100%; }
       <div class="strengths__card">
         <div class="strengths__bignum">03</div>
         <div class="strengths__point">POINT 03</div>
-        <div class="strengths__title">保護者にも、毎週の進捗共有。</div>
-        <div class="strengths__body">週次レポートでお子さまの学習状況をお届け。月1回の保護者面談で、ご家庭での適切なサポート方法も一緒に考えます。</div>
-        <div class="strengths__tag">保護者面談月1回</div>
+        <div class="strengths__title">保護者様にも、毎週の進捗共有。</div>
+        <div class="strengths__body">週次レポートでお子さまの学習状況をお届け。月1回の保護者様面談で、ご家庭での適切なサポート方法も一緒に考えます。</div>
+        <div class="strengths__tag">保護者様面談月1回</div>
       </div>
     </div>
   </section>
@@ -2011,61 +2006,6 @@ img, svg { display: block; max-width: 100%; }
     <div class="schedule__note">※ 高2生・部活継続中の例。<br>個別最適化のため、生徒ごとに調整します。</div>
   </section>
 
-  <!-- ─── Subjects ─────────────────────────────── -->
-  <section class="subjects">
-    <div class="sec-title">
-      <div class="sec-title__eyebrow">SUBJECTS</div>
-      <h2 class="sec-title__heading">科目別、<br>指導の特長。</h2>
-      <p class="sec-title__sub">数学・物理・化学・英語、すべてが理系受験のための最適化。</p>
-    </div>
-    <div class="subjects__list">
-      <div class="subjects__card">
-        <div class="subjects__sym">Σ</div>
-        <div>
-          <div class="subjects__name">数学</div>
-          <div class="subjects__body">解法の暗記ではなく、問題の構造を見抜く力を養成。難関大の融合問題にも崩れない応用力を育てます。</div>
-          <div class="subjects__tags">
-            <span class="subjects__tag">数Ⅰ・A・Ⅱ・B・Ⅲ・C</span>
-            <span class="subjects__tag">東大・京大対応</span>
-            <span class="subjects__tag">医学部対応</span>
-          </div>
-        </div>
-      </div>
-      <div class="subjects__card">
-        <div class="subjects__sym">F</div>
-        <div>
-          <div class="subjects__name">物理</div>
-          <div class="subjects__body">公式の丸暗記ではなく、物理現象の本質から理解。力学・電磁気・波動・熱・原子の全領域をカバー。</div>
-          <div class="subjects__tags">
-            <span class="subjects__tag">本質理解アプローチ</span>
-            <span class="subjects__tag">微積を使った物理</span>
-          </div>
-        </div>
-      </div>
-      <div class="subjects__card">
-        <div class="subjects__sym">⚗</div>
-        <div>
-          <div class="subjects__name">化学</div>
-          <div class="subjects__body">理論・無機・有機の有機的なつながりを意識した指導。記述・論述問題にも対応。</div>
-          <div class="subjects__tags">
-            <span class="subjects__tag">構造決定の徹底演習</span>
-            <span class="subjects__tag">医学部頻出対策</span>
-          </div>
-        </div>
-      </div>
-      <div class="subjects__card">
-        <div class="subjects__sym">En</div>
-        <div>
-          <div class="subjects__name">英語</div>
-          <div class="subjects__body">理系受験生に必要十分な英語力を、最小の時間で。長文読解・英作文を効率化。</div>
-          <div class="subjects__tags">
-            <span class="subjects__tag">理系学生向け最適化</span>
-            <span class="subjects__tag">共テ・二次両対応</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ─── Grade Approach ───────────────────────── -->
   <section class="grade">
@@ -2127,8 +2067,8 @@ img, svg { display: block; max-width: 100%; }
   <section class="parent-support">
     <div class="sec-title">
       <div class="sec-title__eyebrow">FOR PARENTS</div>
-      <h2 class="sec-title__heading">保護者の方にも、<br>安心の伴走を。</h2>
-      <p class="sec-title__sub">お子さまの受験は、ご家庭全体の挑戦です。<br>ガリレオは、保護者の皆さまも支えます。</p>
+      <h2 class="sec-title__heading">保護者様にも、<br>安心の伴走を。</h2>
+      <p class="sec-title__sub">お子さまの受験は、ご家庭全体の挑戦です。<br>ガリレオは、保護者の皆様も支えます。</p>
     </div>
     <div class="parent-support__grid">
       <div class="parent-support__card">
@@ -2138,13 +2078,13 @@ img, svg { display: block; max-width: 100%; }
       </div>
       <div class="parent-support__card">
         <div class="parent-support__icon">💬</div>
-        <div class="parent-support__title">月1回 保護者面談</div>
+        <div class="parent-support__title">月1回 保護者様面談</div>
         <div class="parent-support__body">学習状況の共有に加え、ご家庭での声かけ方・サポート方法を一緒に検討。</div>
       </div>
       <div class="parent-support__card">
         <div class="parent-support__icon">📞</div>
         <div class="parent-support__title">いつでも相談窓口</div>
-        <div class="parent-support__body">受験期の不安・進路の迷いなど、保護者専用の相談窓口を平日・土曜開設。</div>
+        <div class="parent-support__body">受験期の不安・進路の迷いなど、保護者様専用の相談窓口を平日・土曜開設。</div>
       </div>
       <div class="parent-support__card">
         <div class="parent-support__icon">📊</div>
@@ -2159,7 +2099,7 @@ img, svg { display: block; max-width: 100%; }
     <div class="sec-title">
       <div class="sec-title__eyebrow">6 PROMISES</div>
       <h2 class="sec-title__heading sec-title__heading--dark">ガリレオの、<br>6つの約束。</h2>
-      <p class="sec-title__sub sec-title__sub--dark">私たちが、お子さまと保護者さまにお約束すること。</p>
+      <p class="sec-title__sub sec-title__sub--dark">私たちが、お子さまと保護者様にお約束すること。</p>
     </div>
     <div class="promises__list">
       <div class="promises__row">
@@ -2172,7 +2112,7 @@ img, svg { display: block; max-width: 100%; }
       <div class="promises__row">
         <div class="promises__num">02</div>
         <div>
-          <div class="promises__title">保護者を置き去りにしない</div>
+          <div class="promises__title">保護者様を置き去りにしない</div>
           <div class="promises__body">週次レポート・月次面談で家庭との連携を徹底。</div>
         </div>
       </div>
@@ -2276,7 +2216,7 @@ img, svg { display: block; max-width: 100%; }
   <section class="voices">
     <div class="sec-title">
       <div class="sec-title__eyebrow">VOICES</div>
-      <h2 class="sec-title__heading">合格者・保護者の声。</h2>
+      <h2 class="sec-title__heading">合格者・保護者様の声。</h2>
     </div>
     <div class="voices__list">
       <div class="voices__card">
@@ -2294,8 +2234,8 @@ img, svg { display: block; max-width: 100%; }
       <div class="voices__card">
         <div class="voices__deco">"</div>
         <div class="voices__quote">親としても、毎日の進捗が見えて安心でした。</div>
-        <div class="voices__body">受験期、子どもの状況が分からず不安でしたが、保護者向け週次レポートで進捗が共有されるので、家庭でも適切な声かけができました。</div>
-        <div class="voices__meta">医学部医学科 合格 / 保護者 M.Hさま</div>
+        <div class="voices__body">受験期、子どもの状況が分からず不安でしたが、保護者様向け週次レポートで進捗が共有されるので、家庭でも適切な声かけができました。</div>
+        <div class="voices__meta">医学部医学科 合格 / 保護者様 M.Hさま</div>
       </div>
     </div>
   </section>
@@ -2410,7 +2350,7 @@ img, svg { display: block; max-width: 100%; }
         <div class="env__num">2</div>
         <div>
           <div class="env__title">静かな面談スペース</div>
-          <div class="env__body">保護者・本人との面談に。落ち着いた雰囲気で本音の対話を。</div>
+          <div class="env__body">保護者様・本人との面談に。落ち着いた雰囲気で本音の対話を。</div>
         </div>
       </div>
       <div class="env__row">
@@ -2439,50 +2379,45 @@ img, svg { display: block; max-width: 100%; }
     </div>
     <div class="courses__list">
       <div class="courses__card">
-        <div class="courses__tier">STANDARD</div>
-        <div class="courses__name">個別指導コース</div>
+        <div class="courses__tier">ENTRY</div>
+        <div class="courses__name">大学受験準備コース</div>
         <div class="courses__meta">
-          <div>対象：高1・高2</div>
-          <div>科目：数学／物理／化学から選択</div>
+          <div>対象：中学生〜高校2年生</div>
+          <div>主な内容：基礎学力養成 / 学習習慣づくり / 毎日課題</div>
         </div>
-        <div class="courses__price-row">
-          <span class="courses__price-label">月額（税込）</span>
-          <div>
-            <span class="courses__price">¥36,000</span><span class="courses__price-suffix">～</span>
-          </div>
+        <div class="courses__plans">
+          <div class="courses__plan"><span class="courses__plan-freq">月2回オンライン</span><span class="courses__plan-amount">¥40,000<span class="courses__plan-tax">／月（税込）</span></span></div>
+          <div class="courses__plan"><span class="courses__plan-freq">週1回オンライン</span><span class="courses__plan-amount">¥48,980<span class="courses__plan-tax">／月（税込）</span></span></div>
+          <div class="courses__plan"><span class="courses__plan-freq">週2回オンライン</span><span class="courses__plan-amount">¥67,380<span class="courses__plan-tax">／月（税込）</span></span></div>
         </div>
       </div>
       <div class="courses__card is-popular">
         <div class="courses__badge">★ 人気No.1</div>
         <div class="courses__tier">POPULAR</div>
-        <div class="courses__name">理系総合コース</div>
+        <div class="courses__name">合格戦略プログラム</div>
         <div class="courses__meta">
-          <div>対象：高2・高3</div>
-          <div>科目：数・物・化／英 オールパッケージ</div>
+          <div>対象：高校1年生〜高校3年生</div>
+          <div>主な内容：合格ロードマップ / 実力診断テスト / 偏差値推移管理</div>
         </div>
-        <div class="courses__price-row">
-          <span class="courses__price-label">月額（税込）</span>
-          <div>
-            <span class="courses__price">¥64,000</span><span class="courses__price-suffix">～</span>
-          </div>
+        <div class="courses__plans">
+          <div class="courses__plan"><span class="courses__plan-freq">月2回オンライン</span><span class="courses__plan-amount">¥45,000<span class="courses__plan-tax">／月（税込）</span></span></div>
+          <div class="courses__plan"><span class="courses__plan-freq">週1回オンライン</span><span class="courses__plan-amount">¥64,480<span class="courses__plan-tax">／月（税込）</span></span></div>
+          <div class="courses__plan"><span class="courses__plan-freq">週2回オンライン</span><span class="courses__plan-amount">¥83,380<span class="courses__plan-tax">／月（税込）</span></span></div>
         </div>
       </div>
       <div class="courses__card">
-        <div class="courses__tier">PREMIUM</div>
-        <div class="courses__name">医学部・東大特化</div>
+        <div class="courses__tier">SUPPORT</div>
+        <div class="courses__name">合格戦略サポート</div>
         <div class="courses__meta">
-          <div>対象：高3・既卒</div>
-          <div>科目：志望校別カリキュラム</div>
+          <div>対象：併塾向け（他塾・予備校と並行）</div>
+          <div>主な内容：受験戦略サポート / 偏差値分析 / 学習計画設計</div>
         </div>
-        <div class="courses__price-row">
-          <span class="courses__price-label">月額（税込）</span>
-          <div>
-            <span class="courses__price-tbd">応相談</span>
-          </div>
+        <div class="courses__plans courses__plans--single">
+          <div class="courses__plan"><span class="courses__plan-freq">月額</span><span class="courses__plan-amount">¥33,000<span class="courses__plan-tax">（税込）</span></span></div>
         </div>
       </div>
     </div>
-    <div class="courses__note">※入会金 30,000円。教材費別途。<br>※詳細はカウンセリングでご案内します。</div>
+    <div class="courses__note">※ すべてのコースに毎日課題・LINE質問対応・三者面談（保護者様・生徒・講師）が含まれます。<br>※ 4つの支払い方法（銀行振込 一括／2回／3回分割・クレジットカード毎月払い）に対応。クーリングオフ・退塾時返金制度あり。<br>※ 入塾金の詳細は学習相談会時にご案内します。</div>
   </section>
 
   <!-- ─── Campaign ─────────────────────────────── -->
@@ -2599,10 +2534,10 @@ img, svg { display: block; max-width: 100%; }
       <div class="faq__item">
         <button class="faq__btn" type="button" aria-expanded="false">
           <span class="faq__q-marker">Q.</span>
-          <span class="faq__q">保護者への報告はありますか？</span>
+          <span class="faq__q">保護者様への報告はありますか？</span>
           <span class="faq__icon" aria-hidden="true">+</span>
         </button>
-        <div class="faq__a">週次レポートでお子さまの学習状況・到達度をお届けします。月1回の保護者面談もございます。</div>
+        <div class="faq__a">週次レポートでお子さまの学習状況・到達度をお届けします。月1回の保護者様面談もございます。</div>
       </div>
     </div>
   </section>
