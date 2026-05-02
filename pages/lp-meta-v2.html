@@ -1,0 +1,2681 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ガリレオは東大・京大・東工大・医学部など難関理系大学の合格を目指す高校生のための専門塾です。毎日課題システムで「やるべきこと」が明確に。無料学習相談 受付中。">
+<title>理系大学受験専門塾 ガリレオ｜難関理系大学への最短ルート</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,500;1,600&display=swap" rel="stylesheet">
+
+<meta property="og:title" content="理系大学受験専門塾 ガリレオ｜難関理系大学への最短ルート">
+<meta property="og:description" content="毎日課題システムで「やるべきこと」が明確に。東大・京大・医学部の合格実績156名（2024年度）。無料学習相談 受付中。">
+<meta property="og:type" content="website">
+
+<style>
+/* ═══════════════════════════════════════════════════════════
+   Galileo LP B案 v2 — Forest Theme
+   Original design: Babel/JSX prototype → static HTML/CSS/JS
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  --sans: 'Noto Sans JP', sans-serif;
+  --serif: 'Shippori Mincho B1', serif;
+  --serif-latin: 'Cormorant Garamond', serif;
+
+  --text: #0d1f15;
+  --text-muted: #5a7065;
+  --accent: #c9a84c;
+
+  --cta-bg: linear-gradient(135deg, #d4b157 0%, #b8932e 100%);
+  --cta-text: #0d1f15;
+  --cta-shadow: rgba(184, 147, 46, 0.45);
+
+  --fv-bg-1: #0a1f12;
+  --top-bar-bg: #0a1f12;
+  --top-bar-fg: rgba(255, 255, 255, 0.85);
+
+  --header-bg: #fff;
+  --header-border: #dde6df;
+  --header-hint: #5a7065;
+  --logo: #0d2e14;
+
+  --sticky-bg: rgba(10, 31, 18, 0.95);
+  --sticky-border: rgba(201, 168, 76, 0.3);
+  --sticky-hint: rgba(255, 255, 255, 0.55);
+
+  --pain-bg: #f4f1ea;
+  --pain-border: #e6dfcf;
+  --pain-callout-bg: #0a1f12;
+
+  --strength-card-bg: #f7f4ec;
+  --strength-card-border: #e6dfcf;
+  --strength-num-color: rgba(13, 46, 20, 0.06);
+  --strength-tag-bg: #0a1f12;
+
+  --mainichi-bg: #0a1f12;
+  --mainichi-grid: rgba(201, 168, 76, 0.06);
+
+  --results-border: #dccfaa;
+
+  --voices-card-bg: #fbf9f3;
+  --voices-border: #e6dfcf;
+
+  --teacher-mono-bg: #fbf9f3;
+  --teacher-border: #e6dfcf;
+
+  --course-card-bg: #fbf9f3;
+  --course-card-pop-bg: #0a1f12;
+
+  --faq-border: #d8cfb8;
+
+  --final-cta-bg: linear-gradient(180deg, #0a1f12 0%, #050d08 100%);
+}
+
+/* ─── Reset & base ─────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--sans);
+  color: var(--text);
+  background: #1a1c20;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px 0;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+img, svg { display: block; max-width: 100%; }
+
+.lp-frame {
+  width: 100%;
+  max-width: 430px;
+  background: #fff;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 96px;
+}
+@media (max-width: 480px) {
+  body { padding: 0; background: #fff; }
+  .lp-frame { box-shadow: none; border-radius: 0; max-width: 100%; }
+}
+
+/* ─── Top promo & header ───────────────────────── */
+.top-promo {
+  background: var(--top-bar-bg);
+  color: var(--top-bar-fg);
+  padding: 8px 14px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+.mini-header {
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--header-border);
+}
+.mini-header__brand { display: flex; align-items: baseline; gap: 8px; }
+.mini-header__logo {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--logo);
+  letter-spacing: 3px;
+}
+.mini-header__sub {
+  font-size: 9px;
+  color: var(--accent);
+  letter-spacing: 2px;
+}
+.mini-header__hint {
+  font-size: 10px;
+  color: var(--header-hint);
+  letter-spacing: 1.5px;
+}
+
+/* ─── FV (Empathy) ─────────────────────────────── */
+.fv {
+  position: relative;
+  background: var(--fv-bg-1);
+  color: #fff;
+  padding: 40px 22px;
+  overflow: hidden;
+}
+.fv__bg-svg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.5; }
+.fv__inner { position: relative; z-index: 2; }
+.fv__tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--accent);
+  color: var(--cta-text);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+  border-radius: 2px;
+}
+.fv__opening {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 2;
+  margin-bottom: 14px;
+  font-style: italic;
+}
+.fv__headline {
+  font-family: var(--serif);
+  font-size: 34px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+  margin: 0 0 8px;
+}
+.fv__rule {
+  width: 48px;
+  height: 3px;
+  background: var(--accent);
+  margin: 14px 0 22px;
+}
+.fv__sub {
+  font-size: 13.5px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 2.1;
+}
+.fv__chips {
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.fv__chip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+}
+.fv__chip-key {
+  font-family: var(--serif-latin);
+  font-size: 11px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--accent);
+  letter-spacing: 1px;
+  min-width: 80px;
+}
+.fv__chip-divider { width: 1px; height: 16px; background: rgba(255, 255, 255, 0.15); }
+.fv__chip-value {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+.fv__cta-wrap { margin-top: 28px; }
+.fv__cta-hint {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 1.5px;
+}
+
+/* ─── CTA button ───────────────────────────────── */
+.cta-btn {
+  display: block;
+  width: 100%;
+  background: var(--cta-bg);
+  color: var(--cta-text);
+  padding: 16px 18px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 1.5px;
+  box-shadow: 0 8px 24px var(--cta-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px var(--cta-shadow); }
+.cta-btn:active { transform: translateY(0); }
+.cta-btn--rounded { border-radius: 10px; }
+
+/* ─── Section title ────────────────────────────── */
+.sec-title { text-align: center; margin-bottom: 28px; }
+.sec-title__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 4px;
+}
+.sec-title__eyebrow::before,
+.sec-title__eyebrow::after {
+  content: '';
+  width: 18px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.7;
+}
+.sec-title__heading {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.45;
+  letter-spacing: 0.5px;
+}
+.sec-title__heading--dark { color: #fff; }
+.sec-title__sub {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.9;
+  letter-spacing: 0.5px;
+}
+.sec-title__sub--dark { color: rgba(255, 255, 255, 0.5); }
+.sec-title__sub strong { color: var(--accent); font-weight: 700; }
+.sec-title__sub--dark strong { color: #fff; }
+
+/* ─── Numbers ──────────────────────────────────── */
+.numbers { background: #fff; padding: 64px 22px; }
+.numbers__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  margin-top: 30px;
+  background: var(--faq-border);
+  border: 1px solid var(--faq-border);
+}
+.numbers__cell { background: #fff; padding: 22px 14px; text-align: center; }
+.numbers__num-row { display: flex; align-items: baseline; justify-content: center; gap: 3px; }
+.numbers__num {
+  font-family: var(--serif-latin);
+  font-size: 38px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1;
+}
+.numbers__unit { font-size: 13px; font-weight: 600; color: var(--accent); }
+.numbers__label {
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.5;
+}
+.numbers__sub {
+  margin-top: 3px;
+  font-size: 9.5px;
+  color: var(--text-muted);
+  letter-spacing: 0.8px;
+}
+
+/* ─── Pain ─────────────────────────────────────── */
+.pain { background: var(--pain-bg); padding: 52px 22px; }
+.pain__list { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+.pain__card {
+  background: #fff;
+  border: 1px solid var(--pain-border);
+  border-left: 3px solid var(--accent);
+  padding: 16px 18px;
+  border-radius: 4px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+.pain__num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--cta-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif-latin);
+  font-size: 13px;
+  font-weight: 700;
+  font-style: italic;
+  margin-top: 2px;
+}
+.pain__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.55;
+  margin-bottom: 4px;
+}
+.pain__body {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  line-height: 1.85;
+}
+.pain__callout {
+  margin-top: 32px;
+  padding: 18px 16px;
+  background: var(--pain-callout-bg);
+  border-radius: 8px;
+  text-align: center;
+}
+.pain__callout-text {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.7;
+}
+.pain__callout-text .accent { color: var(--accent); }
+.pain__callout-hint {
+  margin-top: 8px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 1px;
+}
+
+/* ─── Message (塾長メッセージ) ─────────────────── */
+.message { background: #fff; padding: 56px 22px; }
+.message__monogram {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--teacher-mono-bg);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 800;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  margin: 0 auto 18px;
+}
+.message__attr {
+  text-align: center;
+  margin-bottom: 22px;
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+.message__attr-sub {
+  margin-top: 4px;
+  font-size: 10.5px;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  font-family: var(--sans);
+}
+.message__card {
+  padding: 24px 22px;
+  background: var(--voices-card-bg);
+  border: 1px solid var(--voices-border);
+  border-radius: 8px;
+}
+.message__quote {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
+}
+.message__body {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 2.05;
+}
+.message__body strong { color: var(--text); }
+.message__body p + p { margin-top: 1em; }
+.message__sign {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--voices-border);
+  font-family: var(--serif-latin);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--accent);
+  text-align: right;
+}
+
+/* ─── Comparison ───────────────────────────────── */
+.compare { background: var(--pain-bg); padding: 64px 22px; }
+.compare__wrap {
+  margin-top: 28px;
+  background: #fff;
+  border: 1px solid var(--faq-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.compare__table { width: 100%; border-collapse: collapse; }
+.compare__table th {
+  padding: 12px 4px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  background: var(--pain-bg);
+  letter-spacing: 0.5px;
+}
+.compare__table th.is-galileo {
+  background: var(--pain-callout-bg);
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.compare__table th:first-child { text-align: left; padding-left: 12px; }
+.compare__table tr { border-top: 1px solid var(--faq-border); }
+.compare__table td {
+  padding: 14px 4px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+}
+.compare__table td:first-child {
+  text-align: left;
+  padding-left: 12px;
+  font-size: 11.5px;
+  color: var(--text);
+  line-height: 1.5;
+}
+.compare__table .is-galileo {
+  background: var(--pain-bg);
+  color: var(--accent);
+  font-size: 16px;
+}
+.compare__table .mark-x { color: #bbb; }
+.compare__table .mark-tri { color: #888; }
+.compare__note {
+  margin-top: 16px;
+  font-size: 10.5px;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* ─── Strengths ────────────────────────────────── */
+.strengths { background: #fff; padding: 56px 22px; }
+.strengths__list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 32px;
+}
+.strengths__card {
+  background: var(--strength-card-bg);
+  border: 1px solid var(--strength-card-border);
+  border-radius: 10px;
+  padding: 24px 20px;
+  position: relative;
+  overflow: hidden;
+}
+.strengths__bignum {
+  position: absolute;
+  top: -10px;
+  right: -8px;
+  font-family: var(--serif-latin);
+  font-size: 110px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--strength-num-color);
+  line-height: 1;
+  user-select: none;
+}
+.strengths__point {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+.strengths__title {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--logo);
+  line-height: 1.5;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+.strengths__body {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 2;
+  position: relative;
+  z-index: 1;
+}
+.strengths__tag {
+  margin-top: 14px;
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 4px;
+  background: var(--strength-tag-bg);
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ─── Mainichi (毎日課題) ──────────────────────── */
+.mainichi {
+  background: var(--mainichi-bg);
+  padding: 56px 22px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.mainichi__grid-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  background-image:
+    linear-gradient(var(--mainichi-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--mainichi-grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.mainichi__inner { position: relative; }
+.mainichi__cycle { margin: 32px auto 28px; max-width: 240px; aspect-ratio: 1; position: relative; }
+.mainichi__flow { display: flex; flex-direction: column; gap: 0; }
+.mainichi__step {
+  display: flex;
+  gap: 14px;
+  position: relative;
+  padding-bottom: 18px;
+}
+.mainichi__step:last-child { padding-bottom: 0; }
+.mainichi__rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 80px;
+}
+.mainichi__time {
+  font-family: var(--serif-latin);
+  font-size: 13px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--accent);
+  letter-spacing: 1px;
+  white-space: nowrap;
+  min-height: 18px;
+  display: flex;
+  align-items: center;
+}
+.mainichi__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-top: 6px;
+  box-shadow: 0 0 0 4px var(--mainichi-bg), 0 0 0 5px rgba(201, 168, 76, 0.25);
+}
+.mainichi__line {
+  width: 1px;
+  flex: 1;
+  margin-top: 4px;
+  background: linear-gradient(rgba(201, 168, 76, 0.4), rgba(201, 168, 76, 0.13));
+}
+.mainichi__step:last-child .mainichi__line { display: none; }
+.mainichi__label {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.mainichi__detail {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.8;
+}
+.mainichi__callout {
+  margin-top: 28px;
+  padding: 14px 16px;
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 6px;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.8;
+  text-align: center;
+}
+.mainichi__callout strong {
+  color: var(--accent);
+  font-size: 15px;
+}
+
+/* ─── Schedule ─────────────────────────────────── */
+.schedule { background: var(--pain-bg); padding: 64px 22px; }
+.schedule__card {
+  margin-top: 28px;
+  background: #fff;
+  border: 1px solid var(--faq-border);
+  border-radius: 8px;
+  padding: 20px 18px;
+}
+.schedule__row {
+  display: flex;
+  gap: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed var(--faq-border);
+  margin-bottom: 12px;
+}
+.schedule__row:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+  margin-bottom: 0;
+}
+.schedule__time {
+  flex-shrink: 0;
+  width: 96px;
+  font-family: var(--serif-latin);
+  font-size: 12.5px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--text-muted);
+  padding-top: 2px;
+}
+.schedule__title {
+  flex: 1;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.5;
+}
+.schedule__tag {
+  flex-shrink: 0;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  align-self: flex-start;
+  margin-top: 2px;
+}
+.schedule__tag--auto { background: var(--accent); color: var(--cta-text); }
+.schedule__tag--school { background: var(--faq-border); color: var(--text); }
+.schedule__tag--galileo { background: var(--pain-callout-bg); color: #fff; }
+.schedule__tag--rest { background: var(--strength-card-bg); color: var(--text-muted); }
+.schedule__note {
+  margin-top: 16px;
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.85;
+}
+
+/* ─── Subjects ─────────────────────────────────── */
+.subjects { background: #fff; padding: 64px 22px; }
+.subjects__list { margin-top: 30px; display: flex; flex-direction: column; gap: 14px; }
+.subjects__card {
+  display: flex;
+  gap: 16px;
+  padding: 20px 18px;
+  background: var(--strength-card-bg);
+  border: 1px solid var(--strength-card-border);
+  border-radius: 8px;
+}
+.subjects__sym {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  background: var(--pain-callout-bg);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif-latin);
+  font-size: 26px;
+  font-weight: 600;
+  font-style: italic;
+}
+.subjects__name {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.subjects__body {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  line-height: 1.85;
+  margin-bottom: 10px;
+}
+.subjects__tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.subjects__tag {
+  padding: 3px 8px;
+  background: #fff;
+  border: 1px solid var(--faq-border);
+  border-radius: 3px;
+  font-size: 9.5px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ─── Grade ────────────────────────────────────── */
+.grade { background: #fff; padding: 64px 22px; }
+.grade__list { margin-top: 32px; display: flex; flex-direction: column; gap: 18px; }
+.grade__card {
+  background: var(--strength-card-bg);
+  border: 1px solid var(--strength-card-border);
+  border-radius: 10px;
+  padding: 24px 20px;
+}
+.grade__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.grade__circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--pain-callout-bg);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+.grade__step-label {
+  font-size: 9.5px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 3px;
+  margin-bottom: 4px;
+}
+.grade__goal {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.4;
+}
+.grade__body {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 2;
+  margin-bottom: 14px;
+}
+.grade__focus {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--faq-border);
+}
+.grade__focus-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11.5px;
+  color: var(--text);
+  font-weight: 500;
+}
+.grade__focus-item::before {
+  content: '';
+  width: 16px;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* ─── Parent Support ───────────────────────────── */
+.parent-support { background: #fff; padding: 56px 22px; }
+.parent-support__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 28px;
+}
+.parent-support__card {
+  background: var(--strength-card-bg);
+  border: 1px solid var(--strength-card-border);
+  padding: 18px 14px;
+  border-radius: 8px;
+}
+.parent-support__icon { font-size: 22px; margin-bottom: 10px; filter: grayscale(0.3); }
+.parent-support__title {
+  font-family: var(--serif);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+.parent-support__body {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.85;
+}
+
+/* ─── Promises ─────────────────────────────────── */
+.promises { background: var(--pain-callout-bg); padding: 64px 22px; color: #fff; }
+.promises__list { margin-top: 30px; display: flex; flex-direction: column; gap: 0; }
+.promises__row {
+  display: flex;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.promises__row:last-child { border-bottom: none; }
+.promises__num {
+  flex-shrink: 0;
+  width: 44px;
+  font-family: var(--serif-latin);
+  font-size: 22px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--accent);
+  line-height: 1;
+  padding-top: 2px;
+}
+.promises__title {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.promises__body {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.85;
+}
+
+/* ─── Transform (Before/After) ─────────────────── */
+.transform { background: var(--pain-bg); padding: 64px 22px; }
+.transform__list { margin-top: 30px; display: flex; flex-direction: column; gap: 16px; }
+.transform__card {
+  background: #fff;
+  border: 1px solid var(--faq-border);
+  border-radius: 10px;
+  padding: 22px 20px;
+}
+.transform__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--faq-border);
+}
+.transform__name {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text);
+}
+.transform__uni {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+.transform__ba { display: flex; gap: 8px; align-items: stretch; }
+.transform__before,
+.transform__after {
+  flex: 1;
+  padding: 12px 12px;
+  border-radius: 6px;
+  position: relative;
+}
+.transform__before { background: #f5f5f0; }
+.transform__after { background: var(--pain-callout-bg); color: #fff; }
+.transform__label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+.transform__before .transform__label { color: #999; }
+.transform__after .transform__label { color: var(--accent); }
+.transform__before-text {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.transform__after-text {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+}
+.transform__arrow {
+  align-self: center;
+  font-family: var(--serif-latin);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--accent);
+}
+.transform__quote {
+  margin-top: 14px;
+  font-family: var(--serif);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+/* ─── Voices ───────────────────────────────────── */
+.voices { background: #fff; padding: 56px 22px; }
+.voices__list { display: flex; flex-direction: column; gap: 16px; margin-top: 28px; }
+.voices__card {
+  background: var(--voices-card-bg);
+  border: 1px solid var(--voices-border);
+  padding: 22px 20px;
+  border-radius: 8px;
+  position: relative;
+}
+.voices__deco {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-family: var(--serif-latin);
+  font-size: 60px;
+  font-weight: 300;
+  color: var(--accent);
+  opacity: 0.18;
+  line-height: 1;
+  font-style: italic;
+}
+.voices__quote {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+.voices__body {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.95;
+  margin-bottom: 14px;
+}
+.voices__meta {
+  padding-top: 12px;
+  border-top: 1px solid var(--voices-border);
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+
+/* ─── Results ──────────────────────────────────── */
+.results { background: var(--pain-bg); padding: 56px 22px; }
+.results__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--results-border);
+  border: 1px solid var(--results-border);
+  margin-top: 24px;
+}
+.results__cell { background: #fff; padding: 24px 14px; text-align: center; }
+.results__num {
+  font-family: var(--serif-latin);
+  font-size: 44px;
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1;
+  font-style: italic;
+}
+.results__num-unit {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-left: 2px;
+  font-style: normal;
+}
+.results__label {
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 1.5px;
+}
+.results__note {
+  margin-top: 18px;
+  font-size: 10px;
+  color: var(--text-muted);
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* ─── Teachers ─────────────────────────────────── */
+.teachers { background: var(--pain-bg); padding: 56px 22px; }
+.teachers__list { display: flex; flex-direction: column; gap: 14px; margin-top: 28px; }
+.teachers__card {
+  background: #fff;
+  border: 1px solid var(--teacher-border);
+  padding: 18px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.teachers__monogram {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--teacher-mono-bg);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 800;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+}
+.teachers__name {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 3px;
+  letter-spacing: 1px;
+}
+.teachers__role {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+.teachers__meta {
+  font-size: 10.5px;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ─── Environment ──────────────────────────────── */
+.env { background: #fff; padding: 64px 22px; }
+.env__plan {
+  margin-top: 28px;
+  padding: 24px 16px;
+  background: var(--pain-bg);
+  border-radius: 10px;
+  border: 1px solid var(--faq-border);
+}
+.env__plan-cap {
+  margin-top: 12px;
+  font-size: 9.5px;
+  color: var(--text-muted);
+  text-align: center;
+  letter-spacing: 1px;
+}
+.env__list {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.env__row {
+  display: flex;
+  gap: 14px;
+  padding: 16px;
+  background: var(--strength-card-bg);
+  border: 1px solid var(--strength-card-border);
+  border-radius: 6px;
+}
+.env__num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--cta-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif-latin);
+  font-size: 12px;
+  font-weight: 700;
+  font-style: italic;
+}
+.env__title {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.env__body {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* ─── Courses ──────────────────────────────────── */
+.courses { background: #fff; padding: 56px 22px; }
+.courses__list { display: flex; flex-direction: column; gap: 16px; margin-top: 28px; }
+.courses__card {
+  background: var(--course-card-bg);
+  border: 1px solid var(--strength-card-border);
+  border-radius: 10px;
+  padding: 22px 20px;
+  position: relative;
+  color: var(--text);
+}
+.courses__card.is-popular {
+  background: var(--course-card-pop-bg);
+  border: 2px solid var(--accent);
+  color: #fff;
+}
+.courses__badge {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background: var(--accent);
+  color: var(--cta-text);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 4px 12px;
+  border-radius: 3px;
+}
+.courses__tier {
+  font-family: var(--serif-latin);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+.courses__name {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 800;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+.courses__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.courses__card.is-popular .courses__meta { color: rgba(255, 255, 255, 0.75); }
+.courses__price-row {
+  padding-top: 14px;
+  border-top: 1px solid var(--strength-card-border);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.courses__card.is-popular .courses__price-row { border-top-color: rgba(255, 255, 255, 0.15); }
+.courses__price-label { font-size: 11px; color: var(--text-muted); }
+.courses__card.is-popular .courses__price-label { color: rgba(255, 255, 255, 0.6); }
+.courses__price {
+  font-family: var(--serif-latin);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--text);
+  font-style: italic;
+}
+.courses__card.is-popular .courses__price { color: #fff; }
+.courses__price-suffix {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: normal;
+  margin-left: 4px;
+}
+.courses__card.is-popular .courses__price-suffix { color: rgba(255, 255, 255, 0.55); }
+.courses__price-tbd {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+.courses__card.is-popular .courses__price-tbd { color: #fff; }
+.courses__note {
+  margin-top: 18px;
+  font-size: 10px;
+  color: var(--text-muted);
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 1.7;
+}
+
+/* ─── Campaign ─────────────────────────────────── */
+.campaign { background: #fff; padding: 50px 22px; }
+.campaign__card {
+  background: linear-gradient(135deg, var(--pain-callout-bg), #1a3a25);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 12px;
+  padding: 28px 22px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.campaign__glow {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(rgba(201, 168, 76, 0.2), transparent);
+}
+.campaign__badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--accent);
+  color: var(--cta-text);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  border-radius: 2px;
+  position: relative;
+}
+.campaign__title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.5;
+  margin-bottom: 14px;
+  position: relative;
+}
+.campaign__items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+  position: relative;
+}
+.campaign__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+}
+.campaign__check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.campaign__terms {
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 10.5px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.7;
+  position: relative;
+}
+
+/* ─── Flow ─────────────────────────────────────── */
+.flow { background: var(--pain-bg); padding: 56px 22px; }
+.flow__list { margin-top: 32px; }
+.flow__step {
+  display: flex;
+  gap: 14px;
+  padding-bottom: 22px;
+  position: relative;
+}
+.flow__step:last-child { padding-bottom: 0; }
+.flow__rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 36px;
+}
+.flow__num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--cta-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif-latin);
+  font-size: 15px;
+  font-weight: 700;
+  font-style: italic;
+  box-shadow: 0 0 0 4px var(--pain-bg), 0 0 0 5px rgba(201, 168, 76, 0.2);
+}
+.flow__line {
+  width: 1px;
+  flex: 1;
+  margin-top: 4px;
+  min-height: 60px;
+  background: linear-gradient(rgba(201, 168, 76, 0.4), rgba(201, 168, 76, 0.13));
+}
+.flow__step:last-child .flow__line { display: none; }
+.flow__step-label {
+  font-family: var(--serif-latin);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 3px;
+  margin-bottom: 4px;
+}
+.flow__dur {
+  margin-left: 8px;
+  font-style: italic;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+.flow__title {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.flow__body {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.95;
+}
+
+/* ─── FAQ ──────────────────────────────────────── */
+.faq { background: var(--pain-bg); padding: 56px 22px; }
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 28px;
+  border-top: 1px solid var(--faq-border);
+}
+.faq__item { border-bottom: 1px solid var(--faq-border); }
+.faq__btn {
+  width: 100%;
+  text-align: left;
+  padding: 18px 4px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.faq__q-marker {
+  flex-shrink: 0;
+  font-family: var(--serif-latin);
+  font-size: 14px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--accent);
+  width: 24px;
+}
+.faq__q {
+  flex: 1;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.6;
+}
+.faq__icon {
+  flex-shrink: 0;
+  font-size: 18px;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+}
+.faq__item.is-open .faq__icon { transform: rotate(45deg); }
+.faq__a {
+  padding: 0 4px 18px 38px;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 2;
+  display: none;
+}
+.faq__item.is-open .faq__a { display: block; }
+
+/* ─── Final CTA ────────────────────────────────── */
+.final-cta {
+  background: var(--final-cta-bg);
+  padding: 60px 22px 90px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.final-cta__orbit {
+  position: absolute;
+  right: -30%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 400px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+.final-cta__inner { position: relative; }
+.final-cta__eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 5px;
+  margin-bottom: 18px;
+}
+.final-cta__heading {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+.final-cta__sub {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 2;
+  letter-spacing: 0.5px;
+  margin-bottom: 28px;
+}
+.final-cta__btn {
+  display: inline-block;
+  background: var(--cta-bg);
+  color: var(--cta-text);
+  padding: 18px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  box-shadow: 0 8px 24px var(--cta-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.final-cta__btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px var(--cta-shadow); }
+.final-cta__hint {
+  margin-top: 16px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 1.5px;
+}
+.final-cta__stats {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  justify-content: space-around;
+  gap: 8px;
+}
+.final-cta__stat-num {
+  font-family: var(--serif-latin);
+  font-size: 26px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--accent);
+  line-height: 1;
+}
+.final-cta__stat-label {
+  margin-top: 4px;
+  font-size: 9.5px;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 1.5px;
+}
+.final-cta__brand {
+  margin-top: 36px;
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 4px;
+}
+.final-cta__brand-sub {
+  font-family: var(--sans);
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-left: 8px;
+  letter-spacing: 2px;
+}
+
+/* ─── Sticky CTA ───────────────────────────────── */
+.sticky-cta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: 10px 14px 14px;
+  background: var(--sticky-bg);
+  border-top: 1px solid var(--sticky-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.sticky-cta__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--cta-bg);
+  color: var(--cta-text);
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 1px;
+  box-shadow: 0 6px 20px var(--cta-shadow);
+  transition: transform 0.15s ease;
+}
+.sticky-cta__btn:active { transform: scale(0.98); }
+.sticky-cta__hint {
+  text-align: center;
+  margin-top: 6px;
+  font-size: 10px;
+  color: var(--sticky-hint);
+  letter-spacing: 1.5px;
+}
+
+/* ─── Footer ───────────────────────────────────── */
+.lp-footer {
+  background: #050d08;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 28px 22px;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 1px;
+  line-height: 1.9;
+}
+.lp-footer a { color: rgba(255, 255, 255, 0.75); }
+.lp-footer__links { display: flex; justify-content: center; gap: 16px; margin-bottom: 12px; }
+</style>
+</head>
+
+<body>
+<div class="lp-frame">
+
+  <!-- ─── Top Promo ─────────────────────────────── -->
+  <div class="top-promo">◆ 高校生の保護者さま｜お子さまの理系受験について</div>
+
+  <!-- ─── Mini Header ───────────────────────────── -->
+  <header class="mini-header">
+    <div class="mini-header__brand">
+      <span class="mini-header__logo">ガリレオ</span>
+      <span class="mini-header__sub">SCIENCES</span>
+    </div>
+    <div class="mini-header__hint">理系受験専門塾</div>
+  </header>
+
+  <!-- ─── FV (First View) ───────────────────────── -->
+  <section class="fv">
+    <svg class="fv__bg-svg" viewBox="0 0 375 700" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="fvBgrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.04)"/>
+          <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+        </linearGradient>
+      </defs>
+      <rect width="375" height="700" fill="url(#fvBgrad)"/>
+      <g stroke="#c9a84c" stroke-opacity="0.25" stroke-width="0.7" fill="none">
+        <line x1="60" y1="140" x2="140" y2="100"/>
+        <line x1="140" y1="100" x2="220" y2="160"/>
+        <line x1="220" y1="160" x2="290" y2="120"/>
+        <line x1="290" y1="120" x2="320" y2="220"/>
+        <line x1="220" y1="160" x2="180" y2="240"/>
+        <line x1="180" y1="240" x2="100" y2="260"/>
+      </g>
+      <g>
+        <circle cx="60" cy="140" r="3" fill="#c9a84c"/><circle cx="60" cy="140" r="6" fill="none" stroke="#c9a84c" stroke-opacity="0.4" stroke-width="0.5"/>
+        <circle cx="140" cy="100" r="3" fill="#c9a84c"/><circle cx="140" cy="100" r="6" fill="none" stroke="#c9a84c" stroke-opacity="0.4" stroke-width="0.5"/>
+        <circle cx="220" cy="160" r="3" fill="#c9a84c"/><circle cx="220" cy="160" r="6" fill="none" stroke="#c9a84c" stroke-opacity="0.4" stroke-width="0.5"/>
+        <circle cx="290" cy="120" r="3" fill="#c9a84c"/><circle cx="290" cy="120" r="6" fill="none" stroke="#c9a84c" stroke-opacity="0.4" stroke-width="0.5"/>
+        <circle cx="320" cy="220" r="3" fill="#c9a84c"/><circle cx="320" cy="220" r="6" fill="none" stroke="#c9a84c" stroke-opacity="0.4" stroke-width="0.5"/>
+        <circle cx="180" cy="240" r="3" fill="#c9a84c"/><circle cx="180" cy="240" r="6" fill="none" stroke="#c9a84c" stroke-opacity="0.4" stroke-width="0.5"/>
+        <circle cx="100" cy="260" r="3" fill="#c9a84c"/><circle cx="100" cy="260" r="6" fill="none" stroke="#c9a84c" stroke-opacity="0.4" stroke-width="0.5"/>
+      </g>
+      <g id="fv-stars"></g>
+    </svg>
+
+    <div class="fv__inner">
+      <div class="fv__tag">高1〜高3 保護者の方へ</div>
+      <div class="fv__opening">「うちの子、本当にこのままで<br>志望校に届くんだろうか…」</div>
+      <h1 class="fv__headline">不安なのは、<br>道筋が見えないから。</h1>
+      <div class="fv__rule"></div>
+      <p class="fv__sub">ガリレオは、お子さまの現在地から志望校まで、<br>毎日の学習で確実に距離を縮めていく専門塾です。<br>1人で悩まず、まずはお話を聞かせてください。</p>
+
+      <div class="fv__chips">
+        <div class="fv__chip">
+          <span class="fv__chip-key">365日</span>
+          <span class="fv__chip-divider"></span>
+          <span class="fv__chip-value">迷わない学習管理</span>
+        </div>
+        <div class="fv__chip">
+          <span class="fv__chip-key">1対1〜少人数</span>
+          <span class="fv__chip-divider"></span>
+          <span class="fv__chip-value">本質を教える対話型授業</span>
+        </div>
+        <div class="fv__chip">
+          <span class="fv__chip-key">週次レポート</span>
+          <span class="fv__chip-divider"></span>
+          <span class="fv__chip-value">保護者にも進捗を共有</span>
+        </div>
+      </div>
+
+      <div class="fv__cta-wrap">
+        <a href="#cta" class="cta-btn">▶︎ 無料学習相談を予約</a>
+        <div class="fv__cta-hint">所要15分 / オンライン可 / 完全無料</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Numbers ───────────────────────────────── -->
+  <section class="numbers">
+    <div class="sec-title">
+      <div class="sec-title__eyebrow">BY THE NUMBERS</div>
+      <h2 class="sec-title__heading">数字で見る、<br>ガリレオの実力。</h2>
+      <p class="sec-title__sub">言葉ではなく、結果でお応えします。</p>
+    </div>
+    <div class="numbers__grid">
+      <div class="numbers__cell">
+        <div class="numbers__num-row"><span class="numbers__num">156</span><span class="numbers__unit">名</span></div>
+        <div class="numbers__label">難関国立・医学部 合格</div>
+        <div class="numbers__sub">2024年度実績</div>
+      </div>
+      <div class="numbers__cell">
+        <div class="numbers__num-row"><span class="numbers__num">92</span><span class="numbers__unit">%</span></div>
+        <div class="numbers__label">学習習慣 定着率</div>
+        <div class="numbers__sub">入塾3ヶ月時点</div>
+      </div>
+      <div class="numbers__cell">
+        <div class="numbers__num-row"><span class="numbers__num">365</span><span class="numbers__unit">日</span></div>
+        <div class="numbers__label">学習が止まらない</div>
+        <div class="numbers__sub">休塾日もサポート</div>
+      </div>
+      <div class="numbers__cell">
+        <div class="numbers__num-row"><span class="numbers__num">+12.4</span></div>
+        <div class="numbers__label">平均偏差値上昇</div>
+        <div class="numbers__sub">入塾後1年</div>
+      </div>
+      <div class="numbers__cell">
+        <div class="numbers__num-row"><span class="numbers__num">18</span><span class="numbers__unit">年</span></div>
+        <div class="numbers__label">理系受験 指導歴</div>
+        <div class="numbers__sub">塾長 田中</div>
+      </div>
+      <div class="numbers__cell">
+        <div class="numbers__num-row"><span class="numbers__num">9割</span></div>
+        <div class="numbers__label">保護者満足度</div>
+        <div class="numbers__sub">年次アンケート</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Pain ─────────────────────────────────── -->
+  <section class="pain">
+    <div class="sec-title">
+      <div class="sec-title__eyebrow">SUCH WORRIES?</div>
+      <h2 class="sec-title__heading">保護者の方から、<br>こんなお声をいただきます。</h2>
+    </div>
+    <div class="pain__list">
+      <div class="pain__card">
+        <div class="pain__num">1</div>
+        <div>
+          <div class="pain__title">「このままで本当に大丈夫？」</div>
+          <div class="pain__body">模試の判定は気になるけれど、本人の頑張りに口出しもできない。何が足りていて、何が足りないのか、客観的に教えてほしい。</div>
+        </div>
+      </div>
+      <div class="pain__card">
+        <div class="pain__num">2</div>
+        <div>
+          <div class="pain__title">「家での勉強、ちゃんとやってる？」</div>
+          <div class="pain__body">部屋にこもっているけれど、本当に集中しているのか分からない。スマホばかり見ているのではと不安になる。</div>
+        </div>
+      </div>
+      <div class="pain__card">
+        <div class="pain__num">3</div>
+        <div>
+          <div class="pain__title">「親としてどう声をかければ？」</div>
+          <div class="pain__body">プレッシャーをかけたくない、でも放っておくのも心配。受験期の子どもとの距離感が分からない。</div>
+        </div>
+      </div>
+    </div>
+    <div class="pain__callout">
+      <div class="pain__callout-text">そのお悩み、<span class="accent">ガリレオ</span>が<br>解決します。</div>
+      <div class="pain__callout-hint">↓ 理系専門塾だからこそ できること</div>
+    </div>
+  </section>
+
+  <!-- ─── Message (塾長メッセージ) ──────────────── -->
+  <section class="message">
+    <div class="sec-title">
+      <div class="sec-title__eyebrow">MESSAGE</div>
+      <h2 class="sec-title__heading">塾長より、<br>保護者の皆さまへ。</h2>
+    </div>
+    <div class="message__monogram">田</div>
+    <div class="message__attr">
+      塾長 田中 隆司
+      <div class="message__attr-sub">東京大学 理学部 数学科 卒 / 指導歴 18年</div>
+    </div>
+    <div class="message__card">
+      <div class="message__quote">「子どもを信じたい。<br>でも、不安もある。」</div>
+      <div class="message__body">
+        <p>受験期、保護者の方々が抱える迷いを、私たちは多く伺ってきました。</p>
+        <p>ガリレオが大切にしているのは、<strong>「子どもの可能性を信じきる」</strong>こと。そのために、毎日の課題で迷いを取り除き、本質を教える授業で確かな学力を育て、保護者の皆さまには進捗を共有する。</p>
+        <p>一人で悩まれる前に、ぜひ一度、お話を聞かせてください。お子さまのこれまでとこれからを、私たちと一緒に見つめ直しましょう。</p>
+      </div>
+      <div class="message__sign">— Galileo Sciences, Director</div>
+    </div>
+  </section>
+
+  <!-- ─── Comparison ───────────────────────────── -->
+  <section class="compare">
+    <div class="sec-title">
+      <div class="sec-title__eyebrow">WHY GALILEO</div>
+      <h2 class="sec-title__heading">他塾と、何が違うのか。</h2>
+      <p class="sec-title__sub">数ある塾の中で、ガリレオを選ぶ意味。</p>
+    </div>
+    <div class="compare__wrap">
+      <table class="compare__table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>大手集団</th>
+            <th>個別塾</th>
+            <th class="is-galileo">ガリレオ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>指導方式</td><td>集団授業</td><td>1対1</td><td class="is-galileo">少人数 + 個別管理</td></tr>
+          <tr><td>理系専門</td><td class="mark-x">×</td><td class="mark-tri">△</td><td class="is-galileo">◎</td></tr>
+          <tr><td>毎日の学習管理</td><td class="mark-x">×</td><td class="mark-tri">△</td><td class="is-galileo">◎</td></tr>
+          <tr><td>本質理解の授業</td><td class="mark-tri">△</td><td>○</td><td class="is-galileo">◎</td></tr>
+          <tr><td>保護者への進捗共有</td><td class="mark-tri">△</td><td class="mark-x">×</td><td class="is-galileo">◎</td></tr>
+          <tr><td>志望校別カリキュラム</td><td class="mark-x">×</td><td>○</td><td class="is-galileo">◎</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="compare__note">※ 比較は一般的な傾向を示すものです。</div>
+  </section>
+
+  <!-- ─── Strengths ────────────────────────────── -->
+  <section class="strengths">
+    <div class="sec-title">
+      <div class="sec-title__eyebrow">3 STRENGTHS</div>
+      <h2 class="sec-title__heading">ガリレオ、<br>3つの強み。</h2>
+      <p class="sec-title__sub">他塾にはない、理系専門塾だからこその指導体制。</p>
+    </div>
+    <div class="strengths__list">
+      <div class="strengths__card">
+        <div class="strengths__bignum">01</div>
+        <div class="strengths__point">POINT 01</div>
+        <div class="strengths__title">「やるべきこと」を、毎日届ける。</div>
+        <div class="strengths__body">志望校から逆算した課題を毎日配信。お子さまは「今日、何をやるか」で迷うことがありません。学習が習慣になり、家庭の空気も変わります。</div>
+        <div class="strengths__tag">習慣化率 92%</div>
+      </div>
+      <div class="strengths__card">
+        <div class="strengths__bignum">02</div>
+        <div class="strengths__point">POINT 02</div>
+        <div class="strengths__title">本物の理系人による、対話型授業。</div>
+        <div class="strengths__body">東大・京大・医学部出身の講師陣が、本質から丁寧に教えます。「なぜそうなるか」を理解する授業だから、応用問題でも崩れない学力が身につきます。</div>
+        <div class="strengths__tag">少人数制</div>
+      </div>
+      <div class="strengths__card">
+        <div class="strengths__bignum">03</div>
+        <div class="strengths__point">POINT 03</div>
+        <div class="strengths__title">保護者にも、毎週の進捗共有。</div>
+        <div class="strengths__body">週次レポートでお子さまの学習状況をお届け。月1回の保護者面談で、ご家庭での適切なサポート方法も一緒に考えます。</div>
+        <div class="strengths__tag">保護者面談月1回</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Mainichi (毎日課題システム) ──────────── -->
+  <section class="mainichi">
+    <div class="mainichi__grid-bg" aria-hidden="true"></div>
+    <div class="mainichi__inner">
+      <div class="sec-title">
+        <div class="sec-title__eyebrow">DAILY ASSIGNMENT</div>
+        <h2 class="sec-title__heading sec-title__heading--dark">毎日課題<br>システム。</h2>
+        <p class="sec-title__sub sec-title__sub--dark"><strong>「やるべきこと」が明確だから、迷わず伸びる。</strong><br>受験までの時間を1日も無駄にしない、ガリレオ独自の学習管理。</p>
+      </div>
+
+      <div class="mainichi__cycle">
+        <svg viewBox="0 0 240 240" width="100%" height="100%" aria-hidden="true">
+          <defs>
+            <linearGradient id="mainichiArc" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#c9a84c" stop-opacity="0.2"/>
+            </linearGradient>
+          </defs>
+          <circle cx="120" cy="120" r="100" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+          <circle cx="120" cy="120" r="80" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="3 4"/>
+          <circle cx="120" cy="120" r="100" fill="none" stroke="url(#mainichiArc)" stroke-width="2" stroke-dasharray="470 200" stroke-dashoffset="-30" stroke-linecap="round" transform="rotate(-90 120 120)"/>
+          <circle cx="120" cy="20" r="6" fill="#c9a84c"/>
+          <circle cx="220" cy="120" r="6" fill="#c9a84c"/>
+          <circle cx="120" cy="220" r="6" fill="#c9a84c"/>
+          <circle cx="20" cy="120" r="6" fill="#c9a84c"/>
+          <text x="120" y="115" text-anchor="middle" font-family="'Shippori Mincho B1',serif" font-size="32" font-weight="800" fill="#fff">365</text>
+          <text x="120" y="138" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="10" fill="rgba(255,255,255,0.6)" letter-spacing="3">DAYS / YEAR</text>
+        </svg>
+      </div>
+
+      <div class="mainichi__flow">
+        <div class="mainichi__step">
+          <div class="mainichi__rail">
+            <div class="mainichi__time">21:00</div>
+            <div class="mainichi__dot"></div>
+            <div class="mainichi__line"></div>
+          </div>
+          <div>
+            <div class="mainichi__label">当日の課題を配信</div>
+            <div class="mainichi__detail">志望校・進度に合わせて毎日カスタマイズ</div>
+          </div>
+        </div>
+        <div class="mainichi__step">
+          <div class="mainichi__rail">
+            <div class="mainichi__time">翌 09:00</div>
+            <div class="mainichi__dot"></div>
+            <div class="mainichi__line"></div>
+          </div>
+          <div>
+            <div class="mainichi__label">提出締切</div>
+            <div class="mainichi__detail">スマホで撮影してLINEに送信</div>
+          </div>
+        </div>
+        <div class="mainichi__step">
+          <div class="mainichi__rail">
+            <div class="mainichi__time">〜 12:00</div>
+            <div class="mainichi__dot"></div>
+            <div class="mainichi__line"></div>
+          </div>
+          <div>
+            <div class="mainichi__label">個別フィードバック</div>
+            <div class="mainichi__detail">理解度に応じた解説とつまずきの指摘</div>
+          </div>
+        </div>
+        <div class="mainichi__step">
+          <div class="mainichi__rail">
+            <div class="mainichi__time">週末</div>
+            <div class="mainichi__dot"></div>
+            <div class="mainichi__line"></div>
+          </div>
+          <div>
+            <div class="mainichi__label">到達度テスト</div>
+            <div class="mainichi__detail">1週間の定着を確認・次週の課題に反映</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mainichi__callout">
+        ガリレオ生の <strong>92%</strong> が<br>毎日の学習習慣を3ヶ月以内に確立。
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Schedule ─────────────────────────────── -->
+  <section class="schedule">
+    <div class="sec-title">
+      <div class="sec-title__eyebrow">A DAY IN GALILEO</div>
+      <h2 class="sec-title__heading">ガリレオ生の、<br>ある1日。</h2>
+      <p class="sec-title__sub">無理なく続けられる、現実的な学習設計。</p>
+    </div>
+    <div class="schedule__card">
+      <div class="schedule__row">
+        <div class="schedule__time">07:00</div>
+        <div class="schedule__title">英単語 / 朝の小テスト</div>
+        <div class="schedule__tag schedule__tag--auto">AUTO</div>
+      </div>
+      <div class="schedule__row">
+        <div class="schedule__time">08:00 - 16:00</div>
+        <div class="schedule__title">学校（通常授業）</div>
+        <div class="schedule__tag schedule__tag--school">SCHOOL</div>
+      </div>
+      <div class="schedule__row">
+        <div class="schedule__time">17:00</div>
+        <div class="schedule__title">ガリレオ授業（数学）</div>
+        <div class="schedule__tag schedule__tag--galileo">GALILEO</div>
+      </div>
+      <div class="schedule__row">
+        <div class="schedule__time">19:00</div>
+        <div class="schedule__title">夕食・休憩</div>
+        <div class="schedule__tag schedule__tag--rest">REST</div>
+      </div>
+      <div class="schedule__row">
+        <div class="schedule__time">20:00</div>
+        <div class="schedule__title">毎日課題に取り組む</div>
+        <div class="schedule__tag schedule__tag--galileo">GALILEO</div>
+      </div>
+      <div class="schedule__row">
+        <div class="schedule__time">22:00</div>
+        <div class="schedule__title">提出・本日の振り返り</div>
+        <div class="schedule__tag schedule__tag--auto">AUTO</div>
+      </div>
+      <div class="schedule__row">
+        <div class="schedule__time">22:30</div>
+        <div class="schedule__title">就寝（睡眠時間 確保）</div>
+        <div class="schedule__tag schedule__tag--rest">REST</div>
+      </div>
+    </div>
+    <div class="schedule__note">※ 高2生・部活継続中の例。<br>個別最適化のため、生徒ごとに調整します。</div>
+  </section>
+
+  <!-- ─── Subjects ─────────────────────────────── -->
+  <section class="subjects">
+    <div class="sec-title">
+      <div class="sec-title__eyebrow">SUBJECTS</div>
+      <h2 class="sec-title__heading">科目別、<br>指導の特長。</h2>
+      <p class="sec-title__sub">数学・物理・化学・英語、すべてが理系受験のための最適化。</p>
+    </div>
+    <div class="subjects__list">
+      <div class="subjects__card">
+        <div class="subjects__sym">Σ</div>
+        <div>
+          <div class="subjects__name">数学</div>
+          <div class="subjects__body">解法の暗記ではなく、問題の構造を見抜く力を養成。難関大の融合問題にも崩れない応用力を育てます。</div>
+          <div class="subjects__tags">
+            <span class="subjects__tag">数Ⅰ・A・Ⅱ・B・Ⅲ・C</span>
+            <span class="subjects__tag">東大・京大対応</span>
+            <span class="subjects__tag">医学部対応</span>
+          </div>
+        </div>
+      </div>
+      <div class="subjects__card">
+        <div class="subjects__sym">F</div>
+        <div>
+          <div class="subjects__name">物理</div>
+          <div class="subjects__body">公式の丸暗記ではなく、物理現象の本質から理解。力学・電磁気・波動・熱・原子の全領域をカバー。</div>
+          <div class="subjects__tags">
+            <span class="subjects__tag">本質理解アプローチ</span>
+            <span class="subjects__tag">微積を使った物理</span>
+          </div>
+        </div>
+      </div>
+      <div class="subjects__card">
+        <div class="subjects__sym">⚗</div>
+        <div>
+          <div class="subjects__name">化学</div>
+          <div class="subjects__body">理論・無機・有機の有機的なつながりを意識した指導。記述・論述問題にも対応。</div>
+          <div class="subjects__tags">
+            <span class="subjects__tag">構造決定の徹底演習</span>
+            <span class="subjects__tag">医学部頻出対策</span>
+          </div>
+        </div>
+      </div>
+      <div class="subjects__card">
+        <div class="subjects__sym">En</div>
+        <div>
+          <div class="subjects__name">英語</div>
+          <div class="subjects__body">理系受験生に必要十分な英語力を、最小の時間で。長文読解・英作文を効率化。</div>
+          <div class="subjects__tags">
+            <span class="subjects__tag">理系学生向け最適化</span>
+            <span class="subjects__tag">共テ・二次両対応</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Grade Approach ───────────────────────── -->
+  <section class="grade">
+    <div class="sec-title">
+      <div class="sec-title__eyebrow">BY GRADE</div>
+      <h2 class="sec-title__heading">学年で、<br>やるべきことは違う。</h2>
+      <p class="sec-title__sub">高1・高2・高3、それぞれの「いま」に最適な指導を。</p>
+    </div>
+    <div class="grade__list">
+      <div class="grade__card">
+        <div class="grade__head">
+          <div class="grade__circle">高1</div>
+          <div>
+            <div class="grade__step-label">GRADE 1</div>
+            <div class="grade__goal">基礎を、本物にする。</div>
+          </div>
+        </div>
+        <div class="grade__body">中学範囲の取りこぼしを埋め、高校理系の土台となる「考え方」を身につける時期。先取りより、確かな理解を優先します。</div>
+        <div class="grade__focus">
+          <div class="grade__focus-item">数学Ⅰ・A の本質理解</div>
+          <div class="grade__focus-item">物理基礎の概念定着</div>
+          <div class="grade__focus-item">学習習慣の確立</div>
+        </div>
+      </div>
+      <div class="grade__card">
+        <div class="grade__head">
+          <div class="grade__circle">高2</div>
+          <div>
+            <div class="grade__step-label">GRADE 2</div>
+            <div class="grade__goal">差を、つける。</div>
+          </div>
+        </div>
+        <div class="grade__body">理系受験で最も差がつくのが高2。数Ⅲ・物理・化学の応用へ進み、志望校との距離を縮めます。</div>
+        <div class="grade__focus">
+          <div class="grade__focus-item">数Ⅱ・B 完成</div>
+          <div class="grade__focus-item">物理・化学 応用突破</div>
+          <div class="grade__focus-item">英語 共通テスト対応</div>
+        </div>
+      </div>
+      <div class="grade__card">
+        <div class="grade__head">
+          <div class="grade__circle">高3</div>
+          <div>
+            <div class="grade__step-label">GRADE 3</div>
+            <div class="grade__goal">志望校に、合わせる。</div>
+          </div>
+        </div>
+        <div class="grade__body">志望校の出題傾向を徹底分析し、合格に必要な得点を最短ルートで取りに行きます。</div>
+        <div class="grade__focus">
+          <div class="grade__focus-item">志望校別 過去問演習</div>
+          <div class="grade__focus-item">弱点の徹底補強</div>
+          <div class="grade__focus-item">メンタル管理</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Parent Support ───────────────────────── -->
+  <section class="parent-support">
+    <div class="sec-title">
+      <div class="sec-title__eyebrow">FOR PARENTS</div>
+      <h2 class="sec-title__heading">保護者の方にも、<br>安心の伴走を。</h2>
+      <p class="sec-title__sub">お子さまの受験は、ご家庭全体の挑戦です。<br>ガリレオは、保護者の皆さまも支えます。</p>
+    </div>
+    <div class="parent-support__grid">
+      <div class="parent-support__card">
+        <div class="parent-support__icon">📅</div>
+        <div class="parent-support__title">週次レポート</div>
+        <div class="parent-support__body">お子さまの学習時間・課題提出状況・到達度を毎週ご家庭へお届け。</div>
+      </div>
+      <div class="parent-support__card">
+        <div class="parent-support__icon">💬</div>
+        <div class="parent-support__title">月1回 保護者面談</div>
+        <div class="parent-support__body">学習状況の共有に加え、ご家庭での声かけ方・サポート方法を一緒に検討。</div>
+      </div>
+      <div class="parent-support__card">
+        <div class="parent-support__icon">📞</div>
+        <div class="parent-support__title">いつでも相談窓口</div>
+        <div class="parent-support__body">受験期の不安・進路の迷いなど、保護者専用の相談窓口を平日・土曜開設。</div>
+      </div>
+      <div class="parent-support__card">
+        <div class="parent-support__icon">📊</div>
+        <div class="parent-support__title">志望校別ロードマップ</div>
+        <div class="parent-support__body">入塾時に志望校までの全体設計をご提示。残り日数で何をすべきかが明確に。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Promises ─────────────────────────────── -->
+  <section class="promises">
+    <div class="sec-title">
+      <div class="sec-title__eyebrow">6 PROMISES</div>
+      <h2 class="sec-title__heading sec-title__heading--dark">ガリレオの、<br>6つの約束。</h2>
+      <p class="sec-title__sub sec-title__sub--dark">私たちが、お子さまと保護者さまにお約束すること。</p>
+    </div>
+    <div class="promises__list">
+      <div class="promises__row">
+        <div class="promises__num">01</div>
+        <div>
+          <div class="promises__title">本人任せにしない</div>
+          <div class="promises__body">毎日の進捗を講師が確認し、つまずきには即対応。</div>
+        </div>
+      </div>
+      <div class="promises__row">
+        <div class="promises__num">02</div>
+        <div>
+          <div class="promises__title">保護者を置き去りにしない</div>
+          <div class="promises__body">週次レポート・月次面談で家庭との連携を徹底。</div>
+        </div>
+      </div>
+      <div class="promises__row">
+        <div class="promises__num">03</div>
+        <div>
+          <div class="promises__title">本質を捨てない</div>
+          <div class="promises__body">解法暗記ではなく、構造を理解する指導を貫きます。</div>
+        </div>
+      </div>
+      <div class="promises__row">
+        <div class="promises__num">04</div>
+        <div>
+          <div class="promises__title">無駄な拘束をしない</div>
+          <div class="promises__body">効率的な学習設計で、睡眠・部活・家族時間を尊重。</div>
+        </div>
+      </div>
+      <div class="promises__row">
+        <div class="promises__num">05</div>
+        <div>
+          <div class="promises__title">強引な勧誘をしない</div>
+          <div class="promises__body">体験後の入塾は完全任意。営業電話もありません。</div>
+        </div>
+      </div>
+      <div class="promises__row">
+        <div class="promises__num">06</div>
+        <div>
+          <div class="promises__title">結果から逃げない</div>
+          <div class="promises__body">合格実績を毎年詳細に公開。誠実な情報開示を約束。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Transform (Before/After) ─────────────── -->
+  <section class="transform">
+    <div class="sec-title">
+      <div class="sec-title__eyebrow">BEFORE / AFTER</div>
+      <h2 class="sec-title__heading">ガリレオで、<br>こう変わった。</h2>
+      <p class="sec-title__sub">数字だけでは語れない、生徒たちの変化。</p>
+    </div>
+    <div class="transform__list">
+      <div class="transform__card">
+        <div class="transform__head">
+          <span class="transform__name">M.K さん</span>
+          <span class="transform__uni">東京大学 理科二類</span>
+        </div>
+        <div class="transform__ba">
+          <div class="transform__before">
+            <div class="transform__label">BEFORE</div>
+            <div class="transform__before-text">高2冬：模試E判定 / 数学に苦手意識</div>
+          </div>
+          <div class="transform__arrow">→</div>
+          <div class="transform__after">
+            <div class="transform__label">AFTER</div>
+            <div class="transform__after-text">高3夏：数学得意科目に / 本番89点</div>
+          </div>
+        </div>
+        <div class="transform__quote">「公式を覚えるのが受験」と思っていた私に、田中先生は問題の見方そのものを教えてくれました。</div>
+      </div>
+      <div class="transform__card">
+        <div class="transform__head">
+          <span class="transform__name">R.S さん</span>
+          <span class="transform__uni">京都大学 工学部</span>
+        </div>
+        <div class="transform__ba">
+          <div class="transform__before">
+            <div class="transform__label">BEFORE</div>
+            <div class="transform__before-text">高3春：志望校未定 / 学習時間バラバラ</div>
+          </div>
+          <div class="transform__arrow">→</div>
+          <div class="transform__after">
+            <div class="transform__label">AFTER</div>
+            <div class="transform__after-text">高3冬：志望校別演習で完成 / 現役合格</div>
+          </div>
+        </div>
+        <div class="transform__quote">毎日課題のおかげで「今日やるべきこと」で迷わなくなり、勉強時間が安定しました。</div>
+      </div>
+      <div class="transform__card">
+        <div class="transform__head">
+          <span class="transform__name">A.N さん</span>
+          <span class="transform__uni">医学部医学科</span>
+        </div>
+        <div class="transform__ba">
+          <div class="transform__before">
+            <div class="transform__label">BEFORE</div>
+            <div class="transform__before-text">高2秋：英語が苦手 / 理科に偏った学習</div>
+          </div>
+          <div class="transform__arrow">→</div>
+          <div class="transform__after">
+            <div class="transform__label">AFTER</div>
+            <div class="transform__after-text">高3秋：英語82点 / 全教科バランス完成</div>
+          </div>
+        </div>
+        <div class="transform__quote">理系専門だからこそ、英語も「理系受験生にとっての最適解」を教えてもらえた。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Voices ───────────────────────────────── -->
+  <section class="voices">
+    <div class="sec-title">
+      <div class="sec-title__eyebrow">VOICES</div>
+      <h2 class="sec-title__heading">合格者・保護者の声。</h2>
+    </div>
+    <div class="voices__list">
+      <div class="voices__card">
+        <div class="voices__deco">"</div>
+        <div class="voices__quote">「迷わず勉強できた」のが一番大きかった。</div>
+        <div class="voices__body">高2の冬に入塾。それまで何から手をつけていいか分からず焦るばかりでしたが、毎日課題で「今日やるべきこと」が見える化されたことで、無駄なく勉強できました。</div>
+        <div class="voices__meta">東京大学 理科一類 合格 / S.Yさん</div>
+      </div>
+      <div class="voices__card">
+        <div class="voices__deco">"</div>
+        <div class="voices__quote">物理で詰まっていた壁を、丁寧に壊してもらえた。</div>
+        <div class="voices__body">独学では理解が浅かった電磁気を、ガリレオの先生は本質から教えてくれました。納得して進められたから、応用問題にも自信が持てるように。</div>
+        <div class="voices__meta">京都大学 工学部 合格 / K.Tさん</div>
+      </div>
+      <div class="voices__card">
+        <div class="voices__deco">"</div>
+        <div class="voices__quote">親としても、毎日の進捗が見えて安心でした。</div>
+        <div class="voices__body">受験期、子どもの状況が分からず不安でしたが、保護者向け週次レポートで進捗が共有されるので、家庭でも適切な声かけができました。</div>
+        <div class="voices__meta">医学部医学科 合格 / 保護者 M.Hさま</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Results ──────────────────────────────── -->
+  <section class="results">
+    <div class="sec-title">
+      <div class="sec-title__eyebrow">RESULTS 2024</div>
+      <h2 class="sec-title__heading">2024年度<br>合格実績。</h2>
+      <p class="sec-title__sub">塾生<strong>156名</strong>の合格実績（一部抜粋）。</p>
+    </div>
+    <div class="results__grid">
+      <div class="results__cell">
+        <div class="results__num">22<span class="results__num-unit">名</span></div>
+        <div class="results__label">東京大学</div>
+      </div>
+      <div class="results__cell">
+        <div class="results__num">15<span class="results__num-unit">名</span></div>
+        <div class="results__label">京都大学</div>
+      </div>
+      <div class="results__cell">
+        <div class="results__num">18<span class="results__num-unit">名</span></div>
+        <div class="results__label">東京工業大</div>
+      </div>
+      <div class="results__cell">
+        <div class="results__num">12<span class="results__num-unit">名</span></div>
+        <div class="results__label">一橋大学</div>
+      </div>
+      <div class="results__cell">
+        <div class="results__num">31<span class="results__num-unit">名</span></div>
+        <div class="results__label">医学部医学科</div>
+      </div>
+      <div class="results__cell">
+        <div class="results__num">46<span class="results__num-unit">名</span></div>
+        <div class="results__label">旧帝・難関国立</div>
+      </div>
+    </div>
+    <div class="results__note">※塾生本人による申告に基づく。重複合格を含む。</div>
+  </section>
+
+  <!-- ─── Teachers ─────────────────────────────── -->
+  <section class="teachers">
+    <div class="sec-title">
+      <div class="sec-title__eyebrow">INSTRUCTORS</div>
+      <h2 class="sec-title__heading">本物の理系人が、<br>本物の理系を育てる。</h2>
+      <p class="sec-title__sub">全講師が東大・京大・医学部出身。<br>研究と指導、両方の現場を知る精鋭陣。</p>
+    </div>
+    <div class="teachers__list">
+      <div class="teachers__card">
+        <div class="teachers__monogram">田</div>
+        <div>
+          <div class="teachers__name">田中 隆司</div>
+          <div class="teachers__role">塾長 / 数学・物理</div>
+          <div class="teachers__meta">東京大学 理学部 数学科 卒<br>指導歴 18年</div>
+        </div>
+      </div>
+      <div class="teachers__card">
+        <div class="teachers__monogram">中</div>
+        <div>
+          <div class="teachers__name">中村 玲奈</div>
+          <div class="teachers__role">化学・生物</div>
+          <div class="teachers__meta">京都大学 医学部 卒<br>指導歴 11年</div>
+        </div>
+      </div>
+      <div class="teachers__card">
+        <div class="teachers__monogram">佐</div>
+        <div>
+          <div class="teachers__name">佐藤 健</div>
+          <div class="teachers__role">数学 / 物理</div>
+          <div class="teachers__meta">東京工業大学 大学院 修了<br>指導歴 9年</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Environment ──────────────────────────── -->
+  <section class="env">
+    <div class="sec-title">
+      <div class="sec-title__eyebrow">ENVIRONMENT</div>
+      <h2 class="sec-title__heading">学べる場所が、<br>そこにある。</h2>
+      <p class="sec-title__sub">授業だけでなく、自学を支える環境も整えています。</p>
+    </div>
+    <div class="env__plan">
+      <svg viewBox="0 0 320 180" width="100%" aria-hidden="true">
+        <rect x="6" y="6" width="308" height="168" fill="none" stroke="#0d1f15" stroke-opacity="0.25" stroke-width="1.5"/>
+        <line x1="6" y1="100" x2="180" y2="100" stroke="#0d1f15" stroke-opacity="0.25" stroke-width="1"/>
+        <line x1="180" y1="6" x2="180" y2="174" stroke="#0d1f15" stroke-opacity="0.25" stroke-width="1"/>
+        <line x1="240" y1="100" x2="314" y2="100" stroke="#0d1f15" stroke-opacity="0.25" stroke-width="1"/>
+        <g font-family="'Noto Sans JP',sans-serif" font-size="9" fill="#5a7065">
+          <text x="92" y="56" text-anchor="middle">CLASSROOM</text>
+          <text x="92" y="138" text-anchor="middle">SELF STUDY</text>
+          <text x="210" y="56" text-anchor="middle">MEETING</text>
+          <text x="277" y="56" text-anchor="middle">LIB</text>
+          <text x="277" y="138" text-anchor="middle">RECEPTION</text>
+        </g>
+        <g fill="#c9a84c" opacity="0.5">
+          <circle cx="40" cy="70" r="3"/><circle cx="60" cy="70" r="3"/><circle cx="80" cy="70" r="3"/><circle cx="100" cy="70" r="3"/>
+          <circle cx="40" cy="120" r="3"/><circle cx="60" cy="120" r="3"/><circle cx="80" cy="120" r="3"/><circle cx="100" cy="120" r="3"/><circle cx="120" cy="120" r="3"/>
+        </g>
+      </svg>
+      <div class="env__plan-cap">渋谷校 フロアプラン（イメージ）</div>
+    </div>
+    <div class="env__list">
+      <div class="env__row">
+        <div class="env__num">1</div>
+        <div>
+          <div class="env__title">集中できる自習室</div>
+          <div class="env__body">個別ブース完備。22:00まで開放、講師に質問もし放題。</div>
+        </div>
+      </div>
+      <div class="env__row">
+        <div class="env__num">2</div>
+        <div>
+          <div class="env__title">静かな面談スペース</div>
+          <div class="env__body">保護者・本人との面談に。落ち着いた雰囲気で本音の対話を。</div>
+        </div>
+      </div>
+      <div class="env__row">
+        <div class="env__num">3</div>
+        <div>
+          <div class="env__title">充実した参考書ライブラリ</div>
+          <div class="env__body">各大学の過去問・参考書を完備。借りて持ち帰り可。</div>
+        </div>
+      </div>
+      <div class="env__row">
+        <div class="env__num">4</div>
+        <div>
+          <div class="env__title">オンライン受講対応</div>
+          <div class="env__body">地方在住・部活で通えない方も同等の指導が受けられます。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Courses ──────────────────────────────── -->
+  <section class="courses">
+    <div class="sec-title">
+      <div class="sec-title__eyebrow">COURSES</div>
+      <h2 class="sec-title__heading">コース・料金。</h2>
+      <p class="sec-title__sub">目的とレベルに合わせて、3つのコースをご用意。</p>
+    </div>
+    <div class="courses__list">
+      <div class="courses__card">
+        <div class="courses__tier">STANDARD</div>
+        <div class="courses__name">個別指導コース</div>
+        <div class="courses__meta">
+          <div>対象：高1・高2</div>
+          <div>科目：数学／物理／化学から選択</div>
+        </div>
+        <div class="courses__price-row">
+          <span class="courses__price-label">月額（税込）</span>
+          <div>
+            <span class="courses__price">¥36,000</span><span class="courses__price-suffix">～</span>
+          </div>
+        </div>
+      </div>
+      <div class="courses__card is-popular">
+        <div class="courses__badge">★ 人気No.1</div>
+        <div class="courses__tier">POPULAR</div>
+        <div class="courses__name">理系総合コース</div>
+        <div class="courses__meta">
+          <div>対象：高2・高3</div>
+          <div>科目：数・物・化／英 オールパッケージ</div>
+        </div>
+        <div class="courses__price-row">
+          <span class="courses__price-label">月額（税込）</span>
+          <div>
+            <span class="courses__price">¥64,000</span><span class="courses__price-suffix">～</span>
+          </div>
+        </div>
+      </div>
+      <div class="courses__card">
+        <div class="courses__tier">PREMIUM</div>
+        <div class="courses__name">医学部・東大特化</div>
+        <div class="courses__meta">
+          <div>対象：高3・既卒</div>
+          <div>科目：志望校別カリキュラム</div>
+        </div>
+        <div class="courses__price-row">
+          <span class="courses__price-label">月額（税込）</span>
+          <div>
+            <span class="courses__price-tbd">応相談</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="courses__note">※入会金 30,000円。教材費別途。<br>※詳細はカウンセリングでご案内します。</div>
+  </section>
+
+  <!-- ─── Campaign ─────────────────────────────── -->
+  <section class="campaign">
+    <div class="campaign__card">
+      <div class="campaign__glow"></div>
+      <div class="campaign__badge">LIMITED OFFER</div>
+      <div class="campaign__title">新年度入塾<br>キャンペーン実施中</div>
+      <div class="campaign__items">
+        <div class="campaign__item"><span class="campaign__check">✓</span>入会金 30,000円 → 0円</div>
+        <div class="campaign__item"><span class="campaign__check">✓</span>初月授業料 半額</div>
+        <div class="campaign__item"><span class="campaign__check">✓</span>無料体験授業 2回まで</div>
+      </div>
+      <div class="campaign__terms">
+        ※ 5月末日までにご入塾の方が対象。<br>※ 他キャンペーンとの併用不可。
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Flow ─────────────────────────────────── -->
+  <section class="flow">
+    <div class="sec-title">
+      <div class="sec-title__eyebrow">FLOW</div>
+      <h2 class="sec-title__heading">ご入塾までの流れ。</h2>
+      <p class="sec-title__sub">ご相談から入塾まで、最短1週間。<br>強引な勧誘は一切ございません。</p>
+    </div>
+    <div class="flow__list">
+      <div class="flow__step">
+        <div class="flow__rail">
+          <div class="flow__num">1</div>
+          <div class="flow__line"></div>
+        </div>
+        <div>
+          <div class="flow__step-label">STEP 01<span class="flow__dur">所要 1分</span></div>
+          <div class="flow__title">無料学習相談を予約</div>
+          <div class="flow__body">WebまたはLINEから30秒で予約。ご都合に合わせてオンライン・対面を選択いただけます。</div>
+        </div>
+      </div>
+      <div class="flow__step">
+        <div class="flow__rail">
+          <div class="flow__num">2</div>
+          <div class="flow__line"></div>
+        </div>
+        <div>
+          <div class="flow__step-label">STEP 02<span class="flow__dur">所要 30分</span></div>
+          <div class="flow__title">個別カウンセリング</div>
+          <div class="flow__body">現在の学力・志望校・お悩みを伺い、ガリレオで何ができるかをご提案します。</div>
+        </div>
+      </div>
+      <div class="flow__step">
+        <div class="flow__rail">
+          <div class="flow__num">3</div>
+          <div class="flow__line"></div>
+        </div>
+        <div>
+          <div class="flow__step-label">STEP 03<span class="flow__dur">所要 90分</span></div>
+          <div class="flow__title">体験授業（任意）</div>
+          <div class="flow__body">実際の授業を1回無料でご体験いただけます。雰囲気・指導スタイルをご確認ください。</div>
+        </div>
+      </div>
+      <div class="flow__step">
+        <div class="flow__rail">
+          <div class="flow__num">4</div>
+          <div class="flow__line"></div>
+        </div>
+        <div>
+          <div class="flow__step-label">STEP 04<span class="flow__dur">即日〜</span></div>
+          <div class="flow__title">ご入塾・カリキュラム作成</div>
+          <div class="flow__body">志望校から逆算した個別カリキュラムを作成。翌日から毎日課題がスタートします。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ──────────────────────────────────── -->
+  <section class="faq">
+    <div class="sec-title">
+      <div class="sec-title__eyebrow">FAQ</div>
+      <h2 class="sec-title__heading">よくあるご質問。</h2>
+    </div>
+    <div class="faq__list">
+      <div class="faq__item is-open">
+        <button class="faq__btn" type="button" aria-expanded="true">
+          <span class="faq__q-marker">Q.</span>
+          <span class="faq__q">入塾テストはありますか？</span>
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__a">ありません。学力に関わらず、本気で理系難関大を目指す方をお迎えしています。現在地から合格までの最短ルートを設計します。</div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__btn" type="button" aria-expanded="false">
+          <span class="faq__q-marker">Q.</span>
+          <span class="faq__q">部活で忙しいのですが両立できますか？</span>
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__a">可能です。毎日課題は1日30〜90分で組まれており、スケジュールに合わせて柔軟に調整できます。</div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__btn" type="button" aria-expanded="false">
+          <span class="faq__q-marker">Q.</span>
+          <span class="faq__q">オンライン受講はできますか？</span>
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__a">対面・オンラインの両方に対応しています。地方からの受講生も多数在籍しています。</div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__btn" type="button" aria-expanded="false">
+          <span class="faq__q-marker">Q.</span>
+          <span class="faq__q">途中で退塾はできますか？</span>
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__a">はい、月単位で退塾可能です。違約金等はございません。</div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__btn" type="button" aria-expanded="false">
+          <span class="faq__q-marker">Q.</span>
+          <span class="faq__q">保護者への報告はありますか？</span>
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__a">週次レポートでお子さまの学習状況・到達度をお届けします。月1回の保護者面談もございます。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Final CTA ────────────────────────────── -->
+  <section class="final-cta" id="cta">
+    <svg class="final-cta__orbit" viewBox="0 0 400 400" aria-hidden="true">
+      <circle cx="200" cy="200" r="180" fill="none" stroke="#c9a84c" stroke-width="0.5"/>
+      <circle cx="200" cy="200" r="140" fill="none" stroke="#c9a84c" stroke-width="0.5"/>
+      <circle cx="200" cy="200" r="100" fill="none" stroke="#c9a84c" stroke-width="0.5"/>
+      <ellipse cx="200" cy="200" rx="180" ry="60" fill="none" stroke="#c9a84c" stroke-width="0.5" transform="rotate(-30 200 200)"/>
+    </svg>
+    <div class="final-cta__inner">
+      <div class="final-cta__eyebrow">FREE COUNSELING</div>
+      <h2 class="final-cta__heading">まずは、お子さまの<br>現在地を知ることから。</h2>
+      <p class="final-cta__sub">学力診断・志望校別アドバイス・<br>個別カリキュラム提案を無料で実施中。<br>所要時間 15〜30分。オンライン可。</p>
+      <a href="#" class="final-cta__btn">▶︎ 無料学習相談を予約</a>
+      <div class="final-cta__hint">30秒で予約完了 / 強引な勧誘は一切ありません</div>
+      <div class="final-cta__stats">
+        <div>
+          <div class="final-cta__stat-num">365</div>
+          <div class="final-cta__stat-label">日 学習管理</div>
+        </div>
+        <div>
+          <div class="final-cta__stat-num">156</div>
+          <div class="final-cta__stat-label">名 合格 (24)</div>
+        </div>
+        <div>
+          <div class="final-cta__stat-num">18</div>
+          <div class="final-cta__stat-label">年 指導歴</div>
+        </div>
+      </div>
+      <div class="final-cta__brand">ガリレオ<span class="final-cta__brand-sub">SCIENCES</span></div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ───────────────────────────────── -->
+  <footer class="lp-footer">
+    <div class="lp-footer__links">
+      <a href="https://galileo-sciences.com" target="_blank" rel="noopener">公式サイト</a>
+      <a href="#">特定商取引法</a>
+      <a href="#">プライバシーポリシー</a>
+    </div>
+    <div>© 理系大学受験専門塾 ガリレオ</div>
+  </footer>
+
+  <!-- ─── Sticky CTA ───────────────────────────── -->
+  <div class="sticky-cta">
+    <a href="#cta" class="sticky-cta__btn">▶︎ 無料学習相談を予約</a>
+    <div class="sticky-cta__hint">所要15分・オンライン可</div>
+  </div>
+
+</div>
+
+<script>
+// ─── FAQ accordion ────────────────────────────────
+document.querySelectorAll('.faq__btn').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var item = btn.closest('.faq__item');
+    var willOpen = !item.classList.contains('is-open');
+    document.querySelectorAll('.faq__item').forEach(function (it) {
+      it.classList.remove('is-open');
+      var b = it.querySelector('.faq__btn');
+      if (b) b.setAttribute('aria-expanded', 'false');
+    });
+    if (willOpen) {
+      item.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// ─── FV starfield (deterministic dust) ────────────
+(function () {
+  var g = document.getElementById('fv-stars');
+  if (!g) return;
+  var svgNS = 'http://www.w3.org/2000/svg';
+  for (var i = 0; i < 40; i++) {
+    var x = (i * 39.7) % 375;
+    var y = (i * 81.3 + 40) % 700;
+    var c = document.createElementNS(svgNS, 'circle');
+    c.setAttribute('cx', x);
+    c.setAttribute('cy', y);
+    c.setAttribute('r', '0.6');
+    c.setAttribute('fill', 'rgba(255,255,255,0.4)');
+    g.appendChild(c);
+  }
+})();
+</script>
+
+</body>
+</html>
