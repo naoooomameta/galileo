@@ -182,24 +182,33 @@ strong{font-weight:700}
 .flow__body h3{font-family:var(--serif);font-size:17px;color:var(--primary-dark);font-weight:700;line-height:1.5;margin-bottom:6px}
 .flow__body p{font-size:13.5px;color:var(--text-light);line-height:1.85}
 
-/* ── Pricing ── */
-.price__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.price__card{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
-.price__card--featured{border:2px solid var(--gold);box-shadow:0 8px 24px rgba(196,154,60,.18);transform:translateY(-6px)}
-.price__head{background:var(--primary-dark);color:#fff;padding:20px 18px;text-align:center}
-.price__card--featured .price__head{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-deep) 100%);color:#1a1a1a}
-.price__badge{display:inline-block;background:#fff;color:var(--gold-deep);font-size:10.5px;font-weight:800;padding:3px 10px;border-radius:999px;letter-spacing:.1em;margin-bottom:8px}
-.price__plan{font-family:var(--serif);font-size:17px;font-weight:700;letter-spacing:.04em}
-.price__target{font-size:11.5px;opacity:.85;margin-top:4px;letter-spacing:.04em}
-.price__body{padding:24px 20px 26px;text-align:center;display:flex;flex-direction:column;flex:1}
-.price__price-row{margin-bottom:14px}
-.price__price{font-family:var(--latin);font-size:34px;font-weight:600;color:var(--primary-dark);letter-spacing:.02em}
-.price__price-unit{font-size:12px;color:var(--text-muted);margin-left:2px}
-.price__price-note{font-size:11.5px;color:var(--text-muted);margin-top:2px}
-.price__list{text-align:left;font-size:13px;color:var(--text-light);line-height:1.85;margin-bottom:18px;flex:1}
-.price__list li{padding-left:20px;position:relative;margin-bottom:4px}
-.price__list li::before{content:'✓';position:absolute;left:0;color:var(--gold-deep);font-weight:800}
-.price__link{display:inline-block;color:var(--primary);font-size:13px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+/* ── Otameshi (single-card trial) ── */
+.otameshi{max-width:620px;margin:0 auto;background:var(--white);border:2px solid var(--gold);border-radius:14px;overflow:hidden;box-shadow:0 14px 38px rgba(10,50,40,.14);position:relative}
+.otameshi__ribbon{position:absolute;top:14px;right:-46px;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-deep) 100%);color:#1a1a1a;font-size:11px;font-weight:800;letter-spacing:.14em;padding:5px 60px;transform:rotate(35deg);box-shadow:0 4px 10px rgba(196,154,60,.4);text-align:center}
+.otameshi__head{background:linear-gradient(135deg,#0A3228 0%,#0E4A38 60%,#14614A 100%);color:#fff;padding:30px 26px 26px;text-align:center;position:relative;overflow:hidden}
+.otameshi__head::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:300px;height:300px;background:radial-gradient(circle,rgba(196,154,60,.25) 0%,transparent 70%);pointer-events:none}
+.otameshi__eyebrow{font-family:var(--latin);font-style:italic;color:var(--gold-light);font-size:13px;letter-spacing:.2em;margin-bottom:8px;position:relative}
+.otameshi__plan{font-family:var(--serif);font-size:24px;font-weight:700;letter-spacing:.04em;line-height:1.5;position:relative}
+.otameshi__plan-sub{font-size:13px;opacity:.85;margin-top:6px;letter-spacing:.04em;position:relative}
+.otameshi__body{padding:32px 28px 32px;text-align:center}
+.otameshi__price-row{margin-bottom:18px}
+.otameshi__price-label{display:inline-block;font-size:12px;background:var(--green-pale);color:var(--primary-dark);padding:3px 12px;border-radius:999px;letter-spacing:.08em;font-weight:700;margin-bottom:10px}
+.otameshi__price-row .price-num{font-family:var(--latin);font-size:62px;font-weight:600;color:var(--primary-dark);letter-spacing:.02em;line-height:1}
+.otameshi__price-row .price-unit{font-size:14px;color:var(--text-light);font-weight:700;margin-left:4px}
+.otameshi__price-note{font-size:12px;color:var(--text-muted);margin-top:6px}
+.otameshi__price-strike{font-size:13px;color:var(--text-muted);margin-bottom:4px;text-decoration:line-through;text-decoration-color:rgba(196,154,60,.7);text-decoration-thickness:1.5px}
+.otameshi__list{text-align:left;font-size:14px;color:var(--text-light);line-height:1.95;margin:18px auto 24px;max-width:440px;background:var(--green-pale);padding:20px 22px 20px 42px;border-radius:8px;border-left:3px solid var(--gold)}
+.otameshi__list li{padding-left:20px;position:relative;margin-bottom:4px}
+.otameshi__list li::before{content:'✓';position:absolute;left:0;color:var(--gold-deep);font-weight:800}
+.otameshi__list li:last-child{margin-bottom:0}
+.otameshi__cta{display:inline-block;background:linear-gradient(135deg,var(--gold-light) 0%,var(--gold) 50%,var(--gold-deep) 100%);color:#1a1a1a;font-weight:800;font-size:16px;padding:16px 40px;border-radius:999px;letter-spacing:.04em;box-shadow:0 6px 18px rgba(196,154,60,.4);transition:transform .15s ease}
+.otameshi__cta:hover{transform:translateY(-2px)}
+.otameshi__cta-hint{margin-top:10px;font-size:12px;color:var(--text-muted);letter-spacing:.04em}
+.otameshi__meta{display:flex;justify-content:center;gap:0;margin-top:24px;flex-wrap:wrap;border-top:1px dashed var(--green-mist);padding-top:20px}
+.otameshi__meta-cell{padding:0 18px;border-right:1px dashed var(--green-mist);text-align:center}
+.otameshi__meta-cell:last-child{border-right:none}
+.otameshi__meta-label{font-size:10.5px;color:var(--text-muted);letter-spacing:.08em;margin-bottom:4px}
+.otameshi__meta-value{font-family:var(--serif);font-size:14px;color:var(--primary-dark);font-weight:700}
 
 /* ── Voices ── */
 .voices__grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -249,8 +258,12 @@ strong{font-weight:700}
 /* ── Responsive ── */
 @media(max-width:820px){
   .numbers__grid{grid-template-columns:repeat(2,1fr)}
-  .hybrid-explain,.features__grid,.price__grid{grid-template-columns:1fr;gap:12px}
-  .price__card--featured{transform:none}
+  .hybrid-explain,.features__grid{grid-template-columns:1fr;gap:12px}
+  .otameshi__head{padding:24px 20px}
+  .otameshi__plan{font-size:20px}
+  .otameshi__price-row .price-num{font-size:50px}
+  .otameshi__list{font-size:13px;padding:18px 18px 18px 36px}
+  .otameshi__meta-cell{padding:0 12px}
   .mainichi__steps{grid-template-columns:repeat(2,1fr)}
   .pain__list,.voices__grid{grid-template-columns:1fr}
   .fv__headline{font-size:27px}
@@ -638,80 +651,64 @@ strong{font-weight:700}
   </div>
 </section>
 
-<!-- ───────────────── Pricing ───────────────── -->
-<section class="sec">
+<!-- ───────────────── Otameshi 1 Month ───────────────── -->
+<section class="sec sec--pale">
   <div class="container">
     <div class="sec-title">
-      <div class="sec-title__eyebrow">COURSES &amp; PRICE</div>
-      <h2 class="sec-title__heading">ハイブリッド型コース・料金。</h2>
-      <p class="sec-title__sub">全プランに「オンライン授業 × 専属コーチング × 毎日課題」を完全装備。<br>志望校・学年に合わせて3コースからお選びいただけます。</p>
+      <div class="sec-title__eyebrow">1-MONTH TRIAL</div>
+      <h2 class="sec-title__heading">まずは、お試し1ヶ月。<br><span style="color:var(--gold-deep)">¥9,900</span> で体験できます。</h2>
+      <p class="sec-title__sub">「合うかどうか、まず1ヶ月で見極めたい」── そんなご家庭のために。<br>本入塾と同じ「ハイブリッド型指導」を、1ヶ月間まるごと体験いただけます。</p>
     </div>
-    <div class="price__grid">
-      <div class="price__card">
-        <div class="price__head">
-          <div class="price__plan">大学受験準備コース</div>
-          <div class="price__target">中学生 〜 高校2年生</div>
-        </div>
-        <div class="price__body">
-          <div class="price__price-row">
-            <div><span class="price__price">¥40,000</span><span class="price__price-unit">〜 / 月</span></div>
-            <div class="price__price-note">月2回プランから / 税込</div>
-          </div>
-          <ul class="price__list">
-            <li>オンライン専門授業（数学・理科・英語）</li>
-            <li>毎日課題システム（365日）</li>
-            <li>専属コーチによる週次面談</li>
-            <li>学習ロードマップ設計</li>
-          </ul>
-          <a class="price__link" href="https://galileo-sciences.com/pages/daigaku-juken-junbi.html" target="_blank" rel="noopener">コース詳細を見る →</a>
-        </div>
-      </div>
 
-      <div class="price__card price__card--featured">
-        <div class="price__head">
-          <span class="price__badge">RECOMMENDED</span>
-          <div class="price__plan">合格戦略プログラム</div>
-          <div class="price__target">高校1年生 〜 高校3年生</div>
-        </div>
-        <div class="price__body">
-          <div class="price__price-row">
-            <div><span class="price__price">¥45,000</span><span class="price__price-unit">〜 / 月</span></div>
-            <div class="price__price-note">月2回プランから / 税込</div>
-          </div>
-          <ul class="price__list">
-            <li>難関理系特化カリキュラム</li>
-            <li>志望校別 合格ロードマップ</li>
-            <li>実力診断テスト・偏差値推移分析</li>
-            <li>毎日課題 ＋ 添削指導</li>
-            <li>専属コーチによる戦略面談</li>
-          </ul>
-          <a class="price__link" href="https://galileo-sciences.com/pages/goukaku-senryaku.html" target="_blank" rel="noopener">コース詳細を見る →</a>
-        </div>
+    <div class="otameshi">
+      <div class="otameshi__ribbon">期間限定</div>
+      <div class="otameshi__head">
+        <div class="otameshi__eyebrow">— OTAMESHI COURSE —</div>
+        <div class="otameshi__plan">ガリレオ お試し1ヶ月コース</div>
+        <div class="otameshi__plan-sub">入塾検討中の高校生・保護者様向け</div>
       </div>
-
-      <div class="price__card">
-        <div class="price__head">
-          <div class="price__plan">合格戦略サポート</div>
-          <div class="price__target">他塾との併用向け</div>
-        </div>
-        <div class="price__body">
-          <div class="price__price-row">
-            <div><span class="price__price">¥33,000</span><span class="price__price-unit">/ 月</span></div>
-            <div class="price__price-note">月額固定 / 税込</div>
+      <div class="otameshi__body">
+        <div class="otameshi__price-row">
+          <div class="otameshi__price-label">体験料金（税込）</div>
+          <div class="otameshi__price-strike">通常 ¥45,000 / 月</div>
+          <div>
+            <span class="price-num">¥9,900</span><span class="price-unit">/ 1ヶ月</span>
           </div>
-          <ul class="price__list">
-            <li>毎日課題管理のみ提供</li>
-            <li>志望校別 学習計画設計</li>
-            <li>週次の進捗チェック面談</li>
-            <li>他塾の授業を最大限活かす</li>
-          </ul>
-          <a class="price__link" href="https://galileo-sciences.com/pages/goukaku-senryaku-support.html" target="_blank" rel="noopener">コース詳細を見る →</a>
+          <div class="otameshi__price-note">入塾金・教材費 0円 / 自動継続なし</div>
+        </div>
+
+        <ul class="otameshi__list">
+          <li>オンライン専門授業（数学・理科・英語）の体験</li>
+          <li>毎日課題システム（30日間フル利用）</li>
+          <li>専属コーチによる個別面談（初回・中間・最終）</li>
+          <li>志望校別 合格ロードマップのご提案</li>
+          <li>提出ノートの添削指導</li>
+        </ul>
+
+        <a href="#cta" class="otameshi__cta">▶︎ お試し1ヶ月を始める</a>
+        <div class="otameshi__cta-hint">所要15分の無料相談後にお申し込みいただけます</div>
+
+        <div class="otameshi__meta">
+          <div class="otameshi__meta-cell">
+            <div class="otameshi__meta-label">期間</div>
+            <div class="otameshi__meta-value">1ヶ月</div>
+          </div>
+          <div class="otameshi__meta-cell">
+            <div class="otameshi__meta-label">対象学年</div>
+            <div class="otameshi__meta-value">中3 〜 高3</div>
+          </div>
+          <div class="otameshi__meta-cell">
+            <div class="otameshi__meta-label">申込</div>
+            <div class="otameshi__meta-value">1人1回限り</div>
+          </div>
         </div>
       </div>
     </div>
-    <p style="text-align:center;margin-top:22px;font-size:12.5px;color:var(--text-muted);line-height:1.85">
-      ※ 4つの支払い方法（銀行振込 一括・2回・3回分割 / クレジットカード毎月払い）からお選びいただけます。<br>
-      ※ 入塾金・教材費の詳細、兄弟割引制度は学習相談会でご案内します。
+
+    <p style="text-align:center;margin-top:24px;font-size:12.5px;color:var(--text-muted);line-height:1.95;max-width:640px;margin-left:auto;margin-right:auto">
+      ※ お試し期間終了後、本入塾を希望される場合のみご案内します。自動的に本入塾へ移行することはありません。<br>
+      ※ 本入塾時には<strong style="color:var(--primary)">入塾金免除</strong>の特典付き。お試し料金はお支払い金額からの差し引き対応も可能です。<br>
+      ※ 強引な勧誘・追加請求は一切ありません。
     </p>
   </div>
 </section>
@@ -776,7 +773,7 @@ strong{font-weight:700}
           <span class="faq__q">他の塾・予備校との併用は可能ですか？</span>
           <span class="faq__icon">▾</span>
         </button>
-        <div class="faq__body"><div class="faq__a">可能です。他塾の授業を活かしつつ、毎日の課題管理だけをガリレオが担当する「<a href="https://galileo-sciences.com/pages/goukaku-senryaku-support.html" target="_blank" rel="noopener">合格戦略サポート</a>」をご用意しています（月額¥33,000）。</div></div>
+        <div class="faq__body"><div class="faq__a">可能です。他塾の授業を活かしつつ、毎日の課題管理だけをガリレオが担当する「<a href="https://galileo-sciences.com/pages/goukaku-senryaku-support.html" target="_blank" rel="noopener">合格戦略サポート</a>」もご用意しています。お試し1ヶ月コースで相性を確認いただいた上でのご判断も可能です。</div></div>
       </div>
       <div class="faq__item">
         <button class="faq__btn" aria-expanded="false">
@@ -787,10 +784,17 @@ strong{font-weight:700}
       </div>
       <div class="faq__item">
         <button class="faq__btn" aria-expanded="false">
+          <span class="faq__q">お試し1ヶ月コースだけで終了することはできますか？</span>
+          <span class="faq__icon">▾</span>
+        </button>
+        <div class="faq__body"><div class="faq__a">はい、1ヶ月の体験で終了いただいて全く問題ありません。自動継続はなく、本入塾を希望される場合のみ別途お申し込みいただきます。強引な勧誘は一切いたしません。</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__btn" aria-expanded="false">
           <span class="faq__q">どの学年から始めるのが良いですか？</span>
           <span class="faq__icon">▾</span>
         </button>
-        <div class="faq__body"><div class="faq__a">理想は高1からです。難関理系は数IIIと物化の演習量で勝負が決まるため、早期から「毎日続く仕組み」を入れた生徒ほど偏差値が伸びます。高3からのご入塾も歓迎です。</div></div>
+        <div class="faq__body"><div class="faq__a">理想は高1からです。難関理系は数IIIと物化の演習量で勝負が決まるため、早期から「毎日続く仕組み」を入れた生徒ほど偏差値が伸びます。高3からのご入塾も歓迎です。お試し1ヶ月コースは中3〜高3が対象です。</div></div>
       </div>
       <div class="faq__item">
         <button class="faq__btn" aria-expanded="false">
@@ -814,13 +818,13 @@ strong{font-weight:700}
 <section class="final-cta" id="cta">
   <div class="container final-cta__inner">
     <div class="final-cta__eyebrow">FREE COUNSELING</div>
-    <h2 class="final-cta__heading">まずは、お子さまの<br>「現在地」を知ることから。</h2>
+    <h2 class="final-cta__heading">まずは、お試し1ヶ月。<br><span style="color:var(--gold-light)">¥9,900</span> で見極める。</h2>
     <p class="final-cta__sub">
-      学力診断・志望校別アドバイス・<br>
-      ハイブリッド型カリキュラム提案を、無料で実施中。<br>
-      所要時間 15〜30分。オンライン可。
+      まずは15分の無料相談で、お子さまの<br>
+      現在地・志望校との距離・必要な演習量をご確認ください。<br>
+      その上で、お試し1ヶ月コースへお進みいただけます。
     </p>
-    <a href="https://galileo-sciences.com/pages/muryo-shindan.html" target="_blank" rel="noopener" class="cta-btn">▶︎ 無料学習相談を予約する</a>
+    <a href="https://galileo-sciences.com/pages/muryo-shindan.html" target="_blank" rel="noopener" class="cta-btn">▶︎ 無料相談 → お試し1ヶ月へ</a>
     <div class="final-cta__hint">30秒で予約完了 / 強引な勧誘は一切ありません</div>
     <div class="final-cta__stats">
       <div>
