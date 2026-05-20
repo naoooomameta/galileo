@@ -513,7 +513,8 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
   .hero-badge{font-size:12px;padding:5px 12px}
   .hero-grid{grid-template-columns:1fr;gap:28px;padding:24px 16px 28px;text-align:center}
   .hero-visual{order:-1}
-  .hero-img{max-width:480px;margin:0 auto}
+  .hero-img{max-width:480px;margin:0 auto;aspect-ratio:auto}
+  .hero-img img{height:auto}
   .hero h1{font-size:28px;line-height:1.45}
   .hero-sub{font-size:14px;margin-bottom:12px}
   .hero-desc{font-size:14px;line-height:2;margin-bottom:20px}
@@ -828,7 +829,10 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
     </div>
     <div class="hero-visual">
       <div class="hero-img">
-        <img src="img/hero-roadmap.png" alt="ガリレオ 合格ロードマップ — 偏差値ギャップ・月別ロードマップ・科目別重点アドバイスを一画面で可視化">
+        <picture>
+          <source media="(max-width: 768px)" srcset="img/hero-fv-sp.png">
+          <img src="img/hero-fv-pc.png" alt="毎日課題 × 理系思考で志望校合格へ — 理系の大学受験専門塾 ガリレオ">
+        </picture>
       </div>
     </div>
   </div>
