@@ -139,17 +139,19 @@ p.body strong{color:var(--primary-dark)}
 .case__meta-cell:last-child{border-right:none}
 .case__meta-label{font-size:11px;color:var(--text-muted);letter-spacing:.08em;margin-bottom:4px}
 .case__meta-value{font-family:var(--serif);font-size:14.5px;color:var(--primary-dark);font-weight:700;line-height:1.45}
-.case__body{padding:26px 28px}
-.case__problem{background:#fbf6e8;border-left:3px solid var(--gold);padding:16px 20px;border-radius:0 8px 8px 0;margin-bottom:24px;font-size:14.5px;line-height:1.95;color:var(--text-light)}
-.case__problem strong{color:var(--gold-deep);display:block;font-size:12px;letter-spacing:.12em;margin-bottom:4px}
+.case__body{padding:30px 28px}
+.case__problem{background:#fbf6e8;border-left:3px solid var(--gold);padding:18px 22px;border-radius:0 8px 8px 0;margin-bottom:30px;font-size:14.5px;line-height:2.15;color:var(--text-light)}
+.case__problem strong{color:var(--gold-deep);display:block;font-size:12px;letter-spacing:.12em;margin-bottom:6px}
 
-.timeline{margin-top:6px}
-.timeline__item{display:flex;gap:18px;padding:18px 0;border-bottom:1px dashed var(--green-mist);position:relative}
-.timeline__item:last-child{border-bottom:none}
-.timeline__time{font-family:var(--latin);color:var(--gold-deep);font-size:18px;font-weight:600;letter-spacing:.04em;flex-shrink:0;width:78px;padding-top:3px;line-height:1.45}
-.timeline__time small{display:block;font-family:var(--font);color:var(--text-muted);font-size:10.5px;letter-spacing:.1em;margin-top:2px;font-weight:700}
-.timeline__body h4{font-family:var(--serif);font-size:16px;color:var(--primary-dark);font-weight:700;line-height:1.55;margin-bottom:6px}
-.timeline__body p{font-size:14px;line-height:2;color:var(--text-light)}
+.timeline{margin-top:10px}
+.timeline__item{display:flex;gap:22px;padding:26px 0;border-bottom:1px dashed var(--green-mist);position:relative}
+.timeline__item:first-child{padding-top:8px}
+.timeline__item:last-child{border-bottom:none;padding-bottom:8px}
+.timeline__time{font-family:var(--latin);color:var(--gold-deep);font-size:19px;font-weight:600;letter-spacing:.04em;flex-shrink:0;width:82px;padding-top:4px;line-height:1.45}
+.timeline__time small{display:block;font-family:var(--font);color:var(--text-muted);font-size:10.5px;letter-spacing:.1em;margin-top:4px;font-weight:700}
+.timeline__body h4{font-family:var(--serif);font-size:16.5px;color:var(--primary-dark);font-weight:700;line-height:1.7;margin-bottom:14px}
+.timeline__body p{font-size:14px;line-height:2.2;color:var(--text-light)}
+.timeline__body p + p{margin-top:16px}
 .timeline__body em{font-style:normal;background:linear-gradient(transparent 65%,rgba(196,154,60,.3) 65%);padding:0 1px;color:var(--primary-dark);font-weight:600}
 
 /* ── Voices ── */
@@ -262,14 +264,17 @@ p.body strong{color:var(--primary-dark)}
   .case__meta-label{margin-bottom:0;font-size:11px}
   .case__meta-value{font-size:13.5px;text-align:right;line-height:1.5}
   .case__meta-value br{display:none}
-  .case__body{padding:22px 20px}
-  .case__problem{padding:14px 16px;font-size:13.5px;margin-bottom:20px}
-  .case__problem strong{font-size:11px}
-  .timeline__item{flex-direction:column;gap:8px;padding:16px 0}
-  .timeline__time{width:auto;display:inline-flex;align-items:baseline;gap:10px;font-size:16px}
+  .case__body{padding:24px 20px}
+  .case__problem{padding:16px 18px;font-size:13.5px;margin-bottom:24px;line-height:2.1}
+  .case__problem strong{font-size:11px;margin-bottom:6px}
+  .timeline__item{flex-direction:column;gap:12px;padding:22px 0}
+  .timeline__item:first-child{padding-top:10px}
+  .timeline__item:last-child{padding-bottom:10px}
+  .timeline__time{width:auto;display:inline-flex;align-items:baseline;gap:10px;font-size:16px;padding-top:0}
   .timeline__time small{margin-top:0;font-size:10px}
-  .timeline__body h4{font-size:15px;line-height:1.6;margin-bottom:6px}
-  .timeline__body p{font-size:13.5px;line-height:1.95}
+  .timeline__body h4{font-size:15px;line-height:1.7;margin-bottom:12px}
+  .timeline__body p{font-size:13.5px;line-height:2.15}
+  .timeline__body p + p{margin-top:14px}
   .voice{padding:22px 20px}
   .voice::before{font-size:48px;top:6px;left:14px}
   .voice__quote{font-size:14px;padding-left:18px;line-height:2;margin-bottom:14px}
