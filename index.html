@@ -510,6 +510,7 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
 .bk-radio-group{flex-direction:column;gap:8px}
 .booking-calendar-wrap{min-height:360px}
 .booking-calendar-wrap iframe{height:360px}
+.bk-form-group select,.bk-form-group textarea{font-size:16px}
 }
 /* ===== COMPREHENSIVE MOBILE RESPONSIVE ===== */
 
@@ -693,7 +694,7 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
   .contact-form{padding:20px}
   .form-row{grid-template-columns:1fr}
   .form-group label{font-size:13px}
-  .form-group input,.form-group select,.form-group textarea{font-size:14px;padding:10px 12px}
+  .form-group input,.form-group select,.form-group textarea{font-size:16px;padding:10px 12px}
   .btn-full{font-size:15px;padding:14px}
 
   /* Footer */
@@ -1410,6 +1411,17 @@ document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{d
 function toggleFaq(el){const item=el.parentElement;const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null});if(!wasOpen){item.classList.add('open');item.querySelector('.faq-a').style.maxHeight=item.querySelector('.faq-a').scrollHeight+'px'}}
 // Staff filter
 function filterStaff(role,btn){document.querySelectorAll('.staff-tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.staff-card').forEach(c=>{c.style.display=(role==='all'||c.dataset.role===role)?'':'none'})}
+// iOS Safari: フォームフォーカスで発火した自動ズームを、モーダル表示の直前に解除する
+function _resetViewportZoom(){
+  try {
+    var vp = document.querySelector('meta[name="viewport"]');
+    if (!vp) return;
+    var original = vp.getAttribute('content') || 'width=device-width, initial-scale=1.0';
+    vp.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+    setTimeout(function(){ vp.setAttribute('content', original); }, 350);
+  } catch(_){}
+}
+
 // ===== GAS連携 + 予約ウィジェット =====
 const BOOKING_GAS_URL = 'https://script.google.com/macros/s/AKfycbzleIs1DqaybK2orps2tQwLCDimHb_7_5CQ0AV4IMD1gN3kVtjOUuD-2EA2-tCGDCo/exec';
 const CALENDAR_EMBED_ID = 'galileogalilei.sciences@gmail.com';
@@ -1453,6 +1465,7 @@ function handleSubmit(e) {
   }
 
   // サンキューモーダル表示
+  _resetViewportZoom();
   document.getElementById('modal').classList.add('open');
   form.reset();
   btn.disabled = false;
@@ -1467,6 +1480,7 @@ function handleSubmit(e) {
 
 // ===== 予約ウィジェット: モーダル制御 =====
 function openBookingModal() {
+  _resetViewportZoom();
   showModalA();
   document.getElementById('bookingOverlay').classList.add('open');
   fetchSlots();
