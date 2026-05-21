@@ -477,6 +477,7 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
 .bk-radio-group{flex-direction:column;gap:8px}
 .booking-calendar-wrap{min-height:360px}
 .booking-calendar-wrap iframe{height:360px}
+.bk-form-group select,.bk-form-group textarea{font-size:16px}
 }
 /* ===== COMPREHENSIVE MOBILE RESPONSIVE ===== */
 
@@ -644,7 +645,7 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
   .contact-form{padding:20px}
   .form-row{grid-template-columns:1fr}
   .form-group label{font-size:13px}
-  .form-group input,.form-group select,.form-group textarea{font-size:14px;padding:10px 12px}
+  .form-group input,.form-group select,.form-group textarea{font-size:16px;padding:10px 12px}
   .btn-full{font-size:15px;padding:14px}
 
   /* Footer */
