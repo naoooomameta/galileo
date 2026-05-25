@@ -5,11 +5,13 @@
  * - GET:  Googleカレンダーの空き枠一覧を返す
  * - POST action=contact: 問い合わせ受付（スプレッドシート記録＋通知メール＋自動返信メール）
  * - POST action=booking: 予約確定（カレンダー登録＋確認メール＋スプレッドシート記録）
+ * - POST action=shindan: 無料合格診断の回答記録（診断用スプレッドシートに記録＋通知メール）
  */
 
 // ===== 設定 =====
 var CALENDAR_ID = 'galileogalilei.sciences@gmail.com';
 var SHEET_ID = '1itXiW1nHXN9Dp2loqx1izUOP_rWpe0hzTafMlJXWmN4';
+var SHINDAN_SHEET_ID = '1FSV7hyX8lr9WD6hDV6gQJ9IjS4Z8w_M7mF1hrlB8KL0'; // 無料合格診断の回答記録先
 var NOTIFY_EMAIL = 'galileogalilei.sciences@gmail.com';
 var SLOT_DURATION_MIN = 60;
 var START_HOUR = 10;
@@ -48,6 +50,9 @@ function doPost(e) {
       saveBookingToSheet(params);
       sendBookingConfirmation(params);
       sendBookingNotificationToAdmin(params);
+    } else if (params.action === 'shindan') {
+      saveShindanToSheet(params);
+      sendShindanNotification(params);
     }
     return ContentService
       .createTextOutput(JSON.stringify({ result: 'success' }))
@@ -179,6 +184,49 @@ function saveBookingToSheet(params) {
     params.concerns || '',
     params.note || ''
   ]);
+}
+
+// ===== 無料合格診断の回答記録 =====
+var SHINDAN_SHEET_NAME = '無料診断';
+
+function saveShindanToSheet(params) {
+  if (!SHINDAN_SHEET_ID) return;
+  var ss = SpreadsheetApp.openById(SHINDAN_SHEET_ID);
+  var sheet = ss.getSheetByName(SHINDAN_SHEET_NAME);
+  if (!sheet) {
+    sheet = ss.insertSheet(SHINDAN_SHEET_NAME);
+    sheet.appendRow([
+      'タイムスタンプ', '送信元', '学年', '希望科目', '1日の学習時間', '課題量'
+    ]);
+  }
+  sheet.appendRow([
+    new Date(),
+    params.source || 'galileo',
+    params.grade || '',
+    params.subjects || '',
+    params.studyTime || '',
+    params.volume || ''
+  ]);
+}
+
+function sendShindanNotification(params) {
+  if (!NOTIFY_EMAIL) return;
+  var subject = '【' + BRAND_NAME + '】無料合格診断の新規回答';
+  var body = [
+    '===========================',
+    BRAND_NAME + ' 無料合格診断 新規回答',
+    '===========================',
+    '',
+    '■ 学年: ' + (params.grade || ''),
+    '■ 希望科目: ' + (params.subjects || ''),
+    '■ 1日の学習時間: ' + (params.studyTime || ''),
+    '■ 課題量: ' + (params.volume || ''),
+    '■ 送信元: ' + (params.source || ''),
+    '',
+    '---',
+    '送信日時: ' + new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })
+  ].join('\n');
+  MailApp.sendEmail(NOTIFY_EMAIL, subject, body);
 }
 
 // ===== 管理者への通知メール =====

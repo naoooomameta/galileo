@@ -1571,21 +1571,21 @@ function openLine() {
   // Meta Pixel: Lead = Instagram DMクリック
   if(typeof fbq==='function') fbq('track', 'Lead', {content_name: 'ig_dm'});
 
-  // 回答をGoogle Sheetsへ送信（GALILEO_SHEETS_ENDPOINT に GAS の /exec URL を設定すると有効化）
-  var GALILEO_SHEETS_ENDPOINT = '{{GALILEO_SHEETS_ENDPOINT}}';
+  // 回答を Google スプレッドシートへ送信（既存の予約・問い合わせ用 GAS に action=shindan で記録）
+  var GALILEO_SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzleIs1DqaybK2orps2tQwLCDimHb_7_5CQ0AV4IMD1gN3kVtjOUuD-2EA2-tCGDCo/exec';
   if (/^https:\/\/script\.google\.com\//.test(GALILEO_SHEETS_ENDPOINT)) {
+    var sd = new URLSearchParams();
+    sd.append('action', 'shindan');
+    sd.append('grade', answers.grade || '');
+    sd.append('subjects', (answers.subjects || []).join('、'));
+    sd.append('studyTime', answers.studyTime || '');
+    sd.append('volume', answers.volume || '');
+    sd.append('source', 'lpquestionnaire');
     fetch(GALILEO_SHEETS_ENDPOINT, {
       method: 'POST',
       mode: 'no-cors',
       keepalive: true,
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        grade: answers.grade || '',
-        subjects: answers.subjects || [],
-        studyTime: answers.studyTime || '',
-        volume: answers.volume || '',
-        source: 'ad'
-      })
+      body: sd
     }).catch(function(e) { console.log('Data send error:', e); });
   }
 
