@@ -3,30 +3,395 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>無料合格診断｜ガリレオ 理系の大学受験専門塾</title>
-<meta name="description" content="このページは新しい「無料合格診断」ページに統合されました。自動で転送されない場合は、下のリンクからアクセスしてください。">
+<title>無料合格診断｜理系の大学受験専門塾「ガリレオ」</title>
+<meta name="description" content="たった4問で、お子様の現状から志望校合格までの合格戦略ガイドブックを無料でお届け。理系の大学受験専門塾「ガリレオ」の無料合格診断。完全無料・登録不要・勧誘なし。">
 <meta name="robots" content="noindex,follow">
-<link rel="canonical" href="https://galileo-sciences.com/pages/muryo-shindan.html">
-<meta http-equiv="refresh" content="0; url=../muryo-shindan.html">
-<script>
-  (function () {
-    var target = '../muryo-shindan.html' + (location.search || '') + (location.hash || '');
-    location.replace(target);
-  })();
-</script>
+<link rel="canonical" href="https://galileo-sciences.com/pages/lpquestionnaire/">
+<meta property="og:title" content="無料合格診断｜理系の大学受験専門塾「ガリレオ」">
+<meta property="og:description" content="4問のかんたん診断で、志望校合格までの戦略がわかる。完全無料・勧誘なし。">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
 <style>
-  body{margin:0;font-family:'Noto Sans JP',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#FAF8F3;color:#1F2A24;display:flex;min-height:100vh;align-items:center;justify-content:center;padding:24px;text-align:center}
-  .box{max-width:480px}
-  h1{font-size:20px;font-weight:700;margin:0 0 12px;color:#0E4A38}
-  p{font-size:14px;line-height:1.8;margin:0 0 18px;color:#4a5856}
-  a{display:inline-block;background:#0E4A38;color:#fff;padding:14px 28px;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px}
+:root{
+  --primary:#0E4A38; --primary-light:#14614A; --primary-dark:#0A3228;
+  --gold:#C49A3C; --gold-light:#D4A843; --gold-deep:#A37E26;
+  --green-pale:#EDF5F0; --green-light:#dceee3; --green-mist:#c0d8c8;
+  --bg:#F4F9F6; --bg-alt:#E6EDE8;
+  --text:#1a2620; --text-light:#3a5a4a; --text-muted:#6a8a78;
+  --white:#fff; --border:#c2d4ca;
+  --font:'Noto Sans JP',sans-serif;
+  --serif:'Noto Serif JP',serif;
+  --latin:'Cormorant Garamond',serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.85;font-size:16px;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;text-size-adjust:100%;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block;height:auto}
+button{font-family:inherit;cursor:pointer}
+
+/* ── Header ── */
+.q-header{background:var(--white);border-bottom:1px solid var(--border);padding:12px 0}
+.q-header__inner{max-width:680px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:12px}
+.q-header__logo{width:42px;height:42px;border-radius:50%;border:2px solid var(--primary);padding:1px;object-fit:cover;background:#fff}
+.q-header__text{line-height:1.2}
+.q-header__name{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--primary);letter-spacing:.04em}
+.q-header__sub{display:block;font-size:10px;color:var(--text-muted);letter-spacing:.12em}
+
+/* ── Progress ── */
+.q-progress{background:var(--white);border-bottom:1px solid var(--border);padding:14px 0}
+.q-progress__inner{max-width:680px;margin:0 auto;padding:0 20px}
+.q-progress__row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.q-progress__label{font-size:12px;color:var(--text-muted);letter-spacing:.04em;font-weight:600}
+.q-progress__count{font-family:var(--latin);font-size:15px;color:var(--gold-deep);font-weight:600}
+.q-progress__count b{font-size:20px;color:var(--primary)}
+.q-progress__bar{height:8px;background:var(--green-pale);border-radius:999px;overflow:hidden}
+.q-progress__fill{height:100%;width:0;background:linear-gradient(90deg,var(--primary) 0%,var(--primary-light) 60%,var(--gold) 100%);border-radius:999px;transition:width .45s cubic-bezier(.4,0,.2,1)}
+.q-progress.is-hidden{display:none}
+
+/* ── Main ── */
+.q-main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:34px 20px 56px}
+.q-stage{width:100%;max-width:680px}
+
+/* ── Screen base ── */
+.q-screen{display:none;animation:fade .4s ease both}
+.q-screen.is-active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── Intro screen ── */
+.q-intro{text-align:center;background:var(--white);border:1px solid var(--border);border-radius:20px;padding:44px 34px 38px;box-shadow:0 8px 28px rgba(14,74,56,.08)}
+.q-intro__mascot{width:128px;height:128px;margin:0 auto 18px;border-radius:50%;background:linear-gradient(180deg,var(--green-pale),var(--green-light));padding:6px;border:2px solid var(--green-mist)}
+.q-intro__badge{display:inline-block;border:1.5px solid var(--primary);color:var(--primary);background:var(--white);font-size:12px;font-weight:700;letter-spacing:.16em;padding:6px 18px;border-radius:30px;margin-bottom:18px}
+.q-intro__title{font-family:var(--serif);font-size:27px;font-weight:700;color:var(--primary-dark);line-height:1.55;letter-spacing:.02em;margin-bottom:14px}
+.q-intro__title .accent{color:var(--gold-deep)}
+.q-intro__lead{font-size:14.5px;color:var(--text-light);line-height:2;margin-bottom:24px}
+.q-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:28px}
+.q-chip{background:var(--green-pale);color:var(--primary-dark);font-size:12.5px;font-weight:600;padding:7px 15px;border-radius:30px;display:inline-flex;align-items:center;gap:5px}
+.q-chip::before{content:'✓';color:var(--gold-deep);font-weight:800}
+
+/* ── Question screen ── */
+.q-card{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:36px 32px 30px;box-shadow:0 8px 28px rgba(14,74,56,.08)}
+.q-card__eyebrow{font-family:var(--latin);font-style:italic;color:var(--gold);font-size:14px;letter-spacing:.18em;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.q-card__eyebrow::before{content:'';width:30px;height:1px;background:var(--gold);opacity:.6}
+.q-card__title{font-family:var(--serif);font-size:21px;font-weight:700;color:var(--primary-dark);line-height:1.6;letter-spacing:.02em;margin-bottom:6px}
+.q-card__hint{font-size:13px;color:var(--text-muted);margin-bottom:24px;line-height:1.7}
+.q-options{display:flex;flex-direction:column;gap:12px}
+.q-option{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:var(--white);border:1.5px solid var(--border);border-radius:13px;padding:17px 20px;font-size:15px;font-weight:600;color:var(--text);transition:all .18s ease}
+.q-option:hover{border-color:var(--primary-light);background:var(--green-pale);transform:translateY(-1px)}
+.q-option.is-selected{border-color:var(--primary);background:var(--green-pale);box-shadow:0 4px 14px rgba(14,74,56,.12)}
+.q-option__radio{width:22px;height:22px;border-radius:50%;border:2px solid var(--green-mist);flex-shrink:0;position:relative;transition:all .18s ease}
+.q-option.is-selected .q-option__radio{border-color:var(--primary);background:var(--primary)}
+.q-option.is-selected .q-option__radio::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:8px;height:8px;border-radius:50%;background:#fff}
+.q-option__text{flex:1;line-height:1.5}
+
+/* ── Nav buttons ── */
+.q-nav{display:flex;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:13px;font-weight:700;letter-spacing:.03em;transition:all .2s ease;text-decoration:none}
+.btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;padding:17px 32px;font-size:16px;flex:1;box-shadow:0 8px 22px rgba(14,74,56,.2)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(14,74,56,.28)}
+.btn-primary:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+.btn-gold{background:linear-gradient(135deg,var(--gold-light) 0%,var(--gold) 50%,var(--gold-deep) 100%);color:#1a1a1a;padding:18px 40px;font-size:17px;font-weight:800;box-shadow:0 8px 22px rgba(196,154,60,.4)}
+.btn-gold:hover{transform:translateY(-2px)}
+.btn-ghost{background:var(--white);border:1.5px solid var(--border);color:var(--text-light);padding:17px 24px;font-size:15px}
+.btn-ghost:hover{border-color:var(--primary-light);color:var(--primary)}
+.btn-block{width:100%;max-width:360px;margin:0 auto}
+
+/* ── Result screen ── */
+.q-result{text-align:center;background:var(--white);border:2px solid var(--gold);border-radius:20px;padding:0;overflow:hidden;box-shadow:0 12px 36px rgba(14,74,56,.14)}
+.q-result__top{background:linear-gradient(160deg,#0A3228 0%,#0E4A38 60%,#14614A 100%);color:#fff;padding:40px 30px 34px;position:relative;overflow:hidden}
+.q-result__top::before{content:'';position:absolute;top:-90px;left:50%;transform:translateX(-50%);width:320px;height:320px;background:radial-gradient(circle,rgba(196,154,60,.25) 0%,transparent 70%);pointer-events:none}
+.q-result__check{width:72px;height:72px;border-radius:50%;background:var(--gold);color:var(--primary-dark);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:36px;font-weight:800;position:relative;box-shadow:0 6px 18px rgba(196,154,60,.4)}
+.q-result__eyebrow{font-family:var(--latin);font-style:italic;color:var(--gold-light);font-size:13px;letter-spacing:.2em;position:relative}
+.q-result__title{font-family:var(--serif);font-size:24px;font-weight:700;line-height:1.55;margin-top:6px;position:relative}
+.q-result__body{padding:34px 30px 38px}
+.q-result__lead{font-size:14.5px;color:var(--text-light);line-height:2;margin-bottom:24px}
+.q-result__lead strong{color:var(--primary-dark)}
+.q-summary{background:var(--green-pale);border-radius:12px;padding:20px 22px;margin-bottom:26px;text-align:left}
+.q-summary__title{font-size:12px;font-weight:700;color:var(--gold-deep);letter-spacing:.1em;margin-bottom:12px}
+.q-summary__row{display:flex;justify-content:space-between;gap:14px;padding:8px 0;border-bottom:1px dashed var(--green-mist);font-size:14px}
+.q-summary__row:last-child{border-bottom:none}
+.q-summary__k{color:var(--text-muted)}
+.q-summary__v{color:var(--primary-dark);font-weight:700;text-align:right}
+.q-guidebook{background:var(--white);border:1px solid var(--green-mist);border-radius:12px;padding:22px 24px;margin-bottom:28px;text-align:left}
+.q-guidebook__title{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;color:var(--primary-dark);margin-bottom:14px;line-height:1.5}
+.q-guidebook__title svg{width:22px;height:22px;fill:var(--gold);flex-shrink:0}
+.q-guidebook__list{list-style:none}
+.q-guidebook__list li{font-size:13.5px;color:var(--text-light);line-height:1.85;padding-left:24px;position:relative;margin-bottom:6px}
+.q-guidebook__list li:last-child{margin-bottom:0}
+.q-guidebook__list li::before{content:'✓';position:absolute;left:0;top:1px;width:17px;height:17px;background:var(--gold);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800}
+.q-result__note{margin-top:14px;font-size:12px;color:var(--text-muted)}
+.q-result__back{display:inline-block;margin-top:18px;font-size:13px;color:var(--text-muted);text-decoration:underline;text-underline-offset:3px;background:none;border:none}
+
+/* ── Footer ── */
+.q-foot{background:#06231a;color:#a0b3aa;padding:22px 0;font-size:12px;text-align:center;line-height:1.9}
+.q-foot a{color:#dfe9e3;text-decoration:none}
+.q-foot a:hover{color:var(--gold-light)}
+
+@media(max-width:560px){
+  .q-main{padding:24px 16px 44px}
+  .q-intro{padding:34px 22px 30px}
+  .q-intro__mascot{width:104px;height:104px}
+  .q-intro__title{font-size:22px}
+  .q-card{padding:28px 22px 24px}
+  .q-card__title{font-size:18.5px;line-height:1.6}
+  .q-option{padding:15px 16px;font-size:14.5px;gap:12px}
+  .q-result__top{padding:34px 22px 28px}
+  .q-result__title{font-size:21px}
+  .q-result__body{padding:28px 22px 32px}
+  .q-nav{flex-direction:column-reverse}
+  .btn-ghost{width:100%}
+}
 </style>
 </head>
 <body>
-  <div class="box">
-    <h1>新しいページに移動しています</h1>
-    <p>このページは「無料合格診断」ページに統合されました。<br>自動で転送されない場合は、下のリンクからアクセスしてください。</p>
-    <a href="../muryo-shindan.html">無料合格診断ページへ移動 →</a>
+
+<!-- ── Header ── -->
+<header class="q-header">
+  <div class="q-header__inner">
+    <img class="q-header__logo" src="images/logo.png" alt="ガリレオ">
+    <div class="q-header__text">
+      <span class="q-header__name">ガリレオ</span>
+      <span class="q-header__sub">理系の大学受験専門塾</span>
+    </div>
   </div>
+</header>
+
+<!-- ── Progress ── -->
+<div class="q-progress is-hidden" id="progress">
+  <div class="q-progress__inner">
+    <div class="q-progress__row">
+      <span class="q-progress__label">無料合格診断</span>
+      <span class="q-progress__count"><b id="progNow">1</b> / 4</span>
+    </div>
+    <div class="q-progress__bar"><div class="q-progress__fill" id="progFill"></div></div>
+  </div>
+</div>
+
+<!-- ── Main ── -->
+<main class="q-main">
+  <div class="q-stage">
+
+    <!-- Intro -->
+    <section class="q-screen is-active" data-screen="intro">
+      <div class="q-intro">
+        <img class="q-intro__mascot" src="images/logo.png" alt="ガリレオ博士">
+        <div class="q-intro__badge">FREE DIAGNOSIS</div>
+        <h1 class="q-intro__title">理系大学受験<br><span class="accent">無料合格診断</span></h1>
+        <p class="q-intro__lead">
+          たった<strong>4問</strong>のかんたん診断で、お子様の現状から志望校合格までの<br>
+          <strong>合格戦略ガイドブック</strong>を無料でお届けします。<br>
+          「何から始めればいいかわからない」── そんな方こそ、まずは現在地を。
+        </p>
+        <div class="q-chips">
+          <span class="q-chip">完全無料</span>
+          <span class="q-chip">所要 約2分</span>
+          <span class="q-chip">登録不要</span>
+          <span class="q-chip">勧誘なし</span>
+        </div>
+        <button class="btn btn-primary btn-block" id="startBtn">診断をはじめる →</button>
+      </div>
+    </section>
+
+    <!-- Questions are injected here -->
+    <section class="q-screen" data-screen="question">
+      <div class="q-card">
+        <div class="q-card__eyebrow" id="qEyebrow">QUESTION 01</div>
+        <h2 class="q-card__title" id="qTitle"></h2>
+        <p class="q-card__hint" id="qHint"></p>
+        <div class="q-options" id="qOptions"></div>
+        <div class="q-nav">
+          <button class="btn btn-ghost" id="prevBtn">← 戻る</button>
+          <button class="btn btn-primary" id="nextBtn" disabled>次へ →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Result -->
+    <section class="q-screen" data-screen="result">
+      <div class="q-result">
+        <div class="q-result__top">
+          <div class="q-result__check">✓</div>
+          <div class="q-result__eyebrow">— DIAGNOSIS COMPLETE —</div>
+          <div class="q-result__title">診断が完了しました！</div>
+        </div>
+        <div class="q-result__body">
+          <p class="q-result__lead">
+            ご回答ありがとうございました。<br>
+            お子様の状況に合わせた<strong>合格戦略ガイドブック</strong>を、<br>
+            LINEでお届けします。下のボタンから友だち追加してください。
+          </p>
+
+          <div class="q-summary">
+            <div class="q-summary__title">YOUR ANSWERS</div>
+            <div class="q-summary__row"><span class="q-summary__k">学年</span><span class="q-summary__v" id="sumGrade">-</span></div>
+            <div class="q-summary__row"><span class="q-summary__k">志望校レベル</span><span class="q-summary__v" id="sumTarget">-</span></div>
+            <div class="q-summary__row"><span class="q-summary__k">現在の偏差値</span><span class="q-summary__v" id="sumDeviation">-</span></div>
+            <div class="q-summary__row"><span class="q-summary__k">1日の学習時間</span><span class="q-summary__v" id="sumTime">-</span></div>
+          </div>
+
+          <div class="q-guidebook">
+            <div class="q-guidebook__title">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+              ガイドブックでわかること
+            </div>
+            <ul class="q-guidebook__list">
+              <li>志望校合格に必要な偏差値と現状のギャップ分析</li>
+              <li>入試本番から逆算した月別 合格ロードマップ</li>
+              <li>数学・物理・化学・生物・英語の科目別 優先順位</li>
+              <li>ガリレオの「合格思考 → 理系思考」トレーニング概要</li>
+              <li>今すぐ取り組むべき最優先アクション3選</li>
+            </ul>
+          </div>
+
+          <a href="https://line.me/ti/p/{{GALILEO_LINE_ID}}" class="btn btn-gold btn-block" target="_blank" rel="noopener" id="lineBtn">LINEで合格戦略ガイドブックを受け取る →</a>
+          <p class="q-result__note">完全無料・登録不要・勧誘なし</p>
+          <br>
+          <button class="q-result__back" id="restartBtn">最初からやり直す</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- ── Footer ── -->
+<footer class="q-foot">
+  <div>
+    <a href="https://galileo-sciences.com/" target="_blank" rel="noopener">理系の大学受験専門塾「ガリレオ」公式サイト</a>
+  </div>
+  <div>© 理系の大学受験専門塾「ガリレオ」</div>
+</footer>
+
+<script>
+(function(){
+  var QUESTIONS = [
+    {
+      key:'grade',
+      title:'現在の学年を教えてください。',
+      hint:'お子様の現在の学年をお選びください。',
+      options:['中学生','高校1年生','高校2年生','高校3年生','既卒・浪人生']
+    },
+    {
+      key:'target',
+      title:'志望校のレベルに最も近いものは？',
+      hint:'現時点での目標で構いません。',
+      options:[
+        '東京大学・京都大学・東京科学大学',
+        '国公立大学 医学部医学科',
+        '旧帝大・早慶理工',
+        'その他 国公立理系',
+        '私立理系',
+        'まだ決めていない'
+      ]
+    },
+    {
+      key:'deviation',
+      title:'現在の偏差値はどのくらいですか？',
+      hint:'直近の模試の理系科目（数学・理科）の平均でお答えください。',
+      options:['〜45','45〜50','50〜55','55〜60','60〜65','65以上','わからない']
+    },
+    {
+      key:'time',
+      title:'1日の学習時間（平日の平均）は？',
+      hint:'学校や塾の授業時間を除いた、自宅での学習時間です。',
+      options:['1時間未満','1〜2時間','2〜4時間','4時間以上']
+    }
+  ];
+
+  var answers = {};
+  var current = 0; // index into QUESTIONS
+
+  var screens = {
+    intro: document.querySelector('[data-screen="intro"]'),
+    question: document.querySelector('[data-screen="question"]'),
+    result: document.querySelector('[data-screen="result"]')
+  };
+  var progress = document.getElementById('progress');
+  var progNow = document.getElementById('progNow');
+  var progFill = document.getElementById('progFill');
+  var qEyebrow = document.getElementById('qEyebrow');
+  var qTitle = document.getElementById('qTitle');
+  var qHint = document.getElementById('qHint');
+  var qOptions = document.getElementById('qOptions');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+
+  function show(name){
+    Object.keys(screens).forEach(function(k){ screens[k].classList.remove('is-active'); });
+    screens[name].classList.add('is-active');
+    progress.classList.toggle('is-hidden', name !== 'question');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+
+  function renderQuestion(){
+    var q = QUESTIONS[current];
+    qEyebrow.textContent = 'QUESTION ' + pad(current + 1);
+    qTitle.textContent = q.title;
+    qHint.textContent = q.hint || '';
+    progNow.textContent = current + 1;
+    progFill.style.width = ((current + 1) / QUESTIONS.length * 100) + '%';
+
+    qOptions.innerHTML = '';
+    q.options.forEach(function(opt){
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'q-option' + (answers[q.key] === opt ? ' is-selected' : '');
+      btn.innerHTML = '<span class="q-option__radio"></span><span class="q-option__text">' + opt + '</span>';
+      btn.addEventListener('click', function(){
+        answers[q.key] = opt;
+        Array.prototype.forEach.call(qOptions.children, function(c){ c.classList.remove('is-selected'); });
+        btn.classList.add('is-selected');
+        nextBtn.disabled = false;
+      });
+      qOptions.appendChild(btn);
+    });
+
+    nextBtn.disabled = !answers[q.key];
+    prevBtn.textContent = current === 0 ? '← 最初に戻る' : '← 戻る';
+    nextBtn.textContent = current === QUESTIONS.length - 1 ? '結果を見る →' : '次へ →';
+  }
+
+  function fillSummary(){
+    document.getElementById('sumGrade').textContent = answers.grade || '-';
+    document.getElementById('sumTarget').textContent = answers.target || '-';
+    document.getElementById('sumDeviation').textContent = answers.deviation || '-';
+    document.getElementById('sumTime').textContent = answers.time || '-';
+  }
+
+  document.getElementById('startBtn').addEventListener('click', function(){
+    current = 0;
+    show('question');
+    renderQuestion();
+  });
+
+  prevBtn.addEventListener('click', function(){
+    if(current === 0){ show('intro'); return; }
+    current--;
+    renderQuestion();
+  });
+
+  nextBtn.addEventListener('click', function(){
+    if(!answers[QUESTIONS[current].key]) return;
+    if(current === QUESTIONS.length - 1){
+      fillSummary();
+      show('result');
+      return;
+    }
+    current++;
+    renderQuestion();
+  });
+
+  document.getElementById('restartBtn').addEventListener('click', function(){
+    answers = {}; current = 0;
+    show('intro');
+  });
+})();
+</script>
+
 </body>
 </html>
