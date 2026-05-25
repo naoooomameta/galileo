@@ -2,396 +2,1677 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>無料合格診断｜理系の大学受験専門塾「ガリレオ」</title>
-<meta name="description" content="たった4問で、お子様の現状から志望校合格までの合格戦略ガイドブックを無料でお届け。理系の大学受験専門塾「ガリレオ」の無料合格診断。完全無料・登録不要・勧誘なし。">
-<meta name="robots" content="noindex,follow">
-<link rel="canonical" href="https://galileo-sciences.com/pages/lpquestionnaire/">
-<meta property="og:title" content="無料合格診断｜理系の大学受験専門塾「ガリレオ」">
-<meta property="og:description" content="4問のかんたん診断で、志望校合格までの戦略がわかる。完全無料・勧誘なし。">
-<meta property="og:type" content="website">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>ガリレオ｜偏差値UP合格戦略ガイドブック無料診断</title>
 
+<!-- OGP -->
+<meta property="og:title" content="うちの子の合格戦略を無料で見てみる｜ガリレオ">
+<meta property="og:description" content="4問のかんたん診断で、志望校合格までの道筋がわかる。理系の大学受験専門塾ガリレオが、お子様専用の合格戦略ガイドブックを無料でお届けします。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://galileo-sciences.com/pages/lpquestionnaire/">
+<meta property="og:image" content="https://galileo-sciences.com/img/ogp.svg">
+<meta property="og:site_name" content="ガリレオ｜理系の大学受験専門塾">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Meta Pixel (set GALILEO_META_PIXEL_ID to a numeric ID to enable) -->
+<script>
+var GALILEO_META_PIXEL_ID = '{{GALILEO_META_PIXEL_ID}}';
+if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', GALILEO_META_PIXEL_ID);
+  fbq('track', 'PageView');
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-
+<link rel="preload" as="image" href="images/logo.png" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=M+PLUS+Rounded+1c:wght@400;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{
-  --primary:#0E4A38; --primary-light:#14614A; --primary-dark:#0A3228;
-  --gold:#C49A3C; --gold-light:#D4A843; --gold-deep:#A37E26;
-  --green-pale:#EDF5F0; --green-light:#dceee3; --green-mist:#c0d8c8;
-  --bg:#F4F9F6; --bg-alt:#E6EDE8;
-  --text:#1a2620; --text-light:#3a5a4a; --text-muted:#6a8a78;
-  --white:#fff; --border:#c2d4ca;
-  --font:'Noto Sans JP',sans-serif;
-  --serif:'Noto Serif JP',serif;
-  --latin:'Cormorant Garamond',serif;
+/* ═══════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════ */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{font-size:16px;scroll-behavior:smooth;}
+body{
+  font-family:'M PLUS Rounded 1c','Noto Sans JP',sans-serif;
+  background:#f4f9f6;
+  color:#1a1a2e;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -webkit-tap-highlight-color:transparent;
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.85;font-size:16px;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;text-size-adjust:100%;-webkit-text-size-adjust:100%}
-img{max-width:100%;display:block;height:auto}
-button{font-family:inherit;cursor:pointer}
 
-/* ── Header ── */
-.q-header{background:var(--white);border-bottom:1px solid var(--border);padding:12px 0}
-.q-header__inner{max-width:680px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:12px}
-.q-header__logo{width:42px;height:42px;border-radius:50%;border:2px solid var(--primary);padding:1px;object-fit:cover;background:#fff}
-.q-header__text{line-height:1.2}
-.q-header__name{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--primary);letter-spacing:.04em}
-.q-header__sub{display:block;font-size:10px;color:var(--text-muted);letter-spacing:.12em}
+/* ═══════════════════════════════════════
+   SECTION 1 — FV (Cyteki-style)
+   ═══════════════════════════════════════ */
 
-/* ── Progress ── */
-.q-progress{background:var(--white);border-bottom:1px solid var(--border);padding:14px 0}
-.q-progress__inner{max-width:680px;margin:0 auto;padding:0 20px}
-.q-progress__row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.q-progress__label{font-size:12px;color:var(--text-muted);letter-spacing:.04em;font-weight:600}
-.q-progress__count{font-family:var(--latin);font-size:15px;color:var(--gold-deep);font-weight:600}
-.q-progress__count b{font-size:20px;color:var(--primary)}
-.q-progress__bar{height:8px;background:var(--green-pale);border-radius:999px;overflow:hidden}
-.q-progress__fill{height:100%;width:0;background:linear-gradient(90deg,var(--primary) 0%,var(--primary-light) 60%,var(--gold) 100%);border-radius:999px;transition:width .45s cubic-bezier(.4,0,.2,1)}
-.q-progress.is-hidden{display:none}
+/* Top Banner */
+.top-banner{
+  background:linear-gradient(90deg,#0E4A38 0%,#14614A 100%);
+  color:#fff;
+  text-align:center;
+  padding:10px 16px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:0.5px;
+  position:relative;
+}
+.top-banner::after{
+  content:'';position:absolute;bottom:-6px;left:50%;
+  transform:translateX(-50%);
+  width:0;height:0;
+  border-left:8px solid transparent;border-right:8px solid transparent;
+  border-top:6px solid #0E4A38;
+}
 
-/* ── Main ── */
-.q-main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:34px 20px 56px}
-.q-stage{width:100%;max-width:680px}
 
-/* ── Screen base ── */
-.q-screen{display:none;animation:fade .4s ease both}
-.q-screen.is-active{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+/* Logo Bar */
+.logo-bar{
+  display:flex;align-items:center;justify-content:center;
+  gap:10px;padding:10px 16px;
+  background:#fff;
+}
+.logo-bar img{
+  width:48px;height:48px;
+  object-fit:contain;
+}
+.logo-text-wrap{
+  display:flex;flex-direction:column;line-height:1.2;
+}
+.logo-sub{
+  font-size:10px;font-weight:700;
+  color:#64748b;letter-spacing:0.5px;
+}
+.logo-name{
+  font-size:18px;font-weight:900;
+  color:#0E4A38;letter-spacing:1px;
+}
+/* Stats Bar */
+.stats-bar{
+  display:flex;align-items:center;justify-content:center;
+  gap:0;padding:14px 12px;
+  background:#fff;
+}
+.stat-item{
+  flex:1;text-align:center;
+}
+.stat-num{
+  font-size:22px;font-weight:900;color:#0E4A38;
+  line-height:1;
+}
+.stat-num span{
+  font-size:12px;font-weight:700;margin-left:1px;
+}
+.stat-label{
+  font-size:11px;font-weight:700;color:#94a3b8;
+  margin-top:4px;letter-spacing:0.2px;
+}
+.stat-divider{
+  width:1px;height:32px;background:#e2e8f0;
+  flex-shrink:0;
+}
 
-/* ── Intro screen ── */
-.q-intro{text-align:center;background:var(--white);border:1px solid var(--border);border-radius:20px;padding:44px 34px 38px;box-shadow:0 8px 28px rgba(14,74,56,.08)}
-.q-intro__mascot{width:128px;height:128px;margin:0 auto 18px;border-radius:50%;background:linear-gradient(180deg,var(--green-pale),var(--green-light));padding:6px;border:2px solid var(--green-mist)}
-.q-intro__badge{display:inline-block;border:1.5px solid var(--primary);color:var(--primary);background:var(--white);font-size:12px;font-weight:700;letter-spacing:.16em;padding:6px 18px;border-radius:30px;margin-bottom:18px}
-.q-intro__title{font-family:var(--serif);font-size:27px;font-weight:700;color:var(--primary-dark);line-height:1.55;letter-spacing:.02em;margin-bottom:14px}
-.q-intro__title .accent{color:var(--gold-deep)}
-.q-intro__lead{font-size:14.5px;color:var(--text-light);line-height:2;margin-bottom:24px}
-.q-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:28px}
-.q-chip{background:var(--green-pale);color:var(--primary-dark);font-size:12.5px;font-weight:600;padding:7px 15px;border-radius:30px;display:inline-flex;align-items:center;gap:5px}
-.q-chip::before{content:'✓';color:var(--gold-deep);font-weight:800}
+/* Hero FV */
+.hero-fv{
+  background:linear-gradient(160deg,#fff 0%,#f4f9f6 100%);
+  text-align:center;padding:32px 24px 24px;
+  position:relative;overflow:hidden;
+}
+.hex-bg{position:absolute;top:-20px;right:-30px;width:200px;height:200px;opacity:0.06;}
+.hex-bg2{position:absolute;top:180px;left:-40px;width:160px;height:160px;opacity:0.04;transform:rotate(30deg);}
 
-/* ── Question screen ── */
-.q-card{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:36px 32px 30px;box-shadow:0 8px 28px rgba(14,74,56,.08)}
-.q-card__eyebrow{font-family:var(--latin);font-style:italic;color:var(--gold);font-size:14px;letter-spacing:.18em;margin-bottom:8px;display:flex;align-items:center;gap:10px}
-.q-card__eyebrow::before{content:'';width:30px;height:1px;background:var(--gold);opacity:.6}
-.q-card__title{font-family:var(--serif);font-size:21px;font-weight:700;color:var(--primary-dark);line-height:1.6;letter-spacing:.02em;margin-bottom:6px}
-.q-card__hint{font-size:13px;color:var(--text-muted);margin-bottom:24px;line-height:1.7}
-.q-options{display:flex;flex-direction:column;gap:12px}
-.q-option{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:var(--white);border:1.5px solid var(--border);border-radius:13px;padding:17px 20px;font-size:15px;font-weight:600;color:var(--text);transition:all .18s ease}
-.q-option:hover{border-color:var(--primary-light);background:var(--green-pale);transform:translateY(-1px)}
-.q-option.is-selected{border-color:var(--primary);background:var(--green-pale);box-shadow:0 4px 14px rgba(14,74,56,.12)}
-.q-option__radio{width:22px;height:22px;border-radius:50%;border:2px solid var(--green-mist);flex-shrink:0;position:relative;transition:all .18s ease}
-.q-option.is-selected .q-option__radio{border-color:var(--primary);background:var(--primary)}
-.q-option.is-selected .q-option__radio::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:8px;height:8px;border-radius:50%;background:#fff}
-.q-option__text{flex:1;line-height:1.5}
+.impact-area{position:relative;margin-bottom:16px;}
+.impact-message{
+  font-size:13px;color:#1a1a2e;line-height:1.9;
+  margin-top:16px;font-weight:700;
+}
+.impact-message strong{color:#0E4A38;}
+.impact-sub{
+  font-size:13px;color:#64748b;line-height:1.7;
+  margin-top:14px;font-weight:500;
+}
+.impact-copy{
+  position:relative;z-index:1;
+  display:flex;flex-direction:column;align-items:center;
+  animation:numberPop 0.6s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+@keyframes numberPop{0%{transform:scale(0.3);opacity:0;}100%{transform:scale(1);opacity:1;}}
+.impact-top{
+  font-size:18px;font-weight:900;color:#1a1a2e;
+  letter-spacing:0.5px;line-height:1.3;
+  margin-bottom:8px;
+}
+.impact-top::before,
+.impact-top::after{
+  content:'';display:inline-block;
+  width:20px;height:2.5px;background:#C49A3C;
+  border-radius:2px;vertical-align:middle;margin:0 8px;
+}
+.impact-bottom{
+  font-size:38px;font-weight:900;color:#0E4A38;
+  line-height:1.1;letter-spacing:-1px;
+}
+.impact-bottom-sub{
+  font-size:26px;font-weight:900;color:#1a1a2e;
+  letter-spacing:0;
+}
 
-/* ── Nav buttons ── */
-.q-nav{display:flex;gap:12px;margin-top:26px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:13px;font-weight:700;letter-spacing:.03em;transition:all .2s ease;text-decoration:none}
-.btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;padding:17px 32px;font-size:16px;flex:1;box-shadow:0 8px 22px rgba(14,74,56,.2)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(14,74,56,.28)}
-.btn-primary:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
-.btn-gold{background:linear-gradient(135deg,var(--gold-light) 0%,var(--gold) 50%,var(--gold-deep) 100%);color:#1a1a1a;padding:18px 40px;font-size:17px;font-weight:800;box-shadow:0 8px 22px rgba(196,154,60,.4)}
-.btn-gold:hover{transform:translateY(-2px)}
-.btn-ghost{background:var(--white);border:1.5px solid var(--border);color:var(--text-light);padding:17px 24px;font-size:15px}
-.btn-ghost:hover{border-color:var(--primary-light);color:var(--primary)}
-.btn-block{width:100%;max-width:360px;margin:0 auto}
+/* FV CTA */
+.fv-cta{
+  text-align:center;
+  margin:24px 0 8px;
+  position:relative;z-index:1;
+}
+.fv-cta-wrap{
+  position:relative;display:inline-block;width:100%;max-width:300px;
+  cursor:pointer;transition:all 0.2s;
+}
+.fv-cta-wrap:hover{transform:translateY(-2px);}
+.fv-cta-wrap:active{transform:scale(0.98);}
+.fv-cta-ribbon{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  background:#ef4444;color:#fff;
+  font-size:14px;font-weight:900;
+  padding:5px 24px;border-radius:100px;
+  letter-spacing:2px;
+  box-shadow:0 3px 12px rgba(239,68,68,0.4);
+  z-index:2;white-space:nowrap;
+  animation:ribbonPop 2s ease-in-out infinite;
+}
+@keyframes ribbonPop{
+  0%,100%{transform:translateX(-50%) scale(1);}
+  50%{transform:translateX(-50%) scale(1.05);}
+}
+.fv-cta-mega{
+  width:100%;padding:26px 20px 18px;
+  background:linear-gradient(135deg,#C49A3C,#A37E26);
+  border-radius:16px;
+  box-shadow:0 8px 30px rgba(196,154,60,0.4);
+  margin-top:8px;
+  position:relative;overflow:hidden;
+}
+.fv-cta-mega::after{
+  content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);
+  animation:shine 3s infinite;
+}
+.fv-cta-mega-text{
+  font-size:17px;font-weight:900;color:#fff;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.fv-cta-mega-sub{
+  font-size:11px;color:rgba(255,255,255,0.7);
+  margin-top:6px;
+}
+.fv-cta-arrow{
+  font-size:22px;transition:transform 0.2s;
+}
+.fv-cta-wrap:hover .fv-cta-arrow{transform:translateX(4px);}
+.fv-cta-micro{
+  font-size:11px;color:#64748b;
+  font-weight:600;margin-top:4px;
+  display:flex;align-items:flex-start;justify-content:center;gap:5px;
+  text-align:center;line-height:1.6;
+}
+.fv-cta-micro svg{flex-shrink:0;margin-top:2px;}
 
-/* ── Result screen ── */
-.q-result{text-align:center;background:var(--white);border:2px solid var(--gold);border-radius:20px;padding:0;overflow:hidden;box-shadow:0 12px 36px rgba(14,74,56,.14)}
-.q-result__top{background:linear-gradient(160deg,#0A3228 0%,#0E4A38 60%,#14614A 100%);color:#fff;padding:40px 30px 34px;position:relative;overflow:hidden}
-.q-result__top::before{content:'';position:absolute;top:-90px;left:50%;transform:translateX(-50%);width:320px;height:320px;background:radial-gradient(circle,rgba(196,154,60,.25) 0%,transparent 70%);pointer-events:none}
-.q-result__check{width:72px;height:72px;border-radius:50%;background:var(--gold);color:var(--primary-dark);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:36px;font-weight:800;position:relative;box-shadow:0 6px 18px rgba(196,154,60,.4)}
-.q-result__eyebrow{font-family:var(--latin);font-style:italic;color:var(--gold-light);font-size:13px;letter-spacing:.2em;position:relative}
-.q-result__title{font-family:var(--serif);font-size:24px;font-weight:700;line-height:1.55;margin-top:6px;position:relative}
-.q-result__body{padding:34px 30px 38px}
-.q-result__lead{font-size:14.5px;color:var(--text-light);line-height:2;margin-bottom:24px}
-.q-result__lead strong{color:var(--primary-dark)}
-.q-summary{background:var(--green-pale);border-radius:12px;padding:20px 22px;margin-bottom:26px;text-align:left}
-.q-summary__title{font-size:12px;font-weight:700;color:var(--gold-deep);letter-spacing:.1em;margin-bottom:12px}
-.q-summary__row{display:flex;justify-content:space-between;gap:14px;padding:8px 0;border-bottom:1px dashed var(--green-mist);font-size:14px}
-.q-summary__row:last-child{border-bottom:none}
-.q-summary__k{color:var(--text-muted)}
-.q-summary__v{color:var(--primary-dark);font-weight:700;text-align:right}
-.q-guidebook{background:var(--white);border:1px solid var(--green-mist);border-radius:12px;padding:22px 24px;margin-bottom:28px;text-align:left}
-.q-guidebook__title{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;color:var(--primary-dark);margin-bottom:14px;line-height:1.5}
-.q-guidebook__title svg{width:22px;height:22px;fill:var(--gold);flex-shrink:0}
-.q-guidebook__list{list-style:none}
-.q-guidebook__list li{font-size:13.5px;color:var(--text-light);line-height:1.85;padding-left:24px;position:relative;margin-bottom:6px}
-.q-guidebook__list li:last-child{margin-bottom:0}
-.q-guidebook__list li::before{content:'✓';position:absolute;left:0;top:1px;width:17px;height:17px;background:var(--gold);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800}
-.q-result__note{margin-top:14px;font-size:12px;color:var(--text-muted)}
-.q-result__back{display:inline-block;margin-top:18px;font-size:13px;color:var(--text-muted);text-decoration:underline;text-underline-offset:3px;background:none;border:none}
+/* Sparks */
+.spark{position:absolute;z-index:2;}
+.spark1{top:10px;right:20px;width:40px;animation:sparkle 2s ease-in-out infinite;}
+.spark2{top:60px;left:15px;width:30px;animation:sparkle 2s ease-in-out infinite 0.5s;}
+.spark3{bottom:30px;right:10px;width:35px;animation:sparkle 2s ease-in-out infinite 1s;}
+@keyframes sparkle{0%,100%{opacity:0.4;transform:scale(0.8) rotate(0deg);}50%{opacity:1;transform:scale(1.2) rotate(15deg);}}
 
-/* ── Footer ── */
-.q-foot{background:#06231a;color:#a0b3aa;padding:22px 0;font-size:12px;text-align:center;line-height:1.9}
-.q-foot a{color:#dfe9e3;text-decoration:none}
-.q-foot a:hover{color:var(--gold-light)}
+/* Visual Area — Report Card */
+.visual-area{max-width:300px;margin:24px auto 0;}
+.report-card{
+  background:#fff;border-radius:18px;
+  border:1.5px solid #e6f0ea;
+  box-shadow:0 8px 32px rgba(14,74,56,0.13);
+  overflow:hidden;
+}
+.report-card-header{
+  background:linear-gradient(135deg,#0E4A38,#14614A);
+  padding:12px 16px;
+  display:flex;align-items:center;gap:8px;
+}
+.report-icon{font-size:16px;line-height:1;}
+.report-title{flex:1;font-size:12px;font-weight:900;color:#fff;letter-spacing:0.3px;}
+.report-badge-free{
+  background:#C49A3C;color:#fff;
+  font-size:10px;font-weight:900;
+  padding:3px 10px;border-radius:100px;
+  letter-spacing:0.3px;
+}
+.report-chart{padding:14px 14px 10px;background:#f8fcfa;}
+.mini-chart{display:flex;align-items:flex-end;gap:5px;height:72px;margin-bottom:6px;}
+.mini-bar{flex:1;border-radius:3px 3px 0 0;animation:barGrow 1s ease-out both;}
+@keyframes barGrow{from{height:0 !important;}}
+.mini-bar:nth-child(1){background:#cfe6da;height:25%;}
+.mini-bar:nth-child(2){background:#9cc4b2;height:35%;}
+.mini-bar:nth-child(3){background:#3b8568;height:48%;}
+.mini-bar:nth-child(4){background:#14614A;height:62%;}
+.mini-bar:nth-child(5){background:#14614A;height:78%;}
+.mini-bar:nth-child(6){background:linear-gradient(180deg,#C49A3C,#D4A843);height:100%;position:relative;border:2px solid #C49A3C;}
+.mini-bar:nth-child(6)::after{content:'🎯';position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:12px;}
+.mini-label{display:flex;justify-content:space-between;font-size:9px;color:#94a3b8;font-weight:700;}
+.report-footer{
+  padding:8px 16px 10px;font-size:10px;color:#94a3b8;
+  font-weight:700;background:#fff;border-top:1px solid #f1f5f9;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.report-footer-label{color:#64748b;}
+.report-footer-name{color:#0E4A38;font-weight:900;}
 
-@media(max-width:560px){
-  .q-main{padding:24px 16px 44px}
-  .q-intro{padding:34px 22px 30px}
-  .q-intro__mascot{width:104px;height:104px}
-  .q-intro__title{font-size:22px}
-  .q-card{padding:28px 22px 24px}
-  .q-card__title{font-size:18.5px;line-height:1.6}
-  .q-option{padding:15px 16px;font-size:14.5px;gap:12px}
-  .q-result__top{padding:34px 22px 28px}
-  .q-result__title{font-size:21px}
-  .q-result__body{padding:28px 22px 32px}
-  .q-nav{flex-direction:column-reverse}
-  .btn-ghost{width:100%}
+/* Mascot */
+.mascot{display:block;width:80px;height:auto;margin-left:auto;margin-top:-6px;position:relative;z-index:2;animation:mascotBounce 3s ease-in-out infinite;}
+@keyframes mascotBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+
+/* Omakase */
+.omakase-area{background:#fff;text-align:center;padding:16px 20px 24px;border-top:1px solid #f1f5f9;}
+.omakase-brand{font-size:15px;font-weight:700;color:#64748b;margin-bottom:2px;}
+.omakase-brand em{font-style:normal;color:#0E4A38;font-weight:900;font-size:16px;}
+.omakase-main{font-size:28px;font-weight:900;color:#1a1a2e;line-height:1.3;margin:4px 0;letter-spacing:-0.5px;}
+.omakase-main .blue{color:#0E4A38;}
+.omakase-main .gold-underline{position:relative;display:inline-block;}
+.omakase-main .gold-underline::after{
+  content:'';position:absolute;bottom:2px;left:-4px;right:-4px;
+  height:10px;background:linear-gradient(90deg,rgba(251,191,36,0.4),rgba(196,154,60,0.4));
+  border-radius:5px;z-index:-1;
+}
+
+/* ═══════════════════════════════════════
+   FV → SURVEY BRIDGE
+   ═══════════════════════════════════════ */
+.bridge-section{
+  background:linear-gradient(180deg,#fff 0%,#edf5f0 50%,#dceee3 100%);
+  text-align:center;
+  padding:32px 20px 40px;
+  display:flex;flex-direction:column;align-items:center;
+}
+.bridge-heading{
+  font-size:18px;font-weight:900;color:#1a1a2e;
+  line-height:1.6;margin-bottom:8px;
+}
+.bridge-heading .blue{color:#0E4A38;}
+.bridge-heading .num{
+  font-size:26px;color:#0E4A38;
+  position:relative;display:inline-block;
+}
+.bridge-heading .num::after{
+  content:'';position:absolute;bottom:0;left:-2px;right:-2px;
+  height:3px;background:#D4A843;border-radius:2px;
+}
+.bridge-sub{font-size:13px;color:#64748b;margin-bottom:24px;line-height:1.7;}
+.bridge-steps{
+  display:flex;align-items:center;justify-content:center;gap:4px;
+  margin-bottom:24px;
+}
+.bridge-step{
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  width:90px;
+}
+.bridge-step-icon{
+  width:64px;height:64px;border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+  background:#fff;
+  box-shadow:0 4px 15px rgba(14,74,56,0.1);
+  border:1.5px solid #dceee3;
+}
+.bridge-step-icon svg{width:48px;height:48px;}
+.bridge-step-label{font-size:10px;font-weight:700;color:#64748b;line-height:1.3;text-align:center;}
+.bridge-arrow{color:#9cc4b2;font-size:20px;margin-top:-20px;font-weight:700;}
+
+/* Bridge Benefits */
+.bridge-benefits{
+  background:#fff;border-radius:16px;
+  padding:24px 20px;margin-bottom:24px;
+  text-align:left;
+  box-shadow:0 2px 12px rgba(14,74,56,0.08);
+  border:1.5px solid #dceee3;
+  width:100%;max-width:360px;
+}
+.bridge-benefits-title{
+  text-align:center;font-size:15px;font-weight:700;
+  color:#1a1a2e;line-height:1.5;margin-bottom:16px;
+}
+.bridge-benefits-title strong{color:#0E4A38;}
+.benefit-list{display:flex;flex-direction:column;gap:10px;margin-bottom:16px;}
+.benefit-item{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:13px;color:#1a1a2e;line-height:1.5;
+}
+.benefit-item strong{color:#0E4A38;}
+.benefit-check{
+  flex-shrink:0;width:20px;height:20px;
+  background:#0E4A38;color:#fff;
+  border-radius:50%;font-size:11px;font-weight:900;
+  display:flex;align-items:center;justify-content:center;
+  margin-top:1px;
+}
+.benefit-free{
+  text-align:center;font-size:13px;color:#64748b;
+  padding-top:12px;border-top:1px solid #f1f5f9;
+}
+.benefit-free strong{color:#0E4A38;}
+
+/* Preview Gallery */
+.preview-gallery{
+  width:100%;max-width:360px;
+  margin:20px auto 24px;
+}
+.preview-label{
+  text-align:center;font-size:13px;font-weight:900;
+  color:#0E4A38;margin-bottom:12px;letter-spacing:0.5px;
+}
+.preview-scroll{
+  display:flex;gap:12px;
+  overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:4px 0 12px;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.preview-scroll::-webkit-scrollbar{display:none;}
+.preview-card{
+  flex:0 0 85%;scroll-snap-align:center;
+  background:#fff;border-radius:12px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.1);
+  border:1.5px solid #e2e8f0;
+  overflow:hidden;
+}
+.preview-card img{
+  width:100%;height:auto;display:block;
+}
+.preview-caption{
+  padding:8px 12px;font-size:11px;font-weight:700;
+  color:#0E4A38;text-align:center;background:#f8fafc;
+  border-top:1px solid #f1f5f9;
+}
+.preview-hint{
+  text-align:center;font-size:11px;color:#94a3b8;
+  font-weight:600;margin-top:4px;
+}
+@keyframes shine{0%{left:-100%;}30%{left:100%;}100%{left:100%;}}
+
+/* ═══════════════════════════════════════
+   SECTION 2 — SURVEY
+   ═══════════════════════════════════════ */
+.survey-overlay{
+  display:none;
+  position:fixed;inset:0;z-index:1000;
+  background:rgba(15,23,42,0.6);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  animation:fadeIn 0.3s ease;
+}
+.survey-overlay.show{display:flex;align-items:center;justify-content:center;}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+.survey-container{
+  width:100%;max-width:420px;height:100dvh;max-height:700px;
+  background:#fff;border-radius:24px;
+  display:flex;flex-direction:column;
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,0.2);
+  position:relative;
+}
+@media(max-width:500px){
+  .survey-container{
+    max-width:100%;height:100dvh;max-height:none;border-radius:0;
+  }
+}
+
+/* Back Link */
+.back-to-top{
+  display:flex;align-items:center;gap:4px;
+  padding:12px 20px 0;
+  background:#fff;
+  font-size:13px;font-weight:700;
+  color:#0E4A38;text-decoration:none;
+  flex-shrink:0;
+}
+.back-to-top:active{opacity:0.6;}
+
+/* Survey Header */
+.survey-header{
+  padding:12px 20px 16px;
+  background:#fff;
+  border-bottom:1px solid #f1f5f9;
+  flex-shrink:0;
+}
+.survey-progress{
+  display:flex;align-items:center;gap:12px;margin-bottom:12px;
+}
+.progress-bar{
+  flex:1;height:6px;background:#e2e8f0;border-radius:100px;overflow:hidden;
+}
+.progress-fill{
+  height:100%;background:linear-gradient(90deg,#0E4A38,#3b8568);
+  border-radius:100px;transition:width 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+.progress-text{font-size:12px;font-weight:700;color:#0E4A38;white-space:nowrap;}
+.survey-step-title{
+  font-size:11px;font-weight:700;color:#94a3b8;letter-spacing:2px;
+}
+
+/* Survey Body */
+.survey-body{
+  flex:1;overflow-y:auto;padding:24px 20px;
+  -webkit-overflow-scrolling:touch;
+}
+.survey-question{
+  display:none;
+  animation:slideUp 0.4s cubic-bezier(0.4,0,0.2,1) both;
+}
+.survey-question.active{display:block;}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+.q-icon{font-size:40px;margin-bottom:12px;display:block;}
+.q-title{font-size:22px;font-weight:900;color:#1a1a2e;line-height:1.4;margin-bottom:6px;}
+.q-desc{font-size:13px;color:#94a3b8;margin-bottom:24px;line-height:1.6;}
+
+/* Option Cards */
+.option-grid{display:flex;flex-direction:column;gap:10px;}
+.option-card{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 18px;border:2px solid #e2e8f0;border-radius:14px;
+  cursor:pointer;transition:all 0.2s;background:#fff;
+  -webkit-user-select:none;user-select:none;
+}
+.option-card:hover{border-color:#9cc4b2;background:#f8fcfa;}
+.option-card:active{transform:scale(0.98);}
+.option-card.selected{
+  border-color:#0E4A38;background:#edf5f0;
+  box-shadow:0 0 0 3px rgba(14,74,56,0.12);
+}
+.option-radio{
+  width:22px;height:22px;border-radius:50%;
+  border:2.5px solid #cbd5e1;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  transition:all 0.2s;
+}
+.option-card.selected .option-radio{
+  border-color:#0E4A38;background:#0E4A38;
+}
+.option-card.selected .option-radio::after{
+  content:'';width:8px;height:8px;border-radius:50%;background:#fff;
+}
+.option-label{font-size:15px;font-weight:700;color:#1a1a2e;}
+.option-sub{font-size:11px;color:#94a3b8;font-weight:500;}
+.option-emoji{font-size:24px;flex-shrink:0;}
+
+/* Checkbox variant for multi-select */
+.option-card.multi .option-radio{border-radius:6px;}
+.option-card.multi.selected .option-radio{border-radius:6px;}
+.option-card.multi.selected .option-radio::after{
+  content:'✓';width:auto;height:auto;background:none;
+  color:#fff;font-size:12px;font-weight:900;border-radius:0;
+}
+
+/* Chip grid for subjects */
+.chip-grid{
+  display:flex;flex-wrap:wrap;gap:8px;
+  margin-top:8px;
+}
+.chip{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:10px 18px;font-size:14px;font-weight:700;
+  color:#475569;background:#fff;
+  border:2px solid #e2e8f0;border-radius:100px;
+  cursor:pointer;font-family:inherit;
+  transition:all 0.15s ease;
+  -webkit-user-select:none;user-select:none;
+  white-space:nowrap;
+}
+.chip:hover{border-color:#9cc4b2;background:#f8fcfa;}
+.chip:active{transform:scale(0.96);}
+.chip.selected{
+  color:#fff;background:#0E4A38;border-color:#0E4A38;
+  box-shadow:0 2px 8px rgba(14,74,56,0.25);
+}
+.chip-none{
+  display:block;margin-top:12px;
+  padding:10px 20px;font-size:13px;font-weight:700;
+  color:#94a3b8;background:#f8fafc;
+  border:1.5px dashed #cbd5e1;border-radius:100px;
+  cursor:pointer;font-family:inherit;
+  transition:all 0.15s ease;
+  text-align:center;width:auto;
+}
+.chip-none:hover{border-color:#94a3b8;color:#64748b;}
+.chip-none.selected{
+  color:#fff;background:#94a3b8;border-color:#94a3b8;border-style:solid;
+}
+
+/* Number input */
+.number-input-wrap{
+  display:flex;align-items:center;gap:12px;
+  justify-content:center;margin:20px 0;
+}
+.number-input{
+  width:120px;padding:16px;font-size:36px;font-weight:900;
+  text-align:center;border:3px solid #e2e8f0;border-radius:16px;
+  font-family:inherit;color:#0E4A38;
+  transition:border-color 0.2s;background:#f8fafc;
+}
+.number-input:focus{outline:none;border-color:#0E4A38;background:#fff;}
+.number-input::placeholder{color:#cbd5e1;font-size:24px;}
+.number-unit{font-size:18px;font-weight:900;color:#64748b;}
+
+/* Text input for free-form answers */
+.text-input-area{display:flex;flex-direction:column;gap:16px;margin-top:8px;}
+.text-field-group{display:flex;flex-direction:column;gap:6px;}
+.text-field-label{font-size:12px;font-weight:700;color:#64748b;letter-spacing:0.5px;}
+.text-field{
+  width:100%;padding:16px 18px;font-size:16px;font-weight:600;
+  border:2.5px solid #e2e8f0;border-radius:14px;
+  font-family:inherit;color:#1a1a2e;background:#f8fafc;
+  transition:all 0.2s;
+}
+.text-field:focus{outline:none;border-color:#0E4A38;background:#fff;box-shadow:0 0 0 4px rgba(14,74,56,0.08);}
+.text-field::placeholder{color:#c0c8d4;font-weight:500;font-size:14px;}
+.text-hint{
+  display:flex;align-items:flex-start;gap:6px;
+  padding:10px 14px;background:#f1f5f9;border-radius:10px;
+  font-size:11px;color:#94a3b8;line-height:1.6;
+}
+
+/* Wish group (第一〜第三志望) */
+.wish-group{
+  background:#f8fafc;border:1.5px solid #e2e8f0;
+  border-radius:14px;padding:14px;
+  transition:border-color 0.2s;
+}
+.wish-group:focus-within{border-color:#9cc4b2;background:#fff;}
+.wish-label{margin-bottom:10px;}
+.wish-badge{
+  display:inline-block;padding:3px 12px;
+  font-size:11px;font-weight:900;border-radius:100px;
+  letter-spacing:0.5px;
+}
+.wish-badge.first{background:#0E4A38;color:#fff;}
+.wish-req{
+  font-size:10px;font-weight:900;color:#ef4444;
+  margin-left:8px;letter-spacing:0.5px;
+}
+.wish-badge.second{background:#e6f0ea;color:#0E4A38;}
+.wish-badge.third{background:#f1f5f9;color:#64748b;}
+.wish-fields{display:flex;flex-direction:column;gap:8px;}
+.text-field.sm{font-size:14px;padding:12px 16px;}
+
+/* Survey Footer */
+.survey-footer{
+  padding:16px 20px calc(24px + env(safe-area-inset-bottom, 0px));
+  border-top:1px solid #f1f5f9;
+  flex-shrink:0;
+  display:flex;gap:10px;
+}
+.survey-btn{
+  flex:1;padding:16px;font-size:16px;font-weight:900;
+  border:none;border-radius:14px;cursor:pointer;
+  font-family:inherit;transition:all 0.2s;
+}
+.survey-btn.back{
+  background:#f1f5f9;color:#64748b;flex:0 0 auto;width:56px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;padding:0;
+}
+.survey-btn.back:hover{background:#e2e8f0;}
+.survey-btn.next{
+  background:linear-gradient(135deg,#0E4A38,#14614A);color:#fff;
+  box-shadow:0 4px 15px rgba(14,74,56,0.3);
+}
+.survey-btn.next:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(14,74,56,0.4);}
+.survey-btn.next:disabled{
+  background:#e2e8f0;color:#94a3b8;
+  box-shadow:none;cursor:not-allowed;transform:none;
+}
+
+/* ═══════════════════════════════════════
+   SECTION 3 — COMPLETE SCREEN
+   ═══════════════════════════════════════ */
+.complete-screen{
+  display:none;
+  text-align:center;
+  padding:20px 20px;
+  flex:1;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  overflow-y:auto;
+}
+.complete-screen.show{display:flex;}
+
+/* Compact inline header */
+.complete-header-inline{
+  display:flex;align-items:center;gap:14px;
+  background:#f0fdf4;border:1.5px solid #bbf7d0;
+  border-radius:14px;padding:14px 18px;
+  width:100%;max-width:360px;margin:0 auto 20px;
+  text-align:left;
+  animation:checkPop 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+@keyframes checkPop{0%{transform:scale(0.9);opacity:0;}100%{transform:scale(1);opacity:1;}}
+.complete-check-sm{
+  width:40px;height:40px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,#10b981,#34d399);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 12px rgba(16,185,129,0.3);
+}
+.complete-check-sm svg{width:20px;height:20px;}
+.complete-title-sm{font-size:15px;font-weight:900;color:#1a1a2e;line-height:1.3;}
+.complete-sub-sm{font-size:12px;color:#10b981;font-weight:700;}
+
+/* LINE CTA note */
+.line-cta-note{
+  font-size:11px;color:rgba(255,255,255,0.6);
+  margin-top:10px;line-height:1.5;
+}
+
+/* Summary collapsible */
+.summary-details{
+  width:100%;max-width:360px;margin:0 auto;
+}
+.summary-toggle{
+  display:block;text-align:center;
+  font-size:12px;font-weight:700;color:#94a3b8;
+  cursor:pointer;padding:8px;
+  list-style:none;
+  transition:color 0.2s;
+}
+.summary-toggle:hover{color:#64748b;}
+.summary-toggle::-webkit-details-marker{display:none;}
+.summary-details[open] .summary-toggle{margin-bottom:8px;}
+
+/* Summary card */
+.summary-card{
+  background:#f8fafc;border:1.5px solid #e2e8f0;
+  border-radius:16px;padding:20px;
+  text-align:left;width:100%;
+  margin:0 auto;
+}
+.summary-row{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  padding:8px 0;border-bottom:1px solid #f1f5f9;gap:12px;
+}
+.summary-row:last-child{border-bottom:none;}
+.summary-label{font-size:12px;color:#94a3b8;font-weight:700;flex-shrink:0;white-space:nowrap;}
+.summary-value{font-size:14px;color:#1a1a2e;font-weight:700;text-align:right;line-height:1.6;}
+
+/* Instagram DM CTA */
+.line-cta-box{
+  background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  border-radius:20px;padding:28px 20px;
+  width:100%;max-width:360px;margin:0 auto;
+  box-shadow:0 8px 30px rgba(220,39,67,0.3);
+}
+.line-cta-box .line-icon{
+  width:56px;height:56px;border-radius:14px;
+  background:#fff;display:flex;align-items:center;justify-content:center;
+  margin:0 auto 12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+.line-cta-title{
+  font-size:22px;font-weight:900;color:#fff;
+  margin-bottom:8px;line-height:1.4;
+}
+.line-cta-desc{
+  font-size:12px;color:rgba(255,255,255,0.8);
+  margin-bottom:16px;line-height:1.6;
+}
+.line-cta-highlight{
+  display:inline-block;background:rgba(255,255,255,0.2);
+  border-radius:8px;padding:6px 14px;
+  font-size:13px;font-weight:700;color:#fff;
+  margin-bottom:16px;
+}
+.line-add-btn{
+  display:block;width:100%;padding:18px;
+  font-size:17px;font-weight:900;
+  color:#bc1888;background:#fff;
+  border:none;border-radius:14px;cursor:pointer;
+  font-family:inherit;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+  transition:all 0.2s;
+  animation:lineBtn 2s ease-in-out infinite;
+}
+@keyframes lineBtn{0%,100%{box-shadow:0 4px 15px rgba(0,0,0,0.1);}50%{box-shadow:0 4px 25px rgba(255,255,255,0.35);}}
+.line-add-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,0.15);}
+
+/* Confetti canvas */
+#confetti{
+  position:fixed;inset:0;z-index:1001;pointer-events:none;
+}
+
+/* Floating CTA */
+.floating-cta{
+  position:fixed;bottom:0;left:0;right:0;z-index:90;
+  transform:translateY(100%);
+  transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.floating-cta.show{transform:translateY(0);}
+.floating-cta-inner{
+  max-width:500px;margin:0 auto;
+  background:#fff;
+  border-top:1px solid #e2e8f0;
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  box-shadow:0 -4px 20px rgba(0,0,0,0.1);
+}
+.floating-cta-text{
+  font-size:12px;font-weight:700;color:#1a1a2e;
+  line-height:1.4;
+}
+.floating-cta-free{
+  display:inline-block;
+  background:#ef4444;color:#fff;
+  font-size:11px;font-weight:900;
+  padding:3px 10px;border-radius:4px;
+  margin-right:4px;vertical-align:middle;
+  box-shadow:0 1px 4px rgba(239,68,68,0.3);
+}
+.floating-cta-btn{
+  flex-shrink:0;
+  padding:12px 24px;font-size:14px;font-weight:900;
+  color:#fff;background:linear-gradient(135deg,#C49A3C,#A37E26);
+  border:none;border-radius:100px;cursor:pointer;
+  font-family:inherit;white-space:nowrap;
+  box-shadow:0 4px 15px rgba(196,154,60,0.35);
+  transition:all 0.2s;
+  animation:floatPulse 2s ease-in-out infinite;
+}
+.floating-cta-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(196,154,60,0.45);}
+@keyframes floatPulse{
+  0%,100%{box-shadow:0 4px 15px rgba(196,154,60,0.35);}
+  50%{box-shadow:0 4px 25px rgba(196,154,60,0.55);}
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE DESKTOP PHONE FRAME
+   ═══════════════════════════════════════ */
+@media(min-width:600px){
+  body{
+    display:flex;flex-direction:column;align-items:center;
+    min-height:100vh;
+    background:linear-gradient(135deg,#e6f0ea,#dceee3);
+    padding:32px 20px;
+  }
+  .phone-frame{
+    width:100%;max-width:680px;border-radius:24px;overflow:hidden;
+    box-shadow:0 8px 40px rgba(0,0,0,0.14);
+    background:#fff;padding:0;position:relative;
+  }
+  .phone-frame::before{display:none;}
+  .phone-inner{border-radius:0;overflow:hidden;overflow-y:auto;max-height:none;}
+  .floating-cta{display:none !important;}
+  .fv-cta-wrap{max-width:400px;}
+  .visual-area{max-width:440px;}
+  .bridge-benefits{max-width:560px;}
+  .preview-gallery{max-width:560px;}
+}
+@media(min-width:1024px){
+  body{
+    display:block;
+    background:#eef5f1;
+    padding:32px 24px;
+  }
+  .phone-frame{
+    max-width:980px;margin:0 auto;
+    border-radius:20px;overflow:hidden;
+    box-shadow:0 12px 48px rgba(0,0,0,0.08);
+  }
+  .top-banner{padding:12px 16px;font-size:13px;}
+  .logo-bar{padding:14px 16px;}
+  .stats-bar{max-width:560px;margin:0 auto;padding:16px;}
+  .stat-divider{height:36px;}
+  .hero-fv{
+    display:grid;
+    grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);
+    grid-template-rows:auto auto;
+    column-gap:48px;
+    padding:40px 56px 60px;
+    text-align:left;
+    align-items:center;
+    background:linear-gradient(160deg,#fff 0%,#f4f9f6 100%);
+  }
+  .hex-bg{width:320px;height:320px;top:-60px;right:-40px;opacity:0.05;}
+  .hex-bg2{width:240px;height:240px;top:120px;left:-50px;opacity:0.04;}
+  .spark1{top:20px;right:60px;width:36px;}
+  .spark2{top:80px;left:40px;width:28px;}
+  .spark3{bottom:60px;right:40px;width:32px;display:none;}
+  .impact-area{grid-column:1;grid-row:1;margin-bottom:0;}
+  .impact-copy{align-items:flex-start;}
+  .impact-top{font-size:20px;margin-bottom:10px;}
+  .impact-top::before,.impact-top::after{width:22px;}
+  .impact-bottom{font-size:50px;letter-spacing:-1.5px;}
+  .impact-bottom-sub{font-size:32px;}
+  .impact-message{font-size:14px;max-width:420px;line-height:1.9;}
+  .impact-sub{font-size:14px;max-width:380px;line-height:1.8;}
+  .fv-cta{grid-column:1;grid-row:2;margin:24px 0 0;}
+  .fv-cta-wrap{max-width:320px;margin:0;display:block;}
+  .fv-cta-mega{padding:20px 18px 14px;border-radius:14px;}
+  .fv-cta-mega-text{font-size:16px;}
+  .fv-cta-mega-sub{font-size:11px;}
+  .fv-cta-ribbon{font-size:12px;padding:4px 18px;top:-11px;}
+  .fv-cta-micro{justify-content:flex-start;text-align:left;margin-top:12px;font-size:11px;}
+  .fv-cta-micro span{text-align:left;}
+  .visual-area{grid-column:2;grid-row:1/3;max-width:340px;margin:0 0 0 auto;align-self:center;position:relative;}
+  .report-card{box-shadow:0 16px 56px rgba(14,74,56,0.18);}
+  .report-chart{padding:18px 16px 12px;}
+  .mini-chart{height:100px;}
+  .mini-label{font-size:10px;}
+  .mascot{position:absolute;bottom:-48px;right:8px;width:88px;margin-top:0;}
+  .omakase-area{padding:28px 20px 32px;border-top:1px solid #e6f0ea;}
+  .omakase-brand{font-size:16px;}
+  .omakase-brand em{font-size:17px;}
+  .omakase-main{font-size:34px;}
+  .bridge-section{padding:48px 40px 52px;}
+  .bridge-heading{font-size:22px;}
+  .bridge-heading .num{font-size:30px;}
+  .bridge-sub{font-size:14px;max-width:520px;}
+  .bridge-benefits{max-width:580px;}
+  .bridge-benefits-title{font-size:15px;}
+  .benefit-item{font-size:14px;}
+  .preview-gallery{max-width:640px;}
+  .survey-container{max-width:640px;}
+  .complete-header-inline{max-width:640px;}
+  .summary-details{max-width:640px;}
+  .line-cta-box{max-width:640px;}
+}
+@media(max-width:599px){
+  .phone-frame{width:100%;}
+  .phone-inner{width:100%;}
+  /* FV adjustments */
+  .impact-top{font-size:22px;}
+  .impact-top::before,.impact-top::after{width:16px;}
+  .impact-bottom{font-size:44px;}
+  .impact-bottom-sub{font-size:28px;}
+  .fv-cta-mega-text{font-size:17px;}
+  .fv-cta-ribbon{font-size:13px;padding:4px 20px;}
+  .omakase-main{font-size:32px;}
+  .bridge-heading{font-size:18px;}
+  /* Survey adjustments */
+  .survey-container{border-radius:0;max-width:100%;height:100dvh;max-height:none;}
+  .survey-body{padding:20px 16px;}
+  .q-title{font-size:20px;}
+  .chip{padding:8px 14px;font-size:13px;}
+  .wish-group{padding:12px;}
+  .text-field{font-size:15px;padding:14px 16px;}
+  .text-field.sm{font-size:13px;padding:11px 14px;}
+  /* Complete screen adjustments */
+  .complete-header-inline{max-width:100%;}
+  .summary-card{padding:16px;}
+  .line-cta-box{max-width:100%;}
+  .line-cta-title{font-size:16px;}
+  .summary-details{max-width:100%;}
+}
+
+/* ═══════════════════════════════════════
+   PC LAYOUT (preview B style) — 900px+
+   ═══════════════════════════════════════ */
+.pc-header{display:none;}
+.hero-stats{display:none;}
+.hero-fv-inner{display:contents;}
+.hero-left,.hero-right{display:contents;}
+
+@media(min-width:900px){
+  body{
+    background:#f8fcfa;
+    padding:0;
+    display:block;
+  }
+
+  /* phone-frameを廃止して全幅レイアウト */
+  .phone-frame{
+    width:100%;max-width:none;
+    margin:0;padding:0;
+    border-radius:0;background:transparent;
+    box-shadow:none;
+  }
+  .phone-frame::before{display:none;}
+  .phone-inner{
+    width:100%;max-width:none;
+    border-radius:0;overflow:visible;
+    background:transparent;box-shadow:none;
+    max-height:none;
+  }
+
+  /* 上部バナー */
+  .top-banner{
+    padding:14px 16px;font-size:15px;
+    width:100%;
+  }
+  .top-banner::after{display:none;}
+
+  /* デスクトップヘッダー（sticky） */
+  .pc-header{
+    display:block;
+    background:#fff;
+    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+    position:sticky;top:0;z-index:100;
+  }
+  .pc-header-inner{
+    max-width:1200px;margin:0 auto;
+    padding:14px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .pc-header-logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;}
+  .pc-header-logo img{width:44px;height:44px;object-fit:contain;}
+  .pc-header-logo .logo-text-wrap{display:flex;flex-direction:column;line-height:1.2;}
+  .pc-header-logo .logo-sub{font-size:11px;font-weight:700;color:#64748b;letter-spacing:0.5px;}
+  .pc-header-logo .logo-name{font-size:22px;font-weight:900;color:#0E4A38;letter-spacing:1.5px;}
+  .pc-header-cta{
+    background:linear-gradient(135deg,#C49A3C,#A37E26);
+    color:#fff;padding:10px 24px;border-radius:100px;
+    font-weight:900;font-size:14px;text-decoration:none;
+    box-shadow:0 4px 12px rgba(196,154,60,0.3);
+    transition:transform 0.2s;cursor:pointer;border:none;
+    font-family:inherit;
+  }
+  .pc-header-cta:hover{transform:translateY(-1px);}
+
+  /* オリジナルのlogo-bar/stats-barはPCで非表示（pc-headerで代替） */
+  .logo-bar{display:none;}
+
+  /* ヒーロー：背景フル幅、内部1200px */
+  .hero-fv{
+    background:
+      radial-gradient(circle at 80% 20%, rgba(59,133,104,0.15), transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(59,133,104,0.1), transparent 50%),
+      linear-gradient(135deg,#f4f9f6 0%,#fff 50%,#dceee3 100%);
+    padding:60px 24px 80px;
+    width:100%;max-width:none;
+    display:block;
+    text-align:left;
+    position:relative;overflow:hidden;
+  }
+  .hero-fv-inner{
+    max-width:1200px;margin:0 auto;
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:48px;align-items:center;
+  }
+  .hero-left,.hero-right{display:block;}
+  .hero-stats{display:flex;}
+
+  /* PC版では元のstats-bar（モバイル用）を非表示。ヒーロー内のみ表示 */
+  .stats-bar.stats-bar-mobile{display:none !important;}
+
+  .hero-left .stats-bar,
+  .hero-stats{
+    display:flex;gap:16px;
+    background:transparent;
+    padding:0;margin:24px 0 32px;
+    max-width:none;
+    border:none;
+  }
+  .hero-left .stat-item,
+  .hero-stats .stat-item{
+    flex:1;background:#fff;border-radius:12px;
+    padding:16px;text-align:center;
+    box-shadow:0 2px 8px rgba(14,74,56,0.08);
+  }
+  .hero-left .stat-divider,
+  .hero-stats .stat-divider{display:none;}
+  .hero-left .stat-num,
+  .hero-stats .stat-num{font-size:28px;}
+  .hero-left .stat-label,
+  .hero-stats .stat-label{font-size:11px;}
+
+  /* インパクトコピー */
+  .impact-area{margin-bottom:0;}
+  .impact-copy{align-items:flex-start;}
+  .impact-top{font-size:18px;margin-bottom:16px;}
+  .impact-top::before,.impact-top::after{width:24px;}
+  .impact-bottom{
+    font-size:56px;letter-spacing:-1.5px;line-height:1.1;
+  }
+  .impact-bottom-sub{font-size:34px;}
+  .impact-message{
+    font-size:15px;line-height:1.9;
+    max-width:480px;color:#1a1a2e;margin-top:18px;
+  }
+  .impact-sub{
+    font-size:16px;line-height:1.8;
+    max-width:480px;color:#475569;margin-top:14px;
+  }
+
+  /* CTA */
+  .fv-cta{margin:32px 0 0;}
+  .fv-cta-wrap{max-width:380px;margin:0;}
+  .fv-cta-mega{padding:24px 24px 18px;border-radius:16px;}
+  .fv-cta-mega-text{font-size:19px;}
+  .fv-cta-mega-sub{font-size:13px;}
+  .fv-cta-ribbon{font-size:13px;padding:5px 22px;top:-12px;}
+  .fv-cta-micro{margin-top:14px;}
+
+  /* グラフ表示エリア */
+  .visual-area{
+    max-width:none;margin:0;
+    align-self:center;position:relative;
+  }
+  .report-card{
+    box-shadow:0 30px 80px rgba(14,74,56,0.2);
+    transform:rotate(-2deg);
+    transition:transform 0.3s;
+  }
+  .report-card:hover{transform:rotate(0) scale(1.02);}
+  .report-chart{padding:24px 20px 16px;}
+  .mini-chart{height:160px;}
+  .mini-label{font-size:12px;}
+  .mascot{width:100px;bottom:-50px;right:10px;}
+
+  /* おまかせエリア：装飾的なセクションに */
+  .omakase-area{
+    padding:60px 24px;
+    border-top:none;
+    background:#fff;
+    text-align:center;
+  }
+  .omakase-brand{font-size:18px;}
+  .omakase-brand em{font-size:20px;}
+  .omakase-main{font-size:42px;}
+
+  /* ブリッジセクション */
+  .bridge-section{
+    padding:80px 24px;
+    max-width:none;
+    background:linear-gradient(180deg,#f8fcfa 0%,#fff 100%);
+  }
+  .bridge-section > *{max-width:1000px;margin-left:auto;margin-right:auto;}
+  .bridge-heading{font-size:32px;}
+  .bridge-heading .num{font-size:42px;}
+  .bridge-sub{font-size:16px;max-width:640px;}
+  .bridge-benefits{max-width:720px;}
+  .bridge-benefits-title{font-size:17px;}
+  .fv-cta-wrap.bridge-cta{max-width:420px !important;}
+  .benefit-item{font-size:15px;}
+  .preview-gallery{max-width:880px;}
+
+  /* サーベイのオーバーレイサイズ調整 */
+  .survey-container{max-width:720px;}
+  .complete-header-inline{max-width:720px;}
+  .summary-details{max-width:720px;}
+  .line-cta-box{max-width:720px;}
+}
+
+@media(min-width:1200px){
+  .impact-bottom{font-size:62px;}
+  .impact-bottom-sub{font-size:38px;}
+  .omakase-main{font-size:48px;}
 }
 </style>
 </head>
 <body>
 
-<!-- ── Header ── -->
-<header class="q-header">
-  <div class="q-header__inner">
-    <img class="q-header__logo" src="images/logo.png" alt="ガリレオ">
-    <div class="q-header__text">
-      <span class="q-header__name">ガリレオ</span>
-      <span class="q-header__sub">理系の大学受験専門塾</span>
-    </div>
+<div class="phone-frame">
+<div class="phone-inner">
+
+<!-- ════════════════════════════════════════
+     FV — First View
+     ════════════════════════════════════════ -->
+<div class="top-banner">お子様の志望校合格を本気で目指す保護者様へ</div>
+
+<!-- PC専用ヘッダー（sticky） -->
+<header class="pc-header">
+  <div class="pc-header-inner">
+    <a href="https://naoooomameta.github.io/galileo/pages/lpquestionnaire/" class="pc-header-logo">
+      <img src="images/logo.png" alt="ガリレオ" fetchpriority="high" decoding="async">
+      <div class="logo-text-wrap">
+        <span class="logo-sub">理系の大学受験専門塾</span>
+        <span class="logo-name">ガリレオ</span>
+      </div>
+    </a>
+    <button class="pc-header-cta" onclick="openSurvey()">無料診断を始める →</button>
   </div>
 </header>
 
-<!-- ── Progress ── -->
-<div class="q-progress is-hidden" id="progress">
-  <div class="q-progress__inner">
-    <div class="q-progress__row">
-      <span class="q-progress__label">無料合格診断</span>
-      <span class="q-progress__count"><b id="progNow">1</b> / 4</span>
+<!-- Logo Bar -->
+<div class="logo-bar">
+  <a href="https://naoooomameta.github.io/galileo/pages/lpquestionnaire/" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+    <img src="images/logo.png" alt="ガリレオ" fetchpriority="high" decoding="async">
+    <div class="logo-text-wrap">
+      <span class="logo-sub">理系の大学受験専門塾</span>
+      <span class="logo-name">ガリレオ</span>
     </div>
-    <div class="q-progress__bar"><div class="q-progress__fill" id="progFill"></div></div>
+  </a>
+</div>
+
+<div class="stats-bar stats-bar-mobile">
+  <div class="stat-item">
+    <div class="stat-num">週5<span>回</span></div>
+    <div class="stat-label">毎日課題を配信</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <div class="stat-num">5<span>日間</span></div>
+    <div class="stat-label">無料で体験OK</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <div class="stat-num">全国<span>対応</span></div>
+    <div class="stat-label">オンライン完結</div>
   </div>
 </div>
 
-<!-- ── Main ── -->
-<main class="q-main">
-  <div class="q-stage">
+<div class="hero-fv">
+  <svg class="hex-bg" viewBox="0 0 200 200"><polygon points="100,10 180,55 180,145 100,190 20,145 20,55" fill="#0E4A38"/><polygon points="100,40 155,70 155,130 100,160 45,130 45,70" fill="none" stroke="#0E4A38" stroke-width="2"/></svg>
+  <svg class="hex-bg2" viewBox="0 0 200 200"><polygon points="100,10 180,55 180,145 100,190 20,145 20,55" fill="#0E4A38"/></svg>
+  <svg class="spark spark1" viewBox="0 0 40 40"><path d="M20 2 L23 16 L38 20 L23 24 L20 38 L17 24 L2 20 L17 16 Z" fill="#D4A843"/></svg>
+  <svg class="spark spark2" viewBox="0 0 40 40"><path d="M20 5 L22 16 L33 20 L22 24 L20 35 L18 24 L7 20 L18 16 Z" fill="#C49A3C"/></svg>
+  <svg class="spark spark3" viewBox="0 0 40 40"><path d="M20 2 L23 16 L38 20 L23 24 L20 38 L17 24 L2 20 L17 16 Z" fill="#D4A843"/></svg>
 
-    <!-- Intro -->
-    <section class="q-screen is-active" data-screen="intro">
-      <div class="q-intro">
-        <img class="q-intro__mascot" src="images/logo.png" alt="ガリレオ博士">
-        <div class="q-intro__badge">FREE DIAGNOSIS</div>
-        <h1 class="q-intro__title">理系大学受験<br><span class="accent">無料合格診断</span></h1>
-        <p class="q-intro__lead">
-          たった<strong>4問</strong>のかんたん診断で、お子様の現状から志望校合格までの<br>
-          <strong>合格戦略ガイドブック</strong>を無料でお届けします。<br>
-          「何から始めればいいかわからない」── そんな方こそ、まずは現在地を。
-        </p>
-        <div class="q-chips">
-          <span class="q-chip">完全無料</span>
-          <span class="q-chip">所要 約2分</span>
-          <span class="q-chip">登録不要</span>
-          <span class="q-chip">勧誘なし</span>
-        </div>
-        <button class="btn btn-primary btn-block" id="startBtn">診断をはじめる →</button>
-      </div>
-    </section>
-
-    <!-- Questions are injected here -->
-    <section class="q-screen" data-screen="question">
-      <div class="q-card">
-        <div class="q-card__eyebrow" id="qEyebrow">QUESTION 01</div>
-        <h2 class="q-card__title" id="qTitle"></h2>
-        <p class="q-card__hint" id="qHint"></p>
-        <div class="q-options" id="qOptions"></div>
-        <div class="q-nav">
-          <button class="btn btn-ghost" id="prevBtn">← 戻る</button>
-          <button class="btn btn-primary" id="nextBtn" disabled>次へ →</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Result -->
-    <section class="q-screen" data-screen="result">
-      <div class="q-result">
-        <div class="q-result__top">
-          <div class="q-result__check">✓</div>
-          <div class="q-result__eyebrow">— DIAGNOSIS COMPLETE —</div>
-          <div class="q-result__title">診断が完了しました！</div>
-        </div>
-        <div class="q-result__body">
-          <p class="q-result__lead">
-            ご回答ありがとうございました。<br>
-            お子様の状況に合わせた<strong>合格戦略ガイドブック</strong>を、<br>
-            InstagramのDMでお届けします。下のボタンからメッセージを送ってください。
-          </p>
-
-          <div class="q-summary">
-            <div class="q-summary__title">YOUR ANSWERS</div>
-            <div class="q-summary__row"><span class="q-summary__k">学年</span><span class="q-summary__v" id="sumGrade">-</span></div>
-            <div class="q-summary__row"><span class="q-summary__k">志望校レベル</span><span class="q-summary__v" id="sumTarget">-</span></div>
-            <div class="q-summary__row"><span class="q-summary__k">現在の偏差値</span><span class="q-summary__v" id="sumDeviation">-</span></div>
-            <div class="q-summary__row"><span class="q-summary__k">1日の学習時間</span><span class="q-summary__v" id="sumTime">-</span></div>
-          </div>
-
-          <div class="q-guidebook">
-            <div class="q-guidebook__title">
-              <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-              ガイドブックでわかること
-            </div>
-            <ul class="q-guidebook__list">
-              <li>志望校合格に必要な偏差値と現状のギャップ分析</li>
-              <li>入試本番から逆算した月別 合格ロードマップ</li>
-              <li>数学・物理・化学・生物・英語の科目別 優先順位</li>
-              <li>ガリレオの「合格思考 → 理系思考」トレーニング概要</li>
-              <li>今すぐ取り組むべき最優先アクション3選</li>
-            </ul>
-          </div>
-
-          <a href="https://ig.me/m/galileo_sciences" class="btn btn-gold btn-block" target="_blank" rel="noopener" id="dmBtn">InstagramのDMで合格戦略ガイドブックを受け取る →</a>
-          <p class="q-result__note">完全無料・登録不要・勧誘なし</p>
-          <br>
-          <button class="q-result__back" id="restartBtn">最初からやり直す</button>
-        </div>
-      </div>
-    </section>
-
+  <div class="hero-fv-inner">
+  <div class="hero-left">
+  <div class="impact-area">
+    <div class="impact-copy">
+      <span class="impact-top">「受かる子」には</span>
+      <span class="impact-bottom">毎日の積み重ね<span class="impact-bottom-sub">がある</span></span>
+    </div>
+    <p class="impact-message">
+      成績は、授業の日だけでは大きく変わりません。<br>
+      志望校合格には、<strong>“毎日の積み重ね”</strong>が何より大切です。<br>
+      <br>
+      だからこそ、お子様に合った<br>
+      <strong>「毎日課題」</strong>を作成します。
+    </p>
+    <p class="impact-sub">4問のかんたんアンケートで、<br>お子様専用の毎日課題プランを無料作成。</p>
   </div>
-</main>
 
-<!-- ── Footer ── -->
-<footer class="q-foot">
-  <div>
-    <a href="https://galileo-sciences.com/" target="_blank" rel="noopener">理系の大学受験専門塾「ガリレオ」公式サイト</a>
+  <!-- PC専用：ヒーロー内ステータス -->
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">週5<span>回</span></div>
+      <div class="stat-label">毎日課題を配信</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">5<span>日間</span></div>
+      <div class="stat-label">無料で体験OK</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">全国<span>対応</span></div>
+      <div class="stat-label">オンライン完結</div>
+    </div>
   </div>
-  <div>© 理系の大学受験専門塾「ガリレオ」</div>
-</footer>
+
+  <!-- FV CTA -->
+  <div class="fv-cta">
+    <div class="fv-cta-wrap" onclick="openSurvey()">
+      <div class="fv-cta-ribbon">＼ 完全無料 ／</div>
+      <div class="fv-cta-mega">
+        <div class="fv-cta-mega-text">うちの子の毎日課題を作ってみる <span class="fv-cta-arrow">→</span></div>
+        <div class="fv-cta-mega-sub">たった30秒でアンケート完了</div>
+      </div>
+    </div>
+    <div class="fv-cta-micro"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="12" rx="2" stroke="#64748b" stroke-width="2"/><path d="M7 20h10" stroke="#64748b" stroke-width="2" stroke-linecap="round"/><path d="M12 16v4" stroke="#64748b" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="10" r="2" fill="#0E4A38"/><path d="M8 14c0-2 2-3 4-3s4 1 4 3" stroke="#0E4A38" stroke-width="1.5" stroke-linecap="round"/></svg><span>📖 家でも学習習慣を。<br>全国どこからでも毎日管理OK</span></div>
+  </div>
+  </div><!-- /hero-left -->
+
+  <div class="hero-right">
+  <div class="visual-area">
+    <div class="report-card">
+      <div class="report-card-header">
+        <span class="report-icon">📊</span>
+        <span class="report-title">お子様専用 毎日課題プラン</span>
+        <span class="report-badge-free">無料</span>
+      </div>
+      <div class="report-chart">
+        <div class="mini-chart">
+          <div class="mini-bar" style="animation-delay:0.1s"></div>
+          <div class="mini-bar" style="animation-delay:0.2s"></div>
+          <div class="mini-bar" style="animation-delay:0.3s"></div>
+          <div class="mini-bar" style="animation-delay:0.4s"></div>
+          <div class="mini-bar" style="animation-delay:0.5s"></div>
+          <div class="mini-bar" style="animation-delay:0.6s"></div>
+        </div>
+        <div class="mini-label"><span>1日目</span><span>2日目</span><span>3日目</span><span>4日目</span><span>5日目</span><span>習慣化!</span></div>
+      </div>
+      <div class="report-footer">
+        <span class="report-footer-label">学習習慣の定着イメージ</span>
+        <span class="report-footer-name">ガリレオ</span>
+      </div>
+    </div>
+    <img class="mascot" src="images/logo.png" alt="ガリレオ" decoding="async">
+  </div>
+  </div><!-- /hero-right -->
+  </div><!-- /hero-fv-inner -->
+</div>
+
+</div><!-- /phone-inner -->
+</div><!-- /phone-frame -->
+
+<!-- Floating CTA -->
+<div class="floating-cta" id="floatingCta">
+  <div class="floating-cta-inner">
+    <div class="floating-cta-text">
+      <span class="floating-cta-free">無料</span>
+      うちの子の毎日課題を作ってみる
+    </div>
+    <button class="floating-cta-btn" onclick="openSurvey()">
+      アンケート →
+    </button>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     SURVEY OVERLAY (Full-screen modal)
+     ════════════════════════════════════════ -->
+<div class="survey-overlay" id="surveyOverlay">
+<div class="survey-container" id="surveyContainer">
+
+  <!-- Back Link -->
+  <a href="javascript:void(0)" onclick="closeSurvey()" class="back-to-top">← 戻る</a>
+
+  <!-- Header -->
+  <div class="survey-header">
+    <div class="survey-progress">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+      <div class="progress-text" id="progressText">0 / 4</div>
+    </div>
+    <div class="survey-step-title" id="stepLabel">STEP 1</div>
+  </div>
+
+  <!-- Body — Questions -->
+  <div class="survey-body" id="surveyBody">
+
+    <!-- Q1: 学年 -->
+    <div class="survey-question active" data-step="1">
+      <span class="q-icon">🎒</span>
+      <div class="q-title">今の学年は？</div>
+      <div class="q-desc">現在の学年を選択してください</div>
+      <div class="option-grid" data-name="grade">
+        <div class="option-card" data-value="中学生" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">中学生</div></div>
+        </div>
+        <div class="option-card" data-value="高1" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">高1</div></div>
+        </div>
+        <div class="option-card" data-value="高2" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">高2</div></div>
+        </div>
+        <div class="option-card" data-value="高3・高卒" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">高3・高卒生</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2: 希望科目（複数選択） -->
+    <div class="survey-question" data-step="2">
+      <span class="q-icon">📚</span>
+      <div class="q-title">毎日課題で希望する科目を選択してください（複数可）</div>
+      <div class="q-desc">当てはまるものをすべて選択してください</div>
+      <div class="chip-grid" data-name="subjects">
+        <button class="chip" data-value="数学ⅠA" onclick="toggleChip(this)">数学ⅠA</button>
+        <button class="chip" data-value="数学ⅡBC" onclick="toggleChip(this)">数学ⅡBC</button>
+        <button class="chip" data-value="数学Ⅲ" onclick="toggleChip(this)">数学Ⅲ</button>
+        <button class="chip" data-value="物理基礎" onclick="toggleChip(this)">物理基礎</button>
+        <button class="chip" data-value="化学基礎" onclick="toggleChip(this)">化学基礎</button>
+        <button class="chip" data-value="生物基礎" onclick="toggleChip(this)">生物基礎</button>
+        <button class="chip" data-value="物理" onclick="toggleChip(this)">物理</button>
+        <button class="chip" data-value="化学" onclick="toggleChip(this)">化学</button>
+        <button class="chip" data-value="生物" onclick="toggleChip(this)">生物</button>
+        <button class="chip" data-value="英語R" onclick="toggleChip(this)">英語R</button>
+        <button class="chip" data-value="英語L" onclick="toggleChip(this)">英語L</button>
+        <button class="chip" data-value="情報Ⅰ" onclick="toggleChip(this)">情報Ⅰ</button>
+        <button class="chip" data-value="中学生用" onclick="toggleChip(this)">中学生用</button>
+      </div>
+    </div>
+
+    <!-- Q3: 1日に勉強できる時間 -->
+    <div class="survey-question" data-step="3">
+      <span class="q-icon">⏰</span>
+      <div class="q-title">お子さまの1日に勉強できる時間は？</div>
+      <div class="q-desc">平日の計算でお答えください</div>
+      <div class="option-grid" data-name="studyTime">
+        <div class="option-card" data-value="1時間以内" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">1時間以内</div></div>
+        </div>
+        <div class="option-card" data-value="3時間以内" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">3時間以内</div></div>
+        </div>
+        <div class="option-card" data-value="5時間以内" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">5時間以内</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q4: 課題の量 -->
+    <div class="survey-question" data-step="4">
+      <span class="q-icon">💪</span>
+      <div class="q-title">課題の量はどれくらいご希望ですか？</div>
+      <div class="q-desc">負担感の希望を選んでください</div>
+      <div class="option-grid" data-name="volume">
+        <div class="option-card" data-value="お手柔らかに" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">お手柔らかに</div></div>
+        </div>
+        <div class="option-card" data-value="普通" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">普通の量で</div></div>
+        </div>
+        <div class="option-card" data-value="ガッツリ" onclick="selectOption(this)">
+          <div class="option-radio"></div>
+          <div><div class="option-label">ガッツリ欲しい！</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPLETE SCREEN -->
+    <div class="complete-screen" id="completeScreen">
+
+      <!-- Compact header -->
+      <div class="complete-header-inline">
+        <div class="complete-check-sm">
+          <svg viewBox="0 0 36 36" fill="none"><path d="M8 18l7 7 13-13" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div class="complete-title-sm">回答を受け付けました！</div>
+          <div class="complete-sub-sm">あと1ステップで完了です</div>
+        </div>
+      </div>
+
+      <!-- Instagram DM CTA — Required -->
+      <div class="line-cta-box">
+        <div class="line-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#d6249f" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#d6249f" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="#d6249f"/></svg>
+        </div>
+        <div class="line-cta-title">Instagramで<br>診断結果を受け取る</div>
+        <div class="line-cta-desc">
+          あなたの回答をもとに、プロの講師が<br>
+          <strong style="color:#fff;">お子様専用の合格戦略ガイドブック</strong>を作成。<br>
+          Instagramのメッセージでお届けします。
+        </div>
+        <div class="line-cta-highlight">📩 2日以内にお届けします</div>
+        <button class="line-add-btn" onclick="openLine()">
+          Instagramのメッセージで受け取る
+        </button>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:10px;">※ 診断結果はInstagramのメッセージでお届けします</div>
+      </div>
+
+    </div>
+
+  </div><!-- /survey-body -->
+
+  <!-- Footer -->
+  <div class="survey-footer" id="surveyFooter">
+    <button class="survey-btn back" id="backBtn" onclick="prevStep()" style="display:none;">←</button>
+    <button class="survey-btn next" id="nextBtn" onclick="nextStep()" disabled>次へ →</button>
+  </div>
+
+</div><!-- /survey-container -->
+</div><!-- /survey-overlay -->
+
+<canvas id="confetti"></canvas>
 
 <script>
+/* ═══════════════════════════════════════
+   FLOATING CTA — show after scrolling past hero
+   ═══════════════════════════════════════ */
 (function(){
-  var QUESTIONS = [
-    {
-      key:'grade',
-      title:'現在の学年を教えてください。',
-      hint:'お子様の現在の学年をお選びください。',
-      options:['中学生','高校1年生','高校2年生','高校3年生','既卒・浪人生']
-    },
-    {
-      key:'target',
-      title:'志望校のレベルに最も近いものは？',
-      hint:'現時点での目標で構いません。',
-      options:[
-        '東京大学・京都大学・東京科学大学',
-        '国公立大学 医学部医学科',
-        '旧帝大・早慶理工',
-        'その他 国公立理系',
-        '私立理系',
-        'まだ決めていない'
-      ]
-    },
-    {
-      key:'deviation',
-      title:'現在の偏差値はどのくらいですか？',
-      hint:'直近の模試の理系科目（数学・理科）の平均でお答えください。',
-      options:['〜45','45〜50','50〜55','55〜60','60〜65','65以上','わからない']
-    },
-    {
-      key:'time',
-      title:'1日の学習時間（平日の平均）は？',
-      hint:'学校や塾の授業時間を除いた、自宅での学習時間です。',
-      options:['1時間未満','1〜2時間','2〜4時間','4時間以上']
+  const fcta = document.getElementById('floatingCta');
+  const phoneInner = document.querySelector('.phone-inner');
+  // Listen on both window and phone-inner for desktop frame
+  function checkScroll(){
+    const scrolled = window.scrollY > 400 || (phoneInner && phoneInner.scrollTop > 300);
+    if(scrolled && !document.getElementById('surveyOverlay').classList.contains('show')){
+      fcta.classList.add('show');
+    } else {
+      fcta.classList.remove('show');
     }
-  ];
-
-  var answers = {};
-  var current = 0; // index into QUESTIONS
-
-  var screens = {
-    intro: document.querySelector('[data-screen="intro"]'),
-    question: document.querySelector('[data-screen="question"]'),
-    result: document.querySelector('[data-screen="result"]')
-  };
-  var progress = document.getElementById('progress');
-  var progNow = document.getElementById('progNow');
-  var progFill = document.getElementById('progFill');
-  var qEyebrow = document.getElementById('qEyebrow');
-  var qTitle = document.getElementById('qTitle');
-  var qHint = document.getElementById('qHint');
-  var qOptions = document.getElementById('qOptions');
-  var prevBtn = document.getElementById('prevBtn');
-  var nextBtn = document.getElementById('nextBtn');
-
-  function show(name){
-    Object.keys(screens).forEach(function(k){ screens[k].classList.remove('is-active'); });
-    screens[name].classList.add('is-active');
-    progress.classList.toggle('is-hidden', name !== 'question');
-    window.scrollTo({top:0,behavior:'smooth'});
   }
-
-  function pad(n){ return n < 10 ? '0' + n : '' + n; }
-
-  function renderQuestion(){
-    var q = QUESTIONS[current];
-    qEyebrow.textContent = 'QUESTION ' + pad(current + 1);
-    qTitle.textContent = q.title;
-    qHint.textContent = q.hint || '';
-    progNow.textContent = current + 1;
-    progFill.style.width = ((current + 1) / QUESTIONS.length * 100) + '%';
-
-    qOptions.innerHTML = '';
-    q.options.forEach(function(opt){
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'q-option' + (answers[q.key] === opt ? ' is-selected' : '');
-      btn.innerHTML = '<span class="q-option__radio"></span><span class="q-option__text">' + opt + '</span>';
-      btn.addEventListener('click', function(){
-        answers[q.key] = opt;
-        Array.prototype.forEach.call(qOptions.children, function(c){ c.classList.remove('is-selected'); });
-        btn.classList.add('is-selected');
-        nextBtn.disabled = false;
-      });
-      qOptions.appendChild(btn);
-    });
-
-    nextBtn.disabled = !answers[q.key];
-    prevBtn.textContent = current === 0 ? '← 最初に戻る' : '← 戻る';
-    nextBtn.textContent = current === QUESTIONS.length - 1 ? '結果を見る →' : '次へ →';
-  }
-
-  function fillSummary(){
-    document.getElementById('sumGrade').textContent = answers.grade || '-';
-    document.getElementById('sumTarget').textContent = answers.target || '-';
-    document.getElementById('sumDeviation').textContent = answers.deviation || '-';
-    document.getElementById('sumTime').textContent = answers.time || '-';
-  }
-
-  document.getElementById('startBtn').addEventListener('click', function(){
-    current = 0;
-    show('question');
-    renderQuestion();
-  });
-
-  prevBtn.addEventListener('click', function(){
-    if(current === 0){ show('intro'); return; }
-    current--;
-    renderQuestion();
-  });
-
-  nextBtn.addEventListener('click', function(){
-    if(!answers[QUESTIONS[current].key]) return;
-    if(current === QUESTIONS.length - 1){
-      fillSummary();
-      show('result');
-      return;
-    }
-    current++;
-    renderQuestion();
-  });
-
-  document.getElementById('restartBtn').addEventListener('click', function(){
-    answers = {}; current = 0;
-    show('intro');
-  });
+  window.addEventListener('scroll', checkScroll, {passive:true});
+  if(phoneInner) phoneInner.addEventListener('scroll', checkScroll, {passive:true});
 })();
+
+/* ═══════════════════════════════════════
+   SURVEY LOGIC
+   ═══════════════════════════════════════ */
+const TOTAL_STEPS = 4;
+let currentStep = 1;
+const answers = {};
+
+function openSurvey() {
+  document.getElementById('surveyOverlay').classList.add('show');
+  document.getElementById('floatingCta').classList.remove('show');
+  document.body.style.overflow = 'hidden';
+  // Meta Pixel: Survey Start
+  if(typeof fbq==='function') fbq('trackCustom', 'SurveyStart');
+  updateUI();
+}
+
+function closeSurvey() {
+  document.getElementById('surveyOverlay').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+function selectOption(card) {
+  const grid = card.closest('.option-grid');
+  grid.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+  card.classList.add('selected');
+
+  const name = grid.dataset.name;
+  answers[name] = card.dataset.value;
+
+  document.getElementById('nextBtn').disabled = false;
+}
+
+function toggleChip(chip) {
+  chip.classList.toggle('selected');
+  const grid = chip.closest('.chip-grid');
+  const name = grid.dataset.name;
+  const selected = grid.querySelectorAll('.chip.selected');
+  answers[name] = Array.from(selected).map(c => c.dataset.value);
+  document.getElementById('nextBtn').disabled = answers[name].length === 0;
+}
+
+function nextStep() {
+  if (currentStep >= TOTAL_STEPS) {
+    openLine();
+    return;
+  }
+  currentStep++;
+  updateUI();
+}
+
+function prevStep() {
+  if (currentStep <= 1) return;
+  currentStep--;
+  updateUI();
+}
+
+function updateUI() {
+  // Show/hide questions
+  document.querySelectorAll('.survey-question').forEach(q => {
+    q.classList.remove('active');
+    if (parseInt(q.dataset.step) === currentStep) {
+      q.classList.add('active');
+    }
+  });
+
+  // Progress
+  const pct = ((currentStep - 1) / TOTAL_STEPS) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressText').textContent = (currentStep - 1) + ' / ' + TOTAL_STEPS;
+  document.getElementById('stepLabel').textContent = 'STEP ' + currentStep;
+
+  // Back button
+  document.getElementById('backBtn').style.display = currentStep > 1 ? 'flex' : 'none';
+
+  // Next button state — type-based validation
+  const btn = document.getElementById('nextBtn');
+  const q = document.querySelector(`.survey-question[data-step="${currentStep}"]`);
+  if (q) {
+    const chipGrid = q.querySelector('.chip-grid');
+    const optionGrid = q.querySelector('.option-grid');
+    if (chipGrid) {
+      const name = chipGrid.dataset.name;
+      btn.disabled = !answers[name] || answers[name].length === 0;
+    } else if (optionGrid) {
+      const name = optionGrid.dataset.name;
+      btn.disabled = !answers[name];
+    }
+  }
+
+  // Last step button text & style
+  if (currentStep === TOTAL_STEPS) {
+    btn.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:6px;"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#fff" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="#fff"/></svg>Instagramで回答を送信';
+    btn.style.background = 'linear-gradient(135deg,#f09433,#dc2743,#bc1888)';
+    btn.style.color = '#fff';
+    btn.style.boxShadow = '0 4px 15px rgba(220,39,67,0.4)';
+    btn.style.fontSize = '15px';
+    btn.style.fontWeight = '900';
+  } else {
+    btn.textContent = '次へ →';
+    btn.style.background = '';
+    btn.style.color = '';
+    btn.style.boxShadow = '';
+    btn.style.fontSize = '';
+    btn.style.fontWeight = '';
+  }
+
+  // Scroll body to top
+  document.getElementById('surveyBody').scrollTop = 0;
+}
+
+function showComplete() {
+  // Hide all questions
+  document.querySelectorAll('.survey-question').forEach(q => q.classList.remove('active'));
+  // Hide footer
+  document.getElementById('surveyFooter').style.display = 'none';
+  // Update progress
+  document.getElementById('progressFill').style.width = '100%';
+  document.getElementById('progressText').textContent = '完了！';
+  document.getElementById('stepLabel').textContent = 'COMPLETE';
+
+  // Show complete screen
+  document.getElementById('completeScreen').classList.add('show');
+  document.getElementById('surveyBody').scrollTop = 0;
+
+  // Confetti!
+  launchConfetti();
+}
+
+function openLine() {
+  // Meta Pixel: Lead = Instagram DMクリック
+  if(typeof fbq==='function') fbq('track', 'Lead', {content_name: 'ig_dm'});
+
+  // 回答をGoogle Sheetsへ送信（GALILEO_SHEETS_ENDPOINT に GAS の /exec URL を設定すると有効化）
+  var GALILEO_SHEETS_ENDPOINT = '{{GALILEO_SHEETS_ENDPOINT}}';
+  if (/^https:\/\/script\.google\.com\//.test(GALILEO_SHEETS_ENDPOINT)) {
+    fetch(GALILEO_SHEETS_ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      keepalive: true,
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        grade: answers.grade || '',
+        subjects: answers.subjects || [],
+        studyTime: answers.studyTime || '',
+        volume: answers.volume || '',
+        source: 'ad'
+      })
+    }).catch(function(e) { console.log('Data send error:', e); });
+  }
+
+  // DM本文（回答を同梱）
+  var msg = 'ガリレオ\n\n【毎日課題の希望】\n'
+    + '学年：' + (answers.grade || '未入力') + '\n'
+    + '希望科目：' + ((answers.subjects || []).join('、') || '未入力') + '\n'
+    + '勉強時間：' + (answers.studyTime || '未入力') + '\n'
+    + '課題量：' + (answers.volume || '未入力');
+  var igUrl = 'https://ig.me/m/galileo_sciences?text=' + encodeURIComponent(msg);
+
+  // Instagram DMを新規タブで開き、少し遅れてthanksへ
+  window.open(igUrl, '_blank');
+  setTimeout(function() {
+    window.location.href = 'thanks.html';
+  }, 800);
+}
+
+/* ═══════════════════════════════════════
+   CONFETTI
+   ═══════════════════════════════════════ */
+function launchConfetti() {
+  const canvas = document.getElementById('confetti');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  canvas.style.display = 'block';
+
+  const pieces = [];
+  const colors = ['#0E4A38','#C49A3C','#10b981','#ef4444','#8b5cf6','#06b6d4','#D4A843'];
+  const total = 120;
+
+  for (let i = 0; i < total; i++) {
+    pieces.push({
+      x: Math.random() * canvas.width,
+      y: -20 - Math.random() * 300,
+      w: 6 + Math.random() * 6,
+      h: 4 + Math.random() * 4,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      vx: (Math.random() - 0.5) * 3,
+      vy: 2 + Math.random() * 4,
+      rot: Math.random() * 360,
+      rotV: (Math.random() - 0.5) * 10,
+      opacity: 1,
+    });
+  }
+
+  let frame = 0;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let alive = false;
+    pieces.forEach(p => {
+      if (p.opacity <= 0) return;
+      alive = true;
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += 0.05;
+      p.rot += p.rotV;
+      if (frame > 60) p.opacity -= 0.01;
+
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot * Math.PI / 180);
+      ctx.globalAlpha = Math.max(0, p.opacity);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+      ctx.restore();
+    });
+    frame++;
+    if (alive) {
+      requestAnimationFrame(draw);
+    } else {
+      canvas.style.display = 'none';
+    }
+  }
+  draw();
+}
 </script>
+
+<!-- Footer -->
+<div style="text-align:center;padding:16px 12px 24px;background:#f0f4f8;font-size:11px;color:#94a3b8;">
+  <a href="https://galileo-sciences.com/pages/news-payment.html" style="color:#64748b;text-decoration:none;">プライバシーポリシー・特定商取引法</a>
+  <span style="margin:0 6px;">｜</span>
+  <a href="https://galileo-sciences.com/#contact" style="color:#64748b;text-decoration:none;">お問い合わせ</a>
+  <span style="margin:0 6px;">｜</span>
+  <span>© 2026 理系の大学受験専門塾「ガリレオ」</span>
+</div>
 
 </body>
 </html>
