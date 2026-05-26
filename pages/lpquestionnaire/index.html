@@ -1572,7 +1572,7 @@ function openLine() {
   if(typeof fbq==='function') fbq('track', 'Lead', {content_name: 'ig_dm'});
 
   // 回答を Google スプレッドシートへ送信（既存の予約・問い合わせ用 GAS に action=shindan で記録）
-  var GALILEO_SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzleIs1DqaybK2orps2tQwLCDimHb_7_5CQ0AV4IMD1gN3kVtjOUuD-2EA2-tCGDCo/exec';
+  var GALILEO_SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwSZT1v2M1P86Vsvox_kC3FIl6IfYRthA_4IfEL18vdmt8FoMqJ3dkUV2N7FpOosy6dxw/exec';
   if (/^https:\/\/script\.google\.com\//.test(GALILEO_SHEETS_ENDPOINT)) {
     var sd = new URLSearchParams();
     sd.append('action', 'shindan');
