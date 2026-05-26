@@ -1589,8 +1589,10 @@ function openLine() {
     }).catch(function(e) { console.log('Data send error:', e); });
   }
 
-  // DM本文（回答を同梱）
-  var msg = 'ガリレオ\n\n【毎日課題の希望】\n'
+  // DM本文：先頭の「毎日課題」はInstagramキーワード自動返信のトリガー語（変更時はMeta側の設定も合わせる）
+  var msg = '毎日課題\n\n'
+    + 'ガリレオの「毎日課題」を希望します。\n\n'
+    + '【診断結果】\n'
     + '学年：' + (answers.grade || '未入力') + '\n'
     + '希望科目：' + ((answers.subjects || []).join('、') || '未入力') + '\n'
     + '勉強時間：' + (answers.studyTime || '未入力') + '\n'
