@@ -481,8 +481,6 @@ body{
 
 /* Option Cards */
 .option-grid{display:flex;flex-direction:column;gap:10px;}
-.cta-hint{margin-top:24px;text-align:center;font-size:13px;font-weight:700;color:#475569;line-height:1.7;}
-.cta-hint .kw{display:inline-block;background:#fdecef;color:#dc2743;font-weight:900;border-radius:6px;padding:2px 9px;margin:0 1px;}
 .option-card{
   display:flex;align-items:center;gap:14px;
   padding:16px 18px;border:2px solid #e2e8f0;border-radius:14px;
@@ -1372,7 +1370,6 @@ body{
           <div><div class="option-label">ガッツリ欲しい！</div></div>
         </div>
       </div>
-      <div class="cta-hint"><span class="kw">毎日課題</span>と送信してください</div>
     </div>
 
     <!-- COMPLETE SCREEN -->
@@ -1533,7 +1530,7 @@ function updateUI() {
 
   // Last step button text & style
   if (currentStep === TOTAL_STEPS) {
-    btn.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:6px;"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#fff" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="#fff"/></svg>Instagramで回答を送信';
+    btn.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:6px;"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#fff" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="#fff"/></svg>Instagramで「毎日課題」と送信';
     btn.style.background = 'linear-gradient(135deg,#f09433,#dc2743,#bc1888)';
     btn.style.color = '#fff';
     btn.style.boxShadow = '0 4px 15px rgba(220,39,67,0.4)';
