@@ -160,6 +160,22 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "wfn0ptjuso");
 </script>
+<!-- Meta Pixel (set GALILEO_META_PIXEL_ID to a numeric ID to enable) -->
+<script>
+var GALILEO_META_PIXEL_ID = '{{GALILEO_META_PIXEL_ID}}';
+if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', GALILEO_META_PIXEL_ID);
+  fbq('track', 'PageView');
+}
+</script>
 </head>
 <body>
 <!-- ===== TOP BAR ===== -->
@@ -425,6 +441,17 @@ document.querySelectorAll('.section,.learn-card,.suited-item,.flow-step,.guidebo
   const update=()=>sticky.classList.toggle('show',pastHero&&!atFinal);
   if(heroCta)new IntersectionObserver(es=>{pastHero=!es[0].isIntersecting;update();},{threshold:0}).observe(heroCta);
   if(finalCta)new IntersectionObserver(es=>{const e=es[0];atFinal=e.isIntersecting||e.boundingClientRect.top<0;update();},{threshold:0.15}).observe(finalCta);
+})();
+/* Funnel measurement: diagnosis CTA clicks (Meta Pixel + Clarity) */
+(function(){
+  function where(a){return a.closest('.sticky-cta')?'sticky':a.closest('.final-cta')?'final':a.closest('.nav')?'nav':a.closest('.page-hero')?'hero':'other';}
+  document.querySelectorAll('a[href="lpquestionnaire/"]').forEach(function(a){
+    a.addEventListener('click',function(){
+      var loc=where(a);
+      try{if(typeof fbq==='function')fbq('trackCustom','DiagnosisCTAClick',{location:loc});}catch(e){}
+      try{if(typeof clarity==='function'){clarity('event','diagnosis_cta_click');clarity('set','cta_location',loc);}}catch(e){}
+    });
+  });
 })();
 </script>
 </body>
