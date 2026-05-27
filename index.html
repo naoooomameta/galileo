@@ -11,7 +11,7 @@
 <meta property="og:image" content="img/ogp.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
 <style>
 /* ===== EMERALD GOLD DESIGN SYSTEM ===== */
 :root{
@@ -860,8 +860,10 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
     <div class="hero-visual">
       <div class="hero-img">
         <picture>
+          <source media="(max-width: 768px)" type="image/webp" srcset="img/hero-fv-sp.webp">
           <source media="(max-width: 768px)" srcset="img/hero-fv-sp.png">
-          <img src="img/hero-fv-pc.png" alt="毎日課題 × 理系思考で志望校合格へ — 理系の大学受験専門塾 ガリレオ">
+          <source type="image/webp" srcset="img/hero-fv-pc.webp">
+          <img src="img/hero-fv-pc.png" alt="毎日課題 × 理系思考で志望校合格へ — 理系の大学受験専門塾 ガリレオ" fetchpriority="high" decoding="async">
         </picture>
       </div>
       <div class="hero-actions">
