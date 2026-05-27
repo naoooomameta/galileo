@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>ガリレオ｜偏差値UP合格戦略ガイドブック無料診断</title>
+<title>ガリレオ｜お子様専用の理系大学受験ロードマップ 無料診断</title>
 
 <!-- OGP -->
-<meta property="og:title" content="うちの子の合格戦略を無料で見てみる｜ガリレオ">
-<meta property="og:description" content="4問のかんたん診断で、志望校合格までの道筋がわかる。理系の大学受験専門塾ガリレオが、お子様専用の合格戦略ガイドブックを無料でお届けします。">
+<meta property="og:title" content="うちの子の理系受験ロードマップを無料で見てみる｜ガリレオ">
+<meta property="og:description" content="4問のかんたん診断で、志望校合格までの道筋がわかる。理系の大学受験専門塾ガリレオが、お子様専用の理系大学受験ロードマップを無料でお届けします。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://galileo-sciences.com/pages/lpquestionnaire/">
 <meta property="og:image" content="https://galileo-sciences.com/img/ogp.svg">
@@ -1181,9 +1181,9 @@ body{
       志望校合格には、<strong>“毎日の積み重ね”</strong>が何より大切です。<br>
       <br>
       だからこそ、お子様に合った<br>
-      <strong>「毎日課題」</strong>を作成します。
+      <strong>「毎日課題」</strong>を、ロードマップにして作成します。
     </p>
-    <p class="impact-sub">4問のかんたんアンケートで、<br>お子様専用の毎日課題プランを無料作成。</p>
+    <p class="impact-sub">4問のかんたんアンケートで、<br>お子様専用の理系大学受験ロードマップを無料作成。</p>
   </div>
 
   <!-- PC専用：ヒーロー内ステータス -->
@@ -1207,7 +1207,7 @@ body{
     <div class="fv-cta-wrap" onclick="openSurvey()">
       <div class="fv-cta-ribbon">＼ 完全無料 ／</div>
       <div class="fv-cta-mega">
-        <div class="fv-cta-mega-text">うちの子の毎日課題を作ってみる <span class="fv-cta-arrow">→</span></div>
+        <div class="fv-cta-mega-text">うちの子のロードマップを作ってみる <span class="fv-cta-arrow">→</span></div>
         <div class="fv-cta-mega-sub">たった30秒でアンケート完了</div>
       </div>
     </div>
@@ -1220,7 +1220,7 @@ body{
     <div class="report-card">
       <div class="report-card-header">
         <span class="report-icon">📊</span>
-        <span class="report-title">お子様専用 毎日課題プラン</span>
+        <span class="report-title">お子様専用 学習ロードマップ</span>
         <span class="report-badge-free">無料</span>
       </div>
       <div class="report-chart">
@@ -1253,7 +1253,7 @@ body{
   <div class="floating-cta-inner">
     <div class="floating-cta-text">
       <span class="floating-cta-free">無料</span>
-      うちの子の毎日課題を作ってみる
+      うちの子のロードマップを作ってみる
     </div>
     <button class="floating-cta-btn" onclick="openSurvey()">
       アンケート →
@@ -1274,8 +1274,8 @@ body{
   <!-- Header -->
   <div class="survey-header">
     <div class="survey-progress">
-      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
-      <div class="progress-text" id="progressText">0 / 4</div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:20%"></div></div>
+      <div class="progress-text" id="progressText">1 / 4 問</div>
     </div>
     <div class="survey-step-title" id="stepLabel">STEP 1</div>
   </div>
@@ -1394,7 +1394,7 @@ body{
         <div class="line-cta-title">Instagramで<br>診断結果を受け取る</div>
         <div class="line-cta-desc">
           あなたの回答をもとに、プロの講師が<br>
-          <strong style="color:#fff;">お子様専用の合格戦略ガイドブック</strong>を作成。<br>
+          <strong style="color:#fff;">お子様専用の理系大学受験ロードマップ</strong>を作成。<br>
           Instagramのメッセージでお届けします。
         </div>
         <div class="line-cta-highlight">📩 2日以内にお届けします</div>
@@ -1504,10 +1504,10 @@ function updateUI() {
     }
   });
 
-  // Progress
-  const pct = ((currentStep - 1) / TOTAL_STEPS) * 100;
+  // Progress (endowed progress: show current position with visible initial fill)
+  const pct = (currentStep / (TOTAL_STEPS + 1)) * 100;
   document.getElementById('progressFill').style.width = pct + '%';
-  document.getElementById('progressText').textContent = (currentStep - 1) + ' / ' + TOTAL_STEPS;
+  document.getElementById('progressText').textContent = currentStep + ' / ' + TOTAL_STEPS + ' 問';
   document.getElementById('stepLabel').textContent = 'STEP ' + currentStep;
 
   // Back button
