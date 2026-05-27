@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>無料合格診断 | ガリレオ 理系の大学受験専門塾</title>
-<meta name="description" content="理系大学受験の無料合格診断。たった4問のかんたん診断で、お子様の現状から志望校合格までの具体的なロードマップを無料でお届けします。完全無料・登録不要・勧誘なし。">
+<title>4問でわかる お子様専用の理系大学受験ロードマップ｜無料診断 | ガリレオ</title>
+<meta name="description" content="理系志望の高校生・保護者の方へ。4問のかんたん無料診断で、数学・物理・化学・英語の『今日から何を勉強すればいいか』がわかる、お子様専用の理系大学受験ロードマップを無料でお届け。所要2〜3分・登録不要・勧誘なし・全国オンライン対応。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
@@ -16,19 +16,23 @@
 .page-hero .breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:20px}
 .page-hero .breadcrumb a{color:var(--primary);text-decoration:underline}
 .hero-badge{display:inline-block;border:1.5px solid var(--primary);color:var(--primary);background:var(--white);font-size:13px;font-weight:700;letter-spacing:.16em;padding:8px 22px;border-radius:30px;margin-bottom:22px}
-.page-hero h1{font-family:var(--font-serif);font-weight:700;line-height:1.45;margin-bottom:26px;letter-spacing:.02em}
+.page-hero h1{font-family:var(--font-serif);font-weight:700;line-height:1.4;margin-bottom:24px;letter-spacing:.02em}
 .page-hero h1 .accent{color:var(--amber)}
-.page-hero h1 .line1,.page-hero h1 .line2,.page-hero h1 .line3{display:block}
-.page-hero h1 .line1{font-size:clamp(18px,2.6vw,24px);color:var(--text-light);font-weight:600;margin-bottom:10px;letter-spacing:.12em}
-.page-hero h1 .line2{font-size:clamp(34px,6.2vw,58px);color:var(--amber);margin-bottom:16px;line-height:1.3}
-.page-hero h1 .line3{font-size:clamp(22px,3.8vw,34px);color:var(--primary-dark);line-height:1.55}
-.hero-lead{font-size:16px;color:var(--text);max-width:700px;margin:0 auto 32px;line-height:2.05;letter-spacing:.01em}
+.page-hero h1 .ht-hook,.page-hero h1 .ht-sub,.page-hero h1 .ht-main{display:block}
+.page-hero h1 .ht-hook{font-size:clamp(21px,3.2vw,31px);color:var(--primary-dark);font-weight:800;letter-spacing:.04em;margin-bottom:10px}
+.page-hero h1 .ht-hook .em{font-weight:900;padding:0 3px;background:linear-gradient(transparent 56%,rgba(196,154,60,.34) 56%)}
+.page-hero h1 .ht-sub{font-size:clamp(16px,2.2vw,22px);color:var(--text-light);font-weight:600;letter-spacing:.08em;margin-bottom:7px}
+.page-hero h1 .ht-main{font-size:clamp(32px,5.8vw,54px);color:var(--amber);font-weight:800;line-height:1.28;letter-spacing:.01em}
+.sp-br{display:none}
+.hero-lead{font-size:16px;color:var(--text);max-width:680px;margin:0 auto 30px;line-height:2.05;letter-spacing:.01em}
+.hero-lead strong{color:var(--primary-dark);font-weight:700}
 .hero-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:34px}
 .hero-chip{background:var(--white);border:1px solid var(--border);color:var(--primary-dark);font-size:14px;font-weight:600;padding:10px 20px;border-radius:30px;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(14,74,56,.04)}
 .hero-chip::before{content:'✓';color:var(--amber);font-weight:700}
-.hero-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--white);padding:20px 56px;border-radius:14px;font-size:18px;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(14,74,56,.22);transition:all .3s}
-.hero-cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(14,74,56,.3)}
-.hero-cta-note{margin-top:14px;font-size:13px;color:var(--text-muted)}
+.hero-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--cta),var(--cta-light));color:var(--white);padding:20px 56px;border-radius:14px;font-size:18px;font-weight:800;text-decoration:none;box-shadow:0 8px 24px rgba(196,154,60,.34);transition:all .3s}
+.hero-cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(196,154,60,.42)}
+.hero-cta-note{margin-top:14px;font-size:13.5px;color:var(--text-light);font-weight:500}
+.sticky-cta{display:none}
 
 .learn-section{background:var(--bg)}
 .learn-lead{text-align:center;font-size:15px;color:var(--text-light);max-width:560px;margin:0 auto 44px;line-height:1.95}
@@ -77,13 +81,14 @@
 
 @media(max-width:1024px){.learn-grid{grid-template-columns:1fr;gap:18px;max-width:560px}}
 @media(max-width:768px){
-  .page-hero{padding:64px 0 56px}
-  .page-hero h1{line-height:1.5;margin-bottom:20px}
-  .page-hero h1 .line1{font-size:14px;letter-spacing:.1em;margin-bottom:8px}
-  .page-hero h1 .line2{font-size:36px;margin-bottom:10px;line-height:1.32}
-  .page-hero h1 .line3{font-size:20px;line-height:1.6}
+  .page-hero{padding:58px 0 50px}
+  .page-hero h1{line-height:1.4;margin-bottom:20px}
+  .page-hero h1 .ht-hook{font-size:24px;margin-bottom:8px}
+  .page-hero h1 .ht-sub{font-size:15px;letter-spacing:.06em;margin-bottom:5px}
+  .page-hero h1 .ht-main{font-size:33px;line-height:1.3}
+  .sp-br{display:inline}
   .hero-lead{font-size:15.5px;line-height:2;color:var(--text)}
-  .hero-cta{padding:18px 40px;font-size:16.5px;width:100%;max-width:340px}
+  .hero-cta{padding:17px 24px;font-size:16px;width:100%;max-width:370px}
   .hero-chip{font-size:13.5px;padding:8px 16px}
   .learn-card{padding:28px 22px}
   .learn-card h3{font-size:17.5px;line-height:1.6}
@@ -126,13 +131,23 @@
   .hero-chips{gap:8px}
   .hero-chip{font-size:13px;padding:7px 14px}
   .guidebook-card{padding:28px 20px}
-  .page-hero h1 .line2{font-size:32px}
-  .page-hero h1 .line3{font-size:18.5px}
+  .page-hero h1 .ht-hook{font-size:22px}
+  .page-hero h1 .ht-main{font-size:30px}
   .hero-lead{font-size:15px}
+  .hero-cta{font-size:15.5px;padding:16px 16px}
+  .hero-cta-note{font-size:12.5px}
   .section-title{font-size:22px!important;line-height:1.55}
   .learn-card h3{font-size:17px}
   .learn-card p{font-size:14.5px}
   .suited-item{font-size:15px}
+}
+
+/* ===== MOBILE STICKY CTA ===== */
+@media(max-width:768px){
+  .sticky-cta{position:fixed;left:10px;right:10px;bottom:10px;z-index:300;display:flex;flex-direction:column;align-items:center;gap:1px;background:linear-gradient(135deg,var(--cta),var(--cta-light));color:var(--white);text-decoration:none;padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));border-radius:14px;box-shadow:0 6px 22px rgba(10,50,40,.32);transform:translateY(180%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
+  .sticky-cta.show{transform:translateY(0)}
+  .sticky-cta-main{font-size:16px;font-weight:800;letter-spacing:.01em}
+  .sticky-cta-sub{font-size:11px;font-weight:600;opacity:.92;letter-spacing:.02em}
 }
 </style>
 <!-- Microsoft Clarity -->
@@ -192,21 +207,22 @@
 <!-- ===== HERO ===== -->
 <section class="page-hero">
   <div class="container">
-    <div class="breadcrumb"><a href="../index.html">ホーム</a> &gt; 無料合格診断</div>
-    <span class="hero-badge">FREE DIAGNOSIS</span>
+    <div class="breadcrumb"><a href="../index.html">ホーム</a> &gt; 無料診断</div>
+    <span class="hero-badge">理系大学受験専門 ｜ 無料診断</span>
     <h1>
-      <span class="line1">理系大学受験</span>
-      <span class="line2">無料合格診断</span>
-      <span class="line3">志望校合格までの<span class="accent">戦略</span>がわかる</span>
+      <span class="ht-hook"><span class="em">4問</span>でわかる。</span>
+      <span class="ht-sub">お子様専用の</span>
+      <span class="ht-main">理系大学受験<br class="sp-br">ロードマップ</span>
     </h1>
-    <p class="hero-lead">たった4問のかんたん診断で、お子様の現状から志望校合格までの具体的なロードマップを無料でお届けします。「何から始めればいいかわからない」「偏差値をどこまで上げれば合格できるのか」── ガリレオの合格戦略をもとに、個別の道筋をお伝えします。</p>
+    <p class="hero-lead">高1〜高3・理系志望のお子様へ。<strong>数学・物理・化学・英語</strong>の学習状況に合わせて、<strong>「今日から何を勉強すればいいか」</strong>を、ガリレオが無料でご提案します。</p>
     <div class="hero-chips">
-      <span class="hero-chip">完全無料</span>
-      <span class="hero-chip">所要時間2〜3分</span>
+      <span class="hero-chip">無料診断</span>
+      <span class="hero-chip">2〜3分で完了</span>
       <span class="hero-chip">勧誘なし</span>
-      <span class="hero-chip">InstagramのDMで受け取る</span>
+      <span class="hero-chip">オンライン対応</span>
     </div>
-    <a href="lpquestionnaire/" class="hero-cta">無料で合格診断を受ける →</a>
+    <a href="lpquestionnaire/" class="hero-cta">無料でロードマップを受け取る →</a>
+    <p class="hero-cta-note">4問のかんたんアンケートに答えるだけ ｜ 所要2〜3分・無料・勧誘なし</p>
   </div>
 </section>
 
@@ -215,7 +231,7 @@
   <div class="container">
     <div class="section-label">WHAT YOU LEARN</div>
     <h2 class="section-title">この診断でわかること</h2>
-    <p class="learn-lead">診断結果は「合格戦略ガイドブック」としてInstagramのDMでお届けします。</p>
+    <p class="learn-lead">診断結果は「お子様専用の理系大学受験ロードマップ」としてInstagramのDMでお届けします。</p>
     <div class="learn-grid">
       <div class="learn-card">
         <div class="learn-icon"><svg viewBox="0 0 24 24"><path d="M3 13h2v8H3v-8zm4-4h2v12H7V9zm4-6h2v18h-2V3zm4 8h2v10h-2V11zm4-4h2v14h-2V7z"/></svg></div>
@@ -271,7 +287,7 @@
   <div class="container">
     <div class="section-label">HOW IT WORKS</div>
     <h2 class="section-title">診断の流れ</h2>
-    <p class="flow-lead">3ステップで、個別の合格戦略ガイドブックをお受け取りいただけます。</p>
+    <p class="flow-lead">3ステップで、お子様専用の理系大学受験ロードマップをお受け取りいただけます。</p>
     <div class="flow-steps">
       <div class="flow-step">
         <div class="flow-num">1</div>
@@ -285,15 +301,15 @@
         <div class="flow-num">2</div>
         <div class="flow-content">
           <h3>InstagramでガリレオにDM</h3>
-          <p>診断完了後、Instagram（@galileo_sciences）のDMからメッセージをお送りいただくと、合格戦略ガイドブックをお送りします。</p>
+          <p>診断完了後、Instagram（@galileo_sciences）のDMからメッセージをお送りいただくと、お子様専用のロードマップをお送りします。</p>
           <span class="flow-tag">すぐに受け取れます</span>
         </div>
       </div>
       <div class="flow-step">
         <div class="flow-num">3</div>
         <div class="flow-content">
-          <h3>合格戦略ガイドブックを受け取る</h3>
-          <p>お子様の状況に合わせた合格ロードマップ・科目別対策方針をInstagramのDMでお届けします。</p>
+          <h3>理系大学受験ロードマップを受け取る</h3>
+          <p>お子様の状況に合わせた合格ロードマップ・科目別の学習方針をInstagramのDMでお届けします。</p>
           <span class="flow-tag">完全無料・勧誘なし</span>
         </div>
       </div>
@@ -307,7 +323,7 @@
     <div class="guidebook-card">
       <div class="guidebook-title">
         <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-        無料でもらえる「合格戦略ガイドブック」の内容
+        無料でもらえる「お子様専用ロードマップ」の内容
       </div>
       <ul class="guidebook-list">
         <li>志望校合格に必要な偏差値と現状のギャップ分析</li>
@@ -328,7 +344,7 @@
     <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q">無料診断は本当に無料ですか？</div>
-        <div class="faq-a"><p>はい、完全無料です。クレジットカードの登録も不要で、診断後に勧誘の電話がかかることもありません。診断結果のガイドブックはInstagramのDMでお届けします。</p></div>
+        <div class="faq-a"><p>はい、完全無料です。クレジットカードの登録も不要で、診断後に勧誘の電話がかかることもありません。診断結果のロードマップはInstagramのDMでお届けします。</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-q">診断にどのくらい時間がかかりますか？</div>
@@ -348,7 +364,7 @@
       </div>
       <div class="faq-item">
         <div class="faq-q">どんな科目に対応していますか？</div>
-        <div class="faq-a"><p>数学（IA・IIB・IIIC）／物理／化学／生物／英語（理系長文読解含む）の5科目に対応しています。診断結果のガイドブックも、これらの科目バランスを踏まえて作成します。</p></div>
+        <div class="faq-a"><p>数学（IA・IIB・IIIC）／物理／化学／生物／英語（理系長文読解含む）の5科目に対応しています。診断結果のロードマップも、これらの科目バランスを踏まえて作成します。</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-q">親（保護者様）が代わりに回答してもいいですか？</div>
@@ -361,12 +377,18 @@
 <!-- ===== FINAL CTA ===== -->
 <section class="final-cta">
   <div class="container">
-    <h2>まず診断してみる<span class="sub">──それだけでOKです</span></h2>
-    <p class="lead">入塾の意思は不要です。「今の状況を整理したい」だけでも、大歓迎です。<br>無料診断は2〜3分で完了します。</p>
-    <a href="lpquestionnaire/" class="hero-cta">無料で合格診断を受ける →</a>
-    <p class="hero-cta-note">完全無料・登録不要・勧誘なし</p>
+    <h2>まずは4問、答えてみる<span class="sub">──それだけでOKです</span></h2>
+    <p class="lead">入塾の意思は不要です。「うちの子は今、何から始めればいいの？」を整理したいだけでも、大歓迎です。<br>4問の無料診断は2〜3分で完了します。</p>
+    <a href="lpquestionnaire/" class="hero-cta">無料でロードマップを受け取る →</a>
+    <p class="hero-cta-note">完全無料・登録不要・勧誘なし ｜ 所要2〜3分</p>
   </div>
 </section>
+
+<!-- ===== MOBILE STICKY CTA ===== -->
+<a href="lpquestionnaire/" class="sticky-cta" id="stickyCta" aria-label="無料でロードマップを受け取る">
+  <span class="sticky-cta-main">無料でロードマップを受け取る →</span>
+  <span class="sticky-cta-sub">4問・所要2〜3分・無料・勧誘なし</span>
+</a>
 
 <footer class="footer">
   <div class="container">
@@ -390,6 +412,17 @@ document.getElementById('hamburger').addEventListener('click',()=>{document.getE
 document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('nav').classList.remove('open');document.getElementById('hamburger').classList.remove('open')}));
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
 document.querySelectorAll('.section,.learn-card,.suited-item,.flow-step,.guidebook-card,.faq-item').forEach(el=>obs.observe(el));
+/* Mobile sticky CTA: show after the hero CTA scrolls away, hide once the final CTA is reached */
+(function(){
+  const sticky=document.getElementById('stickyCta');
+  if(!sticky)return;
+  const heroCta=document.querySelector('.page-hero .hero-cta');
+  const finalCta=document.querySelector('.final-cta');
+  let pastHero=false,atFinal=false;
+  const update=()=>sticky.classList.toggle('show',pastHero&&!atFinal);
+  if(heroCta)new IntersectionObserver(es=>{pastHero=!es[0].isIntersecting;update();},{threshold:0}).observe(heroCta);
+  if(finalCta)new IntersectionObserver(es=>{const e=es[0];atFinal=e.isIntersecting||e.boundingClientRect.top<0;update();},{threshold:0.15}).observe(finalCta);
+})();
 </script>
 </body>
 </html>
