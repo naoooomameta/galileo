@@ -24,6 +24,13 @@ jobs:
         run: |
           BRANCH="${GITHUB_REF#refs/heads/}"
 
+          # main に未取込のコミットが無ければ何もしない（差分なし=マージ不要なので成功終了）
+          git fetch origin main --quiet
+          if [ "$(git rev-list --count FETCH_HEAD..HEAD)" -eq 0 ]; then
+            echo "No commits ahead of main — nothing to merge. Skipping."
+            exit 0
+          fi
+
           # Check if PR already exists
           EXISTING_PR=$(gh pr list --head "$BRANCH" --base main --state open --json number -q '.[0].number')
 
