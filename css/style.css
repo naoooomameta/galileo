@@ -319,6 +319,11 @@ strong{font-weight:700}
 .voice-survey-item img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:3/4}
 .voice-photo{margin:0 0 16px;border-radius:12px;overflow:hidden;border:1px solid var(--green-mist)}
 .voice-photo img{width:100%;display:block}
+.voice-photo-pdf{border:none;overflow:visible}
+.voice-photo-pdf a{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border:1.5px solid var(--primary);border-radius:10px;color:var(--primary);font-weight:700;font-size:14px;background:var(--green-pale);transition:all .25s}
+.voice-photo-pdf a:hover{background:var(--primary);color:var(--white)}
+.voice-photo-pdf-ico{font-size:11px;font-weight:800;background:var(--primary);color:var(--white);padding:2px 7px;border-radius:5px;letter-spacing:.05em}
+.voice-photo-pdf a:hover .voice-photo-pdf-ico{background:var(--white);color:var(--primary)}
 
 /* ===== FLOW ===== */
 .flow-steps{max-width:700px;margin:0 auto}
