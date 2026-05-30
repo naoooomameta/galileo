@@ -208,6 +208,12 @@
       <div id="voices-group-b"><!-- CASE 09〜13（データソースから描画） --></div>
     </div>
 
+    <!-- 保護者アンケート画像（img/voices/ に画像を置き、voices-data.js の SURVEY_IMAGES にパス追加で表示。空なら見出しごと非表示） -->
+    <div class="voice-survey-block" id="voices-survey-block" hidden>
+      <h2 class="voice-group-title">保護者アンケート</h2>
+      <div class="voice-survey-grid" id="voices-survey"></div>
+    </div>
+
     <p class="voices-page-note">
       ※合格実績・合格者の声は、ご本人・保護者様の許可を得て掲載しています。本ページの体験談はすべて保護者様の視点で掲載しています。<br>
       ※主な合格実績です。合格者数・最新の実績はLINEよりお問い合わせください。
@@ -257,6 +263,10 @@ if(window.GALILEO_VOICES){
   GALILEO_VOICES.renderFullList(document.getElementById('voices-group-a'),'A');
   GALILEO_VOICES.renderFullList(document.getElementById('voices-group-b'),'B');
   GALILEO_VOICES.bindAccordions(document);
+  var _sg=document.getElementById('voices-survey');
+  GALILEO_VOICES.renderSurveyGrid(_sg);
+  var _sb=document.getElementById('voices-survey-block');
+  if(_sb) _sb.hidden=!(_sg&&_sg.children.length);
 }
 
 // カテゴリーで絞り込み（空グループの見出しは自動で非表示）

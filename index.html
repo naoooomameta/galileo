@@ -344,6 +344,12 @@ strong{font-weight:700}
   .voice-feature-quote{font-size:14px}
   .results-cat .result-badge{font-size:12.5px;padding:7px 12px}
 }
+/* 保護者アンケート画像グリッド（画像が無いときは自動で非表示） */
+.voice-survey-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin:24px 0 0}
+.voice-survey-grid[hidden],.voice-survey-grid:empty{display:none}
+.voice-survey-item{margin:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--white);box-shadow:0 2px 8px rgba(14,74,56,.05);transition:transform .25s,box-shadow .25s}
+.voice-survey-item:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(14,74,56,.12)}
+.voice-survey-item img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:3/4}
 
 /* ===== FLOW ===== */
 .flow-steps{max-width:700px;margin:0 auto}
@@ -1147,8 +1153,8 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
     <!-- 注目の声（featured）/ 短い声の抜粋 — 13件のデータソース(assets/js/voices-data.js)から描画 -->
     <div class="voice-showcase" id="home-voice-featured"></div>
     <div class="voices-grid" id="home-voices-preview"></div>
-    <!-- TODO: 保護者アンケート画像グリッド（画像用意後にここへ差し込み） -->
-    <!-- <div class="voice-survey-grid"> 保護者アンケート画像 </div> -->
+    <!-- 保護者アンケート画像グリッド：img/voices/ に画像を置き、assets/js/voices-data.js の SURVEY_IMAGES にパスを追加すると自動表示（空なら非表示） -->
+    <div class="voice-survey-grid" id="home-voice-survey" hidden></div>
     <p class="results-note" style="text-align:center;max-width:760px;margin:24px auto 0">※合格実績・合格者の声は、ご本人・保護者様の許可を得て掲載しています。掲載の声はすべて保護者様の視点で記載しています。</p>
     <div class="section-link"><a href="pages/voices.html">すべての合格者の声を見る →</a></div>
   </div>
@@ -1644,6 +1650,7 @@ if(window.GALILEO_VOICES){
   GALILEO_VOICES.renderFeatured(document.getElementById('home-voice-featured'),'case01');
   GALILEO_VOICES.renderPreview(document.getElementById('home-voices-preview'),['case02','case08','case06']);
   GALILEO_VOICES.renderResultBadges(document.getElementById('home-results-badges'));
+  GALILEO_VOICES.renderSurveyGrid(document.getElementById('home-voice-survey'));
 }
 </script>
 </body>
