@@ -311,6 +311,14 @@ strong{font-weight:700}
   .voice-feature-quote{font-size:14px}
   .results-cat .result-badge{font-size:12.5px;padding:7px 12px}
 }
+/* 保護者アンケート画像グリッド / ケース画像（画像が無いときは自動で非表示） */
+.voice-survey-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin:24px 0 0}
+.voice-survey-grid[hidden],.voice-survey-grid:empty{display:none}
+.voice-survey-item{margin:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--white);box-shadow:0 2px 8px rgba(14,74,56,.05);transition:transform .25s,box-shadow .25s}
+.voice-survey-item:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(14,74,56,.12)}
+.voice-survey-item img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:3/4}
+.voice-photo{margin:0 0 16px;border-radius:12px;overflow:hidden;border:1px solid var(--green-mist)}
+.voice-photo img{width:100%;display:block}
 
 /* ===== FLOW ===== */
 .flow-steps{max-width:700px;margin:0 auto}
