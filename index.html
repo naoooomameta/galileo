@@ -328,6 +328,22 @@ strong{font-weight:700}
 .results-cat li{font-size:15px;padding:6px 0;border-bottom:1px dashed var(--border);font-weight:500}
 .results-cat li:last-child{border-bottom:none}
 .results-note{font-size:13px;color:var(--text-muted);margin-top:24px}
+/* ===== VOICES / RESULTS — 合格者の声・実績 共有追加スタイル ===== */
+.voice-tags{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 14px}
+.voice-tag{font-size:11.5px;font-weight:600;color:var(--primary);background:var(--green-pale);border:1px solid var(--green-mist);border-radius:20px;padding:3px 11px;line-height:1.6}
+.voice-card .voice-tags{margin:0 0 12px}
+.voice-feature-quote{font-size:16px;line-height:2;color:var(--text);font-weight:500;margin:6px 0 14px;position:relative;padding-left:22px}
+.voice-feature-quote::before{content:'\201C';position:absolute;left:0;top:-6px;font-size:34px;line-height:1;color:var(--amber);opacity:.5;font-family:var(--font-serif)}
+.voice-feature-author{font-size:13.5px;font-weight:700;color:var(--primary-dark)}
+.result-badges{display:flex;flex-wrap:wrap;gap:8px}
+.results-cat .result-badge{font-size:13.5px;font-weight:600;color:var(--primary-dark);background:var(--green-pale);border:1px solid var(--green-mist);border-left:3px solid var(--primary-light);border-radius:8px;padding:8px 14px;line-height:1.5;transition:all .2s}
+.results-cat .result-badge:hover{background:var(--green-light);border-left-color:var(--amber)}
+.results-disclaimer{margin-top:20px}
+.results-disclaimer p{font-size:13px;color:var(--text-muted);line-height:1.9;margin:0}
+@media(max-width:768px){
+  .voice-feature-quote{font-size:14px}
+  .results-cat .result-badge{font-size:12.5px;padding:7px 12px}
+}
 
 /* ===== FLOW ===== */
 .flow-steps{max-width:700px;margin:0 auto}
@@ -1128,21 +1144,13 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
     <div class="section-label">Voice</div>
     <h2 class="section-title">合格者の声</h2>
     <p class="section-subtitle">ガリレオで学び、志望校合格を勝ち取った生徒たちのリアルな声です。</p>
-    <div class="voice-showcase">
-      <div class="voice-showcase-badge">合格 東京工業大学</div>
-      <div class="voice-stats">
-        <div class="voice-stat-box"><div class="voice-stat-period">入塾時（高2・12月）</div><div class="voice-stat-num">45.7</div><div class="voice-stat-sub">河合模試 偏差値</div><div class="voice-stat-extra">週の勉強時間：5時間</div></div>
-        <div class="voice-stat-box"><div class="voice-stat-period">高3・10月</div><div class="voice-stat-num accent">67.2</div><div class="voice-stat-sub">河合模試 偏差値</div><div class="voice-stat-extra">週の勉強時間：45〜50時間</div></div>
-      </div>
-      <div class="voice-arrow">→</div>
-      <p class="voice-summary">偏差値 <strong>+21.5</strong> UP｜ネガティブな発言が消え、自ら考えてギャップを埋める力が身につきました。 — <strong>K.Mさん（現役）→ 東京工業大学 合格</strong></p>
-    </div>
-    <div class="voices-grid">
-      <div class="voice-card"><div class="voice-badge">合格 東京工業大学</div><div class="voice-quote">"</div><p>通塾の移動時間がなく、その分勉強に集中できました。わからない問題もLINEで送ればすぐ返答が来るので、ストレスなく学習を続けられました。</p><div class="voice-author">A.Sさん（現役）高校3年生 → 東京工業大学</div></div>
-      <div class="voice-card"><div class="voice-badge">合格 京都大学 理学部</div><div class="voice-quote">"</div><p>マンツーマンなので自分のペースで進められ、学力向上の実感がありました。毎日課題があることで家でもしっかり勉強する習慣がつき、本当に感謝しています。</p><div class="voice-author">T.Kさん（現役）高校3年生 → 京都大学 理学部</div></div>
-      <div class="voice-card"><div class="voice-badge">合格 早稲田大学 先進理工</div><div class="voice-quote">"</div><p>毎日課題ロードマップがあったことで、常に「今自分はどこにいて、次に何をすべきか」が明確でした。そのおかげでゴールまで迷わず辿り着けた気がします。</p><div class="voice-author">R.Nさん（現役）高校3年生 → 早稲田大学 先進理工学部</div></div>
-    </div>
-    <div class="section-link"><a href="pages/voices.html">もっと合格者の声を見る →</a></div>
+    <!-- 注目の声（featured）/ 短い声の抜粋 — 13件のデータソース(assets/js/voices-data.js)から描画 -->
+    <div class="voice-showcase" id="home-voice-featured"></div>
+    <div class="voices-grid" id="home-voices-preview"></div>
+    <!-- TODO: 保護者アンケート画像グリッド（画像用意後にここへ差し込み） -->
+    <!-- <div class="voice-survey-grid"> 保護者アンケート画像 </div> -->
+    <p class="results-note" style="text-align:center;max-width:760px;margin:24px auto 0">※合格実績・合格者の声は、ご本人・保護者様の許可を得て掲載しています。掲載の声はすべて保護者様の視点で記載しています。</p>
+    <div class="section-link"><a href="pages/voices.html">すべての合格者の声を見る →</a></div>
   </div>
 </section>
 
@@ -1153,14 +1161,14 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
     <h2 class="section-title">合格実績</h2>
     <p class="section-subtitle">ガリレオから志望校合格を勝ち取った生徒たちの実績です。</p>
     <div class="results-year">
-      <h3 class="results-year-title">2025年 合格実績</h3>
-      <div class="results-cats">
-        <div class="results-cat"><h4>国公立大学</h4><ul><li>東京大学 理科一類</li><li>京都大学 工学部</li><li>東京工業大学</li><li>北海道大学 理学部</li></ul></div>
-        <div class="results-cat"><h4>早慶・私立理系</h4><ul><li>早稲田大学 先進理工学部</li><li>慶應義塾大学 理工学部</li><li>東京理科大学 工学部</li></ul></div>
-        <div class="results-cat"><h4>医学部</h4><ul><li>東京医科歯科大学 医学部</li></ul></div>
-      </div>
+      <h3 class="results-year-title">累計指導生徒200名超の中から（2025年度 主な合格大学）</h3>
+      <!-- カテゴリー別バッジ — データソース(assets/js/voices-data.js)から描画 -->
+      <div class="results-cats" id="home-results-badges"></div>
     </div>
-    <p class="results-note">※ 合格実績は生徒・保護者様の許可を得て掲載しています。詳細は学習相談会時にお伝えします。</p>
+    <div class="results-disclaimer">
+      <p>※合格実績・合格者の声は、ご本人・保護者様の許可を得て掲載しています。</p>
+      <p>※主な合格実績です。合格者数・最新の実績はLINEよりお問い合わせください。</p>
+    </div>
   </div>
 </section>
 
@@ -1405,6 +1413,7 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
 
 </div>
 
+<script src="assets/js/voices-data.js"></script>
 <script>
 // Header scroll
 window.addEventListener('scroll',()=>{document.getElementById('header').classList.toggle('scrolled',scrollY>10)});
@@ -1630,6 +1639,12 @@ function loadCalendarIframe() {
 // Scroll reveal
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
 document.querySelectorAll('.section,.hero-stats,.worry-card,.pillar,.daily-step,.daily-merit,.thinking-card,.course-card,.gallery-item,.staff-card,.voice-card,.flow-step,.faq-item').forEach(el=>obs.observe(el));
+// 合格者の声・主な合格実績の描画（単一データソース: assets/js/voices-data.js）
+if(window.GALILEO_VOICES){
+  GALILEO_VOICES.renderFeatured(document.getElementById('home-voice-featured'),'case01');
+  GALILEO_VOICES.renderPreview(document.getElementById('home-voices-preview'),['case02','case08','case06']);
+  GALILEO_VOICES.renderResultBadges(document.getElementById('home-results-badges'));
+}
 </script>
 </body>
 </html>

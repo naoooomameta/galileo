@@ -3,8 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>合格者の声 | ガリレオ 理系の大学受験専門塾</title>
-<meta name="description" content="ガリレオで志望校に合格した先輩たちの体験談。偏差値推移グラフ付き。">
+<title>合格者の声・合格実績 | ガリレオ 理系の大学受験専門塾</title>
+<meta name="description" content="理系の大学受験専門塾ガリレオで志望校に合格した先輩たちの体験談（全13名・保護者様の声）。東京大学・京都大学・東京工業大学・医学部・早慶理工・MARCH理工系まで。累計指導生徒200名超・志望校合格率90%超。">
+<!-- ===== OGP ===== -->
+<meta property="og:title" content="合格者の声・合格実績 | ガリレオ 理系の大学受験専門塾">
+<meta property="og:description" content="東大・京大・東工大・医学部・早慶理工・MARCH理工系。理系専門塾ガリレオの合格者の声（保護者様の声・全13名）と主な合格実績。">
+<meta property="og:type" content="article">
+<!-- TODO: /voices 専用OGP画像を用意（暫定で共通OGPを使用） -->
+<meta property="og:image" content="../img/ogp.svg">
+<!-- TODO: Meta Pixel（広告計測が必要な場合に追加） -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
@@ -16,7 +23,7 @@
 .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:50px;background:linear-gradient(180deg,transparent,var(--bg));pointer-events:none}
 .page-hero .section-label{margin-bottom:8px;letter-spacing:.08em}
 .page-hero h1{font-family:var(--font-serif);font-size:clamp(28px,4.5vw,44px);font-weight:700;line-height:1.5;margin-bottom:14px}
-.page-hero p{font-size:15px;color:var(--text-light);max-width:600px;margin:0 auto;line-height:2}
+.page-hero p{font-size:15px;color:var(--text-light);max-width:640px;margin:0 auto;line-height:2}
 .breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:20px}
 .breadcrumb a{color:var(--primary);text-decoration:underline}
 
@@ -24,10 +31,15 @@
 .stats-banner{background:var(--white);border-bottom:1px solid var(--border);padding:28px 0;position:relative}
 .stats-banner::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80px;height:3px;background:linear-gradient(90deg,var(--primary),var(--amber));border-radius:2px}
 .stats-grid{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
-.stat-item{text-align:center}
-.stat-number{font-size:38px;font-weight:800;color:var(--primary);font-family:var(--font-serif);line-height:1.2}
-.stat-number .stat-accent{color:var(--amber)}
+.stat-item{text-align:center;opacity:0;animation:fadeInUp .6s ease forwards}
+.stat-item:nth-child(1){animation-delay:.1s}
+.stat-item:nth-child(2){animation-delay:.25s}
+.stat-item:nth-child(3){animation-delay:.4s}
+.stat-item:nth-child(4){animation-delay:.55s}
+.stat-number{font-size:34px;font-weight:800;color:var(--primary);font-family:var(--font-serif);line-height:1.2}
+.stat-number .stat-accent{color:var(--amber);font-size:.7em}
 .stat-label{font-size:13px;color:var(--text-muted);font-weight:600;margin-top:2px}
+.stats-caption{text-align:center;font-size:12px;color:var(--text-muted);margin-top:18px;line-height:1.8}
 
 /* ===== CTA SECTION ===== */
 .cta-section{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--white);text-align:center;position:relative;overflow:hidden}
@@ -39,89 +51,66 @@
 .cta-section p{color:rgba(255,255,255,.75);font-size:15px;line-height:2;max-width:560px;margin:0 auto 28px}
 
 /* ===== FILTER TABS ===== */
-.filter-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:44px;flex-wrap:wrap;padding:0 12px}
-.filter-tab{padding:10px 24px;border-radius:40px;font-size:14px;font-weight:600;color:var(--text-light);background:var(--white);border:1.5px solid var(--border);cursor:pointer;transition:all .3s;position:relative}
+.filter-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:40px;flex-wrap:wrap;padding:0 12px}
+.filter-tab{padding:10px 22px;border-radius:40px;font-size:14px;font-weight:600;color:var(--text-light);background:var(--white);border:1.5px solid var(--border);cursor:pointer;transition:all .3s}
 .filter-tab:hover{border-color:var(--primary);color:var(--primary);background:var(--green-pale)}
 .filter-tab.active{background:var(--primary);color:var(--white);border-color:var(--primary);box-shadow:0 3px 12px rgba(14,74,56,.2)}
 
-/* ===== VOICE CARDS ===== */
-.voice-detail{background:var(--white);border-radius:18px;padding:0;border:1px solid var(--border);margin-bottom:32px;transition:all .4s ease;box-shadow:0 2px 8px rgba(14,74,56,.04);overflow:hidden;opacity:0;transform:translateY(20px)}
+/* ===== GROUP HEADINGS ===== */
+.voice-group{margin-bottom:8px}
+.voice-group-title{font-family:var(--font-serif);font-size:clamp(18px,2.6vw,22px);font-weight:700;color:var(--primary-dark);margin:8px 0 24px;padding:10px 18px;border-left:4px solid var(--amber);background:linear-gradient(90deg,var(--green-pale),transparent)}
+
+/* ===== VOICE CARDS（Q&A 形式） ===== */
+.voice-detail{background:var(--white);border-radius:18px;border:1px solid var(--border);margin-bottom:24px;transition:all .4s ease;box-shadow:0 2px 8px rgba(14,74,56,.04);overflow:hidden;opacity:0;transform:translateY(20px)}
 .voice-detail.visible{opacity:1;transform:translateY(0)}
-.voice-detail:hover{box-shadow:0 12px 36px rgba(14,74,56,.1);transform:translateY(-3px)}
-.voice-detail.visible:hover{transform:translateY(-3px)}
-
-.voice-card-top{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 100%);padding:24px 36px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.voice-detail:hover{box-shadow:0 12px 36px rgba(14,74,56,.1)}
+.voice-card-top{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 100%);padding:22px 32px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 .voice-card-top-left{display:flex;align-items:center;gap:16px}
-.voice-avatar{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:var(--white);font-family:var(--font-serif);flex-shrink:0}
+.voice-avatar{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;color:var(--white);font-family:var(--font-serif);flex-shrink:0}
 .voice-card-top-info .voice-badge{margin-bottom:4px}
-.voice-card-top-info .voice-detail-meta{color:rgba(255,255,255,.7);font-size:13px;line-height:1.6}
-
+.voice-card-top-info .voice-detail-meta{color:rgba(255,255,255,.72);font-size:12.5px;line-height:1.6}
 .voice-badge{display:inline-block;font-size:13px;font-weight:700;color:var(--white);background:rgba(255,255,255,.18);backdrop-filter:blur(4px);padding:4px 14px;border-radius:20px;border:1px solid rgba(255,255,255,.2)}
+.voice-case-no{font-family:var(--font-serif);font-size:13px;font-weight:700;color:rgba(255,255,255,.55);letter-spacing:.08em;flex-shrink:0}
 
-.voice-detail-stats{display:flex;gap:12px;align-items:center}
-.voice-stat-mini{text-align:center;padding:12px 18px;background:rgba(255,255,255,.12);border-radius:12px;border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(4px)}
-.voice-stat-mini-label{font-size:10px;color:rgba(255,255,255,.65);margin-bottom:2px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
-.voice-stat-mini-num{font-size:28px;font-weight:800;color:var(--white);line-height:1.1;font-family:var(--font-serif)}
-.voice-stat-mini-num.accent{color:#D4A843}
-.voice-stat-arrow{font-size:22px;color:rgba(255,255,255,.5);font-weight:700}
+.voice-card-body{padding:26px 32px 24px}
+.voice-card-body .voice-tags{margin:0 0 18px}
+.voice-qa,.voice-more{display:block}
+.voice-q{font-size:14px;font-weight:700;color:var(--primary);margin:0 0 6px;display:flex;align-items:center;gap:8px}
+.voice-q::before{content:'Q';display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:var(--green-pale);border:1px solid var(--green-mist);border-radius:50%;font-size:12px;font-weight:800;color:var(--primary);flex-shrink:0}
+.voice-q{padding-left:0}
+.voice-a{font-size:14.5px;color:var(--text-light);line-height:2.1;margin:0 0 18px;padding-left:30px;border-left:3px solid var(--green-mist)}
+.voice-more{margin-top:2px}
+.voice-more[hidden]{display:none}
+.voice-toggle{display:inline-flex;align-items:center;gap:10px;margin-top:4px;padding:10px 22px;border:1.5px solid var(--primary);border-radius:40px;background:var(--white);color:var(--primary);font-size:13.5px;font-weight:700;cursor:pointer;transition:all .25s}
+.voice-toggle:hover{background:var(--primary);color:var(--white)}
+.voice-toggle-ico{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--green-pale);color:var(--primary);font-weight:800;line-height:1;font-size:15px}
+.voice-toggle:hover .voice-toggle-ico{background:rgba(255,255,255,.2);color:var(--white)}
 
-.voice-card-body{padding:32px 36px}
-.voice-detail-title{font-size:20px;font-weight:700;margin-bottom:16px;color:var(--primary-dark);line-height:1.6;position:relative;padding-left:24px}
-.voice-detail-title::before{content:'"';position:absolute;left:0;top:-4px;font-size:32px;color:var(--amber);opacity:.5;font-family:var(--font-serif);line-height:1}
-
-.voice-detail-body{font-size:15px;color:var(--text-light);line-height:2.2;padding-left:24px;border-left:3px solid var(--green-mist);margin-left:0}
-.voice-detail-body p{margin-bottom:12px}
-.voice-detail-body p:last-child{margin-bottom:0}
-
-/* ===== GRAPH ===== */
-.graph-placeholder{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin-top:24px}
-.graph-title{font-size:14px;font-weight:700;color:var(--primary);margin-bottom:20px;font-family:var(--font-serif);text-align:center}
-.graph-rows{display:flex;flex-direction:column;gap:12px}
-.graph-row{display:flex;align-items:center;gap:12px}
-.graph-row-label{width:60px;font-size:12px;font-weight:600;color:var(--text-muted);text-align:right;flex-shrink:0}
-.graph-row-track{flex:1;height:32px;background:var(--green-pale);border-radius:8px;overflow:hidden;position:relative}
-.graph-row-fill{height:100%;border-radius:8px;display:flex;align-items:center;justify-content:flex-end;padding-right:12px;min-width:40px;transition:width .8s ease}
-.graph-row-fill.green{background:linear-gradient(90deg,#c0d8c8,#a8c8b4)}
-.graph-row-fill.primary{background:linear-gradient(90deg,#14614A,#0E4A38)}
-.graph-row-fill.gold{background:linear-gradient(90deg,#D4A843,#C49A3C)}
-.graph-row-value{font-size:14px;font-weight:800;color:var(--white);font-family:var(--font-serif);text-shadow:0 1px 2px rgba(0,0,0,.15)}
-.graph-row-fill.green .graph-row-value{color:var(--primary-dark)}
+/* ===== NOTES ===== */
+.voices-top-note{max-width:760px;margin:0 auto 36px;background:var(--green-pale);border:1px solid var(--green-mist);border-radius:12px;padding:14px 20px;font-size:13px;color:var(--text-light);line-height:1.9;text-align:center}
+.voices-page-note{margin-top:36px;font-size:13px;color:var(--text-muted);line-height:2;text-align:center}
 
 /* ===== ANIMATIONS ===== */
 @keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes countUp{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
-.stats-banner .stat-item{opacity:0;animation:fadeInUp .6s ease forwards}
-.stats-banner .stat-item:nth-child(1){animation-delay:.1s}
-.stats-banner .stat-item:nth-child(2){animation-delay:.25s}
-.stats-banner .stat-item:nth-child(3){animation-delay:.4s}
-.stats-banner .stat-item:nth-child(4){animation-delay:.55s}
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:768px){
   .page-hero{padding:60px 0 44px}
   .stats-grid{gap:24px}
-  .stat-number{font-size:30px}
+  .stat-number{font-size:28px}
   .stat-label{font-size:12px}
-  .voice-card-top{padding:20px;flex-direction:column;align-items:flex-start}
-  .voice-card-body{padding:24px 20px}
-  .voice-detail-title{font-size:17px;padding-left:20px}
-  .voice-detail-body{padding-left:16px}
-  .voice-detail-stats{margin-top:12px}
-  .voice-stat-mini{padding:10px 14px}
-  .voice-stat-mini-num{font-size:22px}
-  .graph-placeholder{padding:20px 16px}
-  .graph-row-track{height:26px}
-  .graph-row-label{width:50px;font-size:11px}
-  .graph-row-value{font-size:12px}
+  .voice-card-top{padding:18px 20px;flex-direction:column;align-items:flex-start}
+  .voice-case-no{order:-1}
+  .voice-card-body{padding:22px 20px}
+  .voice-a{padding-left:20px;font-size:14px}
   .filter-tabs{gap:6px}
-  .filter-tab{padding:8px 16px;font-size:13px}
-  .voice-avatar{width:44px;height:44px;font-size:16px}
+  .filter-tab{padding:8px 14px;font-size:12.5px}
+  .voice-avatar{width:44px;height:44px;font-size:15px}
 }
 @media(max-width:480px){
   .stats-grid{gap:16px}
-  .stat-number{font-size:26px}
+  .stat-number{font-size:24px}
   .voice-card-top-left{gap:12px}
-  .voice-detail-stats{flex-wrap:wrap;gap:8px}
 }
 </style>
 <!-- Microsoft Clarity -->
@@ -139,7 +128,7 @@
   <div class="top-bar-inner">
     <span><svg style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;fill:currentColor" viewBox="0 0 24 24"><path d="M6 22v-2h2v-6L2 8V6h20v2l-6 6v6h2v2H6zm1.55-12h8.9l3-3H4.55l3 3zM10 20h4v-7.2l-2-2-2 2V20z"/></svg>理系の大学受験専門塾ガリレオ</span>
     <span class="top-bar-sep">|</span>
-    <span><svg style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 7.13l.97 2.29.47 1.11 1.2.1 2.47.21-1.88 1.63-.91.79.27 1.18.56 2.41-2.12-1.28L12 14.78l-1.03.58-2.12 1.28.56-2.41.27-1.18-.91-.79-1.88-1.63 2.47-.21 1.2-.1.47-1.11L12 7.13M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"/></svg>東大・京大・東工大・医学部 合格実績</span>
+    <span><svg style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 7.13l.97 2.29.47 1.11 1.2.1 2.47.21-1.88 1.63-.91.79.27 1.18.56 2.41-2.12-1.28L12 14.78l-1.03.58-2.12 1.28.56-2.41.27-1.18-.91-.79-1.88-1.63 2.47-.21 1.2-.1.47-1.11L12 7.13M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"/></svg>東大・京大・東工大・医学部・MARCH 合格実績</span>
     <span class="top-bar-sep">|</span>
     <a href="https://www.instagram.com/galileo_sciences/" target="_blank" rel="noopener">Instagram @galileo_sciences</a>
   </div>
@@ -180,238 +169,49 @@
 <section class="page-hero">
   <div class="container">
     <div class="breadcrumb"><a href="../index.html">ホーム</a> &gt; 合格者の声</div>
-    <div class="section-label">SUCCESS STORIES</div>
-    <h1>合格者の声</h1>
-    <p>ガリレオで学び、志望校合格を勝ち取った先輩たちの体験談をご紹介します。</p>
+    <div class="section-label">SUCCESS STORIES &amp; VOICES</div>
+    <h1>合格者の声・合格実績</h1>
+    <p>理系の大学受験専門塾ガリレオで志望校合格を勝ち取った先輩たちの体験談（全13名）をご紹介します。<br>本ページの体験談は、すべて<strong>保護者様の視点</strong>で掲載しています。</p>
   </div>
 </section>
 
 <div class="stats-banner">
   <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item"><div class="stat-number">6<span class="stat-accent">名</span></div><div class="stat-label">合格体験談</div></div>
-      <div class="stat-item"><div class="stat-number"><span class="stat-accent">+</span>16.2</div><div class="stat-label">平均偏差値UP</div></div>
-      <div class="stat-item"><div class="stat-number">94.2<span class="stat-accent">%</span></div><div class="stat-label">志望校合格率</div></div>
-      <div class="stat-item"><div class="stat-number">1.5<span class="stat-accent">年</span></div><div class="stat-label">平均在籍期間</div></div>
+    <div class="stats-grid" id="voices-stats">
+      <!-- 確認済み集計値 — データソース(assets/js/voices-data.js)から描画 -->
     </div>
+    <p class="stats-caption">※累計指導生徒数・指導歴・志望校合格率は当塾の累計実績です。掲載の合格者の声は2025年度・全13名分です。</p>
   </div>
 </div>
 
 <section class="section">
   <div class="container">
+    <p class="voices-top-note">
+      ※合格実績・合格者の声は、ご本人・保護者様の許可を得て掲載しています。<br>
+      ※主な合格実績です。合格者数・最新の実績はLINEよりお問い合わせください。
+    </p>
+
     <div class="filter-tabs">
-      <button class="filter-tab active" onclick="filterVoices('all',this)">すべて</button>
-      <button class="filter-tab" onclick="filterVoices('todai',this)">東大</button>
-      <button class="filter-tab" onclick="filterVoices('kyodai',this)">京大</button>
-      <button class="filter-tab" onclick="filterVoices('tokodai',this)">東工大</button>
-      <button class="filter-tab" onclick="filterVoices('kyutei',this)">旧帝大</button>
-      <button class="filter-tab" onclick="filterVoices('soukeiri',this)">早慶理工</button>
-      <button class="filter-tab" onclick="filterVoices('igaku',this)">医学部</button>
+      <button class="filter-tab active" type="button" onclick="filterVoices('all',this)">すべて</button>
+      <button class="filter-tab" type="button" onclick="filterVoices('最難関国公立・医学部',this)">最難関国公立・医学部</button>
+      <button class="filter-tab" type="button" onclick="filterVoices('早慶・難関私立理系',this)">早慶・難関私立理系</button>
+      <button class="filter-tab" type="button" onclick="filterVoices('MARCH理工系',this)">MARCH理工系</button>
     </div>
 
-    <div class="voice-detail" data-category="todai">
-      <div class="voice-card-top">
-        <div class="voice-card-top-left">
-          <div class="voice-avatar">T.K</div>
-          <div class="voice-card-top-info">
-            <span class="voice-badge">東京大学 理科一類</span>
-            <div class="voice-detail-meta">T.K.さん（都内私立高校出身）| 高2の4月から入塾 | 1年11ヶ月</div>
-          </div>
-        </div>
-        <div class="voice-detail-stats">
-          <div class="voice-stat-mini"><div class="voice-stat-mini-label">入塾時</div><div class="voice-stat-mini-num">52</div></div>
-          <span class="voice-stat-arrow">→</span>
-          <div class="voice-stat-mini"><div class="voice-stat-mini-label">合格時</div><div class="voice-stat-mini-num accent">71</div></div>
-        </div>
-      </div>
-      <div class="voice-card-body">
-        <h3 class="voice-detail-title">毎日課題で数学の計算力が飛躍的に伸びました</h3>
-        <div class="voice-detail-body">
-          <p>入塾前は、数学の成績が伸び悩んでいました。計算ミスが多く、模試でも時間が足りずに最後まで解ききれないことが多かったです。ガリレオに入ってからは、毎朝の計算ノート提出が習慣になり、計算スピードと正確性が格段に上がりました。</p>
-          <p>特に印象的だったのは、講師の方が毎日フィードバックをくれること。「ここの計算はもっとこうすれば速い」など具体的なアドバイスが本当に役立ちました。</p>
-        </div>
-        <div class="graph-placeholder">
-          <div class="graph-title">偏差値推移（数学）</div>
-          <div class="graph-rows">
-            <div class="graph-row"><span class="graph-row-label">入塾時</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:55%"><span class="graph-row-value">52</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">3ヶ月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:62%"><span class="graph-row-value">57</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">6ヶ月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:70%"><span class="graph-row-value">62</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">9ヶ月</span><div class="graph-row-track"><div class="graph-row-fill primary" style="width:78%"><span class="graph-row-value">66</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">12ヶ月</span><div class="graph-row-track"><div class="graph-row-fill primary" style="width:84%"><span class="graph-row-value">69</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">合格時</span><div class="graph-row-track"><div class="graph-row-fill gold" style="width:88%"><span class="graph-row-value">71</span></div></div></div>
-          </div>
-        </div>
-      </div>
+    <div class="voice-group" id="group-a">
+      <h2 class="voice-group-title">グループA｜最難関国公立・早慶私大理系・医学部</h2>
+      <div id="voices-group-a"><!-- CASE 01〜08（データソースから描画） --></div>
     </div>
 
-    <div class="voice-detail" data-category="kyodai">
-      <div class="voice-card-top">
-        <div class="voice-card-top-left">
-          <div class="voice-avatar">M.S</div>
-          <div class="voice-card-top-info">
-            <span class="voice-badge">京都大学 工学部</span>
-            <div class="voice-detail-meta">M.S.さん（大阪府立高校出身）| 高2の9月から入塾 | 1年5ヶ月</div>
-          </div>
-        </div>
-        <div class="voice-detail-stats">
-          <div class="voice-stat-mini"><div class="voice-stat-mini-label">入塾時</div><div class="voice-stat-mini-num">55</div></div>
-          <span class="voice-stat-arrow">→</span>
-          <div class="voice-stat-mini"><div class="voice-stat-mini-label">合格時</div><div class="voice-stat-mini-num accent">68</div></div>
-        </div>
-      </div>
-      <div class="voice-card-body">
-        <h3 class="voice-detail-title">物理の本質を理解する力がつきました</h3>
-        <div class="voice-detail-body">
-          <p>物理が苦手で、公式を覚えても応用問題になると手が止まってしまう状態でした。ガリレオでは「なぜその公式が成り立つのか」から丁寧に教えていただき、物理現象のイメージを掴むことができるようになりました。</p>
-          <p>毎日の課題で運動方程式の立式トレーニングを繰り返したことで、複合問題でも自然と解法が浮かぶようになりました。</p>
-        </div>
-        <div class="graph-placeholder">
-          <div class="graph-title">偏差値推移（物理）</div>
-          <div class="graph-rows">
-            <div class="graph-row"><span class="graph-row-label">入塾時</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:60%"><span class="graph-row-value">55</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">3ヶ月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:65%"><span class="graph-row-value">58</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">6ヶ月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:70%"><span class="graph-row-value">62</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">9ヶ月</span><div class="graph-row-track"><div class="graph-row-fill primary" style="width:78%"><span class="graph-row-value">65</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">合格時</span><div class="graph-row-track"><div class="graph-row-fill gold" style="width:83%"><span class="graph-row-value">68</span></div></div></div>
-          </div>
-        </div>
-      </div>
+    <div class="voice-group" id="group-b">
+      <h2 class="voice-group-title">グループB｜MARCH理工系</h2>
+      <div id="voices-group-b"><!-- CASE 09〜13（データソースから描画） --></div>
     </div>
 
-    <div class="voice-detail" data-category="igaku">
-      <div class="voice-card-top">
-        <div class="voice-card-top-left">
-          <div class="voice-avatar">A.Y</div>
-          <div class="voice-card-top-info">
-            <span class="voice-badge">東北大学 医学部医学科</span>
-            <div class="voice-detail-meta">A.Y.さん（宮城県立高校出身）| 高1の1月から入塾 | 2年1ヶ月</div>
-          </div>
-        </div>
-        <div class="voice-detail-stats">
-          <div class="voice-stat-mini"><div class="voice-stat-mini-label">入塾時</div><div class="voice-stat-mini-num">48</div></div>
-          <span class="voice-stat-arrow">→</span>
-          <div class="voice-stat-mini"><div class="voice-stat-mini-label">合格時</div><div class="voice-stat-mini-num accent">72</div></div>
-        </div>
-      </div>
-      <div class="voice-card-body">
-        <h3 class="voice-detail-title">化学の構造決定が得点源に変わりました</h3>
-        <div class="voice-detail-body">
-          <p>医学部志望で理系科目全般の底上げが必要でした。特に化学は暗記科目だと思い込んでいて、有機化学の構造決定は大の苦手。ガリレオでは「構造化思考」のアプローチで、情報を整理してパズルのように解く方法を教わりました。</p>
-          <p>2年間、毎日欠かさず課題に取り組んだことで、偏差値が48から72まで上がりました。ガリレオなしでは医学部合格はなかったと思います。</p>
-        </div>
-        <div class="graph-placeholder">
-          <div class="graph-title">偏差値推移（化学）</div>
-          <div class="graph-rows">
-            <div class="graph-row"><span class="graph-row-label">入塾時</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:45%"><span class="graph-row-value">48</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">6ヶ月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:58%"><span class="graph-row-value">54</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">12ヶ月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:70%"><span class="graph-row-value">61</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">18ヶ月</span><div class="graph-row-track"><div class="graph-row-fill primary" style="width:80%"><span class="graph-row-value">67</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">合格時</span><div class="graph-row-track"><div class="graph-row-fill gold" style="width:90%"><span class="graph-row-value">72</span></div></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="voice-detail" data-category="tokodai">
-      <div class="voice-card-top">
-        <div class="voice-card-top-left">
-          <div class="voice-avatar">R.N</div>
-          <div class="voice-card-top-info">
-            <span class="voice-badge">東京工業大学 理学院</span>
-            <div class="voice-detail-meta">R.N.さん（神奈川県立高校出身）| 高2の6月から入塾 | 1年8ヶ月</div>
-          </div>
-        </div>
-        <div class="voice-detail-stats">
-          <div class="voice-stat-mini"><div class="voice-stat-mini-label">入塾時</div><div class="voice-stat-mini-num">56</div></div>
-          <span class="voice-stat-arrow">→</span>
-          <div class="voice-stat-mini"><div class="voice-stat-mini-label">合格時</div><div class="voice-stat-mini-num accent">70</div></div>
-        </div>
-      </div>
-      <div class="voice-card-body">
-        <h3 class="voice-detail-title">理系思考トレーニングが合格の決め手でした</h3>
-        <div class="voice-detail-body">
-          <p>東工大の数学は独特な問題が多く、パターン暗記では太刀打ちできません。ガリレオの理系思考トレーニングで「抽象化・一般化思考」を鍛えたことが、本番で初見の問題にも対応できた大きな要因です。</p>
-          <p>毎日課題ロードマップのおかげで常に「今何をすべきか」が明確で、不安になることが少なかったです。</p>
-        </div>
-        <div class="graph-placeholder">
-          <div class="graph-title">偏差値推移（総合）</div>
-          <div class="graph-rows">
-            <div class="graph-row"><span class="graph-row-label">入塾時</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:62%"><span class="graph-row-value">56</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">4ヶ月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:68%"><span class="graph-row-value">60</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">8ヶ月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:75%"><span class="graph-row-value">64</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">12ヶ月</span><div class="graph-row-track"><div class="graph-row-fill primary" style="width:80%"><span class="graph-row-value">67</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">合格時</span><div class="graph-row-track"><div class="graph-row-fill gold" style="width:86%"><span class="graph-row-value">70</span></div></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="voice-detail" data-category="soukeiri">
-      <div class="voice-card-top">
-        <div class="voice-card-top-left">
-          <div class="voice-avatar">S.H</div>
-          <div class="voice-card-top-info">
-            <span class="voice-badge">慶應義塾大学 理工学部</span>
-            <div class="voice-detail-meta">S.H.さん（千葉県私立高校出身）| 高2の10月から入塾 | 1年4ヶ月</div>
-          </div>
-        </div>
-        <div class="voice-detail-stats">
-          <div class="voice-stat-mini"><div class="voice-stat-mini-label">入塾時</div><div class="voice-stat-mini-num">54</div></div>
-          <span class="voice-stat-arrow">→</span>
-          <div class="voice-stat-mini"><div class="voice-stat-mini-label">合格時</div><div class="voice-stat-mini-num accent">66</div></div>
-        </div>
-      </div>
-      <div class="voice-card-body">
-        <h3 class="voice-detail-title">併塾サポートで効率的に学力を伸ばせました</h3>
-        <div class="voice-detail-body">
-          <p>大手予備校に通っていましたが、授業のない日の学習管理がうまくいかず成績が停滞していました。合格戦略サポートを利用し始めてからは、毎日課題で学習リズムが安定。予備校の授業の理解度も上がりました。</p>
-        </div>
-        <div class="graph-placeholder">
-          <div class="graph-title">偏差値推移（総合）</div>
-          <div class="graph-rows">
-            <div class="graph-row"><span class="graph-row-label">入塾時</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:58%"><span class="graph-row-value">54</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">3ヶ月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:65%"><span class="graph-row-value">58</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">6ヶ月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:70%"><span class="graph-row-value">62</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">9ヶ月</span><div class="graph-row-track"><div class="graph-row-fill primary" style="width:75%"><span class="graph-row-value">64</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">合格時</span><div class="graph-row-track"><div class="graph-row-fill gold" style="width:80%"><span class="graph-row-value">66</span></div></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="voice-detail" data-category="kyutei">
-      <div class="voice-card-top">
-        <div class="voice-card-top-left">
-          <div class="voice-avatar">Y.T</div>
-          <div class="voice-card-top-info">
-            <span class="voice-badge">大阪大学 基礎工学部</span>
-            <div class="voice-detail-meta">Y.T.さん（兵庫県立高校出身）| 高3の4月から入塾 | 10ヶ月</div>
-          </div>
-        </div>
-        <div class="voice-detail-stats">
-          <div class="voice-stat-mini"><div class="voice-stat-mini-label">入塾時</div><div class="voice-stat-mini-num">50</div></div>
-          <span class="voice-stat-arrow">→</span>
-          <div class="voice-stat-mini"><div class="voice-stat-mini-label">合格時</div><div class="voice-stat-mini-num accent">65</div></div>
-        </div>
-      </div>
-      <div class="voice-card-body">
-        <h3 class="voice-detail-title">毎日の積み重ねが逆転合格を可能にしました</h3>
-        <div class="voice-detail-body">
-          <p>高3の春の時点で偏差値50。阪大はE判定でした。正直、間に合うのか不安でしたが、毎日課題ロードマップで「やるべきこと」が明確になり、毎日課題で計画通りに勉強を進められました。</p>
-          <p>10ヶ月で偏差値を15上げられたのは、ガリレオの講師が毎日伴走してくれたおかげです。</p>
-        </div>
-        <div class="graph-placeholder">
-          <div class="graph-title">偏差値推移（総合）</div>
-          <div class="graph-rows">
-            <div class="graph-row"><span class="graph-row-label">4月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:50%"><span class="graph-row-value">50</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">6月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:60%"><span class="graph-row-value">55</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">9月</span><div class="graph-row-track"><div class="graph-row-fill green" style="width:68%"><span class="graph-row-value">59</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">11月</span><div class="graph-row-track"><div class="graph-row-fill primary" style="width:76%"><span class="graph-row-value">63</span></div></div></div>
-            <div class="graph-row"><span class="graph-row-label">合格時</span><div class="graph-row-track"><div class="graph-row-fill gold" style="width:80%"><span class="graph-row-value">65</span></div></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <p class="voices-page-note">
+      ※合格実績・合格者の声は、ご本人・保護者様の許可を得て掲載しています。本ページの体験談はすべて保護者様の視点で掲載しています。<br>
+      ※主な合格実績です。合格者数・最新の実績はLINEよりお問い合わせください。
+    </p>
   </div>
 </section>
 
@@ -427,9 +227,6 @@
   </div>
 </section>
 
-<script>
-function filterVoices(cat,btn){document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.voice-detail').forEach(v=>{v.style.display=(cat==='all'||v.dataset.category===cat)?'':'none'})}
-</script>
 <footer class="footer">
   <div class="container">
     <div class="footer-brand">
@@ -441,19 +238,39 @@ function filterVoices(cat,btn){document.querySelectorAll('.filter-tab').forEach(
     </div>
     <div class="footer-links">
       <ul><li><a href="../index.html#features">塾の特長</a></li><li><a href="../index.html#courses">コース・料金</a></li><li><a href="daigaku-juken-junbi.html">大学受験準備コース</a></li><li><a href="goukaku-senryaku.html">合格戦略プログラム</a></li><li><a href="goukaku-senryaku-support.html">合格戦略サポート</a></li></ul>
-      <ul><li><a href="../index.html#results">合格実績</a></li><li><a href="../index.html#flow">入塾の流れ</a></li><li><a href="../index.html#faq">FAQ</a></li><li><a href="news.html">お知らせ</a></li><li><a href="muryo-shindan.html">無料合格診断</a></li><li><a href="https://www.instagram.com/galileo_sciences/" target="_blank">Instagram</a></li><li><a href="../index.html#about">塾概要</a></li><li><a href="../index.html#contact">お問い合わせ</a></li></ul>
+      <ul><li><a href="voices.html">合格者の声</a></li><li><a href="../index.html#results">主な合格実績</a></li><li><a href="../index.html#flow">入塾の流れ</a></li><li><a href="../index.html#faq">FAQ</a></li><li><a href="news.html">お知らせ</a></li><li><a href="muryo-shindan.html">無料合格診断</a></li><li><a href="https://www.instagram.com/galileo_sciences/" target="_blank">Instagram</a></li><li><a href="../index.html#about">塾概要</a></li><li><a href="../index.html#contact">お問い合わせ</a></li></ul>
     </div>
     <div class="footer-bottom">© 2025 ガリレオ 理系の大学受験専門塾. All Rights Reserved.</div>
   </div>
 </footer>
 <div class="modal-overlay" id="modal"><div class="modal"><h2>お申し込みありがとう<br>ございます！</h2><p>お問い合わせを受け付けました。<br><strong>2〜3営業日以内</strong>に担当者よりご連絡いたします。<br><br>ガリレオでの学びを、精一杯サポートします。<br>一緒に合格を目指しましょう！</p><button onclick="document.getElementById('modal').classList.remove('open')">閉じる</button></div></div>
+
+<script src="../assets/js/voices-data.js"></script>
 <script>
 window.addEventListener('scroll',()=>{document.getElementById('header').classList.toggle('scrolled',scrollY>10)});
 document.getElementById('hamburger').addEventListener('click',()=>{document.getElementById('nav').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open')});
 document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('nav').classList.remove('open');document.getElementById('hamburger').classList.remove('open')}));
-function handleSubmit(e){e.preventDefault();document.getElementById('modal').classList.add('open');e.target.reset()}
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.06});
-document.querySelectorAll('.section,.voice-detail,.worry-card,.pillar,.daily-step,.daily-merit,.thinking-card,.course-card,.gallery-item,.staff-card,.voice-card,.flow-step,.faq-item').forEach(el=>obs.observe(el));
+
+// 合格者の声（全13件）・集計値を単一データソースから描画
+if(window.GALILEO_VOICES){
+  GALILEO_VOICES.renderStats(document.getElementById('voices-stats'),{count:true});
+  GALILEO_VOICES.renderFullList(document.getElementById('voices-group-a'),'A');
+  GALILEO_VOICES.renderFullList(document.getElementById('voices-group-b'),'B');
+  GALILEO_VOICES.bindAccordions(document);
+}
+
+// カテゴリーで絞り込み（空グループの見出しは自動で非表示）
+function filterVoices(cat,btn){
+  document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.voice-detail').forEach(v=>{
+    v.style.display=(cat==='all'||v.dataset.category===cat)?'':'none';
+  });
+  document.querySelectorAll('.voice-group').forEach(g=>{
+    var visible=Array.prototype.some.call(g.querySelectorAll('.voice-detail'),function(v){return v.style.display!=='none';});
+    g.style.display=visible?'':'none';
+  });
+}
 </script>
 </body>
 </html>
