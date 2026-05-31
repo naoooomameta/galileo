@@ -269,6 +269,16 @@ if(window.GALILEO_VOICES){
   if(_sb) _sb.hidden=!(_sg&&_sg.children.length);
 }
 
+// 共通CSS(style.css)で .section 等は初期 opacity:0。observerで可視化する（未発火でも確実に表示するフォールバック付き）
+(function(){
+  function show(el){el.classList.add('visible');}
+  try{
+    var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)show(e.target);});},{threshold:0.05});
+    document.querySelectorAll('.section,.voice-detail').forEach(function(el){obs.observe(el);});
+  }catch(_){}
+  setTimeout(function(){document.querySelectorAll('.section,.voice-detail').forEach(show);},300);
+})();
+
 // カテゴリーで絞り込み（空グループの見出しは自動で非表示）
 function filterVoices(cat,btn){
   document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active'));
