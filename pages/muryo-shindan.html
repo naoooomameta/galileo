@@ -276,6 +276,19 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
   </div>
 </section>
 
+<!-- ===== RESULTS（合格実績 社会的証明：lp-metaから統合） ===== -->
+<section class="section results-section">
+  <div class="container">
+    <div class="section-label">RESULTS</div>
+    <h2 class="section-title">理系専門塾としての合格実績</h2>
+    <p class="section-subtitle">累計指導生徒200名超・志望校合格率90%超。最難関国公立〜MARCH理工系まで、志望校合格を後押ししてきました。</p>
+    <div class="results-cats" id="shindan-results-badges"></div>
+    <div class="results-gallery" id="shindan-results-gallery" hidden></div>
+    <p class="results-note" style="text-align:center;max-width:760px;margin:18px auto 0">※合格実績・合格者の声は、ご本人・保護者様の許可を得て掲載しています。<br>※主な合格実績です。合格者数・最新の実績はLINEよりお問い合わせください。</p>
+    <div class="section-link" style="margin-top:28px"><a href="voices.html">合格者の声（保護者様の声）を見る →</a></div>
+  </div>
+</section>
+
 <!-- ===== FOR WHOM ===== -->
 <section class="section suited-section">
   <div class="container">
@@ -433,6 +446,14 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
     <div class="footer-bottom">© 2025 ガリレオ 理系の大学受験専門塾. All Rights Reserved.</div>
   </div>
 </footer>
+<script src="../assets/js/voices-data.js?v=20260531b"></script>
+<script>
+// 合格実績（社会的証明）の描画 — 単一データソース。代表6校（最難関+医学部+早慶）
+if(window.GALILEO_VOICES){
+  GALILEO_VOICES.renderResultBadges(document.getElementById('shindan-results-badges'));
+  GALILEO_VOICES.renderResultsGallery(document.getElementById('shindan-results-gallery'),{ids:['case01','case02','case03','case08','case05','case06']});
+}
+</script>
 <script>
 window.addEventListener('scroll',()=>{document.getElementById('header').classList.toggle('scrolled',scrollY>10)});
 document.getElementById('hamburger').addEventListener('click',()=>{document.getElementById('nav').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open')});
