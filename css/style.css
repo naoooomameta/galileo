@@ -324,6 +324,15 @@ strong{font-weight:700}
 .voice-photo-pdf a:hover{background:var(--primary);color:var(--white)}
 .voice-photo-pdf-ico{font-size:11px;font-weight:800;background:var(--primary);color:var(--white);padding:2px 7px;border-radius:5px;letter-spacing:.05em}
 .voice-photo-pdf a:hover .voice-photo-pdf-ico{background:var(--white);color:var(--primary)}
+/* 合格実績画像ギャラリー（masonry・スマホレスポンシブ・タップで拡大） */
+.results-gallery{column-count:4;column-gap:12px;margin-top:24px}
+.results-gallery[hidden]{display:none}
+.results-gallery figure{break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 12px;border:1px solid var(--green-mist);border-radius:10px;overflow:hidden;background:var(--white);box-shadow:0 2px 8px rgba(14,74,56,.06);transition:transform .25s,box-shadow .25s}
+.results-gallery figure:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(14,74,56,.12)}
+.results-gallery img{width:100%;height:auto;display:block}
+.results-gallery figcaption{font-size:11.5px;font-weight:700;color:var(--primary-dark);text-align:center;padding:7px 8px;background:var(--green-pale);line-height:1.4}
+@media(max-width:768px){.results-gallery{column-count:3;column-gap:10px}}
+@media(max-width:480px){.results-gallery{column-count:2;column-gap:8px}.results-gallery figcaption{font-size:10.5px;padding:5px 4px}}
 
 /* ===== FLOW ===== */
 .flow-steps{max-width:700px;margin:0 auto}
