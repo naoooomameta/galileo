@@ -424,7 +424,11 @@
     if (!el) return;
     opts = opts || {};
     var list = CASES.filter(function (c) { return c.image && !/\.pdf(\?|#|$)/i.test(c.image); });
-    if (opts.limit) list = list.slice(0, opts.limit);
+    if (opts.ids && opts.ids.length) {
+      list = opts.ids.map(caseById).filter(function (c) { return c && c.image && !/\.pdf(\?|#|$)/i.test(c.image); });
+    } else if (opts.limit) {
+      list = list.slice(0, opts.limit);
+    }
     if (!list.length) { el.innerHTML = ''; el.hidden = true; return; } // 表示できる画像が無ければ非表示
     el.hidden = false;
     el.innerHTML = list.map(function (c) {
