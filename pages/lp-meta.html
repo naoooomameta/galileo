@@ -104,6 +104,11 @@ strong{font-weight:700}
 .proof-num span{font-size:.55em;color:var(--gold);font-weight:700}
 .proof-label{font-size:13px;color:var(--text-light);margin-top:6px;line-height:1.6}
 @media(max-width:520px){.proof-grid{grid-template-columns:1fr;gap:10px}.proof{padding:18px}}
+.results-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;max-width:780px;margin:18px auto 0}
+.results-gallery[hidden],.results-gallery:empty{display:none}
+.results-gallery figure{margin:0;border:1px solid var(--green-mist);border-radius:10px;overflow:hidden;background:var(--white);box-shadow:0 2px 8px rgba(14,74,56,.06)}
+.results-gallery img{width:100%;height:auto;display:block}
+.results-gallery figcaption{font-size:11px;font-weight:700;color:var(--primary-dark);text-align:center;padding:6px;background:var(--green-pale)}
 
 /* ===== WHAT YOU GET (gift) ===== */
 .gift-card{max-width:720px;margin:0 auto;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--white);border-radius:20px;padding:38px 32px;position:relative;overflow:hidden;box-shadow:0 12px 36px rgba(14,74,56,.22)}
@@ -333,6 +338,8 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
         <div style="font-size:12px;color:var(--text-muted);font-weight:700;margin-top:10px">東京医科歯科大学 医学部 合格／保護者様の声</div>
       </div>
     </div>
+    <!-- 合格実績画像ギャラリー（代表6枚）— データソースから描画（画像が無ければ自動で非表示） -->
+    <div class="results-gallery" id="lp-results-gallery" hidden></div>
     <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:18px;line-height:1.85">※合格実績・合格者の声は、ご本人・保護者様の許可を得て掲載しています。<br>※主な合格実績です。合格者数・最新の実績はLINEよりお問い合わせください。</p>
   </div>
 </section>
@@ -506,6 +513,11 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
   <div class="sticky-cta-note">完全無料・1分で完了</div>
 </div>
 
+<script src="../assets/js/voices-data.js?v=20260531a"></script>
+<script>
+// 合格実績画像ギャラリー（単一データソースから代表6枚を描画）
+if(window.GALILEO_VOICES){GALILEO_VOICES.renderResultsGallery(document.getElementById('lp-results-gallery'),{limit:6});}
+</script>
 <script>
 // CTA tracking — fires Meta Pixel "Lead" event when CTA is clicked
 document.querySelectorAll('[data-cta]').forEach(el=>{

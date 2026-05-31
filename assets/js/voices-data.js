@@ -419,6 +419,23 @@
     }).join('');
   }
 
+  /* ---- 合格実績画像ギャラリー（各ケースの合格実績画像を一覧表示） ---- */
+  function renderResultsGallery(el, opts) {
+    if (!el) return;
+    opts = opts || {};
+    var list = CASES.filter(function (c) { return c.image && !/\.pdf(\?|#|$)/i.test(c.image); });
+    if (opts.limit) list = list.slice(0, opts.limit);
+    if (!list.length) { el.innerHTML = ''; el.hidden = true; return; } // 表示できる画像が無ければ非表示
+    el.hidden = false;
+    el.innerHTML = list.map(function (c) {
+      return '<figure>' +
+        '<img loading="lazy" src="' + esc(asset(c.image)) + '" alt="' + esc(uniLabel(c) + ' 合格') +
+        '" onerror="this.closest(\'figure\').style.display=\'none\'">' +
+        '<figcaption>' + esc(uniLabel(c)) + ' 合格</figcaption>' +
+        '</figure>';
+    }).join('');
+  }
+
   /* ---- 公開API ---- */
   global.GALILEO_VOICES = {
     cases: CASES,
@@ -431,6 +448,7 @@
     asset: asset,
     surveyImages: SURVEY_IMAGES,
     renderSurveyGrid: renderSurveyGrid,
+    renderResultsGallery: renderResultsGallery,
     renderResultBadges: renderResultBadges,
     renderStats: renderStats,
     renderPreview: renderPreview,
