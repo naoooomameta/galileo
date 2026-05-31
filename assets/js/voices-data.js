@@ -428,9 +428,11 @@
     if (!list.length) { el.innerHTML = ''; el.hidden = true; return; } // 表示できる画像が無ければ非表示
     el.hidden = false;
     el.innerHTML = list.map(function (c) {
+      var src = esc(asset(c.image));
       return '<figure>' +
-        '<img loading="lazy" src="' + esc(asset(c.image)) + '" alt="' + esc(uniLabel(c) + ' 合格') +
-        '" onerror="this.closest(\'figure\').style.display=\'none\'">' +
+        '<a href="' + src + '" target="_blank" rel="noopener">' +
+        '<img loading="lazy" src="' + src + '" alt="' + esc(uniLabel(c) + ' 合格') +
+        '" onerror="this.closest(\'figure\').style.display=\'none\'"></a>' +
         '<figcaption>' + esc(uniLabel(c)) + ' 合格</figcaption>' +
         '</figure>';
     }).join('');

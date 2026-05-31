@@ -350,13 +350,15 @@ strong{font-weight:700}
 .voice-survey-item{margin:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--white);box-shadow:0 2px 8px rgba(14,74,56,.05);transition:transform .25s,box-shadow .25s}
 .voice-survey-item:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(14,74,56,.12)}
 .voice-survey-item img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:3/4}
-/* 合格実績画像ギャラリー（フル表示・クロップなし） */
-.results-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:24px}
-.results-gallery[hidden],.results-gallery:empty{display:none}
-.results-gallery figure{margin:0;border:1px solid var(--green-mist);border-radius:10px;overflow:hidden;background:var(--white);box-shadow:0 2px 8px rgba(14,74,56,.06);transition:transform .25s,box-shadow .25s}
+/* 合格実績画像ギャラリー（masonry・スマホレスポンシブ・タップで拡大） */
+.results-gallery{column-count:4;column-gap:12px;margin-top:24px}
+.results-gallery[hidden]{display:none}
+.results-gallery figure{break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 12px;border:1px solid var(--green-mist);border-radius:10px;overflow:hidden;background:var(--white);box-shadow:0 2px 8px rgba(14,74,56,.06);transition:transform .25s,box-shadow .25s}
 .results-gallery figure:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(14,74,56,.12)}
 .results-gallery img{width:100%;height:auto;display:block}
 .results-gallery figcaption{font-size:11.5px;font-weight:700;color:var(--primary-dark);text-align:center;padding:7px 8px;background:var(--green-pale);line-height:1.4}
+@media(max-width:768px){.results-gallery{column-count:3;column-gap:10px}}
+@media(max-width:480px){.results-gallery{column-count:2;column-gap:8px}.results-gallery figcaption{font-size:10.5px;padding:5px 4px}}
 
 /* ===== FLOW ===== */
 .flow-steps{max-width:700px;margin:0 auto}
