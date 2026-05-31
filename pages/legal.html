@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>特定商取引法に基づく表記・個人情報の取り扱い | ガリレオ 理系の大学受験専門塾</title>
+<meta name="description" content="理系の大学受験専門塾ガリレオの「特定商取引法に基づく表記」および「個人情報の取り扱い（プライバシーポリシー）」のご案内です。販売条件・お支払い方法・解約規定・個人情報の利用目的について明記しています。">
+<meta name="robots" content="noindex,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.page-hero{background:linear-gradient(180deg,var(--bg) 0%,var(--green-pale) 50%,var(--green-light) 100%);padding:80px 0 56px;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:20px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(196,154,60,.06) 0%,transparent 70%);pointer-events:none}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:50px;background:linear-gradient(180deg,transparent,var(--bg));pointer-events:none}
+.page-hero .section-label{margin-bottom:8px;letter-spacing:.08em}
+.page-hero h1{font-family:var(--font-serif);font-size:clamp(26px,4.2vw,40px);font-weight:700;line-height:1.5;margin-bottom:14px}
+.page-hero p{font-size:15px;color:var(--text-light);max-width:620px;margin:0 auto;line-height:2}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--primary);font-weight:600;margin-bottom:20px}
+.back-link:hover{text-decoration:underline}
+
+.legal-content{max-width:840px;margin:0 auto}
+.legal-updated{font-size:13px;color:var(--text-muted);text-align:right;margin-bottom:28px}
+.legal-block{margin-bottom:64px;scroll-margin-top:120px}
+.legal-block:last-child{margin-bottom:0}
+.legal-block-head{margin-bottom:24px}
+.legal-block-label{font-size:12px;font-weight:700;color:var(--amber);letter-spacing:.15em;margin-bottom:8px;text-transform:uppercase}
+.legal-block-title{font-family:var(--font-serif);font-size:clamp(21px,3.4vw,28px);font-weight:700;color:var(--primary-dark);line-height:1.5;margin-bottom:14px}
+.legal-block-divider{width:60px;height:3px;background:linear-gradient(90deg,var(--amber),var(--primary-light));border-radius:3px}
+.legal-intro{font-size:15px;color:var(--text-light);line-height:2.1;margin-bottom:28px}
+
+/* 特商法 定義テーブル */
+.legal-table{width:100%;border-collapse:collapse;font-size:14.5px;border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(14,74,56,.06);background:var(--white);border:1px solid var(--border)}
+.legal-table th,.legal-table td{padding:18px 22px;text-align:left;border-bottom:1px solid var(--border);line-height:2;vertical-align:top}
+.legal-table th{background:var(--green-pale);color:var(--primary-dark);font-weight:700;width:32%;white-space:nowrap}
+.legal-table td{color:var(--text-light)}
+.legal-table tr:last-child th,.legal-table tr:last-child td{border-bottom:none}
+.legal-table a{color:var(--primary);text-decoration:underline}
+.legal-table ul{margin:6px 0 0;padding-left:20px}
+.legal-table li{margin-bottom:4px}
+
+/* プライバシーポリシー 条文 */
+.legal-articles{counter-reset:legal-art}
+.legal-article{background:var(--white);border:1px solid var(--border);border-left:5px solid var(--primary);border-radius:16px;padding:26px 32px;margin-bottom:18px;box-shadow:0 2px 12px rgba(14,74,56,.04)}
+.legal-article:last-child{margin-bottom:0}
+.legal-article h3{font-size:16px;font-weight:700;color:var(--primary-dark);margin-bottom:12px;line-height:1.6;display:flex;gap:10px;align-items:baseline}
+.legal-article h3::before{counter-increment:legal-art;content:"第" counter(legal-art) "条";font-size:12px;font-weight:800;color:var(--white);background:var(--primary);padding:3px 10px;border-radius:20px;white-space:nowrap;letter-spacing:.04em;flex-shrink:0;align-self:flex-start;margin-top:2px}
+.legal-article p{font-size:14px;color:var(--text-light);line-height:2.05;margin-bottom:10px}
+.legal-article p:last-child{margin-bottom:0}
+.legal-article ul{margin:4px 0 10px;padding-left:20px}
+.legal-article li{font-size:14px;color:var(--text-light);line-height:1.95;margin-bottom:6px}
+.legal-article a{color:var(--primary);text-decoration:underline}
+
+.legal-note{background:linear-gradient(135deg,var(--green-pale) 0%,var(--green-light) 100%);border:1px solid var(--green-mist);border-radius:16px;padding:22px 28px;margin-top:28px;font-size:13.5px;color:var(--text-light);line-height:2}
+.legal-note strong{color:var(--primary)}
+
+.cta-section{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--white);text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:-40%;right:-15%;width:500px;height:500px;background:radial-gradient(circle,rgba(196,154,60,.08) 0%,transparent 70%);pointer-events:none}
+.cta-section .section-label{color:#D4A843}
+.cta-section .section-title{color:var(--white)}
+.cta-section .section-title::after{background:linear-gradient(90deg,#D4A843,rgba(255,255,255,.3))}
+.cta-section p{color:rgba(255,255,255,.75);font-size:15px;line-height:2;max-width:560px;margin:0 auto 28px}
+
+@media(max-width:768px){
+  .page-hero{padding:60px 0 44px}
+  .legal-block{margin-bottom:48px}
+  .legal-table{font-size:13.5px;border:none;box-shadow:none}
+  .legal-table thead{display:none}
+  .legal-table tr{display:block;background:var(--white);border:1px solid var(--border);border-radius:14px;margin-bottom:14px;overflow:hidden}
+  .legal-table th,.legal-table td{display:block;width:auto;border-bottom:none;padding:14px 18px}
+  .legal-table th{background:var(--green-pale);width:auto;white-space:normal;padding-bottom:14px}
+  .legal-table td{padding-top:10px}
+  .legal-article{padding:22px 20px}
+}
+</style>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wfn0ptjuso");
+</script>
+</head>
+<body>
+<!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <span><svg style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;fill:currentColor" viewBox="0 0 24 24"><path d="M6 22v-2h2v-6L2 8V6h20v2l-6 6v6h2v2H6zm1.55-12h8.9l3-3H4.55l3 3zM10 20h4v-7.2l-2-2-2 2V20z"/></svg>理系の大学受験専門塾ガリレオ</span>
+    <span class="top-bar-sep">|</span>
+    <span><svg style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 7.13l.97 2.29.47 1.11 1.2.1 2.47.21-1.88 1.63-.91.79.27 1.18.56 2.41-2.12-1.28L12 14.78l-1.03.58-2.12 1.28.56-2.41.27-1.18-.91-.79-1.88-1.63 2.47-.21 1.2-.1.47-1.11L12 7.13M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"/></svg>東大・京大・東工大・医学部 合格実績</span>
+    <span class="top-bar-sep">|</span>
+    <a href="https://www.instagram.com/galileo_sciences/" target="_blank" rel="noopener">Instagram @galileo_sciences</a>
+  </div>
+</div>
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">
+      <img src="../img/galileo-logo.png" alt="ガリレオ" class="logo-img">
+      <div class="logo-text">
+        <span class="logo-name">ガリレオ</span>
+        <span class="logo-sub">理系の大学受験専門塾 — Galileo Sciences</span>
+      </div>
+    </a>
+    <div class="header-right">
+      <a href="https://www.instagram.com/galileo_sciences/" target="_blank" rel="noopener" class="header-instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>Instagram</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html#features">指導システム</a>
+    <a href="../index.html#courses">コース・料金</a>
+    <a href="mainichi-kadai.html">毎日課題システム</a>
+    <a href="../index.html#gallery">授業の様子</a>
+    <a href="voices.html">合格者の声</a>
+    <a href="../index.html#results">合格実績</a>
+    <a href="../index.html#flow">入塾の流れ</a>
+    <a href="../index.html#faq">FAQ</a>
+    <a href="../index.html#about">塾概要</a>
+    <a href="news.html">お知らせ</a>
+    <a href="muryo-shindan.html">無料合格診断</a>
+    <a href="muryo-shindan.html" class="nav-cta">▶ 無料診断</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <a href="../index.html" class="back-link">← トップページへ戻る</a>
+    <div class="section-label">Legal &amp; Privacy</div>
+    <h1>特定商取引法に基づく表記<br>・個人情報の取り扱い</h1>
+    <p>理系の大学受験専門塾「ガリレオ」のサービスご利用にあたっての、特定商取引法に基づく表記、および個人情報（プライバシーポリシー）の取り扱いについてのご案内です。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="legal-content">
+
+      <p class="legal-updated">制定日：2026年5月31日 ／ 最終改定日：2026年5月31日</p>
+
+      <!-- ===== 特定商取引法に基づく表記 ===== -->
+      <div class="legal-block" id="tokushoho">
+        <div class="legal-block-head">
+          <div class="legal-block-label">Specified Commercial Transactions Act</div>
+          <h2 class="legal-block-title">特定商取引法に基づく表記</h2>
+          <div class="legal-block-divider"></div>
+        </div>
+        <p class="legal-intro">「特定商取引に関する法律」第11条（通信販売についての広告）に基づき、以下のとおり表示いたします。</p>
+
+        <table class="legal-table">
+          <thead>
+            <tr><th>項目</th><th>内容</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>販売事業者</th>
+              <td>ガリレオ（理系の大学受験専門塾）<!-- ※運営主体の正式名称（個人事業／屋号・法人名）に差し替えてください --></td>
+            </tr>
+            <tr>
+              <th>運営統括責任者</th>
+              <td>佐野 翼（さの つばさ）</td>
+            </tr>
+            <tr>
+              <th>所在地</th>
+              <td>本サービスはオンラインにて提供しております。所在地につきましては、ご請求をいただいた場合に遅滞なく書面または電子メールにて開示いたします。<!-- ※公開可能な事業所所在地がある場合は記載に差し替えてください --></td>
+            </tr>
+            <tr>
+              <th>電話番号</th>
+              <td>ご請求をいただいた場合に遅滞なく開示いたします。お問い合わせは原則として下記メールアドレスにて承っております。<!-- ※公開可能な電話番号がある場合は記載に差し替えてください --></td>
+            </tr>
+            <tr>
+              <th>お問い合わせ先<br>（メール）</th>
+              <td><a href="mailto:galileogalilei.sciences@gmail.com">galileogalilei.sciences@gmail.com</a><!-- ※公開用の連絡先メールアドレスをご確認ください --></td>
+            </tr>
+            <tr>
+              <th>受付時間</th>
+              <td>メールでのお問い合わせは24時間受付。順次ご返信いたします（土日祝・年末年始を除く）。</td>
+            </tr>
+            <tr>
+              <th>販売価格</th>
+              <td>
+                各コースの受講料金は、それぞれのコース紹介ページおよびお申込みフォームに表示する金額（すべて税込）によります。
+                <ul>
+                  <li>お試しコース：各ご案内ページに表示の金額（税込・1人1回限り）</li>
+                  <li>大学受験準備コース：月額 ¥40,000 〜 ¥67,380（税込）</li>
+                  <li>合格戦略プログラム：月額 ¥45,000 〜 ¥83,380（税込）</li>
+                  <li>合格戦略サポート（併塾向け）：月額 ¥33,000（税込）</li>
+                </ul>
+                ※各プランの詳細は<a href="../index.html#courses">コース・料金</a>および各コース紹介ページをご確認ください。
+              </td>
+            </tr>
+            <tr>
+              <th>商品代金以外に<br>必要な料金</th>
+              <td>オンライン受講にあたって必要となるインターネット通信料・通信機器等の費用は、お客様のご負担となります。お振込みの場合の振込手数料はお客様のご負担となります。</td>
+            </tr>
+            <tr>
+              <th>お支払い方法</th>
+              <td>
+                <ul>
+                  <li>銀行口座へのお振込み（一括／2回分割／3回分割）</li>
+                  <li>クレジットカードによる毎月払い（ロボットペイメント株式会社「サブスクペイ」を利用）</li>
+                </ul>
+                詳細は<a href="news-payment.html">授業料のお支払い・ご退塾について</a>をご覧ください。
+              </td>
+            </tr>
+            <tr>
+              <th>お支払い時期</th>
+              <td>お申込み・ご契約後、当塾が指定する期日までにお支払いください。クレジットカード毎月払いの場合は、各カード会社の定める引き落とし日となります。</td>
+            </tr>
+            <tr>
+              <th>役務の提供時期</th>
+              <td>お申込み内容の確認およびお支払い（またはお支払い手続き）の完了後、担当者より日程調整のご連絡を差し上げ、合意した開始日より指導サービスを提供いたします。</td>
+            </tr>
+            <tr>
+              <th>返品・キャンセル・<br>中途解約について</th>
+              <td>
+                指導サービス（役務）の性質上、提供開始後のご返金は原則承っておりません。ただし、以下の対応を定めています。
+                <ul>
+                  <li>クーリングオフ：ご契約日から8日以内であれば無条件で解除でき、お支払い済みの料金は全額返金いたします。</li>
+                  <li>中途解約・ご退塾：当月20日までのお申し出で当月末日をもって退塾が可能です。ご納入済みの翌月以降の指導料金は所定の手続きにより返金いたします。</li>
+                </ul>
+                解約・返金の詳細条件は<a href="news-payment.html">授業料のお支払い・ご退塾について</a>に記載しています。
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="legal-note">
+          ※ 本サービスはオンラインで提供する個別指導サービスです。<strong>所在地・電話番号</strong>は、ご請求をいただいた場合に遅滞なく開示いたします。お問い合わせは上記メールアドレスまでお願いいたします。
+        </div>
+      </div>
+
+      <!-- ===== 個人情報の取り扱い ===== -->
+      <div class="legal-block" id="privacy">
+        <div class="legal-block-head">
+          <div class="legal-block-label">Privacy Policy</div>
+          <h2 class="legal-block-title">個人情報の取り扱い（プライバシーポリシー）</h2>
+          <div class="legal-block-divider"></div>
+        </div>
+        <p class="legal-intro">理系の大学受験専門塾「ガリレオ」（以下「当塾」といいます）は、お客様の個人情報の重要性を認識し、関係法令およびガイドラインを遵守するとともに、以下の方針に基づき個人情報を適切に取り扱います。</p>
+
+        <div class="legal-articles">
+          <div class="legal-article">
+            <h3>取得する個人情報</h3>
+            <p>当塾は、無料相談・お試しコース・各コースのお申込み、お問い合わせ等の際に、以下の個人情報を取得することがあります。</p>
+            <ul>
+              <li>お名前（生徒様・保護者様）、フリガナ</li>
+              <li>メールアドレス、電話番号</li>
+              <li>学年・在籍学校、志望校・志望学部</li>
+              <li>学習状況・ご相談内容・ご質問の内容</li>
+              <li>お支払いに関する情報（決済はロボットペイメント株式会社が取り扱い、クレジットカード番号等を当塾が保持することはありません）</li>
+            </ul>
+          </div>
+
+          <div class="legal-article">
+            <h3>利用目的</h3>
+            <p>取得した個人情報は、以下の目的の範囲内で利用いたします。</p>
+            <ul>
+              <li>無料相談・お試しコース・各種お申込みへの対応、日程調整のご連絡</li>
+              <li>指導サービスの提供および学習・進路に関するサポート</li>
+              <li>お支払い・ご契約に関する事務手続き</li>
+              <li>保護者様への学習状況のご報告・各種ご連絡</li>
+              <li>お問い合わせ・ご要望への対応</li>
+              <li>サービス品質向上のための分析、ご案内（ご本人が希望されない場合は停止します）</li>
+            </ul>
+          </div>
+
+          <div class="legal-article">
+            <h3>第三者への提供</h3>
+            <p>当塾は、次のいずれかに該当する場合を除き、ご本人の同意なく個人情報を第三者に提供いたしません。</p>
+            <ul>
+              <li>法令に基づく場合</li>
+              <li>人の生命・身体または財産の保護のために必要で、ご本人の同意を得ることが困難な場合</li>
+              <li>合格実績・合格体験談等として掲載する場合（この場合は、必ず事前にご本人・保護者様の許可を得たうえで掲載します）</li>
+            </ul>
+          </div>
+
+          <div class="legal-article">
+            <h3>業務委託・外部サービスの利用</h3>
+            <p>利用目的の達成に必要な範囲で、個人情報の取り扱いを外部の事業者に委託する場合があります。委託先に対しては、適切な管理・監督を行います。当塾が利用する主な外部サービスは以下のとおりです。</p>
+            <ul>
+              <li>決済：ロボットペイメント株式会社（「サブスクペイ」）— クレジットカード情報はPCI DSS準拠の同社システムで管理され、当塾には通知されません。</li>
+              <li>フォーム・予約・メール：Google（Google フォーム／Google カレンダー／Google Meet 等）</li>
+              <li>アクセス解析：Microsoft Clarity、Google のアクセス解析サービス（次条をご参照ください）</li>
+            </ul>
+          </div>
+
+          <div class="legal-article">
+            <h3>Cookie・アクセス解析について</h3>
+            <p>当サイトでは、サービス改善のためにCookie等を用いたアクセス解析（Microsoft Clarity 等）を利用しています。これらにより取得される情報には個人を直接特定する情報は含まれません。ブラウザの設定によりCookieを無効化することができますが、その場合、一部の機能がご利用いただけないことがあります。</p>
+          </div>
+
+          <div class="legal-article">
+            <h3>安全管理措置</h3>
+            <p>当塾は、個人情報の漏えい・滅失・毀損の防止その他の安全管理のために、必要かつ適切な措置を講じ、取り扱う従事者に対しても適切な監督を行います。</p>
+          </div>
+
+          <div class="legal-article">
+            <h3>開示・訂正・利用停止等のご請求</h3>
+            <p>ご本人または保護者様から、保有する個人情報の開示・訂正・追加・削除・利用停止・第三者提供の停止等のお申し出があった場合、ご本人であることを確認のうえ、法令に従い遅滞なく対応いたします。下記お問い合わせ窓口までご連絡ください。</p>
+          </div>
+
+          <div class="legal-article">
+            <h3>お問い合わせ窓口</h3>
+            <p>個人情報の取り扱いに関するお問い合わせ・ご請求は、以下までご連絡ください。</p>
+            <ul>
+              <li>理系の大学受験専門塾「ガリレオ」 個人情報お問い合わせ窓口</li>
+              <li>メール：<a href="mailto:galileogalilei.sciences@gmail.com">galileogalilei.sciences@gmail.com</a></li>
+            </ul>
+          </div>
+
+          <div class="legal-article">
+            <h3>本ポリシーの改定</h3>
+            <p>当塾は、法令の改正やサービス内容の変更に応じて、本ポリシーおよび特定商取引法に基づく表記の内容を改定することがあります。改定後の内容は本ページに掲載した時点から効力を生じるものとします。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section cta-section">
+  <div class="container">
+    <div class="section-label">CONTACT</div>
+    <h2 class="section-title">ご不明な点は、お気軽にお問い合わせください</h2>
+    <p>料金・お支払い方法・個人情報の取り扱いなど、ご不安な点は学習相談会でも丁寧にご説明します。オンライン対応・全国どこからでも参加可能です。</p>
+    <a href="../index.html#contact" class="btn btn-primary">無料学習相談を予約する →</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">
+      <div class="logo">
+        <img src="../img/galileo-logo.png" alt="ガリレオ" class="logo-img">
+        <div class="logo-text"><span class="logo-name">ガリレオ</span></div>
+      </div>
+      <p>Galileo Sciences — 理系の大学受験専門塾</p>
+    </div>
+    <div class="footer-links">
+      <ul><li><a href="../index.html#features">塾の特長</a></li><li><a href="../index.html#courses">コース・料金</a></li><li><a href="daigaku-juken-junbi.html">大学受験準備コース</a></li><li><a href="goukaku-senryaku.html">合格戦略プログラム</a></li><li><a href="goukaku-senryaku-support.html">合格戦略サポート</a></li></ul>
+      <ul><li><a href="voices.html">合格者の声</a></li><li><a href="../index.html#results">主な合格実績</a></li><li><a href="../index.html#flow">入塾の流れ</a></li><li><a href="../index.html#faq">FAQ</a></li><li><a href="news.html">お知らせ</a></li><li><a href="news-payment.html">お支払い・ご退塾について</a></li><li><a href="legal.html">特定商取引法に基づく表記・個人情報の取り扱い</a></li></ul>
+    </div>
+    <div class="footer-bottom">© 2025 ガリレオ 理系の大学受験専門塾. All Rights Reserved.</div>
+  </div>
+</footer>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('header').classList.toggle('scrolled',scrollY>10)});
+document.getElementById('hamburger').addEventListener('click',()=>{document.getElementById('nav').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open')});
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('nav').classList.remove('open');document.getElementById('hamburger').classList.remove('open')}));
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
+document.querySelectorAll('.section').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
