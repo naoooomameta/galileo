@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>合格者の声・合格実績 | ガリレオ 理系の大学受験専門塾</title>
-<meta name="description" content="理系の大学受験専門塾ガリレオで志望校に合格した先輩たちの体験談（全13名・保護者様の声）。東京大学・京都大学・東京工業大学・医学部・早慶理工・MARCH理工系まで。累計指導生徒200名超・志望校合格率90%超。">
+<meta name="description" content="理系の大学受験専門塾ガリレオで志望校に合格した先輩たちの体験談（全13名・保護者様の声）。東京大学・京都大学・東京工業大学・医学部・早慶理工・MARCH理工系まで。">
 <!-- ===== OGP ===== -->
 <meta property="og:title" content="合格者の声・合格実績 | ガリレオ 理系の大学受験専門塾">
 <meta property="og:description" content="東大・京大・東工大・医学部・早慶理工・MARCH理工系。理系専門塾ガリレオの合格者の声（保護者様の声・全13名）と主な合格実績。">
@@ -175,14 +175,7 @@
   </div>
 </section>
 
-<div class="stats-banner">
-  <div class="container">
-    <div class="stats-grid" id="voices-stats">
-      <!-- 確認済み集計値 — データソース(assets/js/voices-data.js)から描画 -->
-    </div>
-    <p class="stats-caption">※累計指導生徒数・指導歴・志望校合格率は当塾の累計実績です。掲載の合格者の声は2025年度・全13名分です。</p>
-  </div>
-</div>
+<!-- ===== 集計値バナー（削除：実績数値を一旦非表示） ===== -->
 
 <section class="section">
   <div class="container">
@@ -259,7 +252,6 @@ document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{d
 
 // 合格者の声（全13件）・集計値を単一データソースから描画
 if(window.GALILEO_VOICES){
-  GALILEO_VOICES.renderStats(document.getElementById('voices-stats'),{count:true});
   GALILEO_VOICES.renderFullList(document.getElementById('voices-group-a'),'A');
   GALILEO_VOICES.renderFullList(document.getElementById('voices-group-b'),'B');
   GALILEO_VOICES.bindAccordions(document);
