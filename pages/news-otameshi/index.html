@@ -866,6 +866,25 @@ p.body strong{color:var(--primary-dark)}
 </footer>
 
 <script>
+var OTAMESHI_GAS_URL='https://script.google.com/macros/s/AKfycbzleIs1DqaybK2orps2tQwLCDimHb_7_5CQ0AV4IMD1gN3kVtjOUuD-2EA2-tCGDCo/exec';
+function submitOtameshi(e){
+  e.preventDefault();
+  var form=e.target;
+  if(!form.checkValidity()){form.reportValidity();return;}
+  var btn=document.getElementById('otSubmitBtn');
+  btn.disabled=true;btn.textContent='送信中…';
+  var g=function(id){var el=document.getElementById(id);return el?el.value:'';};
+  var params=new URLSearchParams({action:'contact',source:'galileo-otameshi',
+    name:g('ot-name'),kana:g('ot-kana'),email:g('ot-email'),tel:g('ot-tel'),
+    grade:g('ot-grade'),univ:g('ot-univ'),subject:g('ot-subject'),
+    message:'お試しコース申込 ｜ 体験科目:'+g('ot-subject')+' ｜ '+g('ot-message')});
+  if(OTAMESHI_GAS_URL){try{fetch(OTAMESHI_GAS_URL,{method:'POST',body:params,mode:'no-cors'});}catch(err){}}
+  var name=(g('ot-name')||'お客').replace(/</g,'&lt;');
+  var sec=document.getElementById('otameshi-form');
+  if(sec){var body=sec.querySelector('.section__body');
+    if(body)body.innerHTML='<div class="otform__done"><h3>お申し込みありがとうございます</h3><p>'+name+' 様<br>お試しコースのお申し込みを受け付けました。<br>担当より <strong>2〜3営業日以内</strong> に、日程調整のご連絡を差し上げます。</p></div>';
+    sec.scrollIntoView({behavior:'smooth',block:'start'});}
+}
 document.querySelectorAll('.faq__btn').forEach(function(btn){
   btn.addEventListener('click', function(){
     var item = btn.closest('.faq__item');
