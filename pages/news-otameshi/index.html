@@ -415,7 +415,7 @@ p.body strong{color:var(--primary-dark)}
         <li>1週間後の<strong>振り返り面談</strong>（保護者様同席可）</li>
       </ul>
       <div class="hero-card__cta">
-        <a href="https://galileo-sciences.com/pages/muryo-shindan.html" target="_blank" rel="noopener" class="btn-cta">▶︎ お試しコースを申し込む</a>
+        <a href="#otameshi-form" class="btn-cta">▶︎ お試しコースを申し込む</a>
         <div class="hero-card__hint">所要 約2分・しつこい勧誘はいたしません</div>
       </div>
     </div>
@@ -762,6 +762,76 @@ p.body strong{color:var(--primary-dark)}
     </div>
   </section>
 
+  <!-- ─── Application Form ─── -->
+  <section class="section section--alt" id="otameshi-form">
+    <div class="wrap">
+      <div class="section__inner">
+        <div class="section__eyebrow">APPLICATION</div>
+        <h2 class="section__title">お試しコースの<br>お申し込みフォーム。</h2>
+        <p class="section__lead">
+          所要約2分。送信後、担当より <strong>2〜3営業日以内</strong> に日程調整のご連絡を差し上げます。<br>
+          ¥9,900（税込）／ 1人1回限り。強引な勧誘・追加請求は一切ありません。
+        </p>
+        <div class="section__body">
+          <form class="otform" id="otameshiForm" onsubmit="submitOtameshi(event)" novalidate>
+            <div class="otform__row">
+              <div class="otform__group">
+                <label for="ot-name">保護者さま または ご本人のお名前 <span class="otform__req">必須</span></label>
+                <input type="text" id="ot-name" name="name" autocomplete="name" required placeholder="例）山田 太郎">
+              </div>
+              <div class="otform__group">
+                <label for="ot-kana">フリガナ</label>
+                <input type="text" id="ot-kana" name="kana" placeholder="例）ヤマダ タロウ">
+              </div>
+            </div>
+            <div class="otform__row">
+              <div class="otform__group">
+                <label for="ot-email">メールアドレス <span class="otform__req">必須</span></label>
+                <input type="email" id="ot-email" name="email" autocomplete="email" required placeholder="例）example@email.com">
+              </div>
+              <div class="otform__group">
+                <label for="ot-tel">電話番号</label>
+                <input type="tel" id="ot-tel" name="tel" autocomplete="tel" placeholder="例）090-1234-5678">
+              </div>
+            </div>
+            <div class="otform__row">
+              <div class="otform__group">
+                <label for="ot-grade">学年 <span class="otform__req">必須</span></label>
+                <select id="ot-grade" name="grade" required>
+                  <option value="" disabled selected>選択してください</option>
+                  <option>高校1年生</option>
+                  <option>高校2年生</option>
+                  <option>高校3年生</option>
+                  <option>既卒生</option>
+                  <option>中学生</option>
+                  <option>その他</option>
+                </select>
+              </div>
+              <div class="otform__group">
+                <label for="ot-univ">志望校・志望学部（任意）</label>
+                <input type="text" id="ot-univ" name="univ" placeholder="例）東京大学 理科一類">
+              </div>
+            </div>
+            <div class="otform__group">
+              <label for="ot-subject">体験したい科目（任意・複数可）</label>
+              <input type="text" id="ot-subject" name="subject" placeholder="例）数学・物理・化学・生物・英語">
+            </div>
+            <div class="otform__group">
+              <label for="ot-message">ご相談内容・ご質問（任意）</label>
+              <textarea id="ot-message" name="message" rows="4" placeholder="現在のお悩みやご希望の日程帯など、お気軽にご記入ください"></textarea>
+            </div>
+            <label class="otform__consent">
+              <input type="checkbox" id="ot-consent" required>
+              <span><a href="https://galileo-sciences.com/pages/news-payment.html" target="_blank" rel="noopener">特定商取引法に基づく表記・個人情報の取り扱い</a>に同意します <span class="otform__req">必須</span></span>
+            </label>
+            <button type="submit" class="btn-cta btn-cta--xl" id="otSubmitBtn">▶︎ この内容で申し込む</button>
+            <p class="otform__note">※お試しコースは ¥9,900（税込）／ 1人1回限りです。送信後の自動継続はありません。</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <!-- ─── Final CTA ─── -->
@@ -774,7 +844,7 @@ p.body strong{color:var(--primary-dark)}
       申込フォームは所要約2分。<br>
       担当より日程調整のご連絡を差し上げます。
     </p>
-    <a href="https://galileo-sciences.com/pages/muryo-shindan.html" target="_blank" rel="noopener" class="btn-cta">▶︎ お試しコースを申し込む</a>
+    <a href="#otameshi-form" class="btn-cta">▶︎ お試しコースを申し込む</a>
     <div class="final__hint">強引な勧誘・追加請求は一切ありません</div>
     <div class="final__links">
       <a href="https://galileo-sciences.com/pages/mainichi-kadai.html" target="_blank" rel="noopener">毎日課題システムについて</a>
