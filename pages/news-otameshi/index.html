@@ -892,10 +892,10 @@ function submitOtameshi(e){
   var btn=document.getElementById('otSubmitBtn');
   btn.disabled=true;btn.textContent='送信中…';
   var g=function(id){var el=document.getElementById(id);return el?el.value:'';};
-  var params=new URLSearchParams({action:'contact',source:'galileo-otameshi',
+  var params=new URLSearchParams({action:'otameshi',source:'galileo-otameshi',
     name:g('ot-name'),kana:g('ot-kana'),email:g('ot-email'),tel:g('ot-tel'),
     grade:g('ot-grade'),univ:g('ot-univ'),subject:g('ot-subject'),
-    message:'お試しコース申込 ｜ 体験科目:'+g('ot-subject')+' ｜ '+g('ot-message')});
+    message:g('ot-message')});
   if(OTAMESHI_GAS_URL){try{fetch(OTAMESHI_GAS_URL,{method:'POST',body:params,mode:'no-cors'});}catch(err){}}
   var name=(g('ot-name')||'お客').replace(/</g,'&lt;');
   var sec=document.getElementById('otameshi-form');
