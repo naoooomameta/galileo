@@ -24,6 +24,8 @@
 .cta-section .section-title{color:var(--white)}
 .cta-section .section-title::after{background:linear-gradient(90deg,#D4A843,rgba(255,255,255,.3))}
 .cta-section p{color:rgba(255,255,255,.75);font-size:15px;line-height:2;max-width:560px;margin:0 auto 28px}
+/* スクロールモーション除外（ロードマップ画像セクション等は常時表示） */
+.section.no-reveal{opacity:1!important;transform:none!important;transition:none!important}
 .detail-card{background:var(--white);border-radius:18px;padding:36px;border:1px solid var(--border);border-left:4px solid var(--primary-light);margin-bottom:24px;transition:all .3s;box-shadow:0 2px 8px rgba(14,74,56,.04)}
 .detail-card:hover{box-shadow:0 8px 28px rgba(14,74,56,.08);border-left-color:var(--amber);transform:translateY(-2px)}
 .detail-card h3{font-size:20px;font-weight:700;margin-bottom:12px;color:var(--primary-dark)}
@@ -110,7 +112,7 @@
   </div>
 </section>
 
-<section class="section bg-alt">
+<section class="section bg-alt no-reveal">
   <div class="container" style="text-align:center">
     <div class="section-label">ROADMAP</div>
     <h2 class="section-title">毎日課題が、志望校合格に直結</h2>
@@ -201,7 +203,7 @@ document.getElementById('hamburger').addEventListener('click',()=>{document.getE
 document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('nav').classList.remove('open');document.getElementById('hamburger').classList.remove('open')}));
 function handleSubmit(e){e.preventDefault();document.getElementById('modal').classList.add('open');e.target.reset()}
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
-document.querySelectorAll('.section,.worry-card,.pillar,.daily-step,.daily-merit,.thinking-card,.course-card,.gallery-item,.staff-card,.voice-card,.flow-step,.faq-item').forEach(el=>obs.observe(el));
+document.querySelectorAll('.section:not(.no-reveal),.worry-card,.pillar,.daily-step,.daily-merit,.thinking-card,.course-card,.gallery-item,.staff-card,.voice-card,.flow-step,.faq-item').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
