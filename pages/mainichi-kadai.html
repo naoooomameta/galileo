@@ -34,7 +34,20 @@
 .example-box h4{font-size:15px;font-weight:700;color:var(--primary);margin-bottom:8px}
 .example-box li{font-size:14px;color:var(--text-light);padding:4px 0 4px 20px;position:relative;line-height:1.9}
 .example-box li::before{content:'▸';position:absolute;left:4px;color:var(--amber)}
-@media(max-width:768px){.page-hero{padding:60px 0 44px}.detail-card{padding:24px 20px}}
+@media(max-width:768px){
+  .page-hero{padding:60px 0 44px}
+  .detail-card{padding:24px 20px}
+  .example-box{padding:18px 16px}
+  /* ロードマップ画像枠：スマホで左右余白を詰め角丸を抑える */
+  .roadmap-frame{max-width:100%!important;margin:20px auto 10px!important;border-radius:12px!important}
+}
+@media(max-width:480px){
+  .detail-card{padding:20px 16px}
+  .detail-card h3{font-size:18px}
+  .detail-card p{font-size:14px}
+  .example-box li{font-size:13px}
+  .roadmap-note{font-size:11px}
+}
 </style>
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
@@ -117,11 +130,11 @@
     <div class="section-label">ROADMAP</div>
     <h2 class="section-title">毎日課題が、志望校合格に直結</h2>
     <p class="section-subtitle">毎日の課題は、生徒一人ひとりの毎日課題ロードマップに基づいて設計されています。<br>日々の積み重ねが、志望校合格への最短ルートになります。</p>
-    <div style="max-width:720px;margin:28px auto 12px;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.10);border:1px solid var(--green-mist);opacity:1;transform:none;animation:none;transition:none">
+    <div class="roadmap-frame" style="max-width:720px;margin:28px auto 12px;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.10);border:1px solid var(--green-mist);opacity:1;transform:none;animation:none;transition:none">
       <!-- 毎日課題ロードマップ サンプル（実画像・固定・アニメ無効） -->
       <img src="../img/roadmap-sample.png?v=5" alt="ガリレオ 毎日課題ロードマップ サンプル" style="width:100%;height:auto;display:block;opacity:1;transform:none;animation:none;transition:none">
     </div>
-    <p style="font-size:12px;color:var(--text-muted);margin-top:8px">※ イメージです。実際の内容は生徒ごとに個別設計されます。</p>
+    <p class="roadmap-note" style="font-size:12px;color:var(--text-muted);margin-top:8px">※ イメージです。実際の内容は生徒ごとに個別設計されます。</p>
   </div>
 </section>
 
