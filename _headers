@@ -1,0 +1,12 @@
+# Netlify キャッシュ制御
+# HTML は毎回サーバーに再確認させ、更新後に古い表示が残らないようにする。
+# CSS/JS/画像はファイル更新時に ?v= を付けて更新しているため、通常キャッシュでOK。
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/pages/*
+  Cache-Control: public, max-age=0, must-revalidate
