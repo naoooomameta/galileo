@@ -24,8 +24,8 @@
 .cta-section .section-title{color:var(--white)}
 .cta-section .section-title::after{background:linear-gradient(90deg,#D4A843,rgba(255,255,255,.3))}
 .cta-section p{color:rgba(255,255,255,.75);font-size:15px;line-height:2;max-width:560px;margin:0 auto 28px}
-/* スクロールモーション除外（ロードマップ画像セクション等は常時表示） */
-.section.no-reveal{opacity:1!important;transform:none!important;transition:none!important}
+/* スクロールモーション除外（ロードマップ画像セクション等は常時表示・一切動かさない） */
+.section.no-reveal,.section.no-reveal *{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
 .detail-card{background:var(--white);border-radius:18px;padding:36px;border:1px solid var(--border);border-left:4px solid var(--primary-light);margin-bottom:24px;transition:all .3s;box-shadow:0 2px 8px rgba(14,74,56,.04)}
 .detail-card:hover{box-shadow:0 8px 28px rgba(14,74,56,.08);border-left-color:var(--amber);transform:translateY(-2px)}
 .detail-card h3{font-size:20px;font-weight:700;margin-bottom:12px;color:var(--primary-dark)}
@@ -119,7 +119,7 @@
     <p class="section-subtitle">毎日の課題は、生徒一人ひとりの毎日課題ロードマップに基づいて設計されています。<br>日々の積み重ねが、志望校合格への最短ルートになります。</p>
     <div style="max-width:900px;margin:28px auto 12px;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.10)">
       <!-- 毎日課題ロードマップ サンプル（実画像・固定） -->
-      <img src="../img/roadmap-sample.png?v=1" alt="ガリレオ 毎日課題ロードマップ サンプル" style="width:100%;height:auto;display:block">
+      <img src="../img/roadmap-sample.png?v=2" alt="ガリレオ 毎日課題ロードマップ サンプル" style="width:100%;height:auto;display:block">
     </div>
     <p style="font-size:12px;color:var(--text-muted);margin-top:8px">※ イメージです。実際の内容は生徒ごとに個別設計されます。</p>
   </div>
