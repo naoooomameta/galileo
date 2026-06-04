@@ -343,6 +343,10 @@ p.body strong{color:var(--primary-dark)}
   .final__title br{display:none}
   .final__sub{font-size:13px}
 }
+/* main visual (FV) */
+.otameshi-mv{margin:0 auto 42px;max-width:880px;border-radius:18px;overflow:hidden;box-shadow:0 14px 38px -18px rgba(10,50,40,.35);border:1px solid var(--green-mist,#c0d8c8);line-height:0}
+.otameshi-mv img{width:100%;height:auto;display:block}
+@media(max-width:680px){.otameshi-mv{margin:0 auto 32px;border-radius:14px}}
 /* application form */
 .otform{max-width:680px;margin:0 auto;background:#fff;border:1px solid var(--line,#dfe7e2);border-radius:18px;padding:32px;box-shadow:0 18px 40px -24px rgba(20,105,76,.4)}
 .otform__row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
@@ -409,6 +413,16 @@ p.body strong{color:var(--primary-dark)}
       <span>理系の大学受験専門塾「ガリレオ」</span>
     </div>
   </header>
+
+  <!-- ─── Main visual (FV) ─── -->
+  <figure class="otameshi-mv">
+    <picture>
+      <source media="(max-width:680px)" type="image/webp" srcset="../../img/hero-fv-sp.webp">
+      <source media="(max-width:680px)" srcset="../../img/hero-fv-sp.png">
+      <source type="image/webp" srcset="../../img/hero-fv-pc.webp">
+      <img src="../../img/hero-fv-pc.png" alt="毎日課題 × 理系思考で志望校合格へ — 理系の大学受験専門塾 ガリレオ お試しコース" loading="eager" decoding="async">
+    </picture>
+  </figure>
 
   <!-- ─── Hero card ─── -->
   <div class="hero-card">
