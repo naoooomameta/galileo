@@ -763,3 +763,20 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
   .worry-card:hover,.pillar:hover,.course-card:hover,.staff-card:hover,.voice-card:hover,.gallery-item:hover,.thinking-card:hover{transform:none;box-shadow:none}
   .nav a:hover{border-bottom-color:transparent}
 }
+
+/* ===== 受講スタイル（回数）＋費用は無料相談で案内（料金非表示） ===== */
+.frequency-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:780px;margin:0 auto 32px}
+.frequency-card{background:var(--white);border:1px solid var(--border);border-top:3px solid var(--green-mist);border-radius:16px;padding:28px 22px;text-align:center;transition:all .3s;box-shadow:0 2px 8px rgba(14,74,56,.04)}
+.frequency-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(14,74,56,.1);border-top-color:var(--primary)}
+.frequency-card.featured{border:2px solid var(--primary-light);border-top:3px solid var(--cta);box-shadow:0 4px 20px rgba(14,74,56,.1)}
+.frequency-num{font-family:var(--font-serif);font-size:26px;font-weight:800;color:var(--primary-dark);margin-bottom:10px}
+.frequency-card p{font-size:14px;color:var(--text-light);line-height:1.9}
+.consult-note{max-width:680px;margin:0 auto;background:linear-gradient(135deg,var(--green-pale),rgba(14,74,56,.06));border:1px solid var(--green-mist);border-left:4px solid var(--amber);border-radius:16px;padding:28px 32px;text-align:center}
+.consult-note p{font-size:15px;color:var(--text-light);line-height:2;margin-bottom:20px}
+.consult-note strong{color:var(--primary-dark)}
+@media(max-width:768px){
+  .frequency-cards{grid-template-columns:1fr;max-width:420px;gap:12px}
+  .frequency-card{padding:22px 18px}
+  .consult-note{padding:22px 20px}
+  .consult-note p{font-size:14px}
+}
