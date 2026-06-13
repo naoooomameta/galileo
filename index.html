@@ -1336,13 +1336,14 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
     <div class="section-label">Instagram</div>
     <h2 class="section-title">Instagram最新投稿</h2>
     <p class="section-subtitle">日々の授業・合格速報・学習tips を発信しています！</p>
-    <div class="instagram-feed">
-      <div class="instagram-item"><img src="img/ig-1.svg" alt="合格速報" style="width:100%;height:100%;object-fit:cover"></div>
-      <div class="instagram-item"><img src="img/ig-2.svg" alt="学習Tips" style="width:100%;height:100%;object-fit:cover"></div>
-      <div class="instagram-item"><img src="img/ig-3.svg" alt="偏差値推移" style="width:100%;height:100%;object-fit:cover"></div>
-      <div class="instagram-item"><img src="img/ig-4.svg" alt="毎日課題" style="width:100%;height:100%;object-fit:cover"></div>
-      <div class="instagram-item"><img src="img/ig-5.svg" alt="生徒の声" style="width:100%;height:100%;object-fit:cover"></div>
-      <div class="instagram-item"><img src="img/ig-6.svg" alt="無料体験" style="width:100%;height:100%;object-fit:cover"></div>
+    <div style="max-width:660px;margin:2rem auto 0;">
+      <behold-widget feed-id="__GALILEO_FEED_ID__"></behold-widget>
+      <script>
+        (() => {
+          const d=document,s=d.createElement("script");s.type="module";
+          s.src="https://w.behold.so/widget.js";d.head.append(s);
+        })();
+      </script>
     </div>
     <div class="section-link"><a href="https://www.instagram.com/galileo_sciences/" target="_blank" rel="noopener">Instagramをフォローする → @galileo_sciences</a></div>
   </div>
