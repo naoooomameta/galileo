@@ -1,38 +1,96 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
   <defs>
-    <linearGradient id="bg4" x1="800" y1="0" x2="0" y2="600" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#DCEEE3"/><stop offset="100%" stop-color="#EDF5F0"/>
+    <linearGradient id="bg4" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F1F8F4"/><stop offset="55%" stop-color="#E4F1E9"/><stop offset="100%" stop-color="#D6EADD"/>
     </linearGradient>
+    <linearGradient id="gold4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D4A843"/><stop offset="55%" stop-color="#C49A3C"/><stop offset="100%" stop-color="#B07E2A"/>
+    </linearGradient>
+    <linearGradient id="screen4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c6b51"/><stop offset="100%" stop-color="#0E4A38"/>
+    </linearGradient>
+    <linearGradient id="paper4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#F4F9F6"/>
+    </linearGradient>
+    <radialGradient id="glow4" cx="50%" cy="38%" r="62%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity=".55"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft4" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0A3228" flood-opacity=".16"/>
+    </filter>
+    <filter id="soft24" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#0A3228" flood-opacity=".18"/>
+    </filter>
+    <filter id="pillS" x="-30%" y="-60%" width="160%" height="260%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#0A3228" flood-opacity=".28"/>
+    </filter>
   </defs>
+  
   <rect width="800" height="600" fill="url(#bg4)"/>
-  <!-- Whiteboard -->
-  <rect x="100" y="60" width="600" height="400" rx="12" fill="#fff" stroke="#c0d8c8" stroke-width="2"/>
-  <!-- Board frame top -->
-  <rect x="100" y="60" width="600" height="40" rx="12" fill="#0E4A38" opacity=".08"/>
-  <!-- Math content -->
-  <g fill="#0E4A38" font-family="serif" opacity=".7">
-    <text x="140" y="140" font-size="20" font-weight="700" fill="#C49A3C" opacity="1">【微分積分】</text>
-    <text x="140" y="180" font-size="18">定義: f'(x) = lim  f(x+h) - f(x)</text>
-    <text x="380" y="200" font-size="18">h→0      h</text>
-    <text x="140" y="250" font-size="18">例題: f(x) = x³ + 2x² - 5x + 1</text>
-    <text x="140" y="290" font-size="18">f'(x) = 3x² + 4x - 5</text>
-    <text x="140" y="340" font-size="16" fill="#C49A3C" opacity="1">Point: 各項のべき乗を係数に掛けて</text>
-    <text x="140" y="365" font-size="16" fill="#C49A3C" opacity="1">       指数を1つ下げる</text>
+  <rect width="800" height="600" fill="url(#glow4)"/>
+  <g>
+    <circle cx="705" cy="95" r="135" fill="#ffffff" opacity=".22"/>
+    <circle cx="80" cy="545" r="150" fill="#0E4A38" opacity=".035"/>
+    <circle cx="640" cy="540" r="90" fill="#C49A3C" opacity=".05"/>
   </g>
-  <!-- Pointer/marker -->
-  <rect x="580" y="300" width="8" height="50" rx="4" fill="#C49A3C" opacity=".6" transform="rotate(-30 584 325)"/>
-  <!-- Eraser -->
-  <rect x="620" y="380" width="50" height="30" rx="4" fill="#c0d8c8" opacity=".5"/>
-  <!-- Graph sketch -->
-  <g transform="translate(460,130)" opacity=".5">
-    <rect width="200" height="150" rx="4" fill="none" stroke="#c0d8c8" stroke-width="1"/>
-    <line x1="30" y1="120" x2="180" y2="120" stroke="#0E4A38" stroke-width="1.5"/>
-    <line x1="30" y1="20" x2="30" y2="120" stroke="#0E4A38" stroke-width="1.5"/>
-    <path d="M40 100 Q70 110 100 75 Q130 40 170 30" stroke="#C49A3C" stroke-width="2" fill="none"/>
-    <text x="185" y="125" fill="#0E4A38" font-size="10" font-family="serif">x</text>
-    <text x="20" y="18" fill="#0E4A38" font-size="10" font-family="serif">y</text>
+  <g fill="#0E4A38" opacity=".06">
+    <circle cx="54" cy="120" r="4"/><circle cx="116" cy="78" r="2.6"/><circle cx="150" cy="150" r="3"/>
+    <circle cx="742" cy="470" r="4"/><circle cx="700" cy="520" r="2.6"/>
   </g>
-  <!-- Label -->
-  <rect x="280" y="500" width="240" height="44" rx="22" fill="#0E4A38"/>
-  <text x="400" y="527" text-anchor="middle" fill="#fff" font-size="16" font-family="sans-serif" font-weight="600">数学の解説中</text>
+  
+  <!-- whiteboard -->
+  <g filter="url(#soft4)">
+    <rect x="92" y="64" width="616" height="360" rx="14" fill="url(#paper4)"/>
+  </g>
+  <rect x="92" y="64" width="616" height="360" rx="14" fill="none" stroke="#c0d8c8" stroke-width="2"/>
+  <rect x="92" y="64" width="616" height="44" rx="14" fill="#0E4A38" opacity=".05"/>
+  <!-- tray -->
+  <rect x="120" y="424" width="560" height="14" rx="7" fill="#c0d8c8"/>
+  <rect x="150" y="421" width="70" height="9" rx="4.5" fill="#C49A3C"/>
+  <rect x="232" y="421" width="70" height="9" rx="4.5" fill="#14614A"/>
+  <!-- title chip -->
+  <rect x="120" y="92" width="150" height="34" rx="17" fill="url(#gold4)"/>
+  <text x="195" y="115" text-anchor="middle" fill="#fff" font-size="17" font-family="sans-serif" font-weight="700">微分積分</text>
+  <!-- definition + example -->
+  <g fill="#0E4A38" font-family="serif">
+    <text x="124" y="168" font-size="19">定義 :  f '(x) = lim</text>
+    <text x="300" y="160" font-size="15" fill="#5b7d70">h→0</text>
+    <text x="318" y="160" font-size="17">f(x+h) − f(x)</text>
+    <line x1="318" y1="168" x2="452" y2="168" stroke="#0E4A38" stroke-width="1.3"/>
+    <text x="376" y="184" font-size="17">h</text>
+    <text x="124" y="232" font-size="18">例題 :  f(x) = x³ + 2x² − 5x + 1</text>
+    <text x="124" y="270" font-size="18">　　　 f '(x) = 3x² + 4x − 5</text>
+  </g>
+  <!-- graph card -->
+  <g transform="translate(486,150)">
+    <rect width="186" height="150" rx="8" fill="#F4F9F6" stroke="#c0d8c8" stroke-width="1.4"/>
+    <line x1="26" y1="124" x2="170" y2="124" stroke="#7d9b8f" stroke-width="1.5"/>
+    <line x1="40" y1="18" x2="40" y2="124" stroke="#7d9b8f" stroke-width="1.5"/>
+    <path d="M40,110 Q70,118 96,86 Q126,48 168,30" stroke="url(#gold4)" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="96" cy="86" r="4" fill="#0E4A38"/>
+    <line x1="96" y1="86" x2="96" y2="124" stroke="#0E4A38" stroke-width="1" stroke-dasharray="3 3" opacity=".5"/>
+    <text x="168" y="120" fill="#5b7d70" font-size="11" font-family="serif">x</text>
+    <text x="30" y="22" fill="#5b7d70" font-size="11" font-family="serif">y</text>
+  </g>
+  <!-- POINT callout -->
+  <g transform="translate(124,300)">
+    <rect width="350" height="64" rx="10" fill="#C49A3C" opacity=".1"/>
+    <rect width="350" height="64" rx="10" fill="none" stroke="#C49A3C" stroke-opacity=".4" stroke-width="1.4"/>
+    <rect x="14" y="14" width="58" height="22" rx="11" fill="url(#gold4)"/>
+    <text x="43" y="30" text-anchor="middle" fill="#fff" font-size="12.5" font-family="sans-serif" font-weight="700">POINT</text>
+    <text x="84" y="30" fill="#8a6a1f" font-size="13.5" font-family="sans-serif">各項のべき乗を係数に掛けて、</text>
+    <text x="14" y="52" fill="#8a6a1f" font-size="13.5" font-family="sans-serif">指数を1つ下げるのが微分の基本。</text>
+  </g>
+  <!-- marker held at board -->
+  <g transform="rotate(38 556 322)">
+    <rect x="540" y="300" width="12" height="60" rx="6" fill="#C49A3C"/>
+    <rect x="540" y="300" width="12" height="14" rx="6" fill="#0E4A38"/>
+  </g>
+  
+  <g filter="url(#pillS)">
+    <rect x="284" y="516" width="232" height="50" rx="25" fill="#0E4A38"/>
+  </g>
+  <rect x="284" y="516" width="232" height="50" rx="25" fill="none" stroke="#D4A843" stroke-opacity=".4" stroke-width="1.5"/>
+  <circle cx="310" cy="541" r="3.4" fill="#D4A843"/>
+  <text x="406" y="547" text-anchor="middle" fill="#fff" font-size="17" font-family="sans-serif" font-weight="700" letter-spacing=".02em">数学の解説中</text>
 </svg>
