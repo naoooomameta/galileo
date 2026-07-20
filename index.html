@@ -131,6 +131,7 @@ strong{font-weight:700}
 /* ===== SECTIONS ===== */
 .section{padding:clamp(60px,8vw,100px) 0}
 .bg-alt{background:var(--bg-alt)}
+.bg-white{background:var(--white)}
 .section-label{text-align:center;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:10px}
 .section-title{text-align:center;font-family:var(--font-serif);font-size:clamp(24px,3.5vw,34px);font-weight:700;line-height:1.5;margin-bottom:16px;position:relative}
 .section-title::after{content:'';display:block;width:40px;height:3px;background:linear-gradient(90deg,var(--primary),var(--amber));margin:16px auto 0;border-radius:2px}
@@ -141,7 +142,7 @@ strong{font-weight:700}
 .section-link a:hover{background:var(--primary);color:var(--white);transform:translateY(-2px);box-shadow:0 4px 16px rgba(14,74,56,.15)}
 
 /* Scroll animation */
-.section,.hero-stats,.worry-card,.pillar,.daily-step,.daily-merit,.thinking-card,.course-card,.gallery-item,.staff-card,.voice-card,.flow-step,.faq-item{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.section,.hero-stats,.worry-card,.pillar,.daily-step,.daily-merit,.thinking-card,.course-card,.gallery-item,.team-card,.voice-card,.flow-step,.faq-item{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .visible{opacity:1!important;transform:translateY(0)!important}
 
 /* ===== WORRIES ===== */
@@ -286,21 +287,28 @@ strong{font-weight:700}
 .movie-note{text-align:center;font-size:13px;color:var(--text-muted)}
 @media(max-width:640px){.movie-grid{grid-template-columns:1fr}}
 
-/* ===== STAFF ===== */
-.staff-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:36px;flex-wrap:wrap}
-.staff-tab{padding:10px 22px;border-radius:40px;font-size:14px;font-weight:600;color:var(--text-light);background:var(--white);border:1px solid var(--border);transition:all .3s;cursor:pointer}
-.staff-tab.active,.staff-tab:hover{background:var(--primary);color:var(--white);border-color:var(--primary);box-shadow:0 2px 8px rgba(14,74,56,.15)}
-.staff-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
-.staff-card{background:var(--white);border-radius:16px;overflow:hidden;border:1px solid var(--border);transition:all .3s;box-shadow:0 2px 8px rgba(14,74,56,.04)}
-.staff-card:hover{box-shadow:0 8px 28px rgba(14,74,56,.1);transform:translateY(-4px);border-color:var(--green-mist)}
-.staff-img{aspect-ratio:1;background:linear-gradient(160deg,#f0ebe3 0%,#e4ddd2 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.staff-img svg{width:60%;height:60%;opacity:.7}
-.staff-body{padding:18px 20px 22px}
-.staff-role{font-size:12px;font-weight:700;color:var(--amber);letter-spacing:.05em;text-transform:uppercase}
-.staff-body h4{font-size:18px;font-weight:700;margin:6px 0 10px;color:var(--primary-dark)}
-.staff-subjects{font-size:13px;color:var(--primary);font-weight:600;margin-bottom:10px;line-height:1.6;padding:6px 10px;background:var(--green-pale);border-radius:6px;display:inline-block}
-.staff-msg{font-size:13px;color:var(--text-light);line-height:1.9}
-.staff-bottom{text-align:center;margin-top:40px;font-size:15px;color:var(--text-light);line-height:2;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px 32px}
+/* ===== STAFF（専門チーム体制） ===== */
+.team-supervisor{max-width:820px;margin:0 auto 48px;background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 2px 8px rgba(14,74,56,.04)}
+.team-supervisor-head{background:var(--amber);color:var(--white);text-align:center;font-weight:800;font-size:16px;letter-spacing:.14em;padding:11px 16px}
+.team-supervisor-body{display:flex;align-items:center;gap:26px;padding:26px 32px}
+.team-supervisor-img{width:104px;height:104px;border-radius:50%;overflow:hidden;flex-shrink:0;background:linear-gradient(160deg,#f0ebe3 0%,#e4ddd2 100%);display:flex;align-items:flex-end;justify-content:center}
+.team-supervisor-img svg{width:88%;height:88%}
+.team-supervisor-name{font-family:var(--font-serif);font-size:22px;font-weight:700;color:var(--primary-dark);margin-bottom:6px}
+.team-supervisor-text{font-size:14px;color:var(--text-light);line-height:1.9}
+.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:820px;margin:0 auto}
+.team-card{position:relative;background:var(--white);border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:16px;padding:0 22px 24px;text-align:center;box-shadow:0 2px 8px rgba(14,74,56,.04);transition:all .3s}
+.team-card:hover{box-shadow:0 8px 28px rgba(14,74,56,.1);transform:translateY(-4px);border-color:var(--green-mist);border-left-color:var(--primary)}
+.team-corner{position:absolute;top:-1px;left:-4px;background:var(--primary);color:var(--white);font-size:13px;font-weight:700;letter-spacing:.1em;padding:6px 18px;border-radius:14px 0 10px 0}
+.team-photo{position:relative;width:168px;max-width:70%;margin:32px auto 16px}
+.team-photo-frame{aspect-ratio:1;border-radius:10px;overflow:hidden;background:linear-gradient(160deg,#f0ebe3 0%,#e4ddd2 100%);display:flex;align-items:flex-end;justify-content:center}
+.team-photo-frame svg{width:92%;height:92%}
+.team-role{position:absolute;left:50%;bottom:-11px;transform:translateX(-50%);background:var(--amber);color:var(--white);font-size:12.5px;font-weight:700;padding:5px 14px;border-radius:4px;white-space:nowrap;box-shadow:0 2px 8px rgba(14,74,56,.18)}
+.team-name{font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--primary);margin:16px 0 10px}
+.team-name small{font-size:14px;font-weight:700;margin-left:2px}
+.team-desc{font-size:13.5px;color:var(--text-light);line-height:1.9;margin-bottom:14px}
+.team-tags{display:flex;justify-content:center;flex-wrap:wrap;gap:6px}
+.team-tag{background:var(--primary);color:var(--white);font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:4px;letter-spacing:.02em}
+.team-bottom{text-align:center;margin-top:48px;font-family:var(--font-serif);font-size:17px;color:var(--text);line-height:2.1}
 
 /* ===== VOICES ===== */
 .voice-showcase{background:linear-gradient(135deg,var(--green-pale) 0%,var(--white) 100%);border-radius:20px;border:1px solid var(--green-mist);padding:36px;margin-bottom:32px;position:relative;box-shadow:0 4px 20px rgba(14,74,56,.06)}
@@ -717,14 +725,17 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
   .movie-item{padding:24px 20px}
 
   /* Staff */
-  .staff-tabs{gap:6px;margin-bottom:24px}
-  .staff-tab{padding:6px 14px;font-size:13px}
-  .staff-grid{grid-template-columns:repeat(2,1fr);gap:12px}
-  .staff-body{padding:12px 14px 16px}
-  .staff-body h4{font-size:16px}
-  .staff-subjects{font-size:12px}
-  .staff-msg{font-size:12px}
-  .staff-bottom{font-size:14px;margin-top:24px}
+  .team-supervisor{margin-bottom:32px}
+  .team-supervisor-body{gap:18px;padding:20px 22px}
+  .team-supervisor-img{width:84px;height:84px}
+  .team-supervisor-name{font-size:19px}
+  .team-supervisor-text{font-size:13px}
+  .team-grid{gap:14px}
+  .team-card{padding:0 14px 18px}
+  .team-photo{margin-top:28px}
+  .team-name{font-size:20px}
+  .team-desc{font-size:12.5px}
+  .team-bottom{font-size:15px;margin-top:32px}
 
   /* Voices */
   .voice-showcase{padding:20px}
@@ -809,9 +820,17 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
   /* Daily steps go single column */
   .daily-steps{grid-template-columns:1fr}
 
-  /* Staff single column */
-  .staff-grid{grid-template-columns:1fr}
-  .staff-img{aspect-ratio:5/3}
+  /* Staff（スマホも2列を維持・画像レイアウト準拠） */
+  .team-grid{gap:10px}
+  .team-card{padding:0 10px 16px}
+  .team-corner{font-size:11px;padding:5px 12px}
+  .team-photo{max-width:80%;margin:26px auto 14px}
+  .team-role{font-size:10.5px;padding:4px 10px}
+  .team-name{font-size:18px}
+  .team-name small{font-size:12px}
+  .team-desc{font-size:11.5px;line-height:1.8}
+  .team-tag{font-size:10px;padding:3px 7px}
+  .team-supervisor-body{flex-direction:column;text-align:center;gap:14px}
 
   /* Gallery */
   .gallery-grid{grid-template-columns:1fr;gap:8px}
@@ -847,7 +866,7 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
 
 /* --- Touch device improvements --- */
 @media(hover:none){
-  .worry-card:hover,.pillar:hover,.course-card:hover,.staff-card:hover,.voice-card:hover,.gallery-item:hover,.thinking-card:hover{transform:none;box-shadow:none}
+  .worry-card:hover,.pillar:hover,.course-card:hover,.team-card:hover,.voice-card:hover,.gallery-item:hover,.thinking-card:hover{transform:none;box-shadow:none}
   .nav a:hover{border-bottom-color:transparent}
 }
 
@@ -977,6 +996,7 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
     <a href="#courses">コース・料金</a>
     <a href="pages/mainichi-kadai.html">毎日課題システム</a>
     <a href="#gallery">授業の様子</a>
+    <a href="#staff">講師紹介</a>
     <a href="pages/voices.html">合格者の声</a>
     <a href="#results">合格実績</a>
     <a href="#flow">入塾の流れ</a>
@@ -1279,33 +1299,91 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
 
 <!-- ===== MOVIE（削除：動画素材準備中のため一旦非表示） ===== -->
 
-<!-- ===== STAFF（一時非表示） ===== -->
-<!--
+<!-- ===== STAFF（専門チーム体制） ===== -->
 <section class="section bg-white" id="staff">
   <div class="container">
-    <div class="section-label">Our Teachers</div>
-    <h2 class="section-title">講師紹介</h2>
-    <p class="section-subtitle">ガリレオには個性豊かな専門スタッフが揃っています。</p>
-    <div class="staff-tabs">
-      <button class="staff-tab active" onclick="filterStaff('all',this)">全員</button>
-      <button class="staff-tab" onclick="filterStaff('leader',this)">代表・塾長</button>
-      <button class="staff-tab" onclick="filterStaff('pro',this)">プロ講師</button>
-      <button class="staff-tab" onclick="filterStaff('daily',this)">毎日課題</button>
+    <div class="section-label">Our Team</div>
+    <h2 class="section-title">合格へ導く専門チーム体制</h2>
+    <p class="section-subtitle">お子さまの状況に応じて、複数の専門スタッフが連携し、指導・管理を行います。</p>
+
+    <div class="team-supervisor">
+      <div class="team-supervisor-head">学習メソッド監修</div>
+      <div class="team-supervisor-body">
+        <div class="team-supervisor-img"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="佐野翼のイラスト"><circle cx="60" cy="44" r="22" fill="#a0c4b0"/><ellipse cx="60" cy="110" rx="30" ry="22" fill="#78aa90"/><path d="M48 40c0 0 1-3 4-3s4 3 4 3m12 0c0 0 1-3 4-3s4 3 4 3" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M55 50a5 3 0 0010 0" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M38 28c2-10 12-16 22-16s20 6 22 16" stroke="#2a6a4a" stroke-width="3" stroke-linecap="round" fill="none"/><rect x="42" y="72" width="36" height="28" rx="4" fill="#0E4A38" opacity=".15"/></svg></div>
+        <div>
+          <div class="team-supervisor-name">佐野 翼</div>
+          <p class="team-supervisor-text">プラトンで延べ200名超を指導し確立した学習設計を、ガリレオの理系メソッドへ監修。</p>
+        </div>
+      </div>
     </div>
-    <div class="staff-grid" id="staffGrid">
-      <div class="staff-card" data-role="leader"><div class="staff-img"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="44" r="22" fill="#a0c4b0"/><ellipse cx="60" cy="110" rx="30" ry="22" fill="#78aa90"/><path d="M48 40c0 0 1-3 4-3s4 3 4 3m12 0c0 0 1-3 4-3s4 3 4 3" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M55 50a5 3 0 0010 0" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M38 28c2-10 12-16 22-16s20 6 22 16" stroke="#2a6a4a" stroke-width="3" stroke-linecap="round" fill="none"/><rect x="42" y="72" width="36" height="28" rx="4" fill="#0E4A38" opacity=".15"/><path d="M60 72v10m-6-6l6 6 6-6" stroke="#0E4A38" stroke-width="1.5" stroke-linecap="round" opacity=".2"/></svg></div><div class="staff-body"><span class="staff-role">代表・塾長</span><h4>佐野 翼（さの つばさ）</h4><p class="staff-subjects">得意科目：数学・世界史・日本史・現代文・古典</p><p class="staff-msg">生徒一人一人の毎日課題ロードマップを設計し、毎日の家庭学習からメンタルまで全力でサポートします。</p></div></div>
-      <div class="staff-card" data-role="leader"><div class="staff-img"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="44" r="22" fill="#a0c4b0"/><ellipse cx="60" cy="110" rx="30" ry="22" fill="#78aa90"/><path d="M48 40c0 0 1-3 4-3s4 3 4 3m12 0c0 0 1-3 4-3s4 3 4 3" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M55 50a5 3 0 0010 0" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M36 30c1-12 13-18 24-18s23 6 24 18" stroke="#2a6a4a" stroke-width="3" stroke-linecap="round" fill="none"/><circle cx="76" cy="38" r="6" fill="none" stroke="#C49A3C" stroke-width="1.2" opacity=".4"/><line x1="80" y1="42" x2="84" y2="46" stroke="#C49A3C" stroke-width="1.2" opacity=".4"/><rect x="42" y="72" width="36" height="28" rx="4" fill="#0E4A38" opacity=".15"/></svg></div><div class="staff-body"><span class="staff-role">塾長</span><h4>澤柳 旬（さわやなぎ しゅん）</h4><p class="staff-subjects">得意科目：英語・数学・物理・化学・生物</p><p class="staff-msg">最難関レベルへの指導経験を持つ。思考力を重視した指導で目標達成をサポートします！</p></div></div>
-      <div class="staff-card" data-role="pro"><div class="staff-img"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="44" r="22" fill="#a0c4b0"/><ellipse cx="60" cy="110" rx="30" ry="22" fill="#78aa90"/><path d="M48 40c0 0 1-3 4-3s4 3 4 3m12 0c0 0 1-3 4-3s4 3 4 3" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M55 50a5 3 0 0010 0" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M38 24c-2 6-3 14 0 22m44-22c2 6 3 14 0 22" stroke="#2a6a4a" stroke-width="2.5" stroke-linecap="round" fill="none"/><path d="M38 24c6-10 14-14 22-14s16 4 22 14" stroke="#2a6a4a" stroke-width="2.5" fill="none"/><rect x="42" y="72" width="36" height="28" rx="4" fill="#C49A3C" opacity=".1"/></svg></div><div class="staff-body"><span class="staff-role">プロ講師</span><h4>三浦（みうら）</h4><p class="staff-subjects">数学IA・IIB / 生物・英語 / 化学・物理・地学基礎</p><p class="staff-msg">思考力と「なぜそうなるのか」を大切にし、次に繋がる指導をします。</p></div></div>
-      <div class="staff-card" data-role="pro"><div class="staff-img"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="44" r="22" fill="#a0c4b0"/><ellipse cx="60" cy="110" rx="30" ry="22" fill="#78aa90"/><path d="M48 40c0 0 1-3 4-3s4 3 4 3m12 0c0 0 1-3 4-3s4 3 4 3" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M55 50a5 3 0 0010 0" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M40 22c5-8 12-12 20-12s15 4 20 12c1 2 1 6 0 10" stroke="#2a6a4a" stroke-width="3" stroke-linecap="round" fill="none"/><rect x="42" y="72" width="36" height="28" rx="4" fill="#0E4A38" opacity=".15"/></svg></div><div class="staff-body"><span class="staff-role">プロ講師</span><h4>立川（たちかわ）</h4><p class="staff-subjects">数学IAIIB・IIIC / 英語 / 物理・化学・生物</p><p class="staff-msg">生徒さんの「なぜ？」を大切にし、根本的な理解のため粘り強く指導します！</p></div></div>
-      <div class="staff-card" data-role="pro"><div class="staff-img"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="44" r="22" fill="#a0c4b0"/><ellipse cx="60" cy="110" rx="30" ry="22" fill="#78aa90"/><path d="M48 40c0 0 1-3 4-3s4 3 4 3m12 0c0 0 1-3 4-3s4 3 4 3" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M55 50a5 3 0 0010 0" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M36 28c2-10 14-18 24-18s22 8 24 18c0 2-1 4-2 5" stroke="#2a6a4a" stroke-width="3" stroke-linecap="round" fill="none"/><rect x="42" y="72" width="36" height="28" rx="4" fill="#0E4A38" opacity=".15"/></svg></div><div class="staff-body"><span class="staff-role">プロ講師</span><h4>樋口（ひぐち）</h4><p class="staff-subjects">数学IAIIBIIIC / 英語 / 物理・化学・生物</p><p class="staff-msg">それぞれの生徒に寄り添い、普遍的で重要な「本質」を理解できる指導をします！</p></div></div>
-      <div class="staff-card" data-role="pro"><div class="staff-img"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="44" r="22" fill="#a0c4b0"/><ellipse cx="60" cy="110" rx="30" ry="22" fill="#78aa90"/><path d="M48 40c0 0 1-3 4-3s4 3 4 3m12 0c0 0 1-3 4-3s4 3 4 3" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M55 50a5 3 0 0010 0" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M42 20c4-6 10-10 18-10s14 4 18 10c2 4 2 10 0 14" stroke="#2a6a4a" stroke-width="3" stroke-linecap="round" fill="none"/><rect x="42" y="72" width="36" height="28" rx="4" fill="#C49A3C" opacity=".1"/></svg></div><div class="staff-body"><span class="staff-role">プロ講師</span><h4>西山（にしやま）</h4><p class="staff-subjects">数学IAIIBIIIC / 化学</p><p class="staff-msg">楽しく長く勉強を続けていけるようサポートしていきます。</p></div></div>
-      <div class="staff-card" data-role="daily"><div class="staff-img"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="44" r="22" fill="#a0c4b0"/><ellipse cx="60" cy="110" rx="30" ry="22" fill="#78aa90"/><path d="M48 40c0 0 1-3 4-3s4 3 4 3m12 0c0 0 1-3 4-3s4 3 4 3" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><ellipse cx="60" cy="51" rx="4" ry="2.5" stroke="#4a8a6a" stroke-width="1.5"/><path d="M34 22c3-6 8-10 14-12m24 0c6 2 11 6 14 12" stroke="#2a6a4a" stroke-width="2.5" stroke-linecap="round" fill="none"/><path d="M34 22c-2 8-2 18 4 26m44-26c2 8 2 18-4 26" stroke="#2a6a4a" stroke-width="2" stroke-linecap="round" fill="none"/><rect x="42" y="72" width="36" height="28" rx="4" fill="#C49A3C" opacity=".1"/><circle cx="60" cy="82" r="4" stroke="#C49A3C" stroke-width="1" opacity=".3"/></svg></div><div class="staff-body"><span class="staff-role">毎日課題 Dir.</span><h4>永田（ながた）</h4><p class="staff-subjects">① 毎日課題チェック ② 確認テスト管理</p><p class="staff-msg">一緒に悩んで考えて、できることを増やしていけるように頑張ります！</p></div></div>
-      <div class="staff-card" data-role="daily"><div class="staff-img"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="44" r="22" fill="#a0c4b0"/><ellipse cx="60" cy="110" rx="30" ry="22" fill="#78aa90"/><path d="M48 40c0 0 1-3 4-3s4 3 4 3m12 0c0 0 1-3 4-3s4 3 4 3" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><ellipse cx="60" cy="51" rx="4" ry="2.5" stroke="#4a8a6a" stroke-width="1.5"/><path d="M36 20c4-6 10-10 18-10s14 4 18 10" stroke="#2a6a4a" stroke-width="2.5" stroke-linecap="round" fill="none"/><path d="M36 20c-4 8-6 20-2 30m32-30c4 8 6 20 2 30" stroke="#2a6a4a" stroke-width="2" stroke-linecap="round" fill="none"/><rect x="42" y="72" width="36" height="28" rx="4" fill="#C49A3C" opacity=".1"/></svg></div><div class="staff-body"><span class="staff-role">毎日課題 Dir.</span><h4>瀧澤（たきざわ）</h4><p class="staff-subjects">① 毎日課題チェック ② 確認テスト管理</p><p class="staff-msg">ひとり一人にあった勉強の仕方を重視し、自ら進められる学習サポートを心掛けます。</p></div></div>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <span class="team-corner">塾長</span>
+        <div class="team-photo">
+          <div class="team-photo-frame"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="今西先生のイラスト"><circle cx="60" cy="44" r="22" fill="#a0c4b0"/><ellipse cx="60" cy="110" rx="30" ry="22" fill="#78aa90"/><path d="M48 40c0 0 1-3 4-3s4 3 4 3m12 0c0 0 1-3 4-3s4 3 4 3" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M55 50a5 3 0 0010 0" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M34 22c3-6 8-10 14-12m24 0c6 2 11 6 14 12" stroke="#2a6a4a" stroke-width="2.5" stroke-linecap="round" fill="none"/><path d="M34 22c-2 8-2 18 4 26m44-26c2 8 2 18-4 26" stroke="#2a6a4a" stroke-width="2" stroke-linecap="round" fill="none"/><rect x="42" y="72" width="36" height="28" rx="4" fill="#0E4A38" opacity=".15"/></svg></div>
+          <span class="team-role">受験伴走・学習管理</span>
+        </div>
+        <h3 class="team-name">今西<small>先生</small></h3>
+        <p class="team-desc">志望校までの道のりと日々の学習を管理し、安心して続けられる環境を整えます。</p>
+        <div class="team-tags"><span class="team-tag">学習進捗管理</span><span class="team-tag">保護者連携</span><span class="team-tag">全体統括</span></div>
+      </div>
+
+      <div class="team-card">
+        <span class="team-corner">教務長</span>
+        <div class="team-photo">
+          <div class="team-photo-frame"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="佐野先生のイラスト"><circle cx="60" cy="44" r="22" fill="#a0c4b0"/><ellipse cx="60" cy="110" rx="30" ry="22" fill="#78aa90"/><path d="M48 40c0 0 1-3 4-3s4 3 4 3m12 0c0 0 1-3 4-3s4 3 4 3" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M55 50a5 3 0 0010 0" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M36 30c1-12 13-18 24-18s23 6 24 18" stroke="#2a6a4a" stroke-width="3" stroke-linecap="round" fill="none"/><rect x="42" y="72" width="36" height="28" rx="4" fill="#0E4A38" opacity=".15"/></svg></div>
+          <span class="team-role">学習アドバイザー</span>
+        </div>
+        <h3 class="team-name">佐野<small>先生</small></h3>
+        <p class="team-desc">数学・物理・化学の学習面を統括し、つまずきや勉強法の相談に対応します。</p>
+        <div class="team-tags"><span class="team-tag">質問対応</span><span class="team-tag">勉強法設計</span><span class="team-tag">進路相談</span></div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo">
+          <div class="team-photo-frame"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="立川先生のイラスト"><circle cx="60" cy="44" r="22" fill="#a0c4b0"/><ellipse cx="60" cy="110" rx="30" ry="22" fill="#78aa90"/><circle cx="52" cy="41" r="7" stroke="#2a6a4a" stroke-width="1.5" fill="none"/><circle cx="68" cy="41" r="7" stroke="#2a6a4a" stroke-width="1.5" fill="none"/><line x1="59" y1="41" x2="61" y2="41" stroke="#2a6a4a" stroke-width="1.5"/><path d="M55 52a5 3 0 0010 0" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M38 28c2-10 12-16 22-16s20 6 22 16" stroke="#2a6a4a" stroke-width="3" stroke-linecap="round" fill="none"/><rect x="42" y="72" width="36" height="28" rx="4" fill="#0E4A38" opacity=".15"/></svg></div>
+          <span class="team-role">理系教科指導</span>
+        </div>
+        <h3 class="team-name">立川<small>先生</small></h3>
+        <p class="team-desc">数学・理科を中心に、理解から応用まで丁寧に指導します。</p>
+        <div class="team-tags"><span class="team-tag">数学</span><span class="team-tag">物理</span><span class="team-tag">化学</span><span class="team-tag">生物</span></div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo">
+          <div class="team-photo-frame"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="中谷先生のイラスト"><circle cx="60" cy="44" r="22" fill="#a0c4b0"/><ellipse cx="60" cy="110" rx="30" ry="22" fill="#78aa90"/><path d="M48 40c0 0 1-3 4-3s4 3 4 3m12 0c0 0 1-3 4-3s4 3 4 3" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M52 49a8 5 0 0016 0" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M38 24c-2 6-3 14 0 22m44-22c2 6 3 14 0 22" stroke="#2a6a4a" stroke-width="2.5" stroke-linecap="round" fill="none"/><path d="M38 24c6-10 14-14 22-14s16 4 22 14" stroke="#2a6a4a" stroke-width="2.5" fill="none"/><rect x="42" y="72" width="36" height="28" rx="4" fill="#C49A3C" opacity=".1"/></svg></div>
+          <span class="team-role">英語・国語対策</span>
+        </div>
+        <h3 class="team-name">中谷<small>先生</small></h3>
+        <p class="team-desc">英語長文読解と国語の読解力・記述力をしっかり養います。</p>
+        <div class="team-tags"><span class="team-tag">英語</span><span class="team-tag">国語</span><span class="team-tag">共通テスト対策</span></div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo">
+          <div class="team-photo-frame"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="よはな先生のイラスト"><circle cx="60" cy="44" r="22" fill="#a0c4b0"/><ellipse cx="60" cy="110" rx="30" ry="22" fill="#78aa90"/><path d="M48 40c0 0 1-3 4-3s4 3 4 3m12 0c0 0 1-3 4-3s4 3 4 3" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><ellipse cx="60" cy="51" rx="4" ry="2.5" stroke="#4a8a6a" stroke-width="1.5"/><path d="M36 20c4-6 10-10 18-10s14 4 18 10" stroke="#2a6a4a" stroke-width="2.5" stroke-linecap="round" fill="none"/><path d="M36 20c-4 8-6 20-2 30m32-30c4 8 6 20 2 30" stroke="#2a6a4a" stroke-width="2" stroke-linecap="round" fill="none"/><rect x="42" y="72" width="36" height="28" rx="4" fill="#C49A3C" opacity=".1"/></svg></div>
+          <span class="team-role">学習管理</span>
+        </div>
+        <h3 class="team-name">よはな<small>先生</small></h3>
+        <p class="team-desc">毎日課題の管理・進捗確認で、学習習慣を定着させます。</p>
+        <div class="team-tags"><span class="team-tag">毎日記録</span><span class="team-tag">進捗確認</span><span class="team-tag">習慣化</span></div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo">
+          <div class="team-photo-frame"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="早野先生のイラスト"><circle cx="60" cy="44" r="22" fill="#a0c4b0"/><ellipse cx="60" cy="110" rx="30" ry="22" fill="#78aa90"/><path d="M48 40c0 0 1-3 4-3s4 3 4 3m12 0c0 0 1-3 4-3s4 3 4 3" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M55 50a5 3 0 0010 0" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M35 24c3-8 11-14 25-14s22 6 25 14" stroke="#2a6a4a" stroke-width="2.5" stroke-linecap="round" fill="none"/><path d="M35 24c-3 10-3 24 3 34m47-34c3 10 3 24-3 34" stroke="#2a6a4a" stroke-width="2" stroke-linecap="round" fill="none"/><rect x="42" y="72" width="36" height="28" rx="4" fill="#0E4A38" opacity=".15"/></svg></div>
+          <span class="team-role">保護者連携</span>
+        </div>
+        <h3 class="team-name">早野<small>先生</small></h3>
+        <p class="team-desc">学習状況や今後の方針を、保護者様にも丁寧に共有します。</p>
+        <div class="team-tags"><span class="team-tag">連絡共有</span><span class="team-tag">面談</span><span class="team-tag">保護者連絡</span></div>
+      </div>
     </div>
-    <p class="staff-bottom">理系各科目のプロ講師のみ在籍<br><br>大学入試改革や最新の出題傾向を常に分析し、各大学・学部に合わせた専門的な指導を提供しています。<br>科目指導はもちろん、理系受験に必要な全科目の対策まで幅広く対応可能です。</p>
+
+    <p class="team-bottom">担当講師を中心に、複数の専門スタッフが連携し、<br>チームでお子さまの合格まで伴走します。</p>
   </div>
 </section>
--->
 
 <!-- ===== VOICES ===== -->
 <section class="section bg-alt" id="voices">
@@ -1488,7 +1566,7 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
     </div>
     <div class="footer-links">
       <ul><li><a href="#features">塾の特長</a></li><li><a href="#courses">コース・料金</a></li></ul>
-      <ul><li><a href="pages/mainichi-kadai.html">毎日課題システム</a></li><li><a href="pages/mainichi-kadai.html">毎日課題の仕組み</a></li><li><a href="#gallery">授業の様子</a></li><li><a href="pages/voices.html">合格者の声</a></li></ul>
+      <ul><li><a href="pages/mainichi-kadai.html">毎日課題システム</a></li><li><a href="pages/mainichi-kadai.html">毎日課題の仕組み</a></li><li><a href="#gallery">授業の様子</a></li><li><a href="#staff">講師紹介</a></li><li><a href="pages/voices.html">合格者の声</a></li></ul>
       <ul><li><a href="#results">合格実績</a></li><li><a href="#flow">入塾の流れ</a></li><li><a href="#faq">FAQ</a></li><li><a href="pages/news.html">お知らせ</a></li><li><a href="pages/muryo-shindan.html">無料合格診断</a></li><li><a href="https://www.instagram.com/galileo_sciences/" target="_blank">Instagram</a></li><li><a href="#about">塾概要</a></li><li><a href="#contact">お問い合わせ</a></li><li><a href="pages/legal.html">特定商取引法に基づく表記・個人情報の取り扱い</a></li></ul>
     </div>
     <div class="footer-bottom">
@@ -1635,7 +1713,6 @@ document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{d
 // FAQ
 function toggleFaq(el){const item=el.parentElement;const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null});if(!wasOpen){item.classList.add('open');item.querySelector('.faq-a').style.maxHeight=item.querySelector('.faq-a').scrollHeight+'px'}}
 // Staff filter
-function filterStaff(role,btn){document.querySelectorAll('.staff-tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.staff-card').forEach(c=>{c.style.display=(role==='all'||c.dataset.role===role)?'':'none'})}
 // iOS Safari: フォームフォーカスで発火した自動ズームを、モーダル表示の直前に解除する
 function _resetViewportZoom(){
   try {
@@ -1846,7 +1923,7 @@ function loadCalendarIframe() {
 
 // Scroll reveal
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
-document.querySelectorAll('.section,.hero-stats,.worry-card,.pillar,.daily-step,.daily-merit,.thinking-card,.course-card,.gallery-item,.staff-card,.voice-card,.flow-step,.faq-item').forEach(el=>obs.observe(el));
+document.querySelectorAll('.section,.hero-stats,.worry-card,.pillar,.daily-step,.daily-merit,.thinking-card,.course-card,.gallery-item,.team-card,.voice-card,.flow-step,.faq-item').forEach(el=>obs.observe(el));
 // 合格者の声・主な合格実績の描画（単一データソース: assets/js/voices-data.js）
 if(window.GALILEO_VOICES){
   GALILEO_VOICES.renderFeatured(document.getElementById('home-voice-featured'),'case01');
