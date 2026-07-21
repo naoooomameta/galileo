@@ -1795,11 +1795,11 @@ function handleSubmit(e) {
   btn.disabled = false;
   btn.innerHTML = '<svg style="width:18px;height:18px;fill:currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg> 学習相談会を申し込む →';
 
-  // 1.5秒後 → 予約モーダルへ自動遷移
+  // 0.5秒後 → 予約モーダルへ自動遷移
   setTimeout(function() {
     document.getElementById('modal').classList.remove('open');
     openBookingModal();
-  }, 1500);
+  }, 500);
 }
 
 // ===== 予約ウィジェット: モーダル制御 =====
