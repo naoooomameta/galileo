@@ -271,9 +271,11 @@ strong{font-weight:700}
 
 /* ===== GALLERY ===== */
 .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.gallery-item{aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#a4c4b0,#82aa96);transition:all .4s;border:2px solid transparent;box-shadow:0 2px 8px rgba(14,74,56,.08)}
+.gallery-item{position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#a4c4b0,#82aa96);transition:all .4s;border:2px solid transparent;box-shadow:0 2px 8px rgba(14,74,56,.08)}
 .gallery-item:hover{transform:scale(1.03);box-shadow:0 8px 28px rgba(14,74,56,.15);border-color:var(--primary-light)}
 .gallery-item img{width:100%;height:100%;object-fit:cover}
+.gallery-cap{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:var(--primary);color:var(--white);font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;white-space:nowrap;box-shadow:0 2px 8px rgba(14,74,56,.25)}
+.gallery-cap::before{content:'●';color:var(--amber);font-size:8px;margin-right:6px;vertical-align:1px}
 .gallery-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-size:14px}
 @media(max-width:640px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
 
@@ -1294,10 +1296,10 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
     <div class="gallery-grid">
       <div class="gallery-item"><img src="img/gallery-1-online.svg" alt="オンライン指導の様子"></div>
       <div class="gallery-item"><img src="img/gallery-2-individual.svg" alt="個別指導の様子"></div>
-      <div class="gallery-item"><img src="img/gallery-3-dialogue.svg" alt="講師との対話型授業"></div>
-      <div class="gallery-item"><img src="img/gallery-4-math.svg" alt="数学の解説中"></div>
-      <div class="gallery-item"><img src="img/gallery-5-notebook.svg" alt="毎日課題のノート"></div>
-      <div class="gallery-item"><img src="img/gallery-6-celebration.svg" alt="合格発表の瞬間"></div>
+      <div class="gallery-item"><img src="img/gallery-3-dialogue.jpg" alt="講師との対話型授業" loading="lazy" width="1200" height="900"><span class="gallery-cap">講師との対話型授業</span></div>
+      <div class="gallery-item"><img src="img/gallery-4-feedback.jpg" alt="学習ポイントのフィードバック" loading="lazy" width="1200" height="900"><span class="gallery-cap">学習ポイントのフィードバック</span></div>
+      <div class="gallery-item"><img src="img/gallery-5-kadai.jpg" alt="毎日課題の配信" loading="lazy" width="1200" height="900"><span class="gallery-cap">毎日課題の配信</span></div>
+      <div class="gallery-item"><img src="img/gallery-6-voices.jpg" alt="合格者・保護者様の声" loading="lazy" width="1200" height="900"><span class="gallery-cap">合格者・保護者様の声</span></div>
     </div>
   </div>
 </section>
