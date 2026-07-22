@@ -270,12 +270,23 @@ strong{font-weight:700}
 @media(max-width:900px){.courses-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto}}
 
 /* ===== GALLERY ===== */
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .gallery-item{position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#a4c4b0,#82aa96);transition:all .4s;border:2px solid transparent;box-shadow:0 2px 8px rgba(14,74,56,.08)}
 .gallery-item:hover{transform:scale(1.03);box-shadow:0 8px 28px rgba(14,74,56,.15);border-color:var(--primary-light)}
 .gallery-item img{width:100%;height:100%;object-fit:cover}
 .gallery-cap{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:var(--primary);color:var(--white);font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;white-space:nowrap;box-shadow:0 2px 8px rgba(14,74,56,.25)}
 .gallery-cap::before{content:'●';color:var(--amber);font-size:8px;margin-right:6px;vertical-align:1px}
+.gallery-item{cursor:zoom-in}
+.gallery-featured{grid-column:span 2;grid-row:span 2;aspect-ratio:auto;height:100%}
+/* ライトボックス（画像タップで拡大） */
+.lightbox{position:fixed;inset:0;background:rgba(10,50,40,.93);z-index:3000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
+.lightbox.open{opacity:1;pointer-events:all}
+.lightbox img{max-width:92vw;max-height:84vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.45);cursor:default}
+.lightbox-close{position:absolute;top:14px;right:20px;background:none;border:none;color:var(--white);font-size:40px;line-height:1;cursor:pointer;opacity:.85;transition:opacity .2s}
+.lightbox-close:hover{opacity:1}
+.lightbox-cap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);background:var(--primary);color:var(--white);font-size:13px;font-weight:700;padding:6px 18px;border-radius:20px;white-space:nowrap;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+.lightbox-cap:empty{display:none}
+.lightbox-cap::before{content:'●';color:var(--amber);font-size:8px;margin-right:6px;vertical-align:1px}
 .gallery-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-size:14px}
 @media(max-width:640px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
 
@@ -841,6 +852,7 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
 
   /* Gallery */
   .gallery-grid{grid-template-columns:1fr;gap:8px}
+  .gallery-featured{grid-column:auto;grid-row:auto;aspect-ratio:4/3;height:auto}
 
   /* Instagram */
   .instagram-feed{grid-template-columns:repeat(2,1fr)}
@@ -1294,9 +1306,8 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
     <h2 class="section-title">授業・塾内の様子</h2>
     <p class="section-subtitle">ガリレオの日常風景をご覧ください。</p>
     <div class="gallery-grid">
+      <div class="gallery-item gallery-featured"><img src="img/gallery-3-dialogue.jpg" alt="講師との対話型授業" loading="lazy" width="1200" height="900"><span class="gallery-cap">講師との対話型授業</span></div>
       <div class="gallery-item"><img src="img/gallery-1-roadmap.jpg" alt="一人ひとりの合格ロードマップ" loading="lazy" width="1200" height="900"><span class="gallery-cap">合格ロードマップ</span></div>
-      <div class="gallery-item"><img src="img/gallery-2-individual.svg" alt="個別指導の様子"></div>
-      <div class="gallery-item"><img src="img/gallery-3-dialogue.jpg" alt="講師との対話型授業" loading="lazy" width="1200" height="900"><span class="gallery-cap">講師との対話型授業</span></div>
       <div class="gallery-item"><img src="img/gallery-4-feedback.jpg" alt="学習ポイントのフィードバック" loading="lazy" width="1200" height="900"><span class="gallery-cap">学習ポイントのフィードバック</span></div>
       <div class="gallery-item"><img src="img/gallery-5-kadai.jpg" alt="毎日課題の配信" loading="lazy" width="1200" height="900"><span class="gallery-cap">毎日課題の配信</span></div>
       <div class="gallery-item"><img src="img/gallery-6-voices.jpg" alt="合格者・保護者様の声" loading="lazy" width="1200" height="900"><span class="gallery-cap">合格者・保護者様の声</span></div>
@@ -1608,6 +1619,13 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
     </div>
   </div>
 </footer>
+
+<!-- ===== LIGHTBOX（ギャラリー画像の拡大表示） ===== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="画像の拡大表示">
+  <button class="lightbox-close" aria-label="閉じる">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="lightbox-cap" id="lightboxCap"></div>
+</div>
 
 <!-- ===== THANK YOU MODAL ===== -->
 <div class="modal-overlay" id="modal"><div class="modal"><h2>お申し込みありがとう<br>ございます！</h2><p>お問い合わせを受け付けました。<br>ご相談内容を確認のうえ、1〜3営業日以内に担当者よりご連絡いたします。<br><br>ご不明な点があれば、いつでもお気軽にお問い合わせください。</p><button onclick="document.getElementById('modal').classList.remove('open')">閉じる</button></div></div>
@@ -1951,6 +1969,36 @@ function loadCalendarIframe() {
     + '&ctz=Asia/Tokyo&mode=WEEK&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0';
   wrap.innerHTML = '<iframe src="' + src + '" loading="lazy"></iframe>';
 }
+
+// ギャラリー ライトボックス
+(function(){
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightboxImg');
+  var lbCap = document.getElementById('lightboxCap');
+  if (!lb) return;
+  document.querySelectorAll('.gallery-item').forEach(function(item){
+    var img = item.querySelector('img');
+    if (!img) return;
+    item.addEventListener('click', function(){
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      var cap = item.querySelector('.gallery-cap');
+      lbCap.textContent = cap ? cap.textContent : '';
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  function closeLb(){
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  lb.addEventListener('click', function(e){
+    if (e.target === lb || e.target.classList.contains('lightbox-close')) closeLb();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeLb();
+  });
+})();
 
 // Scroll reveal
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
