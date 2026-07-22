@@ -277,7 +277,6 @@ strong{font-weight:700}
 .gallery-cap{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:var(--primary);color:var(--white);font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;white-space:nowrap;box-shadow:0 2px 8px rgba(14,74,56,.25)}
 .gallery-cap::before{content:'●';color:var(--amber);font-size:8px;margin-right:6px;vertical-align:1px}
 .gallery-item{cursor:zoom-in}
-.gallery-featured{grid-column:span 2;grid-row:span 2;aspect-ratio:auto;height:100%}
 /* ライトボックス（画像タップで拡大） */
 .lightbox{position:fixed;inset:0;background:rgba(10,50,40,.93);z-index:3000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
 .lightbox.open{opacity:1;pointer-events:all}
@@ -852,7 +851,6 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
 
   /* Gallery */
   .gallery-grid{grid-template-columns:1fr;gap:8px}
-  .gallery-featured{grid-column:auto;grid-row:auto;aspect-ratio:4/3;height:auto}
 
   /* Instagram */
   .instagram-feed{grid-template-columns:repeat(2,1fr)}
@@ -1306,7 +1304,7 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
     <h2 class="section-title">授業・塾内の様子</h2>
     <p class="section-subtitle">ガリレオの日常風景をご覧ください。</p>
     <div class="gallery-grid">
-      <div class="gallery-item gallery-featured"><img src="img/gallery-3-dialogue.jpg" alt="講師との対話型授業" loading="lazy" width="1200" height="900"><span class="gallery-cap">講師との対話型授業</span></div>
+      <div class="gallery-item"><img src="img/gallery-3-dialogue.jpg" alt="講師との対話型授業" loading="lazy" width="1200" height="900"><span class="gallery-cap">講師との対話型授業</span></div>
       <div class="gallery-item"><img src="img/gallery-1-roadmap.jpg" alt="一人ひとりの合格ロードマップ" loading="lazy" width="1200" height="900"><span class="gallery-cap">合格ロードマップ</span></div>
       <div class="gallery-item"><img src="img/gallery-2-suii.jpg" alt="偏差値推移のイメージ" loading="lazy" width="1200" height="900"><span class="gallery-cap">偏差値推移</span></div>
       <div class="gallery-item"><img src="img/gallery-4-feedback.jpg" alt="学習ポイントのフィードバック" loading="lazy" width="1200" height="900"><span class="gallery-cap">学習ポイントのフィードバック</span></div>
