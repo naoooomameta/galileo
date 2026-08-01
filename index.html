@@ -948,6 +948,7 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
 .gcourse__list{margin-bottom:20px;flex:1}
 .gcourse__list li{font-size:13.5px;color:var(--text);line-height:1.7;padding:5px 0 5px 26px;position:relative}
 .gcourse__list li::before{content:'✓';position:absolute;left:0;top:5px;width:18px;height:18px;background:var(--primary);color:var(--white);border-radius:50%;font-size:10px;display:flex;align-items:center;justify-content:center}
+.gcourse__note{display:block;font-size:11.5px;color:var(--text-muted);line-height:1.6;margin-top:2px}
 .gcourse__cta{display:flex;align-items:center;justify-content:center;gap:6px;color:var(--white);font-size:14.5px;font-weight:700;background:var(--primary-dark);border-radius:50px;padding:13px 20px;margin-top:auto;transition:all .3s}
 .gcourse__cta:hover{opacity:.92;transform:translateY(-1px);box-shadow:0 4px 16px rgba(14,74,56,.25);color:var(--white)}
 .gcourse--featured{border:2px solid var(--primary-light);box-shadow:0 4px 24px rgba(14,74,56,.12)}
@@ -956,7 +957,14 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
 .gcourse--featured .gcourse__name{color:var(--white)}
 .gcourse--featured .gcourse__cta{background:linear-gradient(135deg,var(--cta),var(--cta-light))}
 .gcourse__popular{position:absolute;top:16px;right:16px;background:var(--cta);color:var(--white);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;box-shadow:0 2px 8px rgba(196,154,60,.3);z-index:1}
+.gcourse__subj{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;background:var(--green-pale);border:1px solid var(--green-mist);border-left:3px solid var(--amber);border-radius:8px;padding:10px 12px;margin-bottom:16px}
+.gcourse__subj-label{font-size:11px;font-weight:700;color:var(--white);background:var(--primary);padding:2px 9px;border-radius:20px;letter-spacing:.03em}
+.gcourse__subj-main{font-size:13.5px;font-weight:800;color:var(--primary-dark)}
+.gcourse__subj-opt{font-size:11.5px;color:var(--text-light);line-height:1.6;width:100%}
 .gcourses-note{text-align:center;font-size:14px;color:var(--text-light);line-height:1.9;margin-top:28px}
+.gcourses-rules{max-width:880px;margin:22px auto 0;background:var(--white);border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:12px;padding:18px 22px}
+.gcourses-rules li{font-size:12.5px;color:var(--text-light);line-height:1.9;padding-left:16px;position:relative}
+.gcourses-rules li::before{content:'※';position:absolute;left:0;top:0;color:var(--primary-light)}
 .gcourses-cta{text-align:center;margin-top:20px}
 @media(max-width:900px){.gcourses-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto}}
 @media(max-width:768px){
@@ -1128,9 +1136,10 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
         <span class="gcourses-common__label">全コース共通</span>
         <div class="gcourses-common__items">
           <span>毎日課題（週5回）</span>
-          <span>合格思考トレーニング</span>
           <span>LINE質問対応（随時）</span>
-          <span>三者面談（保護者様・生徒・講師）</span>
+          <span>学習計画の作成・進捗管理</span>
+          <span>学習カルテによる一元管理</span>
+          <span>学習状況のご報告（2ヶ月に1回）</span>
         </div>
       </div>
 
@@ -1138,19 +1147,25 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
         <!-- 大学受験準備コース -->
         <div class="gcourse">
           <div class="gcourse__head">
-            <span class="gcourse__badge">中学生〜高校3年生</span>
+            <span class="gcourse__badge">中学生〜高校2年生</span>
             <div class="gcourse__name">大学受験準備コース</div>
           </div>
           <div class="gcourse__body">
             <p class="gcourse__desc">大学受験に向けた基礎学力と学習習慣を身につけるコース。毎日課題による学習管理を通して、大学受験に必要な土台を養います。</p>
             <div class="gcourse__tags"><span>毎日課題</span><span>基礎学力養成</span><span>学習習慣づくり</span></div>
+            <p class="gcourse__subj">
+              <span class="gcourse__subj-label">対応科目</span>
+              <span class="gcourse__subj-main">標準 2科目まで</span>
+              <span class="gcourse__subj-opt">オプションで最大4科目まで追加できます</span>
+            </p>
             <p class="gcourse__inc-label">このコースに含まれるもの</p>
             <ul class="gcourse__list">
-              <li>オンライン個別指導（60分／回）</li>
-              <li>合格思考トレーニング</li>
+              <li>オンライン個別指導（60分／回）<br><span class="gcourse__note">月2回／週1回／週2回から選択</span></li>
               <li>毎日課題 週5回</li>
               <li>LINE質問対応（随時）</li>
-              <li>三者面談（保護者様・生徒・講師）</li>
+              <li>学習計画の作成・進捗管理</li>
+              <li>学習カルテによる一元管理</li>
+              <li>学習状況のご報告（2ヶ月に1回）</li>
             </ul>
           </div>
         </div>
@@ -1163,19 +1178,23 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
             <div class="gcourse__name">合格戦略プログラム</div>
           </div>
           <div class="gcourse__body">
-            <p class="gcourse__desc">志望校から逆算した合格ロードマップを作成し、日々の学習内容を設計。実力診断テストで学力の推移を把握し、受験本番まで講師が伴走します。</p>
+            <p class="gcourse__desc">志望校から逆算した合格ロードマップを作成し、日々の学習内容を設計。実力診断テストで合格ラインに対する到達度を把握し、受験本番まで講師が伴走します。</p>
             <div class="gcourse__tags"><span>合格ロードマップ</span><span>実力診断テスト</span><span>受験戦略</span></div>
+            <p class="gcourse__subj">
+              <span class="gcourse__subj-label">対応科目</span>
+              <span class="gcourse__subj-main">標準 4科目まで</span>
+              <span class="gcourse__subj-opt">オプションで最大6科目まで追加できます</span>
+            </p>
             <p class="gcourse__inc-label">このコースに含まれるもの</p>
             <ul class="gcourse__list">
-              <li>オンライン個別指導（60分／回）</li>
-              <li>合格思考トレーニング</li>
+              <li>オンライン個別指導（60分／回）<br><span class="gcourse__note">月2回／週1回／週2回から選択</span></li>
               <li>合格ロードマップ作成</li>
               <li>毎日課題 週5回</li>
-              <li>確認テスト 週1回実施</li>
-              <li>実力診断テスト 月末1回実施</li>
-              <li>当月の偏差値推移の提示</li>
+              <li>実力診断テスト 月末1回実施<br><span class="gcourse__note">合格ラインに対する到達度でフィードバック</span></li>
               <li>LINE質問対応（随時）</li>
-              <li>三者面談（保護者様・生徒・講師）</li>
+              <li>学習計画の作成・進捗管理</li>
+              <li>学習カルテによる一元管理</li>
+              <li>学習状況のご報告（2ヶ月に1回）</li>
             </ul>
           </div>
         </div>
@@ -1188,21 +1207,35 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
           </div>
           <div class="gcourse__body">
             <p class="gcourse__desc">予備校や個別指導塾に通っている生徒向けの受験戦略サポートコース。個別指導（授業）は行わず、現在の塾を活かしながら、志望校合格に向けた最適な戦略を提案します。</p>
-            <div class="gcourse__tags"><span>受験戦略サポート</span><span>偏差値分析</span><span>併塾OK</span></div>
+            <div class="gcourse__tags"><span>受験戦略サポート</span><span>合格ロードマップ</span><span>併塾OK</span></div>
+            <p class="gcourse__subj">
+              <span class="gcourse__subj-label">対応科目</span>
+              <span class="gcourse__subj-main">標準 2科目まで</span>
+              <span class="gcourse__subj-opt">オプションで最大4科目まで追加できます</span>
+            </p>
             <p class="gcourse__inc-label">このコースに含まれるもの</p>
             <ul class="gcourse__list">
+              <li>合格ロードマップ作成</li>
               <li>毎日課題 週5回</li>
-              <li>確認テスト 週1回実施</li>
-              <li>実力診断テスト 月末1回実施</li>
-              <li>当月の偏差値推移の提示</li>
+              <li>月1回の学習カウンセリング<br><span class="gcourse__note">志望校選定・定期テスト対策のアドバイス</span></li>
               <li>LINE質問対応（随時）</li>
-              <li>三者面談（保護者様・生徒・講師）</li>
+              <li>学習計画の作成・進捗管理</li>
+              <li>学習カルテによる一元管理</li>
+              <li>学習状況のご報告（2ヶ月に1回）</li>
             </ul>
           </div>
         </div>
       </div>
 
       <p class="gcourses-note">どのコースが最適かは、お子様の状況をお伺いした上で無料相談にてご提案します。</p>
+
+      <ul class="gcourses-rules">
+        <li>担当科目は入塾面談時に確定し、合格ロードマップも契約科目の範囲で作成します。</li>
+        <li>科目の追加・変更・解除は翌月からの適用となります（月途中の変更はできません）。</li>
+        <li>実力診断テストは偏差値表示を行わず、合格ラインに対する到達度（絶対評価）でフィードバックします。</li>
+        <li>毎日課題は、丸付け時に不正解箇所へ「考え方」のコメントを添えて返却します。</li>
+        <li>受講料および科目追加オプションの費用は、無料相談・入塾面談にてご案内します。</li>
+      </ul>
       <div class="gcourses-cta"><a href="#contact" class="btn btn-primary">無料相談で最適なコースを聞く →</a></div>
     </div>
   </div>
