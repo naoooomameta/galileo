@@ -411,6 +411,14 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
 .form-group input::placeholder,.form-group textarea::placeholder{color:var(--text-muted)}
 .form-group select{appearance:none;cursor:pointer;color:var(--text-muted)}
 .form-group textarea{min-height:100px;resize:vertical}
+.form-choice{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-choice input[type="radio"]{position:absolute;left:14px;bottom:0;width:1px;height:1px;opacity:0;margin:0;padding:0;border:0;pointer-events:none}
+.form-choice label{display:flex;align-items:center;justify-content:center;gap:8px;margin:0;padding:14px 12px;border:1.5px solid var(--border);border-left:3px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font-size:15px;font-weight:700;text-align:center;cursor:pointer;transition:all .3s}
+.form-choice label:hover{border-color:var(--primary);border-left-color:var(--primary)}
+.form-choice input[type="radio"]:checked+label{background:rgba(14,74,56,.06);border-color:var(--primary);border-left-color:var(--gold);color:var(--primary);box-shadow:0 0 0 3px rgba(14,74,56,.1)}
+.form-choice input[type="radio"]:focus-visible+label{box-shadow:0 0 0 3px rgba(14,74,56,.2)}
+.form-choice label svg{width:18px;height:18px;fill:currentColor;flex:none;opacity:.75}
+.form-note{font-size:12px;color:var(--text-muted);margin-top:8px;line-height:1.7}
 .btn-submit{width:100%;padding:18px 36px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--white);border:none;border-radius:50px;font-size:16px;font-weight:700;cursor:pointer;transition:all .3s;box-shadow:0 4px 16px rgba(14,74,56,.25);display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font)}
 .btn-submit:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(14,74,56,.35)}
 @media(max-width:768px){.contact-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.contact-form{padding:24px 20px}}
@@ -690,6 +698,10 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
   .form-row{grid-template-columns:1fr}
   .form-group label{font-size:13px}
   .form-group input,.form-group select,.form-group textarea{font-size:16px;padding:10px 12px}
+  .form-choice{gap:8px}
+  .form-choice label{font-size:14px;padding:12px 8px;gap:6px}
+  .form-choice label svg{width:16px;height:16px}
+  .form-note{font-size:11px}
   .btn-full{font-size:15px;padding:14px}
 
   /* Footer */
