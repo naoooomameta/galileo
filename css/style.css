@@ -511,9 +511,14 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
 .bk-done-btn{padding:14px 40px;border:none;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--white);font-size:15px;font-weight:700;cursor:pointer;transition:all .3s;box-shadow:0 4px 12px rgba(14,74,56,.2)}
 .bk-done-btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(14,74,56,.25)}
 
-/* ── modalD: Calendar iframe ── */
-.booking-calendar-wrap{width:100%;min-height:480px;border-radius:12px;overflow:hidden;background:var(--bg-light)}
-.booking-calendar-wrap iframe{width:100%;height:480px;border:none}
+/* ── modalD: 全空き枠一覧 ── */
+.booking-allslots{width:100%;min-height:200px;max-height:440px;overflow-y:auto;border-radius:12px;background:var(--bg-light);padding:18px}
+.slot-day{margin-bottom:16px}
+.slot-day:last-child{margin-bottom:0}
+.slot-day-label{font-size:13.5px;font-weight:700;color:var(--text);margin-bottom:8px}
+.slot-day-times{display:flex;flex-wrap:wrap;gap:8px}
+.slot-chip{padding:9px 15px;border:1.5px solid var(--border);border-radius:50px;background:var(--white);color:var(--primary);font-size:13.5px;font-weight:700;cursor:pointer;transition:all .2s;font-family:inherit}
+.slot-chip:hover{border-color:var(--primary);background:rgba(14,74,56,.05);transform:translateY(-1px);box-shadow:0 4px 12px rgba(14,74,56,.1)}
 .booking-back-btn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:14px;border:2px solid #e0e5e1;border-radius:12px;background:var(--white);color:var(--primary);font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;margin-top:16px}
 .booking-back-btn:hover{border-color:var(--primary);background:rgba(14,74,56,.03)}
 
@@ -527,8 +532,8 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
 .bk-checkbox-group{gap:6px}
 .bk-checkbox,.bk-radio{padding:7px 12px;font-size:12px}
 .bk-radio-group{flex-direction:column;gap:8px}
-.booking-calendar-wrap{min-height:360px}
-.booking-calendar-wrap iframe{height:360px}
+.booking-allslots{max-height:56vh;padding:14px}
+.slot-chip{padding:8px 13px;font-size:13px}
 .bk-form-group select,.bk-form-group textarea{font-size:16px}
 }
 /* ===== COMPREHENSIVE MOBILE RESPONSIVE ===== */
