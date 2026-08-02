@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
-<title>【ハイブリッド型 理系受験指導】オンライン × 個別コーチング × 毎日課題｜ガリレオ</title>
+<title>【ハイブリッド型 理系受験指導】オンライン個別指導 × 毎日課題｜ガリレオ</title>
 <!-- Favicon -->
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="../img/favicon-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
-<meta name="description" content="理系大学受験専門塾ガリレオのハイブリッド型指導。オンライン個別指導 × 専属コーチング × 毎日課題管理を融合し、東大・京大・東工大・医学部合格までの最短ルートを設計します。無料学習相談 受付中。">
+<meta name="description" content="理系大学受験専門塾ガリレオのハイブリッド型指導。オンライン個別指導 × 担任講師によるサポート × 毎日課題管理を融合し、東大・京大・東工大・医学部合格までの最短ルートを設計します。無料学習相談 受付中。">
 
-<meta property="og:title" content="ハイブリッド型 理系受験指導｜オンライン × 個別コーチング × 毎日課題｜ガリレオ">
+<meta property="og:title" content="ハイブリッド型 理系受験指導｜オンライン個別指導 × 毎日課題｜ガリレオ">
 <meta property="og:description" content="一方通行の映像授業でも、週1の個別指導でもない。3つを融合した「ハイブリッド型」だから、理系難関大に届く。">
 <meta property="og:type" content="website">
 <meta property="og:image" content="../img/ogp.svg">
@@ -108,6 +108,7 @@ strong{font-weight:700}
 .numbers__unit{font-size:14px;color:var(--text-light);font-weight:700}
 .numbers__label{margin-top:10px;font-size:14px;font-weight:700;color:var(--primary-dark)}
 .numbers__sub{font-size:11.5px;color:var(--text-muted);margin-top:3px}
+.numbers__note{margin-top:16px;font-size:11.5px;color:var(--text-muted);line-height:1.8;text-align:center}
 
 /* ── Hybrid concept (3-way fusion) ── */
 .hybrid-diagram{position:relative;max-width:680px;margin:0 auto 36px;aspect-ratio:1.15/1}
@@ -323,7 +324,7 @@ strong{font-weight:700}
     <div class="fv__triangle">
       <span class="fv__pill">オンライン授業</span>
       <span class="fv__plus">＋</span>
-      <span class="fv__pill">専属コーチング</span>
+      <span class="fv__pill">担任講師サポート</span>
       <span class="fv__plus">＋</span>
       <span class="fv__pill">毎日課題管理</span>
     </div>
@@ -341,38 +342,15 @@ strong{font-weight:700}
       <div class="sec-title__eyebrow">BY THE NUMBERS</div>
       <h2 class="sec-title__heading">数字で見る、<br>ハイブリッド型の実力。</h2>
     </div>
-    <div class="numbers__grid">
+    <!-- 集計値は単一データソース(assets/js/voices-data.js)から描画。ページにベタ書きしないこと -->
+    <div class="numbers__grid" id="lp-numbers">
       <div class="numbers__cell">
-        <div class="numbers__num-row"><span class="numbers__num">156</span><span class="numbers__unit">名</span></div>
-        <div class="numbers__label">難関国立・医学部 合格</div>
-        <div class="numbers__sub">2024年度実績</div>
-      </div>
-      <div class="numbers__cell">
-        <div class="numbers__num-row"><span class="numbers__num">+12.4</span></div>
-        <div class="numbers__label">平均偏差値上昇</div>
-        <div class="numbers__sub">入塾後1年（理系科目平均）</div>
-      </div>
-      <div class="numbers__cell">
-        <div class="numbers__num-row"><span class="numbers__num">92</span><span class="numbers__unit">%</span></div>
-        <div class="numbers__label">学習習慣 定着率</div>
-        <div class="numbers__sub">入塾3ヶ月時点</div>
-      </div>
-      <div class="numbers__cell">
-        <div class="numbers__num-row"><span class="numbers__num">365</span><span class="numbers__unit">日</span></div>
-        <div class="numbers__label">毎日課題が止まらない</div>
-        <div class="numbers__sub">休塾日もコーチが伴走</div>
-      </div>
-      <div class="numbers__cell">
-        <div class="numbers__num-row"><span class="numbers__num">18</span><span class="numbers__unit">年</span></div>
-        <div class="numbers__label">理系受験 指導歴</div>
-        <div class="numbers__sub">塾長 田中</div>
-      </div>
-      <div class="numbers__cell">
-        <div class="numbers__num-row"><span class="numbers__num">9</span><span class="numbers__unit">割</span></div>
-        <div class="numbers__label">保護者様満足度</div>
-        <div class="numbers__sub">年次アンケート</div>
+        <div class="numbers__num-row"><span class="numbers__num">週5</span><span class="numbers__unit">回</span></div>
+        <div class="numbers__label">毎日課題の配信</div>
+        <div class="numbers__sub">学習カルテで進捗を一元管理</div>
       </div>
     </div>
+    <p class="numbers__note">※ 累計指導生徒数・志望校合格率・指導歴は、姉妹塾「プラトン」における実績を含みます。</p>
   </div>
 </section>
 
@@ -427,7 +405,7 @@ strong{font-weight:700}
         <div class="hybrid-circle__body">理系特化講師による<br>体系的な理解講義</div>
       </div>
       <div class="hybrid-circle hybrid-circle--b">
-        <div class="hybrid-circle__label">専属<br>コーチング</div>
+        <div class="hybrid-circle__label">担任講師<br>サポート</div>
         <div class="hybrid-circle__body">1対1の個別最適化と<br>志望校別ロードマップ</div>
       </div>
       <div class="hybrid-circle hybrid-circle--c">
@@ -449,12 +427,12 @@ strong{font-weight:700}
       <div class="hybrid-explain__card">
         <div class="hybrid-explain__num">— ELEMENT 02 —</div>
         <div class="hybrid-explain__title">解ける「指導」</div>
-        <div class="hybrid-explain__body">専属コーチが1対1で志望校別のカリキュラムを設計。週次の面談で進度を調整し、解けないものを「解ける」状態まで仕上げます。理系思考トレーニング込み。</div>
+        <div class="hybrid-explain__body">担任講師が1対1で志望校別のカリキュラムを設計。毎日課題と学習カルテで進度を管理し、解けないものを「解ける」状態まで仕上げます。理系思考トレーニング込み。</div>
       </div>
       <div class="hybrid-explain__card">
         <div class="hybrid-explain__num">— ELEMENT 03 —</div>
         <div class="hybrid-explain__title">続く「管理」</div>
-        <div class="hybrid-explain__body">毎日課題システムが「今日やること」を毎朝提示。提出ノートはコーチが添削。やる気ではなく、仕組みで365日学習が止まらない環境を作ります。</div>
+        <div class="hybrid-explain__body">毎日課題システムが「今日やること」を毎朝提示。提出ノートは講師が添削。やる気ではなく、仕組みで365日学習が止まらない環境を作ります。</div>
       </div>
     </div>
   </div>
@@ -486,7 +464,7 @@ strong{font-weight:700}
           <div class="features__name">3つを「同じ講師」が運営。</div>
         </div>
         <div class="features__body">
-          <p class="features__lead">授業・コーチング・課題管理が完全に1本に繋がる。</p>
+          <p class="features__lead">授業・学習管理・毎日課題が完全に1本に繋がる。</p>
           <p class="features__desc">他塾でよくある「映像は別講師／個別は学生／管理はAIだけ」という分断が、ガリレオには有りません。同一の理系専門講師チームが3要素を運営するから、指導が崩れません。</p>
         </div>
       </div>
@@ -498,7 +476,7 @@ strong{font-weight:700}
         </div>
         <div class="features__body">
           <p class="features__lead">毎日課題で「今日やること」を可視化。</p>
-          <p class="features__desc">休塾日も、夏休みも、模試直前も、毎朝コーチから課題が届きます。提出ノートには赤入れが返ってくるから、家庭で「勉強しなさい」と叱る必要が無くなります。</p>
+          <p class="features__desc">休塾日も、夏休みも、模試直前も、毎朝講師から課題が届きます。提出ノートには赤入れが返ってくるから、家庭で「勉強しなさい」と叱る必要が無くなります。</p>
         </div>
       </div>
     </div>
@@ -544,7 +522,7 @@ strong{font-weight:700}
             <td class="compare__bad">× 一律</td>
             <td class="compare__good">◯</td>
             <td class="compare__bad">△</td>
-            <td class="compare__good"><span>◎</span> 1対1コーチ</td>
+            <td class="compare__good"><span>◎</span> 担任講師制</td>
           </tr>
           <tr>
             <th>毎日の学習管理</th>
@@ -573,7 +551,7 @@ strong{font-weight:700}
       <div class="sec-title__eyebrow">DAILY ASSIGNMENT</div>
       <h2 class="sec-title__heading">ハイブリッドを支える、<br>「毎日課題システム」。</h2>
     </div>
-    <p class="mainichi__lead">「今日やること」を毎朝コーチが提示。提出 → 添削 → 振り返り のサイクルが、休塾日も止まりません。これが、ハイブリッドが「続く」理由です。</p>
+    <p class="mainichi__lead">「今日やること」を毎朝講師が提示。提出 → 添削 → 振り返り のサイクルが、休塾日も止まりません。これが、ハイブリッドが「続く」理由です。</p>
     <div class="mainichi__steps">
       <div class="mainichi__step">
         <div class="mainichi__step-num">STEP 01</div>
@@ -587,12 +565,12 @@ strong{font-weight:700}
       </div>
       <div class="mainichi__step">
         <div class="mainichi__step-num">STEP 03</div>
-        <div class="mainichi__step-title">コーチが添削</div>
+        <div class="mainichi__step-title">講師が添削</div>
         <div class="mainichi__step-body">同一講師が赤入れ。「分かった気」を、解ける状態まで仕上げます。</div>
       </div>
       <div class="mainichi__step">
         <div class="mainichi__step-num">STEP 04</div>
-        <div class="mainichi__step-title">週次面談で再設計</div>
+        <div class="mainichi__step-title">日々の提出から再設計</div>
         <div class="mainichi__step-body">進度・合格ラインへの到達度・志望校との距離を毎週見直し、翌週の課題を再設計。</div>
       </div>
     </div>
@@ -631,7 +609,7 @@ strong{font-weight:700}
         </div>
       </div>
       <div class="voices__card">
-        <p class="voices__quote">「勉強しなさい」と言わなくて良くなったのが、家庭としては一番大きい変化でした。毎日コーチから課題が届くので、本人も自然と机に向かいます。</p>
+        <p class="voices__quote">「勉強しなさい」と言わなくて良くなったのが、家庭としては一番大きい変化でした。毎日講師から課題が届くので、本人も自然と机に向かいます。</p>
         <div class="voices__meta">
           <div class="voices__avatar">親</div>
           <div>
@@ -641,7 +619,7 @@ strong{font-weight:700}
         </div>
       </div>
       <div class="voices__card">
-        <p class="voices__quote">他塾で映像とコーチが別の人だったとき、内容がバラバラでした。ガリレオは授業も添削も同じ先生なので、教えてもらう線が1本でした。</p>
+        <p class="voices__quote">他塾で映像と学習管理の担当が別の人だったとき、内容がバラバラでした。ガリレオは授業も添削も同じ先生なので、教えてもらう線が1本でした。</p>
         <div class="voices__meta">
           <div class="voices__avatar">R.A</div>
           <div>
@@ -683,11 +661,8 @@ strong{font-weight:700}
         </div>
 
         <ul class="otameshi__list">
-          <li>オンライン専門授業（数学・理科・英語）の体験</li>
-          <li>毎日課題システム（7日間フル利用）</li>
-          <li>専属コーチによる個別面談（初回・中間・最終）</li>
-          <li>志望校別 合格ロードマップのご提案</li>
-          <li>提出ノートの添削指導</li>
+          <li>1回60分のオンライン個別指導</li>
+          <li>1週間の毎日課題体験（数学・物理・化学・生物・英語から最適化）</li>
         </ul>
 
         <a href="#cta" class="otameshi__cta">▶︎ お試し7日間を始める</a>
@@ -751,7 +726,7 @@ strong{font-weight:700}
         <div class="flow__step">STEP 04</div>
         <div class="flow__body">
           <h3>ご入塾・ハイブリッド型指導の開始</h3>
-          <p>専属コーチをアサイン。翌日から、毎朝コーチから「今日の課題」が届きます。</p>
+          <p>担任講師が決まり、翌日から毎朝「今日の課題」が届きます。</p>
         </div>
       </div>
     </div>
@@ -806,7 +781,7 @@ strong{font-weight:700}
           <span class="faq__q">どんな講師が担当しますか？</span>
           <span class="faq__icon">▾</span>
         </button>
-        <div class="faq__body"><div class="faq__a">数学・物理・化学・生物・理系英語の専任講師が担当します。授業・コーチング・添削を「同じ講師」が一貫して行うため、指導の線がブレません。プロフィールは<a href="https://galileo-sciences.com/#about" target="_blank" rel="noopener">公式サイト</a>でご確認いただけます。</div></div>
+        <div class="faq__body"><div class="faq__a">数学・物理・化学・生物・理系英語の専任講師が担当します。授業・学習管理・添削を「同じ講師」が一貫して行うため、指導の線がブレません。プロフィールは<a href="https://galileo-sciences.com/#about" target="_blank" rel="noopener">公式サイト</a>でご確認いただけます。</div></div>
       </div>
       <div class="faq__item">
         <button class="faq__btn" aria-expanded="false">
@@ -833,17 +808,11 @@ strong{font-weight:700}
     <div class="final-cta__hint">30秒で予約完了 / 強引な勧誘は一切ありません</div>
     <div class="final-cta__stats">
       <div>
-        <div class="final-cta__stat-num">365</div>
-        <div class="final-cta__stat-label">日 学習管理</div>
+        <div class="final-cta__stat-num">週5</div>
+        <div class="final-cta__stat-label">回 毎日課題</div>
       </div>
-      <div>
-        <div class="final-cta__stat-num">156</div>
-        <div class="final-cta__stat-label">名 合格 (2024)</div>
-      </div>
-      <div>
-        <div class="final-cta__stat-num">+12.4</div>
-        <div class="final-cta__stat-label">平均偏差値上昇</div>
-      </div>
+      <!-- 集計値は単一データソース(assets/js/voices-data.js)から描画 -->
+      <div id="lp-final-stats" style="display:contents"></div>
     </div>
   </div>
 </section>
@@ -866,7 +835,38 @@ strong{font-weight:700}
   <div class="sticky-cta__hint">所要15分・オンライン可・完全無料</div>
 </div>
 
+<!-- 合格実績・集計値の単一データソース -->
+<script src="../assets/js/voices-data.js?v=20260531b"></script>
 <script>
+/* 確認済み集計値をデータソースから描画（ページへのベタ書き禁止） */
+(function(){
+  var V = window.GALILEO_VOICES;
+  if (!V || !V.stats) return;
+  var esc = function(s){ return String(s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+
+  var grid = document.getElementById('lp-numbers');
+  if (grid) {
+    var cells = V.stats.map(function(s){
+      return '<div class="numbers__cell">' +
+        '<div class="numbers__num-row"><span class="numbers__num">' + esc(s.num) + '</span>' +
+        '<span class="numbers__unit">' + esc(s.unit) + '</span></div>' +
+        '<div class="numbers__label">' + esc(s.label) + '</div>' +
+        '</div>';
+    }).join('');
+    grid.insertAdjacentHTML('afterbegin', cells);
+  }
+
+  var fin = document.getElementById('lp-final-stats');
+  if (fin) {
+    fin.innerHTML = V.stats.map(function(s){
+      return '<div>' +
+        '<div class="final-cta__stat-num">' + esc(s.num) + '</div>' +
+        '<div class="final-cta__stat-label">' + esc(s.unit) + ' ' + esc(s.label) + '</div>' +
+        '</div>';
+    }).join('');
+  }
+})();
 document.querySelectorAll('.faq__btn').forEach(function(btn){
   btn.addEventListener('click', function(){
     var item = btn.closest('.faq__item');
