@@ -121,6 +121,7 @@ function createCalendarEvent(params) {
   var endTime = new Date(startTime.getTime() + SLOT_DURATION_MIN * 60 * 1000);
   var title = '【' + BRAND_NAME + '学習相談会】' + (params.name || '名前未入力');
   var description = [
+    '■ お問い合わせ者: ' + (params.contactType || '未選択'),
     '■ お名前: ' + (params.name || ''),
     '■ メール: ' + (params.email || ''),
     '■ 電話番号: ' + (params.tel || ''),
@@ -143,9 +144,12 @@ function getOrCreateSheet() {
   var sheet = ss.getSheetByName(SHEET_NAME);
   if (!sheet) {
     sheet = ss.insertSheet(SHEET_NAME);
+    // ※ 既存シートに後から「お問い合わせ者」列を追加する場合は、
+    //   N列（13列目の右隣）の見出しに手動で「お問い合わせ者」を入力してください。
     sheet.appendRow([
       'タイムスタンプ', '種別', '送信元', 'お名前', 'フリガナ', 'メールアドレス',
-      '電話番号', '学年', '志望大学', '予約日時', '相談形式', '相談内容', '伝言'
+      '電話番号', '学年', '志望大学', '予約日時', '相談形式', '相談内容', '伝言',
+      'お問い合わせ者'
     ]);
   }
   return sheet;
@@ -167,7 +171,8 @@ function saveContactToSheet(params) {
     '',
     '',
     params.message || '',
-    ''
+    '',
+    params.contactType || ''
   ]);
 }
 
@@ -187,7 +192,8 @@ function saveBookingToSheet(params) {
     params.slot_display || '',
     params.format || '',
     params.concerns || '',
-    params.note || ''
+    params.note || '',
+    params.contactType || ''
   ]);
 }
 
@@ -330,6 +336,7 @@ function sendContactNotification(params) {
     BRAND_NAME + ' 新規お問い合わせ',
     '===========================',
     '',
+    '■ お問い合わせ者: ' + (params.contactType || '未選択'),
     '■ お名前: ' + (params.name || ''),
     '■ フリガナ: ' + (params.kana || ''),
     '■ メールアドレス: ' + (params.email || ''),
@@ -455,6 +462,7 @@ function sendBookingNotificationToAdmin(params) {
     '===========================',
     '',
     '■ 予約日時: ' + (params.slot_display || ''),
+    '■ お問い合わせ者: ' + (params.contactType || '未選択'),
     '■ お名前: ' + (params.name || ''),
     '■ メール: ' + (params.email || ''),
     '■ 電話番号: ' + (params.tel || ''),
