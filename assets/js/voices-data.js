@@ -45,6 +45,9 @@
   var NOTE_PERMISSION = '※合格実績・合格者の声は、ご本人・保護者様の許可を得て掲載しています。';
   var NOTE_COMPOSITE  = '※掲載内容は実例をもとに構成したものです。';
   var NOTE_RESULTS    = '※主な合格実績です。合格者数・最新の実績はLINEよりお問い合わせください。';
+  // ガリレオの正式開講は2026年1月。それ以前の年度の実績は姉妹塾「プラトン」由来のため、
+  // 合格実績を掲載する箇所には必ずこの注記を併記すること。
+  var NOTE_AFFILIATION = '※合格実績には、姉妹塾「プラトン」における理系志望者の実績を含みます。';
 
   /* ---- 確認済み集計値（これ以外の数値は使わない） ---- */
   var STATS = [
@@ -448,7 +451,7 @@
     stats: STATS,
     individualExample: INDIVIDUAL_EXAMPLE,
     universityGroups: UNIVERSITY_GROUPS,
-    notes: { permission: NOTE_PERMISSION, composite: NOTE_COMPOSITE, results: NOTE_RESULTS },
+    notes: { permission: NOTE_PERMISSION, composite: NOTE_COMPOSITE, results: NOTE_RESULTS, affiliation: NOTE_AFFILIATION },
     caseById: caseById,
     uniLabel: uniLabel,
     asset: asset,
