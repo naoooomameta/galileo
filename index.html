@@ -565,9 +565,14 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
 .bk-done-btn{padding:14px 40px;border:none;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--white);font-size:15px;font-weight:700;cursor:pointer;transition:all .3s;box-shadow:0 4px 12px rgba(14,74,56,.2)}
 .bk-done-btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(14,74,56,.25)}
 
-/* ── modalD: Calendar iframe ── */
-.booking-calendar-wrap{width:100%;min-height:480px;border-radius:12px;overflow:hidden;background:var(--bg-light)}
-.booking-calendar-wrap iframe{width:100%;height:480px;border:none}
+/* ── modalD: 全空き枠一覧 ── */
+.booking-allslots{width:100%;min-height:200px;max-height:440px;overflow-y:auto;border-radius:12px;background:var(--bg-light);padding:18px}
+.slot-day{margin-bottom:16px}
+.slot-day:last-child{margin-bottom:0}
+.slot-day-label{font-size:13.5px;font-weight:700;color:var(--text);margin-bottom:8px}
+.slot-day-times{display:flex;flex-wrap:wrap;gap:8px}
+.slot-chip{padding:9px 15px;border:1.5px solid var(--border);border-radius:50px;background:var(--white);color:var(--primary);font-size:13.5px;font-weight:700;cursor:pointer;transition:all .2s;font-family:inherit}
+.slot-chip:hover{border-color:var(--primary);background:rgba(14,74,56,.05);transform:translateY(-1px);box-shadow:0 4px 12px rgba(14,74,56,.1)}
 .booking-back-btn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:14px;border:2px solid #e0e5e1;border-radius:12px;background:var(--white);color:var(--primary);font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;margin-top:16px}
 .booking-back-btn:hover{border-color:var(--primary);background:rgba(14,74,56,.03)}
 
@@ -622,8 +627,8 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
 .bk-checkbox-group{gap:6px}
 .bk-checkbox,.bk-radio{padding:7px 12px;font-size:12px}
 .bk-radio-group{flex-direction:column;gap:8px}
-.booking-calendar-wrap{min-height:360px}
-.booking-calendar-wrap iframe{height:360px}
+.booking-allslots{max-height:56vh;padding:14px}
+.slot-chip{padding:8px 13px;font-size:13px}
 .bk-form-group select,.bk-form-group textarea{font-size:16px}
 }
 /* ===== COMPREHENSIVE MOBILE RESPONSIVE ===== */
@@ -1793,16 +1798,16 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
     </div>
   </div>
 
-  <!-- ── modalD: Googleカレンダー全体表示 ── -->
+  <!-- ── modalD: 全空き枠の一覧表示 ── -->
   <div class="booking-modal booking-modal-wide" id="modalD" style="display:none">
     <div class="booking-modal-header">
-      <h3><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>カレンダーから選ぶ</h3>
+      <h3><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>全ての候補日程から選ぶ</h3>
       <button class="booking-close" onclick="closeBookingModal()">&times;</button>
     </div>
     <div class="booking-modal-body">
-      <p class="booking-lead">Googleカレンダーで空き状況を確認できます。<br>ご希望の日時がありましたら、上の一覧から選択するか、お問い合わせフォームでお知らせください。</p>
-      <div class="booking-calendar-wrap" id="calendarIframeWrap">
-        <p style="text-align:center;color:var(--text-light);padding:40px 0">カレンダーを読み込み中…</p>
+      <p class="booking-lead">今後2週間のご予約可能な日時です。ご都合の良い枠をお選びください。<br>ご都合が合わない場合は、お問い合わせフォームにてご希望日時をお知らせください。</p>
+      <div class="booking-allslots" id="allSlotsWrap">
+        <div class="slot-loading"><div class="slot-spinner"></div>空き枠を読み込み中…</div>
       </div>
       <button class="booking-back-btn" onclick="showModalA()">← 空き枠一覧に戻る</button>
     </div>
@@ -1842,7 +1847,6 @@ function _resetViewportZoom(){
 
 // ===== GAS連携 + 予約ウィジェット =====
 const BOOKING_GAS_URL = 'https://script.google.com/macros/s/AKfycbzleIs1DqaybK2orps2tQwLCDimHb_7_5CQ0AV4IMD1gN3kVtjOUuD-2EA2-tCGDCo/exec';
-const CALENDAR_EMBED_ID = 'galileogalilei.sciences@gmail.com';
 
 // 問い合わせフォーム送信時に保持する名前・メール
 var _contactName = '';
@@ -1925,7 +1929,7 @@ function switchModal(id) {
 function showModalA() { switchModal('modalA'); }
 function showModalD() {
   switchModal('modalD');
-  loadCalendarIframe();
+  loadAllSlots();
 }
 
 // プラトン互換
@@ -2037,13 +2041,50 @@ function showBookingSuccess() {
   document.getElementById('bookingForm').reset();
 }
 
-// ===== modalD: Googleカレンダー埋め込み =====
-function loadCalendarIframe() {
-  if (!CALENDAR_EMBED_ID) return;
-  var wrap = document.getElementById('calendarIframeWrap');
-  var src = 'https://calendar.google.com/calendar/embed?src=' + encodeURIComponent(CALENDAR_EMBED_ID)
-    + '&ctz=Asia/Tokyo&mode=WEEK&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0';
-  wrap.innerHTML = '<iframe src="' + src + '" loading="lazy"></iframe>';
+// ===== modalD: 全空き枠の一覧表示（GASから取得・予定の詳細は一切表示しない） =====
+var _allSlotsLoaded = false;
+function loadAllSlots() {
+  var wrap = document.getElementById('allSlotsWrap');
+  if (!BOOKING_GAS_URL) {
+    wrap.innerHTML = '<div class="slot-empty">予約システムは現在準備中です。<br>お問い合わせフォームよりご連絡ください。</div>';
+    return;
+  }
+  if (_allSlotsLoaded) return; // 取得済みならそのまま表示
+
+  wrap.innerHTML = '<div class="slot-loading"><div class="slot-spinner"></div>空き枠を読み込み中…</div>';
+
+  fetch(BOOKING_GAS_URL + '?limit=168&days=14')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.result !== 'success' || !data.slots || data.slots.length === 0) {
+        wrap.innerHTML = '<div class="slot-empty">現在空き枠がありません。<br>お問い合わせフォームにてご希望日時をご相談ください。</div>';
+        return;
+      }
+      // 日付ごとにグルーピングして表示
+      var byDate = {};
+      var order = [];
+      data.slots.forEach(function(s) {
+        var key = s.displayDate + '（' + s.dayOfWeek + '）';
+        if (!byDate[key]) { byDate[key] = []; order.push(key); }
+        byDate[key].push(s);
+      });
+      var html = '';
+      order.forEach(function(key) {
+        html += '<div class="slot-day"><div class="slot-day-label">' + key + '</div><div class="slot-day-times">';
+        byDate[key].forEach(function(s) {
+          html += '<button class="slot-chip" onclick="selectSlot(this)" '
+            + 'data-iso="' + s.iso + '" '
+            + 'data-display="' + key + s.displayTime + '">'
+            + s.displayTime + '</button>';
+        });
+        html += '</div></div>';
+      });
+      wrap.innerHTML = html;
+      _allSlotsLoaded = true;
+    })
+    .catch(function() {
+      wrap.innerHTML = '<div class="slot-empty">空き枠の取得に失敗しました。<br>恐れ入りますが、お問い合わせフォームよりご連絡ください。</div>';
+    });
 }
 
 // ギャラリー ライトボックス
