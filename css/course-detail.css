@@ -1,0 +1,116 @@
+/* ===== COURSE DETAIL PAGES — 3コース詳細ページ共通 ===== */
+
+/* ── ページヒーロー ── */
+.page-hero{background:linear-gradient(180deg,var(--bg) 0%,var(--green-pale) 50%,var(--green-light) 100%);padding:80px 0 56px;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:20px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(196,154,60,.06) 0%,transparent 70%);pointer-events:none}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:50px;background:linear-gradient(180deg,transparent,var(--bg));pointer-events:none}
+.page-hero .section-label{margin-bottom:8px;letter-spacing:.08em}
+.page-hero h1{font-family:var(--font-serif);font-size:clamp(28px,4.5vw,44px);font-weight:700;line-height:1.5;margin-bottom:14px}
+.page-hero p{font-size:15px;color:var(--text-light);max-width:640px;margin:0 auto;line-height:2}
+.breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:20px}
+.breadcrumb a{color:var(--primary);text-decoration:underline}
+
+/* コース対象バッジ */
+.cd-badge{display:inline-block;background:var(--primary);color:var(--white);font-size:13px;font-weight:700;padding:5px 18px;border-radius:40px;letter-spacing:.04em;margin-bottom:16px}
+.cd-badge--main{background:var(--amber);color:#1a1a1a}
+
+/* ── 概要ボックス ── */
+.cd-summary{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--primary-light);border-radius:18px;padding:32px;max-width:820px;margin:0 auto;box-shadow:0 2px 8px rgba(14,74,56,.04)}
+.cd-summary-row{display:flex;gap:18px;padding:14px 0;border-bottom:1px dashed var(--green-mist);align-items:flex-start}
+.cd-summary-row:last-child{border-bottom:none;padding-bottom:0}
+.cd-summary-row:first-child{padding-top:0}
+.cd-summary-label{flex-shrink:0;width:132px;font-size:13px;font-weight:700;color:var(--white);background:var(--primary);border-radius:6px;padding:4px 12px;text-align:center;letter-spacing:.02em}
+.cd-summary-value{font-size:15px;color:var(--text-light);line-height:1.95}
+.cd-summary-value strong{color:var(--primary-dark);font-weight:700}
+.cd-summary-note{display:block;font-size:13px;color:var(--text-muted);margin-top:2px}
+
+/* ── 向いている生徒 / 来てほしい状態 ── */
+.cd-fit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:8px}
+.cd-fit{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--amber);border-radius:14px;padding:24px 26px;transition:all .3s;box-shadow:0 2px 8px rgba(14,74,56,.04)}
+.cd-fit:hover{box-shadow:0 8px 28px rgba(14,74,56,.08);transform:translateY(-2px)}
+.cd-fit h3{font-size:16.5px;font-weight:700;color:var(--primary-dark);margin-bottom:8px;line-height:1.6;display:flex;gap:10px;align-items:flex-start}
+.cd-fit h3::before{content:'✓';flex-shrink:0;width:22px;height:22px;background:var(--green-pale);border:1px solid var(--green-mist);border-radius:50%;color:var(--primary);font-size:13px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;margin-top:3px}
+.cd-fit p{font-size:14.5px;color:var(--text-light);line-height:2;padding-left:32px}
+
+/* 来てほしい状態（引用調） */
+.cd-state-list{max-width:820px;margin:0 auto}
+.cd-state{background:linear-gradient(135deg,var(--green-pale) 0%,var(--bg-alt) 100%);border:1px solid var(--green-mist);border-radius:14px;padding:20px 26px;margin-bottom:14px}
+.cd-state-q{font-size:16px;font-weight:700;color:var(--primary-dark);line-height:1.75;margin-bottom:6px}
+.cd-state-q::before{content:'「';color:var(--amber)}
+.cd-state-q::after{content:'」';color:var(--amber)}
+.cd-state p{font-size:14.5px;color:var(--text-light);line-height:2}
+
+/* ── 合格までの道のり（タイムライン） ── */
+.cd-journey{max-width:840px;margin:0 auto;position:relative;padding-left:34px}
+.cd-journey::before{content:'';position:absolute;left:9px;top:10px;bottom:10px;width:2px;background:linear-gradient(180deg,var(--green-mist),var(--amber))}
+.cd-step{position:relative;margin-bottom:26px}
+.cd-step:last-child{margin-bottom:0}
+.cd-step::before{content:'';position:absolute;left:-34px;top:6px;width:20px;height:20px;border-radius:50%;background:var(--white);border:3px solid var(--primary-light)}
+.cd-step--goal::before{border-color:var(--amber);background:var(--amber)}
+.cd-step-time{display:inline-block;font-size:12.5px;font-weight:700;color:var(--primary);background:var(--green-pale);border:1px solid var(--green-mist);border-radius:40px;padding:2px 14px;margin-bottom:8px;letter-spacing:.03em}
+.cd-step--goal .cd-step-time{background:var(--amber);border-color:var(--amber);color:#1a1a1a}
+.cd-step h3{font-size:17px;font-weight:700;color:var(--primary-dark);margin-bottom:6px;line-height:1.6}
+.cd-step p{font-size:14.5px;color:var(--text-light);line-height:2}
+.cd-step-detail{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin-top:12px}
+.cd-step-detail li{font-size:14px;color:var(--text-light);line-height:1.95;padding:3px 0 3px 20px;position:relative}
+.cd-step-detail li::before{content:'▸';position:absolute;left:2px;color:var(--amber)}
+
+/* モデルケース注記 */
+.cd-disclaimer{max-width:840px;margin:24px auto 0;background:var(--bg-alt);border:1px dashed var(--border);border-radius:12px;padding:16px 20px;font-size:13px;color:var(--text-muted);line-height:1.9}
+
+/* ── 含まれるサービス ── */
+.cd-services{max-width:820px;margin:0 auto;background:var(--white);border:1px solid var(--border);border-radius:18px;padding:30px 32px;box-shadow:0 2px 8px rgba(14,74,56,.04)}
+.cd-services li{font-size:15px;color:var(--text-light);line-height:1.9;padding:11px 0 11px 32px;position:relative;border-bottom:1px dashed var(--green-mist)}
+.cd-services li:last-child{border-bottom:none}
+.cd-services li::before{content:'✓';position:absolute;left:0;top:11px;width:21px;height:21px;background:var(--primary);color:var(--white);border-radius:50%;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.cd-services li.is-off{color:var(--text-muted)}
+.cd-services li.is-off::before{content:'−';background:var(--bg-alt);color:var(--text-muted);border:1px solid var(--border)}
+.cd-services strong{color:var(--primary-dark)}
+.cd-services .cd-svc-note{display:block;font-size:13px;color:var(--text-muted);line-height:1.8}
+
+/* ── 運用ルール ── */
+.cd-rules{max-width:820px;margin:24px auto 0}
+.cd-rules li{font-size:13.5px;color:var(--text-muted);line-height:1.95;padding:4px 0 4px 18px;position:relative}
+.cd-rules li::before{content:'※';position:absolute;left:0}
+
+/* ── 他コース案内 ── */
+.cd-other-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:820px;margin:0 auto}
+.cd-other{display:block;background:var(--white);border:1px solid var(--border);border-radius:14px;padding:22px 24px;transition:all .3s;box-shadow:0 2px 8px rgba(14,74,56,.04)}
+.cd-other:hover{box-shadow:0 8px 28px rgba(14,74,56,.08);transform:translateY(-2px);border-color:var(--amber)}
+.cd-other-target{font-size:12.5px;font-weight:700;color:var(--primary);background:var(--green-pale);border-radius:40px;padding:2px 12px;display:inline-block;margin-bottom:8px}
+.cd-other h3{font-size:17px;font-weight:700;color:var(--primary-dark);margin-bottom:6px}
+.cd-other p{font-size:14px;color:var(--text-light);line-height:1.9}
+.cd-other span.cd-other-link{display:inline-block;margin-top:10px;font-size:14px;font-weight:700;color:var(--amber)}
+
+/* ── CTA ── */
+.cta-section{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--white);text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:-40%;right:-15%;width:500px;height:500px;background:radial-gradient(circle,rgba(196,154,60,.08) 0%,transparent 70%);pointer-events:none}
+.cta-section .section-label{color:#D4A843}
+.cta-section .section-title{color:var(--white)}
+.cta-section .section-title::after{background:linear-gradient(90deg,#D4A843,rgba(255,255,255,.3))}
+.cta-section p{color:rgba(255,255,255,.75);font-size:15px;line-height:2;max-width:560px;margin:0 auto 28px}
+
+/* ── レスポンシブ ── */
+@media(max-width:1024px){
+  .cd-fit-grid{gap:16px}
+}
+@media(max-width:768px){
+  .page-hero{padding:60px 0 44px}
+  .cd-summary{padding:24px 20px}
+  .cd-summary-row{flex-direction:column;gap:6px}
+  .cd-summary-label{width:auto;align-self:flex-start;padding:3px 14px}
+  .cd-fit-grid,.cd-other-grid{grid-template-columns:1fr}
+  .cd-fit{padding:20px 18px}
+  .cd-fit p{padding-left:0}
+  .cd-services{padding:22px 20px}
+  .cd-journey{padding-left:28px}
+  .cd-step::before{left:-28px;width:16px;height:16px}
+  .cd-journey::before{left:7px}
+}
+@media(max-width:480px){
+  .cd-summary-value,.cd-services li{font-size:14px}
+  .cd-fit h3{font-size:15.5px}
+  .cd-fit p,.cd-step p{font-size:13.5px}
+  .cd-state-q{font-size:15px}
+  .cd-step h3{font-size:16px}
+}
