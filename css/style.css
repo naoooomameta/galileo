@@ -825,7 +825,12 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
   .weekday-role{font-size:10.5px}
 }
 @media(max-width:480px){
-  .weekplan-grid{grid-template-columns:repeat(2,1fr)}
+  .weekplan-grid{grid-template-columns:1fr;gap:6px}
+  .weekday{display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;padding:11px 16px;border-top:1px solid var(--border);border-left:3px solid var(--border)}
+  .weekday--task{border-left-color:var(--primary)}
+  .weekday--buffer,.weekday--review{border-left-color:var(--amber)}
+  .weekday-name{margin-bottom:0;font-size:13.5px}
+  .weekday-role{font-size:12px;text-align:right}
   .weekplan-note{padding:16px 18px;font-size:13.5px}
 }
 .weekplan-title{text-align:center;font-family:var(--font-serif);font-size:clamp(19px,2.6vw,23px);font-weight:700;color:var(--primary-dark);margin-bottom:8px}
