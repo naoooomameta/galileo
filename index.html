@@ -477,6 +477,19 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
 .btn-submit:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(14,74,56,.35)}
 @media(max-width:768px){.contact-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.contact-form{padding:24px 20px}}
 
+/* ===== FORM VALIDATION（必須項目エラー表示） ===== */
+.form-alert{display:none;align-items:flex-start;gap:10px;background:#FDECEA;border:1.5px solid #E5A29B;border-left:4px solid #B3261E;border-radius:10px;padding:14px 18px;margin-bottom:22px;color:#8C1D18;font-size:14px;line-height:1.8;font-weight:700}
+.form-alert.is-shown{display:flex}
+.form-alert svg{width:20px;height:20px;fill:#B3261E;flex:none;margin-top:2px}
+.form-alert span{font-weight:500}
+.form-alert strong{display:block;font-weight:700;margin-bottom:2px}
+.field-error{display:none;align-items:center;gap:6px;color:#B3261E;font-size:13px;font-weight:700;line-height:1.7;margin-top:7px}
+.field-error.is-shown{display:flex}
+.field-error::before{content:'!';flex:none;width:16px;height:16px;border-radius:50%;background:#B3261E;color:#fff;font-size:11px;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.form-group input.is-invalid,.form-group select.is-invalid,.form-group textarea.is-invalid{border-color:#B3261E;background:#FDF6F5}
+.form-group input.is-invalid:focus,.form-group select.is-invalid:focus,.form-group textarea.is-invalid:focus{box-shadow:0 0 0 3px rgba(179,38,30,.12)}
+.form-choice.is-invalid label{border-color:#E5A29B;border-left-color:#B3261E}
+
 /* ===== FOOTER ===== */
 .footer{background:var(--bg-dark);color:rgba(255,255,255,.5);padding:48px 0 24px}
 .footer .logo-name{color:var(--white)}
@@ -1636,23 +1649,28 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
         <div class="contact-target"><strong><svg style="width:16px;height:16px;vertical-align:-3px;margin-right:4px;fill:currentColor;opacity:.7" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg> 対象者</strong>理系の国公立・私大志望 / 医学部志望 / 文理選択に悩む高1・高2・高3生 / 中学生</div>
         <div class="contact-trial"><strong><svg style="width:16px;height:16px;vertical-align:-3px;margin-right:4px;fill:currentColor;opacity:.7" viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg> 無料体験 受付中</strong>実際の授業をご体験いただけます。数学・物理・化学・生物・英語からお好きな科目を選択可能。授業の進め方や講師との相性を、ぜひご確認ください。</div>
       </div>
-      <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+      <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+        <div class="form-alert" id="formAlert" role="alert" aria-live="assertive" tabindex="-1">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L1 21h22L12 2zm0 15a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zm-1.1-7.6h2.2v6h-2.2v-6z"/></svg>
+          <span><strong>必須項目が入力されていません</strong>下記の赤くなっている項目をご確認のうえ、もう一度お試しください。</span>
+        </div>
         <div class="form-group">
           <label id="contactTypeLabel">どちらからのお問い合わせですか？ <span class="req">必須</span></label>
-          <div class="form-choice" role="radiogroup" aria-labelledby="contactTypeLabel">
+          <div class="form-choice" role="radiogroup" aria-labelledby="contactTypeLabel" tabindex="-1">
             <input type="radio" id="contactTypeParent" name="contactType" value="保護者" required>
             <label for="contactTypeParent"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>保護者の方</label>
             <input type="radio" id="contactTypeStudent" name="contactType" value="生徒本人">
             <label for="contactTypeStudent"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 13.5L5 12.72v3.5L12 20l7-3.78v-3.5L12 16.5z"/></svg>生徒ご本人</label>
           </div>
+          <p class="field-error" id="errContactType">お問い合わせ区分を選択してください</p>
           <p class="form-note">お名前・ご連絡先は、ご入力される方（保護者様またはご本人）の情報をご記入ください。</p>
         </div>
         <div class="form-row">
-          <div class="form-group"><label for="contactName">お名前 <span class="req">必須</span></label><input type="text" id="contactName" name="name" required placeholder="山田 太郎"></div>
-          <div class="form-group"><label for="contactKana">フリガナ <span class="req">必須</span></label><input type="text" id="contactKana" name="kana" required placeholder="ヤマダ タロウ"></div>
+          <div class="form-group"><label for="contactName">お名前 <span class="req">必須</span></label><input type="text" id="contactName" name="name" required placeholder="山田 太郎" aria-describedby="errContactName"><p class="field-error" id="errContactName">お名前を入力してください</p></div>
+          <div class="form-group"><label for="contactKana">フリガナ <span class="req">必須</span></label><input type="text" id="contactKana" name="kana" required placeholder="ヤマダ タロウ" aria-describedby="errContactKana"><p class="field-error" id="errContactKana">フリガナを入力してください</p></div>
         </div>
-        <div class="form-group"><label for="contactEmail">メールアドレス <span class="req">必須</span></label><input type="email" id="contactEmail" name="email" required placeholder="example@email.com"></div>
-        <div class="form-group"><label for="contactTel">電話番号 <span class="req">必須</span></label><input type="tel" id="contactTel" name="tel" required placeholder="090-0000-0000"></div>
+        <div class="form-group"><label for="contactEmail">メールアドレス <span class="req">必須</span></label><input type="email" id="contactEmail" name="email" required placeholder="example@email.com" aria-describedby="errContactEmail"><p class="field-error" id="errContactEmail">メールアドレスを入力してください</p></div>
+        <div class="form-group"><label for="contactTel">電話番号 <span class="req">必須</span></label><input type="tel" id="contactTel" name="tel" required placeholder="090-0000-0000" aria-describedby="errContactTel"><p class="field-error" id="errContactTel">電話番号を入力してください</p></div>
         <div class="form-row">
           <div class="form-group"><label for="contactGrade">学年</label><select id="contactGrade" name="grade"><option value="">選択してください</option><option>中学1年生</option><option>中学2年生</option><option>中学3年生</option><option>高校1年生</option><option>高校2年生</option><option>高校3年生</option><option>既卒（浪人）</option></select></div>
           <div class="form-group"><label for="contactUniv">志望大学</label><input type="text" id="contactUniv" name="univ" placeholder="例：東京大学 理科一類"></div>
@@ -1865,9 +1883,107 @@ var _contactType = '';
 // 選択した枠の情報
 var _selectedSlot = null;
 
+/* ===== お問い合わせフォームの入力チェック ===== */
+var CONTACT_RULES = [
+  { id: 'contactName',  err: 'errContactName',  empty: 'お名前を入力してください' },
+  { id: 'contactKana',  err: 'errContactKana',  empty: 'フリガナを入力してください' },
+  { id: 'contactEmail', err: 'errContactEmail', empty: 'メールアドレスを入力してください',
+    test: function(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); },
+    invalid: 'メールアドレスの形式が正しくありません（例：example@email.com）' },
+  { id: 'contactTel',   err: 'errContactTel',   empty: '電話番号を入力してください',
+    test: function(v) { return (v.replace(/[^0-9]/g, '').length >= 10); },
+    invalid: '電話番号の形式が正しくありません（半角数字10桁以上）' }
+];
+
+function setFieldError(el, errEl, msg) {
+  if (el) { el.classList.add('is-invalid'); el.setAttribute('aria-invalid', 'true'); }
+  if (errEl) { errEl.textContent = msg; errEl.classList.add('is-shown'); }
+}
+function clearFieldError(el, errEl) {
+  if (el) { el.classList.remove('is-invalid'); el.removeAttribute('aria-invalid'); }
+  if (errEl) errEl.classList.remove('is-shown');
+}
+function hideFormAlertIfClean() {
+  var form = document.getElementById('contactForm');
+  var box = document.getElementById('formAlert');
+  if (form && box && !form.querySelector('.is-invalid')) box.classList.remove('is-shown');
+}
+
+function validateContactForm(form) {
+  var firstInvalid = null, ok = true;
+
+  // お問い合わせ区分（ラジオ）
+  var group = form.querySelector('.form-choice');
+  var errType = document.getElementById('errContactType');
+  if (!form.querySelector('input[name="contactType"]:checked')) {
+    ok = false;
+    if (group) group.classList.add('is-invalid');
+    if (errType) errType.classList.add('is-shown');
+    firstInvalid = firstInvalid || group;
+  } else {
+    if (group) group.classList.remove('is-invalid');
+    if (errType) errType.classList.remove('is-shown');
+  }
+
+  // テキスト入力
+  CONTACT_RULES.forEach(function(r) {
+    var el = document.getElementById(r.id);
+    var errEl = document.getElementById(r.err);
+    var v = (el && el.value ? el.value : '').trim();
+    if (!v) {
+      ok = false; setFieldError(el, errEl, r.empty); firstInvalid = firstInvalid || el;
+    } else if (r.test && !r.test(v)) {
+      ok = false; setFieldError(el, errEl, r.invalid); firstInvalid = firstInvalid || el;
+    } else {
+      clearFieldError(el, errEl);
+    }
+  });
+
+  var box = document.getElementById('formAlert');
+  if (ok) { if (box) box.classList.remove('is-shown'); return true; }
+
+  if (box) {
+    box.classList.add('is-shown');
+    try { box.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (_) { box.scrollIntoView(); }
+  }
+  if (firstInvalid) {
+    setTimeout(function() {
+      try { firstInvalid.focus({ preventScroll: true }); } catch (_) { try { firstInvalid.focus(); } catch (__) {} }
+    }, 420);
+  }
+  return false;
+}
+
+// 入力し直したら、その項目のエラー表示をすぐ消す
+(function initContactValidation() {
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+  CONTACT_RULES.forEach(function(r) {
+    var el = document.getElementById(r.id);
+    if (!el) return;
+    el.addEventListener('input', function() {
+      clearFieldError(el, document.getElementById(r.err));
+      hideFormAlertIfClean();
+    });
+  });
+  Array.prototype.forEach.call(form.querySelectorAll('input[name="contactType"]'), function(radio) {
+    radio.addEventListener('change', function() {
+      var g = form.querySelector('.form-choice');
+      if (g) g.classList.remove('is-invalid');
+      var errType = document.getElementById('errContactType');
+      if (errType) errType.classList.remove('is-shown');
+      hideFormAlertIfClean();
+    });
+  });
+})();
+
 function handleSubmit(e) {
   e.preventDefault();
   var form = e.target;
+
+  // 必須項目のチェック（不備があれば送信せずエラーを表示）
+  if (!validateContactForm(form)) return;
+
   var btn = form.querySelector('.btn-submit');
 
   btn.disabled = true;
