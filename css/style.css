@@ -194,6 +194,26 @@ strong{font-weight:700}
 .thinking-card:hover{box-shadow:0 8px 24px rgba(14,74,56,.08);transform:translateY(-3px);border-left-color:var(--amber)}
 .thinking-card h4{font-size:18px;font-weight:700;margin-bottom:12px;color:var(--primary-dark)}
 .thinking-card p{font-size:14px;color:var(--text-light);line-height:2}
+.thinking-define{max-width:820px;margin:0 auto 36px;background:var(--green-pale);border:1px solid var(--green-mist);border-left:4px solid var(--gold);border-radius:12px;padding:24px 28px;font-size:16px;line-height:2;color:var(--text)}
+.thinking-define strong{color:var(--primary)}
+.thinking-symptoms{margin-top:14px;display:grid;gap:8px}
+.thinking-symptoms li{position:relative;padding-left:22px;font-size:14.5px;color:var(--text-light);line-height:1.9}
+.thinking-symptoms li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
+.thinking-cards.three{grid-template-columns:repeat(3,1fr)}
+.thinking-card-num{font-family:var(--font-serif);font-size:26px;font-weight:700;color:var(--gold);margin-bottom:6px;line-height:1}
+.thinking-card-symptom{margin-top:14px;padding-top:12px;border-top:1px dashed var(--green-mist);font-size:12.5px!important;color:var(--text-muted)!important;line-height:1.8!important}
+.thinking-how{max-width:860px;margin:0 auto 32px;text-align:center}
+.thinking-how h3{font-size:19px;font-weight:700;color:var(--primary-dark);margin-bottom:10px}
+.thinking-how>p{font-size:14.5px;color:var(--text-light);margin-bottom:20px}
+.thinking-how-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;text-align:left}
+.thinking-how-item{background:var(--white);border:1px solid var(--border);border-top:4px solid var(--primary);border-radius:12px;padding:22px 24px}
+.thinking-how-head{font-weight:700;font-size:16px;color:var(--primary);margin-bottom:8px}
+.thinking-how-item p{font-size:14px;color:var(--text-light);line-height:1.9}
+.thinking-how-item p span{color:var(--gold);font-weight:600;font-size:13px}
+.thinking-how-note{background:var(--white);border:1px dashed var(--green-mist);border-radius:12px;padding:18px 22px;font-size:14px;color:var(--text-light);line-height:2;text-align:left}
+.thinking-how-note strong{color:var(--primary)}
+@media(max-width:900px){.thinking-cards.three{grid-template-columns:1fr}}
+@media(max-width:640px){.thinking-how-grid{grid-template-columns:1fr}}
 .thinking-bottom{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--white);border-radius:16px;padding:28px 32px;text-align:center;font-size:16px;line-height:2;box-shadow:0 4px 20px rgba(14,74,56,.2)}
 .thinking-bottom strong{color:#D4A843}
 @media(max-width:640px){.thinking-cards{grid-template-columns:1fr}}
