@@ -477,6 +477,28 @@ strong{font-weight:700}
 .news-text{font-size:15px;font-weight:500;flex:1}
 a.news-item{text-decoration:none;color:inherit;cursor:pointer}
 
+/* ===== MEDIA ===== */
+.media-card{display:grid;grid-template-columns:1fr 1.15fr;max-width:880px;margin:0 auto;background:var(--white);border:1px solid var(--green-mist);border-radius:18px;overflow:hidden;box-shadow:0 8px 32px rgba(14,74,56,.08);transition:all .3s}
+a.media-card{text-decoration:none;color:inherit;cursor:pointer}
+.media-card:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(14,74,56,.14)}
+.media-visual{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);padding:36px 28px;display:flex;flex-direction:column;justify-content:center;gap:12px;position:relative;overflow:hidden}
+.media-visual::after{content:'';position:absolute;top:-40%;right:-30%;width:280px;height:280px;background:radial-gradient(circle,rgba(196,154,60,.18) 0%,transparent 70%);pointer-events:none}
+.media-visual-label{align-self:flex-start;font-size:12px;font-weight:700;color:var(--primary-dark);background:var(--gold-light);padding:4px 12px;border-radius:4px;letter-spacing:.04em}
+.media-visual-title{font-family:var(--font-serif);font-size:clamp(20px,2.4vw,25px);font-weight:700;color:var(--white);line-height:1.6}
+.media-visual-title em{font-style:normal;color:var(--gold-light)}
+.media-visual-sub{font-size:13px;color:rgba(255,255,255,.75);font-weight:600;letter-spacing:.03em}
+.media-body{padding:32px 30px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:14px;border-left:4px solid var(--green-pale)}
+.media-badge{font-size:12px;font-weight:700;color:var(--white);background:linear-gradient(135deg,var(--gold),var(--gold-light));padding:5px 14px;border-radius:20px;letter-spacing:.04em}
+.media-title{font-family:var(--font-serif);font-size:clamp(16px,2vw,19px);font-weight:700;line-height:1.8;color:var(--text)}
+.media-desc{font-size:13.5px;color:var(--text-light);line-height:1.9}
+.media-link{display:inline-flex;align-items:center;gap:6px;color:var(--primary);font-weight:700;font-size:14.5px;border-bottom:2px solid var(--gold);padding-bottom:2px;transition:gap .2s}
+.media-card:hover .media-link{gap:10px}
+@media(max-width:768px){
+  .media-card{grid-template-columns:1fr}
+  .media-visual{padding:28px 22px}
+  .media-body{padding:24px 20px;border-left:none;border-top:4px solid var(--green-pale)}
+}
+
 /* ===== CONTACT ===== */
 .contact-section{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--white);position:relative;overflow:hidden}
 .contact-section::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(196,154,60,.08) 0%,transparent 70%);pointer-events:none}
@@ -1721,6 +1743,28 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
       <a href="pages/news.html" class="news-item"><span class="news-date">2026.01.15</span><span class="news-badge new">開講</span><span class="news-text">理系の大学受験専門塾 ガリレオ 正式開講のお知らせ</span></a>
     </div>
     <div class="section-link"><a href="pages/news.html">お知らせ一覧を見る →</a></div>
+  </div>
+</section>
+
+<!-- ===== MEDIA ===== -->
+<section class="section bg-white" id="media">
+  <div class="container">
+    <div class="section-label">Media</div>
+    <h2 class="section-title">メディア掲載</h2>
+    <p class="section-subtitle">ガリレオの学習メソッドを監修する佐野（姉妹塾・文系の大学受験専門塾「プラトン」塾長）のインタビュー記事が、Yahoo!ニュースに掲載されました。</p>
+    <a href="https://news.yahoo.co.jp/articles/512c6e1aed4538f79e4088d16077185758508cf1" target="_blank" rel="noopener" class="media-card">
+      <div class="media-visual">
+        <span class="media-visual-label">塾のプロに聞く！</span>
+        <p class="media-visual-title">「勉強が続かない」のは<br><em>才能</em>じゃない。</p>
+        <p class="media-visual-sub">続けられる子に変える新常識。</p>
+      </div>
+      <div class="media-body">
+        <span class="media-badge">Yahoo!ニュース 掲載</span>
+        <h3 class="media-title">塾に通っているのに成績が上がらない…文系専門塾「プラトン」が重視する“授業より大事なこと”</h3>
+        <p class="media-desc">ガリレオにもそのまま受け継がれている毎日課題システムをはじめとする学習メソッドや、指導にかける想いが語られています。</p>
+        <span class="media-link">記事を読む →</span>
+      </div>
+    </a>
   </div>
 </section>
 
