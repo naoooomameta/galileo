@@ -478,15 +478,11 @@ strong{font-weight:700}
 a.news-item{text-decoration:none;color:inherit;cursor:pointer}
 
 /* ===== MEDIA ===== */
-.media-card{display:grid;grid-template-columns:1fr 1.15fr;max-width:880px;margin:0 auto;background:var(--white);border:1px solid var(--green-mist);border-radius:18px;overflow:hidden;box-shadow:0 8px 32px rgba(14,74,56,.08);transition:all .3s}
+.media-card{display:grid;grid-template-columns:1.15fr 1fr;max-width:880px;margin:0 auto;background:var(--white);border:1px solid var(--green-mist);border-radius:18px;overflow:hidden;box-shadow:0 8px 32px rgba(14,74,56,.08);transition:all .3s}
 a.media-card{text-decoration:none;color:inherit;cursor:pointer}
 .media-card:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(14,74,56,.14)}
-.media-visual{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);padding:36px 28px;display:flex;flex-direction:column;justify-content:center;gap:12px;position:relative;overflow:hidden}
-.media-visual::after{content:'';position:absolute;top:-40%;right:-30%;width:280px;height:280px;background:radial-gradient(circle,rgba(196,154,60,.18) 0%,transparent 70%);pointer-events:none}
-.media-visual-label{align-self:flex-start;font-size:12px;font-weight:700;color:var(--primary-dark);background:var(--gold-light);padding:4px 12px;border-radius:4px;letter-spacing:.04em}
-.media-visual-title{font-family:var(--font-serif);font-size:clamp(20px,2.4vw,25px);font-weight:700;color:var(--white);line-height:1.6}
-.media-visual-title em{font-style:normal;color:var(--gold-light)}
-.media-visual-sub{font-size:13px;color:rgba(255,255,255,.75);font-weight:600;letter-spacing:.03em}
+.media-visual{position:relative;overflow:hidden;background:var(--primary-dark)}
+.media-visual img{width:100%;height:100%;object-fit:cover;display:block}
 .media-body{padding:32px 30px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:14px;border-left:4px solid var(--green-pale)}
 .media-badge{font-size:12px;font-weight:700;color:var(--white);background:linear-gradient(135deg,var(--gold),var(--gold-light));padding:5px 14px;border-radius:20px;letter-spacing:.04em}
 .media-title{font-family:var(--font-serif);font-size:clamp(16px,2vw,19px);font-weight:700;line-height:1.8;color:var(--text)}
@@ -1751,17 +1747,18 @@ a.media-card{text-decoration:none;color:inherit;cursor:pointer}
   <div class="container">
     <div class="section-label">Media</div>
     <h2 class="section-title">メディア掲載</h2>
-    <p class="section-subtitle">ガリレオの学習メソッドを監修する佐野（姉妹塾・文系の大学受験専門塾「プラトン」塾長）のインタビュー記事が、Yahoo!ニュースに掲載されました。</p>
+    <p class="section-subtitle">理系の大学受験専門塾「ガリレオ」の取り組みが、Yahoo!ニュースに掲載されました。</p>
     <a href="https://news.yahoo.co.jp/articles/512c6e1aed4538f79e4088d16077185758508cf1" target="_blank" rel="noopener" class="media-card">
       <div class="media-visual">
-        <span class="media-visual-label">塾のプロに聞く！</span>
-        <p class="media-visual-title">「勉強が続かない」のは<br><em>才能</em>じゃない。</p>
-        <p class="media-visual-sub">続けられる子に変える新常識。</p>
+        <picture>
+          <source srcset="img/media-yahoo.webp" type="image/webp">
+          <img src="img/media-yahoo.jpg" alt="理系の大学受験専門塾ガリレオ 英語・数学の標準カリキュラムを公開" width="880" height="495" loading="lazy">
+        </picture>
       </div>
       <div class="media-body">
         <span class="media-badge">Yahoo!ニュース 掲載</span>
-        <h3 class="media-title">塾に通っているのに成績が上がらない…文系専門塾「プラトン」が重視する“授業より大事なこと”</h3>
-        <p class="media-desc">ガリレオにもそのまま受け継がれている毎日課題システムをはじめとする学習メソッドや、指導にかける想いが語られています。</p>
+        <h3 class="media-title">英語・数学の「標準カリキュラム」を公開</h3>
+        <p class="media-desc">高校2年生終了までに仕上げる英語・数学の標準カリキュラムについて、塾長・教務長が紹介しています。</p>
         <span class="media-link">記事を読む →</span>
       </div>
     </a>
