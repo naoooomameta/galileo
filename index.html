@@ -497,6 +497,30 @@ a.media-card{text-decoration:none;color:inherit;cursor:pointer}
   .media-body{padding:24px 20px;border-left:none;border-top:4px solid var(--green-pale)}
 }
 
+/* ===== CEO MESSAGE CARD (FV直下) ===== */
+.ceo-card-section{background:var(--white);padding:28px 4vw;border-bottom:1px solid var(--border)}
+.ceo-card{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);border-radius:18px;overflow:hidden;box-shadow:0 8px 32px rgba(14,74,56,.15);position:relative;transition:all .3s}
+a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
+.ceo-card:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(14,74,56,.22)}
+.ceo-card::before{content:'';position:absolute;top:-40%;left:-10%;width:420px;height:420px;background:radial-gradient(circle,rgba(196,154,60,.14) 0%,transparent 70%);pointer-events:none}
+.ceo-card-text{padding:40px 44px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;position:relative}
+.ceo-card-badge{font-size:12.5px;font-weight:700;color:var(--primary-dark);background:linear-gradient(135deg,var(--gold),var(--gold-light));padding:5px 14px;border-radius:20px;letter-spacing:.05em;margin-bottom:16px}
+.ceo-card-title{font-family:var(--font-serif);font-size:clamp(21px,2.8vw,29px);font-weight:700;color:var(--white);line-height:1.7}
+.ceo-card-desc{font-size:13.5px;color:rgba(255,255,255,.75);margin-top:12px;line-height:1.9}
+.ceo-card-link{display:inline-flex;align-items:center;gap:6px;margin-top:20px;color:var(--gold-light);font-weight:700;font-size:14px;border-bottom:2px solid var(--gold-light);padding-bottom:2px;transition:gap .2s}
+.ceo-card:hover .ceo-card-link{gap:10px}
+.ceo-card-img{position:relative;min-height:260px}
+.ceo-card-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.ceo-card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--primary) 0%,transparent 18%);pointer-events:none}
+@media(max-width:768px){
+  .ceo-card{grid-template-columns:1fr}
+  .ceo-card-img{order:-1;min-height:220px}
+  .ceo-card-img img{object-position:center 35%}
+  .ceo-card-img::after{background:linear-gradient(0deg,var(--primary) 0%,transparent 18%)}
+  .ceo-card-text{padding:24px 22px}
+  .ceo-card-title{font-size:21px}
+}
+
 /* ===== CONTACT ===== */
 .contact-section{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--white);position:relative;overflow:hidden}
 .contact-section::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(196,154,60,.08) 0%,transparent 70%);pointer-events:none}
@@ -1178,6 +1202,19 @@ a.media-card{text-decoration:none;color:inherit;cursor:pointer}
       </a>
     </div>
   </article>
+</section>
+
+<!-- ===== CEOメッセージ (FV直下) ===== -->
+<section class="ceo-card-section">
+  <a href="pages/ceo-message.html" class="ceo-card">
+    <div class="ceo-card-text">
+      <span class="ceo-card-badge">代表メッセージ</span>
+      <h2 class="ceo-card-title">一人ひとりの可能性を、<br>最後まで諦めない。</h2>
+      <p class="ceo-card-desc">ガリレオ最高教育責任者（CEO）菅野 温が、ガリレオの教育にかける想いをお伝えします。</p>
+      <span class="ceo-card-link">メッセージ全文を読む →</span>
+    </div>
+    <div class="ceo-card-img"><img src="img/staff/kanno.jpg" alt="ガリレオ最高教育責任者（CEO）菅野 温" width="800" height="800" loading="lazy"></div>
+  </a>
 </section>
 
 <!-- ===== WORRIES ===== -->
