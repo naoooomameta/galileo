@@ -39,11 +39,15 @@
 /* 記事セクションは縦に長く、共通のフェードイン（threshold:0.08）が発火しないため対象外にする */
 .message-section{opacity:1;transform:none}
 .message-article{max-width:720px;margin:0 auto}
-.message-profile{display:flex;align-items:center;gap:20px;background:var(--white);border:1px solid var(--green-mist);border-left:4px solid var(--primary);border-radius:16px;padding:22px 24px;margin-bottom:48px;box-shadow:0 4px 20px rgba(14,74,56,.06)}
-.message-profile-img{width:88px;height:88px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2.5px solid var(--green-mist)}
-.message-profile-img img{width:100%;height:100%;object-fit:cover;display:block}
-.message-profile-role{font-size:12.5px;font-weight:700;color:var(--amber);letter-spacing:.05em;margin-bottom:4px}
-.message-profile-name{font-family:var(--font-serif);font-size:22px;font-weight:700;color:var(--primary-dark)}
+.message-profile{display:grid;grid-template-columns:1.5fr 1fr;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);border-radius:18px;overflow:hidden;margin-bottom:56px;box-shadow:0 12px 40px rgba(14,74,56,.18);position:relative}
+.message-profile::before{content:'';position:absolute;top:-40%;left:-10%;width:420px;height:420px;background:radial-gradient(circle,rgba(196,154,60,.14) 0%,transparent 70%);pointer-events:none}
+.message-profile-text{padding:48px 44px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.message-profile-role{display:inline-block;align-self:flex-start;font-size:13px;font-weight:700;color:var(--primary-dark);background:linear-gradient(135deg,var(--gold),var(--gold-light));padding:6px 16px;border-radius:20px;letter-spacing:.05em;margin-bottom:16px}
+.message-profile-name{font-family:var(--font-serif);font-size:clamp(30px,4vw,42px);font-weight:700;color:var(--white);letter-spacing:.06em;line-height:1.4}
+.message-profile-copy{font-size:14px;color:rgba(255,255,255,.75);margin-top:14px;letter-spacing:.03em;line-height:1.9}
+.message-profile-img{position:relative;min-height:300px}
+.message-profile-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.message-profile-img::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--primary) 0%,transparent 18%);pointer-events:none}
 .message-article h2{font-family:var(--font-serif);font-size:clamp(20px,2.6vw,25px);font-weight:700;line-height:1.7;color:var(--primary-dark);margin:64px 0 28px;padding-bottom:14px;position:relative}
 .message-article h2::after{content:'';position:absolute;left:0;bottom:0;width:48px;height:3px;background:linear-gradient(90deg,var(--primary),var(--amber));border-radius:2px}
 .message-article h2:first-of-type{margin-top:0}
@@ -55,9 +59,12 @@
 .message-signature-name{font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--primary-dark)}
 @media(max-width:768px){
   .page-hero{padding:60px 0 44px}
-  .message-profile{gap:14px;padding:18px}
-  .message-profile-img{width:68px;height:68px}
-  .message-profile-name{font-size:19px}
+  .message-profile{grid-template-columns:1fr}
+  .message-profile-text{padding:28px 24px;order:2}
+  .message-profile-img{min-height:260px;order:1}
+  .message-profile-img::after{background:linear-gradient(0deg,var(--primary) 0%,transparent 18%)}
+  .message-profile-name{font-size:28px}
+  .message-profile-copy{font-size:13px}
   .message-article h2{margin:48px 0 22px}
   .message-article p{font-size:14.5px;line-height:2.3}
   .message-quote{font-size:14.5px;padding:14px 18px}
@@ -133,11 +140,12 @@
 <section class="section message-section">
   <div class="container">
     <div class="message-profile">
-      <div class="message-profile-img"><img src="../img/staff/kanno.jpg" alt="ガリレオ最高教育責任者（CEO）菅野 温" width="800" height="800"></div>
-      <div>
-        <div class="message-profile-role">ガリレオ最高教育責任者（CEO）兼 塾長統括</div>
+      <div class="message-profile-text">
+        <span class="message-profile-role">ガリレオ最高教育責任者（CEO）兼 塾長統括</span>
         <div class="message-profile-name">菅野 温</div>
+        <p class="message-profile-copy">一人ひとりの可能性を、最後まで諦めない。</p>
       </div>
+      <div class="message-profile-img"><img src="../img/staff/kanno.jpg" alt="ガリレオ最高教育責任者（CEO）菅野 温" width="800" height="800"></div>
     </div>
     <div class="message-article">
 
