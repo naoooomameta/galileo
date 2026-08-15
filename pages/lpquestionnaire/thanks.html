@@ -166,6 +166,82 @@ body{
 .step-body-title{font-size:13.5px;font-weight:900;color:#1a1a2e;line-height:1.5;margin-bottom:3px;}
 .step-body-desc{font-size:12px;color:#64748b;line-height:1.6;}
 
+/* Contact form (lead capture) */
+.form-card{
+  background:#fff;border-radius:16px;
+  padding:20px;margin-bottom:20px;
+  border:1px solid #e2e8f0;
+  border-left:5px solid #0E4A38;
+  box-shadow:0 2px 12px rgba(14,74,56,0.06);
+}
+.form-head{display:flex;align-items:flex-start;gap:12px;margin-bottom:6px;}
+.form-head-emoji{font-size:26px;line-height:1.2;flex-shrink:0;}
+.form-title{font-size:15px;font-weight:900;color:#0E4A38;line-height:1.5;}
+.form-badge{
+  display:inline-block;background:#fdf3e0;color:#A37E26;
+  font-size:10px;font-weight:900;border-radius:6px;
+  padding:2px 8px;margin-left:6px;vertical-align:2px;white-space:nowrap;
+}
+.form-desc{font-size:12px;color:#64748b;line-height:1.7;margin-bottom:16px;}
+.form-fields{display:flex;flex-direction:column;gap:14px;}
+.form-group{display:flex;flex-direction:column;gap:6px;}
+.form-label{font-size:12px;font-weight:900;color:#475569;letter-spacing:0.3px;}
+.form-req{
+  display:inline-block;background:#fee2e2;color:#dc2626;
+  font-size:10px;font-weight:900;border-radius:4px;
+  padding:1px 6px;margin-left:6px;vertical-align:1px;
+}
+.form-input{
+  width:100%;padding:14px 16px;font-size:16px;font-weight:600;
+  border:2px solid #e2e8f0;border-radius:12px;
+  font-family:inherit;color:#1a1a2e;background:#f8fafc;
+  transition:all 0.2s;
+}
+.form-input:focus{outline:none;border-color:#0E4A38;background:#fff;box-shadow:0 0 0 4px rgba(14,74,56,0.08);}
+.form-input::placeholder{color:#c0c8d4;font-weight:500;font-size:14px;}
+.form-input.error{border-color:#ef4444;background:#fef2f2;}
+.form-error{font-size:11px;font-weight:700;color:#dc2626;line-height:1.5;display:none;}
+.form-error.show{display:block;}
+.form-submit{
+  width:100%;margin-top:18px;padding:17px;
+  font-size:16px;font-weight:900;color:#fff;
+  background:linear-gradient(135deg,#C49A3C,#A37E26);
+  border:none;border-radius:14px;cursor:pointer;
+  font-family:inherit;
+  box-shadow:0 4px 15px rgba(196,154,60,0.35);
+  transition:all 0.2s;
+}
+.form-submit:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(196,154,60,0.45);}
+.form-submit:active{transform:scale(0.99);}
+.form-submit:disabled{
+  background:#e2e8f0;color:#94a3b8;
+  box-shadow:none;cursor:not-allowed;transform:none;
+}
+.form-note{
+  display:flex;align-items:flex-start;gap:6px;
+  font-size:11px;color:#94a3b8;line-height:1.6;margin-top:12px;
+}
+.form-note a{color:#64748b;}
+.form-fail{
+  display:none;margin-top:12px;padding:12px 14px;
+  background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;
+  font-size:12px;font-weight:700;color:#dc2626;line-height:1.6;
+}
+.form-fail.show{display:block;}
+.form-done{
+  display:none;align-items:center;gap:14px;
+}
+.form-done.show{display:flex;}
+.form-done-icon{
+  width:44px;height:44px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,#10b981,#34d399);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 12px rgba(16,185,129,0.3);
+}
+.form-done-icon svg{width:22px;height:22px;}
+.form-done-title{font-size:15px;font-weight:900;color:#1a1a2e;line-height:1.4;}
+.form-done-desc{font-size:12px;color:#64748b;line-height:1.6;margin-top:3px;}
+
 /* Privacy reassurance */
 .privacy-note{
   display:flex;align-items:center;gap:8px;
@@ -201,6 +277,65 @@ body{
       <div class="success-title">登録が完了しました！</div>
       <div class="success-sub">ありがとうございます</div>
     </div>
+  </div>
+
+  <!-- 連絡先フォーム（お名前・メール・電話番号） -->
+  <div class="form-card">
+
+    <form id="contactForm" novalidate>
+      <div class="form-head">
+        <span class="form-head-emoji">📮</span>
+        <div>
+          <div class="form-title">ロードマップをメールでも受け取る<span class="form-badge">無料</span></div>
+        </div>
+      </div>
+      <div class="form-desc">
+        Instagramをご利用でない方や、確実に受け取りたい方はこちらにご記入ください。<br>
+        ご記入いただいた保護者様へ、佐野代表より直接ご連絡いたします。
+      </div>
+
+      <div class="form-fields">
+        <div class="form-group">
+          <label class="form-label" for="leadName">保護者様のお名前<span class="form-req">必須</span></label>
+          <input class="form-input" type="text" id="leadName" name="name" placeholder="山田 太郎" autocomplete="name" enterkeyhint="next">
+          <div class="form-error" id="errName">お名前をご入力ください</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="leadEmail">メールアドレス<span class="form-req">必須</span></label>
+          <input class="form-input" type="email" id="leadEmail" name="email" placeholder="example@mail.com" autocomplete="email" inputmode="email" enterkeyhint="next">
+          <div class="form-error" id="errEmail">メールアドレスの形式をご確認ください</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="leadTel">電話番号<span class="form-req">必須</span></label>
+          <input class="form-input" type="tel" id="leadTel" name="tel" placeholder="09012345678" autocomplete="tel" inputmode="tel" enterkeyhint="done">
+          <div class="form-error" id="errTel">電話番号は10〜11桁の半角数字でご入力ください</div>
+        </div>
+      </div>
+
+      <button class="form-submit" type="submit" id="leadSubmit">この内容で送信する</button>
+
+      <div class="form-fail" id="leadFail">
+        送信に失敗しました。電波状況をご確認のうえ、もう一度お試しください。
+      </div>
+
+      <div class="form-note">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z" stroke="#94a3b8" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span>ご記入いただいた情報は、毎日課題ロードマップのお届けとご連絡以外には使用いたしません。詳しくは<a href="https://galileo-sciences.com/pages/legal.html">プライバシーポリシー</a>をご確認ください。</span>
+      </div>
+    </form>
+
+    <div class="form-done" id="leadDone">
+      <div class="form-done-icon">
+        <svg viewBox="0 0 36 36" fill="none"><path d="M8 18l7 7 13-13" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <div class="form-done-title">ご連絡先を受け付けました</div>
+        <div class="form-done-desc">2日以内に、ご記入いただいたメールアドレス宛にロードマップをお届けします。</div>
+      </div>
+    </div>
+
   </div>
 
   <div class="ig-note">
@@ -271,6 +406,105 @@ body{
   <span style="margin:0 6px;">｜</span>
   <span>&copy; 2026 ガリレオ 理系の大学受験専門塾</span>
 </div>
+
+<script>
+/* ═══════════════════════════════════════
+   連絡先フォーム（お名前・メール・電話番号）
+   ═══════════════════════════════════════ */
+(function(){
+  // LP本体（index.html）と同じ GAS エンドポイント。action=shindanLead で記録する。
+  var GALILEO_SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwSZT1v2M1P86Vsvox_kC3FIl6IfYRthA_4IfEL18vdmt8FoMqJ3dkUV2N7FpOosy6dxw/exec';
+  var SENT_KEY = 'galileo_lead_sent';
+
+  var form = document.getElementById('contactForm');
+  var done = document.getElementById('leadDone');
+  var fail = document.getElementById('leadFail');
+  var btn  = document.getElementById('leadSubmit');
+  var fields = {
+    name:  { input: document.getElementById('leadName'),  error: document.getElementById('errName') },
+    email: { input: document.getElementById('leadEmail'), error: document.getElementById('errEmail') },
+    tel:   { input: document.getElementById('leadTel'),   error: document.getElementById('errTel') }
+  };
+
+  function showDone(){
+    form.style.display = 'none';
+    done.classList.add('show');
+  }
+
+  // 送信済みの場合は再読み込みしても完了表示のまま（二重送信防止）
+  try { if (sessionStorage.getItem(SENT_KEY) === '1') showDone(); } catch(e){}
+
+  function setError(key, on){
+    fields[key].input.classList.toggle('error', on);
+    fields[key].error.classList.toggle('show', on);
+  }
+
+  Object.keys(fields).forEach(function(key){
+    fields[key].input.addEventListener('input', function(){ setError(key, false); });
+  });
+
+  function validate(values){
+    var ok = true;
+    if (!values.name) { setError('name', true); ok = false; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) { setError('email', true); ok = false; }
+    if (!/^0\d{9,10}$/.test(values.tel)) { setError('tel', true); ok = false; }
+    return ok;
+  }
+
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    fail.classList.remove('show');
+
+    var values = {
+      name:  fields.name.input.value.trim(),
+      email: fields.email.input.value.trim(),
+      // 全角数字・ハイフン・空白を許容し、半角数字へ正規化してから検証する
+      tel:   fields.tel.input.value.replace(/[０-９]/g, function(c){ return String.fromCharCode(c.charCodeAt(0) - 0xFEE0); }).replace(/[^0-9]/g, '')
+    };
+    if (!validate(values)) {
+      var firstError = form.querySelector('.form-input.error');
+      if (firstError) firstError.focus();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = '送信中...';
+
+    // 診断の回答（index.html から sessionStorage 経由で引き継ぎ）を同じ行に記録する
+    var shindan = {};
+    try { shindan = JSON.parse(sessionStorage.getItem('galileo_shindan') || '{}') || {}; } catch(e){}
+
+    var body = new URLSearchParams();
+    body.append('action', 'shindanLead');
+    body.append('name', values.name);
+    body.append('email', values.email);
+    body.append('tel', values.tel);
+    body.append('grade', shindan.grade || '');
+    body.append('subjects', shindan.subjects || '');
+    body.append('studyTime', shindan.studyTime || '');
+    body.append('volume', shindan.volume || '');
+    body.append('source', 'lpquestionnaire-thanks');
+
+    fetch(GALILEO_SHEETS_ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      keepalive: true,
+      body: body
+    }).then(function(){
+      try { sessionStorage.setItem(SENT_KEY, '1'); } catch(e){}
+      if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'thanks_contact' });
+      if (typeof clarity === 'function') clarity('event', 'thanks_contact_submit');
+      showDone();
+      done.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }).catch(function(e){
+      console.log('Lead send error:', e);
+      btn.disabled = false;
+      btn.textContent = 'この内容で送信する';
+      fail.classList.add('show');
+    });
+  });
+})();
+</script>
 
 </body>
 </html>

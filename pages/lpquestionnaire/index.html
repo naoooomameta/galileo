@@ -1615,6 +1615,16 @@ function openLine() {
     + '課題量：' + (answers.volume || '未入力');
   var igUrl = 'https://ig.me/m/galileo_sciences?text=' + encodeURIComponent(msg);
 
+  // thanks.html の連絡先フォームで診断内容を一緒に送るため、回答を引き継ぐ
+  try {
+    sessionStorage.setItem('galileo_shindan', JSON.stringify({
+      grade: answers.grade || '',
+      subjects: (answers.subjects || []).join('、'),
+      studyTime: answers.studyTime || '',
+      volume: answers.volume || ''
+    }));
+  } catch (e) { /* プライベートブラウズ等で使用不可な場合は診断内容なしで送信 */ }
+
   // Instagram DMを新規タブで開き、少し遅れてthanksへ
   window.open(igUrl, '_blank');
   setTimeout(function() {
