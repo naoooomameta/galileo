@@ -8,6 +8,17 @@
    このパッチは thanks.html が送信する GAS エンドポイント
      https://script.google.com/macros/s/AKfycbwSZT1v2M1P86Vsvox_kC3FIl6IfYRthA_4IfEL18vdmt8FoMqJ3dkUV2N7FpOosy6dxw/exec
    のスクリプト（= LP の診断回答 action=shindan を受けているプロジェクト）に反映してください。
+
+   対象プロジェクト（確認済み）:
+     名称: ガリレオLP受信GAS
+     編集URL: https://script.google.com/d/1mr89xGp224pv2zXX-9--Jz5XyItK_zPiXbR1mptzhBiTxEq8FCm3d6Q8/edit
+     ※ 診断回答スプレッドシート
+        「ガリレオ：【タブname変更禁止】LPアンケート診断_回答データ」
+        (1FSV7hyX8lr9WD6hDV6gQJ9IjS4Z8w_M7mF1hrlB8KL0) に紐づくコンテナバインドのスクリプト。
+        スプレッドシートの「拡張機能 → Apps Script」からも開けます。
+     編集するファイル: コード.gs（register_v2.gs は生徒自動登録用なので触らないこと）
+     ※ SHEET_ID / SHINDAN_SHEET_ID / NOTIFY_EMAIL / BRAND_NAME / SITE_URL は定義済みのため、
+        下記コードはそのまま貼り付けられます。
    反映前は doPost がどの分岐にも入らず、フォーム送信が記録されません
    （no-cors 送信のため、画面上は成功表示になります）。
 
