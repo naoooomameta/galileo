@@ -510,12 +510,10 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
 .ceo-card-link{display:inline-flex;align-items:center;gap:6px;margin-top:20px;color:var(--gold-light);font-weight:700;font-size:14px;border-bottom:2px solid var(--gold-light);padding-bottom:2px;transition:gap .2s}
 .ceo-card:hover .ceo-card-link{gap:10px}
 .ceo-card-img{position:relative;min-height:260px}
-.ceo-card-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.ceo-card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--primary) 0%,transparent 18%);pointer-events:none}
+.ceo-card-img img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:92%;width:auto;max-width:none;display:block;filter:drop-shadow(0 6px 24px rgba(0,0,0,.25))}
 @media(max-width:768px){
   .ceo-card{grid-template-columns:1fr}
-  .ceo-card-img{order:-1;min-height:220px}
-  .ceo-card-img img{object-position:center 35%}
+  .ceo-card-img{order:-1;min-height:230px}
   .ceo-card-img::after{background:linear-gradient(0deg,var(--primary) 0%,transparent 18%)}
   .ceo-card-text{padding:24px 22px}
   .ceo-card-title{font-size:21px}
@@ -1213,7 +1211,12 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
       <p class="ceo-card-desc">ガリレオ最高教育責任者（CEO）菅野 温が、ガリレオの教育にかける想いをお伝えします。</p>
       <span class="ceo-card-link">メッセージ全文を読む →</span>
     </div>
-    <div class="ceo-card-img"><img src="img/staff/kanno.jpg" alt="ガリレオ最高教育責任者（CEO）菅野 温" width="800" height="800" loading="lazy"></div>
+    <div class="ceo-card-img">
+      <picture>
+        <source srcset="img/ceo-kanno.webp" type="image/webp">
+        <img src="img/ceo-kanno.png" alt="ガリレオ最高教育責任者（CEO）菅野 温" width="600" height="717" loading="lazy">
+      </picture>
+    </div>
   </a>
 </section>
 
