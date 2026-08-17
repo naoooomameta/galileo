@@ -650,122 +650,6 @@ body{
   box-shadow:none;cursor:not-allowed;transform:none;
 }
 
-/* ═══════════════════════════════════════
-   SECTION 3 — COMPLETE SCREEN
-   ═══════════════════════════════════════ */
-.complete-screen{
-  display:none;
-  text-align:center;
-  padding:20px 20px;
-  flex:1;
-  flex-direction:column;
-  align-items:center;
-  justify-content:flex-start;
-  overflow-y:auto;
-}
-.complete-screen.show{display:flex;}
-
-/* Compact inline header */
-.complete-header-inline{
-  display:flex;align-items:center;gap:14px;
-  background:#f0fdf4;border:1.5px solid #bbf7d0;
-  border-radius:14px;padding:14px 18px;
-  width:100%;max-width:360px;margin:0 auto 20px;
-  text-align:left;
-  animation:checkPop 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
-}
-@keyframes checkPop{0%{transform:scale(0.9);opacity:0;}100%{transform:scale(1);opacity:1;}}
-.complete-check-sm{
-  width:40px;height:40px;border-radius:50%;flex-shrink:0;
-  background:linear-gradient(135deg,#10b981,#34d399);
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 12px rgba(16,185,129,0.3);
-}
-.complete-check-sm svg{width:20px;height:20px;}
-.complete-title-sm{font-size:15px;font-weight:900;color:#1a1a2e;line-height:1.3;}
-.complete-sub-sm{font-size:12px;color:#10b981;font-weight:700;}
-
-/* LINE CTA note */
-.line-cta-note{
-  font-size:11px;color:rgba(255,255,255,0.6);
-  margin-top:10px;line-height:1.5;
-}
-
-/* Summary collapsible */
-.summary-details{
-  width:100%;max-width:360px;margin:0 auto;
-}
-.summary-toggle{
-  display:block;text-align:center;
-  font-size:12px;font-weight:700;color:#94a3b8;
-  cursor:pointer;padding:8px;
-  list-style:none;
-  transition:color 0.2s;
-}
-.summary-toggle:hover{color:#64748b;}
-.summary-toggle::-webkit-details-marker{display:none;}
-.summary-details[open] .summary-toggle{margin-bottom:8px;}
-
-/* Summary card */
-.summary-card{
-  background:#f8fafc;border:1.5px solid #e2e8f0;
-  border-radius:16px;padding:20px;
-  text-align:left;width:100%;
-  margin:0 auto;
-}
-.summary-row{
-  display:flex;justify-content:space-between;align-items:flex-start;
-  padding:8px 0;border-bottom:1px solid #f1f5f9;gap:12px;
-}
-.summary-row:last-child{border-bottom:none;}
-.summary-label{font-size:12px;color:#94a3b8;font-weight:700;flex-shrink:0;white-space:nowrap;}
-.summary-value{font-size:14px;color:#1a1a2e;font-weight:700;text-align:right;line-height:1.6;}
-
-/* Instagram DM CTA */
-.line-cta-box{
-  background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-  border-radius:20px;padding:28px 20px;
-  width:100%;max-width:360px;margin:0 auto;
-  box-shadow:0 8px 30px rgba(220,39,67,0.3);
-}
-.line-cta-box .line-icon{
-  width:56px;height:56px;border-radius:14px;
-  background:#fff;display:flex;align-items:center;justify-content:center;
-  margin:0 auto 12px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
-}
-.line-cta-title{
-  font-size:22px;font-weight:900;color:#fff;
-  margin-bottom:8px;line-height:1.4;
-}
-.line-cta-desc{
-  font-size:12px;color:rgba(255,255,255,0.8);
-  margin-bottom:16px;line-height:1.6;
-}
-.line-cta-highlight{
-  display:inline-block;background:rgba(255,255,255,0.2);
-  border-radius:8px;padding:6px 14px;
-  font-size:13px;font-weight:700;color:#fff;
-  margin-bottom:16px;
-}
-.line-add-btn{
-  display:block;width:100%;padding:18px;
-  font-size:17px;font-weight:900;
-  color:#bc1888;background:#fff;
-  border:none;border-radius:14px;cursor:pointer;
-  font-family:inherit;
-  box-shadow:0 4px 15px rgba(0,0,0,0.1);
-  transition:all 0.2s;
-  animation:lineBtn 2s ease-in-out infinite;
-}
-@keyframes lineBtn{0%,100%{box-shadow:0 4px 15px rgba(0,0,0,0.1);}50%{box-shadow:0 4px 25px rgba(255,255,255,0.35);}}
-.line-add-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,0.15);}
-
-/* Confetti canvas */
-#confetti{
-  position:fixed;inset:0;z-index:1001;pointer-events:none;
-}
-
 /* Floating CTA */
 .floating-cta{
   position:fixed;bottom:0;left:0;right:0;z-index:90;
@@ -897,9 +781,6 @@ body{
   .benefit-item{font-size:14px;}
   .preview-gallery{max-width:640px;}
   .survey-container{max-width:640px;}
-  .complete-header-inline{max-width:640px;}
-  .summary-details{max-width:640px;}
-  .line-cta-box{max-width:640px;}
 }
 @media(max-width:599px){
   .phone-frame{width:100%;}
@@ -921,12 +802,6 @@ body{
   .wish-group{padding:12px;}
   .text-field{font-size:15px;padding:14px 16px;}
   .text-field.sm{font-size:13px;padding:11px 14px;}
-  /* Complete screen adjustments */
-  .complete-header-inline{max-width:100%;}
-  .summary-card{padding:16px;}
-  .line-cta-box{max-width:100%;}
-  .line-cta-title{font-size:16px;}
-  .summary-details{max-width:100%;}
 }
 
 /* ═══════════════════════════════════════
@@ -1112,9 +987,6 @@ body{
 
   /* サーベイのオーバーレイサイズ調整 */
   .survey-container{max-width:720px;}
-  .complete-header-inline{max-width:720px;}
-  .summary-details{max-width:720px;}
-  .line-cta-box{max-width:720px;}
 }
 
 @media(min-width:1200px){
@@ -1386,40 +1258,6 @@ body{
       </div>
     </div>
 
-    <!-- COMPLETE SCREEN -->
-    <div class="complete-screen" id="completeScreen">
-
-      <!-- Compact header -->
-      <div class="complete-header-inline">
-        <div class="complete-check-sm">
-          <svg viewBox="0 0 36 36" fill="none"><path d="M8 18l7 7 13-13" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div>
-          <div class="complete-title-sm">回答を受け付けました！</div>
-          <div class="complete-sub-sm">あと1ステップで完了です</div>
-        </div>
-      </div>
-
-      <!-- Instagram DM CTA — Required -->
-      <div class="line-cta-box">
-        <div class="line-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#d6249f" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#d6249f" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="#d6249f"/></svg>
-        </div>
-        <div class="line-cta-title">Instagramで<br>診断結果を受け取る</div>
-        <div class="line-cta-desc">
-          あなたの回答をもとに、プロの講師が<br>
-          <strong style="color:#fff;">お子様専用の毎日課題ロードマップ</strong>を作成。<br>
-          Instagramのメッセージでお届けします。
-        </div>
-        <div class="line-cta-highlight">📩 2日以内にお届けします</div>
-        <button class="line-add-btn" onclick="openLine()">
-          Instagramのメッセージで受け取る
-        </button>
-        <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:10px;">※ 診断結果はInstagramのメッセージでお届けします</div>
-      </div>
-
-    </div>
-
   </div><!-- /survey-body -->
 
   <!-- Footer -->
@@ -1430,8 +1268,6 @@ body{
 
 </div><!-- /survey-container -->
 </div><!-- /survey-overlay -->
-
-<canvas id="confetti"></canvas>
 
 <script>
 /* ═══════════════════════════════════════
@@ -1497,7 +1333,7 @@ function toggleChip(chip) {
 
 function nextStep() {
   if (currentStep >= TOTAL_STEPS) {
-    openLine();
+    submitSurvey();
     return;
   }
   currentStep++;
@@ -1545,10 +1381,10 @@ function updateUI() {
 
   // Last step button text & style
   if (currentStep === TOTAL_STEPS) {
-    btn.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:6px;"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#fff" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="#fff"/></svg>Instagramで「毎日課題」と送信';
-    btn.style.background = 'linear-gradient(135deg,#f09433,#dc2743,#bc1888)';
+    btn.textContent = '回答を送信してロードマップを受け取る →';
+    btn.style.background = 'linear-gradient(135deg,#C49A3C,#A37E26)';
     btn.style.color = '#fff';
-    btn.style.boxShadow = '0 4px 15px rgba(220,39,67,0.4)';
+    btn.style.boxShadow = '0 4px 15px rgba(196,154,60,0.35)';
     btn.style.fontSize = '15px';
     btn.style.fontWeight = '900';
   } else {
@@ -1564,27 +1400,9 @@ function updateUI() {
   document.getElementById('surveyBody').scrollTop = 0;
 }
 
-function showComplete() {
-  // Hide all questions
-  document.querySelectorAll('.survey-question').forEach(q => q.classList.remove('active'));
-  // Hide footer
-  document.getElementById('surveyFooter').style.display = 'none';
-  // Update progress
-  document.getElementById('progressFill').style.width = '100%';
-  document.getElementById('progressText').textContent = '完了！';
-  document.getElementById('stepLabel').textContent = 'COMPLETE';
-
-  // Show complete screen
-  document.getElementById('completeScreen').classList.add('show');
-  document.getElementById('surveyBody').scrollTop = 0;
-
-  // Confetti!
-  launchConfetti();
-}
-
-function openLine() {
-  // Meta Pixel: Lead = Instagram DMクリック
-  if(typeof fbq==='function') fbq('track', 'Lead', {content_name: 'ig_dm'});
+function submitSurvey() {
+  // Meta Pixel: アンケート完了（連絡先の取得は thanks.html のフォームで Lead を計測）
+  if(typeof fbq==='function') fbq('trackCustom', 'SurveyComplete');
   if(typeof clarity==='function') clarity('event', 'survey_complete');
 
   // 回答を Google スプレッドシートへ送信（既存の予約・問い合わせ用 GAS に action=shindan で記録）
@@ -1605,16 +1423,6 @@ function openLine() {
     }).catch(function(e) { console.log('Data send error:', e); });
   }
 
-  // DM本文：先頭の「毎日課題」はInstagramキーワード自動返信のトリガー語（変更時はMeta側の設定も合わせる）
-  var msg = '毎日課題\n\n'
-    + 'ガリレオの「毎日課題」を希望します。\n\n'
-    + '【診断結果】\n'
-    + '学年：' + (answers.grade || '未入力') + '\n'
-    + '希望科目：' + ((answers.subjects || []).join('、') || '未入力') + '\n'
-    + '勉強時間：' + (answers.studyTime || '未入力') + '\n'
-    + '課題量：' + (answers.volume || '未入力');
-  var igUrl = 'https://ig.me/m/galileo_sciences?text=' + encodeURIComponent(msg);
-
   // thanks.html の連絡先フォームで診断内容を一緒に送るため、回答を引き継ぐ
   try {
     sessionStorage.setItem('galileo_shindan', JSON.stringify({
@@ -1625,72 +1433,12 @@ function openLine() {
     }));
   } catch (e) { /* プライベートブラウズ等で使用不可な場合は診断内容なしで送信 */ }
 
-  // Instagram DMを新規タブで開き、少し遅れてthanksへ
-  window.open(igUrl, '_blank');
+  // お届け先を登録してもらうサンクスページへ
   setTimeout(function() {
     window.location.href = 'thanks.html';
-  }, 800);
+  }, 400);
 }
 
-/* ═══════════════════════════════════════
-   CONFETTI
-   ═══════════════════════════════════════ */
-function launchConfetti() {
-  const canvas = document.getElementById('confetti');
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  canvas.style.display = 'block';
-
-  const pieces = [];
-  const colors = ['#0E4A38','#C49A3C','#10b981','#ef4444','#8b5cf6','#06b6d4','#D4A843'];
-  const total = 120;
-
-  for (let i = 0; i < total; i++) {
-    pieces.push({
-      x: Math.random() * canvas.width,
-      y: -20 - Math.random() * 300,
-      w: 6 + Math.random() * 6,
-      h: 4 + Math.random() * 4,
-      color: colors[Math.floor(Math.random() * colors.length)],
-      vx: (Math.random() - 0.5) * 3,
-      vy: 2 + Math.random() * 4,
-      rot: Math.random() * 360,
-      rotV: (Math.random() - 0.5) * 10,
-      opacity: 1,
-    });
-  }
-
-  let frame = 0;
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    let alive = false;
-    pieces.forEach(p => {
-      if (p.opacity <= 0) return;
-      alive = true;
-      p.x += p.vx;
-      p.y += p.vy;
-      p.vy += 0.05;
-      p.rot += p.rotV;
-      if (frame > 60) p.opacity -= 0.01;
-
-      ctx.save();
-      ctx.translate(p.x, p.y);
-      ctx.rotate(p.rot * Math.PI / 180);
-      ctx.globalAlpha = Math.max(0, p.opacity);
-      ctx.fillStyle = p.color;
-      ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
-      ctx.restore();
-    });
-    frame++;
-    if (alive) {
-      requestAnimationFrame(draw);
-    } else {
-      canvas.style.display = 'none';
-    }
-  }
-  draw();
-}
 </script>
 
 <!-- Footer -->
