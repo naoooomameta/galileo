@@ -46,8 +46,7 @@
 .message-profile-name{font-family:var(--font-serif);font-size:clamp(30px,4vw,42px);font-weight:700;color:var(--white);letter-spacing:.06em;line-height:1.4}
 .message-profile-copy{font-size:14px;color:rgba(255,255,255,.75);margin-top:14px;letter-spacing:.03em;line-height:1.9}
 .message-profile-img{position:relative;min-height:300px}
-.message-profile-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.message-profile-img::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--primary) 0%,transparent 18%);pointer-events:none}
+.message-profile-img img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:92%;width:auto;max-width:none;display:block;filter:drop-shadow(0 6px 24px rgba(0,0,0,.25))}
 .message-article h2{font-family:var(--font-serif);font-size:clamp(20px,2.6vw,25px);font-weight:700;line-height:1.7;color:var(--primary-dark);margin:64px 0 28px;padding-bottom:14px;position:relative}
 .message-article h2::after{content:'';position:absolute;left:0;bottom:0;width:48px;height:3px;background:linear-gradient(90deg,var(--primary),var(--amber));border-radius:2px}
 .message-article h2:first-of-type{margin-top:0}
@@ -61,8 +60,7 @@
   .page-hero{padding:60px 0 44px}
   .message-profile{grid-template-columns:1fr}
   .message-profile-text{padding:28px 24px;order:2}
-  .message-profile-img{min-height:260px;order:1}
-  .message-profile-img::after{background:linear-gradient(0deg,var(--primary) 0%,transparent 18%)}
+  .message-profile-img{min-height:240px;order:1}
   .message-profile-name{font-size:28px}
   .message-profile-copy{font-size:13px}
   .message-article h2{margin:48px 0 22px}
@@ -145,7 +143,12 @@
         <div class="message-profile-name">菅野 温</div>
         <p class="message-profile-copy">一人ひとりの可能性を、最後まで諦めない。</p>
       </div>
-      <div class="message-profile-img"><img src="../img/staff/kanno.jpg" alt="ガリレオ最高教育責任者（CEO）菅野 温" width="800" height="800"></div>
+      <div class="message-profile-img">
+        <picture>
+          <source srcset="../img/ceo-kanno.webp" type="image/webp">
+          <img src="../img/ceo-kanno.png" alt="ガリレオ最高教育責任者（CEO）菅野 温" width="600" height="717">
+        </picture>
+      </div>
     </div>
     <div class="message-article">
 
