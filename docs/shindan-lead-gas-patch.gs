@@ -65,6 +65,8 @@ function saveShindanLeadToSheet(params) {
       '学年', '希望科目', '1日の学習時間', '課題量'
     ]);
   }
+  // 電話番号の先頭の0が消えないよう、E列を「書式なしテキスト」に固定する
+  sheet.getRange(2, 5, Math.max(sheet.getMaxRows() - 1, 1), 1).setNumberFormat('@');
   sheet.appendRow([
     new Date(),
     params.source || 'lpquestionnaire-thanks',
@@ -76,6 +78,8 @@ function saveShindanLeadToSheet(params) {
     params.studyTime || '',
     params.volume || ''
   ]);
+  // appendRow で数値化された場合に備え、電話番号だけ文字列で入れ直す
+  sheet.getRange(sheet.getLastRow(), 5).setValue(params.tel || '');
 }
 
 // 連絡先は診断回答と同じスプレッドシートの別タブに記録する
