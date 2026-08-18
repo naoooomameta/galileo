@@ -1336,8 +1336,8 @@ const QUESTION_COUNT = 4;     // 診断の設問数
 const TOTAL_STEPS = 5;        // 設問4 + お届け先入力1
 let currentStep = 1;
 const answers = {};
-let shindanSent = false;      // 回答（action=shindan）の二重送信防止
-let leadSubmitting = false;   // 連絡先（action=shindanLead）の二重送信防止
+let surveyCompleteFired = false; // 計測イベントの二重発火防止
+let leadSubmitting = false;      // 送信（action=shindanLead）の二重送信防止
 
 var GALILEO_SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwSZT1v2M1P86Vsvox_kC3FIl6IfYRthA_4IfEL18vdmt8FoMqJ3dkUV2N7FpOosy6dxw/exec';
 
@@ -1377,11 +1377,10 @@ function toggleChip(chip) {
 }
 
 function nextStep() {
-  if (currentStep === QUESTION_COUNT && !shindanSent) {
-    // 設問が出そろった時点で回答を記録（お届け先の入力前に離脱しても回答は残る）
+  if (currentStep === QUESTION_COUNT && !surveyCompleteFired) {
+    surveyCompleteFired = true;
     if(typeof fbq==='function') fbq('trackCustom', 'SurveyComplete');
     if(typeof clarity==='function') clarity('event', 'survey_complete');
-    sendShindanAnswers();
   }
   if (currentStep >= TOTAL_STEPS) {
     submitLead();
@@ -1472,25 +1471,6 @@ document.querySelectorAll('.contact-field').forEach(function(input){
     }
   });
 });
-
-// 回答のみを記録（お届け先の入力前に離脱しても診断回答は残す）
-function sendShindanAnswers() {
-  if (shindanSent) return;
-  shindanSent = true;
-  var sd = new URLSearchParams();
-  sd.append('action', 'shindan');
-  sd.append('grade', answers.grade || '');
-  sd.append('subjects', (answers.subjects || []).join('、'));
-  sd.append('studyTime', answers.studyTime || '');
-  sd.append('volume', answers.volume || '');
-  sd.append('source', 'lpquestionnaire');
-  fetch(GALILEO_SHEETS_ENDPOINT, {
-    method: 'POST',
-    mode: 'no-cors',
-    keepalive: true,
-    body: sd
-  }).catch(function(e) { console.log('Data send error:', e); });
-}
 
 function setFieldError(id, errId, on) {
   document.getElementById(id).classList.toggle('error', on);
