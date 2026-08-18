@@ -1300,8 +1300,8 @@ function openSurvey() {
   document.getElementById('surveyOverlay').classList.add('show');
   document.getElementById('floatingCta').classList.remove('show');
   document.body.style.overflow = 'hidden';
-  // Meta Pixel: Survey Start
-  if(typeof fbq==='function') fbq('trackCustom', 'SurveyStart');
+  // Meta Pixel: アンケート開始（マイクロCV）
+  if(typeof fbq==='function') fbq('track', 'InitiateCheckout', {content_name: 'shindan_survey'});
   if(typeof clarity==='function') clarity('event', 'survey_start');
   updateUI();
 }
