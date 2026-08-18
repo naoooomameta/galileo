@@ -10,9 +10,9 @@
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-<meta name="description" content="理系の大学受験専門塾ガリレオ。原理から理解し、自分で解法を組み立て、自力で解き切る——3つの力を鍛える理系思考トレーニングと毎日課題で、勉強しているのに伸びない理系受験生を志望校合格へ。数学・物理・化学・生物・英語のプロ講師が全国対応のオンライン指導。">
+<meta name="description" content="理系の大学受験専門塾ガリレオ。微積で理解する物理、順像法・逆像法まで扱う数学——原理から理解させる専門性の高い授業で「自分で解ける力」を鍛え、毎日課題で入試本番の得点力へ。数学・物理・化学・生物・英語のプロ講師が全国対応のオンライン指導。">
 <meta property="og:title" content="ガリレオ | 理系の大学受験専門塾">
-<meta property="og:description" content="公式暗記で終わらせない、理系思考トレーニング。毎日課題 × 理系思考で志望校合格へ。数学・物理・化学・生物・英語のプロ講師が全国対応のオンライン指導。">
+<meta property="og:description" content="教科書の先まで理解させる、専門性の高い理系授業。授業で得た理解を毎日課題で得点力に変える。数学・物理・化学・生物・英語のプロ講師が全国対応のオンライン指導。">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://galileo-sciences.com/img/ogp.png">
 <meta property="og:image:width" content="1200">
@@ -1087,6 +1087,32 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
   .gcourse__body{padding:18px 20px 20px}
   .gcourse__name{font-size:17px}
 }
+
+/* ===== LESSONS（専門性の高い授業） ===== */
+.lessons-intro{max-width:820px;margin:0 auto 40px;background:var(--white);border-radius:20px;padding:32px 40px;border:1px solid var(--border);border-left:5px solid var(--gold);box-shadow:0 4px 20px rgba(14,74,56,.06);font-size:15.5px;color:var(--text-light);line-height:2.2}
+.lessons-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.lesson-card{background:var(--white);border:1px solid var(--border);border-top:3px solid var(--primary);border-radius:16px;padding:30px 26px;transition:all .3s;box-shadow:0 2px 8px rgba(14,74,56,.04)}
+.lesson-card:hover{box-shadow:0 10px 30px rgba(14,74,56,.1);transform:translateY(-3px)}
+.lesson-subject{display:inline-block;font-size:13px;font-weight:700;color:var(--white);background:var(--primary);padding:4px 14px;border-radius:20px;letter-spacing:.06em;margin-bottom:14px}
+.lesson-card h3{font-size:18px;font-weight:700;color:var(--primary-dark);line-height:1.6;margin-bottom:10px}
+.lesson-card>p{font-size:14.5px;color:var(--text-light);line-height:2;margin-bottom:14px}
+.lesson-card ul{list-style:none;border-top:1px dashed var(--border);padding-top:12px}
+.lesson-card li{font-size:13.5px;color:var(--text-light);padding:4px 0 4px 18px;position:relative;line-height:1.8}
+.lesson-card li::before{content:'▸';position:absolute;left:2px;color:var(--amber)}
+.lessons-bridge{max-width:820px;margin:44px auto 0;text-align:center;background:linear-gradient(135deg,var(--green-pale),var(--bg-alt));border:1px solid var(--green-mist);border-radius:18px;padding:36px 32px}
+.lessons-bridge-head{font-family:var(--font-serif);font-size:clamp(19px,2.5vw,24px);font-weight:700;color:var(--primary-dark);margin-bottom:12px}
+.lessons-bridge-body{font-size:15px;color:var(--text-light);line-height:2.1;margin-bottom:20px}
+.lessons-bridge a{display:inline-flex;align-items:center;gap:6px;color:var(--primary);font-weight:700;font-size:15px;padding:12px 28px;border:2px solid var(--primary);border-radius:40px;transition:all .3s;background:var(--white)}
+.lessons-bridge a:hover{background:var(--primary);color:var(--white);transform:translateY(-2px)}
+/* 質×量×継続 ストリップ */
+.daily-qqc{display:flex;justify-content:center;align-items:center;gap:14px;margin:44px auto 10px;font-family:var(--font-serif);font-size:clamp(21px,3vw,27px);font-weight:700;color:var(--primary-dark)}
+.daily-qqc .x{color:var(--gold)}
+.daily-qqc-note{text-align:center;font-size:14.5px;color:var(--text-light);max-width:560px;margin:0 auto;line-height:2}
+@media(max-width:768px){
+  .lessons-intro{padding:24px 20px;font-size:14.5px}
+  .lesson-card{padding:24px 20px}
+  .lessons-bridge{padding:26px 20px}
+}
 </style>
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
@@ -1235,7 +1261,56 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
       <div class="worry-card full"><span class="worry-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="13" stroke="#4a8a6a" stroke-width="2"/><path d="M10 14c3-2 6-3 10-3s7 1 10 3" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round" opacity=".3"/><path d="M10 26c3 2 6 3 10 3s7-1 10-3" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round" opacity=".3"/><path d="M14 8c-1 3-2 7-2 12s1 9 2 12" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round" opacity=".3"/><path d="M26 8c1 3 2 7 2 12s-1 9-2 12" stroke="#4a8a6a" stroke-width="1.5" stroke-linecap="round" opacity=".3"/><text x="15" y="24" font-family="serif" font-size="12" font-weight="700" fill="#C49A3C">Aa</text></svg></span>「理系なのに英語が苦手」「英語の点数がなかなか上がらない」</div>
     </div>
     <div class="worries-bottom">
-      <p>参考書も解いている。授業も受けている。<br>それでも成績が伸びない理由を、ガリレオは<strong>理系専門の視点で分解</strong>し、合格までの道筋を設計します。</p>
+      <p>参考書も解いている。授業も受けている。<br>それでも伸びないのは、努力不足ではなく、<strong>原理からの理解と思考の訓練</strong>が足りていないだけかもしれません。<br>ガリレオは理系専門の視点でその壁を分解し、合格までの道筋を設計します。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SPECIALIZED LESSONS（専門性の高い授業） ===== -->
+<section class="section" id="lessons">
+  <div class="container">
+    <div class="section-label">Specialized Lessons</div>
+    <h2 class="section-title">教科書の“先”まで理解させる、<br>専門性の高い授業</h2>
+    <p class="section-subtitle">難関理系の合否を分けるのは、解法の暗記量ではありません。<br>「原理からの理解」と「自分で解法を組み立てる思考」。ガリレオの授業は、そこを正面から鍛えます。</p>
+    <div class="lessons-intro">
+      <p>「解説を読めば分かるのに、自分では思いつかない」——その原因は才能ではなく、<strong>教わり方</strong>にあります。ガリレオの授業は、公式や解法を「なぜ成り立つのか」「なぜこの場面で使うのか」から扱い、入試本番で<strong>自分で思いつくための思考プロセス</strong>まで言語化して指導します。</p>
+    </div>
+    <div class="lessons-grid">
+      <div class="lesson-card">
+        <div class="lesson-subject">数学</div>
+        <h3>「なぜこの式変形か」まで言語化する</h3>
+        <p>軌跡・領域は、順像法・逆像法という「考え方の選択」から指導。空間ベクトルでは外積などの道具も、計算手順ではなく意味から理解します。</p>
+        <ul>
+          <li>順像法・逆像法で解き切る軌跡・領域</li>
+          <li>外積も使いこなす空間ベクトルの処理</li>
+          <li>ゴールから逆算して道筋を組み立てる設計力</li>
+        </ul>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-subject">物理</div>
+        <h3>公式暗記に頼らない「微積物理」</h3>
+        <p>運動方程式から公式を導出し、「どんな現象が起きているのか」を説明できる状態へ。だから、問題の設定が変わっても対応できます。</p>
+        <ul>
+          <li>微分積分で本質から理解する力学・電磁気</li>
+          <li>公式の導出過程まで扱う授業</li>
+          <li>現象の整理 → 立式までの思考プロセスを言語化</li>
+        </ul>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-subject">化学</div>
+        <h3>「なぜその反応が起こるのか」から整理する</h3>
+        <p>反応式の丸暗記ではなく、原理から体系的に整理。理論・無機・有機を貫く考え方を身につけ、初見の問題設定にも対応できる理解をつくります。</p>
+        <ul>
+          <li>原理から体系化する理論・無機化学</li>
+          <li>構造決定を「情報の整理」から解く有機化学</li>
+          <li>入試で問われる実験考察への応用力</li>
+        </ul>
+      </div>
+    </div>
+    <div class="lessons-bridge">
+      <p class="lessons-bridge-head">そして、授業で終わらせない。</p>
+      <p class="lessons-bridge-body">どれだけ深く理解しても、使わなければ忘れていきます。ガリレオでは、授業で得た理解を<strong>毎日課題</strong>で繰り返し使い、「自分一人でも解ける力」に変えるところまでを一体で設計しています。</p>
+      <a href="pages/mainichi-kadai.html">授業を成果につなげる仕組みを見る →</a>
     </div>
   </div>
 </section>
@@ -1250,14 +1325,14 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
       <p>当塾は、全国の生徒を対象としたオンラインの<strong>理系の大学受験専門塾</strong>です。大学受験では、志望校の出題傾向を理解し、それに合わせた学習を進めていくことが重要です。</p>
       <p>オンライン指導により、住んでいる地域に関係なく、全国どこからでも当塾の指導を受けることができます。また当塾は、数学・物理・化学・生物・英語を中心とした受験対策を行っています。理系科目の学習法や参考書の使い方、志望校の出題傾向を踏まえた指導により、効率的に学力を伸ばしていきます。</p>
       <div class="features-highlight">
-        <p>大学受験で合格を勝ち取るためには、<strong>毎日の学習の積み重ね</strong>と<strong>志望校から逆算した受験戦略</strong>の両方が不可欠です。当塾では、この2つを組み合わせた指導を行っています。</p>
+        <p>難関理系に合格するためには、<strong>原理から理解させる専門性の高い授業（質）</strong>と、<strong>その理解を得点力に変える毎日の学習設計（量・継続）</strong>の両方が不可欠です。当塾では、この2つを一体で設計しています。</p>
       </div>
     </div>
     <div class="pillars-grid">
-      <div class="pillar"><div class="pillar-num">01</div><h3>全国対応のオンライン指導</h3><p>住んでいる地域に関係なく、全国どこからでも受講できます。オンライン指導でありながら、毎日の学習状況を講師がしっかりと把握しながら指導を行います。</p></div>
-      <div class="pillar"><div class="pillar-num">02</div><h3>理系の大学受験専門塾</h3><p>数学・物理・化学・生物・英語を中心とした理系大学受験に特化した専門塾です。理系科目の学習法や参考書の使い方、志望校の出題傾向を踏まえた指導を行います。</p></div>
-      <div class="pillar"><div class="pillar-num">03</div><h3>毎日課題による学習管理</h3><p>生徒一人ひとりの学習状況に合わせて、日々の学習内容を具体的に提示し、学習状況を講師が確認します。「何を勉強すればいいか分からない」「家では続かない」を解決します。</p></div>
-      <div class="pillar"><div class="pillar-num">04</div><h3>志望校から逆算した受験戦略</h3><p>生徒の志望校や現在の学力を分析し、志望校合格までの毎日課題ロードマップを作成します。どの参考書を・どの順番で・どの時期までに進めるべきかを明確にします。</p></div>
+      <div class="pillar"><div class="pillar-num">01</div><h3>専門性の高い理系授業</h3><p>数学・物理・化学・生物・英語。公式・解法の暗記ではなく、原理と思考プロセスから理解させる授業で、初見の問題にも対応できる力を育てます。</p></div>
+      <div class="pillar"><div class="pillar-num">02</div><h3>志望校から逆算した受験戦略</h3><p>生徒の志望校や現在の学力を分析し、志望校合格までの毎日課題ロードマップを作成します。どの参考書を・どの順番で・どの時期までに進めるべきかを明確にします。</p></div>
+      <div class="pillar"><div class="pillar-num">03</div><h3>毎日課題による学習管理</h3><p>授業で得た理解を「自分で使える力」に変えるため、日々の学習内容を具体的に提示し、講師が確認します。「何を勉強すればいいか分からない」「家では続かない」を解決します。</p></div>
+      <div class="pillar"><div class="pillar-num">04</div><h3>全国対応のオンライン指導</h3><p>住んでいる地域に関係なく、全国どこからでも受講できます。オンライン指導でありながら、毎日の学習状況を講師がしっかりと把握しながら指導を行います。</p></div>
     </div>
 
     <!-- ===== 3つの指導コース（費用は無料相談でご案内・金額表記なし） ===== -->
@@ -1450,10 +1525,10 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
   <div class="container">
     <div class="section-label">Daily Management</div>
     <h2 class="section-title">毎日課題システム</h2>
-    <p class="section-subtitle">授業で理解した「考え方」を、毎日の演習で得点力に変えるサイクルです。</p>
+    <p class="section-subtitle">良い授業だけでは、成績は伸びない。<br>授業で理解した「考え方」を、毎日の学習で“入試で使える力”に変える仕組みです。</p>
     <div class="daily-intro">
-      <h3>毎日課題は、「量の担保」のためではありません</h3>
-      <p>ガリレオの毎日課題は、ただ問題量を増やすためのものではありません。授業で理解した「考え方」を、毎日の演習で<strong>自力で再現できるようにするためのトレーニング</strong>であり、理系思考トレーニングの演習パートにあたります。</p>
+      <h3>成績は、「授業のない時間」でつくられる</h3>
+      <p>1週間のうち、授業を受けている時間はほんの一部です。週1回の質の高い授業も、残りの6日間をどう過ごすかで成果は大きく変わります。ガリレオの毎日課題は、ただ問題量を増やす宿題ではなく、授業で理解した「考え方」を、毎日の演習で<strong>自力で再現できるようにするためのトレーニング</strong>です。</p>
       <div class="daily-pain-list">
         <p class="daily-pain-label">勉強しているのに伸びない受験生に共通する悩み：</p>
         <div class="daily-pain-item"><span class="daily-pain-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>何をどの順番で・どの基準で進めればいいか分からない</div>
@@ -1474,6 +1549,8 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
       <div class="daily-merit"><span class="check">✓</span><div><strong>学習状況を講師が把握できる</strong><br>学習報告をもとに、講師が生徒の学習状況を確認。課題がある場合は適切なアドバイスを行います。</div></div>
       <div class="daily-merit"><span class="check">✓</span><div><strong>1問から10問分の学びを得る</strong><br>丸付け時には不正解箇所へ「考え方」のコメントを添えて返却。解きっぱなしにせず、1問ごとの学びを最大化します。</div></div>
     </div>
+    <div class="daily-qqc"><span>学習の質</span><span class="x">×</span><span>学習の量</span><span class="x">×</span><span>継続</span></div>
+    <p class="daily-qqc-note">毎日課題は、この3つを同時に担保する仕組みです。<br>「なぜ良い授業だけでは伸びないのか」——ガリレオの考え方を、詳細ページで全文公開しています。</p>
     <div class="section-link"><a href="pages/mainichi-kadai.html">毎日課題システムの詳細を見る →</a></div>
   </div>
 </section>
