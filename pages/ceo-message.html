@@ -57,13 +57,9 @@
 .message-whiteboard{margin:72px 0 0}
 .message-whiteboard-label{text-align:center;font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--gold);margin-bottom:8px}
 .message-whiteboard-title{text-align:center;font-family:var(--font-serif);font-size:clamp(19px,2.4vw,23px);font-weight:700;color:var(--primary-dark);margin-bottom:28px}
-.message-whiteboard-board{position:relative;background:linear-gradient(160deg,#ffffff 0%,#fbfcfc 55%,#f4f7f6 100%);border:1px solid #d5dde0;border-bottom:7px solid #c7cfd4;border-radius:10px;box-shadow:0 16px 40px rgba(14,74,56,.12),inset 0 0 70px rgba(14,74,56,.025);padding:56px 44px 64px;text-align:center}
-.message-whiteboard-board::after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:-18px;width:40%;height:11px;background:linear-gradient(180deg,#e6ebee,#c7cfd4);border-radius:3px;box-shadow:0 4px 8px rgba(0,0,0,.12)}
-.wb-line{font-family:var(--font-serif);font-size:clamp(19px,2.8vw,26px);font-weight:700;color:#33383b;line-height:1.9;margin:0 0 6px}
-.wb-line-sub{font-size:clamp(15px,2vw,18px);color:#6a7276;margin:18px 0 10px}
-.wb-line-em{color:var(--primary-dark);font-size:clamp(21px,3.2vw,30px)}
-.wb-sign{margin-top:28px;text-align:right;font-family:var(--font-serif);font-size:17px;font-weight:700;color:#4a5155;letter-spacing:.1em}
-.message-whiteboard-caption{margin-top:34px;font-size:14px;color:var(--text-muted);text-align:center;line-height:1.9}
+.message-whiteboard-photo{border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:0 16px 40px rgba(14,74,56,.15)}
+.message-whiteboard-photo img{display:block;width:100%;height:auto}
+.message-whiteboard-caption{margin-top:18px;font-size:14px;color:var(--text-muted);text-align:center;line-height:1.9}
 .message-signature{margin-top:56px;text-align:right}
 .message-signature-role{font-size:14px;color:var(--text-muted);margin-bottom:6px}
 .message-signature-name{font-family:var(--font-serif);font-size:26px;font-weight:700;color:var(--primary-dark)}
@@ -78,8 +74,7 @@
   .message-article p{font-size:16px;line-height:2.3}
   .message-quote{font-size:16px;padding:14px 18px}
   .message-whiteboard{margin:56px 0 0}
-  .message-whiteboard-board{padding:36px 22px 44px}
-  .wb-sign{margin-top:20px;font-size:15px}
+  .message-whiteboard-photo{border-radius:10px}
   .message-whiteboard-caption{font-size:13px}
 }
 </style>
@@ -266,13 +261,11 @@
       <div class="message-whiteboard">
         <div class="message-whiteboard-label">HANDWRITTEN MESSAGE</div>
         <div class="message-whiteboard-title">生徒たちへ、直筆のメッセージ</div>
-        <div class="message-whiteboard-board">
-          <p class="wb-line">今できないことが</p>
-          <p class="wb-line">未来でもできない理由にはならない</p>
-          <p class="wb-line wb-line-sub">だから、</p>
-          <p class="wb-line wb-line-em">一人ひとりの可能性を</p>
-          <p class="wb-line wb-line-em">最後まで諦めない！</p>
-          <div class="wb-sign">菅野 温</div>
+        <div class="message-whiteboard-photo">
+          <picture>
+            <source srcset="../img/ceo-whiteboard.webp" type="image/webp">
+            <img src="../img/ceo-whiteboard.jpg" alt="ホワイトボードに書かれた直筆メッセージ「今できないことが 未来でもできない理由にはならない だから、一人ひとりの可能性を 最後まで諦めない！」" width="1600" height="1200" loading="lazy">
+          </picture>
         </div>
         <p class="message-whiteboard-caption">教室のホワイトボードに、菅野が生徒たちへ向けて書いたメッセージ。</p>
       </div>
