@@ -34,9 +34,8 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "wfn0ptjuso");
 </script>
-<!-- Funnel measurement: diagnosis funnel completed (reached thanks page) -->
+<!-- Funnel measurement: ここはフォームページ。Meta は PageView のみ（Lead は complete.html 到達で1本） -->
 <script>
-  if(typeof fbq==='function') fbq('track','CompleteRegistration',{content_name:'diagnosis'});
   if(typeof clarity==='function'){ clarity('event','diagnosis_complete'); clarity('set','funnel_step','thanks'); }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -462,10 +461,9 @@ body{
       body: body
     }).then(function(){
       try { sessionStorage.setItem(SENT_KEY, '1'); } catch(e){}
-      if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'thanks_contact' });
       if (typeof clarity === 'function') clarity('event', 'thanks_contact_submit');
-      showDone();
-      done.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Lead は登録完了ページの到達で計測する（送信ボタンでは撃たない）
+      window.location.href = 'complete.html';
     }).catch(function(e){
       console.log('Lead send error:', e);
       btn.disabled = false;
