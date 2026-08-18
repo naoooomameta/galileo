@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="../img/favicon-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
-<meta name="description" content="ガリレオの毎日課題システムの詳細。理系思考トレーニングの演習パートとして、授業で理解した考え方を4ステップサイクルで自力で解き切る力に変えます。">
+<meta name="description" content="良い授業だけでは、成績は伸びない。成績を変えるのは毎日の学習です。ガリレオの毎日課題は、授業で得た理解を「自分で使える力」に変える仕組み。質×量×継続で、理系受験に必要な学力をつくります。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
@@ -21,7 +21,8 @@
 .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:50px;background:linear-gradient(180deg,transparent,var(--bg));pointer-events:none}
 .page-hero .section-label{margin-bottom:8px;letter-spacing:.08em}
 .page-hero h1{font-family:var(--font-serif);font-size:clamp(28px,4.5vw,44px);font-weight:700;line-height:1.5;margin-bottom:14px}
-.page-hero p{font-size:15px;color:var(--text-light);max-width:600px;margin:0 auto;line-height:2}
+.page-hero p{font-size:16px;color:var(--text-light);max-width:640px;margin:0 auto;line-height:2}
+.page-hero .hero-catch{font-family:var(--font-serif);font-size:clamp(17px,2.4vw,21px);font-weight:700;color:var(--primary-dark);margin-bottom:10px}
 .breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:20px}
 .breadcrumb a{color:var(--primary);text-decoration:underline}
 .cta-section{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--white);text-align:center;position:relative;overflow:hidden}
@@ -29,29 +30,83 @@
 .cta-section .section-label{color:#D4A843}
 .cta-section .section-title{color:var(--white)}
 .cta-section .section-title::after{background:linear-gradient(90deg,#D4A843,rgba(255,255,255,.3))}
-.cta-section p{color:rgba(255,255,255,.75);font-size:15px;line-height:2;max-width:560px;margin:0 auto 28px}
+.cta-section p{color:rgba(255,255,255,.75);font-size:16px;line-height:2;max-width:560px;margin:0 auto 28px}
 /* スクロールモーション除外（ロードマップ画像セクション等は常時表示・一切動かさない） */
 .section.no-reveal,.section.no-reveal *{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
 .detail-card{background:var(--white);border-radius:18px;padding:36px;border:1px solid var(--border);border-left:4px solid var(--primary-light);margin-bottom:24px;transition:all .3s;box-shadow:0 2px 8px rgba(14,74,56,.04)}
 .detail-card:hover{box-shadow:0 8px 28px rgba(14,74,56,.08);border-left-color:var(--amber);transform:translateY(-2px)}
 .detail-card h3{font-size:20px;font-weight:700;margin-bottom:12px;color:var(--primary-dark)}
-.detail-card p{font-size:15px;color:var(--text-light);line-height:2}
+.detail-card p{font-size:15.5px;color:var(--text-light);line-height:2}
 .example-box{background:linear-gradient(135deg,var(--green-pale) 0%,var(--bg-alt) 100%);border:1px solid var(--green-mist);border-radius:14px;padding:24px;margin-top:16px}
 .example-box h4{font-size:15px;font-weight:700;color:var(--primary);margin-bottom:8px}
-.example-box li{font-size:14px;color:var(--text-light);padding:4px 0 4px 20px;position:relative;line-height:1.9}
+.example-box li{font-size:14.5px;color:var(--text-light);padding:4px 0 4px 20px;position:relative;line-height:1.9}
 .example-box li::before{content:'▸';position:absolute;left:4px;color:var(--amber)}
+
+/* ===== 思想コンテンツ（2026アップデート） ===== */
+.mk-prose{max-width:760px;margin:0 auto;font-size:16.5px;color:var(--text-light);line-height:2.3;text-align:left}
+.mk-prose p{margin-bottom:1.4em}
+.mk-prose h3{font-family:var(--font-serif);font-size:clamp(20px,2.6vw,25px);font-weight:700;color:var(--primary-dark);margin:56px 0 22px;padding-bottom:12px;position:relative;line-height:1.7}
+.mk-prose h3::after{content:'';position:absolute;left:0;bottom:0;width:44px;height:3px;background:linear-gradient(90deg,var(--primary),var(--amber));border-radius:2px}
+.mk-prose h3:first-child{margin-top:0}
+.mk-prose .em{color:var(--primary-dark);font-weight:700}
+.mk-quote{background:var(--green-pale);border-left:3px solid var(--primary-light);border-radius:10px;padding:16px 22px;margin:0 0 1.4em;font-size:16.5px;font-weight:600;color:var(--primary-dark);line-height:2.1}
+/* 記事系の長いセクションはフェードイン対象外にする（発火しない事故防止） */
+.mk-prose-section{opacity:1!important;transform:none!important}
+/* 学習サイクル */
+.mk-cycle{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:8px;max-width:1080px;margin:0 auto}
+.mk-cycle-step{flex:1 1 165px;max-width:195px;background:var(--white);border:1px solid var(--border);border-top:3px solid var(--primary);border-radius:14px;padding:24px 16px;text-align:center;box-shadow:0 2px 10px rgba(14,74,56,.05)}
+.mk-cycle-step .num{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--amber);margin-bottom:6px}
+.mk-cycle-step h4{font-size:17px;font-weight:700;color:var(--primary-dark);margin-bottom:8px}
+.mk-cycle-step p{font-size:13.5px;color:var(--text-light);line-height:1.9}
+.mk-cycle-arrow{align-self:center;color:var(--amber);font-size:20px;font-weight:700;flex:0 0 auto}
+.mk-cycle-note{max-width:720px;margin:32px auto 0;text-align:center;font-size:15.5px;color:var(--text-light);line-height:2.2}
+.mk-cycle-note strong{color:var(--primary-dark)}
+/* 分かる→できる→いつでもできる */
+.mk-stages{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:10px;max-width:980px;margin:0 auto}
+.mk-stage{flex:1 1 240px;max-width:290px;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:30px 24px;text-align:center}
+.mk-stage--goal{border:2px solid var(--gold);background:linear-gradient(160deg,#fffdf4,var(--white));box-shadow:0 10px 30px rgba(196,154,60,.15)}
+.mk-stage .step{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--white);background:var(--primary);border-radius:20px;padding:4px 14px;margin-bottom:14px}
+.mk-stage--goal .step{background:var(--gold)}
+.mk-stage h4{font-family:var(--font-serif);font-size:21px;font-weight:700;color:var(--primary-dark);margin-bottom:10px}
+.mk-stage p{font-size:14.5px;color:var(--text-light);line-height:2}
+.mk-stage-arrow{align-self:center;color:var(--amber);font-size:22px;font-weight:700;flex:0 0 auto}
+.mk-stages-note{max-width:720px;margin:32px auto 0;text-align:center;font-size:15.5px;color:var(--text-light);line-height:2.2}
+.mk-stages-note strong{color:var(--primary-dark)}
+/* 質×量×継続 */
+.mk-qqc{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;max-width:960px;margin:0 auto}
+.mk-qqc-card{background:var(--white);border:1px solid var(--border);border-top:4px solid var(--primary);border-radius:16px;padding:30px 26px}
+.mk-qqc-card .kanji{font-family:var(--font-serif);font-size:36px;font-weight:700;color:var(--primary);line-height:1;margin-bottom:14px}
+.mk-qqc-card h4{font-size:17px;font-weight:700;color:var(--primary-dark);margin-bottom:8px}
+.mk-qqc-card p{font-size:14.5px;color:var(--text-light);line-height:2}
+.mk-qqc-formula{max-width:720px;margin:36px auto 0;text-align:center;background:linear-gradient(135deg,var(--green-pale),var(--bg-alt));border:1px solid var(--green-mist);border-radius:16px;padding:30px 26px}
+.mk-qqc-formula .formula{font-family:var(--font-serif);font-size:clamp(24px,3.5vw,32px);font-weight:700;color:var(--primary-dark);letter-spacing:.06em;margin-bottom:10px}
+.mk-qqc-formula .formula .x{color:var(--gold);margin:0 10px}
+.mk-qqc-formula p{font-size:15px;color:var(--text-light);line-height:2.1}
+/* KEY MESSAGE */
+.mk-keymsg{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary) 100%);color:var(--white);text-align:center;position:relative;overflow:hidden}
+.mk-keymsg::before{content:'';position:absolute;top:-30%;left:-10%;width:520px;height:520px;background:radial-gradient(circle,rgba(196,154,60,.12) 0%,transparent 70%);pointer-events:none}
+.mk-keymsg .section-label{color:#D4A843}
+.mk-keymsg-line{font-family:var(--font-serif);font-size:clamp(21px,3vw,29px);font-weight:700;line-height:2.1;color:var(--white)}
+.mk-keymsg-sub{font-size:16px;line-height:2.5;color:rgba(255,255,255,.85);margin:30px auto;max-width:640px}
+.mk-keymsg-formula{font-family:var(--font-serif);font-size:clamp(25px,3.5vw,34px);font-weight:700;color:#D4A843;letter-spacing:.08em}
+.mk-keymsg-close{font-family:var(--font-serif);font-size:clamp(18px,2.4vw,23px);font-weight:700;color:var(--white);margin-top:18px;line-height:2}
 @media(max-width:768px){
   .page-hero{padding:60px 0 44px}
   .detail-card{padding:24px 20px}
   .example-box{padding:18px 16px}
+  .mk-prose{font-size:15.5px;line-height:2.2}
+  .mk-quote{font-size:15.5px;padding:14px 18px}
+  .mk-cycle-arrow,.mk-stage-arrow{flex-basis:100%;text-align:center;transform:rotate(90deg);font-size:18px;line-height:1}
+  .mk-cycle-step,.mk-stage{max-width:none;flex-basis:100%}
+  .mk-qqc-formula{padding:24px 18px}
   /* ロードマップ画像枠：スマホで左右余白を詰め角丸を抑える */
   .roadmap-frame{max-width:100%!important;margin:20px auto 10px!important;border-radius:12px!important}
 }
 @media(max-width:480px){
   .detail-card{padding:20px 16px}
   .detail-card h3{font-size:18px}
-  .detail-card p{font-size:14px}
-  .example-box li{font-size:13px}
+  .detail-card p{font-size:14.5px}
+  .example-box li{font-size:13.5px}
   .roadmap-note{font-size:11px}
 }
 </style>
@@ -118,11 +173,79 @@
     <div class="breadcrumb"><a href="../index.html">ホーム</a> &gt; 毎日課題システム</div>
     <div class="section-label">DAILY TASK SYSTEM</div>
     <h1>毎日課題システム</h1>
-    <p>毎日課題は、理系思考トレーニングの「演習パート」。授業で理解した考え方を毎日の課題で繰り返し使い、自力で解き切る力に変える、ガリレオ独自の4ステップサイクルです。</p>
+    <p class="hero-catch">良い授業だけでは、成績は伸びない。<br>成績を変えるのは、毎日の学習です。</p>
+    <p>ガリレオの毎日課題は、専門性の高い授業で得た理解を、毎日の学習で「自分で使える力」に変える仕組み。授業の質だけではなく、「授業のない時間」の質まで設計します。</p>
   </div>
 </section>
 
+<!-- ===== PHILOSOPHY ===== -->
+<section class="section mk-prose-section">
+  <div class="container">
+    <div class="section-label">PHILOSOPHY</div>
+    <h2 class="section-title">良い授業だけでは、成績は伸びない。</h2>
+    <div class="mk-prose">
+      <p>「分かりやすい授業を受ければ、成績は上がる」——もちろん、質の高い授業は大切です。しかし、大学受験指導に長く携わる中で私たちが感じてきたのは、<span class="em">良い授業を受けることと、実際に成績が伸びることは、必ずしもイコールではない</span>ということです。</p>
+      <p>授業を聞いているときには理解できる。先生の解説を聞けば納得できる。その場では問題も解ける。それでも、数日後にもう一度解いてみると手が止まる。模試になると解法が思い浮かばない。初めて見る問題になると、何から考えればいいのか分からない。——こうしたことは、決して珍しくありません。なぜなら、</p>
+      <div class="mk-quote">「分かった」と「自分でできる」の間には、大きな距離があるからです。</div>
+      <p>ガリレオでは、この距離を埋めるものこそが<span class="em">「日々の学習」</span>だと考えています。</p>
+
+      <h3>成績は、「授業のない時間」でつくられる。</h3>
+      <p>1週間の学習を考えたとき、授業を受けている時間はその中のほんの一部です。仮に週1回・60分の質の高い授業を受けたとしても、それ以外の時間をどのように過ごすかによって、1週間後、1か月後、半年後の学力には大きな差が生まれます。</p>
+      <p>だから私たちは、<span class="em">「どんな授業をするか」だけではなく、「授業のない日に、どんな勉強をするか」まで教育の一部</span>だと考えています。</p>
+      <p>何を勉強するのか。どの教材を使うのか。今日はどこまで進めるのか。間違えた問題をどう扱うのか。復習をいつ行うのか。——これらをすべて生徒本人の判断に任せてしまえば、当然、学習の質や量にはばらつきが生まれます。だからガリレオでは、<span class="em">「毎日課題」という仕組みを通して、授業と日々の学習をつなげています。</span></p>
+
+      <h3>毎日課題は、単なる「宿題」ではありません。</h3>
+      <p>ガリレオの毎日課題は、「毎日これだけ問題を解いてください」という単純な宿題制度ではありません。私たちが目指しているのは、</p>
+      <div class="mk-quote">授業で得た理解を、毎日の学習によって「自分で使える力」に変えること。</div>
+      <p>授業では、なぜその公式が成り立つのか。なぜこの場面ではこの考え方を使うのか。問題文のどこに着目すべきなのか。条件が変わったら、どのように考えるのか。——その問題の背景にある原理や仕組みまで丁寧に扱います。</p>
+      <p>そして、そこで得た理解を、毎日の課題の中で何度も自分自身で使っていく。この繰り返しによって、<span class="em">「先生の説明を聞けば分かる」状態から、「自分一人でも考えて解ける」状態へ</span>、少しずつ移行していきます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUALITY × QUANTITY ===== -->
+<section class="section bg-alt mk-prose-section">
+  <div class="container">
+    <div class="section-label">QUALITY &amp; QUANTITY</div>
+    <h2 class="section-title">質の高い授業で、<br>「普段の勉強の質」を変える。</h2>
+    <p class="section-subtitle">私たちが考える質の高い授業とは、「説明が上手い」だけではありません。<br>授業を受けたことで、その後の自学自習の質まで変わることです。</p>
+    <div class="detail-card"><h3>物理の場合</h3><p>公式だけを暗記するのではなく、「どんな現象が起きているのか」「なぜこの式が成り立つのか」「どの物理量に着目すればよいのか」を理解する。すると、生徒が一人で問題集を開いたときにも、「これはあの考え方を使う問題かもしれない」「まずこの現象を整理してみよう」と、<strong>自分で考え始められる</strong>ようになります。</p></div>
+    <div class="detail-card"><h3>数学の場合</h3><p>解答の手順だけを覚えるのではなく、「なぜこの式変形をするのか」「どの条件から何が読み取れるのか」「この問題のゴールから逆算すると、何が必要なのか」まで理解する。すると、自学自習の中で新しい問題に出会ったときにも、<strong>学んだ考え方を応用できる</strong>ようになります。</p></div>
+    <div class="mk-prose" style="margin-top:40px">
+      <h3>しかし、「質」が高くても「量」がなければ伸びない。</h3>
+      <p>どれだけ深く理解しても、それを一度使っただけで完全に身につくわけではありません。人は忘れます。理解したつもりでも、数日後には曖昧になります。先生と一緒なら解けても、一人になると解けないこともあります。</p>
+      <p>だから、思い出す。自分で解く。間違える。原因を確認する。もう一度考える。もう一度解く。——こうした経験を、繰り返す必要があります。特に大学受験の理系科目では、一つの考え方をさまざまな条件や問われ方の中で何度も使うことで、初めて<span class="em">「自分の武器」</span>になります。だからこそ、必要な演習量は、避けて通れません。</p>
+
+      <h3>ただし、「たくさんやればいい」でもありません。</h3>
+      <p>大切なのは、<span class="em">「その生徒に、今、本当に必要な量はどのくらいなのか」</span>を考えることです。同じ高校3年生でも、現在の学力、志望大学、得意科目・苦手科目、使える学習時間、理解のスピードは一人ひとり違います。一律に「毎日10問」と決めればよいわけではありません。</p>
+      <p>現在地と目標を確認し、どこまで到達する必要があるのか。そこから逆算して、今週は何を終わらせる必要があるのか。さらに、<span class="em">今日は何を、どのくらいやる必要があるのか</span>まで落とし込む。ガリレオでは、こうして日々の学習量を設計しています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LEARNING CYCLE ===== -->
 <section class="section">
+  <div class="container">
+    <div class="section-label">LEARNING CYCLE</div>
+    <h2 class="section-title">授業と毎日課題を、分断しない。</h2>
+    <p class="section-subtitle">授業で扱った内容が毎日の課題につながり、課題で見つかったつまずきが次の授業につながる。<br>ガリレオは、この循環を設計しています。</p>
+    <div class="mk-cycle">
+      <div class="mk-cycle-step"><span class="num">STEP 1</span><h4>授業</h4><p>原理・背景から<br>深く理解する</p></div>
+      <div class="mk-cycle-arrow">→</div>
+      <div class="mk-cycle-step"><span class="num">STEP 2</span><h4>毎日課題</h4><p>理解した考え方を<br>自分で使う</p></div>
+      <div class="mk-cycle-arrow">→</div>
+      <div class="mk-cycle-step"><span class="num">STEP 3</span><h4>発見</h4><p>できること・<br>できないことが見える</p></div>
+      <div class="mk-cycle-arrow">→</div>
+      <div class="mk-cycle-step"><span class="num">STEP 4</span><h4>修正</h4><p>理解や学習方法を<br>修正する</p></div>
+      <div class="mk-cycle-arrow">→</div>
+      <div class="mk-cycle-step"><span class="num">STEP 5</span><h4>再演習</h4><p>もう一度、<br>自力で解き切る</p></div>
+    </div>
+    <p class="mk-cycle-note">このサイクルを、何度も回していく。だからガリレオにとって毎日課題は「授業のおまけ」ではありません。<strong>授業と並ぶ、教育の中心です。</strong></p>
+  </div>
+</section>
+
+<!-- ===== 4-STEP CYCLE ===== -->
+<section class="section bg-alt">
   <div class="container">
     <div class="section-label">4-STEP CYCLE</div>
     <h2 class="section-title">毎日課題の4ステップサイクル</h2>
@@ -136,7 +259,8 @@
   </div>
 </section>
 
-<section class="section bg-alt">
+<!-- ===== WEEKLY PLAN ===== -->
+<section class="section">
   <div class="container">
     <div class="section-label">WEEKLY PLAN</div>
     <h2 class="section-title">毎日課題の1週間</h2>
@@ -169,15 +293,17 @@
         </div>
       </div>
       <p class="weekplan-note">学習そのものは7日間続きます。ただし<strong>新しい範囲を進める日は5日だけ</strong>です。計画は必ずどこかで崩れるものなので、崩れることを前提に土日を余白として空けています。この余白があるおかげで、平日に1日つまずいても週内で立て直せて、積み残しが翌週へ持ち越されません。</p>
+      <p class="weekplan-note">なぜ「1週間分まとめて」ではなく「毎日」なのか。週末にまとめて終わらせても、提出上は「課題完了」です。しかし私たちが見たいのは、<strong>日々の学習習慣がつくられているか。理解したことを適切な間隔で使えているか。無理のないペースで積み重ねられているか。</strong>——ここまで含めてだからです。受験直前だけ頑張るのではなく、日々の小さな積み重ねを習慣に変えていく。それが結果として、大きな学力差につながります。</p>
     </div>
   </div>
 </section>
 
-<section class="section no-reveal">
+<!-- ===== ROADMAP ===== -->
+<section class="section bg-alt no-reveal">
   <div class="container" style="text-align:center">
     <div class="section-label">ROADMAP</div>
-    <h2 class="section-title">毎日課題が、志望校合格に直結</h2>
-    <p class="section-subtitle">毎日の課題は、生徒一人ひとりの毎日課題ロードマップに基づいて設計されています。<br>日々の積み重ねが、志望校合格への最短ルートになります。</p>
+    <h2 class="section-title">「何を・どれくらい・いつまでに」を<br>明確にする。</h2>
+    <p class="section-subtitle">受験勉強がうまくいかない原因の一つは、「何をやればいいのか分からない」こと。<br>毎日の課題は一人ひとりの毎日課題ロードマップに基づいて設計され、迷う時間を減らし<br>「今日やるべきことが分かっている状態」をつくります。</p>
     <div class="roadmap-frame" style="max-width:720px;margin:28px auto 12px;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.10);border:1px solid var(--green-mist);opacity:1;transform:none;animation:none;transition:none">
       <!-- 毎日課題ロードマップ サンプル（実画像・固定・アニメ無効） -->
       <img src="../img/roadmap-sample.png?v=5" alt="ガリレオ 毎日課題ロードマップ サンプル" style="width:100%;height:auto;display:block;opacity:1;transform:none;animation:none;transition:none">
@@ -186,7 +312,8 @@
   </div>
 </section>
 
-<section class="section bg-alt">
+<!-- ===== EXAMPLES ===== -->
+<section class="section">
   <div class="container">
     <div class="section-label">EXAMPLES</div>
     <h2 class="section-title">理系科目での具体的な課題例</h2>
@@ -199,6 +326,55 @@
   </div>
 </section>
 
+<!-- ===== PACEMAKER ===== -->
+<section class="section bg-alt">
+  <div class="container">
+    <div class="section-label">PACEMAKER</div>
+    <h2 class="section-title">「やる気」に頼らない仕組み。</h2>
+    <p class="section-subtitle">受験勉強は数か月、ときには1年以上続きます。毎日高いモチベーションを維持できる人はほとんどいません。<br>だからガリレオは、やる気だけに任せない仕組みを用意しています。</p>
+    <div class="detail-card"><h3>ペースメーカーとしての毎日課題</h3><p>やる気がある日は5時間、ない日は0時間——それを繰り返していると、必要な学習量は積み上がりません。「今日はここまで」「今週中にここまで」と、やるべきことを外側からある程度明確にすることで、生徒本人のモチベーションだけに依存しない学習環境をつくります。私たちはこれを「管理するための管理」だとは考えていません。<strong>夢や目標までに必要な学習を、途中で止めないための仕組み</strong>です。</p></div>
+    <div class="detail-card"><h3>「できない」を早く見つける</h3><p>予定していた問題数まで進まなかった。同じ問題で何度も間違えている。基礎問題なのに手が止まっている。——これらはすべて重要な情報です。「できなかった」という結果だけを見るのではなく、<strong>なぜ、できなかったのか</strong>を考える。理解不足なのか、演習不足なのか、課題設定が難しすぎたのか、学習時間が確保できていないのか。毎日の学習を見ているからこそ、問題が大きくなる前に修正できます。</p></div>
+    <div class="detail-card"><h3>課題は「固定」ではなく、調整し続ける</h3><p>学習計画は、一度作れば終わりではありません。想定より早く進むこともあれば、ある単元で大きくつまずくこともあります。必要なのは、計画どおり進めることそのものではなく、<strong>目標に向かって計画を調整し続けること</strong>。毎日課題は、学習計画を実行する仕組みであると同時に、学習計画を改善するためのデータでもあります。</p></div>
+    <div class="detail-card"><h3>最終ゴールは「自立」</h3><p>私たちが目指しているのは、「塾から言われなければ勉強できない生徒」をつくることではありません。むしろ逆です。外側からペースをつくる中で、自分に必要な勉強量、復習の仕方、一日の勉強の組み立て方を体得し、最終的には<strong>「自分で考え、自分で学習を進められる状態」</strong>を目指します。ある程度の強制力を入り口にしながら、自立につなげていく。それも毎日課題の大切な考え方です。</p></div>
+  </div>
+</section>
+
+<!-- ===== STAGES ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">3 STAGES</div>
+    <h2 class="section-title">「分かる」→「できる」→<br>「いつでもできる」へ。</h2>
+    <p class="section-subtitle">学力には段階があります。大学受験で必要なのは、③の「いつでもできる」です。</p>
+    <div class="mk-stages">
+      <div class="mk-stage"><span class="step">STAGE 1</span><h4>分かる</h4><p>先生の説明を聞いて理解できる。<br><strong>授業</strong>で到達できる段階です。</p></div>
+      <div class="mk-stage-arrow">→</div>
+      <div class="mk-stage"><span class="step">STAGE 2</span><h4>できる</h4><p>自分一人でも問題を解ける。<br><strong>毎日課題</strong>で理解を使い続けることで到達します。</p></div>
+      <div class="mk-stage-arrow">→</div>
+      <div class="mk-stage mk-stage--goal"><span class="step">STAGE 3</span><h4>いつでもできる</h4><p>時間が経っても、問題の形が変わっても、<strong>入試本番でも再現できる</strong>。反復と修正の積み重ねで到達します。</p></div>
+    </div>
+    <p class="mk-stages-note">授業だけでは①までは到達できても、②③まで引き上げるのは難しい。その間を埋めるのが毎日の学習です。だからガリレオでは、<strong>「分かった」で終わらせない。</strong>授業で理解し、毎日使い、間違え、修正し、また使う。その積み重ねによって「入試本番で使える力」へ変えていきます。</p>
+  </div>
+</section>
+
+<!-- ===== 質×量×継続 ===== -->
+<section class="section bg-alt">
+  <div class="container">
+    <div class="section-label">3 GUARANTEES</div>
+    <h2 class="section-title">毎日課題が担保する、3つのこと</h2>
+    <p class="section-subtitle">どれか一つだけでは、大学受験では安定して結果につながりません。</p>
+    <div class="mk-qqc">
+      <div class="mk-qqc-card"><div class="kanji">質</div><h4>学習の質</h4><p>授業で学んだ考え方を、日々の自学自習でも実践する。授業によって、毎日の勉強の質そのものを高めます。</p></div>
+      <div class="mk-qqc-card"><div class="kanji">量</div><h4>学習の量</h4><p>志望校と現在地から逆算して、必要な演習量を積み重ねる。「今日、何をどのくらいやるか」まで落とし込みます。</p></div>
+      <div class="mk-qqc-card"><div class="kanji">継続</div><h4>学習のペース</h4><p>「やる気」に左右されすぎないよう、ペースメーカーとして毎日の学習を支え、継続させます。</p></div>
+    </div>
+    <div class="mk-qqc-formula">
+      <div class="formula">質<span class="x">×</span>量<span class="x">×</span>継続</div>
+      <p>本当に学力をつくっているのは、特別な講習ではなく、月曜日・火曜日・水曜日——<br>何でもない普通の日に積み重ねた学習です。ガリレオは「授業の時間」だけではなく、<strong>「授業と授業の間」まで大切にします。</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCIENCE THINKING ===== -->
 <section class="section" id="science-thinking">
   <div class="container">
     <div class="section-label">SCIENCE THINKING</div>
@@ -231,6 +407,7 @@
   </div>
 </section>
 
+<!-- ===== BENEFITS ===== -->
 <section class="section bg-alt">
   <div class="container">
     <div class="section-label">BENEFITS</div>
@@ -247,11 +424,22 @@
   </div>
 </section>
 
+<!-- ===== KEY MESSAGE ===== -->
+<section class="section mk-keymsg mk-prose-section">
+  <div class="container">
+    <div class="section-label">KEY MESSAGE</div>
+    <p class="mk-keymsg-line">良い授業だけでは、成績は伸びない。<br>成績を変えるのは、毎日の学習です。</p>
+    <p class="mk-keymsg-sub">だからガリレオは、授業の質だけではなく、「授業のない時間」の質まで設計する。<br><br>深く理解する。毎日使う。必要な量を積み重ねる。<br>できない部分を修正する。そして、また挑戦する。</p>
+    <p class="mk-keymsg-formula">質 × 量 × 継続</p>
+    <p class="mk-keymsg-close">毎日の積み重ねを、確かな学力へ。<br>それが、ガリレオの「毎日課題」です。</p>
+  </div>
+</section>
+
 <section class="section cta-section">
   <div class="container">
     <div class="section-label">CONTACT</div>
-    <h2 class="section-title">まずは無料体験で<br>毎日課題を体感してください</h2>
-    <p>毎日課題システムの効果を、実際に体験していただけます。お気軽にお問い合わせください。</p>
+    <h2 class="section-title">まずは無料相談で<br>お子さまに必要な学習設計を</h2>
+    <p>現在の学力と志望校をお伺いし、授業と毎日課題をどう設計するかを具体的にご提案します。お気軽にお問い合わせください。</p>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
       <a href="../index.html#contact" class="btn btn-primary">無料学習相談を予約する →</a>
       <a href="../index.html#courses" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:var(--white)">コース・料金を見る</a>
