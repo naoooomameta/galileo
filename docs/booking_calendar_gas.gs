@@ -151,8 +151,9 @@ function getOrCreateSheet() {
     sheet = ss.insertSheet(SHEET_NAME);
     // ※ 既存シートに後から「お問い合わせ者」列を追加する場合は、
     //   N列（13列目の右隣）の見出しに手動で「お問い合わせ者」を入力してください。
+    // ※ 2026-08: フリガナ列を廃止（フォームから削除）。既存シートは E列「フリガナ」を手動で列削除してください。
     sheet.appendRow([
-      'タイムスタンプ', '種別', '送信元', 'お名前', 'フリガナ', 'メールアドレス',
+      'タイムスタンプ', '種別', '送信元', 'お名前', 'メールアドレス',
       '電話番号', '学年', '志望大学', '予約日時', '相談形式', '相談内容', '伝言',
       'お問い合わせ者'
     ]);
@@ -168,7 +169,6 @@ function saveContactToSheet(params) {
     'お問い合わせ',
     params.source || 'galileo',
     params.name || '',
-    params.kana || '',
     params.email || '',
     params.tel || '',
     params.grade || '',
@@ -189,7 +189,6 @@ function saveBookingToSheet(params) {
     '予約',
     'galileo',
     params.name || '',
-    '',
     params.email || '',
     params.tel || '',
     '',
@@ -435,7 +434,6 @@ function sendContactNotification(params) {
     '',
     '■ お問い合わせ者: ' + (params.contactType || '未選択'),
     '■ お名前: ' + (params.name || ''),
-    '■ フリガナ: ' + (params.kana || ''),
     '■ メールアドレス: ' + (params.email || ''),
     '■ 電話番号: ' + (params.tel || ''),
     '■ 学年: ' + (params.grade || ''),

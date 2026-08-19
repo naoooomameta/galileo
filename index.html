@@ -1930,10 +1930,7 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
           <p class="field-error" id="errContactType">お問い合わせ区分を選択してください</p>
           <p class="form-note">お名前・ご連絡先は、ご入力される方（保護者様またはご本人）の情報をご記入ください。</p>
         </div>
-        <div class="form-row">
-          <div class="form-group"><label for="contactName">お名前 <span class="req">必須</span></label><input type="text" id="contactName" name="name" required placeholder="山田 太郎" aria-describedby="errContactName"><p class="field-error" id="errContactName">お名前を入力してください</p></div>
-          <div class="form-group"><label for="contactKana">フリガナ <span class="req">必須</span></label><input type="text" id="contactKana" name="kana" required placeholder="ヤマダ タロウ" aria-describedby="errContactKana"><p class="field-error" id="errContactKana">フリガナを入力してください</p></div>
-        </div>
+        <div class="form-group"><label for="contactName">お名前 <span class="req">必須</span></label><input type="text" id="contactName" name="name" required placeholder="山田 太郎" aria-describedby="errContactName"><p class="field-error" id="errContactName">お名前を入力してください</p></div>
         <div class="form-group"><label for="contactEmail">メールアドレス <span class="req">必須</span></label><input type="email" id="contactEmail" name="email" required placeholder="example@email.com" aria-describedby="errContactEmail"><p class="field-error" id="errContactEmail">メールアドレスを入力してください</p></div>
         <div class="form-group"><label for="contactTel">電話番号 <span class="req">必須</span></label><input type="tel" id="contactTel" name="tel" required placeholder="090-0000-0000" aria-describedby="errContactTel"><p class="field-error" id="errContactTel">電話番号を入力してください</p></div>
         <div class="form-row">
@@ -2151,7 +2148,6 @@ var _selectedSlot = null;
 /* ===== お問い合わせフォームの入力チェック ===== */
 var CONTACT_RULES = [
   { id: 'contactName',  err: 'errContactName',  empty: 'お名前を入力してください' },
-  { id: 'contactKana',  err: 'errContactKana',  empty: 'フリガナを入力してください' },
   { id: 'contactEmail', err: 'errContactEmail', empty: 'メールアドレスを入力してください',
     test: function(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); },
     invalid: 'メールアドレスの形式が正しくありません（例：example@email.com）' },
@@ -2270,7 +2266,6 @@ function handleSubmit(e) {
     source: 'galileo',
     contactType: _contactType,
     name: _contactName,
-    kana: val('contactKana'),
     email: _contactEmail,
     tel: _contactTel,
     grade: val('contactGrade'),
