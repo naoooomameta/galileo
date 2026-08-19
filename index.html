@@ -1122,6 +1122,22 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "wfn0ptjuso");
 </script>
+<!-- Meta Pixel (set GALILEO_META_PIXEL_ID to a numeric ID to enable) -->
+<script>
+var GALILEO_META_PIXEL_ID = '{{GALILEO_META_PIXEL_ID}}';
+if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', GALILEO_META_PIXEL_ID);
+  fbq('track', 'PageView');
+}
+</script>
 </head>
 <body>
 
@@ -2265,6 +2281,14 @@ function handleSubmit(e) {
   // fire-and-forget: GASへPOST
   if (BOOKING_GAS_URL) {
     try { fetch(BOOKING_GAS_URL, { method: 'POST', body: params, mode: 'no-cors' }); } catch (err) {}
+  }
+
+  // Meta Pixel: Lead（本命CV）。バリデーション通過＋送信処理後に1回のみ発火。
+  // CTAタップやモーダル表示の重複では撃たない（水増し防止）。
+  if (!window._galileoLeadFired) {
+    window._galileoLeadFired = true;
+    try { if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'contact_form' }); } catch (err) {}
+    try { if (typeof clarity === 'function') clarity('event', 'contact_lead'); } catch (err) {}
   }
 
   // サンキューモーダル表示
