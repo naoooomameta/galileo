@@ -506,7 +506,6 @@ function sendThankYouToUser(params) {
     '',
     '━━━━━━━━━━━━━━━━━━━━',
     '理系の大学受験専門塾 ガリレオ',
-    '塾長',
     'メール: galileogalilei.sciences@gmail.com',
     'Instagram: https://www.instagram.com/galileo_sciences/',
     '公式サイト: https://galileo-sciences.com',
