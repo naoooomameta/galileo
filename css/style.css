@@ -38,6 +38,7 @@ strong{font-weight:700}
 .header-instagram{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--white);background:var(--primary);padding:8px 20px;border-radius:40px;transition:background .3s;letter-spacing:.02em}
 .header-instagram:hover{background:var(--primary-light)}
 .header-instagram svg{width:16px;height:16px;fill:currentColor}
+.header-x{padding:8px 14px}
 
 .hamburger{display:none;width:28px;height:20px;position:relative;z-index:200}
 .hamburger span{display:block;height:2px;background:var(--text);border-radius:2px;position:absolute;left:0;right:0;transition:all .3s}
