@@ -23,6 +23,7 @@ strong{font-weight:700}
 .top-bar-inner{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap}
 .top-bar-sep{opacity:.4}
 .top-bar a{color:rgba(255,255,255,.85);text-decoration:underline}
+.top-bar-sns{display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center}
 
 /* ===== HEADER ===== */
 .header{position:sticky;top:0;z-index:100;background:rgba(244,249,246,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
