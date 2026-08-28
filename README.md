@@ -13,9 +13,8 @@ galileo-site/
 │   └── galileo-logo.png    # ロゴ（背景透過済み）
 ├── pages/
 │   ├── mainichi-kadai.html       # 毎日課題システム詳細
-│   ├── daigaku-juken-junbi.html  # 大学受験準備コース詳細
-│   ├── goukaku-senryaku.html     # 合格戦略プログラム詳細
-│   ├── goukaku-senryaku-support.html  # 合格戦略サポート詳細
+│   ├── kisoryoku-kansei.html     # 基礎力完成コース詳細（COURSE 01）
+│   ├── shibokou-jissen.html      # 志望校実戦コース詳細（COURSE 02）
 │   ├── voices.html               # 合格者の声 一覧
 │   └── news.html                 # お知らせ一覧
 └── CLAUDE.md               # Claude Code用の指示書
