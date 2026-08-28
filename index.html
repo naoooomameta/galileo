@@ -1041,7 +1041,7 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
 @media(max-width:480px){
   .float-cta__btn-label{display:inline}
 }
-/* ===== 指導システム内：3つの指導コース ===== */
+/* ===== 指導システム内：2つの指導コース ===== */
 .gcourses{margin-top:56px}
 .gcourses-head{text-align:center;margin-bottom:8px}
 .gcourses-title{font-family:var(--font-serif);font-size:clamp(20px,3vw,26px);font-weight:700;color:var(--primary-dark);margin-bottom:10px}
@@ -1051,7 +1051,7 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
 .gcourses-common__items{display:flex;flex-wrap:wrap;gap:8px 16px}
 .gcourses-common__items span{font-size:13.5px;color:var(--primary-dark);font-weight:600;display:inline-flex;align-items:center;gap:7px}
 .gcourses-common__items span::before{content:'✓';color:var(--amber);font-weight:800}
-.gcourses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+.gcourses-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;align-items:start;max-width:880px;margin:0 auto}
 .gcourse{background:var(--white);border:1px solid var(--border);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 8px rgba(14,74,56,.04);transition:all .3s;position:relative}
 .gcourse:hover{box-shadow:0 12px 36px rgba(14,74,56,.12);transform:translateY(-4px);border-color:var(--green-mist)}
 .gcourse__head{padding:22px 24px 18px;border-bottom:1px solid var(--green-pale)}
@@ -1083,6 +1083,18 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
 .gcourses-rules li{font-size:12.5px;color:var(--text-light);line-height:1.9;padding-left:16px;position:relative}
 .gcourses-rules li::before{content:'※';position:absolute;left:0;top:0;color:var(--primary-light)}
 .gcourses-cta{text-align:center;margin-top:20px}
+/* コース比較表 */
+.gcompare{max-width:880px;margin:40px auto 0}
+.gcompare-title{text-align:center;font-family:var(--font-serif);font-size:clamp(18px,2.6vw,23px);font-weight:700;color:var(--primary-dark);margin-bottom:6px}
+.gcompare-lead{text-align:center;font-size:13.5px;color:var(--text-light);line-height:1.9;margin-bottom:20px}
+.gcompare-scroll{overflow-x:auto}
+.gcompare table{width:100%;min-width:560px;border-collapse:separate;border-spacing:0;background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;font-size:13.5px}
+.gcompare th,.gcompare td{padding:14px 16px;text-align:left;line-height:1.8;border-bottom:1px solid var(--green-pale)}
+.gcompare thead th{background:var(--primary);color:var(--white);font-size:13px;font-weight:700;letter-spacing:.03em}
+.gcompare thead th:first-child{background:var(--primary-dark)}
+.gcompare tbody tr:last-child th,.gcompare tbody tr:last-child td{border-bottom:none}
+.gcompare tbody th{background:var(--green-pale);color:var(--primary-dark);font-size:12.5px;font-weight:700;white-space:nowrap;width:110px}
+.gcompare tbody td{color:var(--text-light)}
 @media(max-width:900px){.gcourses-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto}}
 @media(max-width:768px){
   .gcourses{margin-top:40px}
@@ -1355,124 +1367,105 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
       <div class="pillar"><div class="pillar-num">04</div><h3>全国対応のオンライン指導</h3><p>住んでいる地域に関係なく、全国どこからでも受講できます。オンライン指導でありながら、毎日の学習状況を講師がしっかりと把握しながら指導を行います。</p></div>
     </div>
 
-    <!-- ===== 3つの指導コース（費用は無料相談でご案内・金額表記なし） ===== -->
+    <!-- ===== 2つの指導コース（費用は無料相談でご案内・金額表記なし） ===== -->
     <div class="gcourses">
       <div class="gcourses-head">
-        <h3 class="gcourses-title">3つの指導コース</h3>
-        <p class="gcourses-lead">学年・現在の学力・他塾との併用状況に合わせて、最適なコースをご用意しています。<br>どのコースが合うかは、無料相談で一人ひとりに合わせてご提案します。</p>
+        <h3 class="gcourses-title">学力段階に合わせた2つの指導コース</h3>
+        <p class="gcourses-lead">今の学力に必要な学びから、志望校で得点するための実戦力まで。<br>質の高い授業と日々の学習を、一人ひとりに合わせて設計します。</p>
       </div>
 
-      <!-- 全コース共通 -->
+      <!-- 両コース共通 -->
       <div class="gcourses-common">
-        <span class="gcourses-common__label">全コース共通</span>
+        <span class="gcourses-common__label">両コース共通のサポート</span>
         <div class="gcourses-common__items">
-          <span>毎日課題（週5回）</span>
-          <span>合格ロードマップ作成</span>
-          <span>LINE質問対応（随時）</span>
+          <span>オンライン個別指導 60分／回</span>
+          <span>日々の課題・学習進捗の確認</span>
+          <span>課題・答案への添削とフィードバック</span>
+          <span>LINE質問対応</span>
           <span>学習計画の作成・進捗管理</span>
-          <span>学習カルテによる一元管理</span>
           <span>月1回の学習カウンセリング</span>
-          <span>学習状況のご報告（2ヶ月に1回）</span>
+          <span>学習カルテによる情報共有</span>
+          <span>保護者への学習状況報告</span>
         </div>
       </div>
 
       <div class="gcourses-grid">
-        <!-- 大学受験準備コース -->
+        <!-- 基礎力完成コース -->
         <div class="gcourse">
           <div class="gcourse__head">
-            <span class="gcourse__badge">中学生〜高校3年生</span>
-            <div class="gcourse__name">大学受験準備コース</div>
+            <span class="gcourse__badge">COURSE 01 ／ FOUNDATION</span>
+            <div class="gcourse__name">基礎力完成コース</div>
           </div>
           <div class="gcourse__body">
-            <p class="gcourse__desc">大学受験に向けた基礎学力と学習習慣を身につけるコース。毎日課題による学習管理を通して、大学受験に必要な土台を養います。</p>
-            <div class="gcourse__tags"><span>毎日課題</span><span>基礎学力養成</span><span>学習習慣づくり</span></div>
+            <p class="gcourse__desc">「分からない」を残さず、大学受験に必要な土台をつくるコース。理解の抜けを埋め、基礎・標準問題を自分の力で正確に解ける状態を目指します。</p>
+            <div class="gcourse__tags"><span>毎日の具体的な課題設計</span><span>基礎理解</span><span>学習習慣づくり</span></div>
             <p class="gcourse__subj">
-              <span class="gcourse__subj-label">対応科目</span>
-              <span class="gcourse__subj-main">標準 2科目まで</span>
-              <span class="gcourse__subj-opt">オプションで＋2科目（合計4科目まで）追加できます</span>
+              <span class="gcourse__subj-label">対象の目安</span>
+              <span class="gcourse__subj-main">模試の偏差値が50前後、または50未満</span>
+              <span class="gcourse__subj-opt">定期テストや既習範囲に不安がある方、志望校がまだ決まっていない方もこちらから。</span>
             </p>
-            <p class="gcourse__inc-label">このコースに含まれるもの</p>
+            <p class="gcourse__inc-label">指導の3つの柱</p>
             <ul class="gcourse__list">
-              <li>オンライン個別指導（60分／回）<br><span class="gcourse__note">月2回／週1回／週2回から選択</span></li>
-              <li>合格ロードマップ作成</li>
-              <li>毎日課題 週5回<br><span class="gcourse__note">平日5日で新しい範囲を進め、土日は予備日と復習に充てます</span></li>
-              <li>月1回の学習カウンセリング</li>
-              <li>LINE質問対応（随時）</li>
-              <li>学習計画の作成・進捗管理</li>
-              <li>学習カルテによる一元管理</li>
-              <li>学習状況のご報告（2ヶ月に1回）</li>
+              <li>毎日の具体的な課題<br><span class="gcourse__note">教材・範囲・問題数まで明確にし、「今日は何をするか」で迷わせません</span></li>
+              <li>理解をつくる個別授業<br><span class="gcourse__note">課題で見つかった理解不足を、原理や考え方から丁寧に解消します</span></li>
+              <li>提出・添削・解き直し<br><span class="gcourse__note">解きっぱなしにせず、間違えた原因を確認し、もう一度自力で解き直します</span></li>
             </ul>
-            <a href="pages/daigaku-juken-junbi.html" class="gcourse__cta">コースの詳細を見る →</a>
+            <a href="pages/kisoryoku-kansei.html" class="gcourse__cta">コースの詳細を見る →</a>
           </div>
         </div>
 
-        <!-- 合格戦略プログラム（メイン） -->
+        <!-- 志望校実戦コース -->
         <div class="gcourse gcourse--featured">
-          <span class="gcourse__popular">メインプログラム</span>
           <div class="gcourse__head">
-            <span class="gcourse__badge">高校1年生〜高校3年生</span>
-            <div class="gcourse__name">合格戦略プログラム</div>
+            <span class="gcourse__badge">COURSE 02 ／ ADVANCED</span>
+            <div class="gcourse__name">志望校実戦コース</div>
           </div>
           <div class="gcourse__body">
-            <p class="gcourse__desc">志望校から逆算した合格ロードマップを作成し、日々の学習内容を設計。実力診断テストで合格ラインに対する到達度を把握し、受験本番まで講師が伴走します。</p>
-            <div class="gcourse__tags"><span>合格ロードマップ</span><span>実力診断テスト</span><span>受験戦略</span></div>
+            <p class="gcourse__desc">途中答案を添削し、一問を最後まで自分の力で解き切るコース。志望校レベルの問題・過去問に取り組み、初見の問題でも合格答案を完成できる力を育てます。</p>
+            <div class="gcourse__tags"><span>自力完遂型演習</span><span>添削とヒント</span><span>過去問演習</span></div>
             <p class="gcourse__subj">
-              <span class="gcourse__subj-label">対応科目</span>
-              <span class="gcourse__subj-main">標準 4科目まで</span>
-              <span class="gcourse__subj-opt">オプションで＋2科目（合計6科目まで）追加できます</span>
+              <span class="gcourse__subj-label">対象の目安</span>
+              <span class="gcourse__subj-main">模試の偏差値が55〜60以上</span>
+              <span class="gcourse__subj-opt">基礎・典型問題はある程度解けるが、応用問題になると方針が立たない方へ。</span>
             </p>
-            <p class="gcourse__inc-label">このコースに含まれるもの</p>
+            <p class="gcourse__inc-label">このコースの約束</p>
             <ul class="gcourse__list">
-              <li>オンライン個別指導（60分／回）<br><span class="gcourse__note">月2回／週1回／週2回から選択</span></li>
-              <li>合格ロードマップ作成</li>
-              <li>毎日課題 週5回<br><span class="gcourse__note">平日5日で新しい範囲を進め、土日は予備日と復習に充てます</span></li>
-              <li>実力診断テスト 月末1回実施<br><span class="gcourse__note">合格ラインに対する到達度でフィードバック</span></li>
-              <li>月1回の学習カウンセリング</li>
-              <li>LINE質問対応（随時）</li>
-              <li>学習計画の作成・進捗管理</li>
-              <li>学習カルテによる一元管理</li>
-              <li>学習状況のご報告（2ヶ月に1回）</li>
+              <li>すぐに答えを渡さない<br><span class="gcourse__note">解けなかったところから、もう一度自分で考えます</span></li>
+              <li>思考を前へ進める添削とヒント<br><span class="gcourse__note">講師は完成解答ではなく、次に考えるための問いを返します</span></li>
+              <li>提出と再挑戦の繰り返し<br><span class="gcourse__note">数日かけてでも、一つの答案を自分の力で完成させます</span></li>
             </ul>
-            <a href="pages/goukaku-senryaku.html" class="gcourse__cta">コースの詳細を見る →</a>
-          </div>
-        </div>
-
-        <!-- 合格戦略サポート -->
-        <div class="gcourse">
-          <div class="gcourse__head">
-            <span class="gcourse__badge">併塾向け</span>
-            <div class="gcourse__name">合格戦略サポート</div>
-          </div>
-          <div class="gcourse__body">
-            <p class="gcourse__desc">予備校や個別指導塾に通っている生徒向けの受験戦略サポートコース。個別指導（授業）は行わず、現在の塾を活かしながら、志望校合格に向けた最適な戦略を提案します。</p>
-            <div class="gcourse__tags"><span>受験戦略サポート</span><span>合格ロードマップ</span><span>併塾OK</span></div>
-            <p class="gcourse__subj">
-              <span class="gcourse__subj-label">対応科目</span>
-              <span class="gcourse__subj-main">標準 2科目まで</span>
-              <span class="gcourse__subj-opt">オプションで＋2科目（合計4科目まで）追加できます</span>
-            </p>
-            <p class="gcourse__inc-label">このコースに含まれるもの</p>
-            <ul class="gcourse__list">
-              <li>合格ロードマップ作成</li>
-              <li>毎日課題 週5回<br><span class="gcourse__note">平日5日で新しい範囲を進め、土日は予備日と復習に充てます</span></li>
-              <li>月1回の学習カウンセリング</li>
-              <li>LINE質問対応（随時）</li>
-              <li>学習計画の作成・進捗管理</li>
-              <li>学習カルテによる一元管理</li>
-              <li>学習状況のご報告（2ヶ月に1回）</li>
-            </ul>
-            <a href="pages/goukaku-senryaku-support.html" class="gcourse__cta">コースの詳細を見る →</a>
+            <a href="pages/shibokou-jissen.html" class="gcourse__cta">コースの詳細を見る →</a>
           </div>
         </div>
       </div>
 
-      <p class="gcourses-note">どのコースが最適かは、お子様の状況をお伺いした上で無料相談にてご提案します。</p>
+      <!-- 2つのコースの違い -->
+      <div class="gcompare">
+        <h3 class="gcompare-title">2つのコースの違い</h3>
+        <p class="gcompare-lead">どちらも、質の高い授業と日々の学習を一体で設計します。違うのは、今必要な支え方です。</p>
+        <div class="gcompare-scroll">
+          <table>
+            <thead>
+              <tr><th>比較項目</th><th>基礎力完成コース</th><th>志望校実戦コース</th></tr>
+            </thead>
+            <tbody>
+              <tr><th>学習課題</th><td>教材・範囲・問題数まで具体的に指定</td><td>志望校レベルの問題を厳選して出題</td></tr>
+              <tr><th>進め方</th><td>その日の課題を完成し、解き直す</td><td>数日かけて一問を解き切ることもある</td></tr>
+              <tr><th>解けない時</th><td>基礎事項へ戻り、理解を補う</td><td>途中答案を出し、添削後に再挑戦する</td></tr>
+              <tr><th>講師の役割</th><td>正しい知識・解法・習慣を定着させる</td><td>答えを教えず、思考を前へ進める</td></tr>
+              <tr><th>目指す力</th><td>基礎・標準問題を正確に解く力</td><td>初見の問題を自力で解き切る力</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="gcourses-note">どちらのコースが最適かは、お子様の状況をお伺いした上で無料相談にてご提案します。</p>
 
       <ul class="gcourses-rules">
-        <li>担当科目は入塾面談時に確定し、合格ロードマップも契約科目の範囲で作成します。</li>
-        <li>科目の追加・変更・解除は翌月からの適用となります（月途中の変更はできません）。</li>
-        <li>実力診断テストは偏差値表示を行わず、合格ラインに対する到達度（絶対評価）でフィードバックします。</li>
-        <li>毎日課題は、丸付け時に不正解箇所へ「考え方」のコメントを添えて返却します。</li>
+        <li>偏差値は目安です。コースは偏差値のみで決めず、学力診断・学習状況・志望校を踏まえてご提案します。</li>
+        <li>オンライン個別指導の授業回数は、週1回・週2回から選択できます。</li>
+        <li>担当科目は入塾面談時に確定します。科目の追加・変更・解除は翌月からの適用となります（月途中の変更はできません）。</li>
+        <li>日々の課題は、丸付け時に不正解箇所へ「考え方」のコメントを添えて返却します。</li>
         <li>受講料および科目追加オプションの費用は、無料相談・入塾面談にてご案内します。</li>
       </ul>
       <div class="gcourses-cta"><a href="#contact" class="btn btn-primary">無料相談で最適なコースを聞く →</a></div>
@@ -1580,7 +1573,7 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
   <div class="container">
     <div class="section-label">Courses &amp; Pricing</div>
     <h2 class="section-title">コース紹介・料金</h2>
-    <p class="section-subtitle">すべてのコースに毎日課題・質問対応・学習管理が含まれています。</p>
+    <p class="section-subtitle">両コースに日々の課題・質問対応・学習管理が含まれています。</p>
 
     <!-- Trial Course Card -->
     <div class="trial-card">
@@ -1818,8 +1811,8 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">医学部受験に対応できますか？<span class="faq-icon">+</span></div><div class="faq-a"><p>はい、医学部受験に必要な全科目の対策が可能です。面接対策の相談も承ります。</p></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">毎日課題はどのくらいの量ですか？<span class="faq-icon">+</span></div><div class="faq-a"><p>生徒の学力や生活リズムに合わせて量を調整します。無理なく継続できることを重視しており、1日あたり1〜2時間程度を目安に設計しています。部活動との両立も可能です。</p></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">保護者様へのご報告はありますか？<span class="faq-icon">+</span></div><div class="faq-a"><p>はい、2ヶ月に1回、保護者様と塾長の面談を実施しています。担任講師から普段のご様子を事前に共有した上で、塾長より学習の進捗状況と今後の方針をご報告します。日々の学習状況についても、LINEなどで随時ご報告可能です。</p></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">何科目まで受講できますか？<span class="faq-icon">+</span></div><div class="faq-a"><p>コースごとに標準の科目数が決まっており、大学受験準備コース・合格戦略サポートは2科目まで、合格戦略プログラムは4科目までが標準です。いずれも科目追加オプションで最大2科目まで追加いただけます。担当科目は入塾面談時に確定し、合格ロードマップも契約科目の範囲で作成します。なお、科目の追加・変更・解除は翌月からの適用となり、月途中の変更はできません。</p></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">実力診断テストの結果はどのように示されますか？<span class="faq-icon">+</span></div><div class="faq-a"><p>偏差値による相対評価ではなく、志望校の合格ラインに対してどこまで到達しているか（絶対評価）でフィードバックします。他人との比較ではなく「合格までにあと何が必要か」が明確になるため、次に取り組むべき課題がはっきりします。</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">何科目まで受講できますか？<span class="faq-icon">+</span></div><div class="faq-a"><p>数学・物理・化学・生物・英語の中から、学力診断・学習状況・志望校を踏まえて受講科目をご提案し、担当科目は入塾面談時に確定します。科目数ごとの受講料や科目追加オプションの費用は、無料相談・入塾面談にてご案内します。なお、科目の追加・変更・解除は翌月からの適用となり、月途中の変更はできません。</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">どちらのコースが合うか分かりません。<span class="faq-icon">+</span></div><div class="faq-a"><p>コースは偏差値のみで決めず、学力診断・学習状況・志望校を踏まえて最適なコースをご提案します。目安として、模試の偏差値が50前後またはそれ未満の方は基礎力完成コース、55〜60以上で志望校レベルの演習へ進みたい方は志望校実戦コースが向いています。無料相談でお子様の状況をお伺いした上でご案内しますので、お気軽にご相談ください。</p></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">毎日課題の丸付けはどのように行われますか？<span class="faq-icon">+</span></div><div class="faq-a"><p>講師が提出物を確認し、不正解の箇所には「なぜそうなるのか」という考え方のコメントを添えて返却します。答え合わせだけで終わらせず、つまずいた原因まで振り返れるようにしています。</p></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">授業料の支払い方法はどうなっていますか？<span class="faq-icon">+</span></div><div class="faq-a"><p>銀行振込（一括・2回分割・3回分割）とクレジットカード毎月払いの4つの方法からお選びいただけます。また、特定商取引法に基づくクーリングオフ（契約日から8日以内・全額返金）にも対応しており、ご退塾時にはすでにご納入いただいた翌月以降の指導料金を返金いたします。</p></div></div>
     </div>
@@ -1973,7 +1966,7 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
       <p>Galileo Sciences — 理系の大学受験専門塾</p>
     </div>
     <div class="footer-links">
-      <ul><li><a href="#features">塾の特長</a></li><li><a href="#courses">コース・料金</a></li><li><a href="pages/daigaku-juken-junbi.html">大学受験準備コース</a></li><li><a href="pages/goukaku-senryaku.html">合格戦略プログラム</a></li><li><a href="pages/goukaku-senryaku-support.html">合格戦略サポート</a></li></ul>
+      <ul><li><a href="#features">塾の特長</a></li><li><a href="#courses">コース・料金</a></li><li><a href="pages/kisoryoku-kansei.html">基礎力完成コース</a></li><li><a href="pages/shibokou-jissen.html">志望校実戦コース</a></li></ul>
       <ul><li><a href="pages/mainichi-kadai.html">毎日課題システム</a></li><li><a href="pages/mainichi-kadai.html">毎日課題の仕組み</a></li><li><a href="#gallery">授業の様子</a></li><li><a href="#staff">講師紹介</a></li><li><a href="pages/voices.html">合格者の声</a></li></ul>
       <ul><li><a href="#results">合格実績</a></li><li><a href="#flow">入塾の流れ</a></li><li><a href="#faq">FAQ</a></li><li><a href="pages/news.html">お知らせ</a></li><li><a href="pages/muryo-shindan.html">無料合格診断</a></li><li><a href="https://www.instagram.com/galileo_sciences/" target="_blank">Instagram</a></li><li><a href="https://x.com/galileosciences" target="_blank">X（旧Twitter）</a></li><li><a href="#about">塾概要</a></li><li><a href="pages/ceo-message.html">代表メッセージ</a></li><li><a href="#contact">お問い合わせ</a></li><li><a href="pages/legal.html">特定商取引法に基づく表記・個人情報の取り扱い</a></li></ul>
     </div>
