@@ -346,6 +346,27 @@ strong{font-weight:700}
 .team-supervisor-img img{width:100%;height:100%;object-fit:cover;display:block}
 .team-supervisor-name{font-family:var(--font-serif);font-size:22px;font-weight:700;color:var(--primary-dark);margin-bottom:6px}
 .team-supervisor-text{font-size:14px;color:var(--text-light);line-height:1.9}
+/* 塾長 兼 指導品質責任者（最大4名） */
+.team-leads{max-width:820px;margin:0 auto 48px;background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 2px 8px rgba(14,74,56,.04)}
+.team-leads-head{background:var(--primary);color:var(--white);text-align:center;font-weight:800;font-size:16px;letter-spacing:.14em;padding:11px 16px}
+.team-leads-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px;padding:26px 32px}
+.team-lead{text-align:center}
+.team-lead-img{width:104px;height:104px;border-radius:50%;overflow:hidden;margin:0 auto 12px;background:linear-gradient(160deg,#f0ebe3 0%,#e4ddd2 100%)}
+.team-lead-img img{width:100%;height:100%;object-fit:cover;display:block}
+.team-lead-name{font-family:var(--font-serif);font-size:20px;font-weight:700;color:var(--primary-dark);margin-bottom:6px}
+.team-lead-name small{font-size:13px;font-weight:700;margin-left:2px}
+.team-lead-text{font-size:13px;color:var(--text-light);line-height:1.9;text-align:left}
+@media(max-width:768px){
+  .team-leads{margin-bottom:32px}
+  .team-leads-grid{grid-template-columns:repeat(2,1fr);gap:18px 14px;padding:20px 22px}
+  .team-lead-img{width:84px;height:84px}
+  .team-lead-name{font-size:17px}
+  .team-lead-text{font-size:12.5px}
+}
+@media(max-width:480px){
+  .team-leads-grid{grid-template-columns:1fr}
+  .team-lead-text{text-align:center}
+}
 .team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:820px;margin:0 auto}
 .team-card{position:relative;min-width:0;background:var(--white);border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:16px;padding:0 22px 24px;text-align:center;box-shadow:0 2px 8px rgba(14,74,56,.04);transition:all .3s}
 .team-card:hover{box-shadow:0 8px 28px rgba(14,74,56,.1);transform:translateY(-4px);border-color:var(--green-mist);border-left-color:var(--primary)}
@@ -1642,18 +1663,30 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
       </div>
     </div>
 
-    <div class="team-grid">
-      <div class="team-card">
-        <span class="team-corner">塾長 兼 指導品質責任者</span>
-        <div class="team-photo">
-          <div class="team-photo-frame"><img src="img/staff/higuchi.jpg" alt="樋口先生" loading="lazy" width="800" height="800"></div>
-          <span class="team-role">学習アドバイザー・学習管理</span>
+    <div class="team-leads">
+      <div class="team-leads-head">塾長 兼 指導品質責任者</div>
+      <div class="team-leads-grid">
+        <div class="team-lead">
+          <div class="team-lead-img"><img src="img/staff/higuchi.jpg" alt="樋口先生" loading="lazy" width="800" height="800"></div>
+          <div class="team-lead-name">樋口<small>先生</small></div>
+          <p class="team-lead-text">数学・理科を軸に、本質の理解を重視した学習指導と勉強法の相談に対応します。</p>
         </div>
-        <h3 class="team-name">樋口<small>先生</small></h3>
-        <p class="team-desc">数学・理科を軸に、本質の理解を重視した学習指導と勉強法の相談に対応します。</p>
-        <div class="team-tags"><span class="team-tag">質問対応</span><span class="team-tag">勉強法設計</span><span class="team-tag">本質理解</span></div>
+        <div class="team-lead">
+          <div class="team-lead-img"><img src="img/staff/shibata.jpg" alt="柴田先生" loading="lazy" width="800" height="800"></div>
+          <div class="team-lead-name">柴田<small>先生</small></div>
+          <p class="team-lead-text">化学を中心に、仕組みや現象の本質から理解できるよう丁寧に指導します。数学も土台づくりから受験対策まで対応します。</p>
+        </div>
+        <!-- 残り2名は後日反映（下のテンプレートを複製して使用）
+        <div class="team-lead">
+          <div class="team-lead-img"><img src="img/staff/XXXX.jpg" alt="◯◯先生" loading="lazy" width="800" height="800"></div>
+          <div class="team-lead-name">◯◯<small>先生</small></div>
+          <p class="team-lead-text">紹介文をここに記載します。</p>
+        </div>
+        -->
       </div>
+    </div>
 
+    <div class="team-grid">
       <div class="team-card">
         <span class="team-corner">広報 兼 専任アドバイザー</span>
         <div class="team-photo">
@@ -1696,17 +1729,6 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
         <h3 class="team-name">山本<small>先生</small></h3>
         <p class="team-desc">化学を中心に、数学・物理も基礎から入試レベルまで丁寧に指導します。</p>
         <div class="team-tags"><span class="team-tag">数学</span><span class="team-tag">物理</span><span class="team-tag">化学</span></div>
-      </div>
-
-      <div class="team-card">
-        <span class="team-corner">講師</span>
-        <div class="team-photo">
-          <div class="team-photo-frame"><img src="img/staff/shibata.jpg" alt="柴田先生" loading="lazy" width="800" height="800"></div>
-          <span class="team-role">理系教科指導</span>
-        </div>
-        <h3 class="team-name">柴田<small>先生</small></h3>
-        <p class="team-desc">化学を中心に、仕組みや現象の本質から理解できるよう丁寧に指導します。数学も土台づくりから受験対策まで対応します。</p>
-        <div class="team-tags"><span class="team-tag">化学</span><span class="team-tag">数学</span></div>
       </div>
 
       <div class="team-card">
