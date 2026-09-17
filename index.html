@@ -123,7 +123,8 @@ strong{font-weight:700}
 .hero-event-btn__badge{background:#fff;color:var(--cta);font-size:11.5px;font-weight:800;letter-spacing:.08em;padding:3px 11px;border-radius:20px;flex-shrink:0}
 .hero-event-btn__label{white-space:nowrap}
 @keyframes heroEventPulse{0%,100%{box-shadow:0 6px 20px rgba(196,154,60,.35)}50%{box-shadow:0 6px 20px rgba(196,154,60,.35),0 0 0 10px rgba(196,154,60,.14)}}
-@media(max-width:768px){.hero-event{margin-bottom:22px;padding:0 16px}.hero-event-btn{font-size:13.5px;padding:12px 22px;width:100%;max-width:420px}}
+@media(max-width:768px){.hero-event{margin-bottom:22px;padding:0 16px}.hero-event-btn{font-size:12.5px;padding:11px 18px;gap:8px}.hero-event-btn__badge{font-size:10.5px;padding:2px 9px}}
+@media(max-width:380px){.hero-event-btn{font-size:11.5px;padding:10px 14px;gap:6px}.hero-event-btn__badge{font-size:10px;padding:2px 8px}}
 .hero-grid{display:flex;flex-direction:column;align-items:center;gap:28px;padding:32px 24px 48px}
 .hero h1{font-family:var(--font-serif);font-size:clamp(30px,5vw,48px);font-weight:700;line-height:1.4;margin-bottom:12px;letter-spacing:.02em}
 .hero h1 em{font-style:normal;color:var(--amber);background:linear-gradient(transparent 60%,rgba(196,154,60,.12) 60%);padding:0 2px}
@@ -1060,8 +1061,9 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
 .event-banner__text{font-size:15px;font-weight:800;letter-spacing:.03em}
 .event-banner__arrow{font-size:13px;font-weight:700;opacity:.9;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:768px){
-  .event-banner{gap:8px;padding:11px 14px}
-  .event-banner__text{font-size:13.5px}
+  .event-banner{gap:8px;padding:10px 14px}
+  .event-banner__text{font-size:13px}
+  .event-banner__sub{display:none}
   .event-banner__arrow{font-size:12px}
 }
 
@@ -1255,7 +1257,7 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
 <!-- ===== 期間限定イベントバナー ===== -->
 <a href="pages/event-kyotsu-simulation.html" class="event-banner">
   <span class="event-banner__badge">期間限定</span>
-  <span class="event-banner__text">共通テストシミュレーション 開催中！あなたも来年に向けてシミュレーションしてみよう</span>
+  <span class="event-banner__text">共通テストシミュレーション 開催中！<span class="event-banner__sub">あなたも来年に向けてシミュレーションしてみよう</span></span>
   <span class="event-banner__arrow">詳しく見る →</span>
 </a>
 
