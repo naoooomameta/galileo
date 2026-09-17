@@ -116,6 +116,14 @@ strong{font-weight:700}
 .hero-badge{font-size:14px;font-weight:600;padding:8px 20px;background:var(--white);border:1px solid var(--green-mist);border-radius:40px;color:var(--primary);box-shadow:0 2px 8px rgba(14,74,56,.06);transition:transform .2s}
 .hero-badge:hover{transform:translateY(-1px)}
 .hero-badge.accent{background:linear-gradient(135deg,var(--cta),var(--cta-light));color:var(--white);border-color:var(--cta);box-shadow:0 2px 12px rgba(196,154,60,.25)}
+/* ヒーロー内 期間限定イベントボタン */
+.hero-event{display:flex;justify-content:center;padding:0 24px;margin-bottom:26px}
+.hero-event-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;background:linear-gradient(135deg,var(--cta),var(--cta-light));color:#fff;font-size:15.5px;font-weight:800;letter-spacing:.02em;padding:13px 28px;border-radius:50px;box-shadow:0 6px 20px rgba(196,154,60,.35);transition:transform .2s,box-shadow .2s;animation:heroEventPulse 2.4s ease-in-out infinite;text-align:center}
+.hero-event-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(196,154,60,.45);color:#fff;animation-play-state:paused}
+.hero-event-btn__badge{background:#fff;color:var(--cta);font-size:11.5px;font-weight:800;letter-spacing:.08em;padding:3px 11px;border-radius:20px;flex-shrink:0}
+.hero-event-btn__label{white-space:nowrap}
+@keyframes heroEventPulse{0%,100%{box-shadow:0 6px 20px rgba(196,154,60,.35)}50%{box-shadow:0 6px 20px rgba(196,154,60,.35),0 0 0 10px rgba(196,154,60,.14)}}
+@media(max-width:768px){.hero-event{margin-bottom:22px;padding:0 16px}.hero-event-btn{font-size:13.5px;padding:12px 22px;width:100%;max-width:420px}}
 .hero-grid{display:flex;flex-direction:column;align-items:center;gap:28px;padding:32px 24px 48px}
 .hero h1{font-family:var(--font-serif);font-size:clamp(30px,5vw,48px);font-weight:700;line-height:1.4;margin-bottom:12px;letter-spacing:.02em}
 .hero h1 em{font-style:normal;color:var(--amber);background:linear-gradient(transparent 60%,rgba(196,154,60,.12) 60%);padding:0 2px}
@@ -1257,6 +1265,12 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
     <span class="hero-badge">東大・京大・東京科学大・医学部・MARCH 合格実績</span>
     <span class="hero-badge">理系専門・少人数指導</span>
     <span class="hero-badge accent">無料学習相談 受付中</span>
+  </div>
+  <div class="hero-event">
+    <a href="pages/event-kyotsu-simulation.html" class="hero-event-btn">
+      <span class="hero-event-btn__badge">期間限定</span>
+      <span class="hero-event-btn__label">共通テストシミュレーション 開催中 →</span>
+    </a>
   </div>
   <div class="container hero-grid">
     <div class="hero-visual">
