@@ -1074,7 +1074,7 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
 .note-update-title{flex:1;min-width:0;font-size:14.5px;font-weight:600;line-height:1.5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .note-update-link{font-size:13px;font-weight:700;color:var(--primary);white-space:nowrap}
 .news-item[hidden]{display:none}
-.news-badge.note{background:var(--primary);color:var(--white)}
+.news-badge.note{background:var(--green-pale);color:var(--primary);border:1px solid var(--green-mist)}
 .section-link[hidden]{display:none}
 @media(max-width:640px){
   .note-update{padding:12px 14px;gap:8px}
@@ -1989,6 +1989,7 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
     <div class="section-label">News</div>
     <h2 class="section-title">お知らせ</h2>
     <div class="news-list">
+      <!-- 下の行は data/note-feed.json（note最新記事）から自動表示。手で編集・削除しない -->
       <a id="noteNewsItem" class="news-item" href="#" target="_blank" rel="noopener" hidden><span class="news-date" id="noteNewsDate"></span><span class="news-badge note">note</span><span class="news-text" id="noteNewsText"></span></a>
       <a href="pages/news.html" class="news-item"><span class="news-date">2026.08.24</span><span class="news-badge info">お知らせ</span><span class="news-text">公式X（旧Twitter）アカウントを開設しました</span></a>
       <a href="pages/news-otameshi/" class="news-item"><span class="news-date">2026.04.10</span><span class="news-badge new">NEW</span><span class="news-text">お試しコースのご案内（¥3,980）｜理系志望の高校生へ</span></a>
@@ -2238,17 +2239,21 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
     if(!d||!d.items||!d.items.length)return;
     var it=d.items[0];
     if(!it.url||!it.title)return;
-    if(top){
+    var title=it.title.length>40?it.title.slice(0,40)+'…':it.title;
+    // FV直下の「更新」の合図は公開から30日以内の記事だけ表示（古い記事を「更新」と見せない。お知らせ欄の行は残る）
+    var fresh=false;
+    if(it.date){var pd=new Date(it.date+'T00:00:00+09:00');fresh=!isNaN(pd.getTime())&&(Date.now()-pd.getTime())<31*86400000}
+    if(top&&fresh){
       top.href=it.url;
-      var t=document.getElementById('noteUpdateDate');t.textContent=it.dateLabel||'';if(it.date)t.setAttribute('datetime',it.date);
-      document.getElementById('noteUpdateTitle').textContent=it.title;
+      var t=document.getElementById('noteUpdateDate');t.textContent=it.dateLabel||'';t.setAttribute('datetime',it.date);
+      document.getElementById('noteUpdateTitle').textContent=title;
       top.hidden=false;
     }
     if(row){
       row.href=it.url;
       var dl=it.dateLabel||'';
       document.getElementById('noteNewsDate').textContent=dl;
-      document.getElementById('noteNewsText').textContent='noteを更新しました「'+it.title+'」';
+      document.getElementById('noteNewsText').textContent='noteを更新しました「'+title+'」';
       // 既存のお知らせ行と日付順（新しい順）にマージ。note記事の方が古い時に先頭へ来ないようにする
       var list=row.parentElement,rows=list.querySelectorAll('.news-item'),before=null;
       for(var i=0;i<rows.length;i++){
