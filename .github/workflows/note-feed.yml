@@ -1,0 +1,50 @@
+name: Update note feed
+
+# note.com の最新記事を定期取得し、data/note-feed.json を更新する。
+# トップページの「note 更新情報」ブロックはこのJSONを読んで表示される。
+# 手動で今すぐ更新したい時は Actions タブ → "Update note feed" → Run workflow。
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'   # 6時間ごと（UTC）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: note-feed
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      # ★ note のユーザーID（https://note.com/XXXX の XXXX 部分）を設定する
+      NOTE_USER: ""
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch note RSS
+        run: node scripts/fetch-note-feed.mjs
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- data/note-feed.json; then
+            echo "note-feed.json に変更なし"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/note-feed.json
+          git commit -m "note更新情報を自動更新"
+          git pull --rebase origin main
+          git push origin HEAD:main
