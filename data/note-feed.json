@@ -1,5 +1,33 @@
 {
-  "source": "",
-  "updatedAt": null,
-  "items": []
+  "source": "https://note.com/galileo_sciences",
+  "updatedAt": "2026-10-01T15:38:13.592Z",
+  "items": [
+    {
+      "title": "仕事とエネルギーの関係｜運動方程式とエネルギー保存則の使い分けを例題で整理",
+      "url": "https://note.com/galileo_sciences/n/n2cce2f304c92",
+      "date": "2026-10-01",
+      "dateLabel": "2026.10.01",
+      "publishedAt": "2026-10-01T03:11:42.000Z",
+      "thumbnail": "https://assets.st-note.com/production/uploads/images/319487793/rectangle_large_type_2_0090752f22cc04702e342aa3f89d5ca2.png?width=800",
+      "excerpt": "みなさんこんにちは、ガリレオで物理を担当している花田です！私は高校生のとき、物理が一番好きな科目でした。仕事とエネルギーは、式の意味を自分でイメージできると一気"
+    },
+    {
+      "title": "剛体のつり合いのコツ｜回転の中心の選び方とモーメントの立て方を例題で解説",
+      "url": "https://note.com/galileo_sciences/n/n463e2bdd4ade",
+      "date": "2026-09-30",
+      "dateLabel": "2026.09.30",
+      "publishedAt": "2026-09-30T02:12:48.000Z",
+      "thumbnail": "https://assets.st-note.com/production/uploads/images/319111054/rectangle_large_type_2_58e53fb11dc315f4249c7d7c4e8c6d6d.png?width=800",
+      "excerpt": "みなさんこんにちは、ガリレオで物理を担当している花田です！私は高校生のとき、物理が一番好きな科目でした。剛体は苦手な人が多い単元ですが、考え方の順番さえ決めてし"
+    },
+    {
+      "title": "単振動の運動方程式の立て方｜周期・中心・位置の式まで読み解く",
+      "url": "https://note.com/galileo_sciences/n/n0e74430ced6f",
+      "date": "2026-09-29",
+      "dateLabel": "2026.09.29",
+      "publishedAt": "2026-09-29T02:03:46.000Z",
+      "thumbnail": "https://assets.st-note.com/production/uploads/images/318748997/rectangle_large_type_2_c2fc11b41f8720440bbc685ec7dedbd5.png?width=800",
+      "excerpt": "みなさんこんにちは、物理を担当している花田です！単振動は公式が多く、苦手意識を持つ人が多い単元です。でも、運動方程式から考えれば、公式はすべてつながって見えてき"
+    }
+  ]
 }
