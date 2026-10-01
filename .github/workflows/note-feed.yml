@@ -8,6 +8,9 @@ on:
   schedule:
     - cron: '17 */6 * * *'   # 6時間ごと（UTC）
   workflow_dispatch:
+  workflow_run:              # サイト更新（claudeブランチの自動マージ）が終わった直後にも1回確認する
+    workflows: ["Auto-merge claude branches"]
+    types: [completed]
 
 permissions:
   contents: write
@@ -18,6 +21,7 @@ concurrency:
 
 jobs:
   update:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     env:
       # ★ note のユーザーID（https://note.com/XXXX の XXXX 部分）を設定する
