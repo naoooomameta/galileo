@@ -29,12 +29,13 @@ if (!rssUrl) {
 }
 
 // --- 最小限のXML読み取り（依存パッケージなし） ---
+const cp = (n) => (n > 0 && n <= 0x10ffff) ? String.fromCodePoint(n) : ''; // 範囲外の文字参照で落ちない
 const decode = (s) => s
   .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1')
   .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"')
   .replace(/&#39;|&apos;/g, "'")
-  .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
-  .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+  .replace(/&#(\d+);/g, (_, n) => cp(Number(n)))
+  .replace(/&#x([0-9a-f]+);/gi, (_, h) => cp(parseInt(h, 16)))
   .replace(/&amp;/g, '&');
 
 const tag = (xml, name) => {
@@ -73,13 +74,15 @@ const xml = await res.text();
 const items = [...xml.matchAll(/<item\b[^>]*>([\s\S]*?)<\/item>/g)]
   .map((m) => m[1])
   .map((x) => {
-    const title = tag(x, 'title');
-    const url = tag(x, 'link') || tag(x, 'guid');
-    const d = new Date(tag(x, 'pubDate'));
+    // 本文（description）内のHTMLを title/link と取り違えないよう、本文を除いた部分からメタ情報を読む
+    const meta = x.replace(/<description(?:\s[^>]*)?>[\s\S]*?<\/description>/, '');
+    const title = tag(meta, 'title');
+    const url = tag(meta, 'link') || tag(meta, 'guid');
+    const d = new Date(tag(meta, 'pubDate'));
     if (!title || !url || Number.isNaN(d.getTime())) return null;
     const f = fmtJst(d);
-    const excerpt = tag(x, 'description').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().slice(0, EXCERPT_LEN);
-    return { title, url, date: f.iso, dateLabel: f.label, publishedAt: d.toISOString(), thumbnail: thumbnail(x), excerpt };
+    const excerpt = Array.from(tag(x, 'description').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()).slice(0, EXCERPT_LEN).join('');
+    return { title, url, date: f.iso, dateLabel: f.label, publishedAt: d.toISOString(), thumbnail: thumbnail(meta), excerpt };
   })
   .filter(Boolean)
   .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))

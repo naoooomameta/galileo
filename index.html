@@ -2259,8 +2259,8 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
   fetch('data/note-feed.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(d){
     if(!d||!d.items||!d.items.length)return;
     var it=d.items[0];
-    if(!it.url||!it.title)return;
-    var title=it.title.length>40?it.title.slice(0,40)+'…':it.title;
+    if(!it.url||!it.title||!/^https?:\/\//.test(it.url))return;
+    var chars=Array.from(it.title),title=chars.length>40?chars.slice(0,40).join('')+'…':it.title; // 絵文字を途中で切らない
     // FV直下の「更新」の合図は公開から30日以内の記事だけ表示（古い記事を「更新」と見せない。お知らせ欄の行は残る）
     var fresh=false;
     if(it.date){var pd=new Date(it.date+'T00:00:00+09:00');fresh=!isNaN(pd.getTime())&&(Date.now()-pd.getTime())<31*86400000}
@@ -2288,7 +2288,7 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
       list.insertBefore(row,before);
       row.hidden=false;
     }
-    if(prof&&d.source){prof.querySelector('a').href=d.source;prof.hidden=false}
+    if(prof&&d.source&&/^https?:\/\//.test(d.source)){prof.querySelector('a').href=d.source;prof.hidden=false}
   }).catch(function(){});
 })();
 // Header scroll
