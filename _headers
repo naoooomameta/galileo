@@ -10,3 +10,6 @@
 
 /pages/*
   Cache-Control: public, max-age=0, must-revalidate
+
+/data/*
+  Cache-Control: public, max-age=0, must-revalidate

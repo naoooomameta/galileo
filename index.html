@@ -1065,6 +1065,21 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
   .news-card-icon svg{width:22px;height:22px}
   .news-card-title{font-size:1rem}
 }
+/* ===== note 更新情報（FV直下・お知らせ欄。data/note-feed.json から表示） ===== */
+.note-update{max-width:1080px;margin:12px auto 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--green-pale);border:1px solid var(--green-mist);border-left:4px solid var(--primary);border-radius:0 10px 10px 0;padding:12px 20px;color:var(--text);transition:background .2s}
+.note-update[hidden]{display:none}
+.note-update:hover{background:var(--green-light);color:var(--text)}
+.note-update-badge{background:var(--primary);color:var(--white);font-size:11.5px;font-weight:700;letter-spacing:.08em;padding:3px 10px;border-radius:50px;white-space:nowrap}
+.note-update-date{font-size:13px;font-weight:600;color:var(--text-muted);white-space:nowrap}
+.note-update-title{flex:1;min-width:0;font-size:14.5px;font-weight:600;line-height:1.5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.note-update-link{font-size:13px;font-weight:700;color:var(--primary);white-space:nowrap}
+.news-item[hidden]{display:none}
+.news-badge.note{background:var(--primary);color:var(--white)}
+.section-link[hidden]{display:none}
+@media(max-width:640px){
+  .note-update{padding:12px 14px;gap:8px}
+  .note-update-title{white-space:normal;flex-basis:100%;font-size:13.5px}
+}
 /* ===== 期間限定イベントバナー（ナビ下） ===== */
 .event-banner{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;background:linear-gradient(135deg,var(--cta) 0%,var(--cta-light) 100%);color:#fff;padding:13px 20px;text-align:center;transition:filter .2s}
 .event-banner:hover{filter:brightness(1.06);color:#fff}
@@ -1325,6 +1340,12 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
       </a>
     </div>
   </article>
+  <a id="noteUpdate" class="note-update" href="#" target="_blank" rel="noopener" hidden>
+    <span class="note-update-badge">note 更新</span>
+    <time class="note-update-date" id="noteUpdateDate"></time>
+    <span class="note-update-title" id="noteUpdateTitle"></span>
+    <span class="note-update-link">記事を読む →</span>
+  </a>
 </section>
 
 <!-- ===== CEOメッセージ (FV直下) ===== -->
@@ -1968,6 +1989,7 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
     <div class="section-label">News</div>
     <h2 class="section-title">お知らせ</h2>
     <div class="news-list">
+      <a id="noteNewsItem" class="news-item" href="#" target="_blank" rel="noopener" hidden><span class="news-date" id="noteNewsDate"></span><span class="news-badge note">note</span><span class="news-text" id="noteNewsText"></span></a>
       <a href="pages/news.html" class="news-item"><span class="news-date">2026.08.24</span><span class="news-badge info">お知らせ</span><span class="news-text">公式X（旧Twitter）アカウントを開設しました</span></a>
       <a href="pages/news-otameshi/" class="news-item"><span class="news-date">2026.04.10</span><span class="news-badge new">NEW</span><span class="news-text">お試しコースのご案内（¥3,980）｜理系志望の高校生へ</span></a>
       <a href="pages/news.html" class="news-item"><span class="news-date">2026.04.01</span><span class="news-badge new">NEW</span><span class="news-text">2026年度 新年度授業開始のお知らせ</span></a>
@@ -1976,6 +1998,7 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
       <a href="pages/news.html" class="news-item"><span class="news-date">2026.01.15</span><span class="news-badge new">開講</span><span class="news-text">理系の大学受験専門塾 ガリレオ 正式開講のお知らせ</span></a>
     </div>
     <div class="section-link"><a href="pages/news.html">お知らせ一覧を見る →</a></div>
+    <div class="section-link" id="noteProfileLink" style="margin-top:10px" hidden><a href="#" target="_blank" rel="noopener">noteで最新記事を読む →</a></div>
   </div>
 </section>
 
@@ -2207,6 +2230,38 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
 
 <script src="assets/js/voices-data.js?v=20260531b"></script>
 <script>
+// note 更新情報（data/note-feed.json を GitHub Actions が定期更新。取得できない時は非表示のまま）
+(function(){
+  var top=document.getElementById('noteUpdate'),row=document.getElementById('noteNewsItem'),prof=document.getElementById('noteProfileLink');
+  if(!top&&!row)return;
+  fetch('data/note-feed.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(d){
+    if(!d||!d.items||!d.items.length)return;
+    var it=d.items[0];
+    if(!it.url||!it.title)return;
+    if(top){
+      top.href=it.url;
+      var t=document.getElementById('noteUpdateDate');t.textContent=it.dateLabel||'';if(it.date)t.setAttribute('datetime',it.date);
+      document.getElementById('noteUpdateTitle').textContent=it.title;
+      top.hidden=false;
+    }
+    if(row){
+      row.href=it.url;
+      var dl=it.dateLabel||'';
+      document.getElementById('noteNewsDate').textContent=dl;
+      document.getElementById('noteNewsText').textContent='noteを更新しました「'+it.title+'」';
+      // 既存のお知らせ行と日付順（新しい順）にマージ。note記事の方が古い時に先頭へ来ないようにする
+      var list=row.parentElement,rows=list.querySelectorAll('.news-item'),before=null;
+      for(var i=0;i<rows.length;i++){
+        if(rows[i]===row)continue;
+        var dd=rows[i].querySelector('.news-date');
+        if(dd&&dd.textContent.trim()<=dl){before=rows[i];break}
+      }
+      list.insertBefore(row,before);
+      row.hidden=false;
+    }
+    if(prof&&d.source){prof.querySelector('a').href=d.source;prof.hidden=false}
+  }).catch(function(){});
+})();
 // Header scroll
 window.addEventListener('scroll',()=>{document.getElementById('header').classList.toggle('scrolled',scrollY>10)});
 // フローティングCTA：少しスクロールしたら表示
