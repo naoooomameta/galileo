@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # ★ note のユーザーID（https://note.com/XXXX の XXXX 部分）を設定する
-      NOTE_USER: ""
+      NOTE_USER: "galileo_sciences"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
