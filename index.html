@@ -350,9 +350,11 @@ strong{font-weight:700}
 .team-supervisor{position:relative;max-width:820px;margin:0 auto 32px;background:linear-gradient(135deg,#fff 0%,var(--green-pale) 100%);border:2px solid var(--primary);border-bottom-width:6px;border-radius:22px;overflow:hidden;box-shadow:0 12px 36px rgba(14,74,56,.14)}
 .team-supervisor-head{background:var(--primary);border-bottom:3px solid var(--gold);color:var(--white);text-align:center;font-weight:800;font-size:17px;letter-spacing:.14em;padding:13px 16px}
 .team-supervisor-body{display:flex;align-items:center;gap:40px;padding:40px 48px}
-.team-supervisor-img{width:190px;height:190px;border-radius:50%;overflow:hidden;flex-shrink:0;border:5px solid var(--white);box-shadow:0 0 0 3px var(--gold),0 10px 28px rgba(14,74,56,.2);background:linear-gradient(160deg,#f0ebe3 0%,#e4ddd2 100%);display:flex;align-items:flex-end;justify-content:center}
-.team-supervisor-img svg{width:88%;height:88%}
-.team-supervisor-img img{width:100%;height:100%;object-fit:cover;display:block}
+.team-supervisor-img{width:200px;height:200px;flex-shrink:0;position:relative;margin:10px 10px 16px 16px}
+/* ゴールドのオフセット枠＋左下の緑ブロック（角丸スクエア） */
+.team-supervisor-img::before{content:'';position:absolute;inset:-10px -10px 10px 10px;border:2px solid var(--gold);border-radius:18px;pointer-events:none}
+.team-supervisor-img::after{content:'';position:absolute;left:-16px;bottom:-16px;width:56px;height:56px;background:var(--primary);border-radius:12px}
+.team-supervisor-img img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block;border-radius:18px;box-shadow:0 12px 28px rgba(14,74,56,.22)}
 .team-supervisor-name{font-family:var(--font-serif);font-size:36px;font-weight:700;color:var(--primary-dark);line-height:1.3;margin-bottom:12px}
 .team-supervisor-name small{font-size:15px;font-weight:600;color:var(--text-muted);margin-left:10px;letter-spacing:.08em}
 .team-supervisor-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
@@ -363,8 +365,10 @@ strong{font-weight:700}
 .team-supervisor-link:hover{background:var(--primary);color:var(--white)}
 /* 担当塾長制 */
 .team-juku{max-width:820px;margin:0 auto 48px;background:var(--white);border:2px solid var(--primary);border-bottom-width:6px;border-radius:22px;padding:32px 48px;display:flex;align-items:center;gap:40px;box-shadow:0 8px 28px rgba(14,74,56,.1)}
-.team-juku-img{width:150px;height:150px;flex-shrink:0;border-radius:50%;border:4px solid var(--primary);overflow:hidden;margin:0;background:var(--green-pale);display:flex;align-items:center;justify-content:center}
-.team-juku-img img{width:88%;height:88%;object-fit:contain;display:block}
+.team-juku-img{width:150px;height:150px;flex-shrink:0;position:relative;margin:8px 8px 12px 12px}
+.team-juku-img::before{content:'';position:absolute;inset:-8px -8px 8px 8px;border:2px solid var(--gold);border-radius:16px;pointer-events:none}
+.team-juku-img::after{content:'';position:absolute;left:-12px;bottom:-12px;width:42px;height:42px;background:var(--primary);border-radius:10px}
+.team-juku-img img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;background:var(--green-pale);border-radius:16px;box-shadow:0 10px 24px rgba(14,74,56,.16)}
 .team-juku-badge{display:inline-block;background:var(--primary-dark);color:var(--white);font-size:14px;font-weight:700;letter-spacing:.08em;padding:6px 20px;border-radius:999px;margin-bottom:12px}
 .team-juku-title{font-family:var(--font-serif);font-size:26px;font-weight:700;color:var(--primary-dark);margin-bottom:8px}
 .team-juku-sub{display:flex;flex-wrap:wrap;gap:2px 14px;font-size:14px;font-weight:700;color:var(--primary-light);line-height:1.8;margin-bottom:18px}
@@ -374,6 +378,9 @@ strong{font-weight:700}
 @media(max-width:768px){
   .team-juku{margin-bottom:32px;padding:28px 26px;gap:24px}
   .team-juku-img{width:124px;height:124px}
+  .team-juku-img::before{inset:-7px -7px 7px 7px;border-radius:14px}
+  .team-juku-img::after{left:-10px;bottom:-10px;width:36px;height:36px}
+  .team-juku-img img{border-radius:14px}
   .team-juku-title{font-size:22px}
   .team-juku-text{font-size:14px}
 }
@@ -889,7 +896,10 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
   .team-supervisor{margin-bottom:24px}
   .team-supervisor-head{font-size:14px;letter-spacing:.08em}
   .team-supervisor-body{gap:24px;padding:28px 26px}
-  .team-supervisor-img{width:140px;height:140px}
+  .team-supervisor-img{width:150px;height:150px;margin:8px 8px 12px 12px}
+  .team-supervisor-img::before{inset:-8px -8px 8px 8px;border-radius:14px}
+  .team-supervisor-img::after{left:-12px;bottom:-12px;width:42px;height:42px;border-radius:10px}
+  .team-supervisor-img img{border-radius:14px}
   .team-supervisor-name{font-size:28px}
   .team-supervisor-text{font-size:14px}
   .team-supervisor-quote{font-size:17px}
