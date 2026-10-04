@@ -546,22 +546,22 @@ a.media-card{text-decoration:none;color:inherit;cursor:pointer}
 
 /* ===== 代表メッセージカード (FV直下) ===== */
 .ceo-card-section{background:var(--white);padding:28px 4vw;border-bottom:1px solid var(--border)}
-.ceo-card{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);border-radius:18px;overflow:hidden;box-shadow:0 8px 32px rgba(14,74,56,.15);position:relative;transition:all .3s}
+.ceo-card{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr;background:linear-gradient(135deg,var(--bg) 0%,var(--green-light) 100%);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 8px 32px rgba(14,74,56,.10);position:relative;transition:all .3s}
 a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
-.ceo-card:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(14,74,56,.22)}
-.ceo-card::before{content:'';position:absolute;top:-40%;left:-10%;width:420px;height:420px;background:radial-gradient(circle,rgba(196,154,60,.14) 0%,transparent 70%);pointer-events:none}
+.ceo-card:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(14,74,56,.16)}
+.ceo-card::before{content:'';position:absolute;top:-40%;left:-10%;width:420px;height:420px;background:radial-gradient(circle,rgba(196,154,60,.18) 0%,transparent 70%);pointer-events:none}
 .ceo-card-text{padding:40px 44px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;position:relative}
-.ceo-card-badge{font-size:12.5px;font-weight:700;color:var(--primary-dark);background:linear-gradient(135deg,var(--gold),var(--gold-light));padding:5px 14px;border-radius:20px;letter-spacing:.05em;margin-bottom:16px}
-.ceo-card-title{font-family:var(--font-serif);font-size:clamp(21px,2.8vw,29px);font-weight:700;color:var(--white);line-height:1.7}
-.ceo-card-desc{font-size:13.5px;color:rgba(255,255,255,.75);margin-top:12px;line-height:1.9}
-.ceo-card-link{display:inline-flex;align-items:center;gap:6px;margin-top:20px;color:var(--gold-light);font-weight:700;font-size:14px;border-bottom:2px solid var(--gold-light);padding-bottom:2px;transition:gap .2s}
+.ceo-card-badge{font-size:12.5px;font-weight:700;color:var(--white);background:linear-gradient(135deg,var(--primary),var(--primary-light));padding:5px 14px;border-radius:20px;letter-spacing:.05em;margin-bottom:16px}
+.ceo-card-title{font-family:var(--font-serif);font-size:clamp(21px,2.8vw,29px);font-weight:700;color:var(--primary-dark);line-height:1.7}
+.ceo-card-desc{font-size:13.5px;color:var(--text-light);margin-top:12px;line-height:1.9}
+.ceo-card-link{display:inline-flex;align-items:center;gap:6px;margin-top:20px;color:var(--primary);font-weight:700;font-size:14px;border-bottom:2px solid var(--gold);padding-bottom:2px;transition:gap .2s}
 .ceo-card:hover .ceo-card-link{gap:10px}
 .ceo-card-img{position:relative;min-height:260px}
-.ceo-card-img img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:92%;width:auto;max-width:none;display:block;filter:drop-shadow(0 6px 24px rgba(0,0,0,.25))}
+.ceo-card-img img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:92%;width:auto;max-width:none;display:block;filter:drop-shadow(0 6px 24px rgba(14,74,56,.22))}
 @media(max-width:768px){
   .ceo-card{grid-template-columns:1fr}
   .ceo-card-img{order:-1;min-height:230px}
-  .ceo-card-img::after{background:linear-gradient(0deg,var(--primary) 0%,transparent 18%)}
+  .ceo-card-img::after{background:linear-gradient(0deg,var(--green-light) 0%,transparent 18%)}
   .ceo-card-text{padding:24px 22px}
   .ceo-card-title{font-size:21px}
 }
