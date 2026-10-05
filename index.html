@@ -1057,53 +1057,59 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
 }
 
 /* ===== NEWS CARD (FV直下 重要なお知らせ) ===== */
-.news-card-section{background:var(--white);padding:28px 4vw;border-bottom:1px solid var(--border)}
-.news-card{max-width:1080px;margin:0 auto;background:var(--white);border-left:4px solid var(--primary);border-radius:0 12px 12px 0;box-shadow:0 4px 24px rgba(14,74,56,.12);padding:22px 28px;display:flex;align-items:flex-start;gap:20px;transition:box-shadow .25s}
-.news-card:hover{box-shadow:0 8px 36px rgba(14,74,56,.20)}
+/* お試しコース＋note新着を横並び（noteが非表示のときはお試しが全幅） */
+.news-card-section{background:var(--white);padding:32px max(4vw,calc((100% - 1080px)/2)) 28px;border-bottom:1px solid var(--border);display:flex;gap:20px;align-items:stretch}
+.news-card-section>.news-card,.news-card-section>.note-card{flex:1 1 0;min-width:0}
+.news-card-section .news-card-icon{display:none}
+.news-card{margin:0;background:var(--white);border:1px solid var(--border);border-top:4px solid var(--gold);border-radius:16px;box-shadow:0 4px 18px rgba(14,74,56,.07);padding:24px 26px;display:flex;flex-direction:column;gap:0;transition:box-shadow .25s}
+.news-card:hover{box-shadow:0 8px 28px rgba(14,74,56,.14)}
 .news-card-icon{flex-shrink:0;width:48px;height:48px;background:var(--green-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--primary)}
 .news-card-icon svg{width:26px;height:26px}
 .news-card-body{flex:1;min-width:0}
 .news-card-label{display:inline-block;background:var(--gold);color:var(--white);font-size:.68rem;font-weight:700;letter-spacing:.12em;padding:3px 12px;border-radius:50px;margin-bottom:8px}
-.news-card-title{font-size:1.1rem;font-weight:700;color:var(--text);line-height:1.4;margin-bottom:4px}
-.news-card-meta{font-size:.78rem;color:var(--text-muted);margin-bottom:10px}
+.news-card-title{font-size:1.15rem;font-weight:700;color:var(--text);line-height:1.5;margin-bottom:8px}
+.news-card-meta{font-size:.85rem;color:var(--text-muted);line-height:1.8;margin-bottom:14px}
 .news-card-link{display:inline-flex;align-items:center;gap:6px;color:var(--primary);font-size:.88rem;font-weight:700;border-bottom:1.5px solid var(--primary);transition:color .2s,border-color .2s;padding-bottom:1px}
 .news-card-link svg{transition:transform .2s}
 .news-card-link:hover{color:var(--text);border-bottom-color:var(--text)}
 .news-card-link:hover svg{transform:translateX(3px)}
 @media(max-width:640px){
-  .news-card{padding:18px 16px;gap:14px}
+  .news-card{padding:20px 18px}
   .news-card-icon{width:40px;height:40px}
   .news-card-icon svg{width:22px;height:22px}
   .news-card-title{font-size:1rem}
 }
 /* ===== note 最新記事カード（FV直下・お知らせ欄。data/note-feed.json から表示） ===== */
 /* note のブランドカラー（#41C9B4）はロゴ・バッジにのみ使用。公式ロゴ画像が用意でき次第 .note-logo を差し替える */
-.note-card{max-width:1080px;margin:14px auto 0;display:flex;align-items:stretch;background:var(--white);border-left:4px solid #41C9B4;border-radius:0 12px 12px 0;box-shadow:0 4px 24px rgba(14,74,56,.12);overflow:hidden;color:var(--text);transition:box-shadow .25s,transform .25s}
+.note-card{margin:0;display:flex;align-items:stretch;background:var(--white);border:1px solid var(--border);border-top:4px solid #41C9B4;border-radius:16px;box-shadow:0 4px 18px rgba(14,74,56,.07);overflow:hidden;color:var(--text);transition:box-shadow .25s,transform .25s}
 .note-card[hidden]{display:none}
-.note-card:hover{box-shadow:0 8px 36px rgba(14,74,56,.2);color:var(--text);transform:translateY(-1px)}
-.note-card-thumb{flex:0 0 236px;background:var(--green-pale);display:flex;align-items:center;justify-content:center}
+.note-card:hover{box-shadow:0 8px 28px rgba(14,74,56,.14);color:var(--text);transform:translateY(-1px)}
+.note-card-thumb{flex:0 0 40%;padding:18px 0 18px 18px;display:flex;align-items:center;justify-content:center}
 .note-card-thumb[hidden]{display:none}
-.note-card-thumb img{width:100%;height:100%;object-fit:cover;display:block}
-.note-card-body{flex:1;min-width:0;padding:18px 28px 18px 24px;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.note-card-thumb img{width:100%;height:auto;aspect-ratio:1.91/1;object-fit:cover;display:block;border-radius:10px;border:1px solid var(--border)}
+.note-card-body{flex:1;min-width:0;padding:22px 24px 22px 20px;display:flex;flex-direction:column;justify-content:center;gap:8px}
 .note-card-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .note-logo{display:inline-flex;align-items:center;font-weight:800;font-size:24px;letter-spacing:-.02em;color:#41C9B4;line-height:1;font-family:var(--font)}
 .note-logo img{height:24px;width:auto;display:block}
 .note-card-label{background:#41C9B4;color:var(--white);font-size:.68rem;font-weight:700;letter-spacing:.12em;padding:3px 12px;border-radius:50px}
-.note-card-date{font-size:.8rem;font-weight:600;color:var(--text-muted);margin-left:auto}
-.note-card-title{font-size:1.1rem;font-weight:700;line-height:1.45;color:var(--text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.note-card-date{font-size:.8rem;font-weight:600;color:var(--text-muted);flex-basis:100%}
+.note-card-title{font-size:1rem;font-weight:700;line-height:1.55;color:var(--text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .note-card-link{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;color:var(--primary);font-size:.88rem;font-weight:700;border-bottom:1.5px solid var(--primary);padding-bottom:1px;transition:color .2s,border-color .2s}
 .note-card:hover .note-card-link{color:var(--text);border-bottom-color:var(--text)}
 .news-item[hidden]{display:none}
 .news-badge.note{background:var(--white);color:#41C9B4;border:1.5px solid #41C9B4;font-weight:800;letter-spacing:-.01em}
 .section-link[hidden]{display:none}
+@media(max-width:768px){
+  .news-card-section{flex-direction:column;gap:16px;padding:24px 4vw}
+  .news-card-section>.news-card,.news-card-section>.note-card{flex:none}
+}
 @media(max-width:640px){
   .note-card{flex-direction:column}
-  .note-card-thumb{flex:none;width:100%;max-height:170px}
-  .note-card-thumb img{aspect-ratio:1.91/1;max-height:170px}
+  .note-card-thumb{flex:none;width:100%;padding:14px 14px 0}
+  .note-card-thumb img{aspect-ratio:1.91/1}
   .note-card-body{padding:14px 16px 16px;gap:7px}
   .note-logo{font-size:21px}
   .note-logo img{height:21px}
-  .note-card-date{margin-left:0;flex-basis:100%}
   .note-card-title{font-size:1rem}
 }
 /* ===== 期間限定イベントバナー（ナビ下） ===== */
