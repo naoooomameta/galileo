@@ -1,33 +1,33 @@
 {
   "source": "https://note.com/galileo_sciences",
-  "updatedAt": "2026-10-05T14:32:21.789Z",
+  "updatedAt": "2026-10-06T06:17:03.617Z",
   "items": [
     {
-      "title": "キルヒホッフの法則の立式のコツ｜回路図の描き方・電流の向き・閉回路の選び方を解説",
-      "url": "https://note.com/galileo_sciences/n/n04aaa9fe9018",
-      "date": "2026-10-05",
-      "dateLabel": "2026.10.05",
-      "publishedAt": "2026-10-05T13:03:44.000Z",
-      "thumbnail": "https://assets.st-note.com/production/uploads/images/321178075/rectangle_large_type_2_29ff4c71dc236df1f9c00bb5b12856a5.png?width=800",
+      "title": "化学平衡の計算が苦手な人へ｜平衡定数の立て方と計算のコツを例題で解説",
+      "url": "https://note.com/galileo_sciences/n/n9f141761d04e",
+      "date": "2026-10-06",
+      "dateLabel": "2026.10.06",
+      "publishedAt": "2026-10-06T02:10:18.000Z",
+      "thumbnail": "https://assets.st-note.com/production/uploads/images/321330848/rectangle_large_type_2_51b9f824229e9bdeb8f70bd9ef4d79ad.png?width=800",
+      "excerpt": "ガリレオで大学受験化学を教えている山本です。続きをみる"
+    },
+    {
+      "title": "中和滴定の計算のコツ｜価数×濃度×体積の考え方から逆滴定まで解説",
+      "url": "https://note.com/galileo_sciences/n/ne6e453821e5a",
+      "date": "2026-10-06",
+      "dateLabel": "2026.10.06",
+      "publishedAt": "2026-10-06T01:55:10.000Z",
+      "thumbnail": "https://assets.st-note.com/production/uploads/images/321326564/rectangle_large_type_2_c169e2c8a4624567a3894179c3a9d4ab.png?width=800",
+      "excerpt": "ガリレオで大学受験化学を教えている山本です。中和滴定の計算は、、何を掛けて何で割ればいいのか分からない、公式は覚えたのに、少し問題が変わると解けない、という声が"
+    },
+    {
+      "title": "半減期の公式と計算のコツ｜対数計算・崩壊回数・年代測定を例題で解説",
+      "url": "https://note.com/galileo_sciences/n/n6595f6f3c214",
+      "date": "2026-10-06",
+      "dateLabel": "2026.10.06",
+      "publishedAt": "2026-10-06T01:48:07.000Z",
+      "thumbnail": "https://assets.st-note.com/production/uploads/images/321324944/rectangle_large_type_2_cb709450e0fcf6dd1f3268ddad85c8aa.png?width=800",
       "excerpt": "みなさんこんにちは、ガリレオで物理を担当している花田です！続きをみる"
-    },
-    {
-      "title": "仮定法を例文でわかりやすく解説！入試頻出パターンと仮定法過去・過去完了",
-      "url": "https://note.com/galileo_sciences/n/ne59647ce706c",
-      "date": "2026-10-05",
-      "dateLabel": "2026.10.05",
-      "publishedAt": "2026-10-05T05:25:05.000Z",
-      "thumbnail": "https://assets.st-note.com/production/uploads/images/321022079/rectangle_large_type_2_01904285927f0e989f6b69071b58d848.png?width=800",
-      "excerpt": "みなさんこんにちは！ガリレオで受験生の皆さんに英語を教えている西原です。仮定法は高校英語の中でも特に難しい単元の一つで、「よく分からない」というご相談をよくいた"
-    },
-    {
-      "title": "荷電粒子の磁場中の運動の解き方｜運動方程式でローレンツ力・円運動・速度選択器を解説",
-      "url": "https://note.com/galileo_sciences/n/n924c3699392b",
-      "date": "2026-10-04",
-      "dateLabel": "2026.10.04",
-      "publishedAt": "2026-10-04T11:49:41.000Z",
-      "thumbnail": "https://assets.st-note.com/production/uploads/images/320778078/rectangle_large_type_2_f7be6380d2f8ef34bc42441da914c501.png?width=800",
-      "excerpt": "みなさんこんにちは、ガリレオで物理を担当している花田です！私は高校生のとき、物理が一番好きな科目でした。荷電粒子の運動は設定が複雑に見えますが、やることは力学と"
     }
   ]
 }
