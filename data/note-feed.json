@@ -1,7 +1,25 @@
 {
   "source": "https://note.com/galileo_sciences",
-  "updatedAt": "2026-10-07T05:55:50.798Z",
+  "updatedAt": "2026-10-07T13:18:45.253Z",
   "items": [
+    {
+      "title": "円運動の加速度を徹底解説｜加速度の公式導出",
+      "url": "https://note.com/galileo_sciences/n/n9dfbfd4b01b1",
+      "date": "2026-10-07",
+      "dateLabel": "2026.10.07",
+      "publishedAt": "2026-10-07T07:01:40.000Z",
+      "thumbnail": "https://assets.st-note.com/production/uploads/images/321770446/rectangle_large_type_2_fd9c3c48ef4452841d23cc3384d71dbe.png?width=800",
+      "excerpt": "みなさんこんにちは！ガリレオ塾長の樋口です。続きをみる"
+    },
+    {
+      "title": "医学部入試・化学の頻出分野｜どこから対策すればいい？出題傾向と時間の使い方を解説",
+      "url": "https://note.com/galileo_sciences/n/nb1802915c44a",
+      "date": "2026-10-07",
+      "dateLabel": "2026.10.07",
+      "publishedAt": "2026-10-07T06:18:44.000Z",
+      "thumbnail": "https://assets.st-note.com/production/uploads/images/321757832/rectangle_large_type_2_5e09b248caa1eb69a33c3bc04c6ca7ef.png?width=800",
+      "excerpt": "みなさん、こんにちは。理系大学受験専門塾「ガリレオ」で化学を担当している柴田です。続きをみる"
+    },
     {
       "title": "化学平衡の計算が苦手な人へ｜平衡定数の立て方と計算のコツを例題で解説",
       "url": "https://note.com/galileo_sciences/n/n9f141761d04e",
@@ -10,24 +28,6 @@
       "publishedAt": "2026-10-06T02:10:18.000Z",
       "thumbnail": "https://assets.st-note.com/production/uploads/images/321330848/rectangle_large_type_2_51b9f824229e9bdeb8f70bd9ef4d79ad.png?width=800",
       "excerpt": "ガリレオで大学受験化学を教えている山本です。化学平衡の計算は、平衡定数の式は覚えたのに問題になると立式できない、xを置いたあと計算が複雑になって分からなくなる、"
-    },
-    {
-      "title": "中和滴定の計算のコツ｜価数×濃度×体積の考え方から逆滴定まで解説",
-      "url": "https://note.com/galileo_sciences/n/ne6e453821e5a",
-      "date": "2026-10-06",
-      "dateLabel": "2026.10.06",
-      "publishedAt": "2026-10-06T01:55:10.000Z",
-      "thumbnail": "https://assets.st-note.com/production/uploads/images/321326564/rectangle_large_type_2_c169e2c8a4624567a3894179c3a9d4ab.png?width=800",
-      "excerpt": "ガリレオで大学受験化学を教えている山本です。中和滴定の計算は、、何を掛けて何で割ればいいのか分からない、公式は覚えたのに、少し問題が変わると解けない、という声が"
-    },
-    {
-      "title": "半減期の公式と計算のコツ｜対数計算・崩壊回数・年代測定を例題で解説",
-      "url": "https://note.com/galileo_sciences/n/n6595f6f3c214",
-      "date": "2026-10-06",
-      "dateLabel": "2026.10.06",
-      "publishedAt": "2026-10-06T01:48:07.000Z",
-      "thumbnail": "https://assets.st-note.com/production/uploads/images/321324944/rectangle_large_type_2_cb709450e0fcf6dd1f3268ddad85c8aa.png?width=800",
-      "excerpt": "みなさんこんにちは、ガリレオで物理を担当している花田です！続きをみる"
     }
   ]
 }
