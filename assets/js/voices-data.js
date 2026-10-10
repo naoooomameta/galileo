@@ -88,7 +88,7 @@
   /* ---- 合格者の声 全13件（本文は提供データのまま） ---- */
   var CASES = [
     {
-      id: 'case01', no: '01', group: 'A', category: '最難関国公立・医学部',
+      id: 'case01', pull: '苦手科目の優先順位を明確にしてもらえたことで、得意な数学・物理に逃げる癖がなくなりました。', no: '01', group: 'A', category: '最難関国公立・医学部',
       university: '東京大学', faculty: '理科一類', initials: 'S.T',
       grade: '高校3年生', year: '2025年度',
       tags: ['全科目バランス', '苦手科目克服', '合格ロードマップ'],
@@ -121,7 +121,7 @@
       q4: '東工大のようなハイレベルな理系大学には、それに合った専門的な対策が不可欠です。息子はガリレオで力をつけ、見事合格できました。難関理系を目指すお子さんにこそ、専門塾の力を感じてほしいです。'
     },
     {
-      id: 'case04', no: '04', group: 'A', category: '最難関国公立・医学部',
+      id: 'case04', pull: '地方在住でも、オンラインで首都圏と同じレベルの理系指導を受けられた点が一番ありがたかったです。', no: '04', group: 'A', category: '最難関国公立・医学部',
       university: '北海道大学', faculty: '理学部', initials: 'K.S',
       grade: '高校3年生', year: '2025年度',
       tags: ['地方在住', 'オンライン指導', '二次記述対策'],
@@ -143,7 +143,7 @@
       q4: '私立理系は大学ごとに傾向が大きく異なります。ガリレオはその違いを熟知しています。息子は早稲田の先進理工に合格しました。志望校に合わせた対策をしたいなら、専門塾を頼ってみてください。'
     },
     {
-      id: 'case06', no: '06', group: 'A', category: '早慶・難関私立理系',
+      id: 'case06', pull: '質問しづらいタイプの娘が、先生には遠慮なく聞けるようになったのが印象的でした。', no: '06', group: 'A', category: '早慶・難関私立理系',
       university: '慶應義塾大学', faculty: '理工学部', initials: 'Y.H',
       grade: '高校3年生', year: '2025年度',
       tags: ['完全個別', '有機化学の克服', '苦手を得意に'],
@@ -154,7 +154,7 @@
       q4: '理系科目でつまずいているなら、完全個別の指導が効果的です。娘は慶應の理工学部に合格しました。一対一でじっくり見てもらえる環境が、苦手を得意に変えてくれますよ。'
     },
     {
-      id: 'case07', no: '07', group: 'A', category: '早慶・難関私立理系',
+      id: 'case07', pull: '親が口を出さなくても学習が回るようになり、家庭の雰囲気も穏やかになりました。', no: '07', group: 'A', category: '早慶・難関私立理系',
       university: '東京理科大学', faculty: '工学部', initials: 'M.I',
       grade: '高校3年生', year: '2025年度',
       tags: ['毎日課題', '学習習慣', '自己管理サポート'],
@@ -445,6 +445,32 @@
     }).join('');
   }
 
+  /* ---- ホーム「信頼ブロック」: 手書きアンケート画像＋抜粋（pull は本文からの逐語抜粋） ---- */
+  function renderProof(el, ids) {
+    if (!el) return;
+    var list = (ids || []).map(caseById).filter(function (c) {
+      return c && c.image && !/\.pdf(\?|#|$)/i.test(c.image);
+    });
+    if (!list.length) { el.innerHTML = ''; el.hidden = true; return; }
+    el.hidden = false;
+    el.innerHTML = list.map(function (c) {
+      var src = esc(asset(c.image));
+      return '' +
+        '<figure class="proof-card">' +
+        '<a class="proof-card-img" href="' + src + '" target="_blank" rel="noopener" aria-label="' + esc(uniLabel(c)) + ' 合格の保護者アンケートを拡大して見る">' +
+        '<img loading="lazy" src="' + src + '" alt="保護者アンケート（' + esc(uniLabel(c)) + ' 合格）" ' +
+        'onerror="this.closest(\'.proof-card\').style.display=\'none\'">' +
+        '<span class="proof-card-zoom">タップで拡大</span></a>' +
+        '<figcaption>' +
+        '<span class="proof-card-badge">合格 ' + esc(uniLabel(c)) + '</span>' +
+        '<p class="proof-card-quote">「' + esc(c.pull || c.q2) + '」</p>' +
+        '<p class="proof-card-author">' + esc(c.initials) + ' さん（' + esc(c.grade) + '・' + esc(c.year) + '）保護者様の手書きアンケートより</p>' +
+        '</figcaption>' +
+        '</figure>';
+    }).join('');
+    reveal(el);
+  }
+
   /* ---- 公開API ---- */
   global.GALILEO_VOICES = {
     cases: CASES,
@@ -462,6 +488,7 @@
     renderStats: renderStats,
     renderPreview: renderPreview,
     renderFeatured: renderFeatured,
+    renderProof: renderProof,
     renderFullList: renderFullList,
     bindAccordions: bindAccordions
   };
