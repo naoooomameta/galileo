@@ -1225,7 +1225,7 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
   .float-cta__btn-label{display:inline}
 }
 /* ===== 指導システム内：2つの指導コース ===== */
-.gcourses{margin-top:56px}
+.gcourses{margin-top:0}
 .gcourses-head{text-align:center;margin-bottom:8px}
 .gcourses-title{font-family:var(--font-serif);font-size:clamp(20px,3vw,26px);font-weight:700;color:var(--primary-dark);margin-bottom:10px}
 .gcourses-lead{font-size:14.5px;color:var(--text-light);line-height:1.9;max-width:620px;margin:0 auto 24px}
@@ -1278,9 +1278,16 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
 .gcompare tbody tr:last-child th,.gcompare tbody tr:last-child td{border-bottom:none}
 .gcompare tbody th{background:var(--green-pale);color:var(--primary-dark);font-size:12.5px;font-weight:700;white-space:nowrap;width:110px}
 .gcompare tbody td{color:var(--text-light)}
+.gcourses-guide{max-width:880px;margin:16px auto 32px;text-align:center;font-size:12.5px;color:var(--text-light);line-height:1.8}
+#courses .trial-card,#courses .courses-payment{max-width:880px}
+.courses-trial-title{text-align:center;font-family:var(--font-serif);font-size:clamp(18px,2.6vw,23px);font-weight:700;color:var(--primary-dark);margin:64px 0 32px}
+.features-courses-link{max-width:880px;margin:48px auto 0;text-align:center;background:var(--green-pale);border:1px solid var(--green-mist);border-left:4px solid var(--primary);border-radius:14px;padding:22px 24px}
+.features-courses-link p{font-size:14.5px;color:var(--text);line-height:1.9;margin-bottom:14px}
+.features-courses-link a{display:inline-flex;align-items:center;gap:6px;color:var(--primary);font-weight:700;font-size:15px;padding:11px 28px;border:2px solid var(--primary);border-radius:40px;background:var(--white);transition:all .3s}
+.features-courses-link a:hover{background:var(--primary);color:var(--white)}
+@media(max-width:768px){.courses-subtitle{text-align:left}.courses-subtitle br{display:none}.courses-trial-title{margin:48px 0 28px}.features-courses-link{margin-top:32px;padding:18px 16px}.features-courses-link p{font-size:13.5px;text-align:left}}
 @media(max-width:900px){.gcourses-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto}}
 @media(max-width:768px){
-  .gcourses{margin-top:40px}
   .gcourses-common{padding:18px 18px}
   .gcourse__head{padding:18px 20px 14px}
   .gcourse__body{padding:18px 20px 20px}
@@ -1593,108 +1600,10 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
       <div class="pillar"><div class="pillar-num">04</div><h3>全国対応のオンライン指導</h3><p>住んでいる地域に関係なく、全国どこからでも受講できます。オンライン指導でありながら、毎日の学習状況を講師がしっかりと把握しながら指導を行います。</p></div>
     </div>
 
-    <!-- ===== 2つの指導コース（費用は無料相談でご案内・金額表記なし） ===== -->
-    <div class="gcourses">
-      <div class="gcourses-head">
-        <h3 class="gcourses-title">学力段階に合わせた2つの指導コース</h3>
-        <p class="gcourses-lead">今の学力に必要な学びから、志望校で得点するための実戦力まで。<br>質の高い授業と日々の学習を、一人ひとりに合わせて設計します。</p>
-      </div>
-
-      <!-- 両コース共通 -->
-      <div class="gcourses-common">
-        <span class="gcourses-common__label">両コース共通のサポート</span>
-        <div class="gcourses-common__items">
-          <span>オンライン個別指導 60分／回</span>
-          <span>日々の課題・学習進捗の確認</span>
-          <span>課題・答案への添削とフィードバック</span>
-          <span>LINE質問対応</span>
-          <span>学習計画の作成・進捗管理</span>
-          <span>月1回の学習カウンセリング</span>
-          <span>学習カルテによる情報共有</span>
-          <span>保護者への学習状況報告</span>
-        </div>
-      </div>
-
-      <div class="gcourses-grid">
-        <!-- 基礎力完成コース -->
-        <div class="gcourse">
-          <div class="gcourse__head">
-            <span class="gcourse__badge">COURSE 01 ／ FOUNDATION</span>
-            <div class="gcourse__name">基礎力完成コース</div>
-          </div>
-          <div class="gcourse__body">
-            <p class="gcourse__desc">「分からない」を残さず、大学受験に必要な土台をつくるコース。理解の抜けを埋め、基礎・標準問題を自分の力で正確に解ける状態を目指します。</p>
-            <div class="gcourse__tags"><span>毎日の具体的な課題設計</span><span>基礎理解</span><span>学習習慣づくり</span></div>
-            <p class="gcourse__subj">
-              <span class="gcourse__subj-label">対象の目安</span>
-              <span class="gcourse__subj-main">模試の偏差値が50前後、または50未満</span>
-              <span class="gcourse__subj-opt">定期テストや既習範囲に不安がある方、志望校がまだ決まっていない方もこちらから。</span>
-            </p>
-            <p class="gcourse__inc-label">指導の3つの柱</p>
-            <ul class="gcourse__list">
-              <li>毎日の具体的な課題<br><span class="gcourse__note">教材・範囲・問題数まで明確にし、「今日は何をするか」で迷わせません</span></li>
-              <li>理解をつくる個別授業<br><span class="gcourse__note">課題で見つかった理解不足を、原理や考え方から丁寧に解消します</span></li>
-              <li>提出・添削・解き直し<br><span class="gcourse__note">解きっぱなしにせず、間違えた原因を確認し、もう一度自力で解き直します</span></li>
-            </ul>
-            <a href="pages/kisoryoku-kansei.html" class="gcourse__cta">コースの詳細を見る →</a>
-          </div>
-        </div>
-
-        <!-- 志望校実戦コース -->
-        <div class="gcourse gcourse--featured">
-          <div class="gcourse__head">
-            <span class="gcourse__badge">COURSE 02 ／ ADVANCED</span>
-            <div class="gcourse__name">志望校実戦コース</div>
-          </div>
-          <div class="gcourse__body">
-            <p class="gcourse__desc">途中答案を添削し、一問を最後まで自分の力で解き切るコース。志望校レベルの問題・過去問に取り組み、初見の問題でも合格答案を完成できる力を育てます。</p>
-            <div class="gcourse__tags"><span>自力完遂型演習</span><span>添削とヒント</span><span>過去問演習</span></div>
-            <p class="gcourse__subj">
-              <span class="gcourse__subj-label">対象の目安</span>
-              <span class="gcourse__subj-main">模試の偏差値が55〜60以上</span>
-              <span class="gcourse__subj-opt">基礎・典型問題はある程度解けるが、応用問題になると方針が立たない方へ。</span>
-            </p>
-            <p class="gcourse__inc-label">このコースの約束</p>
-            <ul class="gcourse__list">
-              <li>すぐに答えを渡さない<br><span class="gcourse__note">解けなかったところから、もう一度自分で考えます</span></li>
-              <li>思考を前へ進める添削とヒント<br><span class="gcourse__note">講師は完成解答ではなく、次に考えるための問いを返します</span></li>
-              <li>提出と再挑戦の繰り返し<br><span class="gcourse__note">数日かけてでも、一つの答案を自分の力で完成させます</span></li>
-            </ul>
-            <a href="pages/shibokou-jissen.html" class="gcourse__cta">コースの詳細を見る →</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2つのコースの違い -->
-      <div class="gcompare">
-        <h3 class="gcompare-title">2つのコースの違い</h3>
-        <p class="gcompare-lead">どちらも、質の高い授業と日々の学習を一体で設計します。違うのは、今必要な支え方です。</p>
-        <div class="gcompare-scroll">
-          <table>
-            <thead>
-              <tr><th>比較項目</th><th>基礎力完成コース</th><th>志望校実戦コース</th></tr>
-            </thead>
-            <tbody>
-              <tr><th>学習課題</th><td>教材・範囲・問題数まで具体的に指定</td><td>志望校レベルの問題を厳選して出題</td></tr>
-              <tr><th>進め方</th><td>その日の課題を完成し、解き直す</td><td>数日かけて一問を解き切ることもある</td></tr>
-              <tr><th>解けない時</th><td>基礎事項へ戻り、理解を補う</td><td>途中答案を出し、添削後に再挑戦する</td></tr>
-              <tr><th>講師の役割</th><td>正しい知識・解法・習慣を定着させる</td><td>答えを教えず、思考を前へ進める</td></tr>
-              <tr><th>目指す力</th><td>基礎・標準問題を正確に解く力</td><td>初見の問題を自力で解き切る力</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <p class="gcourses-note">どちらのコースが最適かは、お子様の状況をお伺いした上で無料相談にてご提案します。</p>
-
-      <ul class="gcourses-rules">
-        <li>偏差値は目安です。コースは偏差値のみで決めず、学力診断・学習状況・志望校を踏まえてご提案します。</li>
-        <li>オンライン個別指導の授業回数は、週1回・週2回から選択できます。</li>
-        <li>担当科目は入塾面談時に確定します。科目の追加・変更・解除は翌月からの適用となります（月途中の変更はできません）。</li>
-        <li>日々の課題は、丸付け時に不正解箇所へ「考え方」のコメントを添えて返却します。</li>
-        <li>受講料および科目追加オプションの費用は、無料相談・入塾面談にてご案内します。</li>
-      </ul>
-      <div class="gcourses-cta"><a href="#contact" class="btn btn-primary">無料相談で最適なコースを聞く →</a></div>
+    <!-- 2つの指導コースは「コース・料金」セクションに集約 -->
+    <div class="features-courses-link">
+      <p>この指導システムを、<strong>学力段階に合わせた2つの指導コース</strong>でご提供しています。</p>
+      <a href="#courses">2つの指導コースを見る →</a>
     </div>
   </div>
 </section>
@@ -1799,9 +1708,108 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
   <div class="container">
     <div class="section-label">Courses &amp; Pricing</div>
     <h2 class="section-title">コース紹介・料金</h2>
-    <p class="section-subtitle">両コースに日々の課題・質問対応・学習管理が含まれています。</p>
+    <p class="section-subtitle courses-subtitle">学力段階に合わせた<strong>2つの指導コース</strong>をご用意しています。<br>どちらのコースにも、日々の課題・添削・質問対応・学習管理が含まれています。</p>
+
+    <!-- ===== 2つの指導コース（費用は無料相談でご案内・金額表記なし） ===== -->
+    <div class="gcourses">
+      <div class="gcourses-grid">
+        <!-- 基礎力完成コース -->
+        <div class="gcourse">
+          <div class="gcourse__head">
+            <span class="gcourse__badge">COURSE 01 ／ FOUNDATION</span>
+            <div class="gcourse__name">基礎力完成コース</div>
+          </div>
+          <div class="gcourse__body">
+            <p class="gcourse__desc">「分からない」を残さず、大学受験に必要な土台をつくるコース。理解の抜けを埋め、基礎・標準問題を自分の力で正確に解ける状態を目指します。</p>
+            <div class="gcourse__tags"><span>毎日の具体的な課題設計</span><span>基礎理解</span><span>学習習慣づくり</span></div>
+            <p class="gcourse__subj">
+              <span class="gcourse__subj-label">対象の目安</span>
+              <span class="gcourse__subj-main">模試の偏差値が50前後、または50未満</span>
+              <span class="gcourse__subj-opt">定期テストや既習範囲に不安がある方、志望校がまだ決まっていない方もこちらから。</span>
+            </p>
+            <p class="gcourse__inc-label">指導の3つの柱</p>
+            <ul class="gcourse__list">
+              <li>毎日の具体的な課題<br><span class="gcourse__note">教材・範囲・問題数まで明確にし、「今日は何をするか」で迷わせません</span></li>
+              <li>理解をつくる個別授業<br><span class="gcourse__note">課題で見つかった理解不足を、原理や考え方から丁寧に解消します</span></li>
+              <li>提出・添削・解き直し<br><span class="gcourse__note">解きっぱなしにせず、間違えた原因を確認し、もう一度自力で解き直します</span></li>
+            </ul>
+            <a href="pages/kisoryoku-kansei.html" class="gcourse__cta">コースの詳細を見る →</a>
+          </div>
+        </div>
+
+        <!-- 志望校実戦コース -->
+        <div class="gcourse gcourse--featured">
+          <div class="gcourse__head">
+            <span class="gcourse__badge">COURSE 02 ／ ADVANCED</span>
+            <div class="gcourse__name">志望校実戦コース</div>
+          </div>
+          <div class="gcourse__body">
+            <p class="gcourse__desc">途中答案を添削し、一問を最後まで自分の力で解き切るコース。志望校レベルの問題・過去問に取り組み、初見の問題でも合格答案を完成できる力を育てます。</p>
+            <div class="gcourse__tags"><span>自力完遂型演習</span><span>添削とヒント</span><span>過去問演習</span></div>
+            <p class="gcourse__subj">
+              <span class="gcourse__subj-label">対象の目安</span>
+              <span class="gcourse__subj-main">模試の偏差値が55〜60以上</span>
+              <span class="gcourse__subj-opt">基礎・典型問題はある程度解けるが、応用問題になると方針が立たない方へ。</span>
+            </p>
+            <p class="gcourse__inc-label">このコースの約束</p>
+            <ul class="gcourse__list">
+              <li>すぐに答えを渡さない<br><span class="gcourse__note">解けなかったところから、もう一度自分で考えます</span></li>
+              <li>思考を前へ進める添削とヒント<br><span class="gcourse__note">講師は完成解答ではなく、次に考えるための問いを返します</span></li>
+              <li>提出と再挑戦の繰り返し<br><span class="gcourse__note">数日かけてでも、一つの答案を自分の力で完成させます</span></li>
+            </ul>
+            <a href="pages/shibokou-jissen.html" class="gcourse__cta">コースの詳細を見る →</a>
+          </div>
+        </div>
+      </div>
+      <p class="gcourses-guide">※偏差値は目安です。学力診断・学習状況・志望校を踏まえて最適なコースをご提案します。</p>
+
+      <!-- 両コース共通 -->
+      <div class="gcourses-common">
+        <span class="gcourses-common__label">両コース共通のサポート</span>
+        <div class="gcourses-common__items">
+          <span>オンライン個別指導 60分／回</span>
+          <span>日々の課題・学習進捗の確認</span>
+          <span>課題・答案への添削とフィードバック</span>
+          <span>LINE質問対応</span>
+          <span>学習計画の作成・進捗管理</span>
+          <span>月1回の学習カウンセリング</span>
+          <span>学習カルテによる情報共有</span>
+          <span>保護者への学習状況報告</span>
+        </div>
+      </div>
+
+      <!-- 2つのコースの違い -->
+      <div class="gcompare">
+        <h3 class="gcompare-title">2つのコースの違い</h3>
+        <p class="gcompare-lead">どちらも、質の高い授業と日々の学習を一体で設計します。違うのは、今必要な支え方です。</p>
+        <div class="gcompare-scroll">
+          <table>
+            <thead>
+              <tr><th>比較項目</th><th>基礎力完成コース</th><th>志望校実戦コース</th></tr>
+            </thead>
+            <tbody>
+              <tr><th>学習課題</th><td>教材・範囲・問題数まで具体的に指定</td><td>志望校レベルの問題を厳選して出題</td></tr>
+              <tr><th>進め方</th><td>その日の課題を完成し、解き直す</td><td>数日かけて一問を解き切ることもある</td></tr>
+              <tr><th>解けない時</th><td>基礎事項へ戻り、理解を補う</td><td>途中答案を出し、添削後に再挑戦する</td></tr>
+              <tr><th>講師の役割</th><td>正しい知識・解法・習慣を定着させる</td><td>答えを教えず、思考を前へ進める</td></tr>
+              <tr><th>目指す力</th><td>基礎・標準問題を正確に解く力</td><td>初見の問題を自力で解き切る力</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <ul class="gcourses-rules">
+        <li>オンライン個別指導の授業回数は、週1回・週2回から選択できます。</li>
+        <li>担当科目は入塾面談時に確定します。科目の追加・変更・解除は翌月からの適用となります（月途中の変更はできません）。</li>
+        <li>日々の課題は、丸付け時に不正解箇所へ「考え方」のコメントを添えて返却します。</li>
+        <li>受講料および科目追加オプションの費用は、無料相談・入塾面談にてご案内します。</li>
+      </ul>
+      <p class="gcourses-note">どちらのコースが最適かは、お子様の状況をお伺いした上で無料相談にてご提案します。</p>
+      <div class="gcourses-cta"><a href="#contact" class="btn btn-primary">無料相談で最適なコースを聞く →</a></div>
+    </div>
 
     <!-- Trial Course Card -->
+    <h3 class="courses-trial-title">まずは、お試しコースで体験</h3>
     <div class="trial-card">
       <span class="trial-badge">まずはお気軽に</span>
       <div class="trial-grid">
