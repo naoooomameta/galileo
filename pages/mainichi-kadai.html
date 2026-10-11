@@ -109,6 +109,63 @@
   .example-box li{font-size:13.5px}
   .roadmap-note{font-size:11px}
 }
+/* ===== MOVIE：Instagramリール（毎日課題を、まずは動画で。） ===== */
+/* スクロールのフェードイン対象外（外部iframeを opacity:0 の層に置かない）。
+   .no-reveal は子孫の transition/transform まで止めるため使わず、セクション本体だけ解除する */
+.mk-movie{opacity:1!important;transform:none!important;padding-top:clamp(32px,5vw,64px);background:linear-gradient(180deg,var(--bg) 0,var(--bg-alt) 160px)}
+.mk-movie-grid{display:grid;grid-template-columns:minmax(0,1fr) 380px;grid-template-rows:auto 1fr;grid-template-areas:"head embed" "side embed";column-gap:64px;row-gap:28px;max-width:960px;margin:0 auto;align-items:start}
+.mk-movie-head{grid-area:head;padding-top:12px}
+.mk-movie-head .section-label,.mk-movie-head .section-title{text-align:left}
+.mk-movie-head .section-title::after{margin:16px 0 0}
+.mk-movie-lead{font-size:15.5px;color:var(--text-light);line-height:2.1;text-wrap:pretty}
+/* 動画フレーム（白カード＋緑の上ボーダー） */
+.mk-movie-frame{grid-area:embed;width:100%;background:var(--white);border:1px solid var(--border);border-top:4px solid var(--primary);border-radius:18px;padding:12px;box-shadow:0 10px 32px rgba(14,74,56,.10)}
+/* 差し替え直後に iframe の高さが確定するまで枠が潰れないよう、ポスターと同じ 9:16 の高さを確保（中身が高ければ自動で伸びる） */
+.mk-movie-embed{aspect-ratio:9/16}
+/* embed.js が差し込む iframe のインライン装飾（灰色枠・min-width:326px・下余白）を打ち消す。高さは触らない（自動調整を生かす） */
+.mk-movie-embed iframe{display:block;width:100%!important;max-width:100%!important;min-width:0!important;margin:0!important;border:1px solid var(--green-mist)!important;border-radius:10px!important;box-shadow:none!important}
+/* ポスター：embed.js 読み込み前／ブロックされた環境では、これがそのまま Instagram へのリンクになる */
+.mk-movie-poster{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;width:100%;aspect-ratio:9/16;min-height:420px;padding:24px;border-radius:10px;text-align:center;color:var(--white);background:radial-gradient(circle at 75% 15%,rgba(212,168,67,.25) 0,transparent 55%),linear-gradient(160deg,var(--primary-light) 0%,var(--primary) 45%,var(--primary-dark) 100%)}
+.mk-movie-poster:focus-visible,.mk-movie-index a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.mk-movie-poster-label{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--gold-light)}
+.mk-movie-play{display:flex;align-items:center;justify-content:center;width:72px;height:72px;border-radius:50%;border:2px solid var(--gold-light);background:rgba(255,255,255,.08);transition:background .2s}
+.mk-movie-play svg{width:28px;height:28px;margin-left:4px;fill:var(--white)}
+.mk-movie-poster-account{font-size:15px;font-weight:700;letter-spacing:.02em}
+.mk-movie-poster-cta{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;border:1.5px solid rgba(255,255,255,.6);border-radius:40px;padding:8px 18px;transition:background .2s}
+.mk-movie-poster:hover .mk-movie-play,.mk-movie-poster:hover .mk-movie-poster-cta{background:rgba(255,255,255,.16)}
+.mk-movie-note{margin-top:10px;font-size:12.5px;color:var(--text-muted);line-height:1.8;text-align:center}
+.mk-movie-note a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+/* このページの目次（緑の左ボーダー） */
+.mk-movie-index{grid-area:side;background:var(--white);border:1px solid var(--border);border-left:4px solid var(--primary-light);border-radius:16px;padding:22px 22px 20px;box-shadow:0 2px 8px rgba(14,74,56,.04)}
+.mk-movie-index-title{font-size:14.5px;font-weight:700;color:var(--primary-dark);margin-bottom:14px}
+.mk-movie-index ol{display:grid;gap:10px}
+.mk-movie-index a{display:flex;flex-direction:column;gap:2px;height:100%;background:var(--green-pale);border:1px solid var(--green-mist);border-radius:10px;padding:12px 14px;transition:background .2s,border-color .2s}
+.mk-movie-index a:hover{background:var(--white);border-color:var(--primary-light)}
+.mk-movie-index-num{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--amber);line-height:1.4}
+.mk-movie-index-num::after{content:'↓';margin-left:6px;letter-spacing:0}
+.mk-movie-index-ttl{font-size:14.5px;font-weight:700;color:var(--primary-dark);line-height:1.6}
+.mk-movie-index-sub{font-size:12.5px;color:var(--text-muted);line-height:1.7}
+@media(max-width:1024px){
+  .mk-movie-grid{grid-template-columns:minmax(0,1fr) 360px;column-gap:40px}
+}
+@media(max-width:768px){
+  .mk-movie-grid{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-template-areas:"head" "embed" "side";row-gap:24px;max-width:560px}
+  .mk-movie-head{padding-top:0}
+  .mk-movie-head .section-label,.mk-movie-head .section-title{text-align:center}
+  .mk-movie-head .section-title::after{margin:16px auto 0}
+  .mk-movie-lead{font-size:14.5px;text-align:center}
+  .mk-movie-frame{justify-self:center;max-width:400px}
+  .mk-movie-index ol{grid-template-columns:1fr 1fr}
+  .mk-movie-index-sub{display:none}
+}
+@media(max-width:480px){
+  .mk-movie-lead{text-align:left}
+  .mk-movie-frame{padding:8px;border-radius:14px}
+  .mk-movie-index{padding:18px 14px 16px}
+  .mk-movie-index ol{gap:8px}
+  .mk-movie-index a{padding:10px 12px}
+  .mk-movie-index-ttl{font-size:13px}
+}
 </style>
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
@@ -178,6 +235,45 @@
   </div>
 </section>
 
+<!-- ===== MOVIE（Instagramリール：毎日課題を、まずは動画で） ===== -->
+<section class="section bg-alt mk-movie" aria-labelledby="mk-movie-title">
+  <div class="container">
+    <div class="mk-movie-grid">
+      <div class="mk-movie-head">
+        <div class="section-label">MOVIE</div>
+        <h2 class="section-title" id="mk-movie-title">毎日課題を、<br>まずは動画で。</h2>
+        <p class="mk-movie-lead">ガリレオの毎日課題について、公式Instagramのリール動画でもご紹介しています。文章で詳しくお読みいただく前に、まずは動画でイメージをつかんでみてください。</p>
+      </div>
+
+      <figure class="mk-movie-frame">
+        <div class="mk-movie-embed" id="mk-movie-embed">
+          <!-- Instagram公式埋め込み。embed.js（ページ末尾のスクリプトで遅延読み込み）がこの blockquote を iframe に置き換える。
+               読み込めない環境（JSオフ・広告/トラッキングブロック・データセーバー）では、中のポスターがそのまま「Instagramで見る」リンクとして残る -->
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DeWvgtXvQpV/" data-instgrm-version="14">
+            <a class="mk-movie-poster" href="https://www.instagram.com/reel/DeWvgtXvQpV/" target="_blank" rel="noopener" aria-label="Instagramで動画を見る（ガリレオ公式 @galileo_sciences／新しいタブで開きます）">
+              <span class="mk-movie-poster-label">INSTAGRAM REEL</span>
+              <span class="mk-movie-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+              <span class="mk-movie-poster-account">@galileo_sciences</span>
+              <span class="mk-movie-poster-cta">Instagramで動画を見る<span aria-hidden="true">↗</span></span>
+            </a>
+          </blockquote>
+        </div>
+        <figcaption class="mk-movie-note">ガリレオ公式Instagram <a href="https://www.instagram.com/galileo_sciences/" target="_blank" rel="noopener">@galileo_sciences</a> より<br>動画が表示されない場合は <a href="https://www.instagram.com/reel/DeWvgtXvQpV/" target="_blank" rel="noopener">Instagramで見る ↗</a></figcaption>
+      </figure>
+
+      <nav class="mk-movie-index" aria-label="このページの内容">
+        <p class="mk-movie-index-title">このページで詳しく解説していること</p>
+        <ol>
+          <li><a href="#learning-cycle"><span class="mk-movie-index-num">01</span><span class="mk-movie-index-ttl">授業と課題の循環</span><span class="mk-movie-index-sub">授業→課題→発見→修正→再演習</span></a></li>
+          <li><a href="#four-step"><span class="mk-movie-index-num">02</span><span class="mk-movie-index-ttl">4ステップサイクル</span><span class="mk-movie-index-sub">配信・実施・提出・フィードバック</span></a></li>
+          <li><a href="#weekly-plan"><span class="mk-movie-index-num">03</span><span class="mk-movie-index-ttl">毎日課題の1週間</span><span class="mk-movie-index-sub">週5回の課題と、土日の使い方</span></a></li>
+          <li><a href="#examples"><span class="mk-movie-index-num">04</span><span class="mk-movie-index-ttl">科目別の課題例</span><span class="mk-movie-index-sub">数学・物理・化学・生物・英語</span></a></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</section>
+
 <!-- ===== PHILOSOPHY ===== -->
 <section class="section mk-prose-section">
   <div class="container">
@@ -224,7 +320,7 @@
 </section>
 
 <!-- ===== LEARNING CYCLE ===== -->
-<section class="section">
+<section class="section" id="learning-cycle">
   <div class="container">
     <div class="section-label">LEARNING CYCLE</div>
     <h2 class="section-title">授業と毎日課題を、分断しない。</h2>
@@ -245,7 +341,7 @@
 </section>
 
 <!-- ===== 4-STEP CYCLE ===== -->
-<section class="section bg-alt">
+<section class="section bg-alt" id="four-step">
   <div class="container">
     <div class="section-label">4-STEP CYCLE</div>
     <h2 class="section-title">毎日課題の4ステップサイクル</h2>
@@ -260,7 +356,7 @@
 </section>
 
 <!-- ===== WEEKLY PLAN ===== -->
-<section class="section">
+<section class="section" id="weekly-plan">
   <div class="container">
     <div class="section-label">WEEKLY PLAN</div>
     <h2 class="section-title">毎日課題の1週間</h2>
@@ -313,7 +409,7 @@
 </section>
 
 <!-- ===== EXAMPLES ===== -->
-<section class="section">
+<section class="section" id="examples">
   <div class="container">
     <div class="section-label">EXAMPLES</div>
     <h2 class="section-title">理系科目での具体的な課題例</h2>
@@ -470,6 +566,48 @@ document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{d
 function handleSubmit(e){e.preventDefault();document.getElementById('modal').classList.add('open');e.target.reset()}
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
 document.querySelectorAll('.section:not(.no-reveal),.worry-card,.pillar,.daily-step,.daily-merit,.thinking-card,.course-card,.gallery-item,.staff-card,.voice-card,.flow-step,.faq-item').forEach(el=>obs.observe(el));
+</script>
+<script>
+/* ===== MOVIE：Instagramリール。ページの読み込み完了後、枠が画面に近づいたときだけ embed.js を読み込む ===== */
+(function(){
+  var wrap=document.getElementById('mk-movie-embed');
+  if(!wrap)return;
+  var c=navigator.connection;
+  if(c&&c.saveData)return; /* データセーバー時は読み込まず、ポスター（Instagramへのリンク）のまま */
+  var started=false;
+  function load(){
+    if(started)return;started=true;
+    /* embed.js が blockquote を iframe に置き換えたら、スクリーンリーダー用の title を付ける */
+    if('MutationObserver' in window){
+      var mo=new MutationObserver(function(){
+        var f=wrap.querySelector('iframe');
+        if(!f)return;
+        if(!f.getAttribute('title'))f.setAttribute('title','ガリレオ公式Instagramのリール動画');
+        mo.disconnect();
+      });
+      mo.observe(wrap,{childList:true,subtree:true});
+    }
+    if(window.instgrm&&window.instgrm.Embeds){window.instgrm.Embeds.process();return;}
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://www.instagram.com/embed.js';
+    s.onload=function(){try{window.instgrm.Embeds.process();}catch(e){}};
+    document.body.appendChild(s); /* 読み込めなかった場合（ブロック等）はポスターがそのまま残る */
+  }
+  function arm(){
+    if(!('IntersectionObserver' in window)){load();return;}
+    var io=new IntersectionObserver(function(es){
+      for(var i=0;i<es.length;i++){if(es[i].isIntersecting){io.disconnect();load();break;}}
+    },{rootMargin:'400px 0px'});
+    io.observe(wrap);
+  }
+  function start(){
+    if('requestIdleCallback' in window)requestIdleCallback(arm,{timeout:2000});
+    else setTimeout(arm,300);
+  }
+  if(document.readyState==='complete')start();
+  else window.addEventListener('load',start);
+})();
 </script>
 </body>
 </html>
