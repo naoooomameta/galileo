@@ -47,6 +47,103 @@
 .okk-media figcaption strong{display:block;color:var(--primary-dark);font-size:14px}
 @media(max-width:768px){.okk-media,.okk-media.two{grid-template-columns:1fr;gap:14px}.okk-photo{margin-top:24px}}
 
+/* ── 板書で見る授業（ガリレオの違い）: 板書は左3／説明は右2。スマホは「STEP・見出し → 板書 → 説明」の順に縦積み ── */
+.lsn{max-width:1000px;margin:56px auto 0}
+.lsn-head{max-width:700px;margin:0 auto 36px;text-align:center}
+.lsn-chip{display:inline-block;font-size:13px;font-weight:700;color:var(--white);background:var(--primary);border-radius:6px;padding:3px 14px;letter-spacing:.02em;line-height:1.6}
+.lsn-title{margin:12px 0;font-family:var(--font-serif);font-size:clamp(20px,2.6vw,25px);font-weight:700;color:var(--primary-dark);line-height:1.5}
+.lsn-lead{font-size:15px;color:var(--text-light);line-height:2;text-align:left}
+.lsn-hint{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:3px 14px 3px 10px;font-size:13px;color:var(--text-light);background:var(--white);border:1px solid var(--green-mist);border-radius:40px;line-height:1.7}
+.lsn svg{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+.lsn-hint svg{color:var(--primary)}
+/* 3つの力（01〜03 は前セクションの柱の番号と対応） */
+.lsn-phase{display:flex;align-items:center;flex-wrap:wrap;gap:4px 12px;margin:48px 0 18px}
+.lsn-head+.lsn-phase{margin-top:0}
+.lsn-phase::after{content:'';flex:1;min-width:24px;height:1px;background:linear-gradient(90deg,var(--green-mist),transparent)}
+.lsn-phase-num{flex-shrink:0;width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:var(--primary);color:var(--white);font-family:var(--font-serif);font-size:14px;font-weight:700}
+.lsn-phase--last .lsn-phase-num{background:var(--amber);color:#1a1a1a}
+.lsn-phase-name{font-size:17px;font-weight:700;color:var(--primary-dark)}
+.lsn-phase-desc{font-size:14px;color:var(--text-light)}
+/* STEPカード */
+.lsn-steps{display:grid;gap:24px}
+.lsn-step{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);grid-template-rows:1fr auto auto 1fr;grid-template-areas:"fig ." "fig head" "fig body" "fig .";background:var(--white);border:1px solid var(--border);border-left:4px solid var(--primary-light);border-radius:16px;overflow:hidden;box-shadow:0 2px 8px rgba(14,74,56,.05)}
+.lsn-step-head{grid-area:head;padding:22px 26px 0}
+.lsn-step-body{grid-area:body;padding:10px 26px 24px}
+.lsn-no{display:flex;align-items:center;gap:8px;margin-bottom:2px;font-family:var(--font-serif);font-size:13.5px;font-weight:700;letter-spacing:.1em;color:var(--primary)}
+.lsn-no::before{content:'';width:18px;height:2px;background:var(--gold)}
+.lsn-step h4{font-size:17px;font-weight:700;color:var(--primary-dark);line-height:1.55}
+.lsn-desc{font-size:14px;color:var(--text-light);line-height:1.95}
+.lsn-key{display:inline-block;margin-top:12px;padding:6px 12px;font-size:13.5px;font-weight:700;color:var(--gold-light);background:var(--primary-dark);border-radius:8px;line-height:1.6}
+/* 板書（タップで拡大）。拡大の案内は板書の下の「トレイ」に置き、手書きを隠さない */
+.lsn-fig{grid-area:fig;display:flex;flex-direction:column;justify-content:center;background:#005429;cursor:zoom-in}
+.lsn-fig img{width:100%;height:auto}
+.lsn-fig:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+.lsn-tray{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 14px;background:var(--primary-dark);font-size:12.5px;font-weight:700;letter-spacing:.04em;line-height:1.5;color:rgba(255,255,255,.72)}
+.lsn-tray-zoom{display:inline-flex;align-items:center;gap:5px;color:var(--white);transition:color .2s}
+.lsn-fig:hover .lsn-tray-zoom{color:var(--gold-light)}
+.lsn-takeaway{margin-top:24px;padding:18px 22px;background:var(--green-pale);border:1px solid var(--green-mist);border-left:4px solid var(--gold);border-radius:12px;font-size:14.5px;line-height:2;color:var(--text)}
+.lsn-takeaway strong{color:var(--primary-dark)}
+.lsn-after{font-size:14.5px;color:var(--text-light);line-height:2}
+.lsn-media.okk-media.two{margin-top:20px}
+.lsn-media figure{border-left:4px solid var(--primary-light)}
+.lsn-media .lsn-chip{font-size:12px;padding:1px 10px;margin-bottom:4px}
+/* 拡大表示（<dialog>）。style.css の *{margin:0} で中央寄せが外れるため margin:auto を戻す */
+.lsn-dialog{margin:auto;padding:0;border:0;border-radius:14px;background:var(--primary-dark);color:var(--white);box-shadow:0 20px 60px rgba(0,0,0,.45);overflow:hidden;width:min(94vw,calc((94vh - 124px) * 1.5385),1600px);width:min(94vw,calc((94dvh - 124px) * 1.5385),1600px);min-width:min(94vw,560px);max-width:none;max-height:94vh;max-height:94dvh}
+.lsn-dialog:not([open]){display:none}
+.lsn-dialog[open]{display:flex;flex-direction:column}
+.lsn-dialog::backdrop{background:rgba(10,50,40,.88)}
+.lsn-dialog-bar{display:flex;align-items:center;gap:12px;padding:8px 8px 8px 18px;flex-shrink:0}
+.lsn-dialog-titles{flex:1;min-width:0}
+.lsn-dialog-cap{font-size:14px;font-weight:700;line-height:1.5}
+.lsn-dialog-hint{font-size:12px;color:var(--gold-light);line-height:1.5}
+.lsn-dialog-hint[hidden]{display:none}
+.lsn-dialog-close{flex-shrink:0;width:44px;height:44px;border-radius:50%;color:var(--white);font-size:30px;line-height:1;background:rgba(255,255,255,.1)}
+.lsn-dialog-close:hover{background:rgba(255,255,255,.2)}
+.lsn-dialog-view{flex:1;min-height:0;display:flex;overflow:auto;overscroll-behavior:contain;background:#005429}
+.lsn-dialog-view img{flex:none;width:100%;height:auto;max-width:none;margin:auto}
+.lsn-dialog-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 14px;flex-shrink:0}
+.lsn-dialog-nav button{min-height:44px;padding:6px 18px;color:var(--white);font-size:14px;font-weight:700;border:1.5px solid rgba(255,255,255,.45);border-radius:40px;transition:background .2s}
+.lsn-dialog-nav button:hover{background:rgba(255,255,255,.12)}
+.lsn-dialog-count{font-size:13px;color:rgba(255,255,255,.8);letter-spacing:.06em}
+.lsn-dialog button:focus-visible{outline:3px solid var(--gold-light);outline-offset:2px}
+
+@media(max-width:1024px){
+  .lsn{margin-top:48px}
+  .lsn-step-head{padding:20px 22px 0}
+  .lsn-step-body{padding:8px 22px 20px}
+}
+@media(max-width:768px){
+  .lsn{max-width:640px;margin-top:40px}
+  .lsn-head{margin-bottom:28px}
+  .lsn-lead{font-size:14px}
+  .lsn-phase{margin-top:40px}
+  .lsn-phase::after{display:none}
+  .lsn-phase-num{width:30px;height:30px;font-size:13px}
+  .lsn-phase-name{font-size:16px}
+  .lsn-phase-desc{flex-basis:100%;padding-left:42px;font-size:13.5px}
+  .lsn-step{grid-template-columns:minmax(0,1fr);grid-template-rows:auto;grid-template-areas:"head" "fig" "body"}
+  .lsn-step-head{padding:16px 18px 12px}
+  .lsn-step-body{padding:14px 18px 18px}
+  .lsn-step h4{font-size:16px}
+  .lsn-takeaway{padding:16px 18px;font-size:14px}
+  .lsn-after{font-size:14px}
+}
+@media(max-width:480px){
+  .lsn-desc{font-size:13.5px}
+  .lsn-key{font-size:12.5px;padding:5px 10px}
+  .lsn-step-head{padding:14px 16px 10px}
+  .lsn-step-body{padding:12px 16px 16px}
+  .lsn-tray{padding:7px 12px}
+}
+/* スマホ（縦・横）では拡大表示を全画面に */
+@media(max-width:768px),(max-height:500px){
+  .lsn-dialog{width:100vw;height:100vh;height:100dvh;min-width:0;max-height:none;border-radius:0}
+}
+/* 縦向きスマホは画面の高さいっぱい（最大 900×585px）に拡大し、横スクロールで読む */
+@media(max-width:480px){
+  .lsn-dialog-cap{font-size:13px}
+  .lsn-dialog-view img{width:auto;aspect-ratio:20/13;height:min(585px,calc(100vh - 150px));height:min(585px,calc(100dvh - 150px))}
+}
 </style>
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
@@ -192,9 +289,86 @@
         <span class="cd-summary-value">学習計画の作成・進捗管理、月1回の学習カウンセリング、保護者さまへの学習状況のご報告。<strong>管理型の良さはそのまま</strong>備えています。</span>
       </div>
     </div>
-    <div class="okk-media two">
-      <figure><img src="../img/gallery-4-feedback.jpg" alt="学習ポイントのフィードバック" loading="lazy" width="1200" height="900"><figcaption><strong>「どう考えるか」までフィードバック</strong></figcaption></figure>
-      <figure><img src="../img/gallery-2-suii.jpg" alt="合格ラインへの到達度のイメージ" loading="lazy" width="1200" height="900"><figcaption><strong>合格ラインへの到達度を見える化</strong><br>※画像はサンプルです</figcaption></figure>
+    <div class="lsn" id="lesson-boards">
+      <div class="lsn-head">
+        <span class="lsn-chip">授業</span>
+        <h3 class="lsn-title">実際の板書で見る、「中身の指導」</h3>
+        <p class="lsn-lead">数学II「図形と方程式」（領域と最大・最小）の授業で講師が書いた板書を、考え方が組み上がる順に並べました。解き方を覚えさせるのではなく、「なぜそうするのか」を図で確かめてから、例題で自分で使える形にしていきます。</p>
+        <p class="lsn-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>板書はタップ（クリック）すると拡大して読めます</p>
+      </div>
+
+      <p class="lsn-phase"><span class="lsn-phase-num" aria-hidden="true">01</span><span class="lsn-phase-name">原理理解力</span><span class="lsn-phase-desc">考え方の「なぜ」をつかむ</span></p>
+      <ol class="lsn-steps">
+        <li class="lsn-step">
+          <div class="lsn-step-head"><p class="lsn-no">STEP 1</p><h4>「積が正」の意味から、領域を描く</h4></div>
+          <a class="lsn-fig" href="../img/lesson/board-01-zushi-1600.webp" data-cap="STEP 1｜「積が正」の意味から、領域を描く">
+            <img src="../img/lesson/board-01-zushi-800.webp" srcset="../img/lesson/board-01-zushi-800.webp 800w, ../img/lesson/board-01-zushi-1600.webp 1600w" sizes="(max-width:480px) calc(100vw - 34px), (max-width:768px) 640px, (max-width:1024px) 60vw, 600px" width="800" height="520" loading="lazy" decoding="async" alt="板書：不等式 (2x−y)(x²+y²−5)&gt;0 の表す領域。A=2x−y、B=x²+y²−5 として「A&gt;0 かつ B&gt;0 または A&lt;0 かつ B&lt;0」に場合分けし、右側に「まずは場合分け／各々に対して領域を考える／最後に図示」と手順を書いている。左側では直線 y=2x と半径√5の円で区切られた領域を斜線で図示し、「求める領域は左図のようです。境界線は含まない。」とまとめている。">
+            <span class="lsn-tray"><span aria-hidden="true">板書 1 / 4</span><span class="lsn-tray-zoom"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>拡大して見る</span></span>
+          </a>
+          <div class="lsn-step-body">
+            <p class="lsn-desc">(2x−y)(x²+y²−5)&gt;0 を A・B の積と見て、「A&gt;0 かつ B&gt;0」または「A&lt;0 かつ B&lt;0」に場合分け。板書の右側には「まずは場合分け → 各々に対して領域を考える → 最後に図示」と、解く手順そのものを書き出しています。</p>
+            <p class="lsn-key">境界は 直線 y=2x と 円 x²+y²=5（含まない）</p>
+          </div>
+        </li>
+        <li class="lsn-step">
+          <div class="lsn-step-head"><p class="lsn-no">STEP 2</p><h4>「(式)=k」とおいて、直線を動かす</h4></div>
+          <a class="lsn-fig" href="../img/lesson/board-02-saidai-saisho-1600.webp" data-cap="STEP 2｜「(式)=k」とおいて、直線を動かす">
+            <img src="../img/lesson/board-02-saidai-saisho-800.webp" srcset="../img/lesson/board-02-saidai-saisho-800.webp 800w, ../img/lesson/board-02-saidai-saisho-1600.webp 1600w" sizes="(max-width:480px) calc(100vw - 34px), (max-width:768px) 640px, (max-width:1024px) 60vw, 600px" width="800" height="520" loading="lazy" decoding="async" alt="板書：見出しは「領域の最大・最小」。座標平面上の領域に対して (式)=k とおき、x軸に平行な直線 y=k を黄色で引いて上下に動かし、領域と共有点をもつ範囲から 1≦k≦8 と読み取っている。">
+            <span class="lsn-tray"><span aria-hidden="true">板書 2 / 4</span><span class="lsn-tray-zoom"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>拡大して見る</span></span>
+          </a>
+          <div class="lsn-step-body">
+            <p class="lsn-desc">例題に入る前に、考え方の仕組みを図で押さえます。最大・最小を求めたい式を k とおき、直線 y=k を上下に動かして、領域と共有点をもつ範囲を読み取ります。</p>
+            <p class="lsn-key">(式)=k → 直線を動かす → 1≦k≦8</p>
+          </div>
+        </li>
+      </ol>
+
+      <p class="lsn-phase"><span class="lsn-phase-num" aria-hidden="true">02</span><span class="lsn-phase-name">解法設計力</span><span class="lsn-phase-desc">原理を使って、道筋を自分で組み立てる</span></p>
+      <ol class="lsn-steps" start="3">
+        <li class="lsn-step">
+          <div class="lsn-step-head"><p class="lsn-no">STEP 3</p><h4>例題：直線で囲まれた領域</h4></div>
+          <a class="lsn-fig" href="../img/lesson/board-03-ex-chokusen-1600.webp" data-cap="STEP 3｜例題：直線で囲まれた領域">
+            <img src="../img/lesson/board-03-ex-chokusen-800.webp" srcset="../img/lesson/board-03-ex-chokusen-800.webp 800w, ../img/lesson/board-03-ex-chokusen-1600.webp 1600w" sizes="(max-width:480px) calc(100vw - 34px), (max-width:768px) 640px, (max-width:1024px) 60vw, 600px" width="800" height="520" loading="lazy" decoding="async" alt="板書：例題「x, y が4つの不等式 x≧0、y≧0、3x+y≦9、x+4y≦14 を満たすとき、次の式の最大・最小は？」。境界の直線 y=−3x+9 と y=−(1/4)x+7/2 を書き、四角形の領域をオレンジで塗っている。x+y=k とおいて y=−x+k とし、直線を動かして 0≦k≦5。点A(2, 3) を通るとき最大5、原点を通るとき最小0。">
+            <span class="lsn-tray"><span aria-hidden="true">板書 3 / 4</span><span class="lsn-tray-zoom"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>拡大して見る</span></span>
+          </a>
+          <div class="lsn-step-body">
+            <p class="lsn-desc">x≧0、y≧0、3x+y≦9、x+4y≦14 のとき、x+y の最大・最小は？ STEP 2 と同じく x+y=k とおき、直線 y=−x+k を動かします。境界の直線 y=−3x+9、y=−(1/4)x+7/2 も書き出して、位置関係を確かめています。</p>
+            <p class="lsn-key">0≦k≦5 → 最大 5（点A(2, 3)）／最小 0（原点）</p>
+          </div>
+        </li>
+        <li class="lsn-step">
+          <div class="lsn-step-head"><p class="lsn-no">STEP 4</p><h4>例題：形が変わっても、同じ考え方で</h4></div>
+          <a class="lsn-fig" href="../img/lesson/board-04-ex-en-1600.webp" data-cap="STEP 4｜例題：形が変わっても、同じ考え方で">
+            <img src="../img/lesson/board-04-ex-en-800.webp" srcset="../img/lesson/board-04-ex-en-800.webp 800w, ../img/lesson/board-04-ex-en-1600.webp 1600w" sizes="(max-width:480px) calc(100vw - 34px), (max-width:768px) 640px, (max-width:1024px) 60vw, 600px" width="800" height="520" loading="lazy" decoding="async" alt="板書：例題「x, y が x²+y²≦1 を満たすとき、次の式の最小値は？」。x+2y=k とおいて y=−(1/2)x+k/2 とし、円の内部を斜線で示して、円に接する直線を黄色で描いている。点と直線の距離の公式から 1=|k|/√(1²+2²) として k=±√5、k&lt;0 より k=−√5。">
+            <span class="lsn-tray"><span aria-hidden="true">板書 4 / 4</span><span class="lsn-tray-zoom"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>拡大して見る</span></span>
+          </a>
+          <div class="lsn-step-body">
+            <p class="lsn-desc">x²+y²≦1 のとき、x+2y の最小値は？ 同じく x+2y=k とおきます。今度は領域が円なので、直線が円に接するときを、点と直線の距離の公式で式にします。</p>
+            <p class="lsn-key">1=|k|／√(1²+2²) → k=±√5、k&lt;0 より最小値 −√5</p>
+          </div>
+        </li>
+      </ol>
+      <p class="lsn-takeaway"><strong>同じ「k とおいて直線を動かす」でも、</strong>STEP 3 では領域の頂点（点A(2, 3) と原点）、STEP 4 では円との接点で、最大・最小が決まりました。原理をつかんでいるから、問題の形が変わっても解き方を自分で組み立てられる。これが②解法設計力です。</p>
+
+      <p class="lsn-phase lsn-phase--last"><span class="lsn-phase-num" aria-hidden="true">03</span><span class="lsn-phase-name">再現力</span><span class="lsn-phase-desc">授業のあと、自分一人で解ける状態へ</span></p>
+      <p class="lsn-after">授業で理解した考え方は、毎日の課題で繰り返し使って定着させます。丸付けでは、不正解の箇所に考え方のコメントを添えて返却。学習計画・進捗の管理で、合格ラインへの到達度も見える化します。</p>
+      <div class="okk-media two lsn-media">
+        <figure><img src="../img/gallery-4-feedback.jpg" alt="数学・物理・化学それぞれの「勉強すべき重要ポイント」と「生徒へのフィードバック」をまとめた学習ポイントシート" loading="lazy" decoding="async" width="1200" height="900"><figcaption><span class="lsn-chip">毎日の課題</span><strong>「どう考えるか」までフィードバック</strong></figcaption></figure>
+        <figure><img src="../img/gallery-2-suii.jpg" alt="合格ラインへの到達度の推移を示すグラフのサンプル" loading="lazy" decoding="async" width="1200" height="900"><figcaption><span class="lsn-chip">計画・管理</span><strong>合格ラインへの到達度を見える化</strong>※画像はサンプルです</figcaption></figure>
+      </div>
+
+      <dialog class="lsn-dialog" id="lsnDialog" aria-labelledby="lsnDialogCap">
+        <div class="lsn-dialog-bar">
+          <div class="lsn-dialog-titles"><p class="lsn-dialog-cap" id="lsnDialogCap"></p><p class="lsn-dialog-hint" hidden>← 横にスクロールして読めます →</p></div>
+          <form method="dialog"><button class="lsn-dialog-close" aria-label="閉じる">&times;</button></form>
+        </div>
+        <div class="lsn-dialog-view"><img alt="" width="1600" height="1040"></div>
+        <div class="lsn-dialog-nav">
+          <button type="button" class="lsn-dialog-prev">← 前の板書</button>
+          <span class="lsn-dialog-count" aria-live="polite"></span>
+          <button type="button" class="lsn-dialog-next">次の板書 →</button>
+        </div>
+      </dialog>
     </div>
     <div class="section-link" style="margin-top:32px"><a href="mainichi-kadai.html">毎日課題システムを詳しく見る →</a></div>
   </div>
@@ -295,6 +469,55 @@ document.getElementById('hamburger').addEventListener('click',()=>{document.getE
 document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('nav').classList.remove('open');document.getElementById('hamburger').classList.remove('open')}));
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
 document.querySelectorAll('.section:not(.no-reveal),.pillar').forEach(el=>obs.observe(el));
+</script>
+<script>
+/* 板書の拡大表示（<dialog>）＋「ガリレオの違い」セクションの表示保証。
+   JS無効・<dialog>非対応のブラウザでは、リンク先の1600px画像がそのまま開く */
+(function(){
+  var root=document.getElementById('lesson-boards');
+  if(!root)return;
+  /* 板書で縦に長くなったため、背の低い画面では threshold:0.08 に届かないことがある。1pxでも入れば表示する */
+  var sec=root.closest('.section');
+  if(sec&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){sec.classList.add('visible');io.disconnect()}});
+    io.observe(sec);
+  }
+  var dlg=document.getElementById('lsnDialog');
+  if(!dlg||typeof dlg.showModal!=='function')return;
+  var links=[].slice.call(root.querySelectorAll('a.lsn-fig')),
+      img=dlg.querySelector('.lsn-dialog-view img'),view=dlg.querySelector('.lsn-dialog-view'),
+      cap=document.getElementById('lsnDialogCap'),hint=dlg.querySelector('.lsn-dialog-hint'),
+      cnt=dlg.querySelector('.lsn-dialog-count'),idx=0,opener=null;
+  function show(i){
+    idx=(i+links.length)%links.length;
+    var a=links[idx],t=a.querySelector('img');
+    img.alt=t.alt;
+    img.src=t.currentSrc||t.src;                 /* 表示済みの画像を先に出し… */
+    var hi=new Image();hi.onload=function(){if(links[idx]===a)img.src=a.href};hi.src=a.href; /* …1600px版に差し替え */
+    cap.textContent=a.getAttribute('data-cap');
+    cnt.textContent=(idx+1)+' / '+links.length;
+    view.scrollLeft=0;view.scrollTop=0;
+    requestAnimationFrame(function(){var x=view.scrollWidth>view.clientWidth+2,y=view.scrollHeight>view.clientHeight+2;hint.hidden=!(x||y);hint.textContent=x?'← 横にスクロールして読めます →':'↓ 下にスクロールして読めます';});
+  }
+  links.forEach(function(a,i){
+    a.addEventListener('click',function(e){
+      if(e.button||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return; /* 新しいタブで開く操作はそのまま */
+      e.preventDefault();opener=a;dlg.showModal();show(i); /* 開いてから描画（閉じている間はスクロール位置をリセットできないため） */
+      document.documentElement.style.overflow='hidden';
+    });
+  });
+  dlg.querySelector('.lsn-dialog-prev').addEventListener('click',function(){show(idx-1)});
+  dlg.querySelector('.lsn-dialog-next').addEventListener('click',function(){show(idx+1)});
+  dlg.addEventListener('keydown',function(e){
+    if(e.key==='ArrowLeft'){e.preventDefault();show(idx-1)}
+    else if(e.key==='ArrowRight'){e.preventDefault();show(idx+1)}
+  });
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()}); /* 背景（ダイアログの外）をクリックで閉じる。全画面時の板書まわりの余白では閉じない */
+  dlg.addEventListener('close',function(){             /* Esc・×・背景クリックのどれで閉じても */
+    document.documentElement.style.overflow='';
+    if(opener)opener.focus({preventScroll:true});      /* 開いた板書にフォーカスを戻す */
+  });
+})();
 </script>
 </body>
 </html>
