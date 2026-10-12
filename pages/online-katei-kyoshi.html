@@ -53,6 +53,7 @@
 @media(max-width:768px){.okk-media,.okk-media.two{grid-template-columns:1fr;gap:14px}.okk-photo{margin-top:24px}}
 
 </style>
+<link rel="stylesheet" href="../css/lesson-boards.css?v=20261012">
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -183,10 +184,82 @@
         <span class="cd-summary-value">LINEでいつでも質問できます。</span>
       </div>
     </div>
-    <div class="okk-media">
-      <figure><img src="../img/gallery-1-roadmap.jpg" alt="担当塾長が作成する合格ロードマップ" loading="lazy" width="1200" height="900"><figcaption><strong>担当塾長が作る合格ロードマップ</strong><br>※画像はサンプルです</figcaption></figure>
-      <figure><img src="../img/gallery-5-kadai.jpg" alt="毎日の課題の配信画面" loading="lazy" width="1200" height="900"><figcaption><strong>授業のない日も、毎日の課題を配信</strong></figcaption></figure>
-      <figure><img src="../img/gallery-4-feedback.jpg" alt="学習ポイントのフィードバック" loading="lazy" width="1200" height="900"><figcaption><strong>つまずいた箇所に、考え方のフィードバック</strong></figcaption></figure>
+    <div class="lsn" id="lesson-boards">
+      <div class="lsn-head">
+        <span class="lsn-chip">実際の授業</span>
+        <h3 class="lsn-title">1対1の授業の中身を、板書で</h3>
+        <p class="lsn-lead">数学II「図形と方程式」（領域と最大・最小）の授業で講師が書いた板書を、考え方が組み上がる順に並べました。解き方を覚えさせるのではなく、「なぜそうするのか」を図で確かめてから、例題で自分で使える形にしていきます。</p>
+        <p class="lsn-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>板書はタップ（クリック）すると拡大して読めます</p>
+      </div>
+
+      <p class="lsn-phase" role="heading" aria-level="4"><span class="lsn-phase-num" aria-hidden="true">01</span><span class="lsn-phase-name">専門講師の1対1授業</span><span class="lsn-phase-desc">原理から理解し、解き方を自分で組み立てる</span></p>
+      <ol class="lsn-steps">
+        <li class="lsn-step">
+          <div class="lsn-step-head"><p class="lsn-no">STEP 1</p><h4>「積が正」の意味から、領域を描く</h4></div>
+          <a class="lsn-fig" href="../img/lesson/board-01-zushi-1600.webp" data-cap="STEP 1｜「積が正」の意味から、領域を描く">
+            <img src="../img/lesson/board-01-zushi-800.webp" srcset="../img/lesson/board-01-zushi-800.webp 800w, ../img/lesson/board-01-zushi-1600.webp 1600w" sizes="(max-width:480px) calc(100vw - 34px), (max-width:768px) 640px, (max-width:1024px) 60vw, 600px" width="800" height="520" loading="lazy" decoding="async" alt="板書：不等式 (2x−y)(x²+y²−5)&gt;0 の表す領域。A=2x−y、B=x²+y²−5 として「A&gt;0 かつ B&gt;0 または A&lt;0 かつ B&lt;0」に場合分けし、右側に「まずは場合分け／各々に対して領域を考える／最後に図示」と手順を書いている。左側では直線 y=2x と半径√5の円で区切られた領域を斜線で図示し、「求める領域は左図のようです。境界線は含まない。」とまとめている。">
+            <span class="lsn-tray"><span aria-hidden="true">板書 1 / 4</span><span class="lsn-tray-zoom"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>拡大して見る</span></span>
+          </a>
+          <div class="lsn-step-body">
+            <p class="lsn-desc">(2x−y)(x²+y²−5)&gt;0 を A・B の積と見て、「A&gt;0 かつ B&gt;0」または「A&lt;0 かつ B&lt;0」に場合分け。板書の右側には「まずは場合分け → 各々に対して領域を考える → 最後に図示」と、解く手順そのものを書き出しています。</p>
+            <p class="lsn-key">境界は 直線 y=2x と 円 x²+y²=5（含まない）</p>
+          </div>
+        </li>
+        <li class="lsn-step">
+          <div class="lsn-step-head"><p class="lsn-no">STEP 2</p><h4>「(式)=k」とおいて、直線を動かす</h4></div>
+          <a class="lsn-fig" href="../img/lesson/board-02-saidai-saisho-1600.webp" data-cap="STEP 2｜「(式)=k」とおいて、直線を動かす">
+            <img src="../img/lesson/board-02-saidai-saisho-800.webp" srcset="../img/lesson/board-02-saidai-saisho-800.webp 800w, ../img/lesson/board-02-saidai-saisho-1600.webp 1600w" sizes="(max-width:480px) calc(100vw - 34px), (max-width:768px) 640px, (max-width:1024px) 60vw, 600px" width="800" height="520" loading="lazy" decoding="async" alt="板書：見出しは「領域の最大・最小」。座標平面上の領域に対して (式)=k とおき、x軸に平行な直線 y=k を黄色で引いて上下に動かし、領域と共有点をもつ範囲から 1≦k≦8 と読み取っている。">
+            <span class="lsn-tray"><span aria-hidden="true">板書 2 / 4</span><span class="lsn-tray-zoom"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>拡大して見る</span></span>
+          </a>
+          <div class="lsn-step-body">
+            <p class="lsn-desc">例題に入る前に、考え方の仕組みを図で押さえます。最大・最小を求めたい式を k とおき、直線 y=k を上下に動かして、領域と共有点をもつ範囲を読み取ります。</p>
+            <p class="lsn-key">(式)=k → 直線を動かす → 1≦k≦8</p>
+          </div>
+        </li>
+        <li class="lsn-step">
+          <div class="lsn-step-head"><p class="lsn-no">STEP 3</p><h4>例題：直線で囲まれた領域</h4></div>
+          <a class="lsn-fig" href="../img/lesson/board-03-ex-chokusen-1600.webp" data-cap="STEP 3｜例題：直線で囲まれた領域">
+            <img src="../img/lesson/board-03-ex-chokusen-800.webp" srcset="../img/lesson/board-03-ex-chokusen-800.webp 800w, ../img/lesson/board-03-ex-chokusen-1600.webp 1600w" sizes="(max-width:480px) calc(100vw - 34px), (max-width:768px) 640px, (max-width:1024px) 60vw, 600px" width="800" height="520" loading="lazy" decoding="async" alt="板書：例題「x, y が4つの不等式 x≧0、y≧0、3x+y≦9、x+4y≦14 を満たすとき、次の式の最大・最小は？」。境界の直線 y=−3x+9 と y=−(1/4)x+7/2 を書き、四角形の領域をオレンジで塗っている。x+y=k とおいて y=−x+k とし、直線を動かして 0≦k≦5。点A(2, 3) を通るとき最大5、原点を通るとき最小0。">
+            <span class="lsn-tray"><span aria-hidden="true">板書 3 / 4</span><span class="lsn-tray-zoom"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>拡大して見る</span></span>
+          </a>
+          <div class="lsn-step-body">
+            <p class="lsn-desc">x≧0、y≧0、3x+y≦9、x+4y≦14 のとき、x+y の最大・最小は？ STEP 2 と同じく x+y=k とおき、直線 y=−x+k を動かします。境界の直線 y=−3x+9、y=−(1/4)x+7/2 も書き出して、位置関係を確かめています。</p>
+            <p class="lsn-key">0≦k≦5 → 最大 5（点A(2, 3)）／最小 0（原点）</p>
+          </div>
+        </li>
+        <li class="lsn-step">
+          <div class="lsn-step-head"><p class="lsn-no">STEP 4</p><h4>例題：形が変わっても、同じ考え方で</h4></div>
+          <a class="lsn-fig" href="../img/lesson/board-04-ex-en-1600.webp" data-cap="STEP 4｜例題：形が変わっても、同じ考え方で">
+            <img src="../img/lesson/board-04-ex-en-800.webp" srcset="../img/lesson/board-04-ex-en-800.webp 800w, ../img/lesson/board-04-ex-en-1600.webp 1600w" sizes="(max-width:480px) calc(100vw - 34px), (max-width:768px) 640px, (max-width:1024px) 60vw, 600px" width="800" height="520" loading="lazy" decoding="async" alt="板書：例題「x, y が x²+y²≦1 を満たすとき、次の式の最小値は？」。x+2y=k とおいて y=−(1/2)x+k/2 とし、円の内部を斜線で示して、円に接する直線を黄色で描いている。点と直線の距離の公式から 1=|k|/√(1²+2²) として k=±√5、k&lt;0 より k=−√5。">
+            <span class="lsn-tray"><span aria-hidden="true">板書 4 / 4</span><span class="lsn-tray-zoom"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>拡大して見る</span></span>
+          </a>
+          <div class="lsn-step-body">
+            <p class="lsn-desc">x²+y²≦1 のとき、x+2y の最小値は？ 同じく x+2y=k とおきます。今度は領域が円なので、直線が円に接するときを、点と直線の距離の公式で式にします。</p>
+            <p class="lsn-key">1=|k|／√(1²+2²) → k=±√5、k&lt;0 より最小値 −√5</p>
+          </div>
+        </li>
+      </ol>
+      <p class="lsn-takeaway"><strong>同じ「k とおいて直線を動かす」でも、</strong>STEP 3 では領域の頂点（点A(2, 3) と原点）、STEP 4 では円との接点で、最大・最小が決まりました。原理から理解しているから、問題の形が変わっても解き方を自分で組み立てられます。</p>
+
+      <p class="lsn-phase lsn-phase--last" role="heading" aria-level="4"><span class="lsn-phase-num" aria-hidden="true">02</span><span class="lsn-phase-name">授業のない日も、チームで</span><span class="lsn-phase-desc">担当塾長の計画管理と、毎日の課題・添削</span></p>
+      <div class="okk-media lsn-media">
+        <figure><img src="../img/gallery-1-roadmap.jpg" alt="担当塾長が作成する合格ロードマップ" loading="lazy" decoding="async" width="1200" height="900"><figcaption><span class="lsn-chip">担当塾長</span><strong>担当塾長が作る合格ロードマップ</strong>※画像はサンプルです</figcaption></figure>
+        <figure><img src="../img/gallery-5-kadai.jpg" alt="毎日の課題の配信画面" loading="lazy" decoding="async" width="1200" height="900"><figcaption><span class="lsn-chip">毎日の課題</span><strong>授業のない日も、毎日の課題を配信</strong></figcaption></figure>
+        <figure><img src="../img/gallery-4-feedback.jpg" alt="学習ポイントのフィードバック" loading="lazy" decoding="async" width="1200" height="900"><figcaption><span class="lsn-chip">毎日の課題</span><strong>つまずいた箇所に、考え方のフィードバック</strong></figcaption></figure>
+      </div>
+
+      <dialog class="lsn-dialog" id="lsnDialog" aria-labelledby="lsnDialogCap">
+        <div class="lsn-dialog-bar">
+          <div class="lsn-dialog-titles"><p class="lsn-dialog-cap" id="lsnDialogCap"></p><p class="lsn-dialog-hint" hidden>← 横にスクロールして読めます →</p></div>
+          <form method="dialog"><button class="lsn-dialog-close" aria-label="閉じる">&times;</button></form>
+        </div>
+        <div class="lsn-dialog-view"><img alt="" width="1600" height="1040"></div>
+        <div class="lsn-dialog-nav">
+          <button type="button" class="lsn-dialog-prev">← 前の板書</button>
+          <span class="lsn-dialog-count" aria-live="polite"></span>
+          <button type="button" class="lsn-dialog-next">次の板書 →</button>
+        </div>
+      </dialog>
     </div>
     <div class="section-link" style="margin-top:32px"><a href="mainichi-kadai.html">毎日課題システムを詳しく見る →</a></div>
   </div>
@@ -296,5 +369,6 @@ document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{d
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
 document.querySelectorAll('.section:not(.no-reveal),.pillar').forEach(el=>obs.observe(el));
 </script>
+<script src="../assets/js/lesson-boards.js?v=20261012"></script>
 </body>
 </html>
