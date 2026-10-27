@@ -226,6 +226,12 @@ strong{font-weight:700}
 .thinking-symptoms li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
 .thinking-cards.three{grid-template-columns:repeat(3,1fr)}
 .thinking-card-num{font-family:var(--font-serif);font-size:26px;font-weight:700;color:var(--gold);margin-bottom:6px;line-height:1}
+.thinking-card-lead{font-size:14.5px!important;font-weight:700;color:var(--primary)!important;margin-bottom:10px;line-height:1.7!important}
+.thinking-card-benefit{margin-top:12px;background:var(--green-pale);border-radius:8px;padding:10px 14px;font-size:13.5px!important;color:var(--primary-dark)!important;line-height:1.8!important}
+.thinking-card-benefit span{display:inline-block;background:var(--gold);color:#fff;font-size:11px;font-weight:700;padding:1px 8px;border-radius:10px;margin-right:6px;vertical-align:middle}
+.thinking-how-grid.three{grid-template-columns:repeat(3,1fr)}
+.sp-only{display:none}
+@media(max-width:640px){.sp-only{display:inline}}
 .thinking-card-symptom{margin-top:14px;padding-top:12px;border-top:1px dashed var(--green-mist);font-size:12.5px!important;color:var(--text-muted)!important;line-height:1.8!important}
 .thinking-how{max-width:860px;margin:0 auto 32px;text-align:center}
 .thinking-how h3{font-size:19px;font-weight:700;color:var(--primary-dark);margin-bottom:10px}
@@ -238,7 +244,7 @@ strong{font-weight:700}
 .thinking-how-note{background:var(--white);border:1px dashed var(--green-mist);border-radius:12px;padding:18px 22px;font-size:14px;color:var(--text-light);line-height:2;text-align:left}
 .thinking-how-note strong{color:var(--primary)}
 @media(max-width:900px){.thinking-cards.three{grid-template-columns:1fr}}
-@media(max-width:640px){.thinking-how-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.thinking-how-grid,.thinking-how-grid.three{grid-template-columns:1fr}}
 .thinking-bottom{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--white);border-radius:16px;padding:28px 32px;text-align:center;font-size:16px;line-height:2;box-shadow:0 4px 20px rgba(14,74,56,.2)}
 .thinking-bottom strong{color:#D4A843}
 @media(max-width:640px){.thinking-cards{grid-template-columns:1fr}}
@@ -1363,7 +1369,7 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
     <div class="nav-item">
       <a href="#features">指導システム<span class="nav-caret">▾</span></a>
       <div class="nav-sub">
-        <a href="#thinking">理系思考トレーニング</a>
+        <a href="#thinking">ガリレオの3つの特徴</a>
         <a href="pages/mainichi-kadai.html">毎日課題システム</a>
       </div>
     </div>
@@ -1559,9 +1565,9 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
       </div>
     </div>
     <div class="pillars-grid">
-      <div class="pillar"><div class="pillar-num">01</div><h3>専門性の高い理系授業</h3><p>数学・物理・化学・生物・英語。公式・解法の暗記ではなく、原理と思考プロセスから理解させる授業で、初見の問題にも対応できる力を育てます。</p></div>
-      <div class="pillar"><div class="pillar-num">02</div><h3>志望校から逆算した受験戦略</h3><p>生徒の志望校や現在の学力を分析し、志望校合格までの毎日課題ロードマップを作成します。どの参考書を・どの順番で・どの時期までに進めるべきかを明確にします。</p></div>
-      <div class="pillar"><div class="pillar-num">03</div><h3>毎日課題による学習管理</h3><p>授業で得た理解を「自分で使える力」に変えるため、日々の学習内容を具体的に提示し、講師が確認します。「何を勉強すればいいか分からない」「家では続かない」を解決します。</p></div>
+      <div class="pillar"><div class="pillar-num">01</div><h3>志望校別学習計画</h3><p>生徒の志望校や現在の学力を分析し、志望校合格までの毎日課題ロードマップを作成します。どの参考書を・どの順番で・どの時期までに進めるべきかを明確にします。</p></div>
+      <div class="pillar"><div class="pillar-num">02</div><h3>理系専門の個別指導</h3><p>数学・物理・化学・生物・英語。公式・解法の暗記ではなく、原理と思考プロセスから理解させる授業で、初見の問題にも対応できる力を育てます。</p></div>
+      <div class="pillar"><div class="pillar-num">03</div><h3>毎日課題・添削</h3><p>授業で得た理解を「自分で使える力」に変えるため、日々の学習内容を具体的に提示し、講師が確認します。「何を勉強すればいいか分からない」「家では続かない」を解決します。丸付け時には、不正解の箇所に考え方のコメントを添えて返却します。</p></div>
       <div class="pillar"><div class="pillar-num">04</div><h3>全国対応のオンライン指導</h3><p>住んでいる地域に関係なく、全国どこからでも受講できます。オンライン指導でありながら、毎日の学習状況を講師がしっかりと把握しながら指導を行います。</p></div>
     </div>
 
@@ -1576,60 +1582,67 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
 <!-- ===== THINKING ===== -->
 <section class="section bg-alt" id="thinking">
   <div class="container">
-    <div class="section-label">Thinking Training</div>
-    <h2 class="section-title">理系思考トレーニング</h2>
-    <p class="section-subtitle">「定量」だけでなく「定性」を鍛える。自ら考え、自ら証明する力を育てます。</p>
-    <div class="thinking-define">
-      <p><strong>理系思考トレーニング</strong>とは、公式や解法の暗記でなく、<strong>「原理から理解し、自分で解法を組み立て、自力で解き切る」</strong>という3つの力を鍛える、ガリレオ独自の指導メソッドです。</p>
-    </div>
+    <div class="section-label">Our Method</div>
+    <h2 class="section-title">志望校合格まで、<br class="sp-only">3つの仕組みで伴走します</h2>
+    <p class="section-subtitle">「わかる」で終わらせない。「自力で解ける」まで。</p>
     <div class="thinking-intro">
       <h3>たくさん問題を解いているのに、なかなか結果が出ない</h3>
-      <p>その原因は、勉強量の不足とは限りません。多くの場合、理系科目に必要な<strong>3つの力</strong>のうち、どこかが欠けているだけです。</p>
+      <p>その原因は、勉強量の不足とは限りません。多くの場合、<strong>「何を・どの順番でやるか（計画）」「なぜそうなるか（理解）」「授業のない日に自力で解く練習（演習）」</strong>のどれかが欠けているだけです。</p>
       <ul class="thinking-symptoms">
         <li>青チャートは終わったのに、模試になると手が止まる</li>
         <li>解説を読めば分かるのに、次に同じ形が出ても解けない</li>
-        <li>典型問題は解けるのに、入試問題になるとつながらない</li>
+        <li>参考書は買ったけれど、何から手をつければいいか分からない</li>
       </ul>
     </div>
     <div class="thinking-cards three">
       <div class="thinking-card">
         <div class="thinking-card-num">01</div>
-        <h4>原理理解力</h4>
-        <p>公式や解法をそのまま暗記するのでなく、現象や原理、背景知識、公式の成り立ちまで理解する力。なぜその考え方が使えるのかまで理解することで、問題の形が変わっても対応できる土台をつくります。</p>
-        <p class="thinking-card-symptom">こんな人に：公式は知っているのに、使いどころが分からない</p>
+        <h4>志望校別学習計画</h4>
+        <p class="thinking-card-lead">志望校から逆算した、あなただけの計画</p>
+        <p>入試本番の日から逆算して、どの教材を・どの順番で・いつまでに進めるかを一人ひとり個別に設計します。模試の結果と学習状況から志望校との差を分析し、月ごとの目標を週ごと・日ごとの課題まで落とし込みます。計画は月1回の学習カウンセリングで見直し、進み具合に合わせて更新します。</p>
+        <p class="thinking-card-benefit"><span>だから</span>「何をやればいいか分からない」がなくなり、迷う時間ゼロで勉強そのものに集中できる。</p>
+        <p class="thinking-card-symptom">こんな人に：参考書は揃っているのに、進め方が分からない</p>
       </div>
       <div class="thinking-card">
         <div class="thinking-card-num">02</div>
-        <h4>解法設計力</h4>
-        <p>初見の問題で、何が与えられ、何を求め、どの知識が使えそうか。問題の情報を整理し、学んだ原理を組み合わせながら、自分で解答までの道筋を組み立てる力を育てます。</p>
+        <h4>理系専門の個別指導</h4>
+        <p class="thinking-card-lead">原理から理解する、完全1対1の授業</p>
+        <p>数学・物理・化学・生物・英語を、理系専門の講師が1対1・60分で指導します。公式や解法を覚えさせるのではなく、「なぜその考え方が使えるのか」を問題の根幹まで掘り下げます。あなたの答案とつまずきに合わせて進めるので、分かったつもりで通り過ぎることがありません。</p>
+        <p class="thinking-card-benefit"><span>だから</span>問題の形が変わっても対応できる。初見の入試問題でも、自分で解答への道筋を組み立てられる。</p>
         <p class="thinking-card-symptom">こんな人に：解説は分かるのに、自分では思いつかない</p>
       </div>
       <div class="thinking-card">
         <div class="thinking-card-num">03</div>
-        <h4>再現力</h4>
-        <p>「説明を聞けば分かる」状態から、「自分一人でも解ける」状態へ。学んだ内容を自分の言葉で説明し、試験本番で自力で解き切る。うまくいかなかった部分は振り返り、もう一度取り組みます。</p>
-        <p class="thinking-card-symptom">こんな人に：分かったつもりなのに、点にならない</p>
+        <h4>毎日課題・添削</h4>
+        <p class="thinking-card-lead">授業のない日も、学びを積み重ねる</p>
+        <p>毎日、教材・範囲・問題数まで具体的に課題を提示します。提出された答案は講師が確認し、丸付け時に不正解箇所へ考え方のコメントを添えて返却。その解き直しが翌日の課題につながります。分からないところはLINEで随時質問できます。</p>
+        <p class="thinking-card-benefit"><span>だから</span>授業で「わかった」ことが、自分一人でも「解ける」状態まで定着する。学習習慣が自然に身につく。</p>
+        <p class="thinking-card-symptom">こんな人に：家だと続かない／分かったつもりなのに点にならない</p>
       </div>
     </div>
     <div class="thinking-how">
-      <h3>どう鍛えるか ― 授業の「質」× 毎日課題の「量」</h3>
-      <p>3つの力は、授業だけでも、演習だけでも育ちません。ガリレオでは役割を分担して鍛えます。</p>
-      <div class="thinking-how-grid">
+      <h3>3つは、ひとつのサイクルです</h3>
+      <p>計画が「何を」、授業が「なぜ」、毎日課題が「自力で」を担います。どれか一つでは成績は変わりません。ガリレオは3つを一体で設計します。</p>
+      <div class="thinking-how-grid three">
         <div class="thinking-how-item">
-          <div class="thinking-how-head">授業（質）</div>
-          <p>なぜその公式を使うのか、なぜその考え方になるのかを、問題の根幹まで掘り下げます。<br><span>→ ①原理理解力・②解法設計力を鍛える</span></p>
+          <div class="thinking-how-head">志望校別学習計画</div>
+          <p>志望校から逆算して、今日やることを決める。<br><span>→ 「何を」</span></p>
         </div>
         <div class="thinking-how-item">
-          <div class="thinking-how-head">毎日課題（量）</div>
-          <p>授業で理解した考え方を繰り返し使い、自力で解ける状態まで定着させます。<br><span>→ ②解法設計力・③再現力を鍛える</span></p>
+          <div class="thinking-how-head">理系専門の個別指導</div>
+          <p>なぜそうなるかを、原理から理解する。<br><span>→ 「なぜ」</span></p>
+        </div>
+        <div class="thinking-how-item">
+          <div class="thinking-how-head">毎日課題・添削</div>
+          <p>授業のない日に自分で解き、添削で修正する。<br><span>→ 「自力で」</span></p>
         </div>
       </div>
       <p class="thinking-how-note">ただし、闇雲に大量の問題を解かせるわけではありません。一人ひとりの現在地・理解度・志望校・学習に使える時間を踏まえ、何を・どのくらい・どのペースで進めるのかを個別に設計します。ただ10問解くのではなく、<strong>1問から10問分の学びを得る</strong>。それがガリレオの学習設計です。</p>
     </div>
     <div class="thinking-bottom">
-      <p><strong>この3つの力がないと、旧帝大・早慶理工以上の大学に合格することは不可能</strong>だと考えてください。ガリレオでは、授業と毎日課題を一体で設計し、受験生の「考える力」そのものを鍛える<strong>理系思考トレーニング</strong>を実施しています。</p>
+      <p><strong>「わかる」で終わらせない。「自力で解ける」まで。</strong><br>この3つの仕組みで、旧帝大・早慶理工・医学部に通用する力を、毎日積み上げていきます。</p>
     </div>
-    <div class="section-link"><a href="pages/mainichi-kadai.html#science-thinking">理系思考トレーニングの詳細を見る →</a></div>
+    <div class="section-link"><a href="pages/mainichi-kadai.html">毎日課題・添削の詳細を見る →</a></div>
   </div>
 </section>
 
@@ -2080,7 +2093,7 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
     <h2 class="section-title">よくある質問</h2>
     <p class="section-subtitle">入塾前によくいただくご質問をまとめました。</p>
     <div class="faq-list">
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">理系思考トレーニングとは何ですか？<span class="faq-icon">+</span></div><div class="faq-a"><p>公式や解法の暗記でなく、「原理から理解し、自分で解法を組み立て、自力で解き切る」という3つの力（原理理解力・解法設計力・再現力）を鍛える、ガリレオ独自の指導メソッドです。授業では問題の根幹まで掘り下げて理解し（質）、毎日課題でその考え方を繰り返し使って定着させる（量）ことで、初めて見る問題にも自分の頭で立ち向かえる力を育てます。</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">ガリレオの指導は、ほかの塾と何が違いますか？<span class="faq-icon">+</span></div><div class="faq-a"><p>ガリレオは「志望校別学習計画」「理系専門の個別指導」「毎日課題・添削」の3つを一体で行います。志望校から逆算した計画で今日やることを決め、1対1の授業で原理から理解し、授業のない日も毎日の課題と添削で自力で解ける状態まで定着させます。授業だけ・管理だけではなく、「わかる」を「自力で解ける」に変えるところまで伴走するのが特徴です。</p></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">体験授業はありますか？<span class="faq-icon">+</span></div><div class="faq-a"><p>はい、60分の無料体験授業を実施しています。数学・物理・化学・生物・英語から選択可能です。お気軽にお申し込みください。</p></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">オンラインでの受講は可能ですか？<span class="faq-icon">+</span></div><div class="faq-a"><p>はい、ガリレオはオンライン完結型の指導を提供しています。全国どこからでも受講可能です。通塾の移動時間がないため、その分を学習時間に充てることができます。</p></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">いつから入塾できますか？<span class="faq-icon">+</span></div><div class="faq-a"><p>随時入塾を受け付けています。学年の途中からでも、生徒の現在の学力に合わせて個別のカリキュラムを組むため、いつからでもスタート可能です。</p></div></div>
