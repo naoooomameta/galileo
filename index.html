@@ -109,7 +109,7 @@ strong{font-weight:700}
 .btn-full{width:100%;justify-content:center}
 
 /* ===== HERO ===== */
-.hero{--hero-cream:#FCF9F1;background:linear-gradient(180deg,var(--hero-cream) 0%,var(--hero-cream) 55%,var(--green-pale) 100%);padding-top:0;position:relative;overflow:hidden}
+.hero{--hero-cream:#FCF9F1;background:linear-gradient(180deg,var(--bg) 0%,var(--green-pale) 70%,var(--green-light) 100%);padding-top:32px;position:relative;overflow:hidden}
 .hero-badges{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:0 24px;margin-top:22px}
 .hero-badge{font-size:13px;font-weight:600;padding:7px 18px;background:var(--white);border:1px solid var(--green-mist);border-radius:40px;color:var(--primary);box-shadow:0 2px 8px rgba(14,74,56,.06);transition:transform .2s}
 .hero-badge:hover{transform:translateY(-1px)}
@@ -123,16 +123,14 @@ strong{font-weight:700}
 @keyframes heroEventPulse{0%,100%{box-shadow:0 6px 20px rgba(196,154,60,.35)}50%{box-shadow:0 6px 20px rgba(196,154,60,.35),0 0 0 10px rgba(196,154,60,.14)}}
 @media(max-width:768px){.hero-event{margin-top:14px;padding:0 16px}.hero-event-btn{font-size:12.5px;padding:11px 18px;gap:8px}.hero-event-btn__badge{font-size:10.5px;padding:2px 9px}}
 @media(max-width:380px){.hero-event-btn{font-size:11.5px;padding:10px 14px;gap:6px}.hero-event-btn__badge{font-size:10px;padding:2px 8px}}
-.hero-under{display:flex;flex-direction:column;align-items:center;padding:30px 24px 52px}
+.hero-under{display:flex;flex-direction:column;align-items:center;padding:28px 24px 48px}
 .hero h1{font-family:var(--font-serif);font-size:clamp(30px,5vw,48px);font-weight:700;line-height:1.4;margin-bottom:12px;letter-spacing:.02em}
 .hero h1 em{font-style:normal;color:var(--amber);background:linear-gradient(transparent 60%,rgba(196,154,60,.12) 60%);padding:0 2px}
 .hero-sub{font-size:16px;font-weight:600;color:var(--primary);margin-bottom:16px;letter-spacing:.05em}
 .hero-desc{font-size:16px;color:var(--text-light);line-height:2.1;margin-bottom:32px}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-.hero-actions .btn{font-size:17px;padding:17px 38px}
-.hero-actions .btn-primary{box-shadow:0 10px 30px rgba(196,154,60,.4)}
-.hero-visual{width:100%;background:var(--hero-cream)}
-.hero-img{width:100%;max-width:1920px;margin:0 auto;overflow:hidden;background:var(--hero-cream)}
+.hero-visual{width:100%;padding:0 24px}
+.hero-img{width:100%;max-width:1200px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 12px 40px rgba(14,74,56,.14);background:var(--hero-cream)}
 .hero-img img{width:100%;height:auto;display:block;aspect-ratio:1672/941}
 .hero-img-placeholder{width:100%;height:100%;background:linear-gradient(135deg,var(--primary-light),var(--primary-dark));display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-size:14px}
 
@@ -870,8 +868,10 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
   /* Hero */
   .hero-badges{gap:6px;padding:0 16px;margin-top:16px}
   .hero-badge{font-size:12px;padding:5px 12px}
+  .hero{padding-top:20px}
+  .hero-visual{padding:0 16px}
+  .hero-img{border-radius:12px;box-shadow:0 8px 24px rgba(14,74,56,.12)}
   .hero-under{padding:22px 16px 34px;text-align:center}
-  .hero-actions .btn{font-size:15px;padding:15px 28px}
   .hero h1{font-size:28px;line-height:1.45}
   .hero-sub{font-size:14px;margin-bottom:12px}
   .hero-desc{font-size:14px;line-height:2;margin-bottom:20px}
