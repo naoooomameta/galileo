@@ -226,6 +226,9 @@ strong{font-weight:700}
 .thinking-symptoms li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
 .thinking-cards.three{grid-template-columns:repeat(3,1fr)}
 .thinking-card-num{font-family:var(--font-serif);font-size:26px;font-weight:700;color:var(--gold);margin-bottom:6px;line-height:1}
+.thinking-card-img{margin:0 0 14px;border-radius:10px;overflow:hidden;border:1px solid var(--green-mist);background:var(--white);cursor:zoom-in}
+.thinking-card-img img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;display:block}
+.thinking-card-img figcaption{font-size:11.5px;color:var(--text-muted);text-align:center;padding:6px 8px;background:var(--green-pale)}
 .thinking-card-lead{font-size:14.5px!important;font-weight:700;color:var(--primary)!important;margin-bottom:10px;line-height:1.7!important}
 .thinking-card-benefit{margin-top:12px;background:var(--green-pale);border-radius:8px;padding:10px 14px;font-size:13.5px!important;color:var(--primary-dark)!important;line-height:1.8!important}
 .thinking-card-benefit span{display:inline-block;background:var(--gold);color:#fff;font-size:11px;font-weight:700;padding:1px 8px;border-radius:10px;margin-right:6px;vertical-align:middle}
@@ -1598,6 +1601,7 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
       <div class="thinking-card">
         <div class="thinking-card-num">01</div>
         <h4>志望校別学習計画</h4>
+        <figure class="thinking-card-img"><picture><source type="image/webp" srcset="img/plan-strategy.webp"><img src="img/plan-strategy.jpg" alt="個別合格ロードマップのサンプル" loading="lazy" width="1600" height="1200"></picture><figcaption>個別合格ロードマップ（サンプル）</figcaption></figure>
         <p class="thinking-card-lead">志望校から逆算した、あなただけの計画</p>
         <p>入試本番の日から逆算して、どの教材を・どの順番で・いつまでに進めるかを一人ひとり個別に設計します。模試の結果と学習状況から志望校との差を分析し、月ごとの目標を週ごと・日ごとの課題まで落とし込みます。計画は月1回の学習カウンセリングで見直し、進み具合に合わせて更新します。</p>
         <p class="thinking-card-benefit"><span>だから</span>「何をやればいいか分からない」がなくなり、迷う時間ゼロで勉強そのものに集中できる。</p>
@@ -1606,6 +1610,7 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
       <div class="thinking-card">
         <div class="thinking-card-num">02</div>
         <h4>理系専門の個別指導</h4>
+        <figure class="thinking-card-img"><img src="img/lesson/board-02-saidai-saisho-800.webp" alt="数学II「図形と方程式」の授業板書" loading="lazy" width="800" height="520"><figcaption>実際の授業の板書</figcaption></figure>
         <p class="thinking-card-lead">原理から理解する、完全1対1の授業</p>
         <p>数学・物理・化学・生物・英語を、理系専門の講師が1対1・60分で指導します。公式や解法を覚えさせるのではなく、「なぜその考え方が使えるのか」を問題の根幹まで掘り下げます。あなたの答案とつまずきに合わせて進めるので、分かったつもりで通り過ぎることがありません。</p>
         <p class="thinking-card-benefit"><span>だから</span>問題の形が変わっても対応できる。初見の入試問題でも、自分で解答への道筋を組み立てられる。</p>
@@ -1614,6 +1619,7 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
       <div class="thinking-card">
         <div class="thinking-card-num">03</div>
         <h4>毎日課題・添削</h4>
+        <figure class="thinking-card-img"><img src="img/feedback-notebook.jpg" alt="毎日課題の答案に講師が考え方のコメントを添えた例" loading="lazy" width="1200" height="900"><figcaption>添削・フィードバックの例</figcaption></figure>
         <p class="thinking-card-lead">授業のない日も、学びを積み重ねる</p>
         <p>毎日、教材・範囲・問題数まで具体的に課題を提示します。提出された答案は講師が確認し、丸付け時に不正解箇所へ考え方のコメントを添えて返却。その解き直しが翌日の課題につながります。分からないところはLINEで随時質問できます。</p>
         <p class="thinking-card-benefit"><span>だから</span>授業で「わかった」ことが、自分一人でも「解ける」状態まで定着する。学習習慣が自然に身につく。</p>
@@ -1825,8 +1831,8 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
     <p class="section-subtitle">ガリレオの日常風景をご覧ください。</p>
     <div class="gallery-grid">
       <div class="gallery-item"><img src="img/gallery-3-dialogue.jpg" alt="講師との対話型授業" loading="lazy" width="1200" height="900"><span class="gallery-cap">講師との対話型授業</span></div>
-      <div class="gallery-item"><img src="img/gallery-1-roadmap.jpg" alt="一人ひとりの合格ロードマップ" loading="lazy" width="1200" height="900"><span class="gallery-cap">合格ロードマップ</span></div>
-      <div class="gallery-item"><img src="img/gallery-2-suii.jpg" alt="合格ラインへの到達度のイメージ" loading="lazy" width="1200" height="900"><span class="gallery-cap">合格ラインへの到達度</span></div>
+      <div class="gallery-item"><picture><source type="image/webp" srcset="img/plan-strategy.webp"><img src="img/plan-strategy.jpg" alt="個別合格ロードマップ（基本情報・志望校の入試情報・現在の学力と目標偏差値・優先課題・マイルストーン）" loading="lazy" width="1600" height="1200"></picture><span class="gallery-cap">個別合格ロードマップ</span></div>
+      <div class="gallery-item"><picture><source type="image/webp" srcset="img/plan-timeline.webp"><img src="img/plan-timeline.jpg" alt="年間タイムライン（教材ごとの進行計画・模試と節目・計画変更履歴）" loading="lazy" width="1600" height="1200"></picture><span class="gallery-cap">年間タイムライン</span></div>
       <div class="gallery-item"><img src="img/gallery-4-feedback.jpg" alt="学習ポイントのフィードバック" loading="lazy" width="1200" height="900"><span class="gallery-cap">学習ポイントのフィードバック</span></div>
       <div class="gallery-item"><img src="img/gallery-5-kadai.jpg" alt="毎日課題の配信" loading="lazy" width="1200" height="900"><span class="gallery-cap">毎日課題の配信</span></div>
       <div class="gallery-item"><img src="img/gallery-6-voices.jpg" alt="2025年度 合格者 保護者様の声（手書きアンケート）" loading="lazy" width="1200" height="900"></div>
@@ -2818,13 +2824,13 @@ function loadAllSlots() {
   var lbImg = document.getElementById('lightboxImg');
   var lbCap = document.getElementById('lightboxCap');
   if (!lb) return;
-  document.querySelectorAll('.gallery-item').forEach(function(item){
+  document.querySelectorAll('.gallery-item, .thinking-card-img').forEach(function(item){
     var img = item.querySelector('img');
     if (!img) return;
     item.addEventListener('click', function(){
       lbImg.src = img.src;
       lbImg.alt = img.alt;
-      var cap = item.querySelector('.gallery-cap');
+      var cap = item.querySelector('.gallery-cap, figcaption');
       lbCap.textContent = cap ? cap.textContent : '';
       lb.classList.add('open');
       document.body.style.overflow = 'hidden';
