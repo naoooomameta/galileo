@@ -1250,6 +1250,16 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
 .gcourse__subj-label{font-size:11px;font-weight:700;color:var(--white);background:var(--primary);padding:2px 9px;border-radius:20px;letter-spacing:.03em}
 .gcourse__subj-main{font-size:13.5px;font-weight:800;color:var(--primary-dark)}
 .gcourse__subj-opt{font-size:11.5px;color:var(--text-light);line-height:1.6;width:100%}
+.gcourse3{display:grid;grid-template-columns:260px 1fr;gap:0;max-width:880px;margin:0 auto 32px;background:var(--white);border:1px solid var(--green-mist);border-left:4px solid var(--amber);border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(14,74,56,.07);transition:transform .25s,box-shadow .25s;color:inherit}
+.gcourse3:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(14,74,56,.12);color:inherit}
+.gcourse3__head{background:linear-gradient(135deg,var(--green-pale),rgba(14,74,56,.08));padding:22px 22px;display:flex;flex-direction:column;gap:8px;justify-content:center}
+.gcourse3__head .gcourse__name{font-size:20px}
+.gcourse3__target{font-size:12.5px;font-weight:700;color:var(--amber)}
+.gcourse3__body{padding:20px 24px}
+.gcourse3__body p{font-size:14px;color:var(--text-light);line-height:1.9}
+.gcourse3__note{font-size:12.5px!important;color:var(--text-muted)!important;margin-top:8px}
+.gcourse3__cta{display:inline-block;margin-top:12px;font-size:14px;font-weight:700;color:var(--primary)}
+@media(max-width:768px){.gcourse3{grid-template-columns:1fr}.gcourse3__head{padding:18px}.gcourse3__body{padding:16px 18px}}
 .gcourses-note{text-align:center;font-size:14px;color:var(--text-light);line-height:1.9;margin-top:28px}
 .gcourses-rules{max-width:880px;margin:22px auto 0;background:var(--white);border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:12px;padding:18px 22px}
 .gcourses-rules li{font-size:12.5px;color:var(--text-light);line-height:1.9;padding-left:16px;position:relative}
@@ -1692,7 +1702,7 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
   <div class="container">
     <div class="section-label">Courses &amp; Pricing</div>
     <h2 class="section-title">コース紹介・料金</h2>
-    <p class="section-subtitle courses-subtitle">学力段階に合わせた<strong>2つの指導コース</strong>をご用意しています。<br>どちらのコースにも、毎日課題（日々の課題）・添削・質問対応・学習管理が含まれています。</p>
+    <p class="section-subtitle courses-subtitle">学力段階に合わせた<strong>2つの指導コース</strong>と、併塾中の方向けの<strong>学習管理特化コース</strong>をご用意しています。<br>どのコースにも、毎日課題（日々の課題）・添削・質問対応・学習管理が含まれています。</p>
 
     <!-- ===== 2つの指導コース（費用は無料相談でご案内・金額表記なし） ===== -->
     <div class="gcourses">
@@ -1747,9 +1757,23 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
       </div>
       <p class="gcourses-guide">※偏差値は目安です。学力診断・学習状況・志望校を踏まえて最適なコースをご提案します。</p>
 
+      <!-- 合格戦略サポート（併塾中の方向け） -->
+      <a href="pages/gokaku-senryaku-support.html" class="gcourse3">
+        <div class="gcourse3__head">
+          <span class="gcourse__badge">COURSE 03 ／ SUPPORT</span>
+          <div class="gcourse__name">合格戦略サポート</div>
+          <span class="gcourse3__target">塾・予備校に通いながら利用する方向け</span>
+        </div>
+        <div class="gcourse3__body">
+          <p>今の塾はそのままに、授業のない時間を「毎日の課題」で埋める。通塾していない科目や、日々の学習管理が足りない科目を、毎日課題・添削・学習計画の管理で支える学習管理特化のコースです。</p>
+          <p class="gcourse3__note">※ オンライン個別指導（授業）は含まれません。標準2科目、追加オプションで最大4科目。</p>
+          <span class="gcourse3__cta">コースの詳細を見る →</span>
+        </div>
+      </a>
+
       <!-- 両コース共通 -->
       <div class="gcourses-common">
-        <span class="gcourses-common__label">両コース共通のサポート</span>
+        <span class="gcourses-common__label">COURSE 01・02 共通のサポート</span>
         <div class="gcourses-common__items">
           <span>オンライン個別指導 60分／回</span>
           <span>毎日課題（日々の課題）・学習進捗の確認</span>
@@ -1783,12 +1807,12 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
       </div>
 
       <ul class="gcourses-rules">
-        <li>オンライン個別指導の授業回数は、週1回・週2回から選択できます。</li>
+        <li>オンライン個別指導の授業回数は、週1回・週2回から選択できます（COURSE 01・02）。COURSE 03 合格戦略サポートには授業は含まれません。</li>
         <li>担当科目は入塾面談時に確定します。科目の追加・変更・解除は翌月からの適用となります（月途中の変更はできません）。</li>
         <li>毎日課題（日々の課題）は、丸付け時に不正解箇所へ「考え方」のコメントを添えて返却します。</li>
         <li>受講料および科目追加オプションの費用は、無料相談・入塾面談にてご案内します。</li>
       </ul>
-      <p class="gcourses-note">どちらのコースが最適かは、お子様の状況をお伺いした上で無料相談にてご提案します。</p>
+      <p class="gcourses-note">どのコースが最適かは、お子様の状況をお伺いした上で無料相談にてご提案します。</p>
       <div class="gcourses-cta"><a href="#contact" class="btn btn-primary">無料相談で最適なコースを聞く →</a></div>
     </div>
 
@@ -2266,7 +2290,7 @@ if (/^\d+$/.test(GALILEO_META_PIXEL_ID)) {
       <p>Galileo Sciences — 理系の大学受験専門塾</p>
     </div>
     <div class="footer-links">
-      <ul><li><a href="#features">塾の特長</a></li><li><a href="#courses">コース・料金</a></li><li><a href="pages/kisoryoku-kansei.html">基礎力完成コース</a></li><li><a href="pages/shibokou-jissen.html">志望校実戦コース</a></li></ul>
+      <ul><li><a href="#features">塾の特長</a></li><li><a href="#courses">コース・料金</a></li><li><a href="pages/kisoryoku-kansei.html">基礎力完成コース</a></li><li><a href="pages/shibokou-jissen.html">志望校実戦コース</a></li><li><a href="pages/gokaku-senryaku-support.html">合格戦略サポート</a></li></ul>
       <ul><li><a href="pages/mainichi-kadai.html">毎日課題システム</a></li><li><a href="pages/mainichi-kadai.html">毎日課題の仕組み</a></li><li><a href="#gallery">授業の様子</a></li><li><a href="#staff">講師紹介</a></li><li><a href="pages/voices.html">合格者の声</a></li></ul>
       <ul><li><a href="#results">合格実績</a></li><li><a href="#flow">入塾の流れ</a></li><li><a href="#faq">FAQ</a></li><li><a href="pages/news.html">お知らせ</a></li><li><a href="pages/muryo-shindan.html">無料合格診断</a></li><li><a href="pages/online-katei-kyoshi.html">オンライン家庭教師をお探しの方へ</a></li><li><a href="pages/kanri-juku-hikaku.html">管理型・コーチング塾との違い</a></li><li><a href="https://www.instagram.com/galileo_sciences/" target="_blank">Instagram</a></li><li><a href="https://x.com/galileosciences" target="_blank">X（旧Twitter）</a></li><li><a href="#about">塾概要</a></li><li><a href="pages/ceo-message.html">塾長メッセージ</a></li><li><a href="#contact">お問い合わせ</a></li><li><a href="pages/legal.html">特定商取引法に基づく表記・個人情報の取り扱い</a></li></ul>
     </div>
