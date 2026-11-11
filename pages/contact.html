@@ -199,15 +199,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="field-error">お名前（姓・名）をご入力ください</p>
         </div>
 
-        <div class="form-group" id="fgKana">
-          <label for="inqKana1">お名前（ふりがな） <span class="req">必須</span></label>
-          <div class="inq-name">
-            <input type="text" id="inqKana1" placeholder="せい">
-            <input type="text" id="inqKana2" placeholder="めい">
-          </div>
-          <p class="field-error">ふりがな（せい・めい）をご入力ください</p>
-        </div>
-
         <div class="form-group" id="fgTel">
           <label for="inqTel">お電話番号 <span class="req">必須</span></label>
           <input type="tel" id="inqTel" placeholder="09012345678" autocomplete="tel">
@@ -305,7 +296,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     check('fgType', !type);
     check('fgGrade', !val('inqGrade'));
     check('fgName', !val('inqName1') || !val('inqName2'));
-    check('fgKana', !val('inqKana1') || !val('inqKana2'));
     check('fgTel', !/^0\d{9,10}$/.test(tel));
     var emailBad = email ? !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) : kindDoc.checked;
     check('fgEmail', emailBad);
@@ -324,14 +314,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     btn.textContent = '送信中...';
 
     var name = val('inqName1') + ' ' + val('inqName2');
-    var kana = val('inqKana1') + ' ' + val('inqKana2');
     var subjects = checkedValues('subjects').join('、');
     var time = val('inqTime');
     // 既存の受付（action=contact）に「お問い合わせページ」由来として送る。
     // 管理者通知メールに全項目が載るよう、本文にもまとめて記載する。
     var message = [
       '【お問い合わせ内容】' + kinds.join('／'),
-      '【ふりがな】' + kana,
       '【気になる科目】' + (subjects || '未選択'),
       '【連絡がつきやすい時間帯】' + (time || '指定なし'),
       '【ご質問・ご要望】',
@@ -343,7 +331,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       source: 'galileo-inquiry',
       contactType: type,
       name: name,
-      kana: kana,
       email: email,
       tel: tel,
       grade: val('inqGrade'),
