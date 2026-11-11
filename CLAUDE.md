@@ -114,6 +114,13 @@
 
 ※ 旧コースページ（daigaku-juken-junbi.html / goukaku-senryaku.html）は新ページへのリダイレクトとして残置。goukaku-senryaku-support.html は gokaku-senryaku-support.html へのリダイレクト
 
+### 4-2. contact.html（お問い合わせ）／ contact-thanks.html（送信完了）
+- 無料学習相談の予約（トップ #contact の予約カレンダー）は別導線として残す。お問い合わせは「予約前に質問したい人」向け
+- お問い合わせ内容（複数選択・必須）: 受講料／資料をメールで受け取りたい／どのコースが合うか／お試しコース／併塾中で合格戦略サポート／無料学習相談を予約したい／その他
+- 必須: 内容・どちらから・学年・お名前・ふりがな・電話番号。メールは任意（「資料をメールで受け取りたい」選択時のみ必須）。紙のパンフレット・住所欄はなし
+- 送信先は既存GAS（action=contact, source=galileo-inquiry）。専用の通知・自動返信は docs/booking_calendar_gas.gs
+- 送信後は contact-thanks.html（noindex）へ遷移し、dataLayer に inquiry_submit を送出（Google広告のコンバージョンはこのページ到達で計測）
+
 ### 5. voices.html（合格者の声 一覧）
 - 全合格体験談の詳細版
 - 合格ラインへの到達度の推移

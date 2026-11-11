@@ -4,6 +4,7 @@
  * 【機能】
  * - GET:  Googleカレンダーの空き枠一覧を返す
  * - POST action=contact: 問い合わせ受付（スプレッドシート記録＋通知メール＋自動返信メール）
+ *     source=galileo-inquiry のときは「お問い合わせページ」(pages/contact.html) からの送信として、専用の通知・自動返信を使う
  * - POST action=booking: 予約確定（カレンダー登録＋確認メール＋スプレッドシート記録）
  * - POST action=shindan: 無料合格診断の回答記録（診断用スプレッドシートに記録＋通知メール）
  * - POST action=shindanLead: 診断後サンクスページの連絡先登録（診断用スプレッドシートの別タブに記録＋通知メール＋自動返信メール）
@@ -43,7 +44,12 @@ function doGet(e) {
 function doPost(e) {
   try {
     var params = e.parameter;
-    if (params.action === 'contact') {
+    if (params.action === 'contact' && params.source === 'galileo-inquiry') {
+      // お問い合わせページ（受講料・資料請求など）からの送信
+      saveContactToSheet(params);
+      sendInquiryNotification(params);
+      sendInquiryThankYou(params);
+    } else if (params.action === 'contact') {
       saveContactToSheet(params);
       sendContactNotification(params);
       sendThankYouToUser(params);
@@ -166,7 +172,7 @@ function saveContactToSheet(params) {
   if (!sheet) return;
   sheet.appendRow([
     new Date(),
-    'お問い合わせ',
+    params.source === 'galileo-inquiry' ? 'お問い合わせ（フォーム）' : 'お問い合わせ',
     params.source || 'galileo',
     params.name || '',
     params.email || '',
@@ -447,6 +453,66 @@ function sendContactNotification(params) {
     '送信日時: ' + new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })
   ].join('\n');
   MailApp.sendEmail(NOTIFY_EMAIL, subject, body);
+}
+
+// ===== お問い合わせページ: 管理者への通知メール =====
+function sendInquiryNotification(params) {
+  if (!NOTIFY_EMAIL) return;
+  var wantsDoc = params.wantsDoc === '1';
+  var subject = '【' + BRAND_NAME + '】' + (wantsDoc ? '【資料送付あり】' : '') + 'お問い合わせフォーム - ' + (params.name || '名前未入力');
+  var body = [
+    '===========================',
+    BRAND_NAME + ' お問い合わせフォーム（pages/contact.html）',
+    '===========================',
+    '',
+    '■ お問い合わせ内容: ' + (params.kinds || ''),
+    wantsDoc ? '　→ 資料のメール送付をご希望です。送付先: ' + (params.email || '（メール未入力）') : '',
+    '',
+    '■ お問い合わせ者: ' + (params.contactType || ''),
+    '■ お名前: ' + (params.name || '') + '（' + (params.kana || '') + '）',
+    '■ 電話番号: ' + (params.tel || ''),
+    '■ メールアドレス: ' + (params.email || '（未入力）'),
+    '■ 学年: ' + (params.grade || ''),
+    '■ 志望大学: ' + (params.univ || ''),
+    '■ 気になる科目: ' + (params.subjects || ''),
+    '■ 連絡がつきやすい時間帯: ' + (params.contactTime || '指定なし'),
+    '',
+    '■ 送信内容（全文）:',
+    (params.message || ''),
+    '',
+    '---',
+    '送信日時: ' + new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })
+  ].join('\n');
+  MailApp.sendEmail(NOTIFY_EMAIL, subject, body);
+}
+
+// ===== お問い合わせページ: 問い合わせ者への自動返信メール =====
+function sendInquiryThankYou(params) {
+  if (!params.email) return;
+  var userName = params.name || 'お客様';
+  var wantsDoc = params.wantsDoc === '1';
+  var subject = '【' + BRAND_NAME + '】お問い合わせありがとうございます';
+  var body = [
+    userName + ' 様',
+    '',
+    'この度は、理系の大学受験専門塾 ガリレオへお問い合わせいただき、誠にありがとうございます。',
+    '以下の内容で受け付けました。担当者より、お電話またはメールにてご連絡いたします。',
+    '',
+    '■ お問い合わせ内容: ' + (params.kinds || ''),
+    wantsDoc ? '　資料は、このメールアドレス宛てに担当者より改めてお送りします。' : '',
+    '',
+    '--------------------------------------',
+    '無料学習相談の日時をすぐに決めたい方は、公式サイトの予約カレンダーからお申し込みいただけます。',
+    '⇒ ' + SITE_URL + '#contact',
+    '--------------------------------------',
+    '',
+    '※このメールは自動でお送りしています。ご不明な点は、このメールにご返信ください。',
+    '※お心当たりのない場合は、お手数ですがこのメールを破棄してください。',
+    '',
+    BRAND_NAME + '（Galileo Sciences）',
+    SITE_URL
+  ].join('\n');
+  MailApp.sendEmail(params.email, subject, body);
 }
 
 // ===== 問い合わせ者への自動返信メール（サンクスメール） =====
