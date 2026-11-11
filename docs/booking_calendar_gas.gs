@@ -469,7 +469,7 @@ function sendInquiryNotification(params) {
     wantsDoc ? '　→ 資料のメール送付をご希望です。送付先: ' + (params.email || '（メール未入力）') : '',
     '',
     '■ お問い合わせ者: ' + (params.contactType || ''),
-    '■ お名前: ' + (params.name || '') + '（' + (params.kana || '') + '）',
+    '■ お名前: ' + (params.name || '') + (params.kana ? '（' + params.kana + '）' : ''),
     '■ 電話番号: ' + (params.tel || ''),
     '■ メールアドレス: ' + (params.email || '（未入力）'),
     '■ 学年: ' + (params.grade || ''),
