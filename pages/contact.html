@@ -48,12 +48,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .contact-form fieldset{border:none;margin:0 0 22px;padding:0}
 .inq-sec{font-size:16px;font-weight:700;color:var(--primary-dark);padding:10px 0;margin:28px 0 16px;border-bottom:2px solid var(--green-pale)}
 .inq-kinds{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.inq-kinds label,.inq-subjects label{display:flex;align-items:center;gap:10px;margin:0;padding:12px 14px;border:1.5px solid var(--border);border-left:3px solid var(--border);border-radius:10px;background:var(--bg);font-size:14px;font-weight:600;color:var(--text);cursor:pointer;line-height:1.5;transition:border-color .2s,background .2s}
-.inq-kinds label:hover,.inq-subjects label:hover{border-color:var(--primary);border-left-color:var(--primary)}
-.inq-kinds input,.inq-subjects input{width:18px!important;height:18px;flex:none;accent-color:var(--primary);margin:0;padding:0!important}
-.inq-kinds label:has(input:checked),.inq-subjects label:has(input:checked){background:rgba(14,74,56,.06);border-color:var(--primary);border-left-color:var(--gold);color:var(--primary)}
-.inq-subjects{display:flex;flex-wrap:wrap;gap:8px}
-.inq-subjects label{padding:9px 14px}
+.inq-kinds label{display:flex;align-items:center;gap:10px;margin:0;padding:12px 14px;border:1.5px solid var(--border);border-left:3px solid var(--border);border-radius:10px;background:var(--bg);font-size:14px;font-weight:600;color:var(--text);cursor:pointer;line-height:1.5;transition:border-color .2s,background .2s}
+.inq-kinds label:hover{border-color:var(--primary);border-left-color:var(--primary)}
+.inq-kinds input{width:18px!important;height:18px;flex:none;accent-color:var(--primary);margin:0;padding:0!important}
+.inq-kinds label:has(input:checked){background:rgba(14,74,56,.06);border-color:var(--primary);border-left-color:var(--gold);color:var(--primary)}
 .inq-booking-note{display:none;margin-top:12px;background:#FFF8E8;border:1px solid #EBD9A8;border-radius:10px;padding:12px 16px;font-size:13.5px;line-height:1.8;color:var(--text)}
 .inq-booking-note.show{display:block}
 .inq-booking-note a{font-weight:700;color:var(--primary);border-bottom:2px solid var(--gold)}
@@ -219,14 +217,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <div class="form-group">
-          <label>気になる科目 <span class="opt">任意</span></label>
-          <div class="inq-subjects">
-            <label><input type="checkbox" name="subjects" value="数学">数学</label>
-            <label><input type="checkbox" name="subjects" value="物理">物理</label>
-            <label><input type="checkbox" name="subjects" value="化学">化学</label>
-            <label><input type="checkbox" name="subjects" value="生物">生物</label>
-            <label><input type="checkbox" name="subjects" value="英語">英語</label>
-          </div>
+          <label for="inqSubject">気になる科目 <span class="opt">任意</span></label>
+          <select id="inqSubject">
+            <option value="">選択してください</option>
+            <optgroup label="理系科目">
+              <option>数学</option>
+              <option>物理</option>
+              <option>化学</option>
+              <option>生物</option>
+            </optgroup>
+            <optgroup label="共通科目">
+              <option>英語</option>
+              <option>情報</option>
+            </optgroup>
+            <optgroup label="文系科目">
+              <option>現代文</option>
+              <option>古文</option>
+              <option>漢文</option>
+              <option>日本史</option>
+              <option>世界史</option>
+              <option>地理</option>
+              <option>公共・政治経済</option>
+              <option>倫理</option>
+            </optgroup>
+            <optgroup label="その他">
+              <option>複数科目</option>
+              <option>まだ決まっていない</option>
+            </optgroup>
+          </select>
+          <p class="form-note">複数ある場合は「複数科目」を選び、ご質問欄に科目名をご記入ください。</p>
         </div>
 
         <div class="form-group">
@@ -314,7 +333,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     btn.textContent = '送信中...';
 
     var name = val('inqName1') + ' ' + val('inqName2');
-    var subjects = checkedValues('subjects').join('、');
+    var subjects = val('inqSubject');
     var time = val('inqTime');
     // 既存の受付（action=contact）に「お問い合わせページ」由来として送る。
     // 管理者通知メールに全項目が載るよう、本文にもまとめて記載する。
