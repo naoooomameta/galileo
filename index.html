@@ -1457,6 +1457,7 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
 .hc-track{display:flex;gap:var(--hc-gap);will-change:transform;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
 .hc-track.no-anim{transition:none}
 .hc-slide{flex:0 0 var(--hc-w);aspect-ratio:3.5/1;overflow:hidden;background:var(--green-pale);cursor:pointer;border:none;padding:0;display:block}
+.hc-slide.is-current{cursor:default}
 .hc-slide picture,.hc-slide img{display:block;width:100%;height:100%}
 .hc-slide img{object-fit:cover}
 .hc-dots{display:flex;justify-content:center;gap:6px;padding:14px 0 0}
@@ -1595,9 +1596,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-visual">
     <div class="hero-carousel" id="heroCarousel" role="region" aria-roledescription="カルーセル" aria-label="ガリレオのご案内">
       <div class="hc-track">
-        <a class="hc-slide" href="#courses" data-i="0"><picture><source type="image/webp" srcset="img/hero-banner2-a.webp"><img src="img/hero-banner2-a.jpg" fetchpriority="high" alt="理系の合格を、最短距離で。難関国立・医学部志望者のための、計画・管理・個別指導で、志望校合格へ。" width="1242" height="363" decoding="async"></picture></a>
-        <a class="hc-slide" href="pages/mainichi-kadai.html" data-i="1"><picture><source type="image/webp" srcset="img/hero-banner2-b.webp"><img src="img/hero-banner2-b.jpg" alt="理系の“わかる”を“できる”に変える。理系専門の個別指導と毎日課題・添削で、理解→演習→定着まで、確かな実力を伸ばす。" width="1240" height="358" decoding="async"></picture></a>
-        <a class="hc-slide" href="#contact" data-i="2"><picture><source type="image/webp" srcset="img/hero-banner2-c.webp"><img src="img/hero-banner2-c.jpg" alt="好きな理系で、もっと遠くへ。理系の学びを出発点に、志望校合格まで一人ひとりに伴走します。" width="1242" height="336" decoding="async"></picture></a>
+        <div class="hc-slide" data-i="0"><picture><source type="image/webp" srcset="img/hero-banner2-a.webp"><img src="img/hero-banner2-a.jpg" fetchpriority="high" alt="理系の合格を、最短距離で。難関国立・医学部志望者のための、計画・管理・個別指導で、志望校合格へ。" width="1242" height="363" decoding="async"></picture></div>
+        <div class="hc-slide" data-i="1"><picture><source type="image/webp" srcset="img/hero-banner2-b.webp"><img src="img/hero-banner2-b.jpg" alt="理系の“わかる”を“できる”に変える。理系専門の個別指導と毎日課題・添削で、理解→演習→定着まで、確かな実力を伸ばす。" width="1240" height="358" decoding="async"></picture></div>
+        <div class="hc-slide" data-i="2"><picture><source type="image/webp" srcset="img/hero-banner2-c.webp"><img src="img/hero-banner2-c.jpg" alt="好きな理系で、もっと遠くへ。理系の学びを出発点に、志望校合格まで一人ひとりに伴走します。" width="1242" height="336" decoding="async"></picture></div>
       </div>
       <div class="hc-dots">
         <button type="button" class="hc-dot is-active" aria-label="スライド1を表示" aria-current="true"></button>
@@ -3116,6 +3117,7 @@ function loadAllSlots() {
     var x=(root.clientWidth-el.offsetWidth)/2-el.offsetLeft;
     track.style.transform='translate3d('+x+'px,0,0)';
     if(!anim){ void track.offsetWidth; track.classList.remove('no-anim'); }
+    all.forEach(function(s,q){ s.classList.toggle('is-current',q===pos); });
     var r=((pos-CL)%n+n)%n;
     dots.forEach(function(d,q){ d.classList.toggle('is-active',q===r); if(q===r) d.setAttribute('aria-current','true'); else d.removeAttribute('aria-current'); });
   }
