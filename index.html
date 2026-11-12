@@ -1325,6 +1325,102 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
   .lesson-card{padding:24px 20px}
   .lessons-bridge{padding:26px 20px}
 }
+/* ===== HERO SLIDER（FV＋訴求スライド）/ HERO CTA ===== */
+.hero-slider{position:relative;container-type:inline-size;aspect-ratio:1672/941}
+.hs-track{position:absolute;inset:0}
+.hs-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .7s ease,visibility 0s linear .7s}
+.hs-slide.is-active{opacity:1;visibility:visible;transition:opacity .7s ease,visibility 0s}
+.hs-slide>picture,.hs-slide>picture img{display:block;width:100%;height:100%}
+.hs-promo{display:grid;grid-template-columns:54fr 38fr;grid-template-rows:auto auto;align-content:center;column-gap:3vw;row-gap:2.6vw;padding:3vw 5.5vw 5vw;column-gap:3cqw;row-gap:2.6cqw;padding:2.5cqw 5.5cqw 5cqw;background:radial-gradient(120% 90% at 100% 0%,var(--green-pale) 0%,rgba(237,245,240,0) 60%),var(--hero-cream);color:var(--text)}
+.hs-promo::before{content:"";position:absolute;left:0;top:0;bottom:0;width:.6cqw;background:linear-gradient(180deg,var(--primary),var(--gold))}
+.hs-photo{position:relative;align-self:center;aspect-ratio:2.4/1;clip-path:polygon(6% 0,100% 0,94% 100%,0 100%);background:var(--green-light)}
+.hs-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,74,56,.10),rgba(14,74,56,0) 40%)}
+.hs-photo picture{display:block;width:100%;height:100%}
+.hero-slider .hs-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;aspect-ratio:auto}
+.hs-copy{align-self:center;min-width:0}
+.hs-tag{display:inline-block;background:var(--primary);color:var(--white);font-weight:700;font-size:1.25vw;font-size:1.25cqw;letter-spacing:.08em;padding:.5em 1.4em;clip-path:polygon(.7em 0,100% 0,calc(100% - .7em) 100%,0 100%);margin-bottom:1.1em}
+.hs-title{font-family:var(--font-serif);font-weight:700;color:var(--primary-dark);font-size:3.1vw;font-size:3.1cqw;line-height:1.42;letter-spacing:.02em;margin-bottom:.5em}
+.hs-title em{font-style:normal;background:linear-gradient(transparent 62%,rgba(196,154,60,.38) 62%)}
+.hs-lead{font-size:1.4vw;font-size:1.4cqw;line-height:1.9;color:var(--text-light);font-weight:500}
+.hs-more{display:inline-block;margin-top:1.1em;font-size:1.3vw;font-size:1.3cqw;font-weight:700;color:var(--primary);border-bottom:2px solid var(--gold);padding-bottom:.15em}
+.hs-more:hover{color:var(--gold)}
+.hs-points{grid-column:1/-1;list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:1.6cqw;margin:0;padding:0}
+.hs-points li{display:flex;align-items:center;gap:1.2cqw;background:var(--white);border:1px solid var(--green-mist);border-left:.4cqw solid var(--primary);border-radius:.8cqw;padding:2cqw 1.8cqw;font-size:1.55vw;font-size:1.55cqw;font-weight:700;line-height:1.5;color:var(--primary-dark)}
+.hs-points svg{flex:0 0 auto;width:3cqw;height:3cqw;stroke:var(--primary);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.hs-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:40px;height:40px;border-radius:50%;border:1px solid var(--green-mist);background:rgba(255,255,255,.92);color:var(--primary);font-size:18px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(14,74,56,.14);transition:background .2s,color .2s}
+.hs-arrow:hover{background:var(--primary);color:var(--white)}
+.hs-prev{left:10px}.hs-next{right:10px}
+.hs-dots{position:absolute;left:0;right:0;bottom:10px;z-index:3;display:flex;justify-content:center;gap:4px}
+.hs-dot{width:28px;height:28px;padding:0;border:none;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.hs-dot::before{content:"";width:9px;height:9px;border-radius:50%;background:rgba(14,74,56,.22);box-shadow:0 0 0 2px rgba(255,255,255,.8);transition:all .25s}
+.hs-dot.is-active::before{background:var(--gold);width:22px;border-radius:6px}
+.hs-arrow:focus-visible,.hs-dot:focus-visible,.hcta:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+.hero-cta{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;width:100%;max-width:1080px;margin:0 auto}
+.hcta{position:relative;display:flex;align-items:center;gap:16px;border-radius:12px;padding:18px 56px 18px 22px;text-align:left;transition:transform .2s,box-shadow .2s;min-width:0}
+.hcta:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(14,74,56,.16)}
+.hcta::after{content:"→";position:absolute;right:18px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;background:var(--primary);color:var(--white)}
+.hcta svg{flex:0 0 auto;width:38px;height:38px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.hcta-body{display:flex;flex-direction:column;min-width:0}
+.hcta-kicker{font-size:13px;font-weight:700;letter-spacing:.06em;opacity:.95}
+.hcta-title{font-size:19px;font-weight:800;line-height:1.4;letter-spacing:.02em}
+.hcta-desc{font-size:13px;line-height:1.7;margin-top:4px;font-weight:500}
+.hcta--fee,.hcta--consult{grid-column:span 3;padding-top:22px;padding-bottom:22px}
+.hcta--fee .hcta-title,.hcta--consult .hcta-title{font-size:24px}
+.hcta--fee{background:linear-gradient(135deg,var(--cta),var(--cta-light));color:var(--white);box-shadow:0 4px 16px rgba(196,154,60,.28)}
+.hcta--consult{background:var(--white);color:var(--primary);border:2px solid var(--primary)}
+.hcta--consult .hcta-desc{color:var(--text-light)}
+.hcta--doc,.hcta--trial,.hcta--results{grid-column:span 2}
+.hcta--doc .hcta-title,.hcta--trial .hcta-title,.hcta--results .hcta-title{font-size:17px}
+.hcta-title span{display:inline-block}
+.hcta--doc,.hcta--results{background:var(--primary);color:var(--white)}
+.hcta--doc::after,.hcta--results::after{background:var(--white);color:var(--primary)}
+.hcta--doc{border-radius:999px;padding-left:28px}
+.hcta--trial{background:#FBF3DF;color:var(--primary-dark);border:2px solid var(--gold)}
+.hero-under .hero-cta+.hero-badges{margin-top:22px}
+@media(max-width:1024px){
+  .hcta--fee .hcta-title,.hcta--consult .hcta-title{font-size:21px}
+  .hcta-title,.hcta--doc .hcta-title,.hcta--trial .hcta-title,.hcta--results .hcta-title{font-size:14px}
+  .hcta{padding:16px 50px 16px 16px;gap:12px}
+  .hcta svg{width:32px;height:32px}
+}
+@media(max-width:768px){
+  .hs-promo{display:block;padding:0;background:var(--primary-dark);color:var(--white)}
+  .hs-promo::before{display:none}
+  .hs-photo{position:absolute;inset:0;aspect-ratio:auto;clip-path:none}
+  .hs-photo::after{background:linear-gradient(180deg,rgba(10,50,40,.05) 20%,rgba(10,50,40,.88) 78%)}
+  .hs-copy{position:absolute;left:0;right:0;bottom:0;padding:0 5cqw 9cqw;text-align:left}
+  .hs-tag{font-size:2.9cqw;background:var(--gold);margin-bottom:.7em}
+  .hs-title{color:var(--white);font-size:5.6cqw;line-height:1.38;margin-bottom:.25em;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+  .hs-title em{background:none;color:#F1D58A}
+  .hs-title br{display:none}
+  .hs-lead{display:none}
+  .hs-more{color:var(--white);font-size:3.2cqw;margin-top:.5em}
+  .hs-points{display:none}
+  .hs-arrow{display:none}
+  .hs-dots{bottom:2px}
+  .hs-dot{width:24px;height:24px}
+  .hs-dot::before{width:7px;height:7px;background:rgba(255,255,255,.75);box-shadow:0 0 0 1px rgba(14,74,56,.35)}
+  .hs-dot.is-active::before{width:18px}
+  .hero-cta{grid-template-columns:repeat(2,1fr);gap:10px}
+  .hcta--fee,.hcta--consult{grid-column:1/-1;padding-top:16px;padding-bottom:16px}
+  .hcta--doc,.hcta--trial{grid-column:span 1}
+  .hcta--results{grid-column:1/-1}
+  .hcta--doc,.hcta--trial{padding:14px 40px 14px 14px}
+  .hcta--doc svg,.hcta--trial svg{display:none}
+  .hcta::after{right:12px;width:24px;height:24px;font-size:12px}
+  .hcta--fee .hcta-title,.hcta--consult .hcta-title{font-size:19px}
+  .hcta-title,.hcta--doc .hcta-title,.hcta--trial .hcta-title,.hcta--results .hcta-title{font-size:14px}
+  .hcta-desc{font-size:12px}
+}
+@media(max-width:480px){
+  .hcta--fee .hcta-title,.hcta--consult .hcta-title{font-size:17px}
+  .hcta-title,.hcta--doc .hcta-title,.hcta--trial .hcta-title,.hcta--results .hcta-title{font-size:13px}
+  .hcta-kicker{font-size:11px}
+  .hcta{padding-left:14px}
+  .hcta--fee svg,.hcta--consult svg{width:28px;height:28px}
+}
+@media(prefers-reduced-motion:reduce){.hs-slide,.hs-slide.is-active{transition:none}.hcta{transition:none}}
 </style>
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
@@ -1414,17 +1510,89 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ===== HERO ===== -->
 <section class="hero" id="hero">
   <div class="hero-visual">
-    <div class="hero-img">
-      <picture>
-        <source type="image/webp" srcset="img/hero-fv-pc.webp?v=3">
-        <img src="img/hero-fv-pc.png?v=3" alt="その勉強は、志望校の合格につながっているか。「わかる」で終わらせない。「自力で解ける」まで。— 理系の大学受験専門・完全1対1のオンライン個別指導 ガリレオ" width="1672" height="941" fetchpriority="high" decoding="async">
-      </picture>
+    <div class="hero-img hero-slider" id="heroSlider" role="region" aria-roledescription="カルーセル" aria-label="ガリレオのご案内">
+      <div class="hs-track">
+        <div class="hs-slide is-active" role="group" aria-roledescription="スライド" aria-label="1 / 4">
+          <picture>
+            <source type="image/webp" srcset="img/hero-fv-pc.webp?v=3">
+            <img src="img/hero-fv-pc.png?v=3" alt="その勉強は、志望校の合格につながっているか。「わかる」で終わらせない。「自力で解ける」まで。— 理系の大学受験専門・完全1対1のオンライン個別指導 ガリレオ" width="1672" height="941" fetchpriority="high" decoding="async">
+          </picture>
+        </div>
+        <div class="hs-slide hs-promo" role="group" aria-roledescription="スライド" aria-label="2 / 4" aria-hidden="true">
+          <div class="hs-photo"><picture><source type="image/webp" srcset="img/hero-slide-a.webp"><img src="img/hero-slide-a.jpg" alt="前を見据える理系志望の高校生" width="1128" height="474" loading="lazy" decoding="async"></picture></div>
+          <div class="hs-copy">
+            <p class="hs-tag">難関国立・医学部・理工系志望へ</p>
+            <p class="hs-title">理系の合格を、<br><em>最短距離</em>で。</p>
+            <p class="hs-lead">志望校から逆算した学習計画と、理系専門の個別指導、毎日課題・添削で志望校合格へ。</p>
+            <a href="#courses" class="hs-more" tabindex="-1">コースを見る →</a>
+          </div>
+          <ul class="hs-points">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.5V16c0 1.4 2.7 2.8 6 2.8s6-1.4 6-2.8v-4.5"/><path d="M22 9v6"/></svg><span>難関国立・医学部・<br>理工系に対応</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h2M14 14h2M8 17.5h2"/></svg><span>志望校から逆算した<br>学習計画</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg><span>一人ひとりに最適な<br>完全1対1の個別指導</span></li>
+          </ul>
+        </div>
+        <div class="hs-slide hs-promo" role="group" aria-roledescription="スライド" aria-label="3 / 4" aria-hidden="true">
+          <div class="hs-photo"><picture><source type="image/webp" srcset="img/hero-slide-b.webp"><img src="img/hero-slide-b.jpg" alt="実験に集中する理系志望の高校生" width="1098" height="434" loading="lazy" decoding="async"></picture></div>
+          <div class="hs-copy">
+            <p class="hs-tag">理系専門の個別指導</p>
+            <p class="hs-title">理系の“わかる”を<br><em>“できる”</em>に変える。</p>
+            <p class="hs-lead">理解から演習・定着まで。授業のない日も、毎日課題と添削で「自力で解ける」力を伸ばします。</p>
+            <a href="pages/mainichi-kadai.html" class="hs-more" tabindex="-1">毎日課題のしくみ →</a>
+          </div>
+          <ul class="hs-points">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8.5 15.5l2.5 2.5 4.5-5"/></svg><span>毎日課題で<br>学習を習慣化</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><path d="M6 21v-5M11 21v-9M16 21v-6"/><path d="M4 11l6-5 4 3 6-6"/><path d="M16 3h4v4"/></svg><span>志望校から逆算した<br>個別の学習計画</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/><path d="M7.5 15h9"/></svg><span>理系専門の<br>個別授業</span></li>
+          </ul>
+        </div>
+        <div class="hs-slide hs-promo" role="group" aria-roledescription="スライド" aria-label="4 / 4" aria-hidden="true">
+          <div class="hs-photo"><picture><source type="image/webp" srcset="img/hero-slide-c.webp"><img src="img/hero-slide-c.jpg" alt="空を見上げる理系志望の高校生と電波望遠鏡" width="1062" height="442" loading="lazy" decoding="async"></picture></div>
+          <div class="hs-copy">
+            <p class="hs-tag">志望校合格まで、伴走</p>
+            <p class="hs-title">好きな理系で、<br><em>もっと遠く</em>へ。</p>
+            <p class="hs-lead">理系の学びを出発点に、志望校合格まで一人ひとりに伴走します。</p>
+            <a href="#contact" class="hs-more" tabindex="-1">無料学習相談へ →</a>
+          </div>
+          <ul class="hs-points">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="4"/><path d="M11 13l9-9M17 4h3v3"/></svg><span>志望校合格に向けた<br>戦略設計</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.6"/><path d="M2 20c0-3.6 2.7-6 6-6s6 2.4 6 6M15 14.2c.6-.2 1.3-.3 2-.3 2.8 0 5 2 5 5"/></svg><span>最後まで寄り添う<br>伴走支援</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4L3 6.5v13.5L9 17.5l6 2.5 6-2.5V4l-6 2.5z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span>入塾面談で<br>合格ロードマップを作成</span></li>
+          </ul>
+        </div>
+      </div>
+      <button type="button" class="hs-arrow hs-prev" aria-label="前のスライド">‹</button>
+      <button type="button" class="hs-arrow hs-next" aria-label="次のスライド">›</button>
+      <div class="hs-dots">
+        <button type="button" class="hs-dot is-active" aria-label="スライド1を表示" aria-current="true"></button>
+        <button type="button" class="hs-dot" aria-label="スライド2を表示"></button>
+        <button type="button" class="hs-dot" aria-label="スライド3を表示"></button>
+        <button type="button" class="hs-dot" aria-label="スライド4を表示"></button>
+      </div>
     </div>
   </div>
   <div class="container hero-under">
-    <div class="hero-actions">
-      <a href="#contact" class="btn btn-primary">無料学習相談を予約する →</a>
-      <a href="#courses" class="btn btn-outline">コースを見る</a>
+    <div class="hero-cta">
+      <a href="pages/contact.html?kind=fee" class="hcta hcta--fee">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M8.5 6.5h7v3h-7zM8.5 13h.01M12 13h.01M15.5 13h.01M8.5 17h.01M12 17h.01M15.5 17h.01"/></svg>
+        <span class="hcta-body"><span class="hcta-kicker">＼ わかりやすい！／</span><span class="hcta-title">授業料について</span><span class="hcta-desc">コース別の授業料を、個別にご案内します。</span></span>
+      </a>
+      <a href="pages/contact.html?kind=course" class="hcta hcta--consult">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h11a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M19 9h1a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-1v3l-4-3h-3"/></svg>
+        <span class="hcta-body"><span class="hcta-title">入塾・学習相談はこちら</span><span class="hcta-desc">入塾のご相談や学習の進め方など、お気軽にご相談ください。</span></span>
+      </a>
+      <a href="pages/contact.html?kind=doc" class="hcta hcta--doc">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h9l4 4V21.5H6z"/><path d="M14.5 2.5V7H19M9 11h7M9 14.5h7M9 18h4"/></svg>
+        <span class="hcta-body"><span class="hcta-title"><span>資料請求は</span><span>こちら</span></span></span>
+      </a>
+      <a href="#contact" class="hcta hcta--trial">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h.01M12 14h.01M16 14h.01M8 17.5h.01M12 17.5h.01"/></svg>
+        <span class="hcta-body"><span class="hcta-title"><span>無料体験・面談は</span><span>こちら</span></span></span>
+      </a>
+      <a href="#results" class="hcta hcta--results">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><path d="M6 21v-5M11 21v-9M16 21v-6"/><path d="M4 11l6-5 4 3 6-6"/><path d="M16 3h4v4"/></svg>
+        <span class="hcta-body"><span class="hcta-title">合格実績を見る</span></span>
+      </a>
     </div>
     <div class="hero-badges">
       <span class="hero-badge">東大・京大・東京科学大・医学部・MARCH 合格実績</span>
@@ -2888,6 +3056,44 @@ function loadAllSlots() {
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape') closeLb();
   });
+})();
+
+// Hero slider（FV＋訴求スライド）
+(function(){
+  var root=document.getElementById('heroSlider'); if(!root) return;
+  var slides=[].slice.call(root.querySelectorAll('.hs-slide'));
+  var dots=[].slice.call(root.querySelectorAll('.hs-dot'));
+  if(slides.length<2) return;
+  var i=0,timer=null,hold=false,INTERVAL=6000;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function go(n,user){
+    n=(n+slides.length)%slides.length; if(n===i) return;
+    slides.forEach(function(s,k){
+      var on=k===n; s.classList.toggle('is-active',on);
+      if(on) s.removeAttribute('aria-hidden'); else s.setAttribute('aria-hidden','true');
+      [].forEach.call(s.querySelectorAll('a'),function(a){ a.tabIndex=on?0:-1; });
+    });
+    dots.forEach(function(d,k){ d.classList.toggle('is-active',k===n); if(k===n) d.setAttribute('aria-current','true'); else d.removeAttribute('aria-current'); });
+    i=n; if(user) restart();
+  }
+  function stop(){ if(timer){ clearInterval(timer); timer=null; } }
+  function start(){ stop(); if(reduce||hold||document.hidden) return; timer=setInterval(function(){ go(i+1); },INTERVAL); }
+  function restart(){ stop(); start(); }
+  root.querySelector('.hs-prev').addEventListener('click',function(){ go(i-1,true); });
+  root.querySelector('.hs-next').addEventListener('click',function(){ go(i+1,true); });
+  dots.forEach(function(d,k){ d.addEventListener('click',function(){ go(k,true); }); });
+  root.addEventListener('mouseenter',function(){ hold=true; stop(); });
+  root.addEventListener('mouseleave',function(){ hold=false; start(); });
+  root.addEventListener('focusin',function(){ hold=true; stop(); });
+  root.addEventListener('focusout',function(){ hold=false; start(); });
+  document.addEventListener('visibilitychange',start);
+  var x0=null,y0=null;
+  root.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; y0=e.touches[0].clientY; },{passive:true});
+  root.addEventListener('touchend',function(e){
+    if(x0===null) return; var dx=e.changedTouches[0].clientX-x0, dy=e.changedTouches[0].clientY-y0; x0=null;
+    if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.5) go(i+(dx<0?1:-1),true);
+  },{passive:true});
+  start();
 })();
 
 // Scroll reveal
