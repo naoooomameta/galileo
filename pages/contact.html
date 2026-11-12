@@ -282,6 +282,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var kindBooking = document.getElementById('kindBooking');
   var sending = false;
 
+  // トップのCTA（授業料・資料請求・入塾相談）から来た場合、該当するお問い合わせ内容を初期選択する
+  setTimeout(function(){
+    try {
+      var map = { fee: '受講料を知りたい', doc: '資料をメールで受け取りたい', course: 'どのコースが合うか知りたい' };
+      var want = map[new URLSearchParams(location.search).get('kind')];
+      if (!want) return;
+      Array.prototype.forEach.call(form.querySelectorAll('input[name="kinds"]'), function(i){ if (i.value === want && !i.checked) i.click(); });
+    } catch (e) {}
+  }, 0);
+
   function $(id){ return document.getElementById(id); }
   function val(id){ return ($(id).value || '').trim(); }
   function checkedValues(name){ return Array.prototype.map.call(form.querySelectorAll('input[name="' + name + '"]:checked'), function(i){ return i.value; }); }
