@@ -3161,18 +3161,14 @@ function loadAllSlots() {
     var r=((pos-CL)%n+n)%n;
     dots.forEach(function(d,q){ d.classList.toggle('is-active',q===r); if(q===r) d.setAttribute('aria-current','true'); else d.removeAttribute('aria-current'); });
   }
-  function go(p,user){ pos=p; place(true); if(user) restart(); }
-  track.addEventListener('transitionend',function(e){
-    if(e.target!==track) return;
-    if(pos>=CL+n){ pos-=n; place(false); } else if(pos<CL){ pos+=n; place(false); }
-  });
+  function wrap(){ if(pos>=CL+n){ pos-=n; place(false); } else if(pos<CL){ pos+=n; place(false); } }
+  function go(p,user){ wrap(); pos=p; place(!reduce); if(reduce) wrap(); if(user) restart(); }
+  track.addEventListener('transitionend',function(e){ if(e.target===track) wrap(); });
   function stop(){ if(timer){ clearInterval(timer); timer=null; } }
-  function start(){ stop(); if(reduce||hold||document.hidden) return; timer=setInterval(function(){ go(pos+1); },INTERVAL); }
+  function start(){ stop(); if(document.hidden) return; timer=setInterval(function(){ go(pos+1); },INTERVAL); }
   function restart(){ stop(); start(); }
   dots.forEach(function(d,q){ d.addEventListener('click',function(){ go(CL+q,true); }); });
   all.forEach(function(el,idx){ el.addEventListener('click',function(e){ if(idx!==pos){ e.preventDefault(); go(idx,true); } }); });
-  root.addEventListener('mouseenter',function(){ hold=true; stop(); });
-  root.addEventListener('mouseleave',function(){ hold=false; start(); });
   document.addEventListener('visibilitychange',start);
   var x0=null,y0=null;
   root.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; y0=e.touches[0].clientY; },{passive:true});
