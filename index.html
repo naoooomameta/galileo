@@ -1428,6 +1428,80 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
 .hero-banner-wrap{margin-bottom:0}
 @media(max-width:768px){.hero-banner{border-radius:8px;aspect-ratio:3/1}.hero-banner .hs-slide>picture img{object-fit:cover;object-position:100% 50%}.hero-banner-wrap .hs-dot::before{background:rgba(14,74,56,.22)}}
 @media(prefers-reduced-motion:reduce){.hs-slide,.hs-slide.is-active{transition:none}.hcta{transition:none}}
+/* ===== 森塾型レイアウト：白基調ヘッダー／見切れカルーセル／固定サイドCTA／キャッチコピー ===== */
+.header-btn{display:inline-flex;align-items:center;gap:7px;font-size:14.5px;font-weight:700;padding:9px 22px;border-radius:6px;border:2px solid var(--primary);letter-spacing:.03em;transition:background .2s,color .2s;white-space:nowrap}
+.header-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.header-btn--faq{background:var(--white);color:var(--primary)}
+.header-btn--faq:hover{background:var(--green-pale)}
+.header-btn--contact{background:var(--primary);color:var(--white)}
+.header-btn--contact:hover{background:var(--primary-light);border-color:var(--primary-light)}
+@media(min-width:1025px){
+  .header{background:rgba(255,255,255,.97);border-bottom:none}
+  .header-inner{max-width:1200px;padding:16px 24px}
+  .header-right{gap:10px}
+  .header-right .header-instagram{font-size:0;gap:0;padding:10px;border-radius:50%}
+  .header-right .header-instagram svg{width:17px;height:17px}
+  .nav{background:var(--white);border-top:1px solid var(--green-pale);border-bottom:1px solid var(--green-mist);box-shadow:0 3px 10px rgba(14,74,56,.05)}
+  .nav-inner{justify-content:center}
+  .nav-inner>a,.nav-inner>.nav-item>a{color:var(--primary-dark);font-weight:700}
+  .nav-inner>a:not(.nav-cta),.nav-inner>.nav-item{position:relative}
+  .nav-inner>a:not(.nav-cta)::before,.nav-inner>.nav-item::before{content:"";position:absolute;left:0;top:32%;height:36%;width:1px;background:var(--green-mist)}
+  .nav-inner>a:hover,.nav-inner>.nav-item>a:hover{color:var(--primary);border-bottom-color:var(--gold)}
+  .nav .nav-cta{margin-left:14px;background:linear-gradient(135deg,var(--cta),var(--cta-light))!important;border-color:var(--cta)!important;color:var(--white)!important}
+  .nav .nav-cta:hover{background:var(--cta)!important;border-color:var(--cta)!important}
+}
+@media(max-width:1024px){.header-btn{display:none}}
+.hero.hero--mori{background:var(--white);padding-top:0}
+.hero--mori .hero-visual{padding:0}
+.hero-carousel{position:relative;overflow:hidden;--hc-w:min(1160px,80vw);--hc-gap:28px;background:var(--white)}
+.hc-track{display:flex;gap:var(--hc-gap);will-change:transform;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
+.hc-track.no-anim{transition:none}
+.hc-slide{flex:0 0 var(--hc-w);aspect-ratio:1290/202;overflow:hidden;background:var(--green-pale);cursor:pointer;border:none;padding:0;display:block}
+.hc-slide picture,.hc-slide img{display:block;width:100%;height:100%}
+.hc-slide img{object-fit:cover}
+.hc-dots{display:flex;justify-content:center;gap:6px;padding:14px 0 0}
+.hc-dot{width:26px;height:26px;padding:0;border:none;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.hc-dot::before{content:"";width:11px;height:11px;border-radius:50%;background:#d9dfdb;transition:background .25s}
+.hc-dot.is-active::before{background:var(--primary)}
+.hc-dot:focus-visible,.hc-slide:focus-visible,.side-cta a:focus-visible,.hero-pill:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.hero--mori .hero-under{padding:44px 24px 56px;gap:0}
+.hero-catch{position:relative;width:100%;max-width:960px;margin:0 auto;padding:22px 56px;text-align:center}
+.hero-catch::before,.hero-catch::after{content:"";position:absolute;top:0;bottom:0;width:36px;border:2px solid var(--primary)}
+.hero-catch::before{left:0;border-right:none}
+.hero-catch::after{right:0;border-left:none}
+.hero-catch-lead{font-size:clamp(17px,2.5vw,30px);font-weight:800;color:var(--text);letter-spacing:.02em;line-height:1.6}
+.hero.hero--mori h1.hero-catch-main{font-family:var(--font);font-size:clamp(22px,3.3vw,37px);font-weight:800;color:var(--primary-dark);line-height:1.6;letter-spacing:.01em;margin:2px 0}
+.hero-catch span,.hero-pill>span{display:inline-block}
+.hero-catch-main span{background:linear-gradient(transparent 68%,#F3DC8C 68%)}
+.hero-catch-sub{font-size:clamp(16px,2.4vw,29px);font-weight:800;color:var(--text);line-height:1.7}
+.hero-catch-sub b{font-size:1.25em;font-weight:800;color:var(--primary)}
+.hero-catch-proof{font-size:clamp(15px,2.2vw,27px);font-weight:800;color:#A9801F;margin-top:6px;letter-spacing:.02em;line-height:1.6}
+.hero-pill{display:block;width:100%;max-width:880px;margin:38px auto 0;padding:15px 28px;border-radius:999px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--white);font-size:clamp(15px,2.3vw,26px);font-weight:800;text-align:center;letter-spacing:.03em;line-height:1.5;box-shadow:0 6px 18px rgba(14,74,56,.22);position:relative;transition:transform .2s,box-shadow .2s}
+.hero-pill:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(14,74,56,.28)}
+.hero-pill em{font-style:normal;color:#F3DC8C}
+.hero-pill::after{content:"";position:absolute;left:50%;bottom:-9px;margin-left:-9px;border:9px solid transparent;border-bottom:none;border-top-color:var(--primary)}
+.hero--mori .hero-cta{margin-top:44px}
+.side-cta{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:1100;display:flex;flex-direction:column;box-shadow:-4px 6px 18px rgba(10,50,40,.2);border-radius:8px 0 0 8px;overflow:hidden}
+.side-cta a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;width:104px;padding:18px 6px;font-size:15px;font-weight:800;line-height:1.4;text-align:center;letter-spacing:.02em;transition:filter .2s}
+.side-cta a:hover{filter:brightness(1.07)}
+.side-cta svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.side-cta__trial{background:linear-gradient(160deg,var(--cta-light),var(--cta));color:var(--primary-dark)}
+.side-cta__fee{background:var(--primary);color:var(--white)}
+@media(max-width:1024px){.side-cta{display:none}}
+@media(max-width:768px){
+  .hero-carousel{--hc-w:88vw;--hc-gap:10px}
+  .hc-slide{aspect-ratio:3/1}
+  .hc-slide img{object-position:100% 50%}
+  .hc-dots{padding-top:8px}
+  .hc-dot{width:22px;height:22px}
+  .hc-dot::before{width:8px;height:8px}
+  .hero--mori .hero-under{padding:26px 16px 36px}
+  .hero-catch{padding:14px 22px}
+  .hero-catch::before,.hero-catch::after{width:16px}
+  .hero-pill{margin-top:26px;padding:12px 18px}
+  .hero--mori .hero-cta{margin-top:28px}
+}
+@media(prefers-reduced-motion:reduce){.hc-track{transition:none}}
 </style>
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
@@ -1482,6 +1556,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </a>
     <div class="header-right">
+      <a href="#faq" class="header-btn header-btn--faq"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M9.3 9.2a2.8 2.8 0 1 1 4.2 2.4c-.9.6-1.5 1.2-1.5 2.2M12 17.2h.01"/></svg>よくあるご質問</a>
+      <a href="pages/contact.html" class="header-btn header-btn--contact"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>お問い合わせ</a>
       <a href="https://www.instagram.com/galileo_sciences/" target="_blank" rel="noopener" class="header-instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>Instagram</a><a href="https://x.com/galileosciences" target="_blank" rel="noopener" class="header-instagram header-x" aria-label="X（旧Twitter）"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></svg></a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="メニュー">
@@ -1515,28 +1591,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav>
 
 <!-- ===== HERO ===== -->
-<section class="hero" id="hero">
+<section class="hero hero--mori" id="hero">
   <div class="hero-visual">
-    <div class="hero-banner-wrap" id="heroSlider" role="region" aria-roledescription="カルーセル" aria-label="ガリレオのご案内">
-      <div class="hero-banner">
-        <div class="hs-track">
-        <div class="hs-slide is-active" role="group" aria-roledescription="スライド" aria-label="1 / 3">
-          <picture><source type="image/webp" srcset="img/hero-banner-a.webp"><img src="img/hero-banner-a.png" fetchpriority="high" alt="理系の合格を、最短距離で。難関国立・医学部志望者のための、計画・管理・個別指導で、志望校合格へ。" width="1290" height="202" decoding="async"></picture>
-        </div>
-        <div class="hs-slide" role="group" aria-roledescription="スライド" aria-label="2 / 3" aria-hidden="true">
-          <picture><source type="image/webp" srcset="img/hero-banner-b.webp"><img src="img/hero-banner-b.png" alt="理系の“わかる”を“できる”に変える。" width="1290" height="202" decoding="async"></picture>
-        </div>
-        <div class="hs-slide" role="group" aria-roledescription="スライド" aria-label="3 / 3" aria-hidden="true">
-          <picture><source type="image/webp" srcset="img/hero-banner-c.webp"><img src="img/hero-banner-c.png" alt="好きな理系で、もっと遠くへ。志望校合格からその先の進路まで、一人ひとりに寄り添います。" width="1290" height="202" decoding="async"></picture>
-        </div>
-        </div>
-        <button type="button" class="hs-arrow hs-prev" aria-label="前のスライド">‹</button>
-        <button type="button" class="hs-arrow hs-next" aria-label="次のスライド">›</button>
+    <div class="hero-carousel" id="heroCarousel" role="region" aria-roledescription="カルーセル" aria-label="ガリレオのご案内">
+      <div class="hc-track">
+        <a class="hc-slide" href="#courses" data-i="0"><picture><source type="image/webp" srcset="img/hero-banner-a.webp"><img src="img/hero-banner-a.png" fetchpriority="high" alt="理系の合格を、最短距離で。難関国立・医学部志望者のための、計画・管理・個別指導で、志望校合格へ。" width="1290" height="202" decoding="async"></picture></a>
+        <a class="hc-slide" href="pages/mainichi-kadai.html" data-i="1"><picture><source type="image/webp" srcset="img/hero-banner-b.webp"><img src="img/hero-banner-b.png" alt="理系の“わかる”を“できる”に変える。" width="1290" height="202" decoding="async"></picture></a>
+        <a class="hc-slide" href="#contact" data-i="2"><picture><source type="image/webp" srcset="img/hero-banner-c.webp"><img src="img/hero-banner-c.png" alt="好きな理系で、もっと遠くへ。志望校合格からその先の進路まで、一人ひとりに寄り添います。" width="1290" height="202" decoding="async"></picture></a>
       </div>
-      <div class="hs-dots"><button type="button" class="hs-dot is-active" aria-label="スライド1を表示"></button><button type="button" class="hs-dot" aria-label="スライド2を表示"></button><button type="button" class="hs-dot" aria-label="スライド3を表示"></button></div>
+      <div class="hc-dots">
+        <button type="button" class="hc-dot is-active" aria-label="スライド1を表示" aria-current="true"></button>
+        <button type="button" class="hc-dot" aria-label="スライド2を表示"></button>
+        <button type="button" class="hc-dot" aria-label="スライド3を表示"></button>
+      </div>
     </div>
   </div>
   <div class="container hero-under">
+    <div class="hero-catch">
+      <p class="hero-catch-lead"><span>理系の大学受験専門！</span><span>完全1対1のオンライン個別指導</span></p>
+      <h1 class="hero-catch-main"><span>その勉強は、</span><span>志望校の合格に</span><span>つながっているか。</span></h1>
+      <p class="hero-catch-sub"><span>「わかる」で終わらせない。</span><span><b>「自力で解ける」</b>まで。</span></p>
+      <p class="hero-catch-proof"><span>《東大・京大・東京科学大・</span><span>医学部・MARCH 合格実績》</span></p>
+    </div>
+    <a href="pages/voices.html" class="hero-pill"><span>ガリレオで<em>志望校に合格</em>した</span><span>先輩の声をご紹介！</span></a>
     <div class="hero-cta">
       <a href="pages/contact.html?kind=fee" class="hcta hcta--fee">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M8.5 6.5h7v3h-7zM8.5 13h.01M12 13h.01M15.5 13h.01M8.5 17h.01M12 17h.01M15.5 17h.01"/></svg>
@@ -1558,11 +1635,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><path d="M6 21v-5M11 21v-9M16 21v-6"/><path d="M4 11l6-5 4 3 6-6"/><path d="M16 3h4v4"/></svg>
         <span class="hcta-body"><span class="hcta-title">合格実績を見る</span></span>
       </a>
-    </div>
-    <div class="hero-badges">
-      <span class="hero-badge">東大・京大・東京科学大・医学部・MARCH 合格実績</span>
-      <span class="hero-badge">理系専門・少人数指導</span>
-      <span class="hero-badge accent">無料学習相談 受付中</span>
     </div>
   </div>
   <!-- ===== KPI実績バンド（削除：実績数値を一旦非表示） ===== -->
@@ -2417,6 +2489,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ===== フローティングCTA（右下・無料相談＋LINE） ===== -->
+<div class="side-cta" aria-label="無料体験・授業料のご案内">
+  <a class="side-cta__trial" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1-4.5L16.5 4a2.1 2.1 0 0 1 3 3L8 18.5z"/><path d="M14.5 6l3.5 3.5"/></svg><span>無料体験は<br>こちら</span></a>
+  <a class="side-cta__fee" href="pages/contact.html?kind=fee"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M8.5 6.5h7v3h-7zM8.5 13h.01M12 13h.01M15.5 13h.01M8.5 17h.01M12 17h.01M15.5 17h.01"/></svg><span>授業料は<br>こちら</span></a>
+</div>
 <div class="float-cta" id="floatCta" aria-label="お問い合わせ">
   <a class="float-cta__btn float-cta__consult" href="#contact">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
@@ -3023,42 +3099,48 @@ function loadAllSlots() {
   });
 })();
 
-// Hero slider（FV＋訴求スライド）
+// Hero carousel（左右が見切れる無限ループ）
 (function(){
-  var root=document.getElementById('heroSlider'); if(!root) return;
-  var slides=[].slice.call(root.querySelectorAll('.hs-slide'));
-  var dots=[].slice.call(root.querySelectorAll('.hs-dot'));
-  if(slides.length<2) return;
-  var i=0,timer=null,hold=false,INTERVAL=6000;
+  var root=document.getElementById('heroCarousel'); if(!root) return;
+  var track=root.querySelector('.hc-track');
+  var real=[].slice.call(track.children), n=real.length; if(n<2) return;
+  var dots=[].slice.call(root.querySelectorAll('.hc-dot'));
+  var CL=2;
+  function clone(el){ var c=el.cloneNode(true); c.setAttribute('aria-hidden','true'); c.tabIndex=-1; var im=c.querySelector('img'); if(im){ im.removeAttribute('fetchpriority'); im.loading='lazy'; } return c; }
+  for(var k=0;k<CL;k++){ track.appendChild(clone(real[k%n])); }
+  for(var j=0;j<CL;j++){ track.insertBefore(clone(real[(n-1-j%n+n)%n]),track.firstChild); }
+  var all=[].slice.call(track.children), pos=CL, timer=null, hold=false, INTERVAL=5000;
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function go(n,user){
-    n=(n+slides.length)%slides.length; if(n===i) return;
-    slides.forEach(function(s,k){
-      var on=k===n; s.classList.toggle('is-active',on);
-      if(on) s.removeAttribute('aria-hidden'); else s.setAttribute('aria-hidden','true');
-      [].forEach.call(s.querySelectorAll('a'),function(a){ a.tabIndex=on?0:-1; });
-    });
-    dots.forEach(function(d,k){ d.classList.toggle('is-active',k===n); if(k===n) d.setAttribute('aria-current','true'); else d.removeAttribute('aria-current'); });
-    i=n; if(user) restart();
+  function place(anim){
+    var el=all[pos]; if(!anim) track.classList.add('no-anim');
+    var x=(root.clientWidth-el.offsetWidth)/2-el.offsetLeft;
+    track.style.transform='translate3d('+x+'px,0,0)';
+    if(!anim){ void track.offsetWidth; track.classList.remove('no-anim'); }
+    var r=((pos-CL)%n+n)%n;
+    dots.forEach(function(d,q){ d.classList.toggle('is-active',q===r); if(q===r) d.setAttribute('aria-current','true'); else d.removeAttribute('aria-current'); });
   }
+  function go(p,user){ pos=p; place(true); if(user) restart(); }
+  track.addEventListener('transitionend',function(e){
+    if(e.target!==track) return;
+    if(pos>=CL+n){ pos-=n; place(false); } else if(pos<CL){ pos+=n; place(false); }
+  });
   function stop(){ if(timer){ clearInterval(timer); timer=null; } }
-  function start(){ stop(); if(reduce||hold||document.hidden) return; timer=setInterval(function(){ go(i+1); },INTERVAL); }
+  function start(){ stop(); if(reduce||hold||document.hidden) return; timer=setInterval(function(){ go(pos+1); },INTERVAL); }
   function restart(){ stop(); start(); }
-  root.querySelector('.hs-prev').addEventListener('click',function(){ go(i-1,true); });
-  root.querySelector('.hs-next').addEventListener('click',function(){ go(i+1,true); });
-  dots.forEach(function(d,k){ d.addEventListener('click',function(){ go(k,true); }); });
+  dots.forEach(function(d,q){ d.addEventListener('click',function(){ go(CL+q,true); }); });
+  all.forEach(function(el,idx){ el.addEventListener('click',function(e){ if(idx!==pos){ e.preventDefault(); go(idx,true); } }); });
   root.addEventListener('mouseenter',function(){ hold=true; stop(); });
   root.addEventListener('mouseleave',function(){ hold=false; start(); });
-  root.addEventListener('focusin',function(){ hold=true; stop(); });
-  root.addEventListener('focusout',function(){ hold=false; start(); });
   document.addEventListener('visibilitychange',start);
   var x0=null,y0=null;
   root.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; y0=e.touches[0].clientY; },{passive:true});
   root.addEventListener('touchend',function(e){
     if(x0===null) return; var dx=e.changedTouches[0].clientX-x0, dy=e.changedTouches[0].clientY-y0; x0=null;
-    if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.5) go(i+(dx<0?1:-1),true);
+    if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.5) go(pos+(dx<0?1:-1),true);
   },{passive:true});
-  start();
+  window.addEventListener('resize',function(){ place(false); });
+  window.addEventListener('load',function(){ place(false); });
+  place(false); start();
 })();
 
 // Scroll reveal
