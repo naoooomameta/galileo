@@ -484,6 +484,39 @@ strong{font-weight:700}
 .result-badges{display:flex;flex-wrap:wrap;gap:8px}
 .results-cat .result-badge{font-size:13.5px;font-weight:600;color:var(--primary-dark);background:var(--green-pale);border:1px solid var(--green-mist);border-left:3px solid var(--primary-light);border-radius:8px;padding:8px 14px;line-height:1.5;transition:all .2s}
 .results-cat .result-badge:hover{background:var(--green-light);border-left-color:var(--amber)}
+/* 合格実績リスト（PC）：大学名を主役に、アンケートは小さな証拠サムネイル */
+.results-list,.results-list-hint{display:none}
+@media(min-width:769px){
+  .results-list:not([hidden]){display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+  .results-list:not([hidden])~#home-results-badges{display:none}
+  .results-year:has(.results-list:not([hidden]))+.results-gallery{display:none}
+  .results-list:not([hidden])+.results-list-hint{display:block;font-size:12.5px;color:var(--text-muted);margin-top:14px;text-align:center}
+  .results-list-cat{padding:20px 20px 12px}
+  .results-list-cat:hover{transform:none}
+  .results-list-cat h4{display:flex;align-items:baseline;justify-content:space-between;font-size:15.5px;margin-bottom:6px}
+  .results-list-cat h4 span{font-size:12px;font-weight:700;color:var(--gold)}
+  .results-list-items li{padding:0;border-bottom:1px dashed var(--border)}
+  .results-list-items li:last-child{border-bottom:none}
+  .result-row{display:flex;align-items:center;gap:14px;width:100%;padding:10px 6px;background:none;border:none;border-radius:10px;font:inherit;color:inherit;text-align:left;transition:background .2s}
+  button.result-row{cursor:zoom-in}
+  button.result-row:hover,button.result-row:focus-visible{background:var(--green-pale);outline:none}
+  .result-row-thumb{position:relative;flex:0 0 46px;width:46px;height:58px;border-radius:6px;overflow:hidden;border:1px solid var(--green-mist);background:var(--green-pale);box-shadow:0 2px 6px rgba(14,74,56,.1)}
+  .result-row-thumb img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+  .result-row-thumb::after{content:'';position:absolute;right:2px;bottom:2px;width:16px;height:16px;border-radius:50%;background:rgba(10,50,40,.72) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='6'/%3E%3Cpath d='M20 20l-4.3-4.3'/%3E%3C/svg%3E") center/10px no-repeat}
+  .result-row-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+  .result-row-univ{font-family:var(--font-serif);font-size:17px;font-weight:700;color:var(--primary-dark);line-height:1.45}
+  .result-row-fac{font-size:12.5px;color:var(--text-light);line-height:1.5}
+  .result-row-badge{flex:0 0 auto;font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--primary-dark);background:linear-gradient(135deg,var(--gold),var(--gold-light));padding:4px 12px 4px 14px;border-radius:20px}
+}
+@media(min-width:769px) and (max-width:1024px){
+  .results-list:not([hidden]){gap:12px}
+  .results-list-cat{padding:16px 12px 8px}
+  .result-row{gap:9px;padding:9px 2px}
+  .result-row-thumb{flex-basis:38px;width:38px;height:48px}
+  .result-row-univ{font-size:14.5px}
+  .result-row-fac{font-size:11.5px}
+  .result-row-badge{font-size:11px;padding:3px 9px;letter-spacing:.08em}
+}
 .results-disclaimer{margin-top:20px}
 .results-disclaimer p{font-size:13px;color:var(--text-muted);line-height:1.9;margin:0}
 @media(max-width:768px){
@@ -2508,9 +2541,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="results-year">
       <h3 class="results-year-title">2025年度 主な合格大学</h3>
       <!-- カテゴリー別バッジ — データソース(assets/js/voices-data.js)から描画 -->
+      <!-- PC: カテゴリー別の合格大学リスト（大学名＋アンケートの小サムネイル。クリックで拡大） -->
+      <div class="results-cats results-list" id="home-results-list" hidden></div>
+      <p class="results-list-hint">各大学の行を押すと、保護者様の手書きアンケートを拡大してご覧いただけます。</p>
       <div class="results-cats" id="home-results-badges"></div>
     </div>
-    <!-- 合格実績画像ギャラリー — データソースから描画（画像が無ければ自動で非表示） -->
+    <!-- スマホ: 合格実績画像ギャラリー（横スクロール）— データソースから描画 -->
     <div class="results-gallery results-gallery--compact" id="home-results-gallery" hidden></div>
     <div class="results-disclaimer">
       <p>※合格実績・合格者の声は、ご本人・保護者様の許可を得て掲載しています。</p>
@@ -2865,7 +2901,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </div>
 
-<script src="assets/js/voices-data.js?v=20261114c"></script>
+<script src="assets/js/voices-data.js?v=20261114d"></script>
 <script>
 // note 更新情報（data/note-feed.json を GitHub Actions が定期更新。取得できない時は非表示のまま）
 (function(){
@@ -3414,6 +3450,18 @@ if(window.GALILEO_VOICES){
   GALILEO_VOICES.renderPreview(document.getElementById('home-voices-preview'),['case02','case08','case06']);
   GALILEO_VOICES.renderResultBadges(document.getElementById('home-results-badges'));
   GALILEO_VOICES.renderResultsGallery(document.getElementById('home-results-gallery'),{thumb:true});
+  GALILEO_VOICES.renderResultsList(document.getElementById('home-results-list'));
+  (function(){ // 合格実績リスト（PC）：行クリックでアンケートを拡大
+    var l=document.getElementById('home-results-list'),lb=document.getElementById('lightbox');
+    if(!l||!lb)return;
+    l.addEventListener('click',function(e){
+      var r=e.target.closest('button.result-row'); if(!r)return;
+      var img=document.getElementById('lightboxImg');
+      img.src=r.getAttribute('data-full'); img.alt=r.getAttribute('aria-label')||'';
+      document.getElementById('lightboxCap').textContent=r.getAttribute('data-cap')||'';
+      lb.classList.add('open'); document.body.style.overflow='hidden';
+    });
+  })();
   (function(){ // 合格実績のサムネイル：別タブではなくライトボックスで拡大
     var g=document.getElementById('home-results-gallery'),lb=document.getElementById('lightbox');
     if(!g||!lb)return;
