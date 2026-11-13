@@ -322,7 +322,9 @@ strong{font-weight:700}
 @media(max-width:900px){.courses-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto}}
 
 /* ===== GALLERY ===== */
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gallery-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.gallery-grid>.gallery-item{grid-column:span 2}
+.gallery-grid>.gallery-item:nth-child(4):nth-last-child(2){grid-column:2/span 2}
 .gallery-item{position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#a4c4b0,#82aa96);transition:all .4s;border:2px solid transparent;box-shadow:0 2px 8px rgba(14,74,56,.08)}
 .gallery-item:hover{transform:scale(1.03);box-shadow:0 8px 28px rgba(14,74,56,.15);border-color:var(--primary-light)}
 .gallery-item img{width:100%;height:100%;object-fit:cover}
@@ -1092,7 +1094,9 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
   .courses-payment-icon svg{width:15px;height:15px}
 
   /* Gallery */
-  .gallery-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+  .gallery-grid{grid-template-columns:repeat(4,1fr);gap:8px}
+  .gallery-grid>.gallery-item:nth-child(4):nth-last-child(2){grid-column:span 2}
+  .gallery-grid>.gallery-item:last-child:nth-child(odd){grid-column:2/span 2}
 
   /* Movie */
   .movie-grid{grid-template-columns:1fr;gap:14px}
@@ -1226,6 +1230,7 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
 
   /* Gallery */
   .gallery-grid{grid-template-columns:1fr;gap:8px}
+  .gallery-grid>.gallery-item,.gallery-grid>.gallery-item:nth-child(4):nth-last-child(2),.gallery-grid>.gallery-item:last-child:nth-child(odd){grid-column:auto}
 
   /* Instagram */
   .instagram-feed{grid-template-columns:repeat(2,1fr)}
@@ -1333,9 +1338,13 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
 .float-cta__line{background:#06C755;color:#fff;fill:#fff}
 .float-cta__line svg{fill:#fff}
 @media(max-width:768px){
-  .float-cta{right:12px;bottom:12px;gap:8px}
-  .float-cta__btn{padding:12px 18px;font-size:13.5px}
+  /* スマホ：右下に重なる縦2段のボタンをやめ、画面下の横2分割バーにする */
+  .float-cta{left:0;right:0;bottom:0;flex-direction:row;align-items:stretch;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--green-mist);box-shadow:0 -6px 20px rgba(10,50,40,.12);transform:translateY(100%)}
+  .float-cta.show{transform:translateY(0)}
+  .float-cta__btn{flex:1 1 0;min-width:0;justify-content:center;gap:6px;height:46px;padding:0 8px;border-radius:12px;font-size:clamp(12px,3.6vw,14px);box-shadow:none}
+  .float-cta__btn:hover{transform:none;box-shadow:none}
   .float-cta__btn svg{width:18px;height:18px}
+  body{padding-bottom:calc(62px + env(safe-area-inset-bottom))}
 }
 @media(max-width:480px){
   .float-cta__btn-label{display:inline}
@@ -1539,6 +1548,34 @@ a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
   .hcta-kicker{font-size:11px}
   .hcta{padding-left:14px}
   .hcta--fee svg,.hcta--consult svg{width:28px;height:28px}
+}
+/* --- スマホ（〜600px）：CTAの形・高さ・折り返しを揃える --- */
+@media(max-width:600px){
+  .hero--mori .hero-cta{margin-top:24px;gap:10px}
+  .hcta{border-radius:14px;min-height:56px}
+  .hcta::after{right:12px;width:26px;height:26px;font-size:12px}
+  /* 主要2枚：1行タイトル＋説明。文字が1字だけ落ちないようサイズを画面幅に追従 */
+  .hcta--fee,.hcta--consult{padding:14px 46px 14px 14px;gap:12px}
+  .hcta--fee .hcta-title,.hcta--consult .hcta-title{font-size:clamp(15.5px,4.7vw,19px);line-height:1.35;white-space:nowrap}
+  .hcta-kicker{font-size:11px;line-height:1.5}
+  .hcta-desc{font-size:clamp(11px,3.2vw,12.5px);line-height:1.6;margin-top:3px}
+  .hcta--fee svg,.hcta--consult svg{width:28px;height:28px}
+  /* 2枚並び：同じ角丸・同じ高さ。アイコンを戻して上下に並べ、文言は短く */
+  .hcta--doc,.hcta--trial{flex-direction:column;align-items:flex-start;justify-content:center;gap:6px;border-radius:14px;padding:13px 40px 13px 14px;min-height:76px}
+  .hcta--doc svg,.hcta--trial svg{display:block;width:24px;height:24px}
+  .hcta--doc .hcta-title,.hcta--trial .hcta-title{font-size:clamp(13.5px,3.9vw,15.5px);line-height:1.35;white-space:nowrap}
+  .hcta--doc .hcta-tail,.hcta--trial .hcta-tail{display:none}
+  .hcta--doc,.hcta--trial{padding-right:14px}
+  .hcta--doc::after,.hcta--trial::after{top:12px;right:12px;transform:none}
+  /* 合格実績：細めの帯にして主従をつける */
+  .hcta--results{padding:12px 46px 12px 14px;min-height:52px;gap:10px;background:var(--white);color:var(--primary);border:1.5px solid var(--green-mist)}
+  .hcta--results svg{width:24px;height:24px}
+  .hcta--results::after{background:var(--primary);color:var(--white)}
+  .hcta--results .hcta-title{font-size:14.5px}
+}
+@media(max-width:340px){
+  .hcta--fee svg,.hcta--consult svg{display:none}
+  .hcta--consult .hcta-tail{display:none}
 }
 .hero-banner-wrap{max-width:1200px;margin:0 auto}
 .hero-banner{position:relative;aspect-ratio:1290/202;border-radius:12px;overflow:hidden;background:var(--white);box-shadow:0 6px 22px rgba(14,74,56,.12)}
@@ -1782,15 +1819,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </a>
       <a href="pages/contact.html?kind=course" class="hcta hcta--consult">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h11a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M19 9h1a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-1v3l-4-3h-3"/></svg>
-        <span class="hcta-body"><span class="hcta-title">入塾・学習相談はこちら</span><span class="hcta-desc">入塾のご相談や学習の進め方など、お気軽にご相談ください。</span></span>
+        <span class="hcta-body"><span class="hcta-title"><span>入塾・学習相談</span><span class="hcta-tail">はこちら</span></span><span class="hcta-desc">入塾のご相談や学習の進め方など、お気軽にご相談ください。</span></span>
       </a>
       <a href="pages/contact.html?kind=doc" class="hcta hcta--doc">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h9l4 4V21.5H6z"/><path d="M14.5 2.5V7H19M9 11h7M9 14.5h7M9 18h4"/></svg>
-        <span class="hcta-body"><span class="hcta-title"><span>資料請求は</span><span>こちら</span></span></span>
+        <span class="hcta-body"><span class="hcta-title"><span>資料請求</span><span class="hcta-tail">はこちら</span></span></span>
       </a>
       <a href="#contact" class="hcta hcta--trial">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h.01M12 14h.01M16 14h.01M8 17.5h.01M12 17.5h.01"/></svg>
-        <span class="hcta-body"><span class="hcta-title"><span>無料体験・面談は</span><span>こちら</span></span></span>
+        <span class="hcta-body"><span class="hcta-title"><span>無料体験・面談</span><span class="hcta-tail">はこちら</span></span></span>
       </a>
       <a href="#results" class="hcta hcta--results">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><path d="M6 21v-5M11 21v-9M16 21v-6"/><path d="M4 11l6-5 4 3 6-6"/><path d="M16 3h4v4"/></svg>
@@ -2240,7 +2277,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="gallery-item"><picture><source type="image/webp" srcset="img/plan-timeline.webp"><img src="img/plan-timeline.jpg" alt="年間タイムライン（教材ごとの進行計画・模試と節目・計画変更履歴）" loading="lazy" width="1600" height="1200"></picture><span class="gallery-cap">年間タイムライン</span></div>
       <div class="gallery-item"><img src="img/gallery-4-feedback.jpg" alt="学習ポイントのフィードバック" loading="lazy" width="1200" height="900"><span class="gallery-cap">学習ポイントのフィードバック</span></div>
       <div class="gallery-item"><img src="img/gallery-5-kadai.jpg" alt="毎日課題の配信" loading="lazy" width="1200" height="900"><span class="gallery-cap">毎日課題の配信</span></div>
-      <div class="gallery-item"><img src="img/gallery-6-voices.jpg" alt="2025年度 合格者 保護者様の声（手書きアンケート）" loading="lazy" width="1200" height="900"></div>
     </div>
   </div>
 </section>
@@ -2948,8 +2984,23 @@ window.addEventListener('scroll',()=>{document.getElementById('header').classLis
 (function(){
   var fc=document.getElementById('floatCta');
   if(!fc)return;
-  var toggle=function(){fc.classList.toggle('show',scrollY>400)};
+  // スマホでは、ヒーローのCTA群や申込フォームが画面内にある間は出さない（重複・重なりを防ぐ）
+  var mq=window.matchMedia('(max-width:768px)'),busy={};
+  var toggle=function(){
+    var blocked=mq.matches&&(busy.hero||busy.contact);
+    fc.classList.toggle('show',scrollY>400&&!blocked);
+  };
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){busy[e.target.getAttribute('data-fc')]=e.isIntersecting;});
+      toggle();
+    },{threshold:0});
+    [['.hero-cta','hero'],['#contactForm','contact']].forEach(function(p){
+      var el=document.querySelector(p[0]); if(el){el.setAttribute('data-fc',p[1]);io.observe(el);}
+    });
+  }
   window.addEventListener('scroll',toggle,{passive:true});
+  if(mq.addEventListener)mq.addEventListener('change',toggle);
   toggle();
 })();
 // Hamburger
