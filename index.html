@@ -491,6 +491,24 @@ strong{font-weight:700}
   .results-cat .result-badge{font-size:12.5px;padding:7px 12px}
 }
 /* 保護者アンケート画像グリッド（画像が無いときは自動で非表示） */
+.voice-fan-wrap{max-width:980px;margin:0 auto 40px;text-align:center}
+.voice-fan-wrap:has(.voice-fan[hidden]){display:none}
+.voice-fan-head{margin-bottom:26px}
+.voice-fan-head span{display:inline-block;font-family:var(--font-serif);font-size:16px;font-weight:700;color:var(--primary-dark);letter-spacing:.08em;padding:6px 22px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+.voice-fan{display:flex;justify-content:center;align-items:flex-end;padding:18px 0 44px}
+.voice-fan-item{--w:clamp(120px,19vw,196px);position:relative;flex:0 0 var(--w);width:var(--w);margin:0 calc(var(--w) * -.09);padding:0;border:1px solid var(--border);border-radius:6px;background:var(--white);cursor:zoom-in;box-shadow:0 10px 26px rgba(14,74,56,.18);transform:translateY(calc(var(--fan-i) * var(--fan-i) * 7px)) rotate(calc(var(--fan-i) * 4deg));transform-origin:50% 120%;transition:transform .3s ease,box-shadow .3s ease;z-index:calc(10 - var(--fan-i) * var(--fan-i));font:inherit}
+.voice-fan-item img{display:block;width:100%;aspect-ratio:3/3.9;object-fit:cover;object-position:top;border-radius:5px}
+.voice-fan-item:hover,.voice-fan-item:focus-visible{transform:translateY(-14px) rotate(0deg) scale(1.05);box-shadow:0 18px 40px rgba(14,74,56,.28);z-index:20;outline:none}
+.voice-fan-label{position:absolute;top:-13px;left:50%;transform:translateX(-50%);z-index:1;white-space:nowrap;font-size:11.5px;font-weight:700;letter-spacing:.04em;color:var(--primary-dark);background:linear-gradient(135deg,var(--gold),var(--gold-light));padding:4px 12px;border-radius:14px;box-shadow:0 3px 10px rgba(196,154,60,.35)}
+.voice-fan-note{font-size:12px;color:var(--text-muted);margin-top:0}
+@media(max-width:768px){
+  .voice-fan-wrap{margin-bottom:28px}
+  .voice-fan{padding-bottom:26px}
+  .voice-fan-item{--w:clamp(100px,29vw,150px);margin:0 calc(var(--w) * -.03)}
+  .voice-fan-item:first-child,.voice-fan-item:last-child{display:none}
+  .voice-fan-label{font-size:10px;padding:3px 8px;top:-20px;white-space:normal;width:max-content;max-width:94%;line-height:1.3;text-align:center;border-radius:10px}
+  .voice-fan-head span{font-size:14px;padding:5px 14px}
+}
 .voice-survey-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin:24px 0 0}
 .voice-survey-grid[hidden],.voice-survey-grid:empty{display:none}
 .voice-survey-item{margin:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--white);box-shadow:0 2px 8px rgba(14,74,56,.05);transition:transform .25s,box-shadow .25s}
@@ -2394,6 +2412,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="section-title">合格者の声</h2>
     <p class="section-subtitle">ガリレオで学び、志望校合格を勝ち取った生徒たちのリアルな声です。</p>
     <!-- 注目の声（featured）/ 短い声の抜粋 — 13件のデータソース(assets/js/voices-data.js)から描画 -->
+    <!-- 手書きアンケートのまとめビジュアル（実物を重ねて並べる。クリックで拡大） -->
+    <div class="voice-fan-wrap" id="home-voice-fan-wrap">
+      <p class="voice-fan-head"><span>実際にいただいた手書きアンケート</span></p>
+      <div class="voice-fan" id="home-voice-fan"></div>
+      <p class="voice-fan-note">タップで拡大してご覧いただけます</p>
+    </div>
     <div class="voice-showcase" id="home-voice-featured"></div>
     <div class="voices-grid" id="home-voices-preview"></div>
     <!-- 保護者アンケート画像グリッド：img/voices/ に画像を置き、assets/js/voices-data.js の SURVEY_IMAGES にパスを追加すると自動表示（空なら非表示） -->
@@ -2755,7 +2779,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </div>
 
-<script src="assets/js/voices-data.js?v=20261011a"></script>
+<script src="assets/js/voices-data.js?v=20261114a"></script>
 <script>
 // note 更新情報（data/note-feed.json を GitHub Actions が定期更新。取得できない時は非表示のまま）
 (function(){
@@ -3248,6 +3272,19 @@ const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersec
 document.querySelectorAll('.section,.hero-stats,.worry-card,.pillar,.daily-step,.daily-merit,.thinking-card,.course-card,.gallery-item,.team-card,.voice-card,.flow-step,.faq-item').forEach(el=>obs.observe(el));
 // 合格者の声・主な合格実績の描画（単一データソース: assets/js/voices-data.js）
 if(window.GALILEO_VOICES){
+  // 手書きアンケートのまとめビジュアル（中央＝東大。両端はスマホでは非表示）
+  GALILEO_VOICES.renderSurveyFan(document.getElementById('home-voice-fan'),['case05','case02','case01','case08','case06']);
+  (function(){
+    var fan=document.getElementById('home-voice-fan'),lb=document.getElementById('lightbox');
+    if(!fan||!lb)return;
+    fan.addEventListener('click',function(e){
+      var b=e.target.closest('.voice-fan-item'); if(!b)return;
+      var img=document.getElementById('lightboxImg');
+      img.src=b.getAttribute('data-full'); img.alt=b.getAttribute('aria-label')||'';
+      document.getElementById('lightboxCap').textContent=b.getAttribute('data-cap')||'';
+      lb.classList.add('open'); document.body.style.overflow='hidden';
+    });
+  })();
   GALILEO_VOICES.renderFeatured(document.getElementById('home-voice-featured'),'case01');
   GALILEO_VOICES.renderPreview(document.getElementById('home-voices-preview'),['case02','case08','case06']);
   GALILEO_VOICES.renderResultBadges(document.getElementById('home-results-badges'));

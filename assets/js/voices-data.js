@@ -422,6 +422,31 @@
     }).join('');
   }
 
+  /* ---- 手書きアンケートのまとめビジュアル（数枚を少し重ねて並べる帯） ----
+     サムネイルは img/voices/thumb/<case id>.webp（無ければ元画像にフォールバック）。
+     クリックで元画像を拡大（呼び出し側が data-full / data-cap を使ってライトボックス表示）。 */
+  function renderSurveyFan(el, ids) {
+    if (!el) return;
+    var list = (ids || []).map(caseById).filter(function (c) {
+      return c && c.image && !/\.pdf(\?|#|$)/i.test(c.image);
+    });
+    if (!list.length) { el.innerHTML = ''; el.hidden = true; return; }
+    el.hidden = false;
+    var mid = (list.length - 1) / 2;
+    el.innerHTML = list.map(function (c, i) {
+      var full = esc(asset(c.image));
+      var thumb = esc(asset('img/voices/thumb/' + c.id + '.webp'));
+      var label = esc(uniLabel(c));
+      return '' +
+        '<button type="button" class="voice-fan-item" style="--fan-i:' + (i - mid) + '" data-full="' + full +
+        '" data-cap="' + label + ' 合格／保護者様の手書きアンケート" aria-label="' + label + ' 合格の保護者アンケートを拡大して見る">' +
+        '<span class="voice-fan-label">' + label + '</span>' +
+        '<img loading="lazy" decoding="async" src="' + thumb + '" alt="保護者アンケート（' + label + ' 合格）" ' +
+        'onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src=\'' + full + '\';}else{this.closest(\'.voice-fan-item\').style.display=\'none\';}">' +
+        '</button>';
+    }).join('');
+  }
+
   /* ---- 合格実績画像ギャラリー（各ケースの合格実績画像を一覧表示） ---- */
   function renderResultsGallery(el, opts) {
     if (!el) return;
@@ -483,6 +508,7 @@
     asset: asset,
     surveyImages: SURVEY_IMAGES,
     renderSurveyGrid: renderSurveyGrid,
+    renderSurveyFan: renderSurveyFan,
     renderResultsGallery: renderResultsGallery,
     renderResultBadges: renderResultBadges,
     renderStats: renderStats,
