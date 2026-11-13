@@ -455,6 +455,38 @@
     return list.length;
   }
 
+  /* ---- 合格実績リスト（カテゴリー別。大学名を主役に、アンケート画像は小さな証拠サムネイルとして添える） ----
+     各行は data-full（元画像）/ data-cap を持ち、拡大表示は呼び出し側で行う。 */
+  function renderResultsList(el) {
+    if (!el) return;
+    var groups = UNIVERSITY_GROUPS.map(function (g) {
+      var items = CASES.filter(function (c) { return c.category === g.category; });
+      return { category: g.category, items: items };
+    }).filter(function (g) { return g.items.length; });
+    if (!groups.length) { el.innerHTML = ''; el.hidden = true; return; }
+    el.hidden = false;
+    el.innerHTML = groups.map(function (g) {
+      return '<div class="results-cat results-list-cat"><h4>' + esc(g.category) +
+        '<span>' + g.items.length + '校</span></h4><ul class="results-list-items">' +
+        g.items.map(function (c) {
+          var hasImg = c.image && !/\.pdf(\?|#|$)/i.test(c.image);
+          var full = hasImg ? esc(asset(c.image)) : '';
+          var thumb = esc(asset('img/voices/thumb/' + c.id + '.webp'));
+          var label = esc(uniLabel(c));
+          var inner =
+            (hasImg ? '<span class="result-row-thumb"><img loading="lazy" decoding="async" src="' + thumb + '" alt="" ' +
+              'onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src=\'' + full + '\';}else{this.parentNode.style.display=\'none\';}"></span>' : '') +
+            '<span class="result-row-body"><span class="result-row-univ">' + esc(c.university) + '</span>' +
+            (c.faculty ? '<span class="result-row-fac">' + esc(c.faculty) + '</span>' : '') + '</span>' +
+            '<span class="result-row-badge">合格</span>';
+          return hasImg
+            ? '<li><button type="button" class="result-row" data-full="' + full + '" data-cap="' + label + ' 合格／' + esc(c.initials) +
+              'さんの保護者様アンケート" aria-label="' + label + ' 合格の保護者様アンケートを拡大して見る">' + inner + '</button></li>'
+            : '<li><span class="result-row">' + inner + '</span></li>';
+        }).join('') + '</ul></div>';
+    }).join('');
+  }
+
   /* ---- 合格実績画像ギャラリー（各ケースの合格実績画像を一覧表示） ---- */
   function renderResultsGallery(el, opts) {
     if (!el) return;
@@ -523,6 +555,7 @@
     renderSurveyGrid: renderSurveyGrid,
     renderSurveyCards: renderSurveyCards,
     renderResultsGallery: renderResultsGallery,
+    renderResultsList: renderResultsList,
     renderResultBadges: renderResultBadges,
     renderStats: renderStats,
     renderPreview: renderPreview,
