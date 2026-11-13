@@ -469,10 +469,15 @@
     el.hidden = false;
     el.innerHTML = list.map(function (c) {
       var src = esc(asset(c.image));
+      // opts.thumb: 軽量サムネイル（img/voices/thumb/<id>.webp）を表示し、無ければ元画像にフォールバック
+      var shown = opts.thumb ? esc(asset('img/voices/thumb/' + c.id + '.webp')) : src;
+      var onerr = opts.thumb
+        ? "if(!this.dataset.fb){this.dataset.fb=1;this.src='" + src + "';}else{this.closest('figure').style.display='none';}"
+        : "this.closest('figure').style.display='none'";
       return '<figure>' +
-        '<a href="' + src + '" target="_blank" rel="noopener">' +
-        '<img loading="lazy" src="' + src + '" alt="' + esc(uniLabel(c) + ' 合格') +
-        '" onerror="this.closest(\'figure\').style.display=\'none\'"></a>' +
+        '<a href="' + src + '" target="_blank" rel="noopener" data-cap="' + esc(uniLabel(c)) + ' 合格">' +
+        '<img loading="lazy" decoding="async" src="' + shown + '" alt="' + esc(uniLabel(c) + ' 合格') +
+        '" onerror="' + onerr + '"></a>' +
         '<figcaption>' + esc(uniLabel(c)) + ' 合格</figcaption>' +
         '</figure>';
     }).join('');
