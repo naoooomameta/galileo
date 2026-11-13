@@ -491,23 +491,68 @@ strong{font-weight:700}
   .results-cat .result-badge{font-size:12.5px;padding:7px 12px}
 }
 /* 保護者アンケート画像グリッド（画像が無いときは自動で非表示） */
-.voice-fan-wrap{max-width:980px;margin:0 auto 40px;text-align:center}
-.voice-fan-wrap:has(.voice-fan[hidden]){display:none}
-.voice-fan-head{margin-bottom:26px}
-.voice-fan-head span{display:inline-block;font-family:var(--font-serif);font-size:16px;font-weight:700;color:var(--primary-dark);letter-spacing:.08em;padding:6px 22px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
-.voice-fan{display:flex;justify-content:center;align-items:flex-end;padding:18px 0 44px}
-.voice-fan-item{--w:clamp(120px,19vw,196px);position:relative;flex:0 0 var(--w);width:var(--w);margin:0 calc(var(--w) * -.09);padding:0;border:1px solid var(--border);border-radius:6px;background:var(--white);cursor:zoom-in;box-shadow:0 10px 26px rgba(14,74,56,.18);transform:translateY(calc(var(--fan-i) * var(--fan-i) * 7px)) rotate(calc(var(--fan-i) * 4deg));transform-origin:50% 120%;transition:transform .3s ease,box-shadow .3s ease;z-index:calc(10 - var(--fan-i) * var(--fan-i));font:inherit}
-.voice-fan-item img{display:block;width:100%;aspect-ratio:3/3.9;object-fit:cover;object-position:top;border-radius:5px}
-.voice-fan-item:hover,.voice-fan-item:focus-visible{transform:translateY(-14px) rotate(0deg) scale(1.05);box-shadow:0 18px 40px rgba(14,74,56,.28);z-index:20;outline:none}
-.voice-fan-label{position:absolute;top:-13px;left:50%;transform:translateX(-50%);z-index:1;white-space:nowrap;font-size:11.5px;font-weight:700;letter-spacing:.04em;color:var(--primary-dark);background:linear-gradient(135deg,var(--gold),var(--gold-light));padding:4px 12px;border-radius:14px;box-shadow:0 3px 10px rgba(196,154,60,.35)}
-.voice-fan-note{font-size:12px;color:var(--text-muted);margin-top:0}
+.survey-block{margin:0 auto 44px}
+.survey-block[hidden]{display:none}
+.survey-block-head{text-align:center;margin-bottom:22px}
+.survey-block-ttl{font-family:var(--font-serif);font-size:clamp(19px,2.4vw,24px);font-weight:700;color:var(--primary-dark);letter-spacing:.04em}
+.survey-block-ttl .ac{color:var(--gold)}
+.survey-block-sub{font-size:14px;color:var(--text-light);margin-top:8px;line-height:1.8}
+.survey-block-note{font-size:12px;color:var(--text-muted);margin-top:4px}
+.survey-rail-wrap{position:relative}
+.survey-rail{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 64px) / 5);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 4px;padding:4px 4px 14px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;overscroll-behavior-x:contain}
+.survey-rail .survey-card{scroll-snap-align:start}
+.survey-rail:focus-visible{outline:2px solid var(--primary);outline-offset:4px;border-radius:12px}
+.survey-card{background:var(--white);border-radius:12px;border:2px solid var(--border);overflow:hidden;cursor:zoom-in;text-align:left;padding:0;transition:border-color .3s,transform .3s,box-shadow .3s;display:flex;flex-direction:column;font:inherit;color:inherit}
+.survey-card:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:0 8px 20px rgba(14,74,56,.15)}
+.survey-card-imgwrap{position:relative;display:block;overflow:hidden;background:var(--green-pale);border-bottom:1px solid var(--green-mist)}
+.survey-card-imgwrap img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;transition:transform .4s}
+.survey-card:hover .survey-card-imgwrap img{transform:scale(1.04)}
+.survey-card-imgwrap::after{content:'';position:absolute;right:8px;bottom:8px;width:30px;height:30px;border-radius:50%;background:rgba(10,50,40,.72) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='6'/%3E%3Cpath d='M20 20l-4.3-4.3'/%3E%3C/svg%3E") center/16px no-repeat}
+.survey-info{padding:11px 13px 13px;display:flex;flex-direction:column;gap:3px}
+.survey-tier{align-self:flex-start;font-size:10.5px;font-weight:700;letter-spacing:.06em;color:var(--primary);border:1px solid var(--primary);border-radius:20px;padding:1px 9px;margin-bottom:3px}
+.survey-univ{font-family:var(--font-serif);font-size:14.5px;font-weight:700;color:var(--primary-dark);line-height:1.5}
+.survey-name{font-size:11.5px;color:var(--text-light);margin-top:2px}
+.survey-rail-nav{position:absolute;top:38%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--white);color:var(--primary);font-size:27px;line-height:1;cursor:pointer;box-shadow:0 4px 14px rgba(14,74,56,.16);display:flex;align-items:center;justify-content:center;padding-bottom:3px;transition:background .2s,color .2s}
+.survey-rail-nav:hover{background:var(--primary);color:var(--white)}
+.survey-rail-nav.prev{left:-18px}
+.survey-rail-nav.next{right:-18px}
+.survey-rail-nav[hidden]{display:none}
+.survey-rail-foot{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:10px}
+.survey-rail-hint{display:none;font-size:12px;color:var(--text-muted);letter-spacing:.05em}
+.survey-all-btn{font:inherit;font-size:14px;font-weight:700;color:var(--primary);background:var(--white);border:2px solid var(--primary);border-radius:50px;padding:12px 26px;cursor:pointer;transition:all .2s}
+.survey-all-btn:hover{background:var(--primary);color:var(--white)}
+.survey-all-modal{position:fixed;inset:0;z-index:2500;background:rgba(10,50,40,.6);display:flex;align-items:flex-end;justify-content:center}
+.survey-all-modal[hidden]{display:none}
+.survey-all-panel{background:var(--bg);width:100%;max-width:1100px;height:92vh;height:92dvh;border-radius:20px 20px 0 0;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 -10px 40px rgba(0,0,0,.25)}
+.survey-all-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:18px 20px 12px;background:var(--white);border-bottom:1px solid var(--border)}
+.survey-all-ttl{font-family:var(--font-serif);font-size:18px;font-weight:700;color:var(--primary-dark)}
+.survey-all-sub{font-size:12px;color:var(--text-light);margin-top:3px;line-height:1.6}
+.survey-all-close{flex:0 0 auto;width:40px;height:40px;border-radius:50%;border:none;background:var(--green-pale);color:var(--primary);font-size:24px;cursor:pointer;line-height:1}
+.survey-filter{display:flex;gap:8px;padding:12px 20px;overflow-x:auto;background:var(--white);border-bottom:1px solid var(--border);scrollbar-width:none}
+.survey-filter::-webkit-scrollbar{display:none}
+.survey-filter button{flex:0 0 auto;font:inherit;font-size:12.5px;font-weight:700;color:var(--primary);background:var(--white);border:1px solid var(--border);border-radius:50px;padding:7px 16px;cursor:pointer}
+.survey-filter button[aria-selected="true"]{background:var(--primary);border-color:var(--primary);color:var(--white)}
+.survey-filter button span{font-weight:500;opacity:.75;margin-left:4px}
+.survey-all-grid{flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:20px 20px 32px;align-content:start;-webkit-overflow-scrolling:touch}
+.survey-all-grid{grid-auto-rows:max-content}
+.survey-all-grid .survey-card{min-height:max-content}
+.survey-all-grid .survey-card-imgwrap{flex:0 0 auto}
+.survey-all-grid .survey-card[hidden]{display:none}
+@media(min-width:769px){
+  .survey-all-modal{align-items:center;padding:3vh 32px}
+  .survey-all-panel{height:94vh;border-radius:20px}
+}
+@media(max-width:1024px){
+  .survey-rail{grid-auto-columns:calc((100% - 32px) / 3)}
+  .survey-all-grid{grid-template-columns:repeat(3,1fr)}
+}
 @media(max-width:768px){
-  .voice-fan-wrap{margin-bottom:28px}
-  .voice-fan{padding-bottom:26px}
-  .voice-fan-item{--w:clamp(100px,29vw,150px);margin:0 calc(var(--w) * -.03)}
-  .voice-fan-item:first-child,.voice-fan-item:last-child{display:none}
-  .voice-fan-label{font-size:10px;padding:3px 8px;top:-20px;white-space:normal;width:max-content;max-width:94%;line-height:1.3;text-align:center;border-radius:10px}
-  .voice-fan-head span{font-size:14px;padding:5px 14px}
+  .survey-block{margin-bottom:30px}
+  .survey-rail{grid-auto-columns:46%;gap:12px}
+  .survey-rail-nav{display:none}
+  .survey-rail-hint{display:block}
+  .survey-all-grid{grid-template-columns:repeat(2,1fr);gap:10px;padding:14px 14px 32px}
+  .survey-univ{font-size:13.5px}
 }
 .voice-survey-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin:24px 0 0}
 .voice-survey-grid[hidden],.voice-survey-grid:empty{display:none}
@@ -2420,11 +2465,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="section-title">合格者の声</h2>
     <p class="section-subtitle">ガリレオで学び、志望校合格を勝ち取った生徒たちのリアルな声です。</p>
     <!-- 注目の声（featured）/ 短い声の抜粋 — 13件のデータソース(assets/js/voices-data.js)から描画 -->
-    <!-- 手書きアンケートのまとめビジュアル（実物を重ねて並べる。クリックで拡大） -->
-    <div class="voice-fan-wrap" id="home-voice-fan-wrap">
-      <p class="voice-fan-head"><span>実際にいただいた手書きアンケート</span></p>
-      <div class="voice-fan" id="home-voice-fan"></div>
-      <p class="voice-fan-note">タップで拡大してご覧いただけます</p>
+    <!-- 保護者様アンケート（実物）：横スクロールのカード一覧＋全件モーダル。描画は assets/js/voices-data.js -->
+    <div class="survey-block" id="home-survey-block" hidden>
+      <div class="survey-block-head">
+        <h3 class="survey-block-ttl">保護者様<span class="ac">アンケート</span></h3>
+        <p class="survey-block-sub">実際にいただいた保護者様アンケート（全<span class="js-survey-count"></span>件）。<br class="sp-only">タップすると拡大して読めます。</p>
+        <p class="survey-block-note">※生徒・保護者様の許可を得て掲載しています。</p>
+      </div>
+      <div class="survey-rail-wrap">
+        <button type="button" class="survey-rail-nav prev" aria-label="前のアンケートへ" hidden>&#8249;</button>
+        <div class="survey-rail" id="surveyRail" tabindex="0" aria-label="保護者様アンケート一覧（横にスクロールできます）"></div>
+        <button type="button" class="survey-rail-nav next" aria-label="次のアンケートへ">&#8250;</button>
+      </div>
+      <div class="survey-rail-foot">
+        <span class="survey-rail-hint">← 横にスクロールできます →</span>
+        <button type="button" class="survey-all-btn" id="surveyAllBtn">すべてのアンケートを一覧で見る（<span class="js-survey-count"></span>件）</button>
+      </div>
     </div>
     <div class="voice-showcase" id="home-voice-featured"></div>
     <div class="voices-grid" id="home-voices-preview"></div>
@@ -2665,6 +2721,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <!-- ===== LIGHTBOX（ギャラリー画像の拡大表示） ===== -->
+<!-- 保護者様アンケート 全件モーダル -->
+<div id="surveyAllModal" class="survey-all-modal" hidden role="dialog" aria-modal="true" aria-labelledby="surveyAllTtl">
+  <div class="survey-all-panel">
+    <div class="survey-all-head">
+      <div>
+        <div class="survey-all-ttl" id="surveyAllTtl">保護者様アンケート</div>
+        <div class="survey-all-sub">タップすると拡大して読めます。※生徒・保護者様の許可を得て掲載しています。</div>
+      </div>
+      <button type="button" class="survey-all-close" aria-label="閉じる">&times;</button>
+    </div>
+    <div class="survey-filter" role="tablist" aria-label="絞り込み"></div>
+    <div class="survey-all-grid"></div>
+  </div>
+</div>
+
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="画像の拡大表示">
   <button class="lightbox-close" aria-label="閉じる">&times;</button>
   <img id="lightboxImg" src="" alt="">
@@ -2787,7 +2858,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </div>
 
-<script src="assets/js/voices-data.js?v=20261114a"></script>
+<script src="assets/js/voices-data.js?v=20261114b"></script>
 <script>
 // note 更新情報（data/note-feed.json を GitHub Actions が定期更新。取得できない時は非表示のまま）
 (function(){
@@ -3280,18 +3351,57 @@ const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersec
 document.querySelectorAll('.section,.hero-stats,.worry-card,.pillar,.daily-step,.daily-merit,.thinking-card,.course-card,.gallery-item,.team-card,.voice-card,.flow-step,.faq-item').forEach(el=>obs.observe(el));
 // 合格者の声・主な合格実績の描画（単一データソース: assets/js/voices-data.js）
 if(window.GALILEO_VOICES){
-  // 手書きアンケートのまとめビジュアル（中央＝東大。両端はスマホでは非表示）
-  GALILEO_VOICES.renderSurveyFan(document.getElementById('home-voice-fan'),['case05','case02','case01','case08','case06']);
+  // 保護者様アンケート：横スクロールのカード一覧＋全件モーダル
   (function(){
-    var fan=document.getElementById('home-voice-fan'),lb=document.getElementById('lightbox');
-    if(!fan||!lb)return;
-    fan.addEventListener('click',function(e){
-      var b=e.target.closest('.voice-fan-item'); if(!b)return;
+    var block=document.getElementById('home-survey-block'),rail=document.getElementById('surveyRail');
+    var modal=document.getElementById('surveyAllModal'),lb=document.getElementById('lightbox');
+    if(!block||!rail||!modal)return;
+    var count=GALILEO_VOICES.renderSurveyCards(rail);
+    if(!count)return;
+    block.hidden=false;
+    Array.prototype.forEach.call(block.querySelectorAll('.js-survey-count'),function(el){el.textContent=count;});
+    // 矢印（端では非表示）
+    var prev=block.querySelector('.survey-rail-nav.prev'),next=block.querySelector('.survey-rail-nav.next');
+    function sync(){prev.hidden=rail.scrollLeft<8;next.hidden=rail.scrollLeft+rail.clientWidth>rail.scrollWidth-8;}
+    function step(dir){rail.scrollBy({left:dir*rail.clientWidth*.8,behavior:'smooth'});}
+    prev.addEventListener('click',function(){step(-1);});
+    next.addEventListener('click',function(){step(1);});
+    rail.addEventListener('scroll',sync,{passive:true});
+    window.addEventListener('resize',sync);
+    sync();
+    // 拡大表示（既存のライトボックスを使用）
+    function zoom(e){
+      var c=e.target.closest('.survey-card'); if(!c||!lb)return;
       var img=document.getElementById('lightboxImg');
-      img.src=b.getAttribute('data-full'); img.alt=b.getAttribute('aria-label')||'';
-      document.getElementById('lightboxCap').textContent=b.getAttribute('data-cap')||'';
+      img.src=c.getAttribute('data-full'); img.alt=c.getAttribute('aria-label')||'';
+      document.getElementById('lightboxCap').textContent=c.getAttribute('data-cap')||'';
       lb.classList.add('open'); document.body.style.overflow='hidden';
+    }
+    rail.addEventListener('click',zoom);
+    // 全件モーダル
+    var grid=modal.querySelector('.survey-all-grid'),filter=modal.querySelector('.survey-filter');
+    GALILEO_VOICES.renderSurveyCards(grid);
+    grid.addEventListener('click',zoom);
+    var cards=grid.querySelectorAll('.survey-card'),tiers=['すべて','国公立','私立'];
+    filter.innerHTML=tiers.map(function(t,i){
+      var n=i?grid.querySelectorAll('.survey-card[data-tier="'+t+'"]').length:cards.length;
+      return '<button type="button" role="tab" aria-selected="'+(i?'false':'true')+'" data-tier="'+(i?t:'')+'">'+t+'<span>'+n+'</span></button>';
+    }).join('');
+    filter.addEventListener('click',function(e){
+      var b=e.target.closest('button'); if(!b)return;
+      Array.prototype.forEach.call(filter.children,function(x){x.setAttribute('aria-selected',x===b?'true':'false');});
+      var t=b.getAttribute('data-tier');
+      Array.prototype.forEach.call(cards,function(c){c.hidden=!!t&&c.getAttribute('data-tier')!==t;});
+      grid.scrollTop=0;
     });
+    function openAll(){modal.hidden=false;document.body.style.overflow='hidden';}
+    function closeAll(){modal.hidden=true;document.body.style.overflow='';}
+    document.getElementById('surveyAllBtn').addEventListener('click',openAll);
+    modal.addEventListener('click',function(e){if(e.target===modal||e.target.closest('.survey-all-close'))closeAll();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden&&!(lb&&lb.classList.contains('open')))closeAll();});
+    // モーダルを開いたままライトボックスを閉じたとき、背面スクロールの固定を維持する
+    if(lb){lb.addEventListener('click',function(){setTimeout(function(){if(!modal.hidden&&!lb.classList.contains('open'))document.body.style.overflow='hidden';},0);});
+      document.addEventListener('keydown',function(e){if(e.key==='Escape')setTimeout(function(){if(!modal.hidden)document.body.style.overflow='hidden';},0);});}
   })();
   GALILEO_VOICES.renderFeatured(document.getElementById('home-voice-featured'),'case01');
   GALILEO_VOICES.renderPreview(document.getElementById('home-voices-preview'),['case02','case08','case06']);
