@@ -569,6 +569,14 @@ strong{font-weight:700}
 .results-gallery figcaption{font-size:11.5px;font-weight:700;color:var(--primary-dark);text-align:center;padding:7px 8px;background:var(--green-pale);line-height:1.4;margin-top:auto}
 @media(max-width:900px){.results-gallery{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:600px){.results-gallery{grid-template-columns:repeat(2,1fr);gap:10px}.results-gallery figcaption{font-size:10.5px;padding:5px 4px}}
+/* トップ用のコンパクト表示（小さなサムネイルを7列。スマホは1行の横スクロール） */
+.results-gallery--compact{grid-template-columns:repeat(7,1fr);gap:10px;max-width:980px;margin-left:auto;margin-right:auto}
+.results-gallery--compact figure>a{cursor:zoom-in}
+.results-gallery--compact img{aspect-ratio:4/5}
+.results-gallery--compact figcaption{font-size:10.5px;padding:5px 4px;line-height:1.35}
+@media(max-width:900px){.results-gallery--compact{grid-template-columns:repeat(5,1fr)}}
+@media(max-width:600px){.results-gallery--compact{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:31%;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:10px;scrollbar-width:thin}
+  .results-gallery--compact figure{scroll-snap-align:start}}
 
 /* ===== FLOW ===== */
 .flow-steps{max-width:700px;margin:0 auto}
@@ -2503,7 +2511,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="results-cats" id="home-results-badges"></div>
     </div>
     <!-- 合格実績画像ギャラリー — データソースから描画（画像が無ければ自動で非表示） -->
-    <div class="results-gallery" id="home-results-gallery" hidden></div>
+    <div class="results-gallery results-gallery--compact" id="home-results-gallery" hidden></div>
     <div class="results-disclaimer">
       <p>※合格実績・合格者の声は、ご本人・保護者様の許可を得て掲載しています。</p>
       <p>※主な合格実績です。合格者数・最新の実績はLINEよりお問い合わせください。</p>
@@ -2858,7 +2866,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </div>
 
-<script src="assets/js/voices-data.js?v=20261114b"></script>
+<script src="assets/js/voices-data.js?v=20261114c"></script>
 <script>
 // note 更新情報（data/note-feed.json を GitHub Actions が定期更新。取得できない時は非表示のまま）
 (function(){
@@ -3406,7 +3414,19 @@ if(window.GALILEO_VOICES){
   GALILEO_VOICES.renderFeatured(document.getElementById('home-voice-featured'),'case01');
   GALILEO_VOICES.renderPreview(document.getElementById('home-voices-preview'),['case02','case08','case06']);
   GALILEO_VOICES.renderResultBadges(document.getElementById('home-results-badges'));
-  GALILEO_VOICES.renderResultsGallery(document.getElementById('home-results-gallery'));
+  GALILEO_VOICES.renderResultsGallery(document.getElementById('home-results-gallery'),{thumb:true});
+  (function(){ // 合格実績のサムネイル：別タブではなくライトボックスで拡大
+    var g=document.getElementById('home-results-gallery'),lb=document.getElementById('lightbox');
+    if(!g||!lb)return;
+    g.addEventListener('click',function(e){
+      var a=e.target.closest('a'); if(!a)return;
+      e.preventDefault();
+      var img=document.getElementById('lightboxImg');
+      img.src=a.getAttribute('href'); img.alt=a.getAttribute('data-cap')||'';
+      document.getElementById('lightboxCap').textContent=a.getAttribute('data-cap')||'';
+      lb.classList.add('open'); document.body.style.overflow='hidden';
+    });
+  })();
   GALILEO_VOICES.renderSurveyGrid(document.getElementById('home-voice-survey'));
   // 信頼ブロック（悩み直後）
   GALILEO_VOICES.renderResultBadges(document.getElementById('proof-badges'));
