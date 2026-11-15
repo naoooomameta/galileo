@@ -608,31 +608,6 @@ a.media-card{text-decoration:none;color:inherit;cursor:pointer}
   .media-body{padding:24px 20px;border-left:none;border-top:4px solid var(--green-pale)}
 }
 
-/* ===== 代表塾長メッセージカード (FV直下) ===== */
-.ceo-card-section{background:var(--white);padding:28px 4vw;border-bottom:1px solid var(--border)}
-.ceo-card{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr;background:linear-gradient(135deg,var(--bg) 0%,var(--green-light) 100%);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 8px 32px rgba(14,74,56,.10);position:relative;transition:all .3s}
-a.ceo-card{text-decoration:none;color:inherit;cursor:pointer}
-.ceo-card:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(14,74,56,.16)}
-.ceo-card::before{content:'';position:absolute;top:-40%;left:-10%;width:420px;height:420px;background:radial-gradient(circle,rgba(196,154,60,.18) 0%,transparent 70%);pointer-events:none}
-.ceo-card-text{padding:44px 32px 44px 72px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;position:relative}
-.ceo-card-badge{font-size:12.5px;font-weight:700;color:var(--white);background:linear-gradient(135deg,var(--primary),var(--primary-light));padding:5px 14px;border-radius:20px;letter-spacing:.05em;margin-bottom:16px}
-.ceo-card-title{font-family:var(--font-serif);font-size:clamp(21px,2.8vw,29px);font-weight:700;color:var(--primary-dark);line-height:1.7}
-.ceo-card-desc{font-size:15.5px;color:var(--text-light);margin-top:14px;line-height:2;letter-spacing:.02em}
-.ceo-card-link{display:inline-flex;align-items:center;gap:6px;margin-top:20px;color:var(--primary);font-weight:700;font-size:14px;border-bottom:2px solid var(--gold);padding-bottom:2px;transition:gap .2s}
-.ceo-card:hover .ceo-card-link{gap:10px}
-.ceo-card-book{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-family:var(--font-serif);font-size:14px;font-weight:700;color:var(--primary-dark)}
-.ceo-card-book-tag{font-family:var(--font);font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--primary-dark);background:linear-gradient(135deg,var(--gold),var(--gold-light));padding:3px 9px;border-radius:6px}
-.ceo-card-img{position:relative;min-height:260px}
-.ceo-card-img img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:92%;width:auto;max-width:none;display:block;filter:drop-shadow(0 6px 24px rgba(14,74,56,.22))}
-@media(max-width:768px){
-  .ceo-card{grid-template-columns:1fr}
-  .ceo-card-img{order:-1;min-height:230px}
-  .ceo-card-img::after{background:linear-gradient(0deg,var(--green-light) 0%,transparent 18%)}
-  .ceo-card-text{padding:24px 22px}
-  .ceo-card-desc{font-size:14px}
-  .ceo-card-title{font-size:21px}
-}
-
 /* ===== BOOK（代表塾長の著書） ===== */
 .book-section{position:relative;overflow:hidden;padding:clamp(44px,5vw,64px) 0}
 .book-section+.book-section{padding-top:0}
@@ -1760,25 +1735,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </a>
 </section>
 
-<!-- ===== 代表塾長メッセージ (FV直下) ===== -->
-<section class="ceo-card-section">
-  <a href="pages/ceo-message.html" class="ceo-card">
-    <div class="ceo-card-text">
-      <span class="ceo-card-badge">代表塾長メッセージ</span>
-      <h2 class="ceo-card-title">一人ひとりの可能性を、<br>最後まで諦めない。</h2>
-      <p class="ceo-card-desc">ガリレオ代表塾長 菅野 温が、ガリレオの教育にかける想いをお伝えします。</p>
-      <span class="ceo-card-link">メッセージ全文を読む →</span>
-      <span class="ceo-card-book"><span class="ceo-card-book-tag">著書発売中</span>『君の夢に、僕も本気だ』</span>
-    </div>
-    <div class="ceo-card-img">
-      <picture>
-        <source srcset="img/ceo-kanno.webp" type="image/webp">
-        <img src="img/ceo-kanno.png" alt="ガリレオ代表塾長 菅野 温" width="600" height="717" loading="lazy">
-      </picture>
-    </div>
-  </a>
-</section>
-
 <!-- ===== WORRIES ===== -->
 <section class="section worries-section" id="worries">
   <div class="container">
@@ -2170,59 +2126,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ===== MOVIE（削除：動画素材準備中のため一旦非表示） ===== -->
 
-<!-- ===== BOOK（代表塾長の著書） ===== -->
-<section class="section book-section" id="book">
-  <div class="container">
-    <div class="section-label">Book</div>
-    <h2 class="section-title">代表塾長 菅野の著書</h2>
-    <p class="section-subtitle">ガリレオ代表塾長 菅野 温（あつし先生）の初の著書が、Amazonで発売中です。</p>
-    <div class="book-card">
-      <div class="book-visual">
-        <a href="https://www.amazon.co.jp/dp/B0HLTXKF2Q" target="_blank" rel="noopener" class="book-3d" aria-label="Amazonで『君の夢に、僕も本気だ』を見る">
-          <span class="book-ribbon">NEW RELEASE</span>
-          <span class="book-3d-spine" aria-hidden="true"></span>
-          <span class="book-3d-pages" aria-hidden="true"></span>
-          <span class="book-3d-front">
-            <picture>
-              <source srcset="img/book-cover.webp" type="image/webp">
-              <img src="img/book-cover.jpg" alt="書籍『君の夢に、僕も本気だ ― まだ名前のない夢から』表紙（著：あつし先生／菅野 温）" width="640" height="960" loading="lazy">
-            </picture>
-          </span>
-        </a>
-      </div>
-      <div class="book-body">
-        <span class="book-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h7a3 3 0 0 1 3 3v15a2 2 0 0 0-2-2H4V3zm16 0h-7a3 3 0 0 0-3 3v15a2 2 0 0 1 2-2h8V3z"/></svg>代表塾長の著書</span>
-        <p class="book-eyebrow">KINDLE 電子書籍</p>
-        <h3 class="book-title">君の夢に、僕も本気だ</h3>
-        <p class="book-subtitle">まだ名前のない夢から</p>
-        <div class="book-author">
-          <picture>
-            <source srcset="img/ceo-kanno.webp" type="image/webp">
-            <img src="img/ceo-kanno.png" alt="" width="60" height="60" loading="lazy">
-          </picture>
-          <div><strong>あつし先生（菅野 温）</strong>理系の大学受験専門塾 ガリレオ 代表塾長</div>
-        </div>
-        <p class="book-desc">「数学がゲームに変わった」日から、「夢を今日の一歩にしていく」まで。受験の現場で一人ひとりの可能性と向き合い続けてきた代表塾長 菅野が、まだ名前のない夢を抱えた生徒と、心配でつい言いすぎてしまう保護者の方へ向けて綴った一冊です。</p>
-        <details class="book-toc">
-          <summary class="book-toc-head">CONTENTS ― 目次</summary>
-          <ol class="book-toc-list">
-            <li><span>第一章</span>数学がゲームに変わった</li>
-            <li><span>第二章</span>その子が夢を話し始めた</li>
-            <li><span>第三章</span>遠回りしたぶん話せることがある</li>
-            <li><span>第四章</span>心配でつい言いすぎてしまう</li>
-            <li><span>第五章</span>夢を今日の一歩にしていく</li>
-          </ol>
-        </details>
-        <div class="book-actions">
-          <a href="https://www.amazon.co.jp/dp/B0HLTXKF2Q" target="_blank" rel="noopener" class="book-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM3 2v2h2l3.6 7.6L7.2 14A2 2 0 0 0 9 17h11v-2H9.4a.3.3 0 0 1-.2-.4l.9-1.6h7.5a2 2 0 0 0 1.7-1l3.6-6.5A1 1 0 0 0 22 4H6.2L5.3 2H3z"/></svg>Amazonで見る</a>
-          <a href="pages/ceo-message.html" class="book-btn-sub">代表塾長メッセージを読む →</a>
-        </div>
-        <p class="book-note">※ Amazon.co.jpの商品ページへ移動します。価格・配信形式は商品ページをご確認ください。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ===== BOOK（創業者の著書） ===== -->
 <section class="section book-section" id="founder-book">
   <div class="container">
@@ -2419,7 +2322,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="news-list">
       <!-- 下の行は data/note-feed.json（note最新記事）から自動表示。手で編集・削除しない -->
       <a id="noteNewsItem" class="news-item" href="#" target="_blank" rel="noopener" hidden><span class="news-date" id="noteNewsDate"></span><span class="news-badge note">note</span><span class="news-text" id="noteNewsText"></span></a>
-      <a href="#book" class="news-item"><span class="news-date">2026.10.07</span><span class="news-badge new">NEW</span><span class="news-text">代表塾長 菅野の著書『君の夢に、僕も本気だ ― まだ名前のない夢から』がAmazonで発売されました</span></a>
+      <a href="pages/news.html" class="news-item"><span class="news-date">2026.10.07</span><span class="news-badge new">NEW</span><span class="news-text">代表塾長 菅野の著書『君の夢に、僕も本気だ ― まだ名前のない夢から』がAmazonで発売されました</span></a>
       <a href="pages/news-otameshi/" class="news-item"><span class="news-date">2026.04.10</span><span class="news-badge new">NEW</span><span class="news-text">お試しコースのご案内（¥3,980）｜理系志望の高校生へ</span></a>
       <a href="pages/news.html" class="news-item"><span class="news-date">2026.04.01</span><span class="news-badge new">NEW</span><span class="news-text">2026年度 新年度授業開始のお知らせ</span></a>
       <a href="pages/news.html" class="news-item"><span class="news-date">2026.03.10</span><span class="news-badge info">実績</span><span class="news-text">2026年度 合格実績速報を更新しました</span></a>
