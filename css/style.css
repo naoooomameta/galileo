@@ -913,3 +913,28 @@ a.news-item{text-decoration:none;color:inherit;cursor:pointer}
   .nav .nav-cta:hover{background:var(--cta)!important;border-color:var(--cta)!important}
 }
 @media(max-width:1024px){.header-btn{display:none}}
+
+/* ===== フォームの視認性改善（2026-11）：入力欄は白地＋濃い枠線、ラベルと必須表示を大きく、送信ボタンはゴールド ===== */
+.form-group{margin-bottom:22px}
+.form-group label{font-size:15px;color:var(--primary-dark);margin-bottom:9px;line-height:1.6}
+.req{font-size:12px;padding:3px 9px;border-radius:5px;letter-spacing:.04em}
+.opt{font-size:12px;font-weight:700;color:var(--text-muted);background:var(--green-pale);border:1px solid var(--green-mist);padding:2px 8px;border-radius:5px;margin-left:6px;vertical-align:1px}
+.form-group input,.form-group select,.form-group textarea{background:var(--white);border:1.5px solid #A9C0B4;font-size:16px;line-height:1.6;min-height:52px;padding:13px 16px}
+.form-group input:hover,.form-group select:hover,.form-group textarea:hover{border-color:var(--primary-light)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(14,74,56,.14)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:#A3B5AB}
+.form-group select{color:var(--text);padding-right:42px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230E4A38' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:18px}
+.form-group textarea{min-height:120px}
+.form-choice label{background:var(--white);border:1.5px solid #A9C0B4;border-left:1.5px solid #A9C0B4;min-height:54px;font-size:15.5px;color:var(--primary-dark)}
+.form-choice label:hover{border-color:var(--primary);border-left-color:var(--primary)}
+.form-choice input[type="radio"]:checked+label{background:var(--green-pale);border-color:var(--primary);border-left-color:var(--primary);color:var(--primary);box-shadow:inset 0 0 0 1px var(--primary),0 0 0 3px rgba(14,74,56,.1)}
+.form-choice input[type="radio"]:checked+label::before{content:"✓";display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--primary);color:var(--white);font-size:12px;font-weight:800;flex:none}
+.form-choice input[type="radio"]:checked+label svg{display:none}
+.form-note{font-size:12.5px;color:var(--text-light)}
+.btn-submit{background:linear-gradient(135deg,var(--cta),var(--cta-light));color:var(--white);font-size:17px;letter-spacing:.04em;padding:19px 28px;box-shadow:0 6px 20px rgba(196,154,60,.38);text-shadow:0 1px 1px rgba(120,84,10,.35)}
+.btn-submit:hover{box-shadow:0 10px 28px rgba(196,154,60,.48)}
+.btn-submit:disabled{opacity:.7;cursor:default;transform:none}
+.form-after{font-size:12.5px;color:var(--text-light);text-align:center;line-height:1.8;margin-top:12px}
+.contact-info p{color:rgba(255,255,255,.9)}
+.contact-target,.contact-trial{font-size:14.5px;color:rgba(255,255,255,.9);background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2)}
+@media(max-width:480px){.contact-form{padding:24px 18px}.form-row{grid-template-columns:1fr;gap:0}}

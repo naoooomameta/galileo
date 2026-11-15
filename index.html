@@ -691,6 +691,12 @@ a.media-card{text-decoration:none;color:inherit;cursor:pointer}
 .contact-trial{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:18px;font-size:14px;color:rgba(255,255,255,.7);line-height:2}
 .contact-trial strong{color:#D4A843;display:block;margin-bottom:4px}
 .contact-form{background:var(--white);border:none;border-radius:20px;padding:32px;box-shadow:0 8px 32px rgba(0,0,0,.1)}
+.form-switch{display:flex;align-items:center;gap:14px;background:var(--green-pale);border:1px solid var(--green-mist);border-left:4px solid var(--gold);border-radius:12px;padding:12px 16px;margin-bottom:22px;color:var(--primary-dark);transition:background .2s,border-color .2s}
+.form-switch:hover{background:var(--green-light);border-color:var(--primary-light)}
+.form-switch-text{flex:1;min-width:0;font-size:12.5px;line-height:1.7;color:var(--text-light)}
+.form-switch-text strong{display:block;font-size:14.5px;color:var(--primary-dark)}
+.form-switch-arrow{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--primary);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700}
+.form-heading{font-family:var(--font-serif);font-size:18px;font-weight:700;color:var(--primary-dark);margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--green-pale)}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .form-group{margin-bottom:18px}
 .form-group label{display:block;font-size:14px;font-weight:700;margin-bottom:8px;color:var(--text)}
@@ -723,6 +729,31 @@ a.media-card{text-decoration:none;color:inherit;cursor:pointer}
 .field-error::before{content:'!';flex:none;width:16px;height:16px;border-radius:50%;background:#B3261E;color:#fff;font-size:11px;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
 .form-group input.is-invalid,.form-group select.is-invalid,.form-group textarea.is-invalid{border-color:#B3261E;background:#FDF6F5}
 .form-group input.is-invalid:focus,.form-group select.is-invalid:focus,.form-group textarea.is-invalid:focus{box-shadow:0 0 0 3px rgba(179,38,30,.12)}
+/* ===== フォームの視認性改善（2026-11）：入力欄は白地＋濃い枠線、ラベルと必須表示を大きく、送信ボタンはゴールド ===== */
+.form-group{margin-bottom:22px}
+.form-group label{font-size:15px;color:var(--primary-dark);margin-bottom:9px;line-height:1.6}
+.req{font-size:12px;padding:3px 9px;border-radius:5px;letter-spacing:.04em}
+.opt{font-size:12px;font-weight:700;color:var(--text-muted);background:var(--green-pale);border:1px solid var(--green-mist);padding:2px 8px;border-radius:5px;margin-left:6px;vertical-align:1px}
+.form-group input,.form-group select,.form-group textarea{background:var(--white);border:1.5px solid #A9C0B4;font-size:16px;line-height:1.6;min-height:52px;padding:13px 16px}
+.form-group input:hover,.form-group select:hover,.form-group textarea:hover{border-color:var(--primary-light)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(14,74,56,.14)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:#A3B5AB}
+.form-group select{color:var(--text);padding-right:42px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230E4A38' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:18px}
+.form-group textarea{min-height:120px}
+.form-choice label{background:var(--white);border:1.5px solid #A9C0B4;border-left:1.5px solid #A9C0B4;min-height:54px;font-size:15.5px;color:var(--primary-dark)}
+.form-choice label:hover{border-color:var(--primary);border-left-color:var(--primary)}
+.form-choice input[type="radio"]:checked+label{background:var(--green-pale);border-color:var(--primary);border-left-color:var(--primary);color:var(--primary);box-shadow:inset 0 0 0 1px var(--primary),0 0 0 3px rgba(14,74,56,.1)}
+.form-choice input[type="radio"]:checked+label::before{content:"✓";display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--primary);color:var(--white);font-size:12px;font-weight:800;flex:none}
+.form-choice input[type="radio"]:checked+label svg{display:none}
+.form-note{font-size:12.5px;color:var(--text-light)}
+.btn-submit{background:linear-gradient(135deg,var(--cta),var(--cta-light));color:var(--white);font-size:17px;letter-spacing:.04em;padding:19px 28px;box-shadow:0 6px 20px rgba(196,154,60,.38);text-shadow:0 1px 1px rgba(120,84,10,.35)}
+.btn-submit:hover{box-shadow:0 10px 28px rgba(196,154,60,.48)}
+.btn-submit:disabled{opacity:.7;cursor:default;transform:none}
+.form-after{font-size:12.5px;color:var(--text-light);text-align:center;line-height:1.8;margin-top:12px}
+.contact-info p{color:rgba(255,255,255,.9)}
+.contact-target,.contact-trial{font-size:14.5px;color:rgba(255,255,255,.9);background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2)}
+@media(max-width:480px){.contact-form{padding:24px 18px}.form-row{grid-template-columns:1fr;gap:0}}
+.form-group input.is-invalid,.form-group select.is-invalid,.form-group textarea.is-invalid{border-color:#B3261E;background:#FDF6F5}
 .form-choice.is-invalid label{border-color:#E5A29B;border-left-color:#B3261E}
 
 /* ===== FOOTER ===== */
@@ -2370,8 +2401,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="contact-target"><strong><svg style="width:16px;height:16px;vertical-align:-3px;margin-right:4px;fill:currentColor;opacity:.7" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg> 対象者</strong>理系の国公立・私大志望 / 医学部志望 / 文理選択に悩む高1・高2・高3生 / 中学生</div>
         <div class="contact-trial"><strong><svg style="width:16px;height:16px;vertical-align:-3px;margin-right:4px;fill:currentColor;opacity:.7" viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg> 無料体験 受付中</strong>実際の授業をご体験いただけます。数学・物理・化学・生物・英語からお好きな科目を選択可能。授業の進め方や講師との相性を、ぜひご確認ください。</div>
       </div>
-      <p class="form-note" style="text-align:center;margin:0 0 14px">受講料・資料請求など、ご質問だけの方は <a href="pages/contact.html" style="color:var(--primary);font-weight:700;border-bottom:1px solid var(--primary)">お問い合わせフォーム</a> へ</p>
       <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+        <a class="form-switch" href="pages/contact.html">
+          <span class="form-switch-text"><strong>ご質問・資料請求だけの方はこちら</strong>受講料やコースについて、予約なしでお問い合わせいただけます。</span>
+          <span class="form-switch-arrow" aria-hidden="true">→</span>
+        </a>
+        <p class="form-heading">無料学習相談のお申し込み</p>
         <div class="form-alert" id="formAlert" role="alert" aria-live="assertive" tabindex="-1">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L1 21h22L12 2zm0 15a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zm-1.1-7.6h2.2v6h-2.2v-6z"/></svg>
           <span><strong>必須項目が入力されていません</strong>下記の赤くなっている項目をご確認のうえ、もう一度お試しください。</span>
@@ -2391,11 +2426,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="form-group"><label for="contactEmail">メールアドレス <span class="req">必須</span></label><input type="email" id="contactEmail" name="email" required placeholder="example@email.com" aria-describedby="errContactEmail"><p class="field-error" id="errContactEmail">メールアドレスを入力してください</p></div>
         <div class="form-group"><label for="contactTel">電話番号 <span class="req">必須</span></label><input type="tel" id="contactTel" name="tel" required placeholder="09000000000" aria-describedby="errContactTel"><p class="form-note" style="margin-top:6px">※ ハイフン（-）なしでご入力いただけます</p><p class="field-error" id="errContactTel">電話番号を入力してください</p></div>
         <div class="form-row">
-          <div class="form-group"><label for="contactGrade">学年</label><select id="contactGrade" name="grade"><option value="">選択してください</option><option>中学1年生</option><option>中学2年生</option><option>中学3年生</option><option>高校1年生</option><option>高校2年生</option><option>高校3年生</option><option>既卒（浪人）</option></select></div>
-          <div class="form-group"><label for="contactUniv">志望大学</label><input type="text" id="contactUniv" name="univ" placeholder="例：東京大学 理科一類"></div>
+          <div class="form-group"><label for="contactGrade">学年 <span class="opt">任意</span></label><select id="contactGrade" name="grade"><option value="">選択してください</option><option>中学1年生</option><option>中学2年生</option><option>中学3年生</option><option>高校1年生</option><option>高校2年生</option><option>高校3年生</option><option>既卒（浪人）</option></select></div>
+          <div class="form-group"><label for="contactUniv">志望大学 <span class="opt">任意</span></label><input type="text" id="contactUniv" name="univ" placeholder="例：東京大学 理科一類"></div>
         </div>
-        <div class="form-group"><label for="contactMessage">お悩み・ご相談内容</label><textarea id="contactMessage" name="message" rows="5" placeholder="学習の悩み、志望校についてなど、お気軽にご記入ください。"></textarea></div>
+        <div class="form-group"><label for="contactMessage">お悩み・ご相談内容 <span class="opt">任意</span></label><textarea id="contactMessage" name="message" rows="5" placeholder="学習の悩み、志望校についてなど、お気軽にご記入ください。"></textarea></div>
         <button type="submit" class="btn-submit"><svg style="width:18px;height:18px;fill:currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg> 学習相談会を申し込む →</button>
+        <p class="form-after">送信後、ご希望の日時を選べる予約画面に進みます。入塾の強制は一切ありません。</p>
       </form>
     </div>
   </div>
