@@ -51,6 +51,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .inq-kinds label:hover{border-color:var(--primary)}
 .inq-kinds input{width:18px!important;height:18px;flex:none;accent-color:var(--primary);margin:0;padding:0!important}
 .inq-kinds label:has(input:checked){background:var(--green-pale);border-color:var(--primary);box-shadow:inset 0 0 0 1px var(--primary);color:var(--primary)}
+.inq-choose{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px}
+.inq-choice{display:flex;flex-direction:column;gap:6px;border-radius:14px;padding:18px 20px;background:var(--white);border:1.5px solid var(--green-mist);color:var(--primary-dark);transition:transform .2s,box-shadow .2s,border-color .2s}
+.inq-choice:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(14,74,56,.14);border-color:var(--primary)}
+.inq-choice strong{font-family:var(--font-serif);font-size:19px;line-height:1.5}
+.inq-choice-tag{align-self:flex-start;font-size:11.5px;font-weight:700;letter-spacing:.05em;padding:2px 10px;border-radius:20px;background:var(--green-pale);color:var(--primary);border:1px solid var(--green-mist)}
+.inq-choice-desc{font-size:13px;line-height:1.8;color:var(--text-light)}
+.inq-choice-go{margin-top:auto;padding-top:6px;font-size:13.5px;font-weight:700;color:var(--primary)}
+.inq-choice--book{border:2px solid var(--gold);background:linear-gradient(135deg,#FFFBF0,var(--white));box-shadow:0 4px 16px rgba(196,154,60,.16)}
+.inq-choice--book .inq-choice-tag{background:linear-gradient(135deg,var(--gold),var(--gold-light));border-color:transparent;color:var(--primary-dark)}
+.inq-booking-note p{margin:0 0 10px}
+.inq-booking-btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 20px;border-radius:50px;background:linear-gradient(135deg,var(--cta),var(--cta-light));color:var(--white)!important;font-size:14.5px;font-weight:700;border-bottom:none!important;box-shadow:0 4px 14px rgba(196,154,60,.32)}
 .inq-booking-note{display:none;margin-top:12px;background:#FFF8E8;border:1px solid #EBD9A8;border-radius:10px;padding:12px 16px;font-size:13.5px;line-height:1.8;color:var(--text)}
 .inq-booking-note.show{display:block}
 .inq-booking-note a{font-weight:700;color:var(--primary);border-bottom:2px solid var(--gold)}
@@ -67,7 +78,7 @@ fieldset.error .inq-kinds label{border-color:#E7B4AE}
 .inq-consent a{color:var(--primary);font-weight:700;border-bottom:1px solid var(--primary)}
 .inq-fail{display:none;margin-top:14px;font-size:13.5px;color:#8E2B20;text-align:center;line-height:1.8}
 .inq-fail.show{display:block}
-@media(max-width:640px){.inq-kinds{grid-template-columns:1fr}.contact-form{padding:22px 18px}.inq-route{flex-direction:column;align-items:flex-start}}
+@media(max-width:640px){.inq-kinds{grid-template-columns:1fr}.contact-form{padding:22px 18px}.inq-choose{grid-template-columns:1fr}.inq-booking-btn{width:100%}}
 </style>
 </head>
 <body>
@@ -138,9 +149,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="section">
   <div class="container">
     <div class="inq-wrap">
-      <div class="inq-route">
-        <p>無料学習相談の日時をすぐに決めたい方は、予約カレンダーからお申し込みいただけます。</p>
-        <a href="../index.html#contact">無料学習相談を予約する →</a>
+      <div class="inq-choose" aria-label="ご希望に合わせてお選びください">
+        <a class="inq-choice inq-choice--book" href="../index.html#contact" data-handoff>
+          <span class="inq-choice-tag">日時まで決まる</span>
+          <strong>面談を予約する</strong>
+          <span class="inq-choice-desc">無料学習相談のお申し込みです。送信後、空いている日時をその場で選んで予約できます。</span>
+          <span class="inq-choice-go">予約フォームへ進む →</span>
+        </a>
+        <a class="inq-choice inq-choice--ask" href="#inquiryForm">
+          <span class="inq-choice-tag">予約なしでOK</span>
+          <strong>質問・資料請求だけする</strong>
+          <span class="inq-choice-desc">受講料・コース・資料のご請求など。このページのフォームからお送りいただけます。</span>
+          <span class="inq-choice-go">下のフォームに入力する ↓</span>
+        </a>
       </div>
 
       <form class="contact-form" id="inquiryForm" novalidate>
@@ -160,7 +181,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <label><input type="checkbox" name="kinds" value="その他">その他</label>
           </div>
           <p class="field-error">お問い合わせ内容を1つ以上お選びください</p>
-          <div class="inq-booking-note" id="bookingNote">無料学習相談は、<a href="../index.html#contact">予約カレンダー</a>からご希望の日時を選んでお申し込みいただけます。このフォームから送信いただいた場合は、担当者より日程調整のご連絡をいたします。</div>
+          <div class="inq-booking-note" id="bookingNote">
+            <p><strong>面談の日時は、予約フォームからその場で決められます。</strong>このページから送信した場合は、担当者からの日程調整のご連絡をお待ちいただく形になります。</p>
+            <a class="inq-booking-btn" href="../index.html#contact" data-handoff>予約フォームへ進む（入力内容を引き継ぎます） →</a>
+          </div>
         </fieldset>
 
         <p class="inq-sec">お客さま情報</p>
@@ -306,6 +330,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     badge.textContent = need ? '必須' : '任意';
     $('emailErr').textContent = need ? '資料の送付先メールアドレスをご入力ください' : 'メールアドレスを正しくご入力ください';
   }
+  // 予約フォーム（トップ #contact）へ進むとき、入力済みの内容を同じタブ内で引き継ぐ
+  function saveHandoff(){
+    try {
+      var t = form.querySelector('input[name="contactType"]:checked');
+      var data = {
+        contactType: t ? t.value : '',
+        name: (val('inqName1') + ' ' + val('inqName2')).trim(),
+        email: val('inqEmail'),
+        tel: normTel($('inqTel').value),
+        grade: val('inqGrade'),
+        univ: val('inqUniv'),
+        message: val('inqMessage'),
+        at: Date.now()
+      };
+      var any = data.contactType || data.name || data.email || data.tel || data.grade || data.univ || data.message;
+      if (any) sessionStorage.setItem('galileoHandoff', JSON.stringify(data));
+    } catch (e) {}
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-handoff]'), function(a){ a.addEventListener('click', saveHandoff); });
   kindDoc.addEventListener('change', syncEmailRequired);
   kindBooking.addEventListener('change', function(){ $('bookingNote').classList.toggle('show', kindBooking.checked); });
 
@@ -337,6 +380,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
     if (val('inqWebsite')) { location.href = 'contact-thanks.html'; return; } // スパム対策（人には見えない欄）
 
+    saveHandoff(); // 完了ページから予約フォームへ進む場合に備えて保持
     sending = true;
     var btn = $('inqSubmit');
     btn.disabled = true;
